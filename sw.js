@@ -1,0 +1,98 @@
+// Offline support.
+// - On install: caches the app shell, both data files, and every artwork image listed in artworks.json.
+// - Data files: network first (so updated JSON arrives when online), cache as fallback.
+// - Everything else: cache first, then network (and cache what comes back).
+// Bump VERSION whenever app files change so phones pick up the new version.
+
+const VERSION = 'v1';
+const CACHE = `gallery-guide-${VERSION}`;
+
+const SHELL = [
+  './',
+  'index.html',
+  'manifest.webmanifest',
+  'css/app.css',
+  'js/app.js',
+  'js/config.js',
+  'js/data.js',
+  'js/map3d.js',
+  'vendor/three.module.min.js',
+  'vendor/OrbitControls.js',
+  'fonts/InstrumentSerif-Regular.woff2',
+  'fonts/InstrumentSerif-Italic.woff2',
+  'icons/apple-touch-icon.png',
+  'icons/icon-192.png',
+  'icons/icon-512.png',
+  'data/floors.json',
+  'data/artworks.json',
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    await cache.addAll(SHELL);
+    await cacheArtworkImages(cache);
+    await self.skipWaiting();
+  })());
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter(k => k.startsWith('gallery-guide-') && k !== CACHE).map(k => caches.delete(k)));
+    await self.clients.claim();
+  })());
+});
+
+self.addEventListener('fetch', event => {
+  const req = event.request;
+  if (req.method !== 'GET') return;
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin) return; // e.g. links to the MFA site
+
+  if (req.mode === 'navigate') {
+    event.respondWith(networkFirst(req, 'index.html'));
+  } else if (url.pathname.endsWith('.json')) {
+    event.respondWith(networkFirst(req));
+  } else {
+    event.respondWith(cacheFirst(req));
+  }
+});
+
+async function cacheFirst(req) {
+  const cache = await caches.open(CACHE);
+  const hit = await cache.match(req, { ignoreSearch: true });
+  if (hit) return hit;
+  const res = await fetch(req);
+  if (res.ok) cache.put(req, res.clone());
+  return res;
+}
+
+async function networkFirst(req, fallbackPath) {
+  const cache = await caches.open(CACHE);
+  try {
+    const res = await fetch(req);
+    if (res.ok) {
+      cache.put(req, res.clone());
+      if (req.url.endsWith('artworks.json')) cacheArtworkImages(cache, res.clone());
+    }
+    return res;
+  } catch {
+    return (await cache.match(req, { ignoreSearch: true }))
+      ?? (fallbackPath && await cache.match(fallbackPath))
+      ?? Response.error();
+  }
+}
+
+// Download any artwork images not yet cached (also runs when a new artworks.json arrives).
+async function cacheArtworkImages(cache, response) {
+  try {
+    const doc = await (response ?? await fetch('data/artworks.json', { cache: 'no-store' })).json();
+    const urls = (doc.artworks ?? []).map(a => a.image).filter(Boolean);
+    for (const u of urls) {
+      if (!(await cache.match(u))) {
+        try { await cache.add(u); } catch { /* skip a missing image, keep going */ }
+      }
+    }
+  } catch { /* offline during install: images will be cached as they are viewed */ }
+}

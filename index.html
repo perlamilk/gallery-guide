@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Gallery Guide</title>
+  <meta name="description" content="A personal 3D guide to the Art of Europe galleries at the MFA, Boston.">
+  <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171612" media="(prefers-color-scheme: dark)">
+
+  <!-- Home-screen app (iOS) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Gallery Guide">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="preload" href="fonts/InstrumentSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/app.css">
+
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.min.js" } }
+  </script>
+</head>
+<body>
+  <main class="app" id="app">
+    <canvas id="map" aria-label="3D map of the galleries. Drag to rotate, pinch to zoom, tap a room."></canvas>
+
+    <header class="masthead">
+      <p class="masthead__eyebrow">MFA Boston</p>
+      <h1 class="masthead__title" id="floorTitle">Art of Europe</h1>
+      <p class="masthead__sub" id="floorSub"></p>
+    </header>
+
+    <nav class="map-tools" aria-label="Map controls">
+      <div class="floors" id="floors" role="radiogroup" aria-label="Floor"></div>
+      <button class="tool" id="recenter" type="button" aria-label="Recenter map">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v4M12 17.5v4M2.5 12h4M17.5 12h4"/></svg>
+      </button>
+    </nav>
+
+    <section class="sheet" id="sheet" data-state="peek" aria-label="Search and artworks">
+      <button class="sheet__grab" id="grab" type="button" aria-label="Resize panel" aria-expanded="false" aria-controls="body"><span aria-hidden="true"></span></button>
+
+      <form class="search" id="searchForm" role="search" autocomplete="off">
+        <svg class="search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+        <input class="search__input" id="q" type="search" inputmode="search" enterkeyhint="search"
+               placeholder="Artist, title or gallery" aria-label="Search artworks" spellcheck="false" autocapitalize="off">
+        <button class="search__clear" id="clear" type="button" aria-label="Clear search" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>
+        </button>
+      </form>
+
+      <div class="sheet__body" id="body"></div>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
