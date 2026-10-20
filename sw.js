@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v16';
+const VERSION = 'v17';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -54,6 +54,11 @@ self.addEventListener('activate', event => {
     await self.clients.claim();
     cacheArtworkImages(cache); // new pictures download in the background
   })());
+});
+
+// the app asks which version is running (Check for Updates)
+self.addEventListener('message', event => {
+  if (event.data === 'version') event.ports[0]?.postMessage(VERSION);
 });
 
 self.addEventListener('fetch', event => {

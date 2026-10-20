@@ -257,6 +257,10 @@ img { -webkit-user-drag: none; }
 .section__title { margin: 0; font-size: 1.18rem; font-weight: 700; letter-spacing: -.01em; }
 .section__action { color: var(--accent); font-size: 0.94rem; min-height: 32px; }
 .caption { margin: 8px 4px 0; font-size: 0.76rem; color: var(--ink-3); }
+.app-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.app-foot .caption { margin: 0 4px; flex: 1; }
+.app-foot__btn { min-height: 44px; padding: 0 4px; border: 0; background: none; color: var(--accent); font: 600 0.82rem var(--sans); white-space: nowrap; cursor: pointer; }
+.app-foot__btn:disabled { color: var(--ink-3); }
 .lead { margin: 6px 4px 0; color: var(--ink-2); font-size: 0.94rem; }
 
 /* pills: one horizontally scrolling row */

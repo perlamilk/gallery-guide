@@ -311,7 +311,10 @@ function homeBody() {
       <div class="section__head"><h3 class="section__title">Find</h3></div>
       <div class="find">${find}</div>
     </section>
-    <p class="caption" id="offline"></p>`;
+    <div class="app-foot">
+      <p class="caption" id="offline"></p>
+      <button class="app-foot__btn" type="button" data-action="check-update">Check for Updates</button>
+    </div>`;
 }
 
 function resultsBody() {
@@ -1086,6 +1089,7 @@ els.sheet.addEventListener('click', e => {
     t.textContent = open ? 'Show Less' : 'Read More';
     t.setAttribute('aria-expanded', String(open));
   }
+  else if (a === 'check-update') checkForUpdate(t);
   else if (a === 'favorite') toggleFavorite(t.dataset.id);
   else if (a === 'route-favorites') routeFavorites();
   else if (a === 'directions') directionsTo([t.dataset.id]);
@@ -1241,6 +1245,39 @@ function wireSheetDrag() {
 // ---------- offline ----------
 
 let offlineStatus = [false, 'Checking offline copy…'];
+
+// Asks the server for a newer version now. If there is one, it installs and the
+// controllerchange handler in registerServiceWorker() reloads the app onto it.
+async function checkForUpdate(btn) {
+  const reg = await navigator.serviceWorker?.getRegistration();
+  if (!reg) return toast('Updates need an internet connection');
+  btn.disabled = true;
+  btn.textContent = 'Checking…';
+  try {
+    await reg.update();
+    if (reg.installing || reg.waiting) {
+      btn.textContent = 'Updating…';
+      toast('New version found. Updating…');
+      return;
+    }
+    toast(`You have the latest version (${await swVersion()})`);
+  } catch {
+    toast('Couldn’t check. Are you online?');
+  }
+  btn.disabled = false;
+  btn.textContent = 'Check for Updates';
+}
+
+function swVersion() {
+  const sw = navigator.serviceWorker?.controller;
+  if (!sw) return Promise.resolve('?');
+  return new Promise(res => {
+    const ch = new MessageChannel();
+    ch.port1.onmessage = e => res(e.data);
+    sw.postMessage('version', [ch.port2]);
+    setTimeout(() => res('?'), 1000);
+  });
+}
 
 async function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return setOffline(false, 'Offline use isn’t supported in this browser');
