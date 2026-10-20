@@ -476,8 +476,9 @@ function artBody(id) {
   if (!a) return emptyHTML(I.grid, 'Not Found', '');
   const info = state.museum.roomInfo(a.gallery);
   const facts = [['Date', a.date], ['Medium', a.medium], ['Size', a.dimensions], ['Type', a.type], ['Country', a.country],
-    ['Credit', a.creditLine], ['Accession', a.accession], ['Acquired', acquired(a)]]
-    .filter(([, v]) => v).map(([k, v]) => `<li><div class="row"><dt>${k}</dt><dd>${escape(v)}</dd></div></li>`).join('');
+    ['Accession', a.accession]]
+    .filter(([, v]) => v).map(([k, v]) => `<li><div class="row"><dt>${k}</dt><dd>${escape(v)}</dd></div></li>`).join('')
+    + acquiredRow(a);
   return `
     ${a.image || a.img ? `<div class="art__frame">${imgHTML(a, 'art__img', a.title)}</div>` : ''}
     <div class="art__head"><h2 class="art__title">${escape(a.title)}</h2></div>
@@ -498,25 +499,53 @@ function artBody(id) {
       : a.img ? '<p class="credit">Image: Museum of Fine Arts, Boston</p>' : ''}`;
 }
 
-// How and when the work came to the museum: "Gift · March 31, 1919".
-// The method comes from the credit line; the date from the provenance, or else the year in the
-// accession number (58.356 came in 1958; 1983.12 in 1983). Two-digit numbers from 70 up are left
-// alone, since they could mean the 1870s or the 1970s.
-function acquired(a) {
+// U.S. consumer price index (CPI-U, annual average), 1913–2024, to restate a purchase price in 2024 dollars.
+const CPI_FROM = 1913;
+const CPI = [9.9, 10.0, 10.1, 10.9, 12.8, 15.1, 17.3, 20.0, 17.9, 16.8, 17.1, 17.1, 17.5, 17.7, 17.4, 17.1, 17.1, 16.7,
+  15.2, 13.7, 13.0, 13.4, 13.7, 13.9, 14.4, 14.1, 13.9, 14.0, 14.7, 16.3, 17.3, 17.6, 18.0, 19.5, 22.3, 24.1, 23.8, 24.1,
+  26.0, 26.5, 26.7, 26.9, 26.8, 27.2, 28.1, 28.9, 29.1, 29.6, 29.9, 30.2, 30.6, 31.0, 31.5, 32.4, 33.4, 34.8, 36.7, 38.8,
+  40.5, 41.8, 44.4, 49.3, 53.8, 56.9, 60.6, 65.2, 72.6, 82.4, 90.9, 96.5, 99.6, 103.9, 107.6, 109.6, 113.6, 118.3, 124.0,
+  130.7, 136.2, 140.3, 144.5, 148.2, 152.4, 156.9, 160.5, 163.0, 166.6, 172.2, 177.1, 179.9, 184.0, 188.9, 195.3, 201.6,
+  207.3, 215.3, 214.5, 218.1, 224.9, 229.6, 233.0, 236.7, 237.0, 240.0, 245.1, 251.1, 255.7, 258.8, 271.0, 292.7, 304.7, 313.7];
+
+// "$45,000" paid in 1956 -> "about $520,000 in 2024 dollars". Dollar prices from 1913 on only.
+function inTodaysDollars(price, when) {
+  const amount = Number(String(price ?? '').match(/^\$\s?([\d,]+)(?!\s*(million|thousand))/)?.[1]?.replace(/,/g, ''));
+  const year = Number(String(when ?? '').match(/(\d{4})/)?.[1]);
+  const then = CPI[year - CPI_FROM];
+  if (!amount || !then || year >= CPI_FROM + CPI.length - 1) return '';
+  const now = amount * CPI.at(-1) / then;
+  const round = Number(now.toPrecision(2));
+  return `about $${round.toLocaleString('en-US')} in ${CPI_FROM + CPI.length - 1} dollars`;
+}
+
+// How and when the work came to the museum, in two lines:
+//   "Gift of Robert Treat Paine, 2nd"        /  "December 5, 1935"
+//   "Bought from Duveen for $45,000"         /  "March 8, 1956 · 1951 Purchase Fund"
+// Wording comes from the credit line and the provenance's last sale ("sold by … to the MFA for …").
+// Without a recorded date, the year comes from the accession number (58.356 came in 1958); two-digit
+// numbers from 70 up are left alone, since they could mean the 1870s or the 1970s.
+function acquiredRow(a) {
   const c = a.creditLine ?? '';
-  const how = /expedition/i.test(c) ? 'Excavation'
-    : /^bequest|\bbequest of\b/i.test(c) ? 'Bequest'
-    : /\bexchange\b/i.test(c) ? 'Exchange'
-    : /purchase|\bfund\b|\bfunds\b/i.test(c) ? 'Purchase'
-    : /\bgift\b/i.test(c) ? 'Gift'
-    : '';
+  const purchase = a.soldBy || /purchase|\bfunds?\b/i.test(c);
+  let how = c, note = '';
+  if (/expedition/i.test(c)) how = 'Excavated by the Harvard–MFA Expedition';
+  else if (purchase && !/^(gift|bequest|partial gift|anonymous gift)/i.test(c)) {
+    how = a.soldBy || a.price ? ['Bought', a.soldBy && `from ${a.soldBy}`, a.price && `for ${a.price}`].filter(Boolean).join(' ') : 'Purchased';
+    note = c;
+  }
   let when = a.accessionDate ?? '';
   if (!when) {
     const m = String(a.accession ?? '').match(/^(\d{2,4})\./);
     if (m && m[1].length === 4) when = m[1];
     else if (m && m[1].length === 2 && +m[1] < 70) when = `19${m[1]}`;
   }
-  return [how, when].filter(Boolean).join(' · ');
+  const today = inTodaysDollars(a.price, when);
+  if (today && how.startsWith('Bought')) how += ` (${today})`;
+  const sub = [when, note].filter(Boolean).join(' · ');
+  if (!how && !sub) return '';
+  return `<li><div class="row"><dt>Acquired</dt><dd>${escape(how || sub)}${how && sub
+    ? `<br><span style="color:var(--ink-2)">${escape(sub)}</span>` : ''}</dd></div></li>`;
 }
 
 // The museum's own text about the work, set like a wall label. Long texts open with Read More.

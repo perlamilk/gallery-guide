@@ -247,7 +247,15 @@
     }
     const value = sel => txt(d.querySelector(`${sel} .detailFieldValue`));
     // the provenance usually ends with "(Accession Date: March 31, 1919)"
-    const accessionDate = txt(d.querySelector('.provenanceField')).match(/Accession Date:\s*([^)]+?)\s*\)/i)?.[1] ?? '';
+    const provenance = txt(d.querySelector('.provenanceField'));
+    const accessionDate = provenance.match(/Accession Date:\s*([^)]+?)\s*\)/i)?.[1] ?? '';
+    // purchases end like "1956, sold by Duveen to the MFA for $45,000."
+    const toMfa = provenance.lastIndexOf(' to the MFA');
+    const soldAt = toMfa > 0 ? provenance.lastIndexOf('sold by ', toMfa) : -1;
+    // only when that sale is the last step (no ';' between it and the MFA)
+    const sale = soldAt >= 0 && toMfa - soldAt < 200 && !provenance.slice(soldAt, toMfa).includes(';') ? [null,
+      provenance.slice(soldAt + 8, toMfa).replace(/,\s*$/, ''),
+      provenance.slice(toMfa).match(/^ to the MFA for ([^;()]+?)\s*(?:[.;(]|$)/)?.[1]] : null;
     const media = d.querySelector('img[src*="/preview"]')?.getAttribute('src')?.match(/dispatcher\/(\d+)/)?.[1] ?? null;
     return {
       id, title, artist, artistDetails, date,
@@ -255,6 +263,9 @@
       dimensions: value('.dimensionsField'),
       creditLine: value('.creditlineField'),
       accessionDate,
+      soldBy: sale?.[1]?.trim() ?? '',
+      price: sale?.[2]?.trim() ?? '',
+      v: 2,   // record format: 2 = has description, credit line, accession date and sale
       description,
       gallery,
       galleryName: onview.replace(/\s*\(Gallery[^)]*\)\s*$/i, '').trim() || null,
@@ -295,7 +306,7 @@
     for (const id of ids) {
       i++;
       const old = await get('records', id);
-      if (!old || 'accessionDate' in old) continue;
+      if (!old || old.v >= 2) continue;
       if (firstOnly && !(old.artist || /Painting/i.test(old.type || ''))) continue;
       const html = await politeFetch(`/objects/${id}`);
       if (html) await put('records', id, { ...record(id, html), _media: old._media ?? null });
