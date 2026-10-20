@@ -19,7 +19,8 @@
 */
 (() => {
   const CONFIG = {
-    pause: 5000,           // ms between requests (the site blocks faster harvesting)
+    pause: 15000,          // ms between requests: slow enough that the site doesn't pause us
+    sessionRequests: 120,  // a session stops by itself after this many requests (about 30 min); press Start later to continue
     imageMax: 420,         // longest side of saved images, px
     imageQuality: 0.72,    // JPEG quality
     packSize: 15e6,        // bytes per image pack file (GitHub's web upload limit is 25 MB)
@@ -80,6 +81,7 @@
   let running = false;
   let pause = CONFIG.pause;
   let failures = 0;
+  let sessionCount = 0;
   // timers in a worker keep full speed when this tab is in the background
   let timer = null;
   try { timer = new Worker(URL.createObjectURL(new Blob(['onmessage=e=>setTimeout(()=>postMessage(e.data),e.data.ms)'], { type: 'text/javascript' }))); } catch { timer = null; }
@@ -96,6 +98,7 @@
   async function politeFetch(url, as = 'text') {
     for (;;) {
       if (!running) throw new Error('paused');
+      if (++sessionCount > CONFIG.sessionRequests) { running = false; throw new Error('session'); }
       await sleep(pause);
       let res;
       try { res = await fetch(url, { credentials: 'include' }); } catch (e) { res = null; }
@@ -324,13 +327,14 @@
     return canvas.convertToBlob({ type: 'image/jpeg', quality: CONFIG.imageQuality });
   }
 
-  async function collectImages() {
+  async function collectImages(firstOnly = false) {
     const ids = await keys('records');
     const todo = ids.length;
     let i = 0;
     for (const id of ids) {
       i++;
       const r = await get('records', id);
+      if (firstOnly && !(r?.artist || /Painting/i.test(r?.type || ''))) continue;
       // a picture that failed earlier (stored as null) is tried again
       if ((await get('images', id)) || !r?._media) {
         if (!r?._media && (await get('images', id)) === undefined) await put('images', id, null);
@@ -400,6 +404,7 @@
   // ---------- controls ----------
   async function run() {
     running = true;
+    sessionCount = 0;
     $('#h-start').textContent = 'Pause';
     try {
       // a listing that found nothing is not a finished listing: start it again;
@@ -416,6 +421,7 @@
       }
       if (!(await get('meta', 'idsDone'))) await collectIds();
       await backfillDescriptions(true);
+      await collectImages(true);
       const listed = await count('ids');
       if (!listed) throw new Error('The search pages returned no works. Open https://collections.mfa.org/search/objects/*/*?filter=onview%3Atrue in this tab, reload, paste the script again and press Start.');
       // a listing cut short by the site gets another go, then the new works are read too
@@ -429,7 +435,8 @@
       await backfillDescriptions();
       status('Finished collecting.', 'Click Download to save the files.', 1);
     } catch (e) {
-      if (e.message !== 'paused') status('Stopped.', e.message);
+      if (e.message === 'session') status('Session finished.', 'Resting so the site isn\u2019t overloaded. Press Start later to continue.');
+      else if (e.message !== 'paused') status('Stopped.', e.message);
       else status('Paused.', 'Click Start to continue.');
     }
     running = false;
