@@ -475,7 +475,8 @@ function artBody(id) {
   const a = state.museum.artworks.find(x => x.id === id);
   if (!a) return emptyHTML(I.grid, 'Not Found', '');
   const info = state.museum.roomInfo(a.gallery);
-  const facts = [['Date', a.date], ['Medium', a.medium], ['Type', a.type], ['Country', a.country], ['Accession', a.accession]]
+  const facts = [['Date', a.date], ['Medium', a.medium], ['Size', a.dimensions], ['Type', a.type], ['Country', a.country],
+    ['Credit', a.creditLine], ['Accession', a.accession]]
     .filter(([, v]) => v).map(([k, v]) => `<li><div class="row"><dt>${k}</dt><dd>${escape(v)}</dd></div></li>`).join('');
   return `
     ${a.image || a.img ? `<div class="art__frame">${imgHTML(a, 'art__img', a.title)}</div>` : ''}
@@ -486,6 +487,7 @@ function artBody(id) {
       <button class="btn" type="button" data-action="directions" data-id="${escape(info.room.id)}">${I.walk}Directions</button>
       <button class="btn btn--gray" type="button" data-room="${escape(a.gallery)}">${I.pin}Gallery ${escape(a.gallery)}</button>
     </div>` : ''}
+    ${aboutHTML(a.description)}
     <dl class="facts"><ul class="group">${facts}
       <li><div class="row"><dt>Where</dt><dd>${info ? `${escape(info.floor.label)} · Gallery ${escape(a.gallery)}${a.galleryName ? `<br><span style="color:var(--ink-2)">${escape(a.galleryName)}</span>` : ''}`
         : escape(a.location || (a.gallery ? `Gallery ${a.gallery} (not on the map)` : 'On view'))}</dd></div></li>
@@ -493,6 +495,18 @@ function artBody(id) {
     <div class="stack"><a class="btn btn--ink" href="${a.url}" target="_blank" rel="noopener">View on the MFA Website</a></div>
     ${a.imageSource ? `<p class="credit">Image: <a href="${a.imageSource}" target="_blank" rel="noopener">${escape(a.imageCredit ?? 'source')}</a></p>`
       : a.img ? '<p class="credit">Image: Museum of Fine Arts, Boston</p>' : ''}`;
+}
+
+// The museum's own text about the work, set like a wall label. Long texts open with Read More.
+function aboutHTML(text) {
+  if (!text) return '';
+  const paras = text.split(/\n{2,}/).map(p => `<p>${escape(p)}</p>`).join('');
+  const long = text.length > 420;
+  return `<section class="about${long ? ' about--folded' : ''}" aria-labelledby="aboutTitle">
+    <h3 class="about__title" id="aboutTitle">About This Work</h3>
+    <div class="about__text">${paras}</div>
+    ${long ? '<button class="about__more" type="button" data-action="read-more" aria-expanded="false">Read More</button>' : ''}
+  </section>`;
 }
 
 function openArt(id) {
@@ -1002,6 +1016,12 @@ els.sheet.addEventListener('click', e => {
   else if (a === 'browse') push({ type: 'browse' }, { sheet: 'full' });
   else if (a === 'clear-filters') { state.filters = { type: '', country: '', period: '' }; computeWorks(); render(); }
   else if (a === 'more') { const top = els.body.scrollTop; state.shown += PAGE; render(); els.body.scrollTop = top; }
+  else if (a === 'read-more') {
+    const box = t.closest('.about');
+    const open = box.classList.toggle('about--folded') === false;
+    t.textContent = open ? 'Show Less' : 'Read More';
+    t.setAttribute('aria-expanded', String(open));
+  }
   else if (a === 'favorite') toggleFavorite(t.dataset.id);
   else if (a === 'route-favorites') routeFavorites();
   else if (a === 'directions') directionsTo([t.dataset.id]);

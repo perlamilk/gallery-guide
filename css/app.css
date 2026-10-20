@@ -380,6 +380,16 @@ img { -webkit-user-drag: none; }
 .fav-btn svg { width: 22px; height: 22px; }
 .fav-btn:active { transform: scale(.88); }
 .fav-btn--on { color: var(--heart); }
+/* About This Work: the wall label, in New York */
+.about { margin: 20px 4px 0; }
+.about__title { margin: 0 0 6px; font-size: 0.71rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.about__text { font: 400 1.06rem/1.55 var(--serif); color: var(--ink); text-wrap: pretty; }
+.about__text p { margin: 0 0 .7em; }
+.about__text p:last-child { margin-bottom: 0; }
+.about--folded .about__text { display: -webkit-box; -webkit-line-clamp: 7; -webkit-box-orient: vertical; overflow: hidden; }
+.about--folded .about__text p { display: inline; }
+.about--folded .about__text p + p::before { content: ' '; }
+.about__more { margin-top: 4px; min-height: 44px; padding: 0; border: 0; background: none; color: var(--accent); font: 600 0.94rem var(--sans, system-ui); cursor: pointer; }
 .facts { margin: 16px 0 0; }
 .facts .row { grid-template-columns: 96px 1fr; min-height: 44px; --sep-inset: 14px; }
 .facts dt { color: var(--ink-2); font-size: 0.94rem; }

@@ -238,10 +238,21 @@
     const onview = txt(d.querySelector('.onviewField')).replace(/^ON VIEW\s*/i, '');
     const gallery = galleryOf(onview);
     const classification = txt(d.querySelector('.classificationsField .detailFieldValue'));
+    // the museum's own text about the work (paragraphs are separated by <br>)
+    const descEl = d.querySelector('.webDescriptionField');
+    let description = '';
+    if (descEl) {
+      descEl.querySelectorAll('br').forEach(br => br.replaceWith('\u2029'));
+      description = descEl.textContent.split(/\u2029+/).map(t => t.replace(/\s+/g, ' ').trim()).filter(Boolean).join('\n\n');
+    }
+    const value = sel => txt(d.querySelector(`${sel} .detailFieldValue`));
     const media = d.querySelector('img[src*="/preview"]')?.getAttribute('src')?.match(/dispatcher\/(\d+)/)?.[1] ?? null;
     return {
       id, title, artist, artistDetails, date,
       medium: txt(d.querySelector('.mediumField .detailFieldValue')),
+      dimensions: value('.dimensionsField'),
+      creditLine: value('.creditlineField'),
+      description,
       gallery,
       galleryName: onview.replace(/\s*\(Gallery[^)]*\)\s*$/i, '').trim() || null,
       location: gallery ? null : onview || null,
@@ -270,6 +281,20 @@
       if (html) await put('records', id, record(id, html));
       i++;
       status('2/3 \u00b7 Reading works', `${i} of ${ids.length} \u00b7 about ${eta(ids.length - i, 2)} left`, 1 / 3 + (i / ids.length) / 3);
+    }
+  }
+
+  // works read before descriptions were collected are read again (after everything else)
+  async function backfillDescriptions() {
+    const ids = await keys('records');
+    let i = 0;
+    for (const id of ids) {
+      i++;
+      const old = await get('records', id);
+      if (!old || 'description' in old) continue;
+      const html = await politeFetch(`/objects/${id}`);
+      if (html) await put('records', id, { ...record(id, html), _media: old._media ?? null });
+      status('Adding descriptions', `${i} of ${ids.length}`, i / ids.length);
     }
   }
 
@@ -384,6 +409,7 @@
         await collectIds();
       }
       if (!(await get('meta', 'idsDone'))) throw new Error('The listing is still incomplete. Progress is saved; press Start again in a while.');
+      await backfillDescriptions();
       status('Finished collecting.', 'Click Download to save the files.', 1);
     } catch (e) {
       if (e.message !== 'paused') status('Stopped.', e.message);
