@@ -61,10 +61,13 @@ def main(path):
     kept = [w for w in old if str(w['id']) in tour_ids and str(w['id']) not in have]
     works.extend(kept)
     # a harvested work with no picture yet keeps the sample's picture, if it had one
-    old_pics = {str(w['id']): w['image'] for w in old if w.get('image')}
+    old_pics = {str(w['id']): w for w in old if w.get('image')}
     for w in works:
-        if 'img' not in w and not w.get('image') and str(w['id']) in old_pics:
-            w['image'] = old_pics[str(w['id'])]
+        o = old_pics.get(str(w['id']))
+        if o and 'img' not in w and not w.get('image'):
+            for k in ('image', 'imageSource', 'imageCredit'):
+                if o.get(k):
+                    w[k] = o[k]
     keep_jpgs = {os.path.basename(w['image']) for w in works if w.get('image')}
 
     # spot-check pictures are JPEG/PNG/WebP
