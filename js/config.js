@@ -2,57 +2,58 @@
 // Map colours mirror the CSS tokens in css/app.css (light and dark); change both together.
 
 export const THEMES = {
+  // the plaster architectural model: white galleries, warm-grey corridors, Klein blue for what you're looking for
   light: {
-    paper: 0xf3f1ec,       // background, gallery-wall white
-    roomTop: 0xfcfbf8,     // gallery floor seen from above
-    roomSide: 0xd9d3c8,    // gallery walls
-    serviceTop: 0xe9e5dd,  // corridors and passages
-    serviceSide: 0xd2cbbe,
-    spaceTop: 0xf3e9da,    // named spaces: courtyards, cafés, shops, auditoriums
-    spaceSide: 0xdccdb6,
-    closedTop: 0xdcd7ce,   // areas closed to visitors (grey on the PDF)
-    closedSide: 0xccc6bb,
-    edge: 0x8f877a,        // outline on top of each room
-    accent: 0x2b44c9,      // ultramarine: matches --accent
-    accentSide: 0x1e329a,
-    selected: 0x15226b,
-    selectedPlain: 0xe6dfd1,
-    shadow: 0.12,
-    note: '#7d766b',
-    area: '#2b44c9',
-    label: '#3a362f',
+    paper: 0xf2f2ef,
+    roomTop: 0xfbfbf9,
+    roomSide: 0xd9d9d3,
+    serviceTop: 0xe9e9e4,
+    serviceSide: 0xd3d3cc,
+    spaceTop: 0xeeebe4,
+    spaceSide: 0xd6d1c6,
+    closedTop: 0xdcdcd6,
+    closedSide: 0xcfcfc8,
+    edge: 0x9a9a93,
+    accent: 0x002fa7,      // International Klein Blue — matches --accent
+    accentSide: 0x00227a,
+    selected: 0x001a5e,
+    selectedPlain: 0xe3e3dd,
+    shadow: 0.13,
+    note: '#6b6b6b',
+    area: '#002fa7',
+    label: '#1f1f1f',
     labelOnAccent: '#ffffff',
     markerBg: '#ffffff',
-    markerInk: '#2a2722',
-    markerRing: '#d6cfc2',
-    door: 0xa69d8e,        // thresholds between rooms
-    visitedTop: 0xd2daf6,  // rooms checked off in the visit diary
+    markerInk: '#111111',
+    markerRing: '#d4d4cf',
+    door: 0xa9a9a2,
+    visitedTop: 0xd6def5,
   },
   dark: {
-    paper: 0x171612,
-    roomTop: 0x45423b,     // galleries: clearly lighter than corridors and closed areas
-    roomSide: 0x2a2823,
-    serviceTop: 0x2c2a25,
-    serviceSide: 0x1f1d19,
-    spaceTop: 0x54493a,
-    spaceSide: 0x352e25,
-    closedTop: 0x1f1e1a,
-    closedSide: 0x191814,
-    edge: 0x7a7365,
-    accent: 0x4a63f0,
-    accentSide: 0x2b3fae,
-    selected: 0x8fa0ff,
-    selectedPlain: 0x45423b,
+    paper: 0x0e0e0e,
+    roomTop: 0x3a3a3c,
+    roomSide: 0x242426,
+    serviceTop: 0x262628,
+    serviceSide: 0x1a1a1c,
+    spaceTop: 0x45403a,
+    spaceSide: 0x2e2a26,
+    closedTop: 0x18181a,
+    closedSide: 0x121214,
+    edge: 0x6e6e73,
+    accent: 0x5470ff,
+    accentSide: 0x2e46c2,
+    selected: 0x9db0ff,
+    selectedPlain: 0x4a4a4e,
     shadow: 0.35,
-    note: '#8f897e',
-    area: '#8fa0ff',
-    label: '#ece7de',
+    note: '#9a9aa0',
+    area: '#7c95ff',
+    label: '#f2f2f2',
     labelOnAccent: '#ffffff',
-    markerBg: '#2e2c27',
-    markerInk: '#ece7de',
-    markerRing: '#4a463f',
-    door: 0x6f685c,
-    visitedTop: 0x323d78,
+    markerBg: '#2c2c2e',
+    markerInk: '#f2f2f2',
+    markerRing: '#48484a',
+    door: 0x7a7a80,
+    visitedTop: 0x2f3a70,
   },
 };
 
@@ -74,5 +75,5 @@ export const MAP = {
 };
 
 export const FONTS = {
-  display: '"Instrument Serif", "Iowan Old Style", Georgia, serif',
+  display: 'ui-serif, "New York", "Iowan Old Style", Georgia, serif',  // Apple's New York on iPhone
 };

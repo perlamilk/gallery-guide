@@ -363,6 +363,7 @@ export class MuseumMap {
     const next = this.floorGroups.get(id);
     if (!next) return;
     this.currentFloor = id;
+    this.lodDirty = true;
     next.visible = true;
     if (animate && prev) {
       const dir = (this.floorOrder.get(id) ?? 0) > (this.floorOrder.get(prev.userData.floorId) ?? 0) ? 1 : -1;
@@ -381,6 +382,7 @@ export class MuseumMap {
 
   // counts: Map(galleryId -> number of matches). Aliases share a room, so their counts add up.
   highlight(counts) {
+    this.lodDirty = true;
     const totals = new Map();
     for (const [id, n] of counts) {
       const view = this.rooms.get(id);
@@ -399,11 +401,13 @@ export class MuseumMap {
   }
 
   select(id) {
+    this.lodDirty = true;
     this.selected = id ? this.rooms.get(id) ?? null : null;
   }
 
   // Facility types to emphasise (e.g. after searching "restroom"); null clears.
   highlightFacilities(types) {
+    this.lodDirty = true;
     this.facilityFilter = types && types.size ? types : null;
     for (const sprite of this.markers) {
       const lit = !!this.facilityFilter?.has(sprite.userData.facility.type);
@@ -660,6 +664,25 @@ export class MuseumMap {
     }
   }
 
+  // HIG maps: show more detail as you zoom in. Small rooms' numbers and the facility icons appear
+  // when they have room to breathe; anything lit, selected or searched for always shows.
+  #levelOfDetail() {
+    const dist = this.camera.position.distanceTo(this.controls.target);
+    if (Math.abs(dist - (this.lastLodDist ?? -1)) < 0.5 && !this.lodDirty) return;
+    this.lastLodDist = dist;
+    this.lodDirty = false;
+    for (const v of this.views) {
+      if (v.floorId !== this.currentFloor || !v.label) continue;
+      const span = Math.min(v.size.x, v.size.z);
+      const important = v.targetLit > 0 || this.selected === v || this.visited.has(v);
+      v.label.visible = important || span / dist > (v.kind === 'space' ? 0.06 : 0.022);
+    }
+    const group = this.floorGroups.get(this.currentFloor);
+    for (const m of group?.userData.markers.children ?? []) {
+      m.visible = m.userData.lit || dist < 95;
+    }
+  }
+
   // Colours for galleries and spaces: base → visited tint → search highlight → selection.
   #paintRooms(floorId, plain) {
     for (const v of this.views) {
@@ -752,6 +775,7 @@ export class MuseumMap {
       if (v.label) v.label.position.y = v.height + 0.012;
     }
     this.#paintRooms(this.currentFloor, false);
+    this.#levelOfDetail();
 
     for (const d of this.doors) {
       const { a, b } = d.userData;
@@ -823,7 +847,7 @@ function drawLabel(text, count, color) {
   const px = 120;
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
-  const font = `${px}px ${FONTS.display}`;
+  const font = `500 ${px}px ${FONTS.display}`;
   const countFont = `600 ${Math.round(px * 0.3)}px -apple-system, "Helvetica Neue", sans-serif`;
   const countText = `${count} ${count === 1 ? 'MATCH' : 'MATCHES'}`;
   ctx.font = font;

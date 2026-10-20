@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v8';
+const VERSION = 'v9';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -21,8 +21,6 @@ const SHELL = [
   'js/routes.js',
   'vendor/three.module.min.js',
   'vendor/OrbitControls.js',
-  'fonts/InstrumentSerif-Regular.woff2',
-  'fonts/InstrumentSerif-Italic.woff2',
   'icons/apple-touch-icon.png',
   'icons/icon-192.png',
   'icons/icon-512.png',
