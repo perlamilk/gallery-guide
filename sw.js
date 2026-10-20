@@ -1,10 +1,10 @@
 // Offline support.
-// - On install: caches the app shell, both data files, and every artwork image listed in artworks.json.
+// - On install: caches the app shell and data files; pictures are kept from the last version, new ones download after.
 // - Data files: network first (so updated JSON arrives when online), cache as fallback.
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v12';
+const VERSION = 'v13';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -30,20 +30,29 @@ const SHELL = [
   'data/curiosities.json',
 ];
 
+// Install only the app itself, so an update is quick and takes over right away;
+// pictures already saved are carried over from the previous version instead of downloaded again.
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);
-    await cache.addAll(SHELL);
-    await cacheArtworkImages(cache);
+    await cache.addAll(SHELL.map(u => new Request(u, { cache: 'reload' })));
     await self.skipWaiting();
   })());
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
-    const keys = await caches.keys();
-    await Promise.all(keys.filter(k => k.startsWith('gallery-guide-') && k !== CACHE).map(k => caches.delete(k)));
+    const cache = await caches.open(CACHE);
+    const old = (await caches.keys()).filter(k => k.startsWith('gallery-guide-') && k !== CACHE);
+    for (const name of old) {
+      const prev = await caches.open(name);
+      for (const req of await prev.keys()) {
+        if (/\/data\/images\//.test(req.url) && !(await cache.match(req))) await cache.put(req, await prev.match(req));
+      }
+      await caches.delete(name);
+    }
     await self.clients.claim();
+    cacheArtworkImages(cache); // new pictures download in the background
   })());
 });
 

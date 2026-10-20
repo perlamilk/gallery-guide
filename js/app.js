@@ -1195,7 +1195,13 @@ let offlineStatus = [false, 'Checking offline copy…'];
 async function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return setOffline(false, 'Offline use isn’t supported in this browser');
   try {
-    await navigator.serviceWorker.register('sw.js');
+    // when an update takes over, reload once so the new version shows straight away
+    const hadController = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (hadController && !registerServiceWorker.reloaded) { registerServiceWorker.reloaded = true; location.reload(); }
+    });
+    const reg = await navigator.serviceWorker.register('sw.js');
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
     await navigator.serviceWorker.ready;
     checkOffline();
   } catch (err) {
