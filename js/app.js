@@ -626,57 +626,116 @@ function safeBottom() {
   return safeB;
 }
 
+// Dragging the sheet, the way iOS sheets behave:
+// - drag from anywhere on it (handle, search field, content);
+// - while it isn't fully open, dragging the content moves the sheet instead of scrolling;
+// - when fully open, the content scrolls, and pulling down at the top of the list closes it;
+// - on release it settles on the nearest resting height, thrown further by a quick flick.
 function wireSheetDrag() {
   const order = ['peek', 'half', 'full'];
-  let start = null;
+  let drag = null;
+  let blockClickUntil = 0;
 
-  const onDown = e => {
-    if (e.target.closest('input, button') && e.currentTarget !== els.grab) return;
-    start = { y: e.clientY, top: els.sheet.getBoundingClientRect().top, t: performance.now(), moved: false };
-    els.sheet.setPointerCapture?.(e.pointerId);
+  const restingVisible = state => {
+    const sheetH = els.sheet.offsetHeight;
+    return { peek: 196 + safeBottom(), half: sheetH * 0.56, full: sheetH }[state];
   };
-  const onMove = e => {
-    if (!start) return;
-    const dy = e.clientY - start.y;
-    if (!start.moved && Math.abs(dy) < 6) return;
-    start.moved = true;
+
+  const begin = (y, target) => {
+    drag = {
+      y0: y, lastY: y, t0: performance.now(), lastT: performance.now(), v: 0,
+      top0: els.sheet.getBoundingClientRect().top - els.app.getBoundingClientRect().top,
+      inBody: !!target.closest('#body'), active: false,
+    };
+  };
+
+  // decide on the first few pixels whether this gesture is ours or the list's
+  const claim = dy => {
+    if (drag.inBody && sheetState() === 'full') {
+      const atTop = els.body.scrollTop <= 0;
+      if (!(atTop && dy > 0)) return false; // let the list scroll
+    }
+    drag.active = true;
     els.sheet.classList.add('dragging');
+    if (document.activeElement === els.q) els.q.blur();
+    return true;
+  };
+
+  const move = y => {
+    const now = performance.now();
+    const dy = y - drag.y0;
+    if (!drag.active) {
+      if (Math.abs(dy) < 6) return false;
+      if (!claim(dy)) { drag = null; return false; }
+    }
+    drag.v = (y - drag.lastY) / Math.max(1, now - drag.lastT); // px per ms, for the flick
+    drag.lastY = y; drag.lastT = now;
     const h = els.sheet.offsetHeight;
     const parentH = els.app.clientHeight;
-    const top = Math.max(parentH - h, start.top + dy);
-    els.sheet.style.transform = `translateY(${top - (parentH - h)}px)`;
+    const minTop = parentH - h;                          // fully open
+    let top = drag.top0 + dy;
+    if (top < minTop) top = minTop - Math.sqrt(minTop - top) * 2; // a little rubber band past the top
+    els.sheet.style.transform = `translateY(${top - minTop}px)`;
     updateInsets();
-  };
-  const onUp = e => {
-    if (!start) return;
-    const dy = e.clientY - start.y;
-    const v = dy / Math.max(1, performance.now() - start.t);
-    const moved = start.moved;
-    start = null;
-    els.sheet.classList.remove('dragging');
-    els.sheet.style.transform = '';
-    if (!moved) {
-      // tap on the handle cycles peek <-> half
-      if (e.target.closest('#grab')) setSheet(sheetState() === 'peek' ? 'half' : 'peek');
-      return;
-    }
-    const i = order.indexOf(sheetState());
-    let next = i;
-    if (v < -0.4 || dy < -80) next = Math.min(order.length - 1, i + (dy < -260 ? 2 : 1));
-    else if (v > 0.4 || dy > 80) next = Math.max(0, i - (dy > 260 ? 2 : 1));
-    if (next === 0) els.q.blur();
-    setSheet(order[next]);
+    return true;
   };
 
-  for (const el of [els.grab, els.form]) el.addEventListener('pointerdown', onDown);
-  // Keyboard / VoiceOver activation of the grabber cycles through the detents.
-  els.grab.addEventListener('click', e => {
-    if (e.detail !== 0) return; // pointer taps are handled in onUp
-    setSheet(order[(order.indexOf(sheetState()) + 1) % order.length]);
+  const finish = () => {
+    if (!drag) return;
+    const wasActive = drag.active;
+    const v = drag.v;
+    drag = null;
+    if (!wasActive) return;
+    blockClickUntil = performance.now() + 350; // a drag that ends on a button isn't a tap
+    const parentH = els.app.clientHeight;
+    const visible = parentH - (els.sheet.getBoundingClientRect().top - els.app.getBoundingClientRect().top);
+    // where the flick would carry the sheet, then the nearest resting height to that
+    const projected = visible - v * 220;
+    let best = 'half', bestD = Infinity;
+    for (const s of order) {
+      const d = Math.abs(restingVisible(s) - projected);
+      if (d < bestD) { bestD = d; best = s; }
+    }
+    els.sheet.classList.remove('dragging');
+    els.sheet.style.transform = '';
+    if (best === 'peek') els.q.blur();
+    setSheet(best);
+  };
+
+  // touch (iPhone): non-passive so a claimed drag can stop the page from scrolling
+  els.sheet.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1 || e.target.closest('select')) { drag = null; return; }
+    begin(e.touches[0].clientY, e.target);
+  }, { passive: true });
+  els.sheet.addEventListener('touchmove', e => {
+    if (!drag) return;
+    if (move(e.touches[0].clientY)) e.preventDefault();
+  }, { passive: false });
+  els.sheet.addEventListener('touchend', finish);
+  els.sheet.addEventListener('touchcancel', finish);
+
+  // mouse (desktop): drag by the handle or the search area
+  for (const el of [els.grab, els.form]) {
+    el.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'mouse' || e.target === els.q) return;
+      begin(e.clientY, e.target);
+      const onMove = ev => move(ev.clientY);
+      const onUp = () => { window.removeEventListener('pointermove', onMove); window.removeEventListener('pointerup', onUp); finish(); };
+      window.addEventListener('pointermove', onMove);
+      window.addEventListener('pointerup', onUp);
+    });
+  }
+
+  // a tap on the handle (or VoiceOver / keyboard) steps through the resting heights
+  els.grab.addEventListener('click', () => {
+    if (performance.now() < blockClickUntil) return;
+    setSheet({ peek: 'half', half: 'full', full: 'half' }[sheetState()]);
   });
-  els.sheet.addEventListener('pointermove', onMove);
-  els.sheet.addEventListener('pointerup', onUp);
-  els.sheet.addEventListener('pointercancel', onUp);
+
+  // swallow the click that some browsers fire at the end of a drag
+  els.sheet.addEventListener('click', e => {
+    if (performance.now() < blockClickUntil) { e.stopPropagation(); e.preventDefault(); }
+  }, true);
 }
 
 // ---------- offline ----------

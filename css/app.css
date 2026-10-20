@@ -370,16 +370,19 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 /* ---------- toast ---------- */
 .toast {
   position: absolute; left: 50%; top: calc(var(--safe-t) + 12px);
-  translate: -50% -140%;
+  /* hidden well above the screen (past the Dynamic Island), and invisible too */
+  translate: -50% calc(-100% - var(--safe-t) - 40px);
+  opacity: 0;
+  z-index: 5;
   padding: 10px 16px;
   border-radius: 999px;
   background: var(--ink); color: var(--paper);
   font-size: 0.824rem;
-  transition: translate .4s var(--ease);
+  transition: translate .4s var(--ease), opacity .25s;
   pointer-events: none;
   white-space: nowrap;
 }
-.toast.show { translate: -50% 0; }
+.toast.show { translate: -50% 0; opacity: 1; }
 
 /* views fade */
 .view { animation: in .28s var(--ease); }
@@ -693,3 +696,7 @@ img { filter: var(--img-dim); }
 .steps .steps__stop { font-weight: 400; }
 .steps .steps__stop::before { content: "★"; background: var(--accent); color: var(--accent-ink); font-size: 0.706rem; }
 .steps .steps__stop span { margin-left: 6px; font: 600 0.647rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+
+/* until the sheet is fully open, dragging its content moves the sheet (like iOS sheets) */
+.sheet:not([data-state="full"]) .sheet__body { overflow-y: hidden; }
+.sheet__body { overscroll-behavior-y: none; }
