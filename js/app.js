@@ -492,6 +492,7 @@ function artBody(id) {
       <button class="btn btn--gray" type="button" data-room="${escape(a.gallery)}">${I.pin}Gallery ${escape(a.gallery)}</button>
     </div>` : ''}
     ${aboutHTML(a.description)}
+    ${a.descriptionKind ? `<p class="credit">${escape(a.descriptionKind)}</p>` : ''}
     ${curiositiesHTML(state.museum.curiosities?.for(a) ?? [])}
     <dl class="facts"><ul class="group">${facts}
       <li><div class="row"><dt>Where</dt><dd>${info ? `${escape(info.floor.label)} · Gallery ${escape(a.gallery)}${a.galleryName ? `<br><span style="color:var(--ink-2)">${escape(a.galleryName)}</span>` : ''}`
@@ -1403,3 +1404,4 @@ function pointInPoly([x, y], poly) {
 function escape(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
+
