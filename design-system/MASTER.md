@@ -80,3 +80,18 @@ and Reduce Motion turns it off.
 
 ui-ux-pro-max suggested "Scroll-triggered storytelling" (a landing-page pattern) and Poiret One / Didact Gothic
 (Art Deco, thin weights the HIG warns against). Kept from it: Minimalism & Swiss, gallery black and white.
+
+## App shell (multi-museum, Oct 2026)
+
+`index.html` is the app; the MFA 3D map guide is `guide.html` (close button returns to the MFA's museum page).
+Tab bar: **Home · Museums · Collection · Discover** (single-word labels, filled icon when selected).
+
+- **Home**: Continue at MFA card · Did you know? (Klein-blue card, New York italic) · Your Top Artists · Your Museum Map · Museums Nearby.
+- **Museums**: search (filters as you type) · All / Favorites chips · list ⇄ map segmented control. Map: MapLibre + OpenFreeMap
+  (Positron / Dark), clustered points (HIG maps: cluster overlapping points), selected point in Klein blue, "Search This Area".
+- **Museum page**: hero photo with title, initials badge, links, Welcome (Wikipedia summary), Visit Information, Highlights.
+- **Collection**: Library / Visits / Collections; toolbar (filter, sort, grid ⇄ list, Select); select mode with a floating action bar.
+- **Discover**: popular artworks, museums, artists (ranked by Wikipedia language count), themes; artist and theme pages.
+
+Open data: Wikidata (CC0) via `tools/build_open_data.py`, pictures from Wikimedia Commons, summaries from Wikipedia, always credited.
+Location is asked for only when you tap "Show Museums Near Me" (HIG privacy). Touch targets ≥ 44 pt; pressed state = opacity.

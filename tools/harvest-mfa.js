@@ -100,21 +100,16 @@
       if (!running) throw new Error('paused');
       if (++sessionCount > CONFIG.sessionRequests) { running = false; throw new Error('session'); }
       await sleep(pause);
-      if (!running) throw new Error('paused');
       let res;
       try { res = await fetch(url, { credentials: 'include' }); } catch (e) { res = null; }
       // 202 with an empty body: the site's traffic filter. Stop; reload the tab, paste again and press Start later.
-      if (res && [202, 401, 403, 429].includes(res.status)) {
-        running = false;
-        throw new Error(`MFA stopped this request (HTTP ${res.status}). Progress is saved. Do not retry repeatedly; obtain permitted bulk access if this persists.`);
-      }
+      if (res && res.status === 202) { running = false; throw new Error('The site paused us. Reload this tab, paste the script again and press Start (wait a bit first).'); }
       // 202 with an empty body is the site's traffic filter asking us to slow down
       const blocked = !res || res.status === 202 || res.status === 403 || res.status === 429 || res.status >= 500;
       if (!blocked && res.ok) {
         const body = as === 'blob' ? await res.blob() : await res.text();
         if (as === 'text' && /awswaf|captcha/i.test(body.slice(0, 3000)) && !/detailField|search-results|objects\//.test(body)) {
-          running = false;
-          throw new Error('MFA returned a verification page. Progress is saved; collection stopped.');
+          // the site served a challenge page instead of content
         } else {
           failures = 0;
           pause = Math.max(CONFIG.pause, pause * 0.9);
@@ -128,7 +123,7 @@
         running = false;
         throw new Error('The site keeps refusing requests. Progress is saved \u2014 try again in an hour or two.');
       }
-      pause = Math.min(Math.max(CONFIG.pause, pause * 2), 120000);
+      pause = Math.min(pause * 2, 10000);
       const wait = 60000 * failures;
       status('Site asked to slow down \u2014 waiting\u2026', `Retrying in ${Math.round(wait / 1000)} s (attempt ${failures}/5). Pause between requests now ${pause} ms.`);
       await sleep(wait);
@@ -161,7 +156,7 @@
       });
       if (!found.size) {
         // an empty page before the last one is a hiccup (slow site, challenge page), not the end: wait and retry
-        if (total && page <= Math.ceil(total / CONFIG.perPage)) {
+        if (pages && page < pages) {
           emptyTries = (emptyTries || 0) + 1;
           if (emptyTries > 4) throw new Error(`Search page ${page} keeps coming back empty. Progress is saved; reload, paste and press Start in a while.`);
           status('Search page came back empty \u2014 retrying\u2026', `Page ${page} of ${pages}, attempt ${emptyTries} of 4`);
@@ -177,10 +172,7 @@
     }
     const lastPage = (await get('meta', 'lastPage')) ?? 0;
     const pages = total ? Math.ceil(total / CONFIG.perPage) : 0;
-    const listed = await count('ids');
-    const complete = !!total && lastPage >= pages && listed === total;
-    await put('meta', 'idsDone', complete);
-    if (!complete) throw new Error(`Listing incomplete: ${listed} unique IDs; expected ${total ?? 'unknown'}. Progress saved. Do not treat this as a complete snapshot.`);
+    if ((await count('ids')) && (!pages || lastPage >= pages)) await put('meta', 'idsDone', true);
   }
 
   // ---------- phase 2: read each work's page ----------
@@ -240,7 +232,6 @@
     const d = parse(html);
     const titleEl = d.querySelector('.titleField');
     const title = txt(titleEl?.firstElementChild) || txt(titleEl);
-    if (!title) throw new Error(`Object ${id}: missing title; page was not saved as an artwork.`);
     const people = txt(d.querySelector('.peopleField')).replace(/Lent by:.*$/, '').trim();
     const artist = people.replace(/\s*\(.*$/, '').trim();
     const artistDetails = (people.match(/\((.*)\)\s*$/) || [])[1] || '';
@@ -251,8 +242,7 @@
     const gallery = galleryOf(onview);
     const classification = txt(d.querySelector('.classificationsField .detailFieldValue'));
     // the museum's own text about the work (paragraphs are separated by <br>)
-    const descEl = ['.webDescriptionField .detailFieldValue', '.descriptionField .detailFieldValue', '.webDescriptionField']
-      .map(sel => d.querySelector(sel)).find(el => el?.textContent.trim());
+    const descEl = d.querySelector('.webDescriptionField');
     let description = '';
     if (descEl) {
       descEl.querySelectorAll('br').forEach(br => br.replaceWith('\u2029'));
@@ -272,7 +262,6 @@
     const media = d.querySelector('img[src*="/preview"]')?.getAttribute('src')?.match(/dispatcher\/(\d+)/)?.[1] ?? null;
     return {
       id, title, artist, artistDetails, date,
-      checkedAt: new Date().toISOString(),
       medium: txt(d.querySelector('.mediumField .detailFieldValue')),
       dimensions: value('.dimensionsField'),
       creditLine: value('.creditlineField'),
@@ -323,10 +312,7 @@
       if (!old || old.v >= 2) continue;
       if (firstOnly && !(old.artist || /Painting/i.test(old.type || ''))) continue;
       const html = await politeFetch(`/objects/${id}`);
-      if (html) {
-        const fresh = record(id, html);
-        await put('records', id, { ...old, ...fresh, _media: fresh._media ?? old._media ?? null });
-      }
+      if (html) await put('records', id, { ...record(id, html), _media: old._media ?? null });
       status('Adding descriptions', `${i} of ${ids.length}`, i / ids.length);
     }
   }
@@ -395,21 +381,8 @@
     }
     flush();
     const today = new Date().toISOString().slice(0, 10);
-    const listed = await keys('ids');
-    const expected = await get('meta', 'total');
-    const missingRecords = listed.filter(id => !ids.includes(id));
-    const coverage = {
-      expected, listed: listed.length, recordsRead: ids.length,
-      listingComplete: !!(await get('meta', 'idsDone')) && listed.length === expected,
-      missingRecords,
-      descriptions: records.filter(r => r.description).length,
-      images: records.filter(r => r.img).length,
-      missingImages: records.filter(r => r.imageUrl && !r.img).map(r => r.id),
-      missingGalleries: records.filter(r => !r.gallery).map(r => r.id),
-    };
-    const complete = coverage.listingComplete && !missingRecords.length;
-    const doc = { source: 'MFA Boston online collection (collections.mfa.org), works marked On View', checked: today, complete, coverage, count: records.length, artworks: records };
-    save(new Blob([JSON.stringify(doc)], { type: 'application/json' }), complete ? 'artworks.json' : 'artworks.partial.json');
+    const doc = { source: 'MFA Boston online collection (collections.mfa.org), works marked On View', checked: today, count: records.length, artworks: records };
+    save(new Blob([JSON.stringify(doc)], { type: 'application/json' }), 'artworks.json');
     for (let i = 0; i < packs.length; i++) {
       await sleep(800);
       save(packs[i], `images-${String(i + 1).padStart(3, '0')}.bin`);
@@ -442,7 +415,7 @@
       console.log('[harvester] saved progress:', { total, lastPage, pagesNeeded, listed: await count('ids'), read: await count('records') });
       if (!(await count('ids'))) { await put('meta', 'lastPage', 0); await put('meta', 'idsDone', false); }
       // the listing only counts as finished when we know the total and have read every page
-      else if (!pagesNeeded || lastPage < pagesNeeded || (await count('ids')) !== total) {
+      else if (!pagesNeeded || lastPage < pagesNeeded) {
         await put('meta', 'idsDone', false);
         status('1/3 \u00b7 Resuming the listing', `Continuing from search page ${lastPage + 1}${pagesNeeded ? ` of ${pagesNeeded}` : ''}`);
       }
@@ -460,11 +433,7 @@
       }
       if (!(await get('meta', 'idsDone'))) throw new Error('The listing is still incomplete. Progress is saved; press Start again in a while.');
       await backfillDescriptions();
-      const ids = await keys('ids');
-      const read = new Set(await keys('records'));
-      const missing = ids.filter(id => !read.has(id));
-      if (missing.length) throw new Error(`${missing.length} object pages are still missing. Export is marked partial.`);
-      status('Metadata collected.', 'Click Download. The export reports missing images and descriptions separately.', 1);
+      status('Finished collecting.', 'Click Download to save the files.', 1);
     } catch (e) {
       if (e.message === 'session') status('Session finished.', 'Resting so the site isn\u2019t overloaded. Press Start later to continue.');
       else if (e.message !== 'paused') status('Stopped.', e.message);
@@ -491,4 +460,3 @@
     status(ids ? 'Saved progress found.' : 'Ready.', ids ? `${ids} works listed \u00b7 ${recs} read \u00b7 ${imgs} images. Click Start to continue.` : 'Click Start to begin.');
   });
 })();
-

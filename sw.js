@@ -10,6 +10,14 @@ const CACHE = `gallery-guide-${VERSION}`;
 const SHELL = [
   './',
   'index.html',
+  'guide.html',
+  'css/shell.css',
+  'js/shell.js',
+  'js/images.js',
+  'vendor/maplibre-gl.js',
+  'vendor/maplibre-gl.css',
+  'data/museums.json',
+  'data/discover.json',
   'manifest.webmanifest',
   'css/app.css',
   'js/app.js',
@@ -141,4 +149,3 @@ async function cacheArtworkImages(cache, response) {
     }
   } catch { /* offline during install: images will be cached as they are viewed */ }
 }
-

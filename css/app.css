@@ -101,6 +101,14 @@ img { -webkit-user-drag: none; }
   .glass, .sheet { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: var(--surface) !important; }
 }
 
+/* ---------- back to the app (guide page) ---------- */
+.guide-close {
+  position: absolute; top: calc(var(--safe-t) + 10px); left: var(--gutter); z-index: 3;
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--ink);
+}
+.guide-close svg { width: 22px; height: 22px; }
+.guide-close ~ .masthead { padding-left: calc(var(--gutter) + 56px); }
+
 /* ---------- masthead (over the map) ---------- */
 .masthead {
   position: absolute; top: 0; left: 0; right: 0;

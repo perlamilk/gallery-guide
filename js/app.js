@@ -2,6 +2,7 @@
 // Structure: the 3D map fills the screen; a sheet floats over it; a tab bar switches between
 // Explore · Tours · Saved · Visits. Each tab keeps its own stack of views (like a navigation stack).
 
+import { BLANK, imgHTML, hydrateImages, blobURL } from './images.js';
 import { loadData, shortArtist, FILTERS } from './data.js';
 import { MuseumMap } from './map3d.js';
 import { FACILITIES, facilitySVG } from './icons.js';
@@ -83,8 +84,18 @@ async function boot() {
   render();
   setSheet('peek');
   state.map.resetView({ animate: false });
+  openFromLink();
   registerServiceWorker();
   window.guide = state; // for Safari's Web Inspector
+}
+
+// Links from the app's home screen: guide.html#art/33556, #visits, #entry/v123, #tours
+function openFromLink() {
+  const [kind, id] = decodeURIComponent(location.hash.slice(1)).split('/');
+  if (kind === 'art' && id) openArt(id);
+  else if (kind === 'visits' || kind === 'tours' || kind === 'saved') { setTab(kind); setSheet('half'); }
+  else if (kind === 'entry' && id) { setTab('visits'); push({ type: 'entry', id }, { sheet: 'full' }); }
+  if (kind) history.replaceState(null, '', location.pathname);
 }
 
 // ---------- tabs & navigation stacks ----------
@@ -492,7 +503,6 @@ function artBody(id) {
       <button class="btn btn--gray" type="button" data-room="${escape(a.gallery)}">${I.pin}Gallery ${escape(a.gallery)}</button>
     </div>` : ''}
     ${aboutHTML(a.description)}
-    ${a.descriptionKind ? `<p class="credit">${escape(a.descriptionKind)}</p>` : ''}
     ${curiositiesHTML(state.museum.curiosities?.for(a) ?? [])}
     <dl class="facts"><ul class="group">${facts}
       <li><div class="row"><dt>Where</dt><dd>${info ? `${escape(info.floor.label)} · Gallery ${escape(a.gallery)}${a.galleryName ? `<br><span style="color:var(--ink-2)">${escape(a.galleryName)}</span>` : ''}`
@@ -1314,51 +1324,7 @@ function setOffline(ready, text) {
   if (el) el.textContent = text;
 }
 
-// ---------- images ----------
-// Sample works have one file each (`image`); the full collection packs small images into a few
-// large files (`img: {p, o, l}` = file, offset, length), read piece by piece as they scroll into view.
-
-const BLANK = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
-
-function imgHTML(a, cls, alt = '') {
-  if (a.image) return `<img class="${cls}" src="${a.image}" alt="${escape(alt)}" loading="lazy" decoding="async">`;
-  if (a.img) return `<img class="${cls}" src="${BLANK}" alt="${escape(alt)}" data-pack="${a.img.p}" data-o="${a.img.o}" data-l="${a.img.l}">`;
-  return `<span class="${cls} img-empty" aria-hidden="true"></span>`;
-}
-
-const packedURLs = new Map();
-function packedImage(p, o, l) {
-  const key = `${p}:${o}`;
-  if (!packedURLs.has(key)) {
-    packedURLs.set(key, (async () => {
-      const res = await fetch(p, { headers: { Range: `bytes=${o}-${o + l - 1}` } });
-      const blob = await res.blob();
-      const part = res.status === 206 ? blob : blob.slice(o, o + l);
-      return URL.createObjectURL(new Blob([part], { type: 'image/jpeg' }));
-    })().catch(err => { packedURLs.delete(key); throw err; }));
-  }
-  return packedURLs.get(key);
-}
-const imageObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
-  for (const e of entries) if (e.isIntersecting) { imageObserver.unobserve(e.target); loadPacked(e.target); }
-}, { rootMargin: '300px' }) : null;
-function loadPacked(img) {
-  const { pack, o, l } = img.dataset;
-  packedImage(pack, Number(o), Number(l)).then(url => { img.src = url; }).catch(() => img.classList.add('img-empty'));
-}
-function hydrateImages(root) {
-  for (const img of root.querySelectorAll('img[data-pack]:not([data-seen])')) {
-    img.dataset.seen = '1';
-    if (imageObserver) imageObserver.observe(img); else loadPacked(img);
-  }
-}
-
-const blobURLs = new Map();
-function blobURL(key, blob) {
-  if (!blob) return BLANK;
-  if (!blobURLs.has(key)) blobURLs.set(key, URL.createObjectURL(blob));
-  return blobURLs.get(key);
-}
+// ---------- images: see images.js ----------
 
 // ---------- small helpers ----------
 
@@ -1404,4 +1370,3 @@ function pointInPoly([x, y], poly) {
 function escape(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
-

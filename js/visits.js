@@ -6,17 +6,21 @@
 const DB = 'gallery-guide';
 const STORE = 'visits';     // finished visits, by id
 const ACTIVE = 'active';    // the one in progress, under the key 'current'
-const FAVS = 'favorites';   // artwork id -> { id, at }
+const FAVS = 'favorites';   // artwork id -> { id, at, work? } (work: details for works outside the MFA data)
+const MUSEUMS = 'museums';  // favourite museums: Wikidata id -> { id, at }
+const LISTS = 'lists';      // your collections: { id, name, at, items: [artwork id] }
 
 let dbPromise;
 function db() {
   dbPromise ??= new Promise((resolve, reject) => {
-    const req = indexedDB.open(DB, 2);
+    const req = indexedDB.open(DB, 3);
     req.onupgradeneeded = () => {
       const d = req.result;
       if (!d.objectStoreNames.contains(STORE)) d.createObjectStore(STORE, { keyPath: 'id' });
       if (!d.objectStoreNames.contains(ACTIVE)) d.createObjectStore(ACTIVE);
       if (!d.objectStoreNames.contains(FAVS)) d.createObjectStore(FAVS, { keyPath: 'id' });
+      if (!d.objectStoreNames.contains(MUSEUMS)) d.createObjectStore(MUSEUMS, { keyPath: 'id' });
+      if (!d.objectStoreNames.contains(LISTS)) d.createObjectStore(LISTS, { keyPath: 'id' });
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error);
@@ -81,20 +85,68 @@ export const Visits = {
   },
 };
 
-// Favourite artworks, newest first.
+// Favourite artworks, newest first. `work` keeps title/artist/picture for works the app
+// only knows from open data (Wikidata ids like "Q12418"), so they still show offline.
 export const Favorites = {
   async list() {
-    const all = (await run(FAVS, 'readonly', s => s.getAll())) ?? [];
-    return all.sort((a, b) => b.at.localeCompare(a.at)).map(f => f.id);
+    return (await this.entries()).map(f => f.id);
   },
-  async toggle(id) {
+  async entries() {
+    const all = (await run(FAVS, 'readonly', s => s.getAll())) ?? [];
+    return all.sort((a, b) => b.at.localeCompare(a.at));
+  },
+  async toggle(id, work = null) {
     const has = await run(FAVS, 'readonly', s => s.get(id));
     if (has) await run(FAVS, 'readwrite', s => s.delete(id));
     else {
-      await run(FAVS, 'readwrite', s => s.put({ id, at: new Date().toISOString() }));
+      await run(FAVS, 'readwrite', s => s.put({ id, at: new Date().toISOString(), ...(work ? { work } : {}) }));
       navigator.storage?.persist?.().catch(() => {});
     }
     return !has;
+  },
+};
+
+// Favourite museums (Wikidata ids), newest first.
+export const MuseumFavorites = {
+  async list() {
+    const all = (await run(MUSEUMS, 'readonly', s => s.getAll())) ?? [];
+    return all.sort((a, b) => b.at.localeCompare(a.at)).map(f => f.id);
+  },
+  async toggle(id) {
+    const has = await run(MUSEUMS, 'readonly', s => s.get(id));
+    if (has) await run(MUSEUMS, 'readwrite', s => s.delete(id));
+    else await run(MUSEUMS, 'readwrite', s => s.put({ id, at: new Date().toISOString() }));
+    return !has;
+  },
+};
+
+// Your own collections of artworks ("Blues I loved", "For mom"…).
+export const Lists = {
+  async all() {
+    const all = (await run(LISTS, 'readonly', s => s.getAll())) ?? [];
+    return all.sort((a, b) => b.at.localeCompare(a.at));
+  },
+  async create(name) {
+    const list = { id: `l${Date.now()}`, name, at: new Date().toISOString(), items: [] };
+    await run(LISTS, 'readwrite', s => s.put(list));
+    return list;
+  },
+  async add(id, ids) {
+    const list = await run(LISTS, 'readonly', s => s.get(id));
+    if (!list) return null;
+    list.items = [...new Set([...ids, ...list.items])];
+    await run(LISTS, 'readwrite', s => s.put(list));
+    return list;
+  },
+  async removeItems(id, ids) {
+    const list = await run(LISTS, 'readonly', s => s.get(id));
+    if (!list) return null;
+    list.items = list.items.filter(x => !ids.includes(x));
+    await run(LISTS, 'readwrite', s => s.put(list));
+    return list;
+  },
+  async remove(id) {
+    await run(LISTS, 'readwrite', s => s.delete(id));
   },
 };
 
