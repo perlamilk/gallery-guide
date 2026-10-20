@@ -72,6 +72,11 @@ class Museum {
       a._haystack = normalize([a.title, a.artist, a.artistDetails, a.date, a.medium,
         a.type, a.country, a.period, a.culture, a.classification, a.collection].join(' '));
       a._artist = normalize(a.artist);
+      // alcoves the map doesn't draw ("204A", "219.4") belong to their main gallery
+      if (a.gallery && !this.rooms.has(a.gallery)) {
+        const main = String(a.gallery).match(/^(\d+)[A-Za-z.]/)?.[1];
+        if (main && this.rooms.has(main)) a.gallery = main;
+      }
       a.floor = a.floor ?? this.rooms.get(a.gallery)?.floor.id ?? null;
     }
 

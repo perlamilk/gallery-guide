@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v9';
+const VERSION = 'v10';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
