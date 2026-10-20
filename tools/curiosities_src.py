@@ -156,18 +156,15 @@ for _id in ["31929", "31930", "31931", "31932", "31933", "31934", "31935", "3193
 ARTISTS = {
         "Edouard Manet": {"name": "Manet", "facts": [
         "Manet's 'Luncheon on the Grass' and 'Olympia' caused scandals in the 1860s and paved the way for the Impressionists, though he never showed with them.",
-        "On the market: his small painting 'Spring' sold for $65.1 million at Christie's in 2014, bought by the Getty Museum.",
     ]},
     "Paul Cézanne": {"name": "Cézanne", "facts": [
         "Picasso and Matisse both called Cézanne 'the father of us all'.",
         "He painted his wife Hortense Fiquet some 29 times.",
-        "On the market: one of his 'Card Players' paintings reportedly sold privately to the Qatari royal family in 2011 for more than $250 million.",
     ]},
     "John Singer Sargent": {"name": "Sargent", "facts": [
         "Born in Florence in 1856 to American parents, Sargent grew up travelling around Europe and first visited the United States at 20.",
         "The scandal over his portrait 'Madame X' at the 1884 Paris Salon pushed him to move to London.",
         "Tired of society portraits, he declared 'No more paughtraits' in 1907 and turned to watercolours and murals.",
-        "On the market: his painting 'Group with Parasols' sold for $23.5 million at Sotheby's in 2004.",
     ]},
     "John Singleton Copley": {"name": "Copley", "facts": [
         "Largely self-taught, Copley was colonial Boston's leading portrait painter.",
@@ -177,12 +174,10 @@ ARTISTS = {
         "His painting 'Impression, Sunrise' gave the Impressionist movement its name in 1874.",
         "Monet worked in series, painting the same subject again and again to catch changing light and weather.",
         "Cataracts in his later years changed how he saw colour; his late pictures turn redder and more abstract.",
-        "On the market: one of his grainstack paintings, similar to the MFA's, sold at Sotheby's in 2019 for $110.7 million, a record for Monet.",
     ]},
     "Vincent van Gogh": {"name": "Van Gogh", "facts": [
         "Van Gogh painted for only about ten years and made around 860 oil paintings.",
         "He sold very few works in his lifetime; his letters to his brother Theo tell us much of what we know about his art.",
-        "On the market: his 'Orchard with Cypresses' sold for $117.2 million at Christie's in 2022, more than a century after he struggled to sell anything.",
     ]},
     "Jean-François Millet": {"name": "Millet", "facts": [
         "A farmer's son from Normandy, Millet settled in the village of Barbizon and painted peasants at work.",
@@ -200,7 +195,6 @@ ARTISTS = {
     "Rembrandt Harmensz. van Rijn": {"name": "Rembrandt", "facts": [
         "Rembrandt painted, drew and etched dozens of self-portraits across his life.",
         "Despite his fame he went bankrupt in 1656 and had to sell his house and art collection.",
-        "On the market: in 2016 the Louvre and the Rijksmuseum jointly bought his pair of wedding portraits of Maerten Soolmans and Oopjen Coppit for €160 million.",
     ]},
     "Camille Pissarro": {"name": "Pissarro", "facts": [
         "Born on the Caribbean island of St. Thomas, Pissarro was the only artist to show in all eight Impressionist exhibitions.",
@@ -230,12 +224,10 @@ ARTISTS = {
     "Paul Gauguin": {"name": "Gauguin", "facts": [
         "Gauguin was a Paris stockbroker before becoming a full-time painter.",
         "He left for Tahiti in 1891 and died in the Marquesas Islands in 1903.",
-        "On the market: his Tahitian painting 'When Will You Marry?' reportedly changed hands privately for about $210 million in 2014–15.",
     ]},
     "Joseph Mallord William Turner": {"name": "Turner", "facts": [
         "Turner was obsessed with light, storms and steam; critics mocked his late pictures as 'soapsuds and whitewash'.",
         "He left hundreds of paintings and thousands of drawings to the British nation.",
-        "On the market: his 'Modern Rome – Campo Vaccino' sold for £30.3 million at Sotheby's in 2010, bought by the Getty Museum.",
     ]},
     "Edmund C. Tarbell": {"name": "Tarbell", "facts": [
         "A leader of the 'Boston School', Tarbell taught at the Museum School here and painted sunlit interiors.",
@@ -411,7 +403,6 @@ KINDS = [
     {"id": "aureus", "title": "About the aureus", "match": {"title": "aureus"}, "facts": [
         "The aureus was Rome's gold coin, worth 25 silver denarii.",
         "Coins carried the emperor's portrait to every corner of the empire, and their backs advertised victories, buildings and virtues.",
-        "On the market: a gold aureus of Brutus celebrating the murder of Julius Caesar on the Ides of March sold for about £2.7 million in 2020, a record for an ancient coin.",
     ]},
     {"id": "denarius", "title": "About the denarius", "match": {"title": "denarius|denarii"}, "facts": [
         "The silver denarius was the backbone of Roman money for about 450 years.",
@@ -455,7 +446,6 @@ KINDS = [
     ]},
     {"id": "krater", "title": "About the krater", "match": {"title": "krater|mixing (wine-)?bowl", "culture": "Greek"}, "facts": [
         "Greeks mixed their wine with water in a krater; drinking wine neat was considered barbaric.",
-        "On the market: in 1972 the Met paid $1 million for a krater painted by Euphronios, a record for an antiquity; it went back to Italy in 2008, after investigators showed it had been illegally dug up.",
         GREEK_VASE_NOTE,
     ]},
     {"id": "hydria", "title": "About the hydria", "match": {"title": "hydria|water jar"}, "facts": [
