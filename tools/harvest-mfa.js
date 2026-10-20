@@ -246,12 +246,15 @@
       description = descEl.textContent.split(/\u2029+/).map(t => t.replace(/\s+/g, ' ').trim()).filter(Boolean).join('\n\n');
     }
     const value = sel => txt(d.querySelector(`${sel} .detailFieldValue`));
+    // the provenance usually ends with "(Accession Date: March 31, 1919)"
+    const accessionDate = txt(d.querySelector('.provenanceField')).match(/Accession Date:\s*([^)]+?)\s*\)/i)?.[1] ?? '';
     const media = d.querySelector('img[src*="/preview"]')?.getAttribute('src')?.match(/dispatcher\/(\d+)/)?.[1] ?? null;
     return {
       id, title, artist, artistDetails, date,
       medium: txt(d.querySelector('.mediumField .detailFieldValue')),
       dimensions: value('.dimensionsField'),
       creditLine: value('.creditlineField'),
+      accessionDate,
       description,
       gallery,
       galleryName: onview.replace(/\s*\(Gallery[^)]*\)\s*$/i, '').trim() || null,
@@ -284,14 +287,16 @@
     }
   }
 
-  // works read before descriptions were collected are read again (after everything else)
-  async function backfillDescriptions() {
+  // works read before descriptions and acquisition dates were collected are read again
+  // `firstOnly`: just the works most likely to have a text (paintings and works by a named artist)
+  async function backfillDescriptions(firstOnly = false) {
     const ids = await keys('records');
     let i = 0;
     for (const id of ids) {
       i++;
       const old = await get('records', id);
-      if (!old || 'description' in old) continue;
+      if (!old || 'accessionDate' in old) continue;
+      if (firstOnly && !(old.artist || /Painting/i.test(old.type || ''))) continue;
       const html = await politeFetch(`/objects/${id}`);
       if (html) await put('records', id, { ...record(id, html), _media: old._media ?? null });
       status('Adding descriptions', `${i} of ${ids.length}`, i / ids.length);
@@ -399,6 +404,7 @@
         status('1/3 \u00b7 Resuming the listing', `Continuing from search page ${lastPage + 1}${pagesNeeded ? ` of ${pagesNeeded}` : ''}`);
       }
       if (!(await get('meta', 'idsDone'))) await collectIds();
+      await backfillDescriptions(true);
       const listed = await count('ids');
       if (!listed) throw new Error('The search pages returned no works. Open https://collections.mfa.org/search/objects/*/*?filter=onview%3Atrue in this tab, reload, paste the script again and press Start.');
       // a listing cut short by the site gets another go, then the new works are read too

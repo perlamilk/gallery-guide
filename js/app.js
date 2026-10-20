@@ -476,7 +476,7 @@ function artBody(id) {
   if (!a) return emptyHTML(I.grid, 'Not Found', '');
   const info = state.museum.roomInfo(a.gallery);
   const facts = [['Date', a.date], ['Medium', a.medium], ['Size', a.dimensions], ['Type', a.type], ['Country', a.country],
-    ['Credit', a.creditLine], ['Accession', a.accession]]
+    ['Credit', a.creditLine], ['Accession', a.accession], ['Acquired', acquired(a)]]
     .filter(([, v]) => v).map(([k, v]) => `<li><div class="row"><dt>${k}</dt><dd>${escape(v)}</dd></div></li>`).join('');
   return `
     ${a.image || a.img ? `<div class="art__frame">${imgHTML(a, 'art__img', a.title)}</div>` : ''}
@@ -496,6 +496,27 @@ function artBody(id) {
     <div class="stack"><a class="btn btn--ink" href="${a.url}" target="_blank" rel="noopener">View on the MFA Website</a></div>
     ${a.imageSource ? `<p class="credit">Image: <a href="${a.imageSource}" target="_blank" rel="noopener">${escape(a.imageCredit ?? 'source')}</a></p>`
       : a.img ? '<p class="credit">Image: Museum of Fine Arts, Boston</p>' : ''}`;
+}
+
+// How and when the work came to the museum: "Gift · March 31, 1919".
+// The method comes from the credit line; the date from the provenance, or else the year in the
+// accession number (58.356 came in 1958; 1983.12 in 1983). Two-digit numbers from 70 up are left
+// alone, since they could mean the 1870s or the 1970s.
+function acquired(a) {
+  const c = a.creditLine ?? '';
+  const how = /expedition/i.test(c) ? 'Excavation'
+    : /^bequest|\bbequest of\b/i.test(c) ? 'Bequest'
+    : /\bexchange\b/i.test(c) ? 'Exchange'
+    : /purchase|\bfund\b|\bfunds\b/i.test(c) ? 'Purchase'
+    : /\bgift\b/i.test(c) ? 'Gift'
+    : '';
+  let when = a.accessionDate ?? '';
+  if (!when) {
+    const m = String(a.accession ?? '').match(/^(\d{2,4})\./);
+    if (m && m[1].length === 4) when = m[1];
+    else if (m && m[1].length === 2 && +m[1] < 70) when = `19${m[1]}`;
+  }
+  return [how, when].filter(Boolean).join(' · ');
 }
 
 // The museum's own text about the work, set like a wall label. Long texts open with Read More.
