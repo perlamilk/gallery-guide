@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v11';
+const VERSION = 'v12';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -27,6 +27,7 @@ const SHELL = [
   'data/floors.json',
   'data/artworks.json',
   'data/tours.json',
+  'data/curiosities.json',
 ];
 
 self.addEventListener('install', event => {

@@ -5,11 +5,14 @@
 import { FACILITIES } from './icons.js';
 
 export async function loadData() {
-  const [floorsDoc, artDoc] = await Promise.all([
+  const [floorsDoc, artDoc, curiosities] = await Promise.all([
     fetchJSON('data/floors.json'),
     fetchJSON('data/artworks.json'),
+    fetchJSON('data/curiosities.json').catch(() => null),
   ]);
-  return new Museum(floorsDoc, artDoc);
+  const museum = new Museum(floorsDoc, artDoc);
+  museum.curiosities = new Curiosities(curiosities);
+  return museum;
 }
 
 async function fetchJSON(url) {
@@ -238,4 +241,29 @@ export function shortArtist(name) {
   if (m) return m[0].replace(/^\w/, c => c.toUpperCase());
   if (/^El Greco/.test(clean)) return 'El Greco';
   return clean.split(' ').at(-1);
+}
+
+// Curiosities (data/curiosities.json) come in three layers, most specific first:
+// facts about this very work, about its artist, and about the kind of object it is.
+// Kinds are matched by rules, so newly harvested works pick them up without editing the file.
+class Curiosities {
+  constructor(doc) {
+    this.works = doc?.works ?? {};
+    this.artists = doc?.artists ?? {};
+    this.kinds = (doc?.kinds ?? []).map(k => ({
+      ...k,
+      tests: Object.entries(k.match ?? {}).map(([field, re]) => [field, new RegExp(re, 'i')]),
+    }));
+  }
+
+  for(a) {
+    const out = [];
+    const own = this.works[a.id];
+    if (own?.length) out.push({ label: 'This Work', facts: own });
+    const artist = this.artists[a.artist];
+    if (artist?.facts?.length) out.push({ label: `About ${artist.name ?? a.artist}`, facts: artist.facts });
+    const kind = this.kinds.find(k => k.tests.length && k.tests.every(([field, re]) => re.test(a[field] ?? '')));
+    if (kind) out.push({ label: kind.title, facts: kind.facts });
+    return out;
+  }
 }

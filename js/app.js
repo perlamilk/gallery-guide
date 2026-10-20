@@ -488,6 +488,7 @@ function artBody(id) {
       <button class="btn btn--gray" type="button" data-room="${escape(a.gallery)}">${I.pin}Gallery ${escape(a.gallery)}</button>
     </div>` : ''}
     ${aboutHTML(a.description)}
+    ${curiositiesHTML(state.museum.curiosities?.for(a) ?? [])}
     <dl class="facts"><ul class="group">${facts}
       <li><div class="row"><dt>Where</dt><dd>${info ? `${escape(info.floor.label)} · Gallery ${escape(a.gallery)}${a.galleryName ? `<br><span style="color:var(--ink-2)">${escape(a.galleryName)}</span>` : ''}`
         : escape(a.location || (a.gallery ? `Gallery ${a.gallery} (not on the map)` : 'On view'))}</dd></div></li>
@@ -506,6 +507,19 @@ function aboutHTML(text) {
     <h3 class="about__title" id="aboutTitle">About This Work</h3>
     <div class="about__text">${paras}</div>
     ${long ? '<button class="about__more" type="button" data-action="read-more" aria-expanded="false">Read More</button>' : ''}
+  </section>`;
+}
+
+// Did-you-know notes written for the app (see data/curiosities.json), grouped by layer.
+function curiositiesHTML(groups) {
+  if (!groups.length) return '';
+  return `<section class="curio" aria-labelledby="curioTitle">
+    <h3 class="about__title" id="curioTitle">Curiosities</h3>
+    ${groups.map(g => `<div class="curio__group">
+      <p class="curio__label">${escape(g.label)}</p>
+      <ul class="curio__list">${g.facts.map(f => `<li>${escape(f)}</li>`).join('')}</ul>
+    </div>`).join('')}
+    <p class="curio__note">Written for this app from general art-history knowledge, not by the MFA. May contain mistakes.</p>
   </section>`;
 }
 
@@ -1192,7 +1206,7 @@ async function registerServiceWorker() {
 
 async function checkOffline() {
   if (!('caches' in window)) return;
-  const urls = ['index.html', 'data/artworks.json', 'data/floors.json',
+  const urls = ['index.html', 'data/artworks.json', 'data/floors.json', 'data/curiosities.json',
     ...new Set(state.museum.artworks.map(a => a.image || a.img?.p).filter(Boolean))];
   const hits = await Promise.all(urls.map(u => caches.match(u)));
   const missing = hits.filter(h => !h).length;
