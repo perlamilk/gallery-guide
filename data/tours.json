@@ -1,0 +1,42 @@
+{
+  "about": "Ready-made tours. Each stop is a gallery (as numbered on the map) with the works to look for there (MFA object ids from artworks.json). Edit freely; the app reads this file.",
+  "tours": [
+    {
+      "id": "impressionism",
+      "title": "Impressionism in 30 minutes",
+      "subtitle": "Monet, Pissarro, Sisley, Van Gogh, Gauguin",
+      "minutes": 30,
+      "description": "From Monet's series paintings to the Post-Impressionists, in three neighbouring galleries on Level 2.",
+      "stops": [
+        { "gallery": "252", "note": "Monet painted the same motif again and again to catch changing light: a grainstack in snow, Rouen Cathedral's façade.", "works": ["33556", "34078", "32700"] },
+        { "gallery": "253", "note": "Painting outdoors around Paris: Pissarro's roads, Sisley's snow, Renoir in Venice.", "works": ["32190", "33329", "31792"] },
+        { "gallery": "255", "note": "After Impressionism: Van Gogh's Roulin portraits, Cézanne, Degas and Gauguin's largest painting.", "works": ["32542", "33277", "33278", "33491", "35481", "32912", "32250", "32558"] }
+      ]
+    },
+    {
+      "id": "van-gogh",
+      "title": "Van Gogh on two floors",
+      "subtitle": "Early Holland to the last summer in Auvers",
+      "minutes": 25,
+      "description": "Start with his dark early Weaver on Level 1, then climb to the colour of Arles, Saint-Rémy and Auvers.",
+      "stops": [
+        { "gallery": "144", "note": "Weaver (1884): painted in Nuenen, years before he moved to France.", "works": ["33610"] },
+        { "gallery": "146", "note": "Gauguin's Brittany, the year after he and Van Gogh shared a house in Arles.", "works": ["34222"] },
+        { "gallery": "255", "note": "The Roulin family portraits, Ravine, the ploughman's field and Houses at Auvers.", "works": ["32542", "33277", "33491", "35481", "33278"] }
+      ]
+    },
+    {
+      "id": "old-masters",
+      "title": "Old Masters: Velázquez to Turner",
+      "subtitle": "Spain, Flanders, Holland, England",
+      "minutes": 40,
+      "description": "Four centuries of European painting around the grand staircase on Level 2.",
+      "stops": [
+        { "gallery": "250", "note": "Velázquez and El Greco: Spanish court portraiture.", "works": ["31124", "31236"] },
+        { "gallery": "242", "note": "Rubens in Flemish and Dutch company.", "works": ["32728"] },
+        { "gallery": "244", "note": "A small early Rembrandt: the artist standing back from his easel.", "works": ["32665"] },
+        { "gallery": "251", "note": "Turner's Slave Ship, Millet's Sower and Manet's Execution of Maximilian.", "works": ["31102", "31601", "32372"] }
+      ]
+    }
+  ]
+}

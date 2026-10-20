@@ -14,18 +14,23 @@ mfa-guide/
 ├── css/app.css             all styling: colour tokens (light + dark) at the top
 ├── js/
 │   ├── app.js              search, bottom sheet, room & artwork views, floor switcher
-│   ├── map3d.js            the 3D map (three.js): rooms, labels, gestures, camera
+│   ├── map3d.js            the 3D map (three.js): rooms, labels, facility icons, gestures, camera
+│   ├── icons.js            facility pictograms + the words search understands (English/Portuguese)
 │   ├── data.js             loads + searches the JSON (the only code that reads data)
+│   ├── routes.js           walking directions: doorways, stairs and elevators as a graph
+│   ├── visits.js           visit diary and favorites, stored on the device (IndexedDB)
 │   └── config.js           map colours and sizes (mirror the CSS tokens)
 ├── data/
 │   ├── artworks.json       ← the artworks. Replace this file to update the guide
-│   ├── floors.json         ← room shapes per floor, traced from the MFA map PDF
+│   ├── tours.json          ← ready-made tours: stops (galleries) and works to look for
+│   ├── floors.json         ← the whole map: rooms, facilities, labels for Levels G/LG–3
 │   └── images/             artwork images, one per work (<id>.jpg)
 ├── fonts/                  Instrument Serif (display type), bundled for offline use
 ├── icons/                  app icons
 ├── vendor/                 three.js r170 + OrbitControls (bundled for offline use)
 └── tools/
     ├── serve.py            local preview server (no caching)
+    ├── trace_pdf.py        rebuilds data/floors.json from the MFA map PDF
     └── README.md           plan for the weekly MFA scraper (not built yet)
 ```
 
@@ -65,15 +70,54 @@ Each work looks like this. You can edit, add or remove entries without touching 
 
 ### floors.json
 
-Room outlines are in **PDF points** from page 1 of `mfa-boston-map_2025-12.pdf` (x to the right, y down),
-so a correction can be read straight off the printed map. Per floor:
+The whole museum map (Levels G/LG, 1, 2 and 3), generated from the MFA visitor map PDF by
+`tools/trace_pdf.py`. Nothing is traced by eye: room shapes, names, gallery numbers and facility icons
+are read from the PDF's vector drawing. Coordinates are **PDF points** of each floor's own drawing, so a
+correction can be read straight off the printed map. Per floor:
 
-- `rooms[].poly` — the outline corners. `kind` is `gallery` or `service` (elevators, passages).
-- `rooms[].name` — the gallery's name if known.
+- `rooms[]` — `kind` is `gallery` (numbered), `space` (named: courtyards, cafés, shops, auditoriums) or `corridor`.
+  A shape that carries several gallery numbers lists the extras in `aliases`.
+- `closed[]` — areas that are grey on the PDF (not open to visitors).
+- `amenities[]` — restrooms, elevators, stairs, dining, shop, information, nursing room, accessible entrances,
+  emergency call boxes, water fountains and coat check, from the map's icons.
+- `labels[]` — wing names and notes (entrances, the Conservation Center elevator).
+- `transform` — `[scale, dx, dy]` that lines the floor up with Level 2 (the PDF draws floors in different places and sizes).
 - `homeView` — the rooms the map frames when it opens or when you tap Recenter.
-- `offset` — lines the floors up with each other (the PDF draws them in different places on the page).
 
-To add a floor, add another entry to `floors` with its rooms. The floor switcher picks it up automatically.
+To re-trace a new edition of the PDF:
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install pymupdf numpy pillow
+.venv/bin/python tools/trace_pdf.py path/to/mfa-boston-map.pdf
+```
+
+Hand decisions (room splits, names, pinned labels) live in `OVERRIDES` at the top of the script.
+
+## Tours
+
+`data/tours.json` holds the ready-made tours. Each stop is a gallery number plus the works to look for there
+(MFA object ids from `artworks.json`) and a short note. Add or edit tours there; no code changes needed.
+Starting a tour also starts a visit in the diary, and each "next stop" checks the room off.
+
+## Directions
+
+Routes use the doorways traced from the PDF (gaps in the wall lines) and link stairs and elevators that sit in the same
+place on neighbouring floors. "Avoid stairs" uses elevators only. Distances are estimates (1 PDF point ≈ 0.35 m).
+Your starting point is the last room you checked off, an entrance, or the room you tap on the map.
+
+## Loading the full list of works on view
+
+`tools/harvest-mfa.js` collects every work marked On View (about 7,700) from collections.mfa.org.
+You run it yourself in your own browser (Chrome works best):
+
+1. Copy the script: `pbcopy < tools/harvest-mfa.js` (from the mfa-guide folder).
+2. Open https://collections.mfa.org in its own Chrome window, open the console (Cmd+Option+J), type `allow pasting` if asked, paste, press Enter.
+3. Click **Start** in the panel. It takes about 4 hours, one request at a time. Keep the window visible and the Mac awake (`caffeinate -dim` in Terminal).
+   Progress is saved: if it stops, paste the script again and click Start.
+4. Click **Download**. Put `artworks.json` in `data/` (replacing the sample) and the `images-*.bin` files in `data/images/`. Allow multiple downloads if Chrome asks.
+5. Bump `VERSION` in `sw.js`.
+
+Images are stored in a few "pack" files (about 15 MB each) instead of thousands of small files, so they can still be uploaded through GitHub's website.
 
 ## Preview on your Mac
 
@@ -134,22 +178,21 @@ The home-screen app has its own storage, separate from Safari. Deleting the icon
 
 ## Map guesses to check
 
-The room shapes come straight from the white gallery shapes in the PDF. These points were unclear and are best guesses:
+Everything comes from the PDF's own drawing. These points were unclear and are best guesses:
 
-1. **146 / 145 (Level 1)** are drawn as one shape. I split them where 246/245 split on Level 2.
-2. **141A / 141B (Level 1)** are one shape in the PDF. Same approach, aligned with 241A/241B.
-3. **153 (Level 1)** runs into the staircase hall in the PDF; I cut it at the edge of 148.
-4. **Elevator block** between 244 and 243A (and between 144 and 143): treated as an elevator lobby, not a gallery.
-5. **Small unlabeled spaces** between 254 and 249 (and 154 and 148): treated as passages.
-6. **249 and 148** contain the grand staircase but have gallery numbers, so they're tappable galleries.
-7. **Grey area between 152 and 146 (Level 1)** is grey on the map (not open to visitors), so it isn't drawn.
-8. **237–239 / 137–138** are left off: the MFA lists American art in 239, so they belong to another area.
-9. **Gallery names** appear only for the 11 rooms whose name I saw on the MFA site.
-10. **Floors** are shown as equal-height blocks; real ceiling heights aren't in the PDF.
+1. **146 / 145, 141A / 141B (Level 1)** are one shape each in the PDF; split where the walls fall on Level 2.
+2. **Shapes with several numbers** (walls drawn as lines inside one shape) are shown as one room with all its numbers:
+   273 / 274, 279 / 280, 265 / 268, 238 / 238A, 239 / 238B, 278A–C, 212A–C, 213–215C, 159 / 160, 121A / 121B, 138A / 138B, G37–G39.
+3. **Taste café and gallery 168** share one shape; Taste is shown as a label on it.
+4. **155** is overlapped by a corridor shape in the PDF; it's kept as its own room.
+5. **Level G/LG** is drawn about 4% smaller than Level 1 in the PDF; it's scaled up to line up with the floors above.
+6. **Emergency exits** aren't on the MFA map. The app shows what the map has: emergency call boxes and the entrances.
+7. **Gallery names** come from the collection site where known; the rest of the rooms show only their number.
+8. **Floors** are shown as equal-height blocks; real ceiling heights aren't in the PDF.
 
 ## Sample data notes
 
-- 21 works, all marked **On View** on collections.mfa.org on Oct 18, 2026, each with the gallery number shown there.
+- 24 works, all marked **On View** on collections.mfa.org (checked Oct 18–19, 2026), each with the gallery number shown there.
 - **Images:** the MFA site blocks automated image downloads, so the app's offline images come from Wikimedia Commons
   (public-domain photos of the same paintings; several come from the MFA via Google Arts & Culture). The MFA's own image address is kept in `imageUrl`.
 - Two works I first picked had no usable public-domain photo (Degas's *Little Dancer* and Veronese's *Atalanta*),

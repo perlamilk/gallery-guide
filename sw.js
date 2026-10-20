@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v1';
+const VERSION = 'v7';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -16,6 +16,9 @@ const SHELL = [
   'js/config.js',
   'js/data.js',
   'js/map3d.js',
+  'js/icons.js',
+  'js/visits.js',
+  'js/routes.js',
   'vendor/three.module.min.js',
   'vendor/OrbitControls.js',
   'fonts/InstrumentSerif-Regular.woff2',
@@ -25,6 +28,7 @@ const SHELL = [
   'icons/icon-512.png',
   'data/floors.json',
   'data/artworks.json',
+  'data/tours.json',
 ];
 
 self.addEventListener('install', event => {
@@ -50,7 +54,9 @@ self.addEventListener('fetch', event => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // e.g. links to the MFA site
 
-  if (req.mode === 'navigate') {
+  if (url.pathname.endsWith('.bin')) {
+    event.respondWith(packPiece(req));
+  } else if (req.mode === 'navigate') {
     event.respondWith(networkFirst(req, 'index.html'));
   } else if (url.pathname.endsWith('.json')) {
     event.respondWith(networkFirst(req));
@@ -84,11 +90,37 @@ async function networkFirst(req, fallbackPath) {
   }
 }
 
+// Image packs: answer "give me bytes X–Y" from the cached pack; fetch and cache the pack if it's missing.
+const packDownloads = new Set();
+async function packPiece(req) {
+  const cache = await caches.open(CACHE);
+  const full = await cache.match(req.url, { ignoreSearch: true });
+  if (!full) {
+    const range = req.headers.get('Range');
+    // online and not cached yet: answer this piece straight away, store the whole pack once in the background
+    if (!packDownloads.has(req.url)) {
+      packDownloads.add(req.url);
+      fetch(req.url).then(res => res.ok && cache.put(req.url, res)).catch(() => {}).finally(() => packDownloads.delete(req.url));
+    }
+    return fetch(req.url, range ? { headers: { Range: range } } : {});
+  }
+  const range = req.headers.get('Range');
+  const m = range && range.match(/bytes=(\d+)-(\d+)?/);
+  if (!m) return full;
+  const blob = await full.blob();
+  const start = Number(m[1]);
+  const end = m[2] ? Number(m[2]) + 1 : blob.size;
+  return new Response(blob.slice(start, end), {
+    status: 206,
+    headers: { 'Content-Type': 'application/octet-stream', 'Content-Range': `bytes ${start}-${end - 1}/${blob.size}` },
+  });
+}
+
 // Download any artwork images not yet cached (also runs when a new artworks.json arrives).
 async function cacheArtworkImages(cache, response) {
   try {
     const doc = await (response ?? await fetch('data/artworks.json', { cache: 'no-store' })).json();
-    const urls = (doc.artworks ?? []).map(a => a.image).filter(Boolean);
+    const urls = [...new Set((doc.artworks ?? []).map(a => a.image || a.img?.p).filter(Boolean))];
     for (const u of urls) {
       if (!(await cache.match(u))) {
         try { await cache.add(u); } catch { /* skip a missing image, keep going */ }
