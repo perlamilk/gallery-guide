@@ -544,6 +544,1320 @@
      "text": "Van Gogh painted every member of the Roulin family. When he was hospitalised after cutting his ear in December 1888, Roulin looked after him."
     }
    ]
+  },
+  "33277": {
+   "image": "data/notice/33277.jpg",
+   "file": "Van Gogh - La Berceuse (Augustine Roulin)3.jpeg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Augustine Roulin, wife of Van Gogh’s friend the postman, painted in Arles in early 1889. Van Gogh made five versions of this picture."
+    },
+    {
+     "title": "The rope",
+     "text": "In her hands is a cord. It rocks a cradle we can’t see, her baby daughter Marcelle, just outside the picture.",
+     "r": [
+      0.32,
+      0.62,
+      0.24,
+      0.36
+     ]
+    },
+    {
+     "title": "Her face",
+     "text": "Calm, a little tired, outlined in dark paint. She doesn’t look at us; she is listening for the baby.",
+     "r": [
+      0.36,
+      0.15,
+      0.3,
+      0.24
+     ]
+    },
+    {
+     "title": "The flowered wall",
+     "text": "Behind her, big flowers float on a green ground. The wall is flat as wallpaper: no depth, just pattern, an idea Van Gogh took from Japanese prints.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.33
+     ]
+    },
+    {
+     "title": "Red and green",
+     "text": "Green skirt against red floor and chair: opposite colours that make each other glow.",
+     "r": [
+      0.0,
+      0.58,
+      1.0,
+      0.42
+     ]
+    },
+    {
+     "title": "A lullaby for sailors",
+     "text": "Van Gogh imagined it hanging in a fishermen’s cabin, comforting men at sea, and once pictured it between two of his Sunflowers, like an altarpiece."
+    }
+   ]
+  },
+  "33278": {
+   "image": "data/notice/33278.jpg",
+   "file": "Houses at Auvers by Vincent Van Gogh.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Cottages in Auvers-sur-Oise, painted in 1890, in the last weeks of Van Gogh’s life, when he made around 70 paintings in about ten weeks."
+    },
+    {
+     "title": "Thatched roofs",
+     "text": "The old roofs are painted in long, thick strokes that look like the straw itself, mossy green and gold.",
+     "r": [
+      0.0,
+      0.24,
+      0.56,
+      0.56
+     ]
+    },
+    {
+     "title": "One red roof",
+     "text": "A bright orange-red roof cuts through the greens and blues: the hottest colour, placed right where your eye lands.",
+     "r": [
+      0.36,
+      0.26,
+      0.26,
+      0.17
+     ]
+    },
+    {
+     "title": "The sky",
+     "text": "Even the clouds are solid: curls of white paint you could almost lift off the canvas.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.32
+     ]
+    },
+    {
+     "title": "A small figure",
+     "text": "In the lane, a tiny person walks by. Look how few strokes it takes to make a human being.",
+     "r": [
+      0.55,
+      0.56,
+      0.14,
+      0.18
+     ]
+    },
+    {
+     "title": "The lane",
+     "text": "The path is painted in rippling blue and white strokes, more like water than earth. Nothing in this picture stands still.",
+     "r": [
+      0.34,
+      0.64,
+      0.62,
+      0.36
+     ]
+    }
+   ]
+  },
+  "33491": {
+   "image": "data/notice/33491.jpg",
+   "file": "Vincent van Gogh - Ravine.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A rocky ravine near the asylum of Saint-Rémy, where Van Gogh lived in 1889–90. He painted it outdoors on a windy day."
+    },
+    {
+     "title": "Rocks like waves",
+     "text": "The cliffs are drawn in long, flowing lines, so the stone seems to move like water.",
+     "r": [
+      0.28,
+      0.08,
+      0.52,
+      0.52
+     ]
+    },
+    {
+     "title": "The stream",
+     "text": "At the bottom, a mountain stream twists through the gorge, a pale path that pulls your eye down.",
+     "r": [
+      0.24,
+      0.58,
+      0.52,
+      0.38
+     ]
+    },
+    {
+     "title": "A small palette",
+     "text": "Blues, greens and greys, with a few flicks of orange for the plants: Van Gogh builds the whole scene from a handful of colours.",
+     "r": [
+      0.0,
+      0.08,
+      0.3,
+      0.45
+     ]
+    },
+    {
+     "title": "Painting in the wind",
+     "text": "According to his letters, the mistral was so strong he had to hold the easel down with stones. You can feel that energy in every stroke."
+    }
+   ]
+  },
+  "33610": {
+   "image": "data/notice/33610.jpg",
+   "file": "Vincent van Gogh - Weaver - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A weaver at his loom in Nuenen, in the Netherlands, painted in 1884, before Van Gogh moved to Paris and his colours brightened."
+    },
+    {
+     "title": "The weaver",
+     "text": "The man sits deep inside the wooden frame of the loom, almost a prisoner of his machine.",
+     "r": [
+      0.58,
+      0.22,
+      0.2,
+      0.3
+     ]
+    },
+    {
+     "title": "The red cloth",
+     "text": "The one bright note in a brown, grey room: the red cloth on the loom, the work of his hands.",
+     "r": [
+      0.28,
+      0.38,
+      0.34,
+      0.18
+     ]
+    },
+    {
+     "title": "The spinning wheel",
+     "text": "On the left, a spinning wheel: thread first, then cloth. The whole process sits in one room.",
+     "r": [
+      0.02,
+      0.36,
+      0.26,
+      0.4
+     ]
+    },
+    {
+     "title": "A long study",
+     "text": "He made at least 28 paintings, drawings and watercolours of weavers, fascinated by the machinery and by the people working long hours for little pay."
+    }
+   ]
+  },
+  "35481": {
+   "image": "data/notice/35481.jpg",
+   "file": "Vincent van Gogh - Enclosed Field with Ploughman - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The walled wheat field Van Gogh saw from his window at the asylum in Saint-Rémy, painted in autumn 1889."
+    },
+    {
+     "title": "The ploughman",
+     "text": "A man and his horses turn the earth, small against the huge field: the cycle of work and seasons Van Gogh loved.",
+     "r": [
+      0.52,
+      0.36,
+      0.36,
+      0.16
+     ]
+    },
+    {
+     "title": "The windmill",
+     "text": "Far away, a windmill on the hill, a tiny vertical in a world of horizontal stripes.",
+     "r": [
+      0.36,
+      0.14,
+      0.16,
+      0.13
+     ]
+    },
+    {
+     "title": "Furrows",
+     "text": "The ploughed earth runs in bands of violet, grey and yellow, painted with short strokes that follow the furrows.",
+     "r": [
+      0.0,
+      0.56,
+      1.0,
+      0.44
+     ]
+    },
+    {
+     "title": "The hills",
+     "text": "Behind, the blue Alpilles hills and a pale sky close the view, like the wall around the field.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.3
+     ]
+    }
+   ]
+  },
+  "31449": {
+   "image": "data/notice/31449.jpg",
+   "file": "Claude Monet Mohnfeld.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A summer field near Monet’s home at Giverny, painted in 1890: poppies, poplars, distant hills."
+    },
+    {
+     "title": "The poplar",
+     "text": "One tall, thin poplar splits the sky, a vertical accent in a picture made of horizontal bands.",
+     "r": [
+      0.52,
+      0.1,
+      0.12,
+      0.62
+     ]
+    },
+    {
+     "title": "The poppies",
+     "text": "Red dabs scattered across green: complementary colours, side by side, seem to vibrate.",
+     "r": [
+      0.0,
+      0.68,
+      1.0,
+      0.32
+     ]
+    },
+    {
+     "title": "Blue distance",
+     "text": "The far hills turn blue and pale. Monet paints air itself: things look bluer the farther away they are.",
+     "r": [
+      0.58,
+      0.5,
+      0.42,
+      0.2
+     ]
+    },
+    {
+     "title": "The sky",
+     "text": "Pink-edged clouds in a pale sky: probably late in the day, when the light turns warm.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.32
+     ]
+    }
+   ]
+  },
+  "31789": {
+   "image": "data/notice/31789.jpg",
+   "file": "Monet - Water Lilies, 1907, 19.170.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Monet’s water-lily pond at Giverny, painted in 1907. There is no shore and no horizon, only the surface of the water."
+    },
+    {
+     "title": "An upside-down world",
+     "text": "Look into the water: the pale shapes are reflections of the sky and trees. We look down, but we see up.",
+     "r": [
+      0.2,
+      0.3,
+      0.6,
+      0.36
+     ]
+    },
+    {
+     "title": "Depth from lily pads",
+     "text": "The pads get smaller and closer together as they recede: that’s all Monet needs to make the pond feel deep.",
+     "r": [
+      0.42,
+      0.55,
+      0.58,
+      0.3
+     ]
+    },
+    {
+     "title": "The flowers",
+     "text": "Each blossom is just a few touches of pink and white.",
+     "r": [
+      0.66,
+      0.55,
+      0.34,
+      0.18
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Claude Monet 1907, signed in the water itself, at lower right.",
+     "r": [
+      0.68,
+      0.86,
+      0.32,
+      0.14
+     ]
+    },
+    {
+     "title": "His own garden",
+     "text": "Monet had the pond dug in 1893 and spent nearly 30 years painting it, about 250 canvases in all."
+    }
+   ]
+  },
+  "31803": {
+   "image": "data/notice/31803.jpg",
+   "file": "Claude Monet - Flower Beds at Vétheuil - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Monet’s garden at Vétheuil, above the Seine, painted in 1881. The flowers rise up almost to the river."
+    },
+    {
+     "title": "Sunflowers",
+     "text": "Tall sunflowers stand out against the far bank, their yellow heads catching the light.",
+     "r": [
+      0.3,
+      0.36,
+      0.3,
+      0.18
+     ]
+    },
+    {
+     "title": "A boat on the river",
+     "text": "Tiny on the water, a boat with a figure: easy to miss, it tells you the scale of the view.",
+     "r": [
+      0.66,
+      0.46,
+      0.24,
+      0.12
+     ]
+    },
+    {
+     "title": "The island",
+     "text": "A wooded island sits in the river, softened by haze.",
+     "r": [
+      0.7,
+      0.3,
+      0.3,
+      0.18
+     ]
+    },
+    {
+     "title": "A wall of colour",
+     "text": "Up close, the garden is a crowd of thick, round dabs: red, orange, green. From a step back they turn into flowers.",
+     "r": [
+      0.08,
+      0.6,
+      0.84,
+      0.4
+     ]
+    }
+   ]
+  },
+  "32061": {
+   "image": "data/notice/32061.jpg",
+   "file": "Monet Meadow-with-Poplars-Homepage.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A summer meadow with poplars, painted by Monet around 1875 near Argenteuil, outside Paris."
+    },
+    {
+     "title": "The poplars",
+     "text": "Two dark trees fill the left side, holding the composition like a frame.",
+     "r": [
+      0.05,
+      0.0,
+      0.4,
+      0.62
+     ]
+    },
+    {
+     "title": "A small figure",
+     "text": "In the long grass, a tiny figure in white with a straw hat, almost swallowed by the meadow.",
+     "r": [
+      0.33,
+      0.6,
+      0.14,
+      0.18
+     ]
+    },
+    {
+     "title": "Poppies",
+     "text": "Red poppies flicker in the foreground: a few strokes of red make the whole field come alive.",
+     "r": [
+      0.6,
+      0.74,
+      0.4,
+      0.26
+     ]
+    },
+    {
+     "title": "The sky",
+     "text": "Big white clouds in blue, painted quickly, the way they move on a windy day.",
+     "r": [
+      0.55,
+      0.0,
+      0.45,
+      0.45
+     ]
+    }
+   ]
+  },
+  "32103": {
+   "image": "data/notice/32103.jpg",
+   "file": "Claude Monet - Rouen Cathedral Façade and Tour d'Albane (Morning Effect) - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Rouen Cathedral early in the morning, painted in 1894. Monet made more than 30 views of this façade from rooms he rented across the square."
+    },
+    {
+     "title": "The tower in light",
+     "text": "The Tour d’Albane catches the first sun and glows pale pink.",
+     "r": [
+      0.04,
+      0.0,
+      0.46,
+      0.75
+     ]
+    },
+    {
+     "title": "The façade in shadow",
+     "text": "The rest of the front is still in cool blue shadow. Light, not stone, is the real subject.",
+     "r": [
+      0.5,
+      0.05,
+      0.5,
+      0.7
+     ]
+    },
+    {
+     "title": "Paint like stone",
+     "text": "Look at the surface: layers of thick, crusty paint, as rough as the carved stone itself.",
+     "r": [
+      0.3,
+      0.38,
+      0.32,
+      0.26
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Signed and dated ’94 at lower left. Monet finished the series in his studio at Giverny.",
+     "r": [
+      0.0,
+      0.86,
+      0.36,
+      0.14
+     ]
+    }
+   ]
+  },
+  "32700": {
+   "image": "data/notice/32700.jpg",
+   "file": "Rouen Cathedral Boston W1356.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The same cathedral, from the same spot, at another hour. The MFA has two of Monet’s Rouen Cathedrals; compare them."
+    },
+    {
+     "title": "The rose window",
+     "text": "The great round window is a dark, warm circle at the centre of the façade.",
+     "r": [
+      0.46,
+      0.26,
+      0.28,
+      0.22
+     ]
+    },
+    {
+     "title": "The portals",
+     "text": "At the bottom, the doorways glow orange where the sun reaches into them.",
+     "r": [
+      0.4,
+      0.62,
+      0.34,
+      0.38
+     ]
+    },
+    {
+     "title": "Crusted paint",
+     "text": "The paint is so thick it looks carved, built up over many sessions.",
+     "r": [
+      0.08,
+      0.38,
+      0.32,
+      0.26
+     ]
+    },
+    {
+     "title": "A slice of sky",
+     "text": "Only a little blue sky shows at the top: the cathedral fills almost the whole canvas.",
+     "r": [
+      0.28,
+      0.0,
+      0.52,
+      0.2
+     ]
+    }
+   ]
+  },
+  "32183": {
+   "image": "data/notice/32183.jpg",
+   "file": "Claude Monet - Poppy Field in a Hollow near Giverny - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Poppies in a hollow near Giverny, painted in 1885."
+    },
+    {
+     "title": "A river of red",
+     "text": "The poppies spill down the slope in a wedge of red, pulling your eye from the front up into the hollow.",
+     "r": [
+      0.14,
+      0.5,
+      0.62,
+      0.5
+     ]
+    },
+    {
+     "title": "The hollow",
+     "text": "The hills fold around the field like cupped hands, closing the view.",
+     "r": [
+      0.0,
+      0.06,
+      1.0,
+      0.42
+     ]
+    },
+    {
+     "title": "Dark bushes",
+     "text": "A few dark bushes act as stepping stones across the slopes.",
+     "r": [
+      0.46,
+      0.24,
+      0.28,
+      0.16
+     ]
+    },
+    {
+     "title": "White flowers",
+     "text": "At lower left, white flowers in shadow: a cool note against all that red.",
+     "r": [
+      0.0,
+      0.64,
+      0.22,
+      0.32
+     ]
+    }
+   ]
+  },
+  "34078": {
+   "image": "data/notice/34078.jpg",
+   "file": "Claude Monet, Haystack, Morning Snow Effect (Meule, Effet de Neige, le Matin), 1891, oil on canvas, 65 x 92 cm, Museum of Fine Arts, Boston.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A grainstack in snow, painted in 1891, one of about 25 grainstacks Monet painted near his house at Giverny across seasons and times of day."
+    },
+    {
+     "title": "The stack",
+     "text": "Huge and simple, almost a mountain. Monet chose a dull subject so the light would be the real story.",
+     "r": [
+      0.1,
+      0.2,
+      0.48,
+      0.6
+     ]
+    },
+    {
+     "title": "Blue shadows",
+     "text": "The shadow on the snow is blue and violet, not grey or black. Look at real snow on a sunny day: Monet was right.",
+     "r": [
+      0.3,
+      0.7,
+      0.62,
+      0.3
+     ]
+    },
+    {
+     "title": "A rim of light",
+     "text": "The sun catches the top and edge of the stack in warm gold.",
+     "r": [
+      0.24,
+      0.2,
+      0.3,
+      0.24
+     ]
+    },
+    {
+     "title": "The far trees",
+     "text": "A band of blue trees and houses closes the horizon, all in the same cold winter light.",
+     "r": [
+      0.0,
+      0.18,
+      1.0,
+      0.18
+     ]
+    },
+    {
+     "title": "Signature",
+     "text": "Claude Monet ’91, lower left.",
+     "r": [
+      0.0,
+      0.86,
+      0.26,
+      0.14
+     ]
+    }
+   ]
+  },
+  "31792": {
+   "image": "data/notice/31792.jpg",
+   "file": "Pierre-Auguste Renoir - Grand Canal, Venice - 19.173 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Grand Canal in Venice, painted by Renoir in 1881 on his first trip to Italy."
+    },
+    {
+     "title": "Gondolas",
+     "text": "Black gondolas glide across the shimmering water, the darkest shapes in the picture.",
+     "r": [
+      0.6,
+      0.64,
+      0.36,
+      0.24
+     ]
+    },
+    {
+     "title": "Water made of dabs",
+     "text": "The canal is a mosaic of small strokes: blue, white, yellow. Up close it’s abstract; from a step back it sparkles.",
+     "r": [
+      0.0,
+      0.7,
+      1.0,
+      0.18
+     ]
+    },
+    {
+     "title": "The palaces",
+     "text": "The palaces on the left melt into warm pinks and golds in the sunlight.",
+     "r": [
+      0.0,
+      0.24,
+      0.46,
+      0.42
+     ]
+    },
+    {
+     "title": "Mooring poles",
+     "text": "The striped mooring poles at right lead your eye down to the water.",
+     "r": [
+      0.7,
+      0.46,
+      0.27,
+      0.32
+     ]
+    },
+    {
+     "title": "Signature",
+     "text": "Renoir signed and dated it ’81 at lower right.",
+     "r": [
+      0.74,
+      0.86,
+      0.26,
+      0.14
+     ]
+    }
+   ]
+  },
+  "31445": {
+   "image": "data/notice/31445.jpg",
+   "file": "Spring Pasture.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A spring pasture painted by Camille Pissarro in 1889, when he was experimenting with the dot technique of Seurat and Signac."
+    },
+    {
+     "title": "Woman and goat",
+     "text": "A peasant woman leads a white goat: the human scale of this calm landscape.",
+     "r": [
+      0.72,
+      0.6,
+      0.28,
+      0.27
+     ]
+    },
+    {
+     "title": "Made of dots",
+     "text": "Look closely: the grass is built from small, separate touches of colour that mix in your eye.",
+     "r": [
+      0.3,
+      0.7,
+      0.32,
+      0.26
+     ]
+    },
+    {
+     "title": "The cottage",
+     "text": "A steep roof and a red chimney peek over the hedge, the only building in the scene.",
+     "r": [
+      0.48,
+      0.44,
+      0.22,
+      0.2
+     ]
+    },
+    {
+     "title": "The tree",
+     "text": "A big tree on the left, its leaves shimmering in dots of green, violet and yellow.",
+     "r": [
+      0.02,
+      0.12,
+      0.4,
+      0.55
+     ]
+    }
+   ]
+  },
+  "31454": {
+   "image": "data/notice/31454.jpg",
+   "file": "Two Peasant Women in a Meadow (Le Pré).jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Two peasant women resting in a meadow at Éragny, painted by Pissarro in 1893."
+    },
+    {
+     "title": "The two women",
+     "text": "One sits, one stands, both turned away from us, part of the landscape rather than posing for it.",
+     "r": [
+      0.04,
+      0.7,
+      0.32,
+      0.3
+     ]
+    },
+    {
+     "title": "The poplars",
+     "text": "Tall poplars rise like columns at the left, leading your eye up into the sky.",
+     "r": [
+      0.04,
+      0.12,
+      0.34,
+      0.56
+     ]
+    },
+    {
+     "title": "The village",
+     "text": "Through the trees, a church spire and roofs: the village of Éragny, where Pissarro lived.",
+     "r": [
+      0.56,
+      0.36,
+      0.18,
+      0.18
+     ]
+    },
+    {
+     "title": "Cows in the distance",
+     "text": "Far away in the field, a few cows graze, tiny touches of colour.",
+     "r": [
+      0.58,
+      0.62,
+      0.14,
+      0.08
+     ]
+    }
+   ]
+  },
+  "31810": {
+   "image": "data/notice/31810.jpg",
+   "file": "Camille Pissarro - Morning Sunlight on the Snow, Eragny-sur-Epte - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Morning sun on snow at Éragny, painted by Pissarro in 1895, looking out from his house."
+    },
+    {
+     "title": "A lone walker",
+     "text": "A small figure trudges through the snow, the only movement in a frozen morning.",
+     "r": [
+      0.58,
+      0.76,
+      0.16,
+      0.18
+     ]
+    },
+    {
+     "title": "A screen of trees",
+     "text": "Bare trees cover the whole picture like a veil you look through.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.62
+     ]
+    },
+    {
+     "title": "Snow is not white",
+     "text": "The snow is made of pinks, violets, yellows and blues. That’s how sunlight looks on snow.",
+     "r": [
+      0.18,
+      0.84,
+      0.62,
+      0.16
+     ]
+    },
+    {
+     "title": "Signature",
+     "text": "C. Pissarro ’95, lower left.",
+     "r": [
+      0.0,
+      0.88,
+      0.32,
+      0.12
+     ]
+    }
+   ]
+  },
+  "32190": {
+   "image": "data/notice/32190.jpg",
+   "file": "Camille Pissarro - Sunlight on the Road, Pontoise - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A sunlit road at Pontoise, painted by Pissarro in 1874, the year of the first Impressionist exhibition."
+    },
+    {
+     "title": "Rider on a white horse",
+     "text": "A horseman rides along the road, the brightest shape on the left.",
+     "r": [
+      0.06,
+      0.44,
+      0.24,
+      0.26
+     ]
+    },
+    {
+     "title": "A woman and a child",
+     "text": "A woman in a white cap walks with a small child toward the trees: everyday life, not a posed scene.",
+     "r": [
+      0.52,
+      0.54,
+      0.09,
+      0.18
+     ]
+    },
+    {
+     "title": "Shadows on the road",
+     "text": "Long shadows cross the road: you can feel the low sun and the time of day.",
+     "r": [
+      0.2,
+      0.68,
+      0.5,
+      0.26
+     ]
+    },
+    {
+     "title": "The trees",
+     "text": "Big trees on the right frame the scene and filter the light into dapples.",
+     "r": [
+      0.58,
+      0.0,
+      0.42,
+      0.8
+     ]
+    },
+    {
+     "title": "The village",
+     "text": "Roofs of Pontoise peek out behind the greenery.",
+     "r": [
+      0.3,
+      0.32,
+      0.32,
+      0.15
+     ]
+    }
+   ]
+  },
+  "31229": {
+   "image": "data/notice/31229.jpg",
+   "file": "Edgar Germain Hilaire Degas 059.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Racehorses at Longchamp, near Paris, painted by Degas in 1871 and possibly reworked in 1874."
+    },
+    {
+     "title": "Seen from behind",
+     "text": "Most of the horses walk away from us. Degas loved unusual angles, as if we just happened to be standing there.",
+     "r": [
+      0.44,
+      0.32,
+      0.48,
+      0.52
+     ]
+    },
+    {
+     "title": "The jockeys’ silks",
+     "text": "Pink, yellow, blue and brown: the bright racing silks are the only strong colours on the grey-green field.",
+     "r": [
+      0.44,
+      0.32,
+      0.46,
+      0.18
+     ]
+    },
+    {
+     "title": "A sudden gallop",
+     "text": "At left, a group breaks into a run, blurred with motion.",
+     "r": [
+      0.02,
+      0.34,
+      0.4,
+      0.36
+     ]
+    },
+    {
+     "title": "The empty foreground",
+     "text": "The whole bottom half is empty grass. Degas leaves space, like a photograph taken at the wrong moment, on purpose.",
+     "r": [
+      0.0,
+      0.7,
+      1.0,
+      0.3
+     ]
+    }
+   ]
+  },
+  "32250": {
+   "image": "data/notice/32250.jpg",
+   "file": "Edgar Degas - At the Races in the Countryside - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "At the races in the countryside, painted by Degas in 1869. It was shown at the first Impressionist exhibition in 1874."
+    },
+    {
+     "title": "A family outing",
+     "text": "Degas’s friend Paul Valpinçon drives the carriage; his wife, the baby and a nurse sit behind. The race is almost an afterthought.",
+     "r": [
+      0.34,
+      0.44,
+      0.42,
+      0.56
+     ]
+    },
+    {
+     "title": "The dog",
+     "text": "A little black dog perches on the carriage seat, looking out.",
+     "r": [
+      0.53,
+      0.52,
+      0.08,
+      0.09
+     ]
+    },
+    {
+     "title": "Cut off",
+     "text": "The horses are sliced by the right edge, like a snapshot. Degas loved this cropping, borrowed from Japanese prints and early photography.",
+     "r": [
+      0.68,
+      0.44,
+      0.32,
+      0.56
+     ]
+    },
+    {
+     "title": "The race, far away",
+     "text": "The actual race is a tiny scene in the distance on the left.",
+     "r": [
+      0.0,
+      0.52,
+      0.44,
+      0.24
+     ]
+    }
+   ]
+  },
+  "32372": {
+   "image": "data/notice/32372.jpg",
+   "file": "Manet, Edouard - The Execution of Emperor Maximilian, 1867.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The execution of Maximilian, the Austrian archduke made emperor of Mexico by Napoleon III, shot in June 1867. This is the first of Manet’s versions."
+    },
+    {
+     "title": "The victims",
+     "text": "At left, Maximilian and his two generals blur into the gunsmoke, barely there.",
+     "r": [
+      0.04,
+      0.08,
+      0.38,
+      0.68
+     ]
+    },
+    {
+     "title": "The firing squad",
+     "text": "The soldiers stand in a tight line, faceless, their rifles a row of dark diagonals.",
+     "r": [
+      0.38,
+      0.14,
+      0.38,
+      0.82
+     ]
+    },
+    {
+     "title": "The soldier apart",
+     "text": "At right, a bearded soldier stands calmly with his rifle, apart from the others. In later versions he readies the final shot.",
+     "r": [
+      0.7,
+      0.14,
+      0.28,
+      0.78
+     ]
+    },
+    {
+     "title": "The smoke",
+     "text": "A cloud of white smoke hangs over the scene: the moment of the volley.",
+     "r": [
+      0.18,
+      0.0,
+      0.36,
+      0.32
+     ]
+    },
+    {
+     "title": "Unfinished on purpose?",
+     "text": "The loose, sketchy paint makes it feel like news, raw and immediate. French censors kept the final version out of public view."
+    }
+   ]
+  },
+  "32912": {
+   "image": "data/notice/32912.jpg",
+   "file": "Madame Cézanne dans un fauteuil rouge, par Paul Cézanne.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Hortense Fiquet, Cézanne’s wife, in a red armchair, around 1877. He painted her some 29 times."
+    },
+    {
+     "title": "Her face",
+     "text": "Still, almost a mask. Cézanne cared less about expression than about solid forms.",
+     "r": [
+      0.32,
+      0.03,
+      0.3,
+      0.18
+     ]
+    },
+    {
+     "title": "The red armchair",
+     "text": "The chair wraps around her like a big red shell, the strongest colour in the picture.",
+     "r": [
+      0.0,
+      0.06,
+      1.0,
+      0.68
+     ]
+    },
+    {
+     "title": "The hands",
+     "text": "Folded calmly in her lap, the centre of the whole composition.",
+     "r": [
+      0.3,
+      0.45,
+      0.26,
+      0.15
+     ]
+    },
+    {
+     "title": "The striped skirt",
+     "text": "Vertical stripes of green and blue run down like pillars, building her like architecture.",
+     "r": [
+      0.12,
+      0.55,
+      0.76,
+      0.45
+     ]
+    },
+    {
+     "title": "The wallpaper",
+     "text": "Small blue motifs on the wall behind her, flat pattern against solid form.",
+     "r": [
+      0.0,
+      0.0,
+      0.36,
+      0.55
+     ]
+    }
+   ]
+  },
+  "33329": {
+   "image": "data/notice/33329.jpg",
+   "file": "Alfred Sisley 026.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Early snow on a village street at Louveciennes, near Paris, painted by Alfred Sisley around 1870."
+    },
+    {
+     "title": "The road",
+     "text": "The road sweeps into the picture and curves away: your eye walks down it.",
+     "r": [
+      0.1,
+      0.6,
+      0.8,
+      0.4
+     ]
+    },
+    {
+     "title": "Two figures",
+     "text": "Two people walk along the snowy edge of the road, small and dark.",
+     "r": [
+      0.06,
+      0.58,
+      0.12,
+      0.18
+     ]
+    },
+    {
+     "title": "Snow on the roofs",
+     "text": "Thin snow on the roofs and chimneys: the first snow of the season, not deep winter.",
+     "r": [
+      0.2,
+      0.34,
+      0.42,
+      0.22
+     ]
+    },
+    {
+     "title": "The fence",
+     "text": "A wooden fence at right, half buried in white, leads back toward the houses.",
+     "r": [
+      0.62,
+      0.55,
+      0.38,
+      0.14
+     ]
+    },
+    {
+     "title": "A quiet painter",
+     "text": "Sisley, born in Paris to British parents, painted the villages around Paris all his life, often the same roads Monet and Pissarro painted."
+    }
+   ]
+  },
+  "34222": {
+   "image": "data/notice/34222.jpg",
+   "file": "Paul Gauguin - Paysage avec la femme bretonne Deux.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Two Breton women resting in a landscape, painted by Gauguin in Brittany in 1889, before he left for Tahiti."
+    },
+    {
+     "title": "The two women",
+     "text": "One sits, one bends forward, both absorbed in their own thoughts.",
+     "r": [
+      0.3,
+      0.58,
+      0.46,
+      0.42
+     ]
+    },
+    {
+     "title": "White caps",
+     "text": "The white coiffes, the traditional Breton headdresses, are the brightest spots in the painting.",
+     "r": [
+      0.32,
+      0.6,
+      0.4,
+      0.24
+     ]
+    },
+    {
+     "title": "The twisting tree",
+     "text": "A long, bent trunk crosses the whole picture like a line in a drawing.",
+     "r": [
+      0.1,
+      0.2,
+      0.86,
+      0.5
+     ]
+    },
+    {
+     "title": "Flat colour",
+     "text": "Big flat areas of yellow, green and pink, outlined with dark lines: Gauguin was moving away from Impressionism toward colour for its own sake.",
+     "r": [
+      0.0,
+      0.3,
+      1.0,
+      0.4
+     ]
+    }
+   ]
+  },
+  "31804": {
+   "image": "data/notice/31804.jpg",
+   "file": "Monet - Seacoast at Trouville, 1881.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A windswept tree on the cliffs at Trouville, on the Normandy coast, painted by Monet in 1881."
+    },
+    {
+     "title": "The tree",
+     "r": [
+      0.32,
+      0.12,
+      0.5,
+      0.62
+     ],
+     "text": "One tree leans hard against the wind, its crown pushed sideways. It is the only character in the picture."
+    },
+    {
+     "title": "Its bent trunk",
+     "r": [
+      0.3,
+      0.5,
+      0.2,
+      0.26
+     ],
+     "text": "The thin trunk slants like a dancer: you can feel the wind that shaped it."
+    },
+    {
+     "title": "The sea",
+     "r": [
+      0.0,
+      0.26,
+      0.5,
+      0.28
+     ],
+     "text": "The sea is a calm, pale band behind the tree, almost the same colour as the sky."
+    },
+    {
+     "title": "Grass in the wind",
+     "r": [
+      0.0,
+      0.62,
+      1.0,
+      0.3
+     ],
+     "text": "The grass is a tangle of quick strokes in every direction, moving like the tree."
+    },
+    {
+     "title": "Signature",
+     "r": [
+      0.76,
+      0.86,
+      0.24,
+      0.14
+     ],
+     "text": "Claude Monet signed at lower right."
+    }
+   ]
   }
  }
 }
