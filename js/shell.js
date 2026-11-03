@@ -4,6 +4,7 @@
 
 import { imgHTML, hydrateImages, blobURL, commons } from './images.js';
 import { Visits, Favorites, MuseumFavorites, Lists, duration } from './visits.js';
+import { noticeData, openNotice } from './notice.js';
 
 const $ = sel => document.querySelector(sel);
 const page = $('#page');
@@ -59,6 +60,7 @@ async function boot() {
   D.mfa = (mfa?.artworks ?? []).filter(a => a.onView !== false);
   D.mfaById = new Map(D.mfa.map(a => [a.id, a]));
   D.curio = curio ?? { works: {} };
+  D.notice = await noticeData();
   await refreshMine();
 
   wireTabs();
@@ -66,8 +68,8 @@ async function boot() {
   page.addEventListener('input', onInput);
   page.addEventListener('change', onChange);
   window.addEventListener('hashchange', () => { navDepth++; route(); });
+  S.here = savedPlace()?.at ?? null;   // no prompt on launch: see location notes below
   route();
-  locate(false).then(here => { if (here) { S.here = here; if (['home', 'museums'].includes(routeName())) route({ keepScroll: true }); } });
   registerServiceWorker();
 }
 
@@ -282,14 +284,20 @@ function fitTo(map, list, maxZoom = 11) {
 }
 
 // ---------- location ----------
-// Asks only when you tap "Show Museums Near Me"; afterwards it's remembered on this device.
-async function locate(ask) {
+// Home-screen web apps on iPhone don't keep location permission between launches, so asking on
+// every launch meant a prompt every time. Now the app remembers the last place you shared (on this
+// device only) and asks again only when you tap "Show Museums Near Me" or "Update Location".
+function savedPlace() {
+  try { const p = JSON.parse(localStorage.getItem('gg-place') || 'null'); return Array.isArray(p?.at) ? p : null; } catch { return null; }
+}
+async function locate() {
   if (!navigator.geolocation) return null;
-  let allowed = false;
-  try { allowed = localStorage.getItem('gg-loc') === '1'; } catch { /* storage off */ }
-  if (!ask && !allowed) return null;
   return new Promise(res => navigator.geolocation.getCurrentPosition(
-    p => { try { localStorage.setItem('gg-loc', '1'); } catch { /* fine */ } res([p.coords.latitude, p.coords.longitude]); },
+    p => {
+      const at = [Math.round(p.coords.latitude * 1e3) / 1e3, Math.round(p.coords.longitude * 1e3) / 1e3];   // ~100 m is plenty
+      try { localStorage.setItem('gg-place', JSON.stringify({ at, t: Date.now() })); } catch { /* storage off */ }
+      res(at);
+    },
     () => res(null), { maximumAge: 10 * 60e3, timeout: 12e3 }));
 }
 
@@ -303,7 +311,7 @@ function homePage() {
     <section class="s-section"><div class="s-head"><h2>Your Top Artists</h2></div>${topArtists()}</section>
     <section class="s-section"><div class="s-head"><h2>Your Museum Map</h2></div><div class="mini-map" id="homeMap"></div>
       <p class="fine" id="homeMapNote"></p></section>
-    <section class="s-section"><div class="s-head"><h2>Museums Nearby</h2><a href="#museums">Full List</a></div>${nearby()}</section>
+    <section class="s-section"><div class="s-head"><h2>Museums Nearby</h2>${S.here ? '<button type="button" data-locate>Update Location</button>' : '<a href="#museums">Full List</a>'}</div>${nearby()}</section>
     <p class="fine" style="margin-top:28px">Museum data from Wikidata, photos from Wikimedia Commons. <button class="btn--plain" type="button" data-update style="color:var(--accent);font-weight:600">Check for Updates</button></p>`;
 }
 
@@ -607,6 +615,22 @@ function listPage(id) {
 }
 
 // ---------- Discover ----------
+// What to Notice: the general guide, then the paintings with a guided look (they open in the MFA guide).
+function noticeSection() {
+  const ids = Object.keys(D.notice?.works ?? {}).filter(id => D.mfaById.has(id));
+  if (!D.notice) return '';
+  return `<section class="s-section"><div class="s-head"><h2>What to Notice</h2></div>
+    <button class="notice-cta" type="button" data-notice-general>
+      <span class="notice-cta__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></svg></span>
+      <span><strong>${escape(D.notice.general.title)}</strong><span>${escape(D.notice.general.subtitle)}</span></span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+    <div class="hscroll" style="margin-top:14px;grid-auto-columns:40%">${ids.map(id => {
+      const w = workInfo(id);
+      return `<a class="tile" href="guide.html#notice/${id}"><div class="tile__img">${w.thumb('ph')}</div>
+        <p class="tile__title">${escape(w.title)}</p><p class="tile__sub">${escape(w.artist ?? '')} · ${D.notice.works[id].steps.length} details</p></a>`;
+    }).join('')}</div></section>`;
+}
+
 function discoverPage() {
   const d = D.discover;
   const works = d.popularArtworks.map(id => workInfo(id)).filter(Boolean);
@@ -614,6 +638,7 @@ function discoverPage() {
   return `
     <h1 class="large-title">Discover</h1>
     <p class="lede">The best-known art in American museums.</p>
+    ${noticeSection()}
     ${first ? `<section class="s-section"><div class="s-head"><h2>Popular Artworks</h2><a href="#popular/artworks">See All ${I.chev}</a></div>
       <a class="feature" href="${first.href}"><div class="feature__img">${first.thumb('ph')}</div>
         <div class="feature__row"><span class="rank">1</span><div><p class="feature__title">${escape(first.title)}</p>
@@ -709,7 +734,7 @@ function workPage(id) {
 
 // ---------- events ----------
 async function onClick(e) {
-  const t = e.target.closest('[data-back],[data-fav-museum],[data-mview],[data-mfilter],[data-clear-area],[data-more-museums],[data-locate],[data-coll],[data-lib-view],[data-select],[data-pick],[data-add-to-list],[data-unsave],[data-new-list],[data-rename-list],[data-delete-list],[data-remove-from-list],[data-save-work],[data-more],[data-update]');
+  const t = e.target.closest('[data-back],[data-fav-museum],[data-mview],[data-mfilter],[data-clear-area],[data-more-museums],[data-locate],[data-coll],[data-lib-view],[data-select],[data-pick],[data-add-to-list],[data-unsave],[data-new-list],[data-rename-list],[data-delete-list],[data-remove-from-list],[data-save-work],[data-more],[data-update],[data-notice-general]');
   if (!t) return;
   const d = t.dataset;
   if (d.back !== undefined) return back(d.back);
@@ -726,7 +751,7 @@ async function onClick(e) {
   if (d.moreMuseums !== undefined) { S.shown += PAGE_SIZE * 2; return route({ keepScroll: true }); }
   if (d.locate !== undefined) {
     t.disabled = true; t.textContent = 'Finding you…';
-    S.here = await locate(true);
+    S.here = await locate() ?? S.here;
     if (!S.here) toast('Location is off. You can allow it in Settings › Privacy.');
     return route({ keepScroll: true });
   }
@@ -771,6 +796,7 @@ async function onClick(e) {
   }
   if (d.more !== undefined) { t.previousElementSibling?.classList.remove('clamp'); t.remove(); return; }
   if (d.update !== undefined) return checkForUpdate(t);
+  if (d.noticeGeneral !== undefined) return openNotice({ general: true });
 }
 
 let queryTimer;

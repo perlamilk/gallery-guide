@@ -1,0 +1,549 @@
+{
+ "about": "What to Notice: guided looks at a painting, one detail at a time. Written for this app from general art-history knowledge, not by the MFA. Regions are fractions of the picture: x, y, width, height. Pictures: Wikimedia Commons (public domain).",
+ "general": {
+  "title": "How to Look at a Painting",
+  "subtitle": "Seven questions that work for any picture",
+  "steps": [
+   {
+    "title": "First, just look",
+    "text": "Give it a full minute before reading anything. What do you notice first? What feeling does it give you? Your first impression is a clue: the artist planned it."
+   },
+   {
+    "title": "Composition and lines",
+    "text": "Find the big shapes: triangles, diagonals, verticals. Diagonals feel like movement; horizontals feel calm. Where is the centre, and what did the artist put there?"
+   },
+   {
+    "title": "Follow the eyes",
+    "text": "Where are the people looking: at each other, at something, at you? Painters use gazes and pointing hands like arrows to steer your eye around the picture."
+   },
+   {
+    "title": "Light",
+    "text": "Where does the light come from, and what does it fall on? The brightest spot is usually the most important part. Shadows can hide, soften or add drama."
+   },
+   {
+    "title": "Colour",
+    "text": "Which colour repeats? A strong colour (often red or blue) can tie the picture together or mark the main figure. Warm colours come forward; cool ones recede."
+   },
+   {
+    "title": "Symbols and small details",
+    "text": "Look in the corners and the background. Objects often mean something: a skull for death, a lily for purity, a dog for loyalty. Painters hide stories in details."
+   },
+   {
+    "title": "Context",
+    "text": "Who made it, when, and for whom? A church, a family, a market? Knowing the purpose explains a lot. Now look again: you’ll see more than the first time."
+   }
+  ]
+ },
+ "works": {
+  "31035": {
+   "image": "data/notice/31035.jpg",
+   "file": "Weyden madonna 1440.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Saint Luke, believed to have painted the first portrait of the Virgin, kneels to draw her while she nurses the baby Jesus. Rogier van der Weyden painted it in Brussels around 1435–40."
+    },
+    {
+     "title": "Two worlds",
+     "r": [
+      0.24,
+      0.14,
+      0.56,
+      0.3
+     ],
+     "text": "The room in front is sacred and enclosed. Through the columns opens an everyday world: a city, a river, boats. The picture joins the holy and the ordinary."
+    },
+    {
+     "title": "The two figures with their backs to us",
+     "r": [
+      0.4,
+      0.36,
+      0.22,
+      0.2
+     ],
+     "text": "Right in the centre, a small couple leans on the parapet and looks away, into the distance. They are our stand-ins: they turn us around and lead our eye out of the room. Some scholars think they are Mary’s parents, Joachim and Anna; that’s an interpretation, not a certainty."
+    },
+    {
+     "title": "Follow their gaze",
+     "r": [
+      0.38,
+      0.2,
+      0.26,
+      0.2
+     ],
+     "text": "Their gaze runs down the river to the horizon, the vanishing point of the picture. The whole composition funnels you there, a trick borrowed from Jan van Eyck’s Madonna of Chancellor Rolin, which has the same couple at the same parapet."
+    },
+    {
+     "title": "The artist at work",
+     "r": [
+      0.56,
+      0.38,
+      0.22,
+      0.2
+     ],
+     "text": "Luke draws with a silverpoint on paper, exactly how painters made studies in Rogier’s day. Luke was the patron saint of painters, and many think Rogier gave him his own face."
+    },
+    {
+     "title": "Queen and mother",
+     "r": [
+      0.06,
+      0.36,
+      0.36,
+      0.38
+     ],
+     "text": "Mary sits low, on the step, beneath a rich canopy of honour: a queen, yet humble. Nursing the child makes her tender and human, the ‘Virgin of the Milk’."
+    },
+    {
+     "title": "Luke’s study",
+     "r": [
+      0.83,
+      0.44,
+      0.17,
+      0.24
+     ],
+     "text": "Through the doorway at right is Luke’s study: an open book on the desk and, half hidden in the shadow below, an ox, the symbol of Saint Luke the Evangelist."
+    },
+    {
+     "title": "Why it was made",
+     "text": "It was probably painted for the painters’ guild in Brussels, a portrait of their patron at work. Painters copied it for centuries; versions survive in Munich, St Petersburg and Bruges."
+    }
+   ]
+  },
+  "31782": {
+   "image": "data/notice/31782.jpg",
+   "file": "John Singer Sargent 001.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The four daughters of Edward and Mary Boit in their Paris apartment, painted by Sargent in 1882. Notice how strange it is for a family portrait: nobody poses together."
+    },
+    {
+     "title": "A square, an empty centre",
+     "r": [
+      0.3,
+      0.3,
+      0.4,
+      0.4
+     ],
+     "text": "The canvas is square, and its centre is a dark, empty hallway. Sargent pushes the girls to the edges and into the shadows, like a snapshot of a quiet moment."
+    },
+    {
+     "title": "Youngest, in the light",
+     "r": [
+      0.56,
+      0.64,
+      0.22,
+      0.3
+     ],
+     "text": "Julia, about four, sits on the rug with her doll, full in the light and looking straight at us."
+    },
+    {
+     "title": "Mary Louisa, standing apart",
+     "r": [
+      0.04,
+      0.34,
+      0.22,
+      0.48
+     ],
+     "text": "Mary Louisa, about eight, stands alone against the wall, hands behind her back, also meeting our gaze."
+    },
+    {
+     "title": "The two eldest, half lost",
+     "r": [
+      0.32,
+      0.28,
+      0.3,
+      0.36
+     ],
+     "text": "Jane, twelve, and Florence, fourteen, stand deep in the shadow; Florence turns away and leans on a vase. As the girls get older, they recede. Many read it as a picture about leaving childhood behind; that’s an interpretation."
+    },
+    {
+     "title": "The giant vases",
+     "r": [
+      0.24,
+      0.18,
+      0.18,
+      0.56
+     ],
+     "text": "The towering Japanese vases dwarf the girls. They travelled with the family across the Atlantic and are now in the MFA too, displayed near the painting."
+    },
+    {
+     "title": "Little sparks of light",
+     "r": [
+      0.62,
+      0.05,
+      0.14,
+      0.22
+     ],
+     "text": "A mirror glints in the dark at the back, and a red screen flashes at the right. Sargent learned from Velázquez’s Las Meninas, another painting of children in a deep, shadowy room."
+    }
+   ]
+  },
+  "30998": {
+   "image": "data/notice/30998.jpg",
+   "file": "J S Copley - Watson and the Shark (Boston).jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Havana harbour, 1749: a shark attacks 14-year-old Brook Watson while his shipmates try to save him. Copley painted the true story in 1778, frozen at its most dramatic second."
+    },
+    {
+     "title": "A triangle of people",
+     "r": [
+      0.24,
+      0.0,
+      0.56,
+      0.64
+     ],
+     "text": "The rescuers form a pyramid, with the harpooner at its peak. This classic, stable shape holds the chaos together."
+    },
+    {
+     "title": "The harpoon",
+     "r": [
+      0.58,
+      0.0,
+      0.2,
+      0.52
+     ],
+     "text": "The harpooner is about to strike. His weapon’s diagonal points down at the shark’s open jaws, connecting attacker and defender."
+    },
+    {
+     "title": "The shark",
+     "r": [
+      0.54,
+      0.64,
+      0.26,
+      0.32
+     ],
+     "text": "Copley had probably never seen a shark: notice its odd lips and the nostrils. It still reads as pure menace."
+    },
+    {
+     "title": "Watson in the water",
+     "r": [
+      0.03,
+      0.62,
+      0.46,
+      0.36
+     ],
+     "text": "Watson floats on his back, pale, hair streaming, his hand reaching for help. He lost his right leg below the knee, though he survived and later became Lord Mayor of London."
+    },
+    {
+     "title": "The sailor with the rope",
+     "r": [
+      0.45,
+      0.12,
+      0.18,
+      0.3
+     ],
+     "text": "A Black sailor at the centre holds the rope that will reach Watson. Rare for 1778, a Black man is a key, heroic figure in a history painting, though we don’t know who he was."
+    },
+    {
+     "title": "The real harbour",
+     "r": [
+      0.0,
+      0.08,
+      0.36,
+      0.28
+     ],
+     "text": "Behind them is Havana, with its Morro Castle. Copley built the view from prints and maps: he had never been to Cuba."
+    }
+   ]
+  },
+  "33556": {
+   "image": "data/notice/33556.jpg",
+   "file": "Claude Monet-Madame Monet en costume japonais.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Camille Monet, the painter’s wife, poses in a theatrical red kimono among Japanese fans. Monet painted it in 1876, at the height of Paris’s craze for all things Japanese."
+    },
+    {
+     "title": "The blond wig",
+     "r": [
+      0.26,
+      0.11,
+      0.24,
+      0.15
+     ],
+     "text": "Camille had dark hair. The blond wig makes clear she’s a Parisienne playing dress-up, not a Japanese woman."
+    },
+    {
+     "title": "The fan she holds",
+     "r": [
+      0.48,
+      0.05,
+      0.22,
+      0.2
+     ],
+     "text": "Her fan is in the French national colours, blue, white and red, a playful French touch in the middle of all the Japonisme."
+    },
+    {
+     "title": "The samurai on the robe",
+     "r": [
+      0.34,
+      0.47,
+      0.32,
+      0.22
+     ],
+     "text": "An embroidered warrior seems to burst out of the fabric, drawing his sword, almost a second figure in the painting. MFA research with colleagues in Japan linked the robe’s design to a Japanese story about samurai."
+    },
+    {
+     "title": "The fans on the wall",
+     "r": [
+      0.64,
+      0.14,
+      0.34,
+      0.28
+     ],
+     "text": "Look at the fans: some show faces of Japanese women, as if watching Camille. The wall behind turns into a pattern, flattening the space like a Japanese print."
+    },
+    {
+     "title": "The train of the kimono",
+     "r": [
+      0.0,
+      0.7,
+      0.96,
+      0.28
+     ],
+     "text": "The heavy, padded hem sweeps across the floor in a long curve: Monet paints the embroidery with thick, quick strokes you can almost touch."
+    },
+    {
+     "title": "Then and now",
+     "text": "It was a success at the 1876 Impressionist exhibition; Monet later called it a potboiler. Today it also prompts questions about cultural appropriation, debated at the MFA in 2015."
+    }
+   ]
+  },
+  "31102": {
+   "image": "data/notice/31102.jpg",
+   "file": "Slave-ship.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A blazing sunset over a stormy sea. Only slowly do you see what is happening in the water. Turner exhibited it in 1840 with the title: Slavers Throwing Overboard the Dead and Dying, Typhoon Coming On."
+    },
+    {
+     "title": "The ship",
+     "r": [
+      0.18,
+      0.34,
+      0.26,
+      0.28
+     ],
+     "text": "On the left, the ship sails on into the storm, leaving behind what its crew has thrown overboard."
+    },
+    {
+     "title": "The sun",
+     "r": [
+      0.44,
+      0.38,
+      0.26,
+      0.28
+     ],
+     "text": "The sun burns at the centre like a wound, its red reflected in the water. Beauty and horror are painted with the same brush."
+    },
+    {
+     "title": "In the water",
+     "r": [
+      0.66,
+      0.74,
+      0.32,
+      0.24
+     ],
+     "text": "At lower right, a shackled leg rises from the waves, circled by fish and gulls. Turner was thinking of the Zong massacre of 1781, when a crew threw enslaved Africans overboard to claim insurance."
+    },
+    {
+     "title": "Chains and hands",
+     "r": [
+      0.3,
+      0.8,
+      0.22,
+      0.2
+     ],
+     "text": "More chains and reaching hands float in the foreground, nearly dissolved into paint. The longer you look, the more you find."
+    },
+    {
+     "title": "Why 1840",
+     "text": "Britain had abolished slavery in its colonies, but the trade went on elsewhere. Turner showed this in the year of the first World Anti-Slavery Convention in London."
+    }
+   ]
+  },
+  "32558": {
+   "image": "data/notice/32558.jpg",
+   "file": "Gauguin - Where Do We Come From? What Are We? Where Are We Going? (1897-98).jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Gauguin’s largest painting, made in Tahiti in 1897–98, which he called his testament. It is read from right to left, like a story of a human life."
+    },
+    {
+     "title": "Where do we come from?",
+     "r": [
+      0.8,
+      0.74,
+      0.14,
+      0.26
+     ],
+     "text": "At the far right lies a sleeping baby, watched by three women: the beginning of life."
+    },
+    {
+     "title": "What are we?",
+     "r": [
+      0.5,
+      0.0,
+      0.12,
+      0.98
+     ],
+     "text": "In the centre, a young figure reaches up to pick fruit: daily life, desire, perhaps the fruit of knowledge from the Garden of Eden."
+    },
+    {
+     "title": "The idol",
+     "r": [
+      0.22,
+      0.04,
+      0.12,
+      0.48
+     ],
+     "text": "Behind, a blue idol raises its arms, seeming to point to a world beyond. Gauguin described it as pointing to the Beyond."
+    },
+    {
+     "title": "Where are we going?",
+     "r": [
+      0.0,
+      0.44,
+      0.12,
+      0.54
+     ],
+     "text": "At the far left, an old woman crouches, hands to her face, near the end of life. At her feet, a strange white bird, which Gauguin said stood for the futility of words."
+    },
+    {
+     "title": "The title in the corner",
+     "r": [
+      0.0,
+      0.0,
+      0.14,
+      0.2
+     ],
+     "text": "Gauguin painted the title himself on a yellow patch in the upper left corner, as if on a worn fresco on a gold ground."
+    }
+   ]
+  },
+  "31601": {
+   "image": "data/notice/31601.jpg",
+   "file": "Jean-François Millet - The Sower - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A peasant strides down a hill at dusk, scattering seed. Millet painted it in 1850; at the Paris Salon some saw it as a political statement about the rural poor."
+    },
+    {
+     "title": "A giant figure",
+     "r": [
+      0.08,
+      0.06,
+      0.64,
+      0.92
+     ],
+     "text": "The sower fills almost the whole canvas, tilted on a strong diagonal, so he seems to stride toward us. Millet gives an ordinary labourer the size and dignity of a hero."
+    },
+    {
+     "title": "The hand",
+     "r": [
+      0.02,
+      0.32,
+      0.22,
+      0.16
+     ],
+     "text": "His open hand flings the seed in a wide arc: one gesture, repeated thousands of times a day."
+    },
+    {
+     "title": "No face",
+     "r": [
+      0.36,
+      0.07,
+      0.24,
+      0.17
+     ],
+     "text": "His face is lost in the shadow of his hat. He isn’t a portrait of one man but every man who works the land."
+    },
+    {
+     "title": "The crows",
+     "r": [
+      0.0,
+      0.05,
+      0.3,
+      0.26
+     ],
+     "text": "Black birds swoop in the sky at left, ready to eat the seed: the hard truth that not everything sown will grow."
+    },
+    {
+     "title": "Far away",
+     "r": [
+      0.66,
+      0.3,
+      0.32,
+      0.14
+     ],
+     "text": "On the bright horizon, a farmer works the field with oxen. The sower walks down from the light into the dark earth."
+    },
+    {
+     "title": "Its long life",
+     "text": "Van Gogh copied this painting again and again, and the publisher Simon & Schuster made the sower its logo."
+    }
+   ]
+  },
+  "32542": {
+   "image": "data/notice/32542.jpg",
+   "file": "Vincent van Gogh - Portret van de postbode Joseph Roulin.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Joseph Roulin, Van Gogh’s friend in Arles, painted in 1888 in his postal uniform. Look at how much character fits into one seated figure."
+    },
+    {
+     "title": "The cap",
+     "r": [
+      0.29,
+      0.03,
+      0.27,
+      0.11
+     ],
+     "text": "POSTES, written in gold across his cap. Roulin worked at the post office at the Arles railway station; he was proud of the job and the uniform."
+    },
+    {
+     "title": "The beard",
+     "r": [
+      0.29,
+      0.17,
+      0.32,
+      0.2
+     ],
+     "text": "His great forked beard is painted in curling strokes of many colours. Van Gogh compared him to Socrates."
+    },
+    {
+     "title": "Blue on blue",
+     "r": [
+      0.3,
+      0.4,
+      0.34,
+      0.32
+     ],
+     "text": "Dark blue uniform, pale blue background, gold buttons: Van Gogh uses a few strong colours instead of shadows and depth, an idea learned from Japanese prints."
+    },
+    {
+     "title": "The hands",
+     "r": [
+      0.1,
+      0.56,
+      0.86,
+      0.32
+     ],
+     "text": "Big, worker’s hands rest on the chair and table, slightly awkward, completely real. They make the official uniform human."
+    },
+    {
+     "title": "A friendship",
+     "text": "Van Gogh painted every member of the Roulin family. When he was hospitalised after cutting his ear in December 1888, Roulin looked after him."
+    }
+   ]
+  }
+ }
+}

@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v22';
+const VERSION = 'v23';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -14,6 +14,9 @@ const SHELL = [
   'css/shell.css',
   'js/shell.js',
   'js/images.js',
+  'js/notice.js',
+  'css/notice.css',
+  'data/notice.json',
   'vendor/maplibre-gl.js',
   'vendor/maplibre-gl.css',
   'data/museums.json',

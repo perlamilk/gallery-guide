@@ -3,6 +3,7 @@
 // Explore · Tours · Saved · Visits. Each tab keeps its own stack of views (like a navigation stack).
 
 import { BLANK, imgHTML, hydrateImages, blobURL } from './images.js';
+import { noticeData, openNotice } from './notice.js';
 import { loadData, shortArtist, FILTERS } from './data.js';
 import { MuseumMap } from './map3d.js';
 import { FACILITIES, facilitySVG } from './icons.js';
@@ -68,6 +69,7 @@ async function boot() {
     Favorites.list().catch(() => []), Visits.list().catch(() => []), Visits.active().catch(() => null),
   ]);
   state.tours = (await fetch('data/tours.json').then(r => r.json()).catch(() => ({}))).tours ?? [];
+  state.noticeIds = new Set(Object.keys((await noticeData())?.works ?? {}));
   state.here = state.visit?.rooms.at(-1)?.id ?? null;
 
   buildFloorPicker();
@@ -95,6 +97,7 @@ function openFromLink() {
   if (kind === 'art' && id) openArt(id);
   else if (kind === 'visits' || kind === 'tours' || kind === 'saved') { setTab(kind); setSheet('half'); }
   else if (kind === 'entry' && id) { setTab('visits'); push({ type: 'entry', id }, { sheet: 'full' }); }
+  else if (kind === 'notice' && id) { openArt(id); openNotice({ id, title: state.museum.artworks.find(x => x.id === id)?.title ?? '' }); }
   if (kind) history.replaceState(null, '', location.pathname);
 }
 
@@ -502,6 +505,10 @@ function artBody(id) {
       <button class="btn" type="button" data-action="directions" data-id="${escape(info.room.id)}">${I.walk}Directions</button>
       <button class="btn btn--gray" type="button" data-room="${escape(a.gallery)}">${I.pin}Gallery ${escape(a.gallery)}</button>
     </div>` : ''}
+    ${state.noticeIds?.has(a.id) ? `<button class="notice-cta" type="button" data-action="notice" data-id="${a.id}">
+      <span class="notice-cta__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></svg></span>
+      <span><strong>What to Notice</strong><span>A guided look, one detail at a time</span></span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>` : ''}
     ${aboutHTML(a.description)}
     ${a.descriptionKind ? `<p class="credit">${escape(a.descriptionKind)}</p>` : ''}
     ${curiositiesHTML(state.museum.curiosities?.for(a) ?? [])}
@@ -1102,6 +1109,7 @@ els.sheet.addEventListener('click', e => {
     t.setAttribute('aria-expanded', String(open));
   }
   else if (a === 'check-update') checkForUpdate(t);
+  else if (a === 'notice') { const w = state.museum.artworks.find(x => x.id === t.dataset.id); openNotice({ id: t.dataset.id, title: w?.title ?? '' }); }
   else if (a === 'favorite') toggleFavorite(t.dataset.id);
   else if (a === 'route-favorites') routeFavorites();
   else if (a === 'directions') directionsTo([t.dataset.id]);

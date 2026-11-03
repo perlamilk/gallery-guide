@@ -1,0 +1,56 @@
+/* What to Notice: full-screen guided look (js/notice.js). Always gallery-dark, so the painting glows
+   and the text never sits on top of it (HIG image views: take care when overlaying text on images). */
+
+.notice-open, .notice-open body { overflow: hidden; }
+.notice {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; grid-template-rows: auto 1fr auto;
+  background: #0b0b0c; color: #f2f2f2;
+  padding-top: env(safe-area-inset-top, 0px);
+  animation: notice-in .22s var(--ease, ease) both;
+  -webkit-user-select: none; user-select: none;
+}
+.notice--out { animation: notice-out .2s ease both; }
+@keyframes notice-in { from { opacity: 0; transform: scale(.98); } }
+@keyframes notice-out { to { opacity: 0; } }
+
+.notice__bar { display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; gap: 8px; padding: 6px 12px; }
+.notice__close { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, .12); color: #fff; }
+.notice__close svg { width: 20px; height: 20px; stroke-width: 2.2; }
+.notice__head { text-align: center; min-width: 0; }
+.notice__eyebrow { margin: 0; font-size: 0.71rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .62); }
+.notice__title { margin: 2px 0 0; font: 600 0.94rem/1.25 var(--serif, Georgia, serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.notice__count { font-size: 0.76rem; color: rgba(255, 255, 255, .62); text-align: right; font-variant-numeric: tabular-nums; }
+
+.notice__stage { position: relative; overflow: hidden; touch-action: pan-y; }
+.notice__frame { position: absolute; left: 0; top: 0; transform-origin: 0 0; will-change: transform; }
+.notice__img { width: 100%; height: 100%; display: block; box-shadow: 0 20px 60px rgba(0, 0, 0, .6); }
+.notice__stage--text { display: grid; place-items: center; }
+.notice__big { font: 600 clamp(6rem, 34vw, 12rem)/1 var(--serif, Georgia, serif); color: #7c95ff; opacity: .9; }
+
+.notice__panel { padding: 14px 20px calc(env(safe-area-inset-bottom, 0px) + 14px); background: linear-gradient(transparent, rgba(0, 0, 0, .35) 24px); }
+.notice__dots { display: flex; justify-content: center; gap: 2px; margin-bottom: 10px; }
+.notice__dots button { width: 22px; height: 22px; display: grid; place-items: center; }
+.notice__dots button::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: rgba(255, 255, 255, .32); transition: background .2s, transform .2s; }
+.notice__dots button[aria-selected="true"]::before { background: #fff; transform: scale(1.2); }
+.notice__copy { max-width: 60ch; margin: 0 auto; min-height: 8.5em; }
+.notice__step { margin: 0; font: 600 1.35rem/1.2 var(--serif, Georgia, serif); }
+.notice__text { margin: 8px 0 0; font-size: 1rem; line-height: 1.5; color: rgba(255, 255, 255, .86); text-wrap: pretty; }
+.notice__nav { display: flex; gap: 10px; max-width: 60ch; margin: 14px auto 0; }
+.notice__btn { flex: 1; min-height: 48px; border-radius: 14px; background: #fff; color: #0b0b0c; font-weight: 600; font-size: 1rem; }
+.notice__btn--ghost { background: rgba(255, 255, 255, .12); color: #fff; }
+.notice__btn:disabled { opacity: .35; }
+.notice__btn:active, .notice__close:active { opacity: .7; }
+.notice__credit { margin: 10px auto 0; max-width: 60ch; text-align: center; font-size: 0.71rem; color: rgba(255, 255, 255, .5); }
+.notice :focus-visible { outline: 3px solid #7c95ff; outline-offset: 2px; }
+
+/* the entry button on artwork pages */
+.notice-cta { display: flex; align-items: center; gap: 12px; width: 100%; margin-top: 14px; padding: 12px 14px; border-radius: 16px; background: #0b0b0c; color: #fff; text-align: left; text-decoration: none; }
+.notice-cta__icon { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: rgba(255, 255, 255, .12); }
+.notice-cta__icon svg { width: 22px; height: 22px; }
+.notice-cta strong { display: block; font: 600 1.06rem/1.2 var(--serif, Georgia, serif); }
+.notice-cta span span { display: block; margin-top: 2px; font-size: 0.82rem; color: rgba(255, 255, 255, .7); }
+.notice-cta > svg { width: 18px; height: 18px; margin-left: auto; color: rgba(255, 255, 255, .6); }
+.notice-cta:active { opacity: .75; }
+@media (prefers-color-scheme: dark) { .notice-cta { background: #f2f2f2; color: #0b0b0c; } .notice-cta__icon { background: rgba(0, 0, 0, .08); } .notice-cta span span, .notice-cta > svg { color: rgba(0, 0, 0, .6); } }
+@media (prefers-reduced-motion: reduce) { .notice, .notice--out { animation: none; } }
