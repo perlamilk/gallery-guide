@@ -1858,6 +1858,1362 @@
      "text": "Claude Monet signed at lower right."
     }
    ]
+  },
+  "31042": {
+   "image": "data/notice/31042.jpg",
+   "file": "Winslow Homer - The Fog Warning - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A fisherman rows his small dory back to his ship off the coast of Maine, with a heavy catch. Winslow Homer painted it in 1885."
+    },
+    {
+     "title": "The look over his shoulder",
+     "text": "He turns to look back at something: that glance is the story.",
+     "r": [
+      0.34,
+      0.13,
+      0.18,
+      0.18
+     ]
+    },
+    {
+     "title": "The fog bank",
+     "text": "What he sees: grey fog rolling in from the horizon. If it reaches him before he reaches his ship, he’s lost.",
+     "r": [
+      0.45,
+      0.0,
+      0.55,
+      0.32
+     ]
+    },
+    {
+     "title": "The schooner",
+     "text": "Far off, tiny on the horizon, the schooner he must row back to.",
+     "r": [
+      0.74,
+      0.24,
+      0.12,
+      0.1
+     ]
+    },
+    {
+     "title": "The catch",
+     "text": "Big halibut lie in the boat: a good day’s work, and heavy weight in a rising sea.",
+     "r": [
+      0.42,
+      0.56,
+      0.34,
+      0.24
+     ]
+    },
+    {
+     "title": "The waves",
+     "text": "The dory rides high on a rolling wave. Homer lived by the sea at Prouts Neck, Maine, and painted it from long watching.",
+     "r": [
+      0.0,
+      0.6,
+      1.0,
+      0.4
+     ]
+    }
+   ]
+  },
+  "31103": {
+   "image": "data/notice/31103.jpg",
+   "file": "Winslow Homer - The Lookout – „All's Well“.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Night on a ship. An old sailor on watch calls out ‘All’s well’ while the bell rings the hour. Homer painted it in 1896."
+    },
+    {
+     "title": "The face",
+     "text": "Weathered, bearded, mouth open mid-call, lit by a light we can’t see.",
+     "r": [
+      0.06,
+      0.54,
+      0.46,
+      0.38
+     ]
+    },
+    {
+     "title": "The bell",
+     "text": "The ship’s bell, glinting in the dark, rings out the hours of the watch.",
+     "r": [
+      0.34,
+      0.1,
+      0.42,
+      0.48
+     ]
+    },
+    {
+     "title": "Rope and rigging",
+     "text": "Ropes cut across the left side: we are right on deck with him.",
+     "r": [
+      0.06,
+      0.0,
+      0.3,
+      0.6
+     ]
+    },
+    {
+     "title": "The night sky",
+     "text": "A dark blue sky with a few faint stars: a long, cold watch.",
+     "r": [
+      0.55,
+      0.0,
+      0.45,
+      0.35
+     ]
+    }
+   ]
+  },
+  "30881": {
+   "image": "data/notice/30881.jpg",
+   "file": "Samuel Adams by John Singleton Copley.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Samuel Adams, Boston Patriot, painted by Copley around 1772. It was commissioned by John Hancock."
+    },
+    {
+     "title": "The pointing finger",
+     "text": "He points firmly at a document on the table: the Massachusetts charter, which guaranteed the colony’s rights.",
+     "r": [
+      0.3,
+      0.6,
+      0.3,
+      0.2
+     ]
+    },
+    {
+     "title": "The papers",
+     "text": "He holds a petition, and the charter lies with its seal. Copley recalls the moment after the Boston Massacre of 1770, when Adams demanded the governor remove British troops.",
+     "r": [
+      0.0,
+      0.7,
+      0.6,
+      0.3
+     ]
+    },
+    {
+     "title": "His face",
+     "text": "Stern and direct. Copley shows a man of conviction, not of fashion.",
+     "r": [
+      0.34,
+      0.1,
+      0.28,
+      0.2
+     ]
+    },
+    {
+     "title": "A plain suit",
+     "text": "No lace, no gold: a simple red suit against a dark background, the image of a man of the people.",
+     "r": [
+      0.1,
+      0.3,
+      0.6,
+      0.5
+     ]
+    }
+   ]
+  },
+  "30882": {
+   "image": "data/notice/30882.jpg",
+   "file": "JohnHancockLarge.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "John Hancock, Boston’s richest merchant, painted by Copley in 1765, about ten years before he signed the Declaration of Independence."
+    },
+    {
+     "title": "The account book",
+     "text": "Hancock rests his hand on a huge ledger: he wanted to be seen as a man of business.",
+     "r": [
+      0.5,
+      0.36,
+      0.46,
+      0.28
+     ]
+    },
+    {
+     "title": "The quill",
+     "text": "Pen in hand, as if we interrupted him at work.",
+     "r": [
+      0.38,
+      0.55,
+      0.26,
+      0.12
+     ]
+    },
+    {
+     "title": "The coat",
+     "text": "A fine blue coat with gold braid: wealth, shown with taste.",
+     "r": [
+      0.08,
+      0.26,
+      0.54,
+      0.5
+     ]
+    },
+    {
+     "title": "His face",
+     "text": "Young (he was 28), calm, looking straight at us.",
+     "r": [
+      0.26,
+      0.1,
+      0.26,
+      0.2
+     ]
+    }
+   ]
+  },
+  "31064": {
+   "image": "data/notice/31064.jpg",
+   "file": "JosephWarrenByCopley.jpeg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Joseph Warren, Boston doctor and Patriot leader, painted by Copley around 1765."
+    },
+    {
+     "title": "His face",
+     "text": "Young and open. Ten years later Warren was killed at the Battle of Bunker Hill, in 1775.",
+     "r": [
+      0.28,
+      0.14,
+      0.28,
+      0.2
+     ]
+    },
+    {
+     "title": "The papers",
+     "text": "He rests his hand on papers on the table, the sign of an educated professional.",
+     "r": [
+      0.5,
+      0.55,
+      0.4,
+      0.15
+     ]
+    },
+    {
+     "title": "The red curtain",
+     "text": "A rich red curtain at right, a standard way to give a sitter grandeur.",
+     "r": [
+      0.8,
+      0.0,
+      0.2,
+      0.5
+     ]
+    },
+    {
+     "title": "The pose",
+     "text": "Seated, relaxed, one arm on the table: Copley’s portraits make people look natural, not stiff.",
+     "r": [
+      0.0,
+      0.3,
+      0.7,
+      0.6
+     ]
+    }
+   ]
+  },
+  "31228": {
+   "image": "data/notice/31228.jpg",
+   "file": "John Singleton Copley - Mr. and Mrs. Ralph Izard (Alice Delancey) - 03.1033 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Ralph and Alice Izard, a South Carolina couple on their Grand Tour, painted by Copley in Rome in 1775, his first big portrait after leaving America."
+    },
+    {
+     "title": "The Colosseum",
+     "text": "Through the window: the Colosseum. It tells you exactly where they are.",
+     "r": [
+      0.28,
+      0.4,
+      0.16,
+      0.14
+     ]
+    },
+    {
+     "title": "The statue",
+     "text": "A classical sculpture group behind them, the kind of art Grand Tourists came to Rome to see.",
+     "r": [
+      0.43,
+      0.2,
+      0.18,
+      0.32
+     ]
+    },
+    {
+     "title": "The drawing",
+     "text": "They discuss a drawing on the table, perhaps of the sculpture: the couple as connoisseurs.",
+     "r": [
+      0.42,
+      0.45,
+      0.22,
+      0.2
+     ]
+    },
+    {
+     "title": "The Greek vase",
+     "text": "An ancient Greek vase at upper left, another sign of taste and learning.",
+     "r": [
+      0.0,
+      0.0,
+      0.12,
+      0.28
+     ]
+    },
+    {
+     "title": "The gilded table",
+     "text": "A heavy carved and gilded table between them: luxury, and a divider between husband and wife.",
+     "r": [
+      0.34,
+      0.6,
+      0.38,
+      0.3
+     ]
+    }
+   ]
+  },
+  "31294": {
+   "image": "data/notice/31294.jpg",
+   "file": "John Singleton Copley - Mrs. Richard Skinner (Dorothy Wendell) - 06.2428 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Dorothy Wendell Skinner of Boston, painted by Copley in 1772."
+    },
+    {
+     "title": "The reflection",
+     "text": "Look at the polished table: her arm and sleeve are reflected in the mahogany. Copley was famous for these mirror-like surfaces.",
+     "r": [
+      0.0,
+      0.68,
+      0.62,
+      0.3
+     ]
+    },
+    {
+     "title": "Hand to chin",
+     "text": "A thoughtful pose, finger at her cheek, as if lost in thought.",
+     "r": [
+      0.24,
+      0.34,
+      0.22,
+      0.22
+     ]
+    },
+    {
+     "title": "The silk dress",
+     "text": "Shimmering silk, lace and a pink bow: Copley paints each fabric so you can almost feel it.",
+     "r": [
+      0.24,
+      0.5,
+      0.62,
+      0.3
+     ]
+    },
+    {
+     "title": "Her cap",
+     "text": "A delicate lace cap on her piled-up hair, the fashion of the 1770s.",
+     "r": [
+      0.3,
+      0.06,
+      0.3,
+      0.18
+     ]
+    }
+   ]
+  },
+  "32171": {
+   "image": "data/notice/32171.jpg",
+   "file": "John Singleton Copley - Venus and Cupid - 25.94 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Venus and her son Cupid, painted by Copley around 1779, after he moved to London and turned to mythology."
+    },
+    {
+     "title": "Two faces, one embrace",
+     "text": "Cupid hugs his mother, cheek to cheek. Both look straight out at us.",
+     "r": [
+      0.18,
+      0.22,
+      0.6,
+      0.34
+     ]
+    },
+    {
+     "title": "Cupid’s look",
+     "text": "A mischievous little smile: the god of love knows what he’s doing.",
+     "r": [
+      0.46,
+      0.36,
+      0.3,
+      0.26
+     ]
+    },
+    {
+     "title": "Loose brushwork",
+     "text": "Look at the background: quick, sketchy strokes of blue and white, a free side of Copley rarely seen in his portraits.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.3
+     ]
+    }
+   ]
+  },
+  "32172": {
+   "image": "data/notice/32172.jpg",
+   "file": "Jesus ascending to heaven.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Christ rising to heaven while his apostles watch, painted by Copley in Rome in 1775, one of his first grand religious paintings."
+    },
+    {
+     "title": "Christ ascending",
+     "text": "Arms open, robes billowing, Christ floats up into the light.",
+     "r": [
+      0.36,
+      0.14,
+      0.3,
+      0.34
+     ]
+    },
+    {
+     "title": "The apostles",
+     "text": "Below, the apostles react: some kneel, some shield their eyes, some point. Every gesture is different.",
+     "r": [
+      0.04,
+      0.6,
+      0.58,
+      0.36
+     ]
+    },
+    {
+     "title": "Two angels",
+     "text": "Two angels in white stand at right, telling the apostles Christ will return.",
+     "r": [
+      0.66,
+      0.62,
+      0.24,
+      0.32
+     ]
+    },
+    {
+     "title": "Clouds and light",
+     "text": "Golden light breaks through dark clouds: heaven opening.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.5
+     ]
+    }
+   ]
+  },
+  "32168": {
+   "image": "data/notice/32168.jpg",
+   "file": "John Singleton Copley - Mary and Elizabeth Royall - 25.49 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Mary and Elizabeth Royall, daughters of a wealthy Massachusetts family, painted by Copley around 1758, when he was about 20."
+    },
+    {
+     "title": "The two sisters",
+     "text": "Close together, the older Mary at left, Elizabeth at right.",
+     "r": [
+      0.12,
+      0.16,
+      0.76,
+      0.34
+     ]
+    },
+    {
+     "title": "The dog",
+     "text": "Elizabeth holds a small black dog, a classic symbol of loyalty.",
+     "r": [
+      0.6,
+      0.48,
+      0.16,
+      0.18
+     ]
+    },
+    {
+     "title": "Satin",
+     "text": "Blue and cream satin, painted with brilliant highlights. The young Copley was already a master of fabric.",
+     "r": [
+      0.04,
+      0.36,
+      0.92,
+      0.56
+     ]
+    },
+    {
+     "title": "The curtain",
+     "text": "A red curtain sweeps behind them, a grand backdrop for two young girls.",
+     "r": [
+      0.0,
+      0.0,
+      0.4,
+      0.6
+     ]
+    }
+   ]
+  },
+  "31586": {
+   "image": "data/notice/31586.jpg",
+   "file": "John Singleton Copley - John Quincy Adams - 17.1077 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "John Quincy Adams at 29, painted by Copley in London in 1796. He would become the sixth president of the United States."
+    },
+    {
+     "title": "His face",
+     "text": "Young, confident, the eyes catching the light.",
+     "r": [
+      0.28,
+      0.18,
+      0.36,
+      0.3
+     ]
+    },
+    {
+     "title": "The oval",
+     "text": "The portrait is painted inside an oval: a traditional format for a bust portrait.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+     ]
+    },
+    {
+     "title": "Stormy sky",
+     "text": "A dramatic sky behind his shoulder, more romantic than the plain backgrounds of Copley’s Boston years.",
+     "r": [
+      0.6,
+      0.5,
+      0.4,
+      0.3
+     ]
+    }
+   ]
+  },
+  "32060": {
+   "image": "data/notice/32060.jpg",
+   "file": "John Singleton Copley - Nicholas Boylston - 23.504 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Nicholas Boylston, a rich Boston merchant, painted by Copley around 1769."
+    },
+    {
+     "title": "The cap",
+     "text": "Instead of a wig, a soft velvet cap: fashionable informality for a gentleman at home.",
+     "r": [
+      0.36,
+      0.1,
+      0.24,
+      0.14
+     ]
+    },
+    {
+     "title": "The silk banyan",
+     "text": "He wears a banyan, a loose silk robe imported from the East: a sign of wealth and worldly taste.",
+     "r": [
+      0.1,
+      0.34,
+      0.72,
+      0.62
+     ]
+    },
+    {
+     "title": "The hand on the books",
+     "text": "His hand rests on books, showing him as a man of learning as well as trade.",
+     "r": [
+      0.62,
+      0.48,
+      0.18,
+      0.16
+     ]
+    },
+    {
+     "title": "His face",
+     "text": "A shrewd, relaxed expression, painted without flattery.",
+     "r": [
+      0.38,
+      0.14,
+      0.22,
+      0.2
+     ]
+    }
+   ]
+  },
+  "30879": {
+   "image": "data/notice/30879.jpg",
+   "file": "WashingtonAtDorchesterHeightsByStuart.jpeg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "George Washington beside his horse, painted by Gilbert Stuart in 1806 for Boston’s Faneuil Hall."
+    },
+    {
+     "title": "Washington",
+     "text": "Calm and upright, Washington stands like a statue in the middle of the action.",
+     "r": [
+      0.2,
+      0.1,
+      0.44,
+      0.86
+     ]
+    },
+    {
+     "title": "The white horse",
+     "text": "His horse fills the right side, its head turned toward him.",
+     "r": [
+      0.56,
+      0.12,
+      0.44,
+      0.78
+     ]
+    },
+    {
+     "title": "Smoke and sky",
+     "text": "Smoke and dark clouds behind recall the night in March 1776 when Washington fortified Dorchester Heights and forced the British to leave Boston.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.4
+     ]
+    }
+   ]
+  },
+  "31871": {
+   "image": "data/notice/31871.jpg",
+   "file": "Gilbert Stuart - Bishop Jean-Louis Anne Magdelaine Lefebvre de Cheverus - 21.9 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Jean-Louis Lefebvre de Cheverus, the first Catholic bishop of Boston, painted by Gilbert Stuart in 1823."
+    },
+    {
+     "title": "His face",
+     "text": "A gentle smile and a direct gaze: Stuart was famous for capturing personality.",
+     "r": [
+      0.36,
+      0.2,
+      0.32,
+      0.26
+     ]
+    },
+    {
+     "title": "The cross",
+     "text": "A gold pectoral cross on a red cord, the sign of his office.",
+     "r": [
+      0.44,
+      0.58,
+      0.16,
+      0.22
+     ]
+    },
+    {
+     "title": "The hand",
+     "text": "His hand rises in a speaking gesture, as if in conversation.",
+     "r": [
+      0.3,
+      0.66,
+      0.2,
+      0.16
+     ]
+    },
+    {
+     "title": "The book",
+     "text": "A book at lower left: scholar and preacher.",
+     "r": [
+      0.08,
+      0.82,
+      0.3,
+      0.16
+     ]
+    }
+   ]
+  },
+  "32287": {
+   "image": "data/notice/32287.jpg",
+   "file": "Gilbert Stuart - Colonel James Swan - 27.538 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Colonel James Swan, a Boston merchant and financier, painted by Gilbert Stuart in 1795."
+    },
+    {
+     "title": "His face",
+     "text": "Ruddy cheeks and a powdered wig: Stuart builds the face with quick, fresh strokes.",
+     "r": [
+      0.32,
+      0.18,
+      0.42,
+      0.32
+     ]
+    },
+    {
+     "title": "The blue coat",
+     "text": "A deep blue coat with a soft white cravat, the main colour notes.",
+     "r": [
+      0.24,
+      0.5,
+      0.76,
+      0.5
+     ]
+    },
+    {
+     "title": "The red curtain",
+     "text": "Red drapery sweeps behind him, a classic backdrop.",
+     "r": [
+      0.0,
+      0.36,
+      0.4,
+      0.4
+     ]
+    },
+    {
+     "title": "A dramatic life",
+     "text": "Swan later lost a fortune and spent over twenty years in a Paris debtors’ prison."
+    }
+   ]
+  },
+  "32288": {
+   "image": "data/notice/32288.jpg",
+   "file": "Gilbert Stuart - Mrs. James Swan (Hepzibah Clarke) - 27.539 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Hepzibah Clarke Swan, wife of James Swan, painted by Gilbert Stuart in 1808."
+    },
+    {
+     "title": "Her face",
+     "text": "Dark curls, a calm smile, a direct look.",
+     "r": [
+      0.36,
+      0.16,
+      0.3,
+      0.3
+     ]
+    },
+    {
+     "title": "The lace veil",
+     "text": "A sheer lace veil falls from her hair, painted in a few light touches.",
+     "r": [
+      0.36,
+      0.14,
+      0.32,
+      0.4
+     ]
+    },
+    {
+     "title": "Lace and black silk",
+     "text": "White lace against a black dress: Stuart loved this contrast.",
+     "r": [
+      0.28,
+      0.52,
+      0.6,
+      0.26
+     ]
+    }
+   ]
+  },
+  "32340": {
+   "image": "data/notice/32340.jpg",
+   "file": "Gilbert Stuart - George Washington - 29.788 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "George Washington, painted by Gilbert Stuart in 1810. It follows his famous ‘Athenaeum’ portrait, the face on the one-dollar bill."
+    },
+    {
+     "title": "The face",
+     "text": "Stuart painted Washington from life in 1796 and kept painting copies for years. The original unfinished portrait is owned jointly by the MFA and the National Portrait Gallery.",
+     "r": [
+      0.32,
+      0.12,
+      0.42,
+      0.34
+     ]
+    },
+    {
+     "title": "The mouth",
+     "text": "The tight-set mouth is often linked to Washington’s ill-fitting false teeth.",
+     "r": [
+      0.4,
+      0.34,
+      0.24,
+      0.1
+     ]
+    },
+    {
+     "title": "Plain and dark",
+     "text": "No uniform, no background: just the man, in black, against a dark ground.",
+     "r": [
+      0.0,
+      0.45,
+      1.0,
+      0.55
+     ]
+    }
+   ]
+  },
+  "30884": {
+   "image": "data/notice/30884.jpg",
+   "file": "Josiah Quincy Gilbert Stuart.jpeg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Josiah Quincy, mayor of Boston, painted by Gilbert Stuart in 1824."
+    },
+    {
+     "title": "His face",
+     "text": "Energetic, windswept hair, looking straight at us.",
+     "r": [
+      0.26,
+      0.14,
+      0.34,
+      0.3
+     ]
+    },
+    {
+     "title": "The new market",
+     "text": "Behind him rises Quincy Market, the market building he championed for Boston, under construction from 1824.",
+     "r": [
+      0.6,
+      0.38,
+      0.4,
+      0.42
+     ]
+    },
+    {
+     "title": "The plans",
+     "text": "In his hands, the building’s plans.",
+     "r": [
+      0.7,
+      0.8,
+      0.3,
+      0.2
+     ]
+    }
+   ]
+  },
+  "31260": {
+   "image": "data/notice/31260.jpg",
+   "file": "John Singer Sargent - An Artist in His Studio - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "An artist in his cramped hotel room, painted by Sargent around 1904. The painter is his Italian friend Ambrogio Raffele."
+    },
+    {
+     "title": "The painter",
+     "text": "Raffele sits hunched at left, working on a small canvas.",
+     "r": [
+      0.0,
+      0.26,
+      0.42,
+      0.6
+     ]
+    },
+    {
+     "title": "The unmade bed",
+     "text": "Rumpled white sheets fill half the room: the studio is also where he sleeps.",
+     "r": [
+      0.36,
+      0.3,
+      0.64,
+      0.66
+     ]
+    },
+    {
+     "title": "Paintings everywhere",
+     "text": "Landscape studies are propped and pinned around the room.",
+     "r": [
+      0.08,
+      0.0,
+      0.52,
+      0.3
+     ]
+    },
+    {
+     "title": "White on white",
+     "text": "The sheets are a showpiece of whites: cream, blue-grey, gold. Sargent loved painting light on white fabric.",
+     "r": [
+      0.5,
+      0.38,
+      0.5,
+      0.5
+     ]
+    }
+   ]
+  },
+  "31959": {
+   "image": "data/notice/31959.jpg",
+   "file": "John Singer Sargent - The Master and His Pupils - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A painter and his pupils sketching by a mountain stream, painted by Sargent in 1914."
+    },
+    {
+     "title": "The painters",
+     "text": "Small in the middle distance, the master and his students sit with their easels and parasols.",
+     "r": [
+      0.3,
+      0.2,
+      0.32,
+      0.14
+     ]
+    },
+    {
+     "title": "The rocks",
+     "text": "Most of the picture is the stony stream bed, painted with quick, sure strokes.",
+     "r": [
+      0.3,
+      0.4,
+      0.7,
+      0.6
+     ]
+    },
+    {
+     "title": "The forest",
+     "text": "Dark pine trees close the view at the top.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.3
+     ]
+    }
+   ]
+  },
+  "31976": {
+   "image": "data/notice/31976.jpg",
+   "file": "John Singer Sargent - Low Tide at Cancale Harbor - 22.646 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Low tide at Cancale, a fishing port in Brittany, painted by the young Sargent in 1878."
+    },
+    {
+     "title": "Beached boats",
+     "text": "Boats lie tilted on the sand, waiting for the tide.",
+     "r": [
+      0.0,
+      0.0,
+      0.6,
+      0.7
+     ]
+    },
+    {
+     "title": "The far boats",
+     "text": "Out on the flats, more boats and figures, tiny in the haze.",
+     "r": [
+      0.36,
+      0.38,
+      0.64,
+      0.16
+     ]
+    },
+    {
+     "title": "A figure in the sand",
+     "text": "At lower left, a figure lies in the sand.",
+     "r": [
+      0.0,
+      0.74,
+      0.36,
+      0.14
+     ]
+    },
+    {
+     "title": "Light and air",
+     "text": "Pale sky, wet sand, white sails: Sargent at 22, already painting light like the Impressionists.",
+     "r": [
+      0.3,
+      0.0,
+      0.7,
+      0.4
+     ]
+    }
+   ]
+  },
+  "31955": {
+   "image": "data/notice/31955.jpg",
+   "file": "John Singer Sargent - Robert de Cévrieux - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Robert de Cévrieux, a young boy, painted by Sargent in 1879."
+    },
+    {
+     "title": "His face",
+     "text": "Serious, a little shy, under a neat fringe.",
+     "r": [
+      0.4,
+      0.16,
+      0.26,
+      0.18
+     ]
+    },
+    {
+     "title": "The dog",
+     "text": "Tucked under his arm, a small black dog, almost lost in his dark velvet suit.",
+     "r": [
+      0.3,
+      0.28,
+      0.3,
+      0.2
+     ]
+    },
+    {
+     "title": "Red accents",
+     "text": "A big red bow and red stockings: two bright notes in a dark picture.",
+     "r": [
+      0.32,
+      0.26,
+      0.4,
+      0.62
+     ]
+    },
+    {
+     "title": "The background",
+     "text": "Dark and loosely brushed, so the boy stands out.",
+     "r": [
+      0.0,
+      0.0,
+      0.3,
+      0.6
+     ]
+    }
+   ]
+  },
+  "31960": {
+   "image": "data/notice/31960.jpg",
+   "file": "Rehearsal at the Cirque d'Hiver by John Singer Sargent.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "An orchestra rehearsing in the Cirque d’Hiver, a circus building in Paris, painted by Sargent around 1879–80, almost all in black and white."
+    },
+    {
+     "title": "Instruments",
+     "text": "Trombones, bows and music stands jut out at every angle: you can almost hear the noise.",
+     "r": [
+      0.52,
+      0.08,
+      0.46,
+      0.28
+     ]
+    },
+    {
+     "title": "The players",
+     "text": "Musicians are dark smudges of paint, captured in a hurry.",
+     "r": [
+      0.0,
+      0.56,
+      0.6,
+      0.42
+     ]
+    },
+    {
+     "title": "The circus seats",
+     "text": "Rows of empty seats curve at the top: it’s a rehearsal, not a concert.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.2
+     ]
+    },
+    {
+     "title": "The inscription",
+     "text": "Sargent wrote at lower right where it was painted and signed his name.",
+     "r": [
+      0.62,
+      0.76,
+      0.38,
+      0.18
+     ]
+    }
+   ]
+  },
+  "31231": {
+   "image": "data/notice/31231.jpg",
+   "file": "1819 Passage OfThe Delaware byThomasSully MFABoston.jpeg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Washington on the night of December 25, 1776, before crossing the Delaware to attack Trenton. Thomas Sully painted it in 1819."
+    },
+    {
+     "title": "Washington",
+     "text": "On a white horse, calm, looking back toward his troops.",
+     "r": [
+      0.48,
+      0.2,
+      0.26,
+      0.46
+     ]
+    },
+    {
+     "title": "The soldiers",
+     "text": "Below, soldiers haul a cannon through the snow.",
+     "r": [
+      0.12,
+      0.6,
+      0.42,
+      0.32
+     ]
+    },
+    {
+     "title": "The river",
+     "text": "In the distance, the icy river they will cross.",
+     "r": [
+      0.0,
+      0.44,
+      0.5,
+      0.18
+     ]
+    },
+    {
+     "title": "The officers",
+     "text": "Officers on horseback wait at right, one pointing ahead.",
+     "r": [
+      0.68,
+      0.14,
+      0.32,
+      0.5
+     ]
+    },
+    {
+     "title": "Too big",
+     "text": "Commissioned for North Carolina’s State House, the canvas turned out too big for its space, so it ended up in Boston."
+    }
+   ]
+  },
+  "31554": {
+   "image": "data/notice/31554.jpg",
+   "file": "Thomas Sully - The Torn Hat - 16.104 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Torn Hat, painted by Thomas Sully in 1820. The boy is his son, Thomas Wilcocks Sully."
+    },
+    {
+     "title": "The torn straw hat",
+     "text": "A big straw hat, torn at the brim.",
+     "r": [
+      0.08,
+      0.06,
+      0.7,
+      0.4
+     ]
+    },
+    {
+     "title": "Light through the tear",
+     "text": "Sunlight slips through the hole and lands on his cheek: that warm patch of light is the heart of the picture.",
+     "r": [
+      0.28,
+      0.38,
+      0.36,
+      0.2
+     ]
+    },
+    {
+     "title": "His eyes",
+     "text": "Calm, direct, very childlike.",
+     "r": [
+      0.24,
+      0.34,
+      0.4,
+      0.14
+     ]
+    }
+   ]
+  },
+  "122064": {
+   "image": "data/notice/122064.jpg",
+   "file": "William Michael Harnett - Still Life with Violin - 2000.2 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A still life with a violin, painted by William Michael Harnett in 1885. Harnett was a master of trompe-l’oeil, painting that fools the eye."
+    },
+    {
+     "title": "The violin",
+     "text": "Every string, every curl of the wood looks real.",
+     "r": [
+      0.44,
+      0.48,
+      0.42,
+      0.18
+     ]
+    },
+    {
+     "title": "Sheet music",
+     "text": "Curling pages of music with notes you could almost read.",
+     "r": [
+      0.4,
+      0.62,
+      0.42,
+      0.28
+     ]
+    },
+    {
+     "title": "Delft jug",
+     "text": "A blue-and-white jug catches the light.",
+     "r": [
+      0.64,
+      0.3,
+      0.18,
+      0.24
+     ]
+    },
+    {
+     "title": "Old books",
+     "text": "Worn books with a fanning page: things used and loved.",
+     "r": [
+      0.18,
+      0.4,
+      0.4,
+      0.22
+     ]
+    },
+    {
+     "title": "The card",
+     "text": "A card tilted at the edge of the table, as if you could pick it up.",
+     "r": [
+      0.14,
+      0.62,
+      0.2,
+      0.2
+     ]
+    }
+   ]
+  },
+  "31974": {
+   "image": "data/notice/31974.jpg",
+   "file": "William McGregor Paxton, The New Necklace, 1910.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A young woman tries on a new necklace while her friend looks on, painted by William McGregor Paxton in 1910."
+    },
+    {
+     "title": "The necklace",
+     "text": "She holds it up to the light, the centre of everyone’s attention.",
+     "r": [
+      0.4,
+      0.38,
+      0.3,
+      0.18
+     ]
+    },
+    {
+     "title": "The standing friend",
+     "text": "Her friend stands thoughtfully, hand at her chin.",
+     "r": [
+      0.64,
+      0.2,
+      0.24,
+      0.56
+     ]
+    },
+    {
+     "title": "The pink jacket",
+     "text": "An embroidered Chinese jacket over a pale skirt: Boston taste for the exotic.",
+     "r": [
+      0.12,
+      0.48,
+      0.56,
+      0.4
+     ]
+    },
+    {
+     "title": "The desk",
+     "text": "A fine desk at left, with an open drawer.",
+     "r": [
+      0.0,
+      0.24,
+      0.26,
+      0.56
+     ]
+    },
+    {
+     "title": "Like Vermeer",
+     "text": "Soft light, quiet women, precious objects: Paxton deeply admired Vermeer."
+    }
+   ]
+  },
+  "31346": {
+   "image": "data/notice/31346.jpg",
+   "file": "Edmund C. Tarbell - Girl Reading - 09.209 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A girl reading in a quiet room, painted by Edmund Tarbell in 1909, a leader of the Boston School."
+    },
+    {
+     "title": "The reader",
+     "text": "Head bent over a book, completely absorbed.",
+     "r": [
+      0.2,
+      0.38,
+      0.32,
+      0.38
+     ]
+    },
+    {
+     "title": "Window light",
+     "text": "Light pours in from the window at right and spreads across the room.",
+     "r": [
+      0.8,
+      0.0,
+      0.2,
+      0.8
+     ]
+    },
+    {
+     "title": "The blue-and-white jar",
+     "text": "A Chinese jar catches the light, one of Tarbell’s favourite props.",
+     "r": [
+      0.76,
+      0.46,
+      0.16,
+      0.18
+     ]
+    },
+    {
+     "title": "A bowl of fruit",
+     "text": "A small bowl on the floor: a still life inside the picture.",
+     "r": [
+      0.46,
+      0.71,
+      0.2,
+      0.1
+     ]
+    },
+    {
+     "title": "Like Vermeer",
+     "text": "A woman, a window, silence: Tarbell, like Paxton, learned from Vermeer."
+    }
+   ]
   }
  }
 }
