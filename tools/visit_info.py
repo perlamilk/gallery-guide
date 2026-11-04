@@ -61,6 +61,13 @@ VISIT = {
                  ['Tue, Wed, Sat, Sun: 10 am–5 pm', 'Thu–Fri: 10 am–9 pm (first Friday: 5 pm)', 'Mon: closed'],
                  ['Adults: $20', 'Seniors 65+: $17', 'Students: $15', '18 and under: free',
                   'Thursday 5–9 pm: free (book ahead)'], '617-478-3100', None),
+    'Q4681251': ('3 Chapel Avenue, Andover, MA 01810',
+                 ['Tue–Sat: 10 am–5 pm', 'Sun: 1 pm–5 pm', 'Mon: closed',
+                  'Closed national holidays, December 24, and August 1 through Labor Day'],
+                 FREE, '978-749-4015',
+                 'On the Phillips Academy campus, at Main Street (Route 28) and Chapel Avenue; free parking. Restrooms are on '
+                 'the Lower Level (an accessible restroom is on Level 1). No café. An accessible lift is down the ramp to the '
+                 'left of the main entrance stairs, and an elevator serves every floor.'),
     'Q7005718': ('56 Lexington Street, New Britain, CT 06052',
                  ['Tue–Sun: 10 am–5 pm', 'Fri: 10 am–8 pm', 'Mon: closed'],
                  ['Adults: $22', 'Seniors 67+: $18', 'College students and ages 6–17: $10', '5 and under: free'],
@@ -195,6 +202,10 @@ EXTRA = {
     'Q14715853': {'id': 'Q14715853', 'name': 'Smith College Museum of Art', 'at': [42.318502, -72.636378], 'links': 7,
                   'image': '020 Elm St Smith College Museum.jpg', 'website': 'https://scma.smith.edu/',
                   'city': 'Northampton', 'state': 'Massachusetts', 'wikipedia': 'Smith_College_Museum_of_Art'},
+    'Q4681251': {'id': 'Q4681251', 'name': 'Addison Gallery of American Art', 'at': [42.6486, -71.1333], 'links': 6,
+                 'image': 'Phillips Academy, Andover, MA - Addison Gallery of American Art.JPG',
+                 'website': 'https://addison.andover.edu/', 'city': 'Andover', 'state': 'Massachusetts',
+                 'wikipedia': 'Addison_Gallery_of_American_Art'},
 }
 
 # Museums whose Wikidata name is out of date (deCordova reversed its name in 2009)

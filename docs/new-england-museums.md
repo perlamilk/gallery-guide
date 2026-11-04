@@ -124,6 +124,16 @@ the PDF's text, so every number sits where the museum prints it, and each sculpt
 around it. Each sculpture's picture, medium, size, credit line and text come from its page on thetrustees.org (linked
 from /content/decordovasculpturepark). Nature Sanctuary (works marked * on the map) ended Oct 4, 2026; those works say
 they may have left. When a new park map comes out, update `MAP_PDF` and `MAP_LIST` and re-run.
+Addison Gallery of American Art (Nov 4, 2026): not in Wikidata's museum list, so `tools/visit_info.py` adds it (`ADD`,
+Q4681251). Map guide at `guide.html?museum=addison`, built by `tools/build_addison.py`, traced from the museum's own gallery
+maps (addison.andover.edu/visit/gallery-map: Level 1 and Level 2 from September 2026, Lower Level from 2023) and its Fall
+2026 visitor guide PDF (coatroom, water, accessible restroom, main entrance). Works come from the museum's collection search
+(an EmbARK kiosk shown through addison.andover.edu/search-the-collection/?embark_query=…; accessaddison.andover.edu itself
+refuses direct reading), read by `tools/harvest_addison.py`: every work in the current show's portfolio (America in the
+Making, portfolio 2600) and the ship models (212). The museum names the gallery range of each section of the show; the room
+within a section is guessed from date and medium (each work says so), except works the gallery map pins to a room. When the
+next season opens, add its portfolio number to `PORTFOLIOS` and the room ranges to build_addison.py. The collection has 29,000+
+works; only the ones on view are in the guide. Pictures load from accessaddison.andover.edu as they are viewed.
 
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
