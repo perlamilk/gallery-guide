@@ -48,6 +48,8 @@ const SHELL = [
   'data/harvard/artworks.json',
   'data/worcester/floors.json',
   'data/worcester/artworks.json',
+  'data/gardner/floors.json',
+  'data/gardner/artworks.json',
 ];
 
 // Install only the app itself, so an update is quick and takes over right away;
