@@ -144,6 +144,14 @@
    "galleries": true,
    "checked": "2026-11-04",
    "source": "Addison Gallery of American Art collection search"
+  },
+  "Q12072937": {
+   "works": 5553,
+   "pictures": 3392,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "WCMA open collection data (github.com/wcmaart/collection, CC0)"
   }
  }
 }
