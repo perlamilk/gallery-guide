@@ -165,6 +165,17 @@ export const SITES = {
     flat: true,
     blurb: 'The whole sculpture park from the museum’s own map, with every one of its 53 numbered sculptures on the lawn where it stands, Admission, the café, store and restrooms, directions and your visit diary. The indoor galleries are closed for renovation.',
   },
+  addison: {
+    key: 'addison', id: 'Q4681251', short: 'The Addison', name: 'Addison Gallery of American Art',
+    floors: 'data/addison/floors.json', artworks: 'data/addison/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-addison.json', packKey: 'gg-pack-addison',
+    room: id => (/^\d{3}$/.test(id) ? `Gallery ${id}` : id),
+    website: 'View on the Addison Collection Site',
+    official: false,
+    flat: true,
+    blurb: 'All three levels traced from the Addison’s own gallery map, every work in America in the Making and the ship models in the gallery where it hangs, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

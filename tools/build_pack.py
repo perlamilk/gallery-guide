@@ -53,6 +53,9 @@ PACKS = [
     ('Q2019741', 'data/pack-decordova.json',
      ['data/decordova/artworks.json', 'data/decordova/floors.json'],
      'data/decordova/artworks.json', None),
+    ('Q4681251', 'data/pack-addison.json',
+     ['data/addison/artworks.json', 'data/addison/floors.json'],
+     'data/addison/artworks.json', None),
 ]
 
 for museum, out_path, files, art_path, notice_path in PACKS:
