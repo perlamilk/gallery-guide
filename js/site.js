@@ -242,6 +242,17 @@ export const SITES = {
     flat: true,
     blurb: 'The lawn campus on Bellevue Avenue with the Griswold House’s ground floor traced from its 1969 measured plan and the Cushing Memorial Gallery, parking, entrances, the lobby and restrooms (some rooms approximate: the museum publishes no plan), the works in the five shows open now, directions and your visit diary.',
   },
+  breakers: {
+    key: 'breakers', id: 'Q1786400', short: 'The Breakers', name: 'The Breakers',
+    floors: 'data/breakers/floors.json', artworks: 'data/breakers/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-breakers.json', packKey: 'gg-pack-breakers',
+    room: id => id,                          // rooms are named (Great Hall, Music Room)
+    website: 'More about this object',
+    official: false,
+    flat: true,
+    blurb: 'The grounds with the Welcome Center (tickets, café, restrooms), parking and the Cliff Walk, and both floors on the house tour traced from the National Register floor plans, plus the basement store and restrooms: the Vanderbilts’ own furniture, portraits and tapestry in the rooms where they stand, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
