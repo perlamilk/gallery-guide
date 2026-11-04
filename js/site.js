@@ -286,6 +286,17 @@ export const SITES = {
     flat: true,
     blurb: 'Both levels of I. M. Pei’s building (approximate: traced from his 1979 plans): the entrance lobby with tickets, restrooms and the coat room, the theaters with the introductory film, the exhibits in the order of the visit, from the 1960 campaign and the Oval Office to the Space Race, the Cuban Missile Crisis and the glass Pavilion, the Kennedy Café, JFK’s sailboat Victura on the harbor lawn, directions and your visit diary.',
   },
+  elms: {
+    key: 'elms', id: 'Q7731834', short: 'The Elms', name: 'The Elms',
+    floors: 'data/elms/floors.json', artworks: 'data/elms/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-elms.json', packKey: 'gg-pack-elms',
+    room: id => id,                          // rooms are named (Ballroom, Conservatory)
+    website: 'More about this object',
+    official: false,
+    flat: true,
+    blurb: 'The grounds with parking, the Sunken Garden and the Carriage House Café, and every floor of the house traced from its National Historic Landmark plans: the Ballroom, Salon, Conservatory and the Berwinds’ bedrooms, the basement restrooms and the staff floor of the Servant Life Tour, with the Berwinds’ furniture and paintings, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
