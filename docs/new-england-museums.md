@@ -13,6 +13,14 @@ Batch 2 (Nov 4, 2026): guides for Peabody Essex, Norman Rockwell, New Britain, M
 2. The museum's page in the app shows **In the Collection**: search by artist, title or gallery; **On View** when the museum's own data says so.
 3. Bump `VERSION` in `sw.js`.
 
+Worcester Art Museum (Nov 4, 2026): map guide at `guide.html?museum=worcester`. The floor plan is traced by
+`tools/trace_worcester.py` from the museum's visitor map PDF (worcesterart.org/visit/floor-map/), an isometric drawing
+turned back into flat plans (Ground Level and Levels 1–4, 47 numbered rooms, elevators, stairs, restrooms, café, shop,
+coat rooms, entrances). Works come from Wikidata through `tools/build_worcester.py`: 1,500 in the collection, 835 placed
+in their likely gallery by date and origin (the app says it's a guess and that the work may not be on view). The museum's
+own collection site (worcester.emuseum.com) has a Cloudflare bot check, so it isn't read; on-view data would need the
+museum's permission or a data export.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).

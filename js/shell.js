@@ -599,8 +599,8 @@ function museumPage(id) {
         ${m.website ? `<a href="${escape(m.website)}" target="_blank" rel="noopener">${escape(host(m.website))} ${I.ext}</a>` : ''}
       </div>
       ${site ? `<div class="btn-row"><a class="btn" href="${guideURL(site)}">${I.map}Open the Map Guide</a></div>
-        <p class="fine">${site.key === 'mfa' ? 'Floor plans, search for every work on view, tours, directions and your visit diary.'
-          : 'Floor plans from the museum’s map, search for every work on view, directions and your visit diary.'}</p>` : ''}
+        <p class="fine">${site.blurb ?? (site.key === 'mfa' ? 'Floor plans, search for every work on view, tours, directions and your visit diary.'
+          : 'Floor plans from the museum’s map, search for every work on view, directions and your visit diary.')}</p>` : ''}
     </div>
     ${site ? '<div class="info-card offline" id="offlineCard" aria-live="polite"><p class="offline__sub">Checking offline pack…</p></div>' : ''}
     <div class="info-card"><h2>Welcome to ${escape(m.name)}</h2><div id="museumAbout"><p style="color:var(--ink-3)">Loading…</p></div></div>
