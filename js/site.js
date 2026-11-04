@@ -66,6 +66,17 @@ export const SITES = {
     flat: true,
     blurb: 'Floor plans of the Clark Center, the Museum Building and the Manton Research Center from the museum’s map, works in the gallery where they most likely hang, directions and your visit diary.',
   },
+  risd: {
+    key: 'risd', id: 'Q2148186', short: 'RISD Museum', name: 'RISD Museum',
+    floors: 'data/risd/floors.json', artworks: 'data/risd/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-risd.json', packKey: 'gg-pack-risd',
+    room: id => id,                          // galleries have names (Grand Gallery, Pendleton House), not numbers
+    website: 'View on Wikidata',             // the museum's own collection site blocks automated reading
+    official: false,
+    flat: true,
+    blurb: 'Floor plans of the Radeke Building, Pendleton House and the Chace Center from the museum’s maps, works in the gallery where they most likely hang, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

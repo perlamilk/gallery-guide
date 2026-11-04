@@ -40,6 +40,16 @@ read from the PDF's text layer. Works: 563 of the 603 in Wikidata, placed in the
 their artist, date and country (Degas → 14, Alfred Stevens → 15, Renoir → 2, British → Manton, works on paper → Thaw…),
 each with a note that the gallery is a guess.
 
+RISD Museum (Nov 4, 2026): map guide at `guide.html?museum=risd`, built by `tools/build_risd.py`. risdmuseum.org sits
+behind a Cloudflare block (from the cloud and from Grazi's Mac too), so the plan comes from copies of the museum's own maps
+on all-maps.com: the 2020 "Floor 3 & 4" plan (image-only PDF; Benefit Street entrance, Café Pearl, Farago Wing, Radeke
+Building, bridge, Chace Center special exhibitions) and the 2018 section map, which says what is on each floor of each
+building and where the elevators, restrooms, coat check and entrances are. Floors 1, 2 (Chace Center: North Main Street
+entrance, RISD Works, Metcalf Auditorium, Gelman student galleries) and 5, 6 (Grand Gallery, European, Greek and Roman,
+Egyptian, Asian, Costume and Textiles, Pendleton House) are laid out by hand inside the same building outlines and say on
+the map that they are approximate. Works: 1,465 of the ~1,900 in Wikidata (almost all paintings), placed by date, country
+and type; works with no date use the artist's birth year + 35; each says the gallery is a guess.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
