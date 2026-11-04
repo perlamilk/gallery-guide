@@ -3,7 +3,7 @@
 The plan for adding guides (works, and later maps) for every museum in the three states.
 Guides are built with `tools/build_guides.py` from open data only (Wikidata, and museum APIs where they exist).
 
-Status: the app is ready for guides; no guide data is built yet because the cloud network blocked Wikidata and the museum APIs (Nov 4, 2026).
+Status (Nov 4, 2026): batch 1 is built from Wikidata for 8 of its 10 museums. The ICA Boston (1 work) and MASS MoCA (0 works) have too little open data, so `build_guides.py` gives them no guide (MIN_WORKS). Harvard has Wikidata works only, without galleries, until the build runs with HARVARD_API_KEY.
 
 ## How a museum gets a guide
 

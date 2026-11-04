@@ -1,4 +1,69 @@
 {
  "about": "Museums with a guide on their museum page. Written by tools/build_guides.py; one file per museum in data/guides/.",
- "museums": {}
+ "museums": {
+  "Q3783572": {
+   "works": 3000,
+   "pictures": 2024,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q49135": {
+   "works": 425,
+   "pictures": 348,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q847508": {
+   "works": 1497,
+   "pictures": 260,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q1465805": {
+   "works": 601,
+   "pictures": 505,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q2148186": {
+   "works": 1899,
+   "pictures": 735,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q1568434": {
+   "works": 3000,
+   "pictures": 2992,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q6352575": {
+   "works": 3000,
+   "pictures": 2998,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q403080": {
+   "works": 190,
+   "pictures": 128,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  }
+ }
 }
