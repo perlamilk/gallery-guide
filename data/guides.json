@@ -256,6 +256,14 @@
    "galleries": true,
    "checked": "2026-11-04",
    "source": "Historic American Buildings Survey CT-359 photos (Library of Congress) and The Mark Twain House & Museum’s exhibit pages"
+  },
+  "Q7758868": {
+   "works": 56,
+   "pictures": 51,
+   "onView": 56,
+   "galleries": true,
+   "checked": "2026-11-04",
+   "source": "Springfield Museums: gallery, exhibition and collection pages, and museum maps (springfieldmuseums.org)"
   }
  }
 }
