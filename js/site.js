@@ -264,6 +264,17 @@ export const SITES = {
     flat: true,
     blurb: 'The grounds with parking, the lawn, the terrace and Rockwell’s own Studio, and the Main and Lower Levels of the museum (approximate: drawn inside the building’s real outline): the Four Freedoms in their octagonal gallery under the cupola, Rockwell’s Saturday Evening Post covers and civil-rights paintings, directions and your visit diary.',
   },
+  marble: {
+    key: 'marble', id: 'Q2650982', short: 'Marble House', name: 'Marble House',
+    floors: 'data/marble/floors.json', artworks: 'data/marble/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-marble.json', packKey: 'gg-pack-marble',
+    room: id => id,                          // rooms are named (Gold Room, Gothic Room)
+    website: 'More about this object',
+    official: false,
+    flat: true,
+    blurb: 'The grounds with parking, the Chinese Tea House and the Cliff Walk, and both floors on the house tour traced from Richard Morris Hunt’s own 1889 plans, plus the basement store and restrooms: the Vanderbilts’ and Alva Belmont’s furniture, portraits and treasures in the rooms where they stand, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
