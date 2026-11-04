@@ -145,6 +145,9 @@ Then open http://localhost:8770 (run the command from inside the `mfa-guide` fol
 
 ## Put it online for free with GitHub Pages (step by step)
 
+> **This copy is now hosted privately** on Cloudflare Pages behind a login. See
+> [docs/private-hosting.md](docs/private-hosting.md). The GitHub Pages steps below are kept for reference.
+
 You only do this once. Later updates are a drag and drop.
 
 **1. Create a GitHub account**

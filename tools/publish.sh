@@ -1,8 +1,8 @@
 #!/bin/bash
-# Publish mfa-guide to https://perlamilk.github.io/gallery-guide/
+# Publish mfa-guide to the private Cloudflare Pages site (see docs/private-hosting.md)
 #   tools/publish.sh "Commit message"
 # Copies the app into a clone of the repo, bumps sw.js VERSION (so phones update), commits, pushes,
-# then waits until the live site serves the new version.
+# then waits until Cloudflare Pages reports the new version is deployed.
 #
 # Safety: if the repo has commits this folder hasn't seen (a merged pull request, an edit on GitHub),
 # it stops instead of overwriting them. Bring those changes into mfa-guide first, then run
@@ -39,13 +39,16 @@ git push -q
 git rev-parse HEAD > .git/gg-last-publish
 echo "pushed $(git log --oneline -1) as $new"
 
-# wait for GitHub Pages to finish building this commit, then check the live version
+# wait for Cloudflare Pages to deploy this commit. The site itself sits behind a login, so instead of
+# fetching it we read the check Cloudflare posts on the commit in GitHub.
 sha=$(git rev-parse HEAD)
 for i in $(seq 1 60); do
-  build=$(gh api repos/perlamilk/gallery-guide/pages/builds/latest -q '.commit + " " + .status' 2>/dev/null || true)
-  if [ "$build" = "$sha built" ] && curl -s "https://perlamilk.github.io/gallery-guide/sw.js?t=$RANDOM" | grep -q "VERSION = '$new'"; then
-    echo "live: $new"; exit 0
-  fi
+  result=$(gh api "repos/perlamilk/gallery-guide/commits/$sha/check-runs" \
+    -q '[.check_runs[] | select(.name | test("cloudflare"; "i"))][0] | "\(.status) \(.conclusion)"' 2>/dev/null || true)
+  case "$result" in
+    "completed success") echo "live: $new"; exit 0 ;;
+    "completed "*) echo "Cloudflare Pages couldn't publish $new ($result). Open the Cloudflare dashboard to see why."; exit 1 ;;
+  esac
   sleep 10
 done
-echo "pushed, but GitHub Pages hasn't finished publishing $new yet"
+echo "pushed, but Cloudflare Pages hasn't finished publishing $new yet"

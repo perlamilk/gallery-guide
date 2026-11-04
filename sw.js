@@ -108,8 +108,12 @@ async function networkFirst(req, fallbackPath) {
     if (res.ok) {
       cache.put(req, res.clone());
       if (req.url.endsWith('artworks.json')) cacheArtworkImages(cache, res.clone());
+      return res;
     }
-    return res;
+    // A page load that the sign-in screen redirects goes through, so the browser can show the login.
+    // Data that comes back as an error (signed out, server hiccup) falls back to the saved copy.
+    if (req.mode === 'navigate') return res;
+    return (await cache.match(req, { ignoreSearch: true })) ?? res;
   } catch {
     return (await cache.match(req, { ignoreSearch: true }))
       ?? (fallbackPath && await cache.match(fallbackPath))
