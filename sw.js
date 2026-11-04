@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v26';
+const VERSION = 'v27';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -15,6 +15,7 @@ const SHELL = [
   'js/shell.js',
   'js/images.js',
   'js/notice.js',
+  'js/offline.js',
   'css/notice.css',
   'data/notice.json',
   'vendor/maplibre-gl.js',
@@ -58,7 +59,8 @@ self.addEventListener('activate', event => {
     for (const name of old) {
       const prev = await caches.open(name);
       for (const req of await prev.keys()) {
-        if (/\/data\/images\//.test(req.url) && !(await cache.match(req))) await cache.put(req, await prev.match(req));
+        // keep pictures and the offline pack across updates, so nothing downloads twice
+        if (/\/data\/(images|notice)\//.test(req.url) && !(await cache.match(req))) await cache.put(req, await prev.match(req));
       }
       await caches.delete(name);
     }
@@ -121,6 +123,8 @@ async function packPiece(req) {
   const full = await cache.match(req.url, { ignoreSearch: true });
   if (!full) {
     const range = req.headers.get('Range');
+    // a whole-file request (the offline pack download) goes straight to the network; the page stores it
+    if (!range) return fetch(req.url);
     // online and not cached yet: answer this piece straight away, store the whole pack once in the background
     if (!packDownloads.has(req.url)) {
       packDownloads.add(req.url);

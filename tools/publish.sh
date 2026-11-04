@@ -30,6 +30,7 @@ remote=$(sed -n "s/^const VERSION = 'v\([0-9]*\)';/\1/p" sw.js)
 new="v$((old + 1))"
 sed -i '' "s/^const VERSION = 'v[0-9]*';/const VERSION = '$new';/" "$APP/sw.js"
 
+python3 -I "$APP/tools/build_pack.py"
 rsync -a --delete --exclude '.DS_Store' --exclude '.git' --exclude '__pycache__' "$APP/" ./
 git add -A
 git -c user.name=perlamilk -c user.email=331113409+perlamilk@users.noreply.github.com \

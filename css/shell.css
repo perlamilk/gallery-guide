@@ -250,3 +250,16 @@
 .cluster { display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--accent-ink);
   border: 2px solid #fff; font: 700 0.76rem var(--sans); box-shadow: 0 2px 8px rgba(0, 0, 0, .25); }
 @media (prefers-reduced-motion: reduce) { .page { scroll-behavior: auto; } }
+
+/* offline pack card (MFA museum page) */
+.offline__head { display: flex; gap: 14px; align-items: flex-start; }
+.offline__head h2 { margin: 2px 0 4px; }
+.offline__sub { margin: 0; color: var(--ink-2); font-size: 0.88rem; line-height: 1.45; }
+.offline__icon { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); }
+.offline__icon svg { width: 22px; height: 22px; }
+.offline__icon--ok { background: rgba(52, 199, 89, .16); color: #248a3d; }
+@media (prefers-color-scheme: dark) { .offline__icon--ok { color: #30d158; } }
+.offline .btn { margin-top: 14px; width: 100%; }
+.offline .btn--plain { width: auto; }
+.offline__bar { height: 6px; margin-top: 14px; border-radius: 3px; background: var(--fill); overflow: hidden; }
+.offline__bar span { display: block; height: 100%; background: var(--accent); border-radius: 3px; transition: width .3s var(--ease); }

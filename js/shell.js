@@ -5,6 +5,7 @@
 import { imgHTML, hydrateImages, blobURL, commons } from './images.js';
 import { Visits, Favorites, MuseumFavorites, Lists, duration } from './visits.js';
 import { noticeData, openNotice } from './notice.js';
+import { packStatus, downloadPack, mb } from './offline.js';
 
 const $ = sel => document.querySelector(sel);
 const page = $('#page');
@@ -477,6 +478,7 @@ function museumPage(id) {
       ${id === MFA ? `<div class="btn-row"><a class="btn" href="guide.html">${I.map}Open the Map Guide</a></div>
         <p class="fine">3D floor plans, search for every work on view, tours, directions and your visit diary.</p>` : ''}
     </div>
+    ${id === MFA ? '<div class="info-card offline" id="offlineCard" aria-live="polite"><p class="offline__sub">Checking offline pack…</p></div>' : ''}
     <div class="info-card"><h2>Welcome to ${escape(m.name)}</h2><div id="museumAbout"><p style="color:var(--ink-3)">Loading…</p></div></div>
     <div class="info-card"><h2>Visit Information</h2>
       <dl class="kv">
@@ -493,7 +495,56 @@ function museumPage(id) {
       <div class="tiles">${highlights.map(tileHTML).join('')}</div></section>` : ''}
     <p class="fine" style="margin-top:20px">Photo: Wikimedia Commons · Data: Wikidata${m.wikipedia ? ' · Text: Wikipedia' : ''}</p>`;
 }
-afterRender.museum = id => fillSummary($('#museumAbout'), D.byMuseum.get(id)?.wikipedia, 'No description yet.');
+afterRender.museum = id => {
+  fillSummary($('#museumAbout'), D.byMuseum.get(id)?.wikipedia, 'No description yet.');
+  if (id === MFA) renderOfflineCard();
+};
+
+// ---------- offline pack ----------
+// Museum Wi-Fi and signal are often poor: download the whole guide at home, use it with no connection.
+let packJob = null;
+async function renderOfflineCard(progress = null) {
+  const el = $('#offlineCard');
+  if (!el) return;
+  const icon = `<span class="offline__icon">${icon_(progress ? 'down' : 'cloud')}</span>`;
+  if (progress) {
+    const pct = progress.totalBytes ? Math.min(100, Math.round(progress.bytes / progress.totalBytes * 100)) : 0;
+    el.innerHTML = `<div class="offline__head">${icon}<div><h2>Downloading MFA Boston</h2>
+      <p class="offline__sub">${mb(progress.bytes)} of ${mb(progress.totalBytes)} · keep the app open</p></div></div>
+      <div class="offline__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Download progress"><span style="width:${pct}%"></span></div>
+      <button class="btn btn--plain" type="button" data-pack-stop>Pause</button>`;
+    return;
+  }
+  const st = await packStatus();
+  if (!el.isConnected) return;
+  if (!st.supported) { el.innerHTML = '<p class="offline__sub">This browser can’t save the guide for offline use.</p>'; return; }
+  if (st.ready) {
+    const when = st.saved?.at ? new Date(st.saved.at).toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) : null;
+    el.innerHTML = `<div class="offline__head"><span class="offline__icon offline__icon--ok">${icon_('check')}</span><div><h2>Ready Offline</h2>
+      <p class="offline__sub">Map guide, ${st.works.toLocaleString("en-US")} works, their pictures and ${st.notice} What to Notice guides are on this device${when ? ` · saved ${when}` : ''}. No signal needed at the museum.</p></div></div>
+      <button class="btn btn--plain" type="button" data-pack-start>Check for Updates</button>`;
+    return;
+  }
+  const left = Math.max(0, st.bytes - st.haveBytes);
+  el.innerHTML = `<div class="offline__head">${icon}<div><h2>Take MFA Boston Offline</h2>
+    <p class="offline__sub">Museum Wi-Fi is unreliable. Download the map guide, ${st.works.toLocaleString("en-US")} works, their pictures and all What to Notice guides before you go: ${st.have ? `${mb(left)} left` : `about ${mb(st.bytes)}`}, best on Wi-Fi.</p></div></div>
+    <button class="btn" type="button" data-pack-start>${icon_('down')}${st.have ? 'Finish Download' : 'Download'}</button>`;
+}
+const icon_ = k => ({
+  cloud: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9.5 4.3 4.3 0 0 0 7 18z"/><path d="M12 11v5m-2.2-2.2L12 16l2.2-2.2"/></svg>',
+  down: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>',
+  check: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg>',
+}[k]);
+
+async function startPack() {
+  if (packJob) return;
+  packJob = downloadPack(p => renderOfflineCard(p));
+  const r = await packJob.done;
+  packJob = null;
+  if (r.ok) toast('MFA Boston is ready offline');
+  else if (!r.stopped) toast(r.failed ? 'Some files didn’t download. Check your connection and tap again.' : 'Paused');
+  renderOfflineCard();
+}
 
 function museumHighlights(id) {
   if (id === MFA) {
@@ -734,7 +785,7 @@ function workPage(id) {
 
 // ---------- events ----------
 async function onClick(e) {
-  const t = e.target.closest('[data-back],[data-fav-museum],[data-mview],[data-mfilter],[data-clear-area],[data-more-museums],[data-locate],[data-coll],[data-lib-view],[data-select],[data-pick],[data-add-to-list],[data-unsave],[data-new-list],[data-rename-list],[data-delete-list],[data-remove-from-list],[data-save-work],[data-more],[data-update],[data-notice-general]');
+  const t = e.target.closest('[data-back],[data-fav-museum],[data-mview],[data-mfilter],[data-clear-area],[data-more-museums],[data-locate],[data-coll],[data-lib-view],[data-select],[data-pick],[data-add-to-list],[data-unsave],[data-new-list],[data-rename-list],[data-delete-list],[data-remove-from-list],[data-save-work],[data-more],[data-update],[data-notice-general],[data-pack-start],[data-pack-stop]');
   if (!t) return;
   const d = t.dataset;
   if (d.back !== undefined) return back(d.back);
@@ -797,6 +848,8 @@ async function onClick(e) {
   if (d.more !== undefined) { t.previousElementSibling?.classList.remove('clamp'); t.remove(); return; }
   if (d.update !== undefined) return checkForUpdate(t);
   if (d.noticeGeneral !== undefined) return openNotice({ general: true });
+  if (d.packStart !== undefined) return startPack();
+  if (d.packStop !== undefined) { packJob?.stop(); return; }
 }
 
 let queryTimer;
