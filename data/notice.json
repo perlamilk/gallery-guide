@@ -3214,6 +3214,1300 @@
      "text": "A woman, a window, silence: Tarbell, like Paxton, learned from Vermeer."
     }
    ]
+  },
+  "31033": {
+   "image": "data/notice/31033.jpg",
+   "file": "William Morris Hunt self portrait.jpeg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "William Morris Hunt painted himself in 1849, at about 25, while studying in Europe."
+    },
+    {
+     "title": "The top hat",
+     "text": "A tall black hat, tipped back, painted in loose strokes.",
+     "r": [
+      0.12,
+      0.04,
+      0.66,
+      0.34
+     ]
+    },
+    {
+     "title": "The face",
+     "text": "Dark eyes, a full beard, a confident look straight at us.",
+     "r": [
+      0.3,
+      0.26,
+      0.36,
+      0.3
+     ]
+    },
+    {
+     "title": "An unfinished oval",
+     "text": "The painted oval and the rough edges show the canvas underneath: a quick, private study.",
+     "r": [
+      0.0,
+      0.6,
+      1.0,
+      0.4
+     ]
+    }
+   ]
+  },
+  "31295": {
+   "image": "data/notice/31295.jpg",
+   "file": "William Morris Hunt - La Marguerite - 06.2429 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A young woman in a wheat field, painted by William Morris Hunt in 1853 while he worked near Millet at Barbizon."
+    },
+    {
+     "title": "The daisy",
+     "text": "In French a marguerite is a daisy. She plucks its petals, perhaps playing ‘he loves me, he loves me not’.",
+     "r": [
+      0.6,
+      0.36,
+      0.24,
+      0.2
+     ]
+    },
+    {
+     "title": "Her profile",
+     "text": "Eyes lowered, absorbed in the little ritual.",
+     "r": [
+      0.34,
+      0.14,
+      0.32,
+      0.24
+     ]
+    },
+    {
+     "title": "The wheat",
+     "text": "Golden wheat surrounds her, painted in soft strokes.",
+     "r": [
+      0.0,
+      0.36,
+      0.34,
+      0.6
+     ]
+    },
+    {
+     "title": "A soft sky",
+     "text": "A pale, cloudy sky keeps the mood quiet.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.3
+     ]
+    }
+   ]
+  },
+  "31308": {
+   "image": "data/notice/31308.jpg",
+   "file": "William Morris Hunt - The Belated Kid - 07.135 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A girl carries a young goat home at dusk while its mother follows, painted by William Morris Hunt in the 1850s."
+    },
+    {
+     "title": "The kid",
+     "text": "The little goat, held tight in her arms: the ‘belated kid’ that stayed out too late.",
+     "r": [
+      0.3,
+      0.2,
+      0.46,
+      0.34
+     ]
+    },
+    {
+     "title": "The mother goat",
+     "text": "The nanny goat presses close, looking up at her kid.",
+     "r": [
+      0.0,
+      0.44,
+      0.44,
+      0.46
+     ]
+    },
+    {
+     "title": "The girl",
+     "text": "She bends her head over the animal, tender and tired.",
+     "r": [
+      0.28,
+      0.1,
+      0.32,
+      0.24
+     ]
+    },
+    {
+     "title": "Evening light",
+     "text": "A low, warm sky behind: the day is ending.",
+     "r": [
+      0.0,
+      0.3,
+      1.0,
+      0.25
+     ]
+    }
+   ]
+  },
+  "31502": {
+   "image": "data/notice/31502.jpg",
+   "file": "Niagara Falls William Morris Hunt.jpeg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Niagara Falls, painted by William Morris Hunt in 1879, the last year of his life."
+    },
+    {
+     "title": "The edge",
+     "text": "Green water curls over the brink of the falls.",
+     "r": [
+      0.0,
+      0.12,
+      0.5,
+      0.3
+     ]
+    },
+    {
+     "title": "The spray",
+     "text": "Most of the canvas is mist: white, pink and grey spray rising from the falls.",
+     "r": [
+      0.4,
+      0.1,
+      0.6,
+      0.6
+     ]
+    },
+    {
+     "title": "The river below",
+     "text": "At the bottom, churning water where the falls land.",
+     "r": [
+      0.0,
+      0.76,
+      1.0,
+      0.24
+     ]
+    }
+   ]
+  },
+  "31514": {
+   "image": "data/notice/31514.jpg",
+   "file": "William Morris Hunt - The Gleaner - 15.1 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A young woman carrying a bundle of grain on her head, painted by William Morris Hunt in 1865, an echo of Millet’s gleaners."
+    },
+    {
+     "title": "The bundle",
+     "text": "The heavy sheaf, painted in bright golden strokes.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.32
+     ]
+    },
+    {
+     "title": "Her face",
+     "text": "Calm and strong, in shadow under the weight.",
+     "r": [
+      0.3,
+      0.28,
+      0.44,
+      0.3
+     ]
+    },
+    {
+     "title": "The shirt",
+     "text": "Rough white cloth catching the light.",
+     "r": [
+      0.0,
+      0.62,
+      0.6,
+      0.38
+     ]
+    }
+   ]
+  },
+  "31723": {
+   "image": "data/notice/31723.jpg",
+   "file": "William Morris Hunt - The Wounded Drummer Boy - 18.393 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A wounded drummer boy, a Civil War subject, painted by William Morris Hunt around 1862."
+    },
+    {
+     "title": "The boy",
+     "text": "He lies back in the grass, one arm stretched out, his white shirt the brightest thing in the picture.",
+     "r": [
+      0.08,
+      0.2,
+      0.56,
+      0.48
+     ]
+    },
+    {
+     "title": "The field",
+     "text": "Dark, rough strokes of grass and earth around him.",
+     "r": [
+      0.0,
+      0.6,
+      1.0,
+      0.4
+     ]
+    },
+    {
+     "title": "A sketch",
+     "text": "The loose, unfinished paint makes the moment feel sudden and raw."
+    }
+   ]
+  },
+  "31740": {
+   "image": "data/notice/31740.jpg",
+   "file": "William Morris Hunt - Man in Wheat Field - 19.8 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A man working in a wheat field, a small sketch by William Morris Hunt from 1865, painted almost in black and white."
+    },
+    {
+     "title": "The figure",
+     "text": "A bent figure among the wheat, just a few dark strokes.",
+     "r": [
+      0.16,
+      0.34,
+      0.28,
+      0.44
+     ]
+    },
+    {
+     "title": "The clouds",
+     "text": "Big white clouds swept in with a loaded brush.",
+     "r": [
+      0.3,
+      0.08,
+      0.7,
+      0.3
+     ]
+    },
+    {
+     "title": "The water",
+     "text": "A pale strip of water or road crossing the landscape.",
+     "r": [
+      0.4,
+      0.5,
+      0.6,
+      0.3
+     ]
+    }
+   ]
+  },
+  "32147": {
+   "image": "data/notice/32147.jpg",
+   "file": "William Morris Hunt - Mrs. Robert C. Winthrop (Frances Pickering Adams) - 24.339 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Frances Pickering Adams Winthrop, painted by William Morris Hunt in 1861."
+    },
+    {
+     "title": "Her face",
+     "text": "Copper-red curls and a gentle look.",
+     "r": [
+      0.38,
+      0.1,
+      0.28,
+      0.18
+     ]
+    },
+    {
+     "title": "Lavender silk",
+     "text": "A grand lavender dress with lace and black ribbon fills the canvas.",
+     "r": [
+      0.1,
+      0.38,
+      0.8,
+      0.62
+     ]
+    },
+    {
+     "title": "The fan",
+     "text": "A folding fan in her hand, a detail of elegance.",
+     "r": [
+      0.5,
+      0.56,
+      0.2,
+      0.16
+     ]
+    },
+    {
+     "title": "The flowers",
+     "text": "A small plant on the table at right.",
+     "r": [
+      0.74,
+      0.44,
+      0.26,
+      0.18
+     ]
+    }
+   ]
+  },
+  "32359": {
+   "image": "data/notice/32359.jpg",
+   "file": "William Morris Hunt - Italian Peasant Boy - 29.1117 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "An Italian peasant boy, painted by William Morris Hunt in 1866."
+    },
+    {
+     "title": "The hat",
+     "text": "Flowers and a peacock feather decorate his hat.",
+     "r": [
+      0.24,
+      0.0,
+      0.48,
+      0.16
+     ]
+    },
+    {
+     "title": "His face",
+     "text": "A guarded, direct look.",
+     "r": [
+      0.32,
+      0.06,
+      0.3,
+      0.18
+     ]
+    },
+    {
+     "title": "Red vest",
+     "text": "A bright red waistcoat under a dark jacket, arms crossed.",
+     "r": [
+      0.2,
+      0.22,
+      0.6,
+      0.42
+     ]
+    },
+    {
+     "title": "Leaning on the wall",
+     "text": "He leans back against a plain wall: the pose of someone who has been waiting a long time.",
+     "r": [
+      0.0,
+      0.5,
+      1.0,
+      0.5
+     ]
+    }
+   ]
+  },
+  "30948": {
+   "image": "data/notice/30948.jpg",
+   "file": "Washington Allston.jpeg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Washington Allston painted himself in 1805, aged about 25, while studying in Europe. He became America’s first major Romantic painter."
+    },
+    {
+     "title": "His face",
+     "text": "Dark curls and a pale, serious face, lit from the side.",
+     "r": [
+      0.38,
+      0.1,
+      0.36,
+      0.32
+     ]
+    },
+    {
+     "title": "The cravat",
+     "text": "A golden cravat tied high, a fashionable touch.",
+     "r": [
+      0.44,
+      0.38,
+      0.22,
+      0.16
+     ]
+    },
+    {
+     "title": "Shadows",
+     "text": "A dark, shadowy background: mood matters more than setting.",
+     "r": [
+      0.0,
+      0.0,
+      0.4,
+      0.6
+     ]
+    }
+   ]
+  },
+  "30844": {
+   "image": "data/notice/30844.jpg",
+   "file": "Washington Allston 001.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The prophet Elijah alone in the wilderness, painted by Washington Allston in 1818."
+    },
+    {
+     "title": "The dead trees",
+     "text": "Two huge, twisted dead trees dominate the scene, like giants.",
+     "r": [
+      0.08,
+      0.0,
+      0.6,
+      0.9
+     ]
+    },
+    {
+     "title": "The raven",
+     "text": "In the Bible, ravens brought Elijah food in the desert. Look for the raven perched in the tree.",
+     "r": [
+      0.38,
+      0.3,
+      0.12,
+      0.1
+     ]
+    },
+    {
+     "title": "Elijah",
+     "text": "The prophet himself is tiny, kneeling at the foot of the trees.",
+     "r": [
+      0.5,
+      0.8,
+      0.22,
+      0.14
+     ]
+    },
+    {
+     "title": "A wild landscape",
+     "text": "Rocky cliffs and a stormy sky: nature as overwhelming and sublime.",
+     "r": [
+      0.56,
+      0.2,
+      0.44,
+      0.5
+     ]
+    }
+   ]
+  },
+  "30897": {
+   "image": "data/notice/30897.jpg",
+   "file": "Storm Rising at Sea.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A small boat caught in a rising storm, painted by Washington Allston in 1804, one of the first great American Romantic seascapes."
+    },
+    {
+     "title": "The small boat",
+     "text": "A sailboat heels over in the waves, its crew fighting the wind.",
+     "r": [
+      0.46,
+      0.5,
+      0.24,
+      0.24
+     ]
+    },
+    {
+     "title": "The ship",
+     "text": "Farther off, a larger ship sails on.",
+     "r": [
+      0.28,
+      0.36,
+      0.14,
+      0.14
+     ]
+    },
+    {
+     "title": "The clouds",
+     "text": "Dark storm clouds pile up while a patch of light remains: the storm is just beginning.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.45
+     ]
+    },
+    {
+     "title": "The waves",
+     "text": "Black-green water with white crests fills the bottom of the picture.",
+     "r": [
+      0.0,
+      0.52,
+      1.0,
+      0.48
+     ]
+    }
+   ]
+  },
+  "32366": {
+   "image": "data/notice/32366.jpg",
+   "file": "George Inness - Near Kearsarge Village - 30.102 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Near Kearsarge Village, New Hampshire, painted by George Inness in 1875."
+    },
+    {
+     "title": "The storm clouds",
+     "text": "Dark clouds tear open over the hills.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.3
+     ]
+    },
+    {
+     "title": "The pine",
+     "text": "A single dark pine stands out on the bright slope.",
+     "r": [
+      0.4,
+      0.3,
+      0.2,
+      0.4
+     ]
+    },
+    {
+     "title": "The birch",
+     "text": "A thin white birch beside it, a pale vertical.",
+     "r": [
+      0.56,
+      0.2,
+      0.12,
+      0.4
+     ]
+    },
+    {
+     "title": "The meadow",
+     "text": "Bright green grass in sunlight, against the dark woods.",
+     "r": [
+      0.4,
+      0.5,
+      0.6,
+      0.5
+     ]
+    }
+   ]
+  },
+  "31828": {
+   "image": "data/notice/31828.jpg",
+   "file": "George Inness - Scene in Perugia - 20.169 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A scene in Perugia, Italy, painted by George Inness in 1875."
+    },
+    {
+     "title": "A faint rainbow",
+     "text": "Look at the upper left: a pale rainbow arcs across the clouds.",
+     "r": [
+      0.0,
+      0.0,
+      0.5,
+      0.3
+     ]
+    },
+    {
+     "title": "The hilltop buildings",
+     "text": "White buildings catch the light on the hill.",
+     "r": [
+      0.36,
+      0.32,
+      0.26,
+      0.14
+     ]
+    },
+    {
+     "title": "The figures",
+     "text": "People gather at a fountain in the shadowy foreground.",
+     "r": [
+      0.6,
+      0.72,
+      0.3,
+      0.24
+     ]
+    },
+    {
+     "title": "The trees",
+     "text": "Dark trees at right frame the view.",
+     "r": [
+      0.5,
+      0.1,
+      0.5,
+      0.5
+     ]
+    }
+   ]
+  },
+  "31881": {
+   "image": "data/notice/31881.jpg",
+   "file": "George Inness - Villa Borghese, Rome - 21.99 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Umbrella pines at the Villa Borghese in Rome, painted by George Inness around 1857."
+    },
+    {
+     "title": "The pines",
+     "text": "The flat-topped stone pines that define the Roman skyline.",
+     "r": [
+      0.16,
+      0.24,
+      0.44,
+      0.36
+     ]
+    },
+    {
+     "title": "The towers",
+     "text": "The villa’s towers peek between the trees.",
+     "r": [
+      0.48,
+      0.44,
+      0.22,
+      0.22
+     ]
+    },
+    {
+     "title": "The sky",
+     "text": "A thick, worked sky over the trees.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.3
+     ]
+    }
+   ]
+  },
+  "31888": {
+   "image": "data/notice/31888.jpg",
+   "file": "George Inness - Lake Nemi - 21.290 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Lake Nemi, a volcanic lake near Rome, painted by George Inness around 1874."
+    },
+    {
+     "title": "The lake",
+     "text": "The lake lies far below, glinting in the haze.",
+     "r": [
+      0.52,
+      0.4,
+      0.48,
+      0.3
+     ]
+    },
+    {
+     "title": "The thin tree",
+     "text": "A tall, thin tree rises at left, golden at the top.",
+     "r": [
+      0.18,
+      0.0,
+      0.16,
+      0.6
+     ]
+    },
+    {
+     "title": "The far hills",
+     "text": "A town and hills on the horizon, softened by distance.",
+     "r": [
+      0.52,
+      0.28,
+      0.48,
+      0.16
+     ]
+    }
+   ]
+  },
+  "31353": {
+   "image": "data/notice/31353.jpg",
+   "file": "James Abbott McNeill Whistler - Street in Old Chelsea - 09.297 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A street of shops in Chelsea, London, painted by James McNeill Whistler around 1880–85 on a small wooden panel."
+    },
+    {
+     "title": "The shopfronts",
+     "text": "A row of old houses and shops, painted almost flat, like a stage set.",
+     "r": [
+      0.0,
+      0.0,
+      1.0,
+      0.6
+     ]
+    },
+    {
+     "title": "The children",
+     "text": "A few children play in the street, quick dabs of paint.",
+     "r": [
+      0.56,
+      0.66,
+      0.3,
+      0.3
+     ]
+    },
+    {
+     "title": "A small figure",
+     "text": "A lone figure at left, just a few strokes.",
+     "r": [
+      0.26,
+      0.68,
+      0.1,
+      0.24
+     ]
+    }
+   ]
+  },
+  "31085": {
+   "image": "data/notice/31085.jpg",
+   "file": "Little Rose of Lyme Regis (1895).jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A girl from Lyme Regis, in Dorset, England, painted by Whistler in 1895."
+    },
+    {
+     "title": "Her face",
+     "text": "Large dark eyes in a pale face: Whistler had a gift for children’s portraits.",
+     "r": [
+      0.3,
+      0.08,
+      0.4,
+      0.3
+     ]
+    },
+    {
+     "title": "The red pinafore",
+     "text": "A warm red pinafore over a dark dress.",
+     "r": [
+      0.14,
+      0.4,
+      0.72,
+      0.42
+     ]
+    },
+    {
+     "title": "Folded hands",
+     "text": "Her hands rest in her lap, a quiet, patient pose.",
+     "r": [
+      0.32,
+      0.84,
+      0.4,
+      0.16
+     ]
+    }
+   ]
+  },
+  "31086": {
+   "image": "data/notice/31086.jpg",
+   "file": "James Abbott McNeill Whistler - The Master Smith of Lyme Regis - 96.951 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The blacksmith of Lyme Regis, painted by Whistler in the same summer of 1895."
+    },
+    {
+     "title": "His face",
+     "text": "A strong face, dark moustache, eyes turned aside.",
+     "r": [
+      0.24,
+      0.08,
+      0.5,
+      0.32
+     ]
+    },
+    {
+     "title": "Folded arms",
+     "text": "Arms crossed: a working man, calm and proud.",
+     "r": [
+      0.3,
+      0.6,
+      0.5,
+      0.2
+     ]
+    },
+    {
+     "title": "Dark tones",
+     "text": "Browns and blacks, almost no colour: Whistler loved quiet harmonies.",
+     "r": [
+      0.0,
+      0.4,
+      1.0,
+      0.6
+     ]
+    }
+   ]
+  },
+  "31120": {
+   "image": "data/notice/31120.jpg",
+   "file": "Elihu Vedder - Lazarus Rising from the Tomb - 01.1 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Lazarus coming out of his tomb, raised from the dead by Christ, painted by Elihu Vedder in 1899, almost entirely in greys."
+    },
+    {
+     "title": "His face",
+     "text": "Wrapped in a burial cloth, Lazarus looks out, stunned and still half in shadow.",
+     "r": [
+      0.34,
+      0.26,
+      0.36,
+      0.42
+     ]
+    },
+    {
+     "title": "The shroud",
+     "text": "The white burial cloth swirls around him.",
+     "r": [
+      0.0,
+      0.6,
+      1.0,
+      0.4
+     ]
+    },
+    {
+     "title": "The mountains",
+     "text": "Barren mountains behind, cold and silent.",
+     "r": [
+      0.66,
+      0.3,
+      0.34,
+      0.4
+     ]
+    }
+   ]
+  },
+  "32045": {
+   "image": "data/notice/32045.jpg",
+   "file": "Elihu Vedder - Eugenia, Head of a Roman Girl - 23.488 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Eugenia, a young Roman woman, painted by Elihu Vedder in 1879. Vedder spent most of his life in Rome."
+    },
+    {
+     "title": "Her face",
+     "text": "Dark hair, a calm, slightly sad expression.",
+     "r": [
+      0.3,
+      0.18,
+      0.42,
+      0.42
+     ]
+    },
+    {
+     "title": "The sleeves",
+     "text": "Rich patterned sleeves fill the bottom of the picture.",
+     "r": [
+      0.0,
+      0.62,
+      1.0,
+      0.38
+     ]
+    },
+    {
+     "title": "The bodice",
+     "text": "An embroidered bodice with a lace collar.",
+     "r": [
+      0.34,
+      0.6,
+      0.32,
+      0.3
+     ]
+    }
+   ]
+  },
+  "31279": {
+   "image": "data/notice/31279.jpg",
+   "file": "Hopefamily.GIF",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Hope family of Sydenham, Kent, painted by Benjamin West in 1802. West was born in Pennsylvania and became president of London’s Royal Academy."
+    },
+    {
+     "title": "The family",
+     "text": "Parents, children and relatives crowd around a table, each with a role in the group.",
+     "r": [
+      0.04,
+      0.1,
+      0.92,
+      0.7
+     ]
+    },
+    {
+     "title": "The children in white",
+     "text": "The children in white are the bright centre of the picture.",
+     "r": [
+      0.32,
+      0.26,
+      0.32,
+      0.44
+     ]
+    },
+    {
+     "title": "The seascape behind",
+     "text": "A painting of ships and a harbour hangs behind them.",
+     "r": [
+      0.28,
+      0.06,
+      0.36,
+      0.3
+     ]
+    },
+    {
+     "title": "The table",
+     "text": "Books, papers and a red cloth on the table.",
+     "r": [
+      0.18,
+      0.58,
+      0.5,
+      0.24
+     ]
+    }
+   ]
+  },
+  "30874": {
+   "image": "data/notice/30874.jpg",
+   "file": "Charles Willson Peale - Head of Washington - 74.29 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "George Washington, painted by Charles Willson Peale around 1795–98. Peale painted Washington many times from life."
+    },
+    {
+     "title": "The face",
+     "text": "An older Washington, heavy-lidded and grave.",
+     "r": [
+      0.26,
+      0.14,
+      0.52,
+      0.36
+     ]
+    },
+    {
+     "title": "The cravat",
+     "text": "A soft white cravat, painted with a few light touches.",
+     "r": [
+      0.3,
+      0.48,
+      0.3,
+      0.36
+     ]
+    }
+   ]
+  },
+  "32344": {
+   "image": "data/notice/32344.jpg",
+   "file": "John Smibert - Mrs. Tyng - 29.792 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Mrs. Tyng, painted by John Smibert in 1729, the year he arrived in Boston, one of the first trained European painters in the colonies."
+    },
+    {
+     "title": "Her face",
+     "text": "A calm, pleasant face under dark curls.",
+     "r": [
+      0.36,
+      0.04,
+      0.3,
+      0.24
+     ]
+    },
+    {
+     "title": "The blue silk",
+     "text": "A shimmering blue dress, the main colour.",
+     "r": [
+      0.26,
+      0.3,
+      0.6,
+      0.5
+     ]
+    },
+    {
+     "title": "The red wrap",
+     "text": "A red shawl drapes around her, a dramatic touch.",
+     "r": [
+      0.0,
+      0.36,
+      0.5,
+      0.64
+     ]
+    },
+    {
+     "title": "The hand",
+     "text": "Her hand rests on a ledge, showing off a lace cuff.",
+     "r": [
+      0.5,
+      0.62,
+      0.4,
+      0.28
+     ]
+    }
+   ]
+  },
+  "31744": {
+   "image": "data/notice/31744.jpg",
+   "file": "Henry Sargent - The Tea Party - 19.12 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "An evening tea party in a Boston house, painted by Henry Sargent around 1824."
+    },
+    {
+     "title": "The arch",
+     "text": "Look through the arch: a second room, full of guests, glows with light.",
+     "r": [
+      0.36,
+      0.36,
+      0.32,
+      0.3
+     ]
+    },
+    {
+     "title": "The crowd",
+     "text": "Dozens of tiny guests talk, stand and sit in their best clothes.",
+     "r": [
+      0.0,
+      0.48,
+      1.0,
+      0.3
+     ]
+    },
+    {
+     "title": "The ceiling",
+     "text": "A big lit ceiling and dark drapery frame the scene like a stage.",
+     "r": [
+      0.0,
+      0.1,
+      1.0,
+      0.25
+     ]
+    }
+   ]
+  },
+  "31745": {
+   "image": "data/notice/31745.jpg",
+   "file": "Henry Sargent - The Dinner Party - 19.13 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A gentlemen’s dinner party in a Boston house, painted by Henry Sargent around 1821."
+    },
+    {
+     "title": "The long table",
+     "text": "The guests sit at a long table, seen through an arch.",
+     "r": [
+      0.2,
+      0.5,
+      0.6,
+      0.22
+     ]
+    },
+    {
+     "title": "Red curtains",
+     "text": "Red curtains at the windows warm up the room.",
+     "r": [
+      0.36,
+      0.36,
+      0.34,
+      0.14
+     ]
+    },
+    {
+     "title": "The servant",
+     "text": "A servant stands at the right side of the table.",
+     "r": [
+      0.56,
+      0.46,
+      0.12,
+      0.26
+     ]
+    },
+    {
+     "title": "The chandelier",
+     "text": "A chandelier hangs from the ceiling at the centre.",
+     "r": [
+      0.38,
+      0.2,
+      0.24,
+      0.2
+     ]
+    }
+   ]
+  },
+  "31024": {
+   "image": "data/notice/31024.jpg",
+   "file": "Dennis Miller Bunker - Jessica 1890.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Jessica, painted by Dennis Miller Bunker in 1890, the year he died, aged only 29."
+    },
+    {
+     "title": "Her profile",
+     "text": "A pure profile, pale against the dark background.",
+     "r": [
+      0.36,
+      0.12,
+      0.36,
+      0.32
+     ]
+    },
+    {
+     "title": "Red hair",
+     "text": "Coppery hair pinned up, glowing in the light.",
+     "r": [
+      0.24,
+      0.12,
+      0.32,
+      0.26
+     ]
+    },
+    {
+     "title": "The dark dress",
+     "text": "A black dress merges into the dark background.",
+     "r": [
+      0.0,
+      0.56,
+      1.0,
+      0.44
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Signed and dated at lower right.",
+     "r": [
+      0.72,
+      0.88,
+      0.28,
+      0.12
+     ]
+    }
+   ]
+  },
+  "31339": {
+   "image": "data/notice/31339.jpg",
+   "file": "Eleanor 1907 Frank Weston Benson.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Eleanor, the painter’s daughter, on a sunny porch, painted by Frank Weston Benson in 1907, probably at the family’s summer home in North Haven, Maine."
+    },
+    {
+     "title": "Her profile",
+     "text": "Red hair, head bowed, lost in thought.",
+     "r": [
+      0.5,
+      0.02,
+      0.32,
+      0.3
+     ]
+    },
+    {
+     "title": "Pink dress",
+     "text": "Her pink dress is painted with flickering strokes of white light.",
+     "r": [
+      0.4,
+      0.3,
+      0.6,
+      0.6
+     ]
+    },
+    {
+     "title": "The straw hat",
+     "text": "A straw hat with a blue ribbon in her lap.",
+     "r": [
+      0.32,
+      0.6,
+      0.24,
+      0.32
+     ]
+    },
+    {
+     "title": "The view",
+     "text": "Trees, water and distant hills beyond the white fence.",
+     "r": [
+      0.0,
+      0.2,
+      0.48,
+      0.5
+     ]
+    }
+   ]
+  },
+  "32078": {
+   "image": "data/notice/32078.jpg",
+   "file": "Edmund Charles Tarbell - Mother and Child in a Boat - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A mother and child in a boat, painted by Edmund Tarbell in 1892; the models are thought to be his wife and daughter."
+    },
+    {
+     "title": "The child",
+     "text": "A small child in white sits on her mother’s lap and looks straight at us.",
+     "r": [
+      0.5,
+      0.24,
+      0.24,
+      0.24
+     ]
+    },
+    {
+     "title": "The mother",
+     "text": "Her face in shadow under the leaves, her arm around the child.",
+     "r": [
+      0.42,
+      0.08,
+      0.24,
+      0.2
+     ]
+    },
+    {
+     "title": "The water",
+     "text": "Sparkling blue water made of short, bright strokes.",
+     "r": [
+      0.0,
+      0.0,
+      0.4,
+      0.6
+     ]
+    },
+    {
+     "title": "The boat",
+     "text": "The white boat cuts diagonally across the picture.",
+     "r": [
+      0.0,
+      0.46,
+      0.8,
+      0.54
+     ]
+    },
+    {
+     "title": "Leaves above",
+     "text": "Overhanging leaves frame the top.",
+     "r": [
+      0.6,
+      0.0,
+      0.4,
+      0.3
+     ]
+    }
+   ]
   }
  }
 }
