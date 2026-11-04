@@ -223,6 +223,14 @@ Internet Archive gri_33125006526137, page n154), turned so north is up. The 1972
 plans. Floor 2 is the exhibition floor today; basement (Museum Store, restrooms) as an outline with approximate places.
 Works: objects that name the house or came from Theresa Fair Oelrichs or the J. Edgar Monroe family.
 
+Mark Twain House & Museum, Hartford (Nov 4, 2026): map guide at `guide.html?museum=twain`, built by
+`tools/build_twain.py`. Map: grounds from OpenStreetMap (parking at 385 Farmington Avenue and 65 Forest Street, the
+paths, the Carriage House; gardens placed from the museum's garden pages, approximate); the house's basement and floors
+1-3 traced from the Historic American Buildings Survey drawings (HABS CT-359, 1995, Library of Congress ct0332), turned
+so north is up (on the sheets north is to the right). The Museum Center has no published plan: OpenStreetMap outline,
+rooms placed from the museum's exhibit page (approximate). Works: the rooms and their famous features with HABS photos,
+plus the Museum Center's permanent exhibits.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
