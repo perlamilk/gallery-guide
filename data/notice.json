@@ -6772,6 +6772,1536 @@
      ]
     }
    ]
+  },
+  "32401": {
+   "image": "data/notice/32401.jpg",
+   "file": "J S Copley - Paul Revere.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Paul Revere, painted by John Singleton Copley around 1768, years before Revere’s famous midnight ride. He is shown at work, as a silversmith."
+    },
+    {
+     "title": "The pose",
+     "text": "Hand on chin: a thinker, not just a craftsman.",
+     "r": [
+      0.38,
+      0.28,
+      0.22,
+      0.17
+     ]
+    },
+    {
+     "title": "The teapot",
+     "text": "A silver teapot he made himself. Look at his fingers reflected in the shiny silver.",
+     "r": [
+      0.6,
+      0.5,
+      0.3,
+      0.27
+     ]
+    },
+    {
+     "title": "The tools",
+     "text": "Engraving tools on the table, ready to decorate the pot.",
+     "r": [
+      0.1,
+      0.72,
+      0.45,
+      0.15
+     ]
+    },
+    {
+     "title": "Shirtsleeves",
+     "text": "No coat or wig: working clothes, unusual for a portrait at the time.",
+     "r": [
+      0.15,
+      0.3,
+      0.7,
+      0.45
+     ]
+    },
+    {
+     "title": "The table",
+     "text": "The polished wood reflects his shirt and hand.",
+     "r": [
+      0.1,
+      0.68,
+      0.85,
+      0.18
+     ]
+    }
+   ]
+  },
+  "32404": {
+   "image": "data/notice/32404.jpg",
+   "file": "Degas - Das Ehepaar Morbilli.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Edgar Degas painted his sister Thérèse and her husband (and cousin) Edmondo Morbilli, about 1865."
+    },
+    {
+     "title": "Thérèse",
+     "text": "Her head rests on her hand; she looks uneasy.",
+     "r": [
+      0.12,
+      0.15,
+      0.3,
+      0.35
+     ]
+    },
+    {
+     "title": "Edmondo",
+     "text": "He sits forward, confident, looking right at us.",
+     "r": [
+      0.45,
+      0.05,
+      0.42,
+      0.38
+     ]
+    },
+    {
+     "title": "The hands",
+     "text": "Her hand on his shoulder, his hand loose on his knee.",
+     "r": [
+      0.28,
+      0.5,
+      0.4,
+      0.25
+     ]
+    },
+    {
+     "title": "The space between them",
+     "text": "They sit close, but each seems alone. Degas was a sharp observer of couples."
+    }
+   ]
+  },
+  "32415": {
+   "image": "data/notice/32415.jpg",
+   "file": "Childe Hassam, 'Boston Common at Twilight', 1885–86.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Boston Common at twilight, painted by Childe Hassam in 1885. Tremont Street is on the left."
+    },
+    {
+     "title": "Feeding the birds",
+     "text": "A woman and two girls throw crumbs to birds in the snow.",
+     "r": [
+      0.22,
+      0.38,
+      0.27,
+      0.42
+     ]
+    },
+    {
+     "title": "The streetcars",
+     "text": "Horse-drawn streetcars on Tremont Street.",
+     "r": [
+      0,
+      0.35,
+      0.22,
+      0.2
+     ]
+    },
+    {
+     "title": "The sunset",
+     "text": "Pink and orange light through the bare trees.",
+     "r": [
+      0.5,
+      0.05,
+      0.5,
+      0.3
+     ]
+    },
+    {
+     "title": "The birds",
+     "text": "Small dark birds scattered on the snow.",
+     "r": [
+      0.45,
+      0.55,
+      0.25,
+      0.2
+     ]
+    }
+   ]
+  },
+  "32538": {
+   "image": "data/notice/32538.jpg",
+   "file": "Thomas Eakins - Starting Out After Rail - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Thomas Eakins, 1874. Two men set out on the Delaware River near Philadelphia to hunt rail, small marsh birds."
+    },
+    {
+     "title": "The sail",
+     "text": "A big, bright sail leaning in the wind. Eakins studied boats and light with great precision.",
+     "r": [
+      0.05,
+      0.3,
+      0.42,
+      0.55
+     ]
+    },
+    {
+     "title": "The men",
+     "text": "Two hunters in the boat, one steering.",
+     "r": [
+      0.5,
+      0.68,
+      0.37,
+      0.2
+     ]
+    },
+    {
+     "title": "Another boat",
+     "text": "A second sailboat far away gives the distance.",
+     "r": [
+      0.6,
+      0.47,
+      0.17,
+      0.1
+     ]
+    },
+    {
+     "title": "The water",
+     "text": "Calm brown river water.",
+     "r": [
+      0,
+      0.55,
+      1,
+      0.45
+     ]
+    }
+   ]
+  },
+  "32679": {
+   "image": "data/notice/32679.jpg",
+   "file": "Boston, Museum of Fine Art - Il bacino di San Marco c.1738 - Canaletto.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Bacino di San Marco in Venice, by Canaletto, about 1738. Tourists on the Grand Tour bought views like this as souvenirs."
+    },
+    {
+     "title": "The bell tower",
+     "text": "On the left, the Campanile of San Marco.",
+     "r": [
+      0,
+      0.32,
+      0.1,
+      0.32
+     ]
+    },
+    {
+     "title": "The Doge’s Palace",
+     "text": "Along the waterfront: the heart of Venice.",
+     "r": [
+      0,
+      0.48,
+      0.28,
+      0.17
+     ]
+    },
+    {
+     "title": "San Giorgio",
+     "text": "Across the water, the church of San Giorgio Maggiore.",
+     "r": [
+      0.65,
+      0.42,
+      0.2,
+      0.2
+     ]
+    },
+    {
+     "title": "The ships",
+     "text": "Big ships with rigging in front.",
+     "r": [
+      0.3,
+      0.6,
+      0.27,
+      0.3
+     ]
+    },
+    {
+     "title": "Gondolas",
+     "text": "Dozens of tiny gondolas, each one carefully painted.",
+     "r": [
+      0.5,
+      0.7,
+      0.5,
+      0.25
+     ]
+    }
+   ]
+  },
+  "32693": {
+   "image": "data/notice/32693.jpg",
+   "file": "Monet - Morning on the Seine, near Giverny, 1896.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Claude Monet painted the Seine near Giverny at dawn, often from a boat, in a whole series in 1896–97."
+    },
+    {
+     "title": "The trees",
+     "text": "Dark trees on the left, soft as a cloud.",
+     "r": [
+      0,
+      0,
+      0.6,
+      0.8
+     ]
+    },
+    {
+     "title": "The mist",
+     "text": "Morning mist: pinks and pale blues.",
+     "r": [
+      0.55,
+      0.1,
+      0.45,
+      0.6
+     ]
+    },
+    {
+     "title": "Reflections",
+     "text": "The trees are reflected in the still water. Where is the edge of the bank?",
+     "r": [
+      0.4,
+      0.6,
+      0.6,
+      0.35
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Monet’s signature, bottom left.",
+     "r": [
+      0,
+      0.85,
+      0.27,
+      0.12
+     ]
+    }
+   ]
+  },
+  "32703": {
+   "image": "data/notice/32703.jpg",
+   "file": "Renoir - Girls Picking Flowers in a Meadow, about 1890.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Two girls picking flowers in a meadow, by Pierre-Auguste Renoir, about 1890."
+    },
+    {
+     "title": "Reaching up",
+     "text": "One girl reaches for the blossoms.",
+     "r": [
+      0.4,
+      0.25,
+      0.4,
+      0.5
+     ]
+    },
+    {
+     "title": "The straw hat",
+     "text": "A yellow straw hat with a blue ribbon.",
+     "r": [
+      0.25,
+      0.38,
+      0.2,
+      0.15
+     ]
+    },
+    {
+     "title": "The bouquet",
+     "text": "A small bunch of yellow flowers in her hands.",
+     "r": [
+      0.35,
+      0.6,
+      0.17,
+      0.2
+     ]
+    },
+    {
+     "title": "The colors",
+     "text": "Soft feathery strokes of green, pink and white everywhere.",
+     "r": [
+      0,
+      0,
+      1,
+      0.4
+     ]
+    }
+   ]
+  },
+  "32837": {
+   "image": "data/notice/32837.jpg",
+   "file": "James Abbott McNeill Whistler - Nocturne in Blue and Silver- The Lagoon, Venice - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "James McNeill Whistler, Venice, 1879–80. He named paintings like music: Nocturne in Blue and Silver."
+    },
+    {
+     "title": "The tower",
+     "text": "The bell tower of San Giorgio Maggiore, a dark shape against the sky.",
+     "r": [
+      0.65,
+      0.12,
+      0.17,
+      0.3
+     ]
+    },
+    {
+     "title": "The ships",
+     "text": "Masts of ships on the left, almost invisible.",
+     "r": [
+      0.1,
+      0.2,
+      0.32,
+      0.25
+     ]
+    },
+    {
+     "title": "The lights",
+     "text": "A few tiny lights along the shore.",
+     "r": [
+      0.55,
+      0.33,
+      0.35,
+      0.12
+     ]
+    },
+    {
+     "title": "The gondolas",
+     "text": "Gondolas glide in the dark water.",
+     "r": [
+      0.2,
+      0.55,
+      0.75,
+      0.35
+     ]
+    },
+    {
+     "title": "Almost nothing",
+     "text": "Very little paint, very few details. Let your eyes adjust, like at night."
+    }
+   ]
+  },
+  "32851": {
+   "image": "data/notice/32851.jpg",
+   "file": "Monet - Meadow with Haystacks near Giverny, 1885.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A meadow near Giverny, Monet, 1885. Haystacks would later become one of his most famous series."
+    },
+    {
+     "title": "The haystacks",
+     "text": "Pink haystacks on the left.",
+     "r": [
+      0,
+      0.55,
+      0.35,
+      0.2
+     ]
+    },
+    {
+     "title": "The trees",
+     "text": "A wall of trees in deep blues and greens.",
+     "r": [
+      0.45,
+      0.1,
+      0.55,
+      0.55
+     ]
+    },
+    {
+     "title": "The meadow",
+     "text": "Quick, criss-crossing strokes of many colors make the grass.",
+     "r": [
+      0,
+      0.7,
+      1,
+      0.3
+     ]
+    },
+    {
+     "title": "The sky",
+     "text": "A pale, hazy summer sky.",
+     "r": [
+      0,
+      0,
+      0.5,
+      0.35
+     ]
+    }
+   ]
+  },
+  "32947": {
+   "image": "data/notice/32947.jpg",
+   "file": "Martin Johnson Heade - Approaching Storm- Beach near Newport - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A storm coming in over a beach near Newport, by Martin Johnson Heade, 1861, the year the Civil War began."
+    },
+    {
+     "title": "The sky",
+     "text": "An enormous dark sky takes up half the picture.",
+     "r": [
+      0,
+      0,
+      1,
+      0.5
+     ]
+    },
+    {
+     "title": "The surf",
+     "text": "White waves break in long, even lines.",
+     "r": [
+      0.3,
+      0.6,
+      0.7,
+      0.25
+     ]
+    },
+    {
+     "title": "The sailboats",
+     "text": "Tiny white sails, still in sunlight.",
+     "r": [
+      0.7,
+      0.55,
+      0.27,
+      0.15
+     ]
+    },
+    {
+     "title": "The rocks",
+     "text": "Bright rocks on the left catch the last light.",
+     "r": [
+      0,
+      0.5,
+      0.22,
+      0.27
+     ]
+    }
+   ]
+  },
+  "32976": {
+   "image": "data/notice/32976.jpg",
+   "file": "Edouard Manet - Victorine Meurent - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Victorine Meurent, painted by Édouard Manet about 1862. She was his favorite model, and later became a painter herself. Her self-portrait is in the Museum too."
+    },
+    {
+     "title": "The face",
+     "text": "Flat, strong light. Manet skips the soft shading of traditional portraits.",
+     "r": [
+      0.25,
+      0.12,
+      0.45,
+      0.45
+     ]
+    },
+    {
+     "title": "The ribbon",
+     "text": "A blue ribbon in her hair.",
+     "r": [
+      0.25,
+      0.05,
+      0.42,
+      0.15
+     ]
+    },
+    {
+     "title": "The collar",
+     "text": "Black ribbon and a striped blouse, painted in quick strokes.",
+     "r": [
+      0.2,
+      0.65,
+      0.47,
+      0.35
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Manet signed at the top right.",
+     "r": [
+      0.78,
+      0,
+      0.22,
+      0.1
+     ]
+    }
+   ]
+  },
+  "33060": {
+   "image": "data/notice/33060.jpg",
+   "file": "Cole Thomas Expulsion from the Garden of Eden 1828.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Expulsion from the Garden of Eden, Thomas Cole, 1828. Two worlds, divided down the middle."
+    },
+    {
+     "title": "The gate",
+     "text": "A blaze of light pours out of the stone gate. Look closely for two tiny figures, Adam and Eve, leaving.",
+     "r": [
+      0.38,
+      0.3,
+      0.24,
+      0.32
+     ]
+    },
+    {
+     "title": "Paradise",
+     "text": "On the right: bright, calm Eden with palm trees.",
+     "r": [
+      0.65,
+      0,
+      0.35,
+      0.6
+     ]
+    },
+    {
+     "title": "The wild world",
+     "text": "On the left: dead trees, storm and rocks.",
+     "r": [
+      0,
+      0.2,
+      0.37,
+      0.7
+     ]
+    },
+    {
+     "title": "The volcano",
+     "text": "A volcano smokes in the distance.",
+     "r": [
+      0.25,
+      0.03,
+      0.22,
+      0.22
+     ]
+    }
+   ]
+  },
+  "33195": {
+   "image": "data/notice/33195.jpg",
+   "file": "Fitz Henry Lane - Owl's Head, Penobscot Bay, Maine - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Owl’s Head, Penobscot Bay, Maine, by Fitz Henry Lane, 1862. A painter of still light, later called “luminism”."
+    },
+    {
+     "title": "The man",
+     "text": "A lone figure on the shore looks out.",
+     "r": [
+      0.17,
+      0.72,
+      0.12,
+      0.18
+     ]
+    },
+    {
+     "title": "The ship",
+     "text": "A sailing ship at rest.",
+     "r": [
+      0.37,
+      0.5,
+      0.14,
+      0.23
+     ]
+    },
+    {
+     "title": "The island",
+     "text": "A small wooded island and the headland.",
+     "r": [
+      0.45,
+      0.55,
+      0.25,
+      0.15
+     ]
+    },
+    {
+     "title": "Mirror water",
+     "text": "Water so calm it reflects everything.",
+     "r": [
+      0,
+      0.6,
+      1,
+      0.3
+     ]
+    },
+    {
+     "title": "The boat",
+     "text": "A rowboat pulled up on the beach.",
+     "r": [
+      0.05,
+      0.82,
+      0.22,
+      0.13
+     ]
+    }
+   ]
+  },
+  "33254": {
+   "image": "data/notice/33254.jpg",
+   "file": "Paul Cézanne - Turn in the Road - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Turn in the Road, Paul Cézanne, about 1881."
+    },
+    {
+     "title": "The road",
+     "text": "The road curves away and disappears. Where does it go?",
+     "r": [
+      0.25,
+      0.55,
+      0.57,
+      0.45
+     ]
+    },
+    {
+     "title": "The houses",
+     "text": "Houses built of flat patches of color, like blocks.",
+     "r": [
+      0.3,
+      0.18,
+      0.7,
+      0.32
+     ]
+    },
+    {
+     "title": "The brushstrokes",
+     "text": "Short strokes laid side by side, in the same direction.",
+     "r": [
+      0,
+      0,
+      0.3,
+      0.6
+     ]
+    }
+   ]
+  },
+  "33563": {
+   "image": "data/notice/33563.jpg",
+   "file": "Rembrandt 21044.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Reverend Johannes Elison, by Rembrandt, 1634. He hangs beside his wife, Maria Bockenolle. Life-size, full-length portraits were rare in Rembrandt’s work."
+    },
+    {
+     "title": "The face",
+     "text": "An old man with a white beard and a stiff ruff collar.",
+     "r": [
+      0.25,
+      0.13,
+      0.32,
+      0.22
+     ]
+    },
+    {
+     "title": "The Bible",
+     "text": "An open book on the table: he was a minister.",
+     "r": [
+      0.6,
+      0.32,
+      0.4,
+      0.18
+     ]
+    },
+    {
+     "title": "The hand",
+     "text": "A hand on his chest, as if speaking.",
+     "r": [
+      0.35,
+      0.38,
+      0.27,
+      0.3
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Rembrandt’s signature and date, bottom right.",
+     "r": [
+      0.75,
+      0.9,
+      0.25,
+      0.08
+     ]
+    }
+   ]
+  },
+  "33564": {
+   "image": "data/notice/33564.jpg",
+   "file": "Rembrandt, Portrait of Maria Bockenolle, 1634, Museum of Fine Arts, Boston.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Maria Bockenolle, Rembrandt, 1634, the wife of Johannes Elison. The two portraits face each other."
+    },
+    {
+     "title": "The face",
+     "text": "A calm face framed by a wide white ruff.",
+     "r": [
+      0.3,
+      0.14,
+      0.42,
+      0.22
+     ]
+    },
+    {
+     "title": "The hands",
+     "text": "Hands resting in her lap, white cuffs bright against the black.",
+     "r": [
+      0.15,
+      0.4,
+      0.6,
+      0.15
+     ]
+    },
+    {
+     "title": "The black dress",
+     "text": "Many shades of black: Rembrandt makes the dark rich.",
+     "r": [
+      0.1,
+      0.45,
+      0.8,
+      0.55
+     ]
+    },
+    {
+     "title": "The curtain",
+     "text": "A reddish curtain behind her.",
+     "r": [
+      0.6,
+      0.05,
+      0.4,
+      0.6
+     ]
+    }
+   ]
+  },
+  "33634": {
+   "image": "data/notice/33634.jpg",
+   "file": "Edvard Munch - Summer Night's Dream. The Voice (1893).jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Summer Night’s Dream (The Voice), Edvard Munch, 1893."
+    },
+    {
+     "title": "The woman",
+     "text": "A woman in white among the trees, hands behind her back, looking straight at us.",
+     "r": [
+      0.15,
+      0.15,
+      0.37,
+      0.85
+     ]
+    },
+    {
+     "title": "The moon",
+     "text": "The moon’s reflection makes a pale column on the water.",
+     "r": [
+      0.47,
+      0.05,
+      0.13,
+      0.4
+     ]
+    },
+    {
+     "title": "The trees",
+     "text": "Tall dark trunks like the bars of a fence.",
+     "r": [
+      0.6,
+      0,
+      0.4,
+      1
+     ]
+    }
+   ]
+  },
+  "33697": {
+   "image": "data/notice/33697.jpg",
+   "file": "Water-Lily Pond MFA Boston 61.959 Catalog No 1630.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The water lily pond in Claude Monet’s garden at Giverny, 1900, with his Japanese bridge."
+    },
+    {
+     "title": "The bridge",
+     "text": "An arched footbridge, inspired by Japanese prints Monet collected.",
+     "r": [
+      0.3,
+      0.25,
+      0.7,
+      0.27
+     ]
+    },
+    {
+     "title": "The water lilies",
+     "text": "Lily pads floating on the pond.",
+     "r": [
+      0.3,
+      0.5,
+      0.7,
+      0.35
+     ]
+    },
+    {
+     "title": "The willows",
+     "text": "Weeping willows hang over the top.",
+     "r": [
+      0,
+      0,
+      1,
+      0.3
+     ]
+    },
+    {
+     "title": "Thick paint",
+     "text": "Heavy, tangled brushwork. Monet painted this pond for the rest of his life."
+    }
+   ]
+  },
+  "33971": {
+   "image": "data/notice/33971.jpg",
+   "file": "Straßensängerin (1862) - Edouard Manet (Museum of Fine Arts, Boston).jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Street Singer, Édouard Manet, about 1862. The model is Victorine Meurent."
+    },
+    {
+     "title": "The face",
+     "text": "She raises cherries to her mouth as she leaves a café.",
+     "r": [
+      0.3,
+      0.05,
+      0.27,
+      0.15
+     ]
+    },
+    {
+     "title": "The cherries",
+     "text": "Cherries in a twist of yellow paper.",
+     "r": [
+      0.48,
+      0.27,
+      0.37,
+      0.12
+     ]
+    },
+    {
+     "title": "The guitar",
+     "text": "A guitar tucked under her arm: she sings in the streets.",
+     "r": [
+      0.6,
+      0.4,
+      0.27,
+      0.35
+     ]
+    },
+    {
+     "title": "The dress",
+     "text": "A long gray dress, painted in broad strokes.",
+     "r": [
+      0.1,
+      0.4,
+      0.75,
+      0.55
+     ]
+    },
+    {
+     "title": "The café door",
+     "text": "The café behind her.",
+     "r": [
+      0,
+      0.1,
+      0.3,
+      0.4
+     ]
+    }
+   ]
+  },
+  "34058": {
+   "image": "data/notice/34058.jpg",
+   "file": "Édouard Manet - Leçon de Musique.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Music Lesson, Édouard Manet, 1870."
+    },
+    {
+     "title": "The guitarist",
+     "text": "A bearded man plays the guitar.",
+     "r": [
+      0.1,
+      0.05,
+      0.47,
+      0.6
+     ]
+    },
+    {
+     "title": "The student",
+     "text": "A woman in black holds the sheet music.",
+     "r": [
+      0.45,
+      0.08,
+      0.42,
+      0.55
+     ]
+    },
+    {
+     "title": "The music",
+     "text": "White pages bright against her dress.",
+     "r": [
+      0.48,
+      0.38,
+      0.27,
+      0.15
+     ]
+    },
+    {
+     "title": "The guitar",
+     "text": "A warm yellow guitar in the middle.",
+     "r": [
+      0.12,
+      0.3,
+      0.42,
+      0.25
+     ]
+    }
+   ]
+  },
+  "34157": {
+   "image": "data/notice/34157.jpg",
+   "file": "Autoportrait au béret, par Paul Cézanne.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Self-Portrait with a Beret, Paul Cézanne, about 1898–1900, near the end of his life."
+    },
+    {
+     "title": "The face",
+     "text": "Built from patches of red, orange and green.",
+     "r": [
+      0.25,
+      0.25,
+      0.42,
+      0.3
+     ]
+    },
+    {
+     "title": "The beret",
+     "text": "A dark beret.",
+     "r": [
+      0.2,
+      0.1,
+      0.55,
+      0.2
+     ]
+    },
+    {
+     "title": "The coat",
+     "text": "A dark coat painted in heavy, separate strokes.",
+     "r": [
+      0.05,
+      0.5,
+      0.8,
+      0.5
+     ]
+    },
+    {
+     "title": "The red chair",
+     "text": "A red chair on the right.",
+     "r": [
+      0.75,
+      0.62,
+      0.25,
+      0.38
+     ]
+    }
+   ]
+  },
+  "34242": {
+   "image": "data/notice/34242.jpg",
+   "file": "Monet - Camille Monet and a Child in the Artist's Garden in Argenteuil, 1875.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Monet’s wife Camille sewing in their garden at Argenteuil, 1875, with a child playing nearby."
+    },
+    {
+     "title": "Camille",
+     "text": "Head bent over her sewing.",
+     "r": [
+      0.28,
+      0.15,
+      0.37,
+      0.47
+     ]
+    },
+    {
+     "title": "The child",
+     "text": "A small child in blue sits on the path.",
+     "r": [
+      0.72,
+      0.55,
+      0.25,
+      0.3
+     ]
+    },
+    {
+     "title": "The flowers",
+     "text": "A wall of red and pink flowers behind them.",
+     "r": [
+      0,
+      0,
+      1,
+      0.45
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Claude Monet 75, bottom left.",
+     "r": [
+      0,
+      0.85,
+      0.3,
+      0.12
+     ]
+    }
+   ]
+  },
+  "34253": {
+   "image": "data/notice/34253.jpg",
+   "file": "John Singleton Copley - The Copley Family (c. 1788) - MFA.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Copley Family. John Singleton Copley painted his own family after moving to London in 1774."
+    },
+    {
+     "title": "The artist",
+     "text": "Copley himself, standing at the back.",
+     "r": [
+      0.2,
+      0.04,
+      0.17,
+      0.17
+     ]
+    },
+    {
+     "title": "The grandfather",
+     "text": "His father-in-law, Richard Clarke, with a grandchild on his lap.",
+     "r": [
+      0.18,
+      0.15,
+      0.25,
+      0.3
+     ]
+    },
+    {
+     "title": "Mother and child",
+     "text": "His wife Susanna hugs one of their children.",
+     "r": [
+      0.5,
+      0.25,
+      0.37,
+      0.32
+     ]
+    },
+    {
+     "title": "The girl",
+     "text": "A girl in white stands in the middle, looking at us.",
+     "r": [
+      0.38,
+      0.35,
+      0.17,
+      0.5
+     ]
+    }
+   ]
+  },
+  "34260": {
+   "image": "data/notice/34260.jpg",
+   "file": "The Death of General Warren at the Battle of Bunker's Hill.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Battle of Bunker Hill, 1775, painted by John Trumbull in 1786. The American general Joseph Warren lies dying."
+    },
+    {
+     "title": "General Warren",
+     "text": "Wounded, held by a fellow soldier.",
+     "r": [
+      0.15,
+      0.4,
+      0.32,
+      0.25
+     ]
+    },
+    {
+     "title": "The officer",
+     "text": "A British officer stops a soldier’s bayonet, to spare Warren.",
+     "r": [
+      0.35,
+      0.22,
+      0.37,
+      0.32
+     ]
+    },
+    {
+     "title": "The flags",
+     "text": "British and American flags rise through the smoke.",
+     "r": [
+      0.1,
+      0,
+      0.75,
+      0.3
+     ]
+    },
+    {
+     "title": "The smoke",
+     "text": "Dark smoke fills the sky: the chaos of battle."
+    }
+   ]
+  },
+  "34280": {
+   "image": "data/notice/34280.jpg",
+   "file": "John Singleton Copley - A Boy with a Flying Squirrel (Henry Pelham) - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A Boy with a Flying Squirrel, John Singleton Copley, 1765. The boy is his half-brother Henry Pelham. Copley sent it to London to show what he could do, and it was praised there."
+    },
+    {
+     "title": "The profile",
+     "text": "Seen from the side, deep in thought.",
+     "r": [
+      0.3,
+      0.12,
+      0.37,
+      0.3
+     ]
+    },
+    {
+     "title": "The squirrel",
+     "text": "A pet flying squirrel on a little gold chain.",
+     "r": [
+      0.28,
+      0.67,
+      0.17,
+      0.15
+     ]
+    },
+    {
+     "title": "The glass",
+     "text": "A glass of water: look at the reflections.",
+     "r": [
+      0.03,
+      0.67,
+      0.17,
+      0.15
+     ]
+    },
+    {
+     "title": "The chain",
+     "text": "He holds the end of the chain.",
+     "r": [
+      0.03,
+      0.55,
+      0.27,
+      0.2
+     ]
+    },
+    {
+     "title": "The curtain",
+     "text": "A deep red curtain behind him.",
+     "r": [
+      0,
+      0,
+      1,
+      0.4
+     ]
+    }
+   ]
+  },
+  "34341": {
+   "image": "data/notice/34341.jpg",
+   "file": "Gilbert Stuart - George Washington (The Athenaeum Portrait) - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "George Washington, by Gilbert Stuart, 1796, the Athenaeum Portrait. It became the image on the one-dollar bill."
+    },
+    {
+     "title": "The face",
+     "text": "Only the face is finished.",
+     "r": [
+      0.38,
+      0.24,
+      0.3,
+      0.25
+     ]
+    },
+    {
+     "title": "Unfinished",
+     "text": "Stuart kept it unfinished on purpose and used it to paint many copies for sale.",
+     "r": [
+      0,
+      0.55,
+      1,
+      0.45
+     ]
+    },
+    {
+     "title": "The brushed background",
+     "text": "A few quick strokes around the head.",
+     "r": [
+      0.3,
+      0,
+      0.7,
+      0.6
+     ]
+    }
+   ]
+  },
+  "34360": {
+   "image": "data/notice/34360.jpg",
+   "file": "Dante Gabriel Rossetti Bocca Baciata 1859.png",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Bocca Baciata, Dante Gabriel Rossetti, 1859. The title, from Boccaccio, means “the mouth that has been kissed”."
+    },
+    {
+     "title": "The face",
+     "text": "Red lips, thick red-gold hair.",
+     "r": [
+      0.25,
+      0.12,
+      0.45,
+      0.35
+     ]
+    },
+    {
+     "title": "The marigolds",
+     "text": "A background of marigolds.",
+     "r": [
+      0,
+      0,
+      1,
+      0.15
+     ]
+    },
+    {
+     "title": "The rose",
+     "text": "A white rose in her hair.",
+     "r": [
+      0.62,
+      0.17,
+      0.17,
+      0.12
+     ]
+    },
+    {
+     "title": "The apple",
+     "text": "An apple on the ledge, an old symbol of temptation.",
+     "r": [
+      0.7,
+      0.78,
+      0.22,
+      0.18
+     ]
+    },
+    {
+     "title": "The hair ornament",
+     "text": "A gold ornament hangs by her face.",
+     "r": [
+      0.18,
+      0.25,
+      0.15,
+      0.17
+     ]
+    }
+   ]
+  },
+  "533347": {
+   "image": "data/notice/533347.jpg",
+   "file": "Mondrian - Composition with Blue, Yellow, and Red, 1927.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Composition with Blue, Yellow, and Red, Piet Mondrian, 1927. Only straight lines and three primary colors."
+    },
+    {
+     "title": "The blue",
+     "text": "A big blue square in the corner.",
+     "r": [
+      0,
+      0,
+      0.27,
+      0.3
+     ]
+    },
+    {
+     "title": "The yellow",
+     "text": "A thin yellow strip at the bottom.",
+     "r": [
+      0.25,
+      0.87,
+      0.32,
+      0.13
+     ]
+    },
+    {
+     "title": "The red",
+     "text": "Just a little red, at the bottom right.",
+     "r": [
+      0.9,
+      0.84,
+      0.1,
+      0.16
+     ]
+    },
+    {
+     "title": "The white",
+     "text": "Most of the canvas is white. The balance is in the empty space.",
+     "r": [
+      0.25,
+      0.05,
+      0.7,
+      0.8
+     ]
+    },
+    {
+     "title": "The initials",
+     "text": "Painted initials and date: P M 27.",
+     "r": [
+      0.48,
+      0.88,
+      0.17,
+      0.1
+     ]
+    }
+   ]
+  },
+  "537982": {
+   "image": "data/notice/537982.jpg",
+   "file": "Gustave Caillebotte -Man at His Bath.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Man at His Bath, Gustave Caillebotte, 1884. A man drying himself after a bath, a subject usually painted with women."
+    },
+    {
+     "title": "The back",
+     "text": "He rubs himself dry with a towel.",
+     "r": [
+      0.15,
+      0.08,
+      0.47,
+      0.85
+     ]
+    },
+    {
+     "title": "Wet footprints",
+     "text": "Look at the floor: wet footprints from the tub.",
+     "r": [
+      0.15,
+      0.7,
+      0.47,
+      0.25
+     ]
+    },
+    {
+     "title": "The tub",
+     "text": "A copper bathtub on the right.",
+     "r": [
+      0.6,
+      0.35,
+      0.4,
+      0.37
+     ]
+    },
+    {
+     "title": "His clothes",
+     "text": "Clothes thrown over a chair.",
+     "r": [
+      0,
+      0.3,
+      0.25,
+      0.42
+     ]
+    },
+    {
+     "title": "The towel",
+     "text": "Another towel on the floor.",
+     "r": [
+      0.6,
+      0.8,
+      0.4,
+      0.2
+     ]
+    }
+   ]
+  },
+  "696863": {
+   "image": "data/notice/696863.jpg",
+   "file": "Autoportrait-victorine-meurent.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Self-portrait by Victorine Meurent, Manet’s favorite model, who became a painter and exhibited at the Paris Salon. This is one of very few of her paintings known today."
+    },
+    {
+     "title": "The face",
+     "text": "She looks over her shoulder at us, calm and direct.",
+     "r": [
+      0.25,
+      0.2,
+      0.42,
+      0.35
+     ]
+    },
+    {
+     "title": "The flower",
+     "text": "A dark flower in her hair.",
+     "r": [
+      0.6,
+      0.08,
+      0.22,
+      0.15
+     ]
+    },
+    {
+     "title": "The shawl",
+     "text": "A yellow shawl at the bottom.",
+     "r": [
+      0.25,
+      0.78,
+      0.75,
+      0.22
+     ]
+    },
+    {
+     "title": "Compare",
+     "text": "Compare with Manet’s portrait of her, painted about fifteen years earlier."
+    }
+   ]
   }
  }
 }
