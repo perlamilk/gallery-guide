@@ -220,6 +220,17 @@ export const SITES = {
     flat: true,
     blurb: 'The grounds with the visitor center, Museum Shop, restrooms, parking and the Sunken Garden, and both floors of the Pope-Riddle House traced from the museum’s own guidebook plans: Monet, Manet, Degas and Cassatt in the rooms where they hang, directions and your visit diary.',
   },
+  mystic: {
+    key: 'mystic', id: 'Q1890082', short: 'Mystic Seaport', name: 'Mystic Seaport Museum',
+    floors: 'data/mystic/floors.json', artworks: 'data/mystic/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-mystic.json', packKey: 'gg-pack-mystic',
+    room: id => id,                          // buildings and ships have names (Cooperage, Charles W. Morgan)
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'The 19-acre grounds traced from the museum’s own 2026 map, with every numbered building, the ships at their berths, restrooms, cafés and both entrances: the Charles W. Morgan and the other historic vessels, the Seaport Village trade shops and the exhibitions open now, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

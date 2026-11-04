@@ -171,6 +171,14 @@ gallery), places inside it approximate. House floors 1 and 2 traced from the pla
 grounds map. Works: 27 from Google Arts & Culture + 5 more from Wikidata (32 on the map, 29 pictures). The house stays as
 Theodate Pope Riddle left it, so all works are on view; rooms come from Side of Culture (May 2022) and Galerie captions,
 and 13 rooms are guesses, marked on each work. To improve: Hill-Stead's own room list, or a photo of a tour handout.
+Mystic Seaport Museum, Mystic (Nov 4, 2026): map guide at `guide.html?museum=mystic`, built by `tools/build_mystic.py`.
+The 19-acre grounds are traced from the museum's 2026 Map & Guide PDF (mysticseaport.org/visit/mystic-seaport-museum-map):
+every numbered building is placed by the number the PDF's own text gives, outlines and walks are drawn by eye, and the
+Charles W. Morgan, Joseph Conrad, L. A. Dunton, Sabino, Emma C. Berry, Fire Fighter and Kingston II sit at their berths.
+Upper floors of the exhibition buildings aren't drawn. Works: the online catalogue (mobius.mysticseaport.org) says nothing
+about what is on view and has few pictures, so the guide lists the historic vessels, the Seaport Village buildings and the
+exhibitions now open, from the museum's WordPress pages (robots.txt crawl delay 10 s). Monstrous closes Jan 10, 2027 and
+Brickwrecks Mar 14, 2027: re-run when the exhibitions change.
 
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
