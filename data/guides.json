@@ -64,6 +64,54 @@
    "galleries": false,
    "checked": "2026-11-04",
    "source": "Wikidata (CC0)"
+  },
+  "Q3373790": {
+   "works": 71,
+   "pictures": 66,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q713204": {
+   "works": 28,
+   "pictures": 22,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q7005718": {
+   "works": 1524,
+   "pictures": 293,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q6803132": {
+   "works": 36,
+   "pictures": 24,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q15694044": {
+   "works": 49,
+   "pictures": 18,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
+  },
+  "Q41512158": {
+   "works": 28,
+   "pictures": 20,
+   "onView": null,
+   "galleries": false,
+   "checked": "2026-11-04",
+   "source": "Wikidata (CC0)"
   }
  }
 }
