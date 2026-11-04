@@ -34,7 +34,8 @@ EUROPE = ('English', 'British', 'French', 'Italian', 'Dutch', 'Flemish', 'German
           'Bolognese', 'Neapolitan', 'Roman', 'Genoese', 'Milanese', 'Lombard', 'Ferrarese', 'Finnish', 'Romanian',
           'Croatian', 'Ukrainian', 'Latvian', 'Lithuanian', 'Estonian', 'Slovak', 'Slovenian', 'Serbian', 'Icelandic',
           'England', 'France', 'Italy', 'Netherlands', 'Germany', 'Spain', 'Austria', 'Switzerland', 'Belgium',
-          'Denmark', 'Sweden', 'Norway', 'Russia', 'Ireland', 'Scotland', 'Portugal', 'Holland', 'Flanders', 'Bohemia')
+          'Denmark', 'Sweden', 'Norway', 'Russia', 'Ireland', 'Scotland', 'Portugal', 'Holland', 'Flanders', 'Bohemia',
+          'Venice', 'Paris', 'London', 'Nevers', 'Meissen', 'Sèvres', 'Delft', 'Murano', 'Swabian')
 ANCIENT = ('Egyptian', 'Egypt', 'Etruscan', 'Cypriot', 'Cyprus', 'Mesopotamian', 'Assyrian', 'Babylonian', 'Sumerian',
            'Greek', 'Greece', 'Hellenistic', 'Attic', 'Corinthian', 'Apulian', 'Campanian', 'Byzantine', 'Coptic',
            'Near Eastern', 'Persian', 'Iran', 'Syria', 'Anatolia')
@@ -82,7 +83,7 @@ def maker(text):
 
 
 def has(text, words):
-    return bool(text) and any(re.search(r'\b' + re.escape(w) + r'\b', text) for w in words)
+    return bool(text) and any(re.search(r'\b' + re.escape(w) + r'\b', text, re.I) for w in words)
 
 
 def wing_of(w):

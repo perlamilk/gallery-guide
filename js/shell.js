@@ -605,8 +605,7 @@ function museumPage(id) {
     ${site ? '<div class="info-card offline" id="offlineCard" aria-live="polite"><p class="offline__sub">Checking offline pack…</p></div>' : ''}
     <div class="info-card"><h2>Welcome to ${escape(m.name)}</h2><div id="museumAbout"><p style="color:var(--ink-3)">Loading…</p></div></div>
     <div class="info-card"><h2>Visit Information</h2>
-    href: `#work/${id}${w.museumId && D.guides[w.museumId] ? `/${w.museumId}` : ''}`,
-    where: w.onView && w.gallery ? `Gallery ${w.gallery}` : null, thumb: cls => workImg(w, cls, 400) };
+      ${visitHTML(m)}
       <div class="btn-row">
         ${m.at ? `<a class="btn btn--gray" href="https://maps.apple.com/?daddr=${m.at.join(',')}&q=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">${I.nav}Get Directions</a>` : ''}
         ${m.website ? `<a class="btn btn--gray" href="${escape(m.website)}" target="_blank" rel="noopener">${I.ext}Open Website</a>` : ''}
@@ -619,8 +618,12 @@ function museumPage(id) {
     ${id === MFA ? '' : `<p class="fine">${UNOFFICIAL}</p>`}`;
 }
 afterRender.museum = id => {
-    href: `#work/${id}${w.museumId && D.guides[w.museumId] ? `/${w.museumId}` : ''}`,
-    where: w.onView && w.gallery ? `Gallery ${w.gallery}` : null, thumb: cls => workImg(w, cls, 400) };
+  const m = D.byMuseum.get(id);
+  const img = $('#museumHero img');
+  if (!img) heroMap(m);
+  else img.addEventListener('error', () => heroMap(m), { once: true });
+  fillSummary($('#museumAbout'), m?.wikipedia, 'No description yet.');
+  if (siteById(id)) renderOfflineCard(null, siteById(id));
 };
 
 // ---------- offline pack ----------
