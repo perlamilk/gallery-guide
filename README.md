@@ -206,6 +206,7 @@ Everything comes from the PDF's own drawing. These points were unclear and are b
 6. **Emergency exits** aren't on the MFA map. The app shows what the map has: emergency call boxes and the entrances.
 7. **Gallery names** come from the collection site where known; the rest of the rooms show only their number.
 8. **Floors** are shown as equal-height blocks; real ceiling heights aren't in the PDF.
+9. **Rotunda and Colonnade (205 / 204, Level 2)** are one shape named "Rotunda" with no numbers in the PDF. It carries both gallery numbers so the Sargent murals light it up; where the Rotunda ends and the Colonnade begins isn't drawn.
 
 ## Sample data notes
 

@@ -72,6 +72,8 @@ OVERRIDES = {
     'rename': {'Japanese Garden Open April through October, weather permitting.': 'Japanese Garden (open April–October)',
                'Sharf Visitor Center · Rotunda': 'Sharf Visitor Center',
                'Shapiro Family Courtyard · New American Café $$': 'Shapiro Family Courtyard · New American Café'},
+    # named spaces that are numbered galleries on collections.mfa.org: (id, name, aliases)
+    'space_galleries': {'Rotunda': ('205', 'Rotunda and Colonnade', ['204'])},
     # notes the PDF splits into several text runs, placed by hand (PDF points, floor's own drawing)
     'extra_labels': {'1': [dict(text='Conservation Center (Gallery 360): take this elevator to Level 3', kind='note', at=[86.0, 520.0]),
                            dict(text='Taste café', kind='place', at=[160.5, 280.0])]},
@@ -385,6 +387,11 @@ def trace(pdf_path):
             elif names:
                 slug = re.sub(r'[^a-z0-9]+', '-', names[0].lower()).strip('-')[:30]
                 name = ' · '.join(names)
+                if name in OVERRIDES['space_galleries']:
+                    gid, gname, more = OVERRIDES['space_galleries'][name]
+                    rooms.append(dict(id=gid, kind='gallery', name=gname, aliases=more, poly=poly,
+                                      guess='A named space with no number in the PDF; its gallery numbers are given by hand.'))
+                    continue
                 rooms.append(dict(id=f"{spec['id']}-{slug}", kind='space', name=OVERRIDES['rename'].get(name, name), poly=poly))
             else:
                 rooms.append(dict(id=f"{spec['id']}-w{i}", kind='corridor', poly=poly))
