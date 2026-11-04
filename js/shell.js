@@ -190,7 +190,7 @@ function workInfo(id, fallback = null) {
     href: `guide.html#art/${id}`, thumb: cls => imgHTML(a, cls, a.title), mfa: true };
   const w = D.guideWorks.get(id) ?? D.discover.works[id] ?? fallback;
   if (!w) return null;
-  return { id, title: w.title, artist: w.artist, year: w.year ?? w.date, museum: shortMuseum(w.museumId, w.museum), museumId: w.museumId,
+  return { id, title: w.title, artist: w.artist, year: w.date ?? w.year, museum: shortMuseum(w.museumId, w.museum), museumId: w.museumId,
     href: `#work/${id}${w.museumId && D.guides[w.museumId] ? `/${w.museumId}` : ''}`, thumb: cls => workImg(w, cls, 400) };
 }
 
@@ -235,7 +235,7 @@ function guideListHTML(id) {
   const doc = guideDocNow(id);
   const works = guideWorks(id);
   const g = S.guide;
-  const sub = w => [w.artist, w.year ?? w.date, w.gallery ? `Gallery ${w.gallery}` : w.location].filter(Boolean).join(' · ');
+  const sub = w => [w.artist, w.date ?? w.year, w.gallery ? `Gallery ${w.gallery}` : w.location].filter(Boolean).join(' · ');
   const list = works.length
     ? `<div class="tiles">${works.slice(0, g.shown).map(w => `<a class="tile" href="#work/${w.id}/${id}"><div class="tile__img">${workImg(w, 'ph', 400)}</div>
         <p class="tile__title">${escape(w.title)}</p><p class="tile__sub">${escape(sub(w))}</p></a>`).join('')}</div>
@@ -933,7 +933,7 @@ async function onClick(e) {
   }
   if (d.saveWork) {
     const w = D.guideWorks.get(d.saveWork) ?? D.discover.works[d.saveWork];
-    const on = await Favorites.toggle(d.saveWork, w ? { title: w.title, artist: w.artist, year: w.year ?? w.date, image: w.image, imageUrl: w.imageUrl, museum: w.museum ?? shortMuseum(w.museumId), museumId: w.museumId, artistId: w.artistId } : null);
+    const on = await Favorites.toggle(d.saveWork, w ? { title: w.title, artist: w.artist, year: w.date ?? w.year, image: w.image, imageUrl: w.imageUrl, museum: w.museum ?? shortMuseum(w.museumId), museumId: w.museumId, artistId: w.artistId } : null);
     await refreshMine();
     t.setAttribute('aria-pressed', String(on)); t.innerHTML = I.heart(on);
     return toast(on ? 'Saved to your Library' : 'Removed from Library');

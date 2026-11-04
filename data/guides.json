@@ -2,12 +2,12 @@
  "about": "Museums with a guide on their museum page. Written by tools/build_guides.py; one file per museum in data/guides/.",
  "museums": {
   "Q3783572": {
-   "works": 3000,
-   "pictures": 2024,
-   "onView": null,
-   "galleries": false,
+   "works": 4594,
+   "pictures": 3409,
+   "onView": 1825,
+   "galleries": true,
    "checked": "2026-11-04",
-   "source": "Wikidata (CC0)"
+   "source": "Harvard Art Museums API · Wikidata (CC0)"
   },
   "Q49135": {
    "works": 425,
