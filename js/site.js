@@ -77,6 +77,17 @@ export const SITES = {
     flat: true,
     blurb: 'Floor plans of the Radeke Building, Pendleton House and the Chace Center from the museum’s maps, works in the gallery where they most likely hang, directions and your visit diary.',
   },
+  pem: {
+    key: 'pem', id: 'Q3373790', short: 'PEM', name: 'Peabody Essex Museum',
+    floors: 'data/pem/floors.json', artworks: 'data/pem/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-pem.json', packKey: 'gg-pack-pem',
+    room: id => (/^\d{3}$/.test(id) ? `Gallery ${id}` : id),
+    website: 'View on the PEM Website',
+    official: false,
+    flat: true,
+    blurb: 'Floor plans of all three levels from the museum’s map, works from PEM’s website in the gallery where they are shown, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

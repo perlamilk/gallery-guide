@@ -241,6 +241,11 @@ export function shortArtist(name) {
   const m = clean.match(/\b(van|de|del|della|da|di|le|la)\s+\S+$/i);
   if (m) return m[0].replace(/^\w/, c => c.toUpperCase());
   if (/^El Greco/.test(clean)) return 'El Greco';
+  // "Artist in Korea", "Lakota artist", "Artist unknown", "Worcester Porcelain Factory": no surname to pick
+  if (/\b(artists?|unknown|maker|makers|workshop|factory|company|co\.|ltd|inc|manufactory|studio)\b/i.test(clean)) {
+    const short = clean.replace(/,.*$/, '');
+    return short.length > 32 ? `${short.slice(0, 31)}…` : short;
+  }
   return clean.split(' ').at(-1);
 }
 
