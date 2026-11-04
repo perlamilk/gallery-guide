@@ -51,7 +51,7 @@ VISIT = {
                 ['Wed–Sun: 10 am–4 pm', 'Mon–Tue: closed'],
                 ['Adults: $22', 'Seniors and students: $17', '17 and under: free', 'Members: free'], '508-799-4406', None),
     'Q6352575': ('1080 Chapel Street, New Haven, CT 06510',
-                 ['Tue–Sat: 10 am–5 pm', 'Thu (Sept–June): 10 am–7 pm', 'Sun: 11 am–5 pm', 'Mon: closed'],
+                 ['Tue: 10 am–5 pm', 'Wed: 10 am–7 pm', 'Thu–Sat: 10 am–5 pm', 'Sun: 11 am–5 pm', 'Mon: closed'],
                  FREE, '203-432-2800', None),
     'Q478013': ('10½ Beacon Street, Boston, MA 02108',
                 ['Mon–Thu: 9 am–8 pm', 'Fri–Sat: 9 am–5 pm', 'Sun: closed'],

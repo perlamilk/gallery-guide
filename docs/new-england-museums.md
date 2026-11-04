@@ -59,6 +59,15 @@ highlights ("On view in the Byrne Family Gallery of Maritime Art") and the ongoi
 named by PEM, with PEM's pictures; the rest are highlights placed in the gallery of their collection area, and Wikidata's
 works placed by subject, each with a note. Pages are cached in `.cache/pem` (one request every 2 s; `--refresh` re-reads).
 
+Yale Center for British Art (Nov 4, 2026): map guide at `guide.html?museum=ycba`, built by `tools/harvest_ycba.py` +
+`tools/build_ycba.py`. The works are exact: the museum's collection search (collections.britishart.yale.edu, CC0 records)
+has an "On view" filter (about 550 works) and lists each work's exhibitions, so the current displays say the floor: the
+John Constable exhibition fills floor 2, "Sightlines" (photography) floor 3, the "In a New Light" rehang and the Long
+Gallery (408) floor 4. Pictures and details come from each work's IIIF manifest. The map follows Louis Kahn's published
+plans (ground, second and third floors; 20-foot bays, Entrance Court and Library Court); the rooms inside each floor
+and the lower level (restrooms, lockers) are drawn by us and labelled approximate. Within floor 4 the room is a guess
+from the work's date. No café inside (Atticus Bookstore Café is in the building's Chapel Street shops).
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).

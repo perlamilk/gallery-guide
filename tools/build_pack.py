@@ -32,6 +32,9 @@ PACKS = [
     ('Q3373790', 'data/pack-pem.json',
      ['data/pem/artworks.json', 'data/pem/floors.json'],
      'data/pem/artworks.json', None),
+    ('Q6352575', 'data/pack-ycba.json',
+     ['data/ycba/artworks.json', 'data/ycba/floors.json'],
+     'data/ycba/artworks.json', None),
 ]
 
 for museum, out_path, files, art_path, notice_path in PACKS:

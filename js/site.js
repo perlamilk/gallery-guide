@@ -88,6 +88,17 @@ export const SITES = {
     flat: true,
     blurb: 'Floor plans of all three levels from the museum’s map, works from PEM’s website in the gallery where they are shown, directions and your visit diary.',
   },
+  ycba: {
+    key: 'ycba', id: 'Q6352575', short: 'British Art Center', name: 'Yale Center for British Art',
+    floors: 'data/ycba/floors.json', artworks: 'data/ycba/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-ycba.json', packKey: 'gg-pack-ycba',
+    room: id => id,                          // displays and galleries have names, not numbers
+    website: 'View on the YCBA Collection Site',
+    official: false,
+    flat: true,
+    blurb: 'Floor plans of Louis Kahn’s building, every work the museum lists as on view on the floor where it hangs, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
