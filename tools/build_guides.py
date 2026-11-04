@@ -73,6 +73,9 @@ BATCHES = {
 ALSO = {'Q3783572': ['Q809600', 'Q1017269']}  # Fogg Museum, Busch–Reisinger Museum
 STATES = {'Q771': 'Massachusetts', 'Q1387': 'Rhode Island', 'Q779': 'Connecticut'}
 MAX_WORKS = 3000
+MIN_WORKS = 20   # fewer than this and the museum gets no guide: an empty list would only mislead
+ART_TYPES = {'painting', 'sculpture', 'drawing', 'print', 'watercolor painting', 'photograph', 'engraving',
+             'etching', 'woodcut print', 'lithograph', 'pastel artwork', 'statue', 'bust', 'relief', 'tapestry', 'miniature painting'}
 
 
 # ---------- Wikidata ----------
@@ -93,9 +96,14 @@ SELECT ?w (SAMPLE(?t) AS ?title) (SAMPLE(?a) AS ?artist) (SAMPLE(?an) AS ?artist
   OPTIONAL {{ ?w wdt:P217 ?inv }}
   OPTIONAL {{ ?w wdt:P18 ?im }}
   OPTIONAL {{ ?w wdt:P973 ?u }}
-  OPTIONAL {{ ?w wdt:P276 ?loc . FILTER(?loc NOT IN ({', '.join(f'wd:{x}' for x in [museum_id, *ALSO.get(museum_id, [])])}))
-             ?loc rdfs:label ?ln FILTER(LANG(?ln) = "en") }}
-}} GROUP BY ?w ORDER BY DESC(BOUND(?img)) DESC(?links) LIMIT {MAX_WORKS}''')
+  # a room or wing of the museum (P276 also holds cities and past loans, which would mislead)
+  OPTIONAL {{ ?w wdt:P276 ?loc . ?loc wdt:P361 ?coll ; rdfs:label ?ln FILTER(LANG(?ln) = "en") }}
+}} GROUP BY ?w''')
+    # best-known first; among equally known works, ones with a picture and paintings, sculpture,
+    # drawings and prints before fragments, beads and other study pieces
+    rows.sort(key=lambda r: (-int(r.get('links') or 0), not r.get('img'),
+                             (r.get('type') or '') not in ART_TYPES, r.get('title') or ''))
+    rows = rows[:MAX_WORKS]
     out = []
     for r in rows:
         w = {'id': qid(r['w']), 'title': r['title'], 'links': int(r.get('links') or 0)}
@@ -211,6 +219,12 @@ def build(museum_id, museums):
         # the museum's own on-view list comes first; Wikidata adds the rest, marked as not known to be on view
         seen = {(w.get('accession') or '').lower() for w in on_view}
         works = on_view + [w for w in works if (w.get('accession') or '').lower() not in seen]
+    if len(works) < MIN_WORKS:
+        print(f'  only {len(works)} works in open data: no guide yet')
+        path = os.path.join(GUIDES, f'{museum_id}.json')
+        if os.path.exists(path):
+            os.remove(path)
+        return None
     doc = {
         'museum': museum_id, 'name': m.get('name'), 'checked': date.today().isoformat(),
         'source': ' · '.join(sources), 'onViewKnown': bool(on_view),
@@ -240,7 +254,11 @@ def main():
     index_path = os.path.join(DATA, 'guides.json')
     index = json.load(open(index_path, encoding='utf-8')) if os.path.exists(index_path) else {'museums': {}}
     for museum_id in ids:
-        index['museums'][museum_id] = build(museum_id, museums)
+        entry = build(museum_id, museums)
+        if entry:
+            index['museums'][museum_id] = entry
+        else:
+            index['museums'].pop(museum_id, None)
         with open(index_path, 'w', encoding='utf-8') as f:
             json.dump(index, f, ensure_ascii=False, indent=1)
     print('Done. Bump VERSION in sw.js so phones pick up the new guides.')
