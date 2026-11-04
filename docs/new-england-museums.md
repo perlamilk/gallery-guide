@@ -5,6 +5,8 @@ Guides are built with `tools/build_guides.py` from open data only (Wikidata, and
 
 Status (Nov 4, 2026): batch 1 is built from Wikidata for 8 of its 10 museums. The ICA Boston (1 work) and MASS MoCA (0 works) have too little open data, so `build_guides.py` gives them no guide (MIN_WORKS). Harvard has Wikidata works only, without galleries, until the build runs with HARVARD_API_KEY.
 
+Batch 2 (Nov 4, 2026): guides for Peabody Essex, Norman Rockwell, New Britain, Mead, Davis and D'Amour. Williams College, Hill-Stead, Lyman Allyn, Rose, Boston Athenæum and the Aldrich have under 20 works in Wikidata, so they get no guide until better open data turns up.
+
 ## How a museum gets a guide
 
 1. `python3 tools/build_guides.py --batch N` writes `data/guides/<id>.json` and adds it to `data/guides.json`.
