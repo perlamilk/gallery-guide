@@ -99,6 +99,17 @@ export const SITES = {
     flat: true,
     blurb: 'Floor plans of Louis Kahn’s building, every work the museum lists as on view on the floor where it hangs, directions and your visit diary.',
   },
+  yale: {
+    key: 'yale', id: 'Q1568434', short: 'Yale Art Gallery', name: 'Yale University Art Gallery',
+    floors: 'data/yale/floors.json', artworks: 'data/yale/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-yale.json', packKey: 'gg-pack-yale',
+    room: id => id,                          // galleries have names (European Art, Dura-Europos), not numbers
+    website: 'View on the Yale Art Gallery Website',
+    official: false,
+    flat: true,
+    blurb: 'Every work the Gallery has on view, in the gallery it names, on approximate plans of the Kahn building, the Old Yale Art Gallery and Street Hall, with directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

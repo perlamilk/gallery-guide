@@ -68,6 +68,16 @@ plans (ground, second and third floors; 20-foot bays, Entrance Court and Library
 and the lower level (restrooms, lockers) are drawn by us and labelled approximate. Within floor 4 the room is a guess
 from the work's date. No café inside (Atticus Bookstore Café is in the building's Chapel Street shops).
 
+Yale University Art Gallery (Nov 4, 2026): map guide at `guide.html?museum=yale`. `tools/harvest_yale.py` reads the
+Gallery's own "What's On View by Floor" lists (linked from artgallery.yale.edu/permanent-collection, 24 works a page, one page
+every 2 s) and each work's CC0 Linked Art record on media.art.yale.edu (date, medium, size, credit line, description);
+`tools/build_yale.py` turns that cache into `data/yale/`. Works are exact: about 3,960 on view, each in the gallery the
+Gallery names; pictures are the Gallery's own thumbnails (media.collections.yale.edu, loaded online). The site turns away
+Python's HTTP client, so the harvester calls plain curl. The map is approximate: the only floor plan is in the Smartify app
+(app.smartify.org blocks automated reading), so the lower lobby and floors 1–4 of the Kahn building, the Old Yale Art Gallery
+and Street Hall (across High Street, by the floor-2 bridge) are drawn from the Gallery's descriptions and turned a quarter so
+Chapel Street runs down the left. A photo of the Smartify floor plans would let the rooms be placed properly.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
