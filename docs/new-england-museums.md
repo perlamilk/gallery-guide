@@ -298,3 +298,12 @@ Google Arts & Culture and Wikidata: 34 Rockwell paintings and studies on the map
 the others in a Rockwell gallery by date, marked as a guess), plus 41 archive photos, letters and other illustrators
 on the museum page. Shows from Nov 14, 2026 (Exploring Calvin and Hobbes, The Human Touch) are named in the room
 names; update `SHOWS` when they change. To improve: a photo of the museum's gallery map.
+
+John F. Kennedy Presidential Library and Museum (Nov 4, 2026): map guide at `guide.html?museum=jfk`, built by
+`tools/harvest_jfk.py` + `tools/build_jfk.py`. jfklibrary.org answers 403 to cloud machines and its robots.txt shuts
+out AI agents, so the guide does not read it. The map is traced from I. M. Pei's published 1979 plans (Level 2,
+Entrance Level: glass lobby, theater lobby, Theaters I and II, store at the foot of the tower; Level 1, Exhibit Level:
+the galleries, the glass Pavilion, restrooms) and is APPROXIMATE: the exhibits were rebuilt in 1993, so which exhibit
+is in which room follows visitors' accounts of the route. Works: 17 permanent exhibits in the order of the visit, plus
+the 28 objects, photographs and papers the museum publishes on Google Arts & Culture, each in the gallery about its
+subject and marked "may not be on view". To improve: a photo of the museum's paper map.

@@ -51,6 +51,20 @@ VISIT = {
                 'grounds and is open May to early November (it closes for the season after Nov 8, 2026). The Terrace '
                 'Café is open in summer only. Exploring Calvin and Hobbes and Norman Rockwell: The Human Touch open Nov '
                 '14, 2026. No backpacks or large bags in the galleries.'),
+    'Q2007919': ('Columbia Point, Boston, MA 02125',
+                 ['Daily: 10 am–5 pm', 'Closes at 2 pm the day before Thanksgiving (Nov 25, 2026), on Christmas Eve '
+                  'and New Year’s Eve', 'Closed Thanksgiving, Christmas and New Year’s Day',
+                  'Timed tickets: book an entry time online'],
+                 ['Adults 18–61: $24', 'Seniors 62+: $12', '17 and under: free',
+                  'Presidential library foundation members: free',
+                  'Massachusetts public library card holders: 50% off'], '617-514-1600',
+                 ['Free parking in the museum’s lot. By train: Red Line to JFK/UMass, then the free UMass Boston '
+                  'shuttle to the "JFK Library" stop',
+                  'Tickets, restrooms and a self-service coat room in the entrance lobby',
+                  'Start with the introductory film in Theater I; the exhibits are one floor down and end in the '
+                  'glass Pavilion',
+                  'Kennedy Café, off the Pavilion: 10 am–4 pm',
+                  'The Edward M. Kennedy Institute for the U.S. Senate is next door']),
     'Q847508': ('55 Salisbury Street, Worcester, MA 01609',
                 ['Wed–Sun: 10 am–4 pm', 'Mon–Tue: closed'],
                 ['Adults: $22', 'Seniors and students: $17', '17 and under: free', 'Members: free'], '508-799-4406', None),
@@ -278,6 +292,10 @@ EXTRA = {
                  'image': 'Marble House, Newport RI.jpg',
                  'website': 'https://www.newportmansions.org/mansions-and-gardens/marble-house/', 'city': 'Newport',
                  'state': 'Rhode Island', 'wikipedia': 'Marble_House'},
+    'Q2007919': {'id': 'Q2007919', 'name': 'John F. Kennedy Presidential Library and Museum',
+                 'at': [42.316111, -71.033889], 'links': 24, 'image': 'JFK library Stitch Crop.jpg',
+                 'website': 'https://www.jfklibrary.org/', 'city': 'Boston', 'state': 'Massachusetts',
+                 'wikipedia': 'John_F._Kennedy_Presidential_Library_and_Museum'},
     'Q4681251': {'id': 'Q4681251', 'name': 'Addison Gallery of American Art', 'at': [42.6486, -71.1333], 'links': 6,
                  'image': 'Phillips Academy, Andover, MA - Addison Gallery of American Art.JPG',
                  'website': 'https://addison.andover.edu/', 'city': 'Andover', 'state': 'Massachusetts',
