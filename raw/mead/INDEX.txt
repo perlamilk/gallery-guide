@@ -1,0 +1,68 @@
+Mead Art Museum raw pages — fetched 2026-11-04 from Grazi's Mac.
+NOTE: www.amherst.edu answers every request (even from this Mac) with an AWS WAF CAPTCHA page (HTTP 405), so nothing came from it directly.
+Everything below is from the Internet Archive (web.archive.org); column 3 = snapshot timestamp. Original-format HTML (id_) / images (im_).
+Status 404 = not archived (file not saved). Remittance exhibition page: never archived.
+
+file	source_url	via	status	saved
+home.html	https://www.amherst.edu/museums/mead/	wayback:20261017132350	200	yes
+pages/visit_accessibility.html	https://www.amherst.edu/museums/mead/visit/accessibility	wayback:20240818024249	200	yes
+pages/visit_group-visits.html	https://www.amherst.edu/museums/mead/visit/group-visits	wayback:20230805091834	200	yes
+pages/visit_what-to-expect.html	https://www.amherst.edu/museums/mead/visit/what-to-expect	wayback:20230328124905	200	yes
+pages/exhibitions_2026.html	https://www.amherst.edu/museums/mead/exhibitions/2026	wayback:20260110133619	200	yes
+pages/exhibitions_2026_remittance.html	https://www.amherst.edu/museums/mead/exhibitions/2026/remittance	-	not archived	NO
+pages/exhibitions_2026_kwame-brathwaite-revolutionary-movements.html	https://www.amherst.edu/museums/mead/exhibitions/2026/kwame-brathwaite-revolutionary-movements	wayback:20260110042228	200	yes
+pages/exhibitions_2026_adventures-of-the-quantum-soup-surfer.html	https://www.amherst.edu/museums/mead/exhibitions/2026/adventures-of-the-quantum-soup-surfer	wayback:20260110012937	200	yes
+pages/exhibitions_stained-glass-rotherwas-room.html	https://www.amherst.edu/museums/mead/exhibitions/stained-glass-rotherwas-room	wayback:20260628030658	200	yes
+pages/collection_overview_african.html	https://www.amherst.edu/museums/mead/collection/overview/african	wayback:20240810105834	200	yes
+pages/collection_overview_american.html	https://www.amherst.edu/museums/mead/collection/overview/american	wayback:20250528174343	200	yes
+pages/collection_overview_ancient.html	https://www.amherst.edu/museums/mead/collection/overview/ancient	wayback:20240603085040	200	yes
+pages/collection_overview_rotherwas.html	https://www.amherst.edu/museums/mead/collection/overview/rotherwas	wayback:20240722175744	200	yes
+pages/collection_overview_russian.html	https://www.amherst.edu/museums/mead/collection/overview/russian	wayback:20240606033208	200	yes
+pages/exhibitions.html	https://www.amherst.edu/museums/mead/exhibitions/	wayback:20240828141815	200	yes
+pages/exhibitions_rotherwas-room.html	https://www.amherst.edu/museums/mead/exhibitions/rotherwas-room	wayback:20260628030556	200	yes
+pages/collection.html	https://www.amherst.edu/museums/mead/collection	wayback:20240719050715	200	yes
+pages/collection_overview.html	https://www.amherst.edu/museums/mead/collection/overview	wayback:20240603085117	200	yes
+pages/collection_overview_steeple.html	https://www.amherst.edu/museums/mead/collection/overview/steeple	wayback:20240805004440	200	yes
+pages/about.html	https://www.amherst.edu/museums/mead/about	wayback:20240721042631	200	yes
+pages/exhibitions_2026_my-beautiful-pitiful-age.html	https://www.amherst.edu/museums/mead/exhibitions/2026/my-beautiful-pitiful-age?ref=amherststudent.com	wayback:20261007052245	200	yes
+pages/visit.html	https://www.amherst.edu/museums/mead/visit	wayback:20240715084937	200	yes
+images/home/Architectual Ghosts.jpg	https://www.amherst.edu/system/files/Architectual%20Ghosts.jpg	wayback:20260424215346	200	yes
+images/home/Collections.jpg	https://www.amherst.edu/system/files/Collections.jpg?__=1619537277	wayback:20260624032414	200	yes
+images/home/Education.jpg	https://www.amherst.edu/system/files/Education.jpg	wayback:20260424215415	200	yes
+images/home/Exhibitions.jpg	https://www.amherst.edu/system/files/Exhibitions.jpg	wayback:20260424215454	200	yes
+images/home/2017_0214_Mead Reimagined Take 2_141.jpg	https://www.amherst.edu/system/files/styles/fs_440_293/private/2017_0214_Mead%20Reimagined%20Take%202_141.jpg?h=2992ba0a&itok=F9H68HgJ&__=1492696468	wayback:20251224100102	200	yes
+images/collection/Chase_700_1.png	https://www.amherst.edu/system/files/styles/fs_439_291/private/Chase_700_1.png?h=8e7fe10d&itok=VxTRju_s&__=1658510780	wayback:?	404	NO
+images/collection/Jamini_700_0.png	https://www.amherst.edu/system/files/styles/fs_439_291/private/Jamini_700_0.png?h=ce9ed74f&itok=piwbV_Ab&__=1658510760	wayback:?	404	NO
+images/collection/Monet_edit_700_2.png	https://www.amherst.edu/system/files/styles/fs_439_291/private/Monet_edit_700_2.png?h=d3dd76fc&itok=VD7ifRyT&__=1658512130	wayback:?	404	NO
+images/collection/Sanchez_700.png	https://www.amherst.edu/system/files/styles/fs_439_291/private/Sanchez_700.png?h=493e290e&itok=W2HGAhaf&__=1657127013	wayback:20240817050500	200	yes
+images/collection/Snyders_700.png	https://www.amherst.edu/system/files/styles/fs_439_291/private/Snyders_700.png?h=ca349742&itok=bBDUdReb&__=1657127060	wayback:?	404	NO
+images/collection/Toshino_700_0.png	https://www.amherst.edu/system/files/styles/fs_439_291/private/Toshino_700_0.png?h=50a5909f&itok=ScIpTScf&__=1658510803	wayback:?	404	NO
+images/collection_overview_american/fisher girl.jpg	https://www.amherst.edu/media/view/443417/original/fisher%2Bgirl.jpg	wayback:20250528174343	200	yes
+images/collection_overview_american/thomas cold.jpg	https://www.amherst.edu/media/view/443418/original/thomas%2Bcold.jpg	wayback:20250528174344	200	yes
+images/collection_overview_american/peale.jpg	https://www.amherst.edu/media/view/443422/original/peale.jpg	wayback:20250528174344	200	yes
+images/collection_overview_ancient/ancient 2.jpg	https://www.amherst.edu/media/view/446024/original/ancient%2B2.jpg	wayback:20240603091816	200	yes
+images/collection_overview_ancient/ancient 3.jpg	https://www.amherst.edu/media/view/446025/original/ancient%2B3.jpg	wayback:20240604030726	200	yes
+images/collection_overview_ancient/ancient 4.jpg	https://www.amherst.edu/media/view/446026/original/ancient%2B4.jpg	wayback:20240603094415	200	yes
+images/collection_overview_ancient/ancient 5.jpg	https://www.amherst.edu/media/view/446027/original/ancient%2B5.jpg	wayback:20240603211918	200	yes
+images/collection_overview_rotherwas/41-170-20.jpg	https://www.amherst.edu/media/view/61564/original/41-170-20.jpg	wayback:20160322143401	200	yes
+images/collection_overview_rotherwas/41-170-36.jpg	https://www.amherst.edu/media/view/61565/original/41-170-36.jpg	wayback:20160322143413	200	yes
+images/collection_overview_rotherwas/Unicorn window.jpg	https://www.amherst.edu/media/view/61569/original/Unicorn%2Bwindow.jpg	wayback:20160322143428	200	yes
+images/exhibitions_rotherwas-room/1966.jpg	https://www.amherst.edu/system/files/1966.jpg?__=1737909859	wayback:20260628030600	200	yes
+images/exhibitions_rotherwas-room/Bodenham_800.jpg	https://www.amherst.edu/system/files/Bodenham_800.jpg	wayback:?	404	NO
+images/exhibitions_rotherwas-room/Detail.jpg	https://www.amherst.edu/system/files/Detail.jpg	wayback:20250926064446	404	NO
+images/exhibitions_rotherwas-room/Footprint_1500.jpg	https://www.amherst.edu/system/files/Footprint_1500.jpg	wayback:20250926063532	404	NO
+images/exhibitions_rotherwas-room/Mansion.jpg	https://www.amherst.edu/system/files/Mansion.jpg	wayback:20250926061454	404	NO
+images/exhibitions_rotherwas-room/Relief.jpg	https://www.amherst.edu/system/files/Relief.jpg	wayback:20250926053602	404	NO
+images/exhibitions_rotherwas-room/Room_800.jpg	https://www.amherst.edu/system/files/Room_800.jpg	wayback:20250926052431	404	NO
+images/exhibitions_rotherwas-room/Rotherwas 2_1500.jpg	https://www.amherst.edu/system/files/Rotherwas%202_1500.jpg	wayback:?	404	NO
+images/exhibitions_rotherwas-room/Rotherwas_1500.jpg	https://www.amherst.edu/system/files/Rotherwas_1500.jpg	wayback:20250926061027	404	NO
+images/exhibitions_rotherwas-room/2021_0126_Rotherwas Room_MS_66-2.jpg	https://www.amherst.edu/system/files/styles/fs_440_293/private/2021_0126_Rotherwas%20Room_MS_66-2.jpg?h=c4e50db2&itok=jGzBvluB&__=1757085334	wayback:20250926052616	404	NO
+images/exhibitions_stained-glass-rotherwas-room/AC 1978.jpg	https://www.amherst.edu/system/files/AC%201978.jpg	wayback:20260110110453	200	yes
+images/exhibitions_stained-glass-rotherwas-room/AC 2018.jpg	https://www.amherst.edu/system/files/AC%202018.jpg	wayback:20260110191431	200	yes
+images/exhibitions_stained-glass-rotherwas-room/AC 2018_0.jpg	https://www.amherst.edu/system/files/AC%202018_0.jpg	wayback:?	404	NO
+images/exhibitions_stained-glass-rotherwas-room/AC 2018_2.jpg	https://www.amherst.edu/system/files/AC%202018_2.jpg	wayback:20260110110643	200	yes
+images/exhibitions_stained-glass-rotherwas-room/General View.jpg	https://www.amherst.edu/system/files/General%20View.jpg	wayback:20260110122558	200	yes
+images/exhibitions_stained-glass-rotherwas-room/Jan_Vermeer_van_Delft_-_The_Glass_of_Wine_-_Google_Art_Project.jpg	https://www.amherst.edu/system/files/Jan_Vermeer_van_Delft_-_The_Glass_of_Wine_-_Google_Art_Project.jpg	wayback:20260110150855	200	yes
+images/exhibitions_stained-glass-rotherwas-room/1. INTRO.jpg	https://www.amherst.edu/system/files/styles/fs_440_293/private/1.%20INTRO.jpg?h=cd54d883&itok=tJTtxGqr&__=1765919835	wayback:20260110110437	200	yes
+images/visit/Mead LB.jpg	https://www.amherst.edu/system/files/Mead%20LB.jpg	wayback:20230807225017	200	yes
+images/visit/Mead Map.png	https://www.amherst.edu/system/files/styles/large/private/Mead%20Map.png?itok=Hl_bLxX1&__=1681324054	wayback:20240715123258	200	yes
