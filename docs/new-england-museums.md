@@ -189,6 +189,15 @@ paintings, from newportartmuseum.org (WordPress, robots.txt crawl delay 10 s); o
 Unfurling (Griswold House) name their gallery. Plus 60 collection highlights on the museum page. Re-run when shows
 change (Unfurling ends Dec 31, 2026; Isham Jan 4, Otero Jan 10, Play / Pretend Jan 31, 2027).
 
+The Breakers, Newport (Nov 4, 2026): map guide at `guide.html?museum=breakers`, built by `tools/harvest_breakers.py`
+(the Preservation Society's Digital Collections site, newportmansions.rediscoverysoftware.com, through the JSON service its
+own pages use; the server drops connections now and then, so the script retries slowly) and `tools/build_breakers.py`.
+Map: floor G (grounds, Welcome Center, Caretaker's and Children's Cottages, parking, Cliff Walk) from OpenStreetMap; floors
+1 and 2 traced from the floor plans in the National Register nomination (preservation.ri.gov PDF, pages 35-36), ocean side
+at the top; basement (Museum Store, restrooms) only as an outline with approximate places. Works: 61 objects that name the
+house or came down from Cornelius Vanderbilt II / Countess Széchényi; 25 placed (room from the record, or a portrait in its
+sitter's bedroom, marked as a guess), the rest listed on the museum page without a room.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
