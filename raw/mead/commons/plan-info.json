@@ -1,0 +1,98 @@
+{
+ "batchcomplete": "",
+ "query": {
+  "pages": {
+   "179392528": {
+    "pageid": 179392528,
+    "ns": 6,
+    "title": "File:Final Plans for the Mead Art Museum at Amherst College from March 15, 1948.jpg",
+    "imagerepository": "local",
+    "imageinfo": [
+     {
+      "size": 7657680,
+      "width": 6250,
+      "height": 4830,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Final_Plans_for_the_Mead_Art_Museum_at_Amherst_College_from_March_15%2C_1948.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Final_Plans_for_the_Mead_Art_Museum_at_Amherst_College_from_March_15,_1948.jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=179392528",
+      "extmetadata": {
+       "DateTime": {
+        "value": "2025-12-04 16:26:13",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+       },
+       "ObjectName": {
+        "value": "Final Plans for the Mead Art Museum at Amherst College from March 15, 1948",
+        "source": "mediawiki-metadata"
+       },
+       "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+       },
+       "Categories": {
+        "value": "Mead Art Museum|1948-03-15|Self-published work|Floor plans of Massachusetts",
+        "source": "commons-categories",
+        "hidden": ""
+       },
+       "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+       },
+       "ImageDescription": {
+        "value": "The final documented plans from March 15, 1948 by McKim, Mead, &amp; White for the Mead Art Building were created before construction, although alterations continued to be made.",
+        "source": "commons-desc-page"
+       },
+       "DateTimeOriginal": {
+        "value": "March 15, 1948",
+        "source": "commons-desc-page"
+       },
+       "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+       },
+       "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:MMuseumF25&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:MMuseumF25 (page does not exist)\">MMuseumF25</a>",
+        "source": "commons-desc-page"
+       },
+       "LicenseShortName": {
+        "value": "CC BY 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+       },
+       "UsageTerms": {
+        "value": "Creative Commons Attribution 4.0",
+        "source": "commons-desc-page"
+       },
+       "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+       },
+       "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/4.0",
+        "source": "commons-desc-page"
+       },
+       "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+       },
+       "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+       },
+       "License": {
+        "value": "cc-by-4.0",
+        "source": "commons-templates",
+        "hidden": ""
+       }
+      }
+     }
+    ]
+   }
+  }
+ }
+}
