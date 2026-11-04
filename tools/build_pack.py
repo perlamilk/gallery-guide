@@ -98,6 +98,9 @@ PACKS = [
     ('Q7005471', 'data/pack-nbwm.json',
      ['data/nbwm/artworks.json', 'data/nbwm/floors.json'],
      'data/nbwm/artworks.json', None),
+    ('Q4165331', 'data/pack-twain.json',
+     ['data/twain/artworks.json', 'data/twain/floors.json'],
+     'data/twain/artworks.json', None),
 ]
 
 for museum, out_path, files, art_path, notice_path in PACKS:
