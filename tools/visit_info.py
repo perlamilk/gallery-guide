@@ -66,9 +66,12 @@ VISIT = {
                  ['Adults: $22', 'Seniors 67+: $18', 'College students and ages 6–17: $10', '5 and under: free'],
                  '860-229-0257', None),
     'Q588474': ('1040 MASS MoCA Way, North Adams, MA 01247',
-                ['Wed–Mon: 10 am–5 pm', 'Tue: closed'],
-                ['Adults: $25', 'Seniors 65+ and veterans: $22', 'Students: $15', 'Kids 6–16: $10', '5 and under: free'],
-                '413-662-2111', None),
+                ['Wed–Mon: 10 am–5 pm', 'Tue: closed', 'Closed Thanksgiving and Christmas'],
+                ['Adults: $25', 'Seniors 65+ and veterans: $22', 'Students: $15', 'Kids 6–16: $10', '5 and under: free',
+                 'EBT, WIC and ConnectorCare cards: $2', 'Kidspace: always free'],
+                '413-662-2111', 'James Turrell’s Perfectly Clear and Hind Sight need a timed reservation, made at the '
+                                'Box Office or at reserve@massmoca.org. Some outdoor and seasonal galleries '
+                                '(Anselm Kiefer, the Boiler House, Mary Lum) are open May to October only.'),
     'Q6803132': ('41 Quadrangle Drive, Amherst, MA 01002',
                  ['Tue–Sun: 9 am–5 pm', 'Thu (school year): until 10 pm', 'Mon: closed'], FREE, '413-542-2335', None),
     'Q4713992': ('258 Main Street, Ridgefield, CT 06877',

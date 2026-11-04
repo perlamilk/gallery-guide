@@ -110,6 +110,17 @@ export const SITES = {
     flat: true,
     blurb: 'Every work the Gallery has on view, in the gallery it names, on approximate plans of the Kahn building, the Old Yale Art Gallery and Street Hall, with directions and your visit diary.',
   },
+  massmoca: {
+    key: 'massmoca', id: 'Q588474', short: 'MASS MoCA', name: 'MASS MoCA',
+    floors: 'data/massmoca/floors.json', artworks: 'data/massmoca/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-massmoca.json', packKey: 'gg-pack-massmoca',
+    room: id => id,                          // places are buildings and floors ("Building 6 · Floor 2"), not numbers
+    website: 'View on the MASS MoCA Website',
+    official: false,
+    flat: true,
+    blurb: 'Floor plans of every building on the campus from the museum’s map, what is on view in each one (with all 88 Sol LeWitt wall drawings), directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
