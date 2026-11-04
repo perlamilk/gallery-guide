@@ -231,6 +231,17 @@ export const SITES = {
     flat: true,
     blurb: 'The 19-acre grounds traced from the museum’s own 2026 map, with every numbered building, the ships at their berths, restrooms, cafés and both entrances: the Charles W. Morgan and the other historic vessels, the Seaport Village trade shops and the exhibitions open now, directions and your visit diary.',
   },
+  newport: {
+    key: 'newport', id: 'Q7018775', short: 'Newport Art', name: 'Newport Art Museum',
+    floors: 'data/newport/floors.json', artworks: 'data/newport/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-newport.json', packKey: 'gg-pack-newport',
+    room: id => id,                          // galleries have names (Ilgenfritz Gallery, Cushing Memorial Gallery)
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'The lawn campus on Bellevue Avenue with the Griswold House’s ground floor traced from its 1969 measured plan and the Cushing Memorial Gallery, parking, entrances, the lobby and restrooms (some rooms approximate: the museum publishes no plan), the works in the five shows open now, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

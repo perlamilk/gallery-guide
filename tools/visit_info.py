@@ -185,8 +185,14 @@ VISIT = {
     'Q15694044': ('106 Central Street, Wellesley, MA 02481',
                   ['Tue–Sun: 11 am–5 pm', 'Mon and holidays: closed'], FREE, '781-283-2051', None),
     'Q7018775': ('76 Bellevue Avenue, Newport, RI 02840',
-                 ['Wed–Mon: 11 am–4 pm', 'Tue: closed'],
-                 ['Adults: $20', 'Seniors 65+: $15', 'College students: $10', '17 and under: free'], '401-848-8200', None),
+                 ['Wed–Mon: 11 am–4 pm', 'Tue: closed',
+                  'Closed New Year’s Eve and Day, Easter Sunday, Thanksgiving, Christmas Eve and Christmas Day'],
+                 ['Adults: $20', 'Seniors 65+: $15', 'College students: $10', '17 and under: free',
+                  'Active military and spouse: free', 'Members: free'], '401-848-8200',
+                 'Two gallery buildings on a lawn at Bellevue Avenue and Old Beach Road: the Griswold House (1864, '
+                 'Richard Morris Hunt) and the Cushing Memorial Gallery. Free parking off Downing Street and off Old '
+                 'Beach Road; the south lot off Downing Street is the step-free way into all three buildings. The '
+                 'Museum School (Coleman Center) is at 26 Liberty Street. No café.'),
     'Q7152453': ('Choate Rosemary Hall, 333 Christian Street, Wallingford, CT 06492',
                  ['Gallery open during the school year: call for hours'], FREE, '203-697-2423', None),
     'Q5017445': ('4676 Falmouth Road (Route 28), Cotuit, MA 02635',

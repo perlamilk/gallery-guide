@@ -179,6 +179,15 @@ Upper floors of the exhibition buildings aren't drawn. Works: the online catalog
 about what is on view and has few pictures, so the guide lists the historic vessels, the Seaport Village buildings and the
 exhibitions now open, from the museum's WordPress pages (robots.txt crawl delay 10 s). Monstrous closes Jan 10, 2027 and
 Brickwrecks Mar 14, 2027: re-run when the exhibitions change.
+Newport Art Museum, Newport (Nov 4, 2026): map guide at `guide.html?museum=newport`, built by `tools/harvest_newport.py`
+and `tools/build_newport.py`. The museum publishes no floor plan. The campus comes from OpenStreetMap; the Griswold
+House's ground floor is traced from the Historic American Buildings Survey's measured plan (HABS RI-322, 1969-70, on
+Wikimedia Commons). Drury (old dining room), Library, Parlor and Corridor galleries are known; Ilgenfritz, Wright,
+Studio, Damon and Blue Room placements, the Cushing building's rooms and the lobby's desk, shop and restrooms are
+guesses, marked on the map. Upper floor not drawn. Works: the five shows now on view and the museum's own Cushing
+paintings, from newportartmuseum.org (WordPress, robots.txt crawl delay 10 s); only Rediscoveries (Cushing Gallery) and
+Unfurling (Griswold House) name their gallery. Plus 60 collection highlights on the museum page. Re-run when shows
+change (Unfurling ends Dec 31, 2026; Isham Jan 4, Otero Jan 10, Play / Pretend Jan 31, 2027).
 
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
