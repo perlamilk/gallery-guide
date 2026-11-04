@@ -275,6 +275,17 @@ export const SITES = {
     flat: true,
     blurb: 'The grounds with parking, the Chinese Tea House and the Cliff Walk, and both floors on the house tour traced from Richard Morris Hunt’s own 1889 plans, plus the basement store and restrooms: the Vanderbilts’ and Alva Belmont’s furniture, portraits and treasures in the rooms where they stand, directions and your visit diary.',
   },
+  jfk: {
+    key: 'jfk', id: 'Q2007919', short: 'JFK Library', name: 'John F. Kennedy Presidential Library and Museum',
+    floors: 'data/jfk/floors.json', artworks: 'data/jfk/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-jfk.json', packKey: 'gg-pack-jfk',
+    room: id => id,                          // galleries have names (Campaign 1960, Pavilion)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'Both levels of I. M. Pei’s building (approximate: traced from his 1979 plans): the entrance lobby with tickets, restrooms and the coat room, the theaters with the introductory film, the exhibits in the order of the visit, from the 1960 campaign and the Oval Office to the Space Race, the Cuban Missile Crisis and the glass Pavilion, the Kennedy Café, JFK’s sailboat Victura on the harbor lawn, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
