@@ -198,6 +198,17 @@ export const SITES = {
     flat: true,
     blurb: 'The one gallery floor with the entrance, coat room, restrooms and baby changing (an approximate plan: the Mead publishes none), the works in this season’s Whitney Collection show, the Rotherwas Room and its stained glass, the Assyrian reliefs, directions and your visit diary.',
   },
+  flogris: {
+    key: 'flogris', id: 'Q5460633', short: 'FloGris', name: 'Florence Griswold Museum',
+    floors: 'data/flogris/floors.json', artworks: 'data/flogris/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-flogris.json', packKey: 'gg-pack-flogris',
+    room: id => id,                          // rooms are named (Dining Room, Niblack Gallery)
+    website: 'More about this work',
+    official: false,
+    flat: true,
+    blurb: 'The 12-acre campus traced from the museum’s own map, with the Krieble Gallery, Café Flo, restrooms, gardens and studios, plus both floors of the Griswold House: every painted panel in the dining room where the artists left it, the collection highlights, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
