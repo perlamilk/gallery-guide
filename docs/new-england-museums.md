@@ -347,3 +347,14 @@ and the objects pictured with captions on the pages of the exhibitions on view. 
 Carvings and Bristol County: Incarcerated are matched to the map's "Rotating Exhibition" rooms by guess and say so.
 Upcoming: The State of Water (upper level, Nov 20, 2026), New Ecologies: May Babcock (Center Street Gallery, Nov 20);
 Sailor's Valentines closes Nov 8, 2026.
+
+Yale Peabody Museum (Nov 4, 2026): map guide at `guide.html?museum=ypm`, built by `tools/harvest_ypm.py` +
+`tools/build_ypm.py`. peabody.yale.edu answers scripts and its robots.txt allows the pages used. The map is traced from
+the museum's own floor plan (3 pages, dated Oct 3, 2025, the "Download Map (PDF)" link on /visit): Floors 1, 2 and 3 on
+one frame, with restrooms, the all-gender restrooms, elevators, stairs, information desk, coatroom, lockers, store,
+classrooms and staff-only areas. The wellness room is on the lower level, which the plan doesn't draw. Works: the
+galleries and the cards (photo, text, catalogue number) on each page under /explore/exhibitions, plus the Stegosaurus.
+The collection database (peabody.collections.yale.edu) is a JavaScript app behind CloudFront that blocks scripts.
+Temporary shows are placed in the second-floor Special Exhibitions gallery by guess and say so; Spineless is in the
+Student Gallery. Indigenous Connections / Mesoamerican & Andean Civilizations share one open room, split by guess.
+Admission is free.

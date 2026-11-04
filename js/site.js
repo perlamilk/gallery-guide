@@ -330,6 +330,17 @@ export const SITES = {
     flat: true,
     blurb: 'All three levels, traced from the museum’s own map: the Lobby with the blue whale, humpback and right whale skeletons overhead, the Lagoda you can step aboard and its balcony, the Scrimshaw Gallery, the sperm whale, Harbor View, every gallery and what is in it, plus restrooms, elevators, stairs, the store, directions and your visit diary.',
   },
+  ypm: {
+    key: 'ypm', id: 'Q122945', short: 'Peabody', name: 'Yale Peabody Museum',
+    floors: 'data/ypm/floors.json', artworks: 'data/ypm/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-ypm.json', packKey: 'gg-pack-ypm',
+    room: id => id,                          // galleries have names (Burke Hall, Hall of the Pacific)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'All three floors, traced from the museum’s own floor plan: Burke Hall with the Brontosaurus and The Age of Reptiles mural, the Central Gallery with Archelon, the Human Footprint, Egypt and Mesopotamia, the dioramas, the minerals and the Living Lab, with what is in each gallery, plus restrooms, elevators, stairs, the store, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
