@@ -209,6 +209,17 @@ export const SITES = {
     flat: true,
     blurb: 'The 12-acre campus traced from the museum’s own map, with the Krieble Gallery, Café Flo, restrooms, gardens and studios, plus both floors of the Griswold House: every painted panel in the dining room where the artists left it, the collection highlights, directions and your visit diary.',
   },
+  hillstead: {
+    key: 'hillstead', id: 'Q1618645', short: 'Hill-Stead', name: 'Hill-Stead Museum',
+    floors: 'data/hillstead/floors.json', artworks: 'data/hillstead/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-hillstead.json', packKey: 'gg-pack-hillstead',
+    room: id => id,                          // rooms are named (Drawing Room, Morning Room)
+    website: 'More about this work',
+    official: false,
+    flat: true,
+    blurb: 'The grounds with the visitor center, Museum Shop, restrooms, parking and the Sunken Garden, and both floors of the Pope-Riddle House traced from the museum’s own guidebook plans: Monet, Manet, Degas and Cassatt in the rooms where they hang, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
