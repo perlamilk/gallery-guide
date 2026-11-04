@@ -114,7 +114,7 @@ export class MuseumMap {
     this.controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN };
     if (this.flat) {
       // 2D plan: looking straight down, north up; drag moves the map, pinch zooms
-      Object.assign(this.controls, { enableRotate: false, screenSpacePanning: true, minPolarAngle: 0, maxPolarAngle: 0 });
+      Object.assign(this.controls, { enableRotate: false, screenSpacePanning: true, minPolarAngle: 0, maxPolarAngle: 0, maxDistance: 520 });
       this.controls.touches = { ONE: THREE.TOUCH.PAN, TWO: THREE.TOUCH.DOLLY_PAN };
       this.controls.mouseButtons = { LEFT: THREE.MOUSE.PAN, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.PAN };
       this.camera.fov = 24;
@@ -616,7 +616,7 @@ export class MuseumMap {
     const dist = this.flat
       ? Math.max((size.x * 0.5 * 1.08) / Math.tan(hfov / 2), (size.z * 0.5 * 1.1) / Math.tan(vfov / 2))
       : Math.max((size.x * 0.5 * 1.18) / Math.tan(hfov / 2), (size.z * 0.5 * 1.5) / Math.tan(vfov / 2));
-    this.homeDistance = Math.min(dist, this.flat ? 200 : 90);
+    this.homeDistance = Math.min(dist, this.flat ? 480 : 90);
     const pos = this.#orbitPosition(center, dist, this.flat ? 1e-4 : 0.72, 0);
     if (animate) this.#flyTo(center, dist, pos);
     else { this.controls.target.copy(center); this.camera.position.copy(pos); }
