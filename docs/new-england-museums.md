@@ -198,6 +198,14 @@ at the top; basement (Museum Store, restrooms) only as an outline with approxima
 house or came down from Cornelius Vanderbilt II / Countess Széchényi; 25 placed (room from the record, or a portrait in its
 sitter's bedroom, marked as a guess), the rest listed on the museum page without a room.
 
+Marble House, Newport (Nov 4, 2026): map guide at `guide.html?museum=marble`, built by `tools/harvest_marble.py` (the
+same Preservation Society Digital Collections service as The Breakers) and `tools/build_marble.py`. Map: floor G (grounds,
+parking across Bellevue Avenue, Chinese Tea House, Cliff Walk) from OpenStreetMap; floors 1 and 2 traced from Richard
+Morris Hunt's 1889 office-copy plans at the Library of Congress (LCCN 2024633241 first story, 2017648779 second story),
+ocean side at the top; the plan's Grand Salon/Library/Morning Room are today's Gold Room/Gothic Room/Library; bedroom
+owners on floor 2 read from the plan (approximate); basement (store, restrooms) as an outline with approximate places.
+Works: 30 objects that name the house or came from Alva Belmont / Frederick H. Prince; 10 placed (9 guessed, marked).
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
