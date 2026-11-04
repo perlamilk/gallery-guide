@@ -297,6 +297,17 @@ export const SITES = {
     flat: true,
     blurb: 'The grounds with parking, the Sunken Garden and the Carriage House Café, and every floor of the house traced from its National Historic Landmark plans: the Ballroom, Salon, Conservatory and the Berwinds’ bedrooms, the basement restrooms and the staff floor of the Servant Life Tour, with the Berwinds’ furniture and paintings, directions and your visit diary.',
   },
+  rosecliff: {
+    key: 'rosecliff', id: 'Q2166814', short: 'Rosecliff', name: 'Rosecliff',
+    floors: 'data/rosecliff/floors.json', artworks: 'data/rosecliff/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-rosecliff.json', packKey: 'gg-pack-rosecliff',
+    room: id => id,                          // rooms are named (Ballroom, Salon)
+    website: 'More about this object',
+    official: false,
+    flat: true,
+    blurb: 'The grounds with parking and the rose garden by the Cliff Walk, and both floors of the house traced from Stanford White’s 1902 plans: the heart-shaped staircase, the Ballroom (the largest in Newport), the Salon, the Dining and Billiard Rooms, the exhibition upstairs and the basement restrooms and store, with the Oelrichs’ and Monroes’ furniture and paintings, directions and your visit diary.',
+  },
   mos: {
     key: 'mos', id: 'Q1139748', short: 'Museum of Science', name: 'Museum of Science',
     floors: 'data/mos/floors.json', artworks: 'data/mos/artworks.json',

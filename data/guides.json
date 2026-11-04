@@ -224,6 +224,14 @@
    "galleries": true,
    "checked": "2026-11-04",
    "source": "Museum of Science, Boston: exhibit pages and Museum Map (mos.org)"
+  },
+  "Q2166814": {
+   "works": 12,
+   "pictures": 12,
+   "onView": 3,
+   "galleries": true,
+   "checked": "2026-11-04",
+   "source": "The Preservation Society of Newport County, Digital Collections"
   }
  }
 }
