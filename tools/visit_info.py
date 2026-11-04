@@ -128,10 +128,14 @@ VISIT = {
                  ['Fri–Wed: 10 am–5 pm', 'Thu: closed'],
                  ['Adults: $18', 'Seniors and college students: $15', 'Youth 4–17: $8', '3 and under: free'], '413-443-7171', None),
     'Q2019741': ('51 Sandy Pond Road, Lincoln, MA 01773',
-                 ['Sculpture park: Tue–Fri 10 am–4 pm, Sat–Sun 10 am–5 pm', 'Mon: closed (open holiday Mondays)',
-                  'Indoor galleries closed for renovation'],
-                 ['Adults: $14', 'Seniors and students: $12', '12 and under: free', 'Lincoln residents: free'],
-                 '781-259-8355', None),
+                 ['Sculpture park and store: Tue–Fri 10 am–4 pm, Sat–Sun 10 am–5 pm',
+                  'Twisted Tree Café: Tue–Fri 10 am–3 pm, Sat–Sun 10 am–4 pm',
+                  'Mon: closed (open holiday Mondays, 10 am–4 pm)', 'Indoor galleries closed for renovation'],
+                 ['Adults: $14', 'Seniors and students: $12', '12 and under: free',
+                  'Trustees members and Lincoln residents: free', 'EBT, WIC and MassHealth cardholders: free'],
+                 '781-259-8355', 'The museum’s indoor galleries are closed for renovation; the 30-acre sculpture park, '
+                                 'the Twisted Tree Café and the store are open. Restrooms by the café (accessible) and '
+                                 'in the museum (3rd floor, elevator). Dogs on leash are welcome in the park.'),
     'Q4796749': ('189 Alden Street, Duxbury, MA 02332',
                  ['Wed–Sun: 12–5 pm', 'Thu: 12–8 pm', 'Mon–Tue: closed'], FREE, '781-934-6634', None),
     'Q5386237': ('125 West Bay Road, Amherst, MA 01002',
@@ -193,6 +197,9 @@ EXTRA = {
                   'city': 'Northampton', 'state': 'Massachusetts', 'wikipedia': 'Smith_College_Museum_of_Art'},
 }
 
+# Museums whose Wikidata name is out of date (deCordova reversed its name in 2009)
+NAMES = {'Q2019741': 'deCordova Sculpture Park and Museum'}
+
 # Commons photos for museums that Wikidata has no picture for (others show a map of where they are)
 PHOTOS = {
     'Q123689395': 'Lunder Arts Center, Lesley University 1803 Mass Ave Cambridge.jpg',
@@ -214,6 +221,7 @@ def main():
         if not v:
             continue
         seen.add(m['id'])
+        if m['id'] in NAMES: m['name'] = NAMES[m['id']]
         address, hours, admission, phone, notes = v
         m.update(address=address, infoChecked=CHECKED)
         # Wikidata sometimes gives the state as the city ("Massachusetts, Massachusetts")

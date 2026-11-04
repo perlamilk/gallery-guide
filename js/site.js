@@ -154,6 +154,17 @@ export const SITES = {
     flat: true,
     blurb: 'All four floors traced from the museum’s own map, with the entrance, restrooms, shop and elevators, the works in this season’s shows in the gallery where they hang, directions and your visit diary.',
   },
+  decordova: {
+    key: 'decordova', id: 'Q2019741', short: 'deCordova', name: 'deCordova Sculpture Park and Museum',
+    floors: 'data/decordova/floors.json', artworks: 'data/decordova/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-decordova.json', packKey: 'gg-pack-decordova',
+    room: id => id,                          // lawns and gardens of the park (Pondside, South Lawn), not numbers
+    website: 'View on the deCordova Website',
+    official: false,
+    flat: true,
+    blurb: 'The whole sculpture park from the museum’s own map, with every one of its 53 numbered sculptures on the lawn where it stands, Admission, the café, store and restrooms, directions and your visit diary. The indoor galleries are closed for renovation.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
