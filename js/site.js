@@ -121,6 +121,17 @@ export const SITES = {
     flat: true,
     blurb: 'Floor plans of every building on the campus from the museum’s map, what is on view in each one (with all 88 Sol LeWitt wall drawings), directions and your visit diary.',
   },
+  ica: {
+    key: 'ica', id: 'Q3152226', short: 'ICA', name: 'Institute of Contemporary Art, Boston',
+    floors: 'data/ica/floors.json', artworks: 'data/ica/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-ica.json', packKey: 'gg-pack-ica',
+    room: id => id,                          // galleries have donors' names, not numbers
+    website: 'View on the ICA Website',
+    official: false,
+    flat: true,
+    blurb: 'All four floors, with the galleries traced from the ICA’s own gallery map, the works in this season’s shows in the gallery where they hang, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
