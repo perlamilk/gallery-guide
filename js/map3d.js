@@ -32,7 +32,9 @@ const KIND = {
 };
 
 export class MuseumMap {
-  constructor(canvas, museum, { onTap } = {}) {
+  // flat: a plain 2D plan seen from straight above (no tilt, no rotation; one finger pans).
+  constructor(canvas, museum, { onTap, flat = false } = {}) {
+    this.flat = flat;
     this.canvas = canvas;
     this.museum = museum;
     this.onTap = onTap;
@@ -110,6 +112,14 @@ export class MuseumMap {
     });
     // One finger rotates, two fingers pinch-zoom and pan.
     this.controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN };
+    if (this.flat) {
+      // 2D plan: looking straight down, north up; drag moves the map, pinch zooms
+      Object.assign(this.controls, { enableRotate: false, screenSpacePanning: true, minPolarAngle: 0, maxPolarAngle: 0 });
+      this.controls.touches = { ONE: THREE.TOUCH.PAN, TWO: THREE.TOUCH.DOLLY_PAN };
+      this.controls.mouseButtons = { LEFT: THREE.MOUSE.PAN, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.PAN };
+      this.camera.fov = 24;
+      sun.position.set(-6, 60, 8);   // short, soft shadows: walls read as lines, like a printed plan
+    }
   }
 
   // All floors share one origin so rooms stay put when switching floors.
@@ -603,9 +613,11 @@ export class MuseumMap {
     const vfov = THREE.MathUtils.degToRad(this.camera.fov);
     const hfov = 2 * Math.atan(Math.tan(vfov / 2) * this.#visibleAspect());
     // tilted view: the near edge comes closer to the camera, so leave extra margin
-    const dist = Math.max((size.x * 0.5 * 1.18) / Math.tan(hfov / 2), (size.z * 0.5 * 1.5) / Math.tan(vfov / 2));
-    this.homeDistance = Math.min(dist, 90);
-    const pos = this.#orbitPosition(center, dist, 0.72, 0);
+    const dist = this.flat
+      ? Math.max((size.x * 0.5 * 1.08) / Math.tan(hfov / 2), (size.z * 0.5 * 1.1) / Math.tan(vfov / 2))
+      : Math.max((size.x * 0.5 * 1.18) / Math.tan(hfov / 2), (size.z * 0.5 * 1.5) / Math.tan(vfov / 2));
+    this.homeDistance = Math.min(dist, this.flat ? 200 : 90);
+    const pos = this.#orbitPosition(center, dist, this.flat ? 1e-4 : 0.72, 0);
     if (animate) this.#flyTo(center, dist, pos);
     else { this.controls.target.copy(center); this.camera.position.copy(pos); }
   }
@@ -680,7 +692,7 @@ export class MuseumMap {
     }
     const group = this.floorGroups.get(this.currentFloor);
     for (const m of group?.userData.markers.children ?? []) {
-      m.visible = m.userData.lit || dist < 95;
+      m.visible = m.userData.lit || this.flat || dist < 95;
     }
   }
 

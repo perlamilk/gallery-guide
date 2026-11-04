@@ -67,7 +67,7 @@ async function boot() {
   document.querySelector('.masthead__eyebrow').textContent = SITE.short;
   document.querySelector('.guide-close').href = `./#museum/${SITE.id}`;
   state.museum = await loadData();
-  state.map = new MuseumMap(els.canvas, state.museum, { onTap: onMapTap });
+  state.map = new MuseumMap(els.canvas, state.museum, { onTap: onMapTap, flat: SITE.flat });
   state.router = new Router(state.museum);
   [state.favorites, state.diary, state.visit] = await Promise.all([
     Favorites.list().catch(() => []), Visits.list(SITE.id).catch(() => []), Visits.active(SITE.id).catch(() => null),

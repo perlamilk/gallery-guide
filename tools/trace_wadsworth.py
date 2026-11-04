@@ -44,7 +44,7 @@ ICONS = {
     (991, 199): 'elevator', (1132, 246): 'elevator', (84, 320): 'elevator', (132, 198): 'elevator',
     (274, 247): 'elevator', (700, 246): 'elevator', (558, 198): 'elevator',
     (270, 220): 'coat', (164, 161): 'dining', (327, 287): 'info', (126, 312): 'info',
-    (89, 123): 'restroom-all', (553, 131): 'restroom-all',
+    (89, 123): 'restroom', (553, 131): 'restroom',
     (125, 374): 'entrance',
 }
 OVERRIDES = {
@@ -61,7 +61,7 @@ OVERRIDES = {
               '600 Main Street Entrance', '29 Atheneum Sq. North Entrance'],
     'ignore': ['Wheelchair accessibility:', 'MAP KEY', 'Wheelchair', 'Accessible Route'],
     # the main entrance has no icon on the plan: put one at the steps, under its label
-    'extra_amenities': {'1': [dict(type='entrance', at=[161.0, 297.5])]},
+    'extra_amenities': {'1': [dict(type='entrance', at=[161.0, 297.5]), dict(type='shop', at=[311.0, 352.0])]},
     # rooms that open on start / Recenter
     'home': {'1': [], '2': [], '3': []},
 }

@@ -20,6 +20,7 @@ export const SITES = {
     room: id => id,                        // the map shows wings ("Avery 2"), not numbered galleries
     website: 'Search the Wadsworth Collection',
     official: false,
+    flat: true,                            // a 2D plan from above: Grazi prefers it to the tilting 3D map
   },
 };
 
