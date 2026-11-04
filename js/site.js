@@ -132,6 +132,17 @@ export const SITES = {
     flat: true,
     blurb: 'All four floors, with the galleries traced from the ICA’s own gallery map, the works in this season’s shows in the gallery where they hang, directions and your visit diary.',
   },
+  nbmaa: {
+    key: 'nbmaa', id: 'Q7005718', short: 'NBMAA', name: 'New Britain Museum of American Art',
+    floors: 'data/nbmaa/floors.json', artworks: 'data/nbmaa/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-nbmaa.json', packKey: 'gg-pack-nbmaa',
+    room: id => id,                          // galleries have names (Benton Murals, Landers House), not numbers
+    website: 'View on the NBMAA Collection Site',
+    official: false,
+    flat: true,
+    blurb: 'An approximate floor plan of both floors inside the building’s real outline, every work in the museum’s online collection in the gallery for its period, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

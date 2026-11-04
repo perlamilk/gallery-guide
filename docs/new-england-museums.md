@@ -96,6 +96,16 @@ dimensions, credit, accession and a text. Exhibition pages name their gallery, s
 Beyond the Galleries names one work per floor; works given by Fotene Demoulas and Tom Coté go in To My Best Friend with a
 note. The museum page lists the whole collection (`data/guides/Q3152226.json`, on view = in a current show). Shows change
 often: re-run both scripts (with `--refresh`) and update `EXHIBITIONS`/`BEYOND` in build_ica.py when they do.
+New Britain Museum of American Art (Nov 4, 2026): map guide at `guide.html?museum=nbmaa`, built by
+`tools/build_nbmaa.py`. The museum publishes no floor plan. The building's real outline (Chase Family Building, west wing,
+Landers House) is traced from the grounds map in its family guide PDF (nbmaa.org/pdfs/Sculpture-Garden-Tour-2024…pdf);
+the rooms inside are laid out by hand and the map says so: Main Floor (Lexington Street entrance, lobby, café, store, Benton
+murals, Colonial, Hudson River School, 19th century and Impressionism, Landers House, west-wing exhibitions) and Upper Floor
+(Early Modernism, Regionalism, Post-War, McKernan Gallery, Sol LeWitt, Low Illustration, exhibitions). Works come from the
+museum's own collection site, ink.nbmaa.org (eMuseum, reachable from the cloud), read politely by
+`tools/harvest_nbmaa.py` (12 works a page, 1.5 s apart, so a full run takes a couple of hours). There is no on-view data:
+works in the museum's themed highlight sets go to that period's gallery, the rest by date and medium, each with a note.
+Pictures load from ink.nbmaa.org as they are viewed; sw.js does not download them in bulk.
 
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 

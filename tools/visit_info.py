@@ -64,7 +64,8 @@ VISIT = {
     'Q7005718': ('56 Lexington Street, New Britain, CT 06052',
                  ['Tue–Sun: 10 am–5 pm', 'Fri: 10 am–8 pm', 'Mon: closed'],
                  ['Adults: $22', 'Seniors 67+: $18', 'College students and ages 6–17: $10', '5 and under: free'],
-                 '860-229-0257', None),
+                 '860-229-0257', 'Museum Café: Tue–Sun 10 am–2:30 pm. New Britain residents get in free on the first Saturday '
+                 'of the month; one free Community Day a month for everyone.'),
     'Q588474': ('1040 MASS MoCA Way, North Adams, MA 01247',
                 ['Wed–Mon: 10 am–5 pm', 'Tue: closed', 'Closed Thanksgiving and Christmas'],
                 ['Adults: $25', 'Seniors 65+ and veterans: $22', 'Students: $15', 'Kids 6–16: $10', '5 and under: free',
