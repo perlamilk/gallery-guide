@@ -143,6 +143,16 @@ Davis's pages on Google Arts & Culture (read by `tools/harvest_davis.py`, robots
 current shows (Excavating Antioch, Shi: Stories in Stone, through May 30, 2027). Each work sits in the gallery for its date
 and origin and says it may be in storage. To improve: a photo of the paper gallery map, or on-view data from the museum.
 
+Mead Art Museum (Nov 4, 2026): map guide at `guide.html?museum=mead`, built by `tools/build_mead.py`. www.amherst.edu shows a
+CAPTCHA to every script (even from Grazi's Mac), so the Mead's pages were read from Internet Archive copies, fetched on the Mac
+into `.cache/mead/raw` (a temporary `mead-raw` branch carried them to the cloud). The Mead publishes no floor plan: the one
+gallery floor is APPROXIMATE, from the OpenStreetMap outline, the architects' 1948 plan on Wikimedia Commons and the
+accessibility page (Fairchild Gallery, restrooms, coat room, entrance). Works on the map: the 8 named works of "My beautiful,
+pitiful age" (Aug 25, 2026 – Jan 3, 2027; gallery guessed as the Fairchild), the Rotherwas Room and its stained glass, the
+Assyrian relief. The collection list adds Collection Highlights, Mead files on Wikimedia Commons and Wikidata (103 works).
+The full catalogue (Five College Museums database, 20,000+ works) blocks AI crawlers and is not read. When the spring show
+(Anchors and Aspirations, Feb 23 – Jul 3, 2027) opens, update `SHOW_WORKS` and re-run.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).

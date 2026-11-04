@@ -187,6 +187,17 @@ export const SITES = {
     flat: true,
     blurb: 'An approximate plan of the five public floors inside the building’s real outline, with the entrance, front desk, restrooms and Collins Café, the works the Davis shows online in the gallery for their period, the current shows, directions and your visit diary.',
   },
+  mead: {
+    key: 'mead', id: 'Q6803132', short: 'The Mead', name: 'Mead Art Museum',
+    floors: 'data/mead/floors.json', artworks: 'data/mead/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-mead.json', packKey: 'gg-pack-mead',
+    room: id => id,                          // galleries have names (Fairchild, Rotherwas Room), not numbers
+    website: 'View on the Five College Museums Site',
+    official: false,
+    flat: true,
+    blurb: 'The one gallery floor with the entrance, coat room, restrooms and baby changing (an approximate plan: the Mead publishes none), the works in this season’s Whitney Collection show, the Rotherwas Room and its stained glass, the Assyrian reliefs, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
