@@ -4508,6 +4508,1552 @@
      ]
     }
    ]
+  },
+  "32281": {
+   "image": "data/notice/32281.jpg",
+   "file": "Robert Salmon - South Sea Whale Fishing I.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "An American whaleship in the Pacific, painted in Boston in 1831 by the British-born marine painter Robert Salmon."
+    },
+    {
+     "title": "The whaleship",
+     "text": "The big ship with the American flag, sails set, is the mother ship of the hunt.",
+     "r": [
+      0.08,
+      0.1,
+      0.45,
+      0.7
+     ]
+    },
+    {
+     "title": "The flag",
+     "text": "Find the Stars and Stripes at the stern: this is a New England ship far from home.",
+     "r": [
+      0.12,
+      0.42,
+      0.14,
+      0.18
+     ]
+    },
+    {
+     "title": "The whaleboat",
+     "text": "Small boats did the real work: crews rowed right up to the whale and threw harpoons by hand.",
+     "r": [
+      0.6,
+      0.72,
+      0.4,
+      0.2
+     ]
+    },
+    {
+     "title": "Another ship",
+     "text": "A second whaler waits further off. Ships often hunted in company.",
+     "r": [
+      0.68,
+      0.45,
+      0.26,
+      0.3
+     ]
+    },
+    {
+     "title": "The sea",
+     "text": "Salmon paints calm, glassy water with neat, regular ripples: an orderly sea, not a stormy one.",
+     "r": [
+      0,
+      0.78,
+      1,
+      0.22
+     ]
+    }
+   ]
+  },
+  "31090": {
+   "image": "data/notice/31090.jpg",
+   "file": "Abbott Handerson Thayer - Caritas - 97.199 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Caritas is Latin for love or charity. Abbott Thayer paints it as a young woman in white, sheltering two children."
+    },
+    {
+     "title": "The face",
+     "text": "Eyes lowered, calm and still, like a statue.",
+     "r": [
+      0.36,
+      0.03,
+      0.26,
+      0.16
+     ]
+    },
+    {
+     "title": "The arms",
+     "text": "Her arms stretch out wide, almost making a cross, as if she covers everything beneath her.",
+     "r": [
+      0.03,
+      0.2,
+      0.94,
+      0.2
+     ]
+    },
+    {
+     "title": "The children",
+     "text": "Two small children lean against her robe, safe under her protection.",
+     "r": [
+      0.25,
+      0.38,
+      0.55,
+      0.32
+     ]
+    },
+    {
+     "title": "The white robe",
+     "text": "Thick, quick strokes of white paint. Thayer liked to leave his surfaces rough and alive.",
+     "r": [
+      0.25,
+      0.2,
+      0.5,
+      0.68
+     ]
+    },
+    {
+     "title": "The dark leaves",
+     "text": "A dark wall of leaves behind her makes the white glow.",
+     "r": [
+      0.05,
+      0.05,
+      0.9,
+      0.9
+     ]
+    }
+   ]
+  },
+  "32244": {
+   "image": "data/notice/32244.jpg",
+   "file": "Elihu Vedder - Nude - 26.773 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A tall, narrow nude by Elihu Vedder, an American who spent most of his life in Rome."
+    },
+    {
+     "title": "Arms raised",
+     "text": "She lifts a long cloth over her head, as if about to wrap herself or let it fall.",
+     "r": [
+      0.2,
+      0.0,
+      0.6,
+      0.25
+     ]
+    },
+    {
+     "title": "The drapery",
+     "text": "The white cloth falls in long folds and frames her whole body.",
+     "r": [
+      0.2,
+      0.15,
+      0.75,
+      0.75
+     ]
+    },
+    {
+     "title": "The pedestal",
+     "text": "She stands on a round base, like a statue come to life.",
+     "r": [
+      0.2,
+      0.82,
+      0.5,
+      0.18
+     ]
+    },
+    {
+     "title": "The trees",
+     "text": "A strip of leaves and sky on the left: she is outdoors, in a garden.",
+     "r": [
+      0,
+      0,
+      0.25,
+      0.9
+     ]
+    }
+   ]
+  },
+  "31416": {
+   "image": "data/notice/31416.jpg",
+   "file": "The Picture Gallery in the Old Museum by Enrico Meneghelli, 1879.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A painting of a painting gallery: the MFA’s first building in Copley Square, which opened in 1876. The Museum moved to Huntington Avenue in 1909."
+    },
+    {
+     "title": "Frame to frame",
+     "text": "Paintings hang edge to edge, up to the ceiling. This crowded “salon” hang was normal in the 1800s.",
+     "r": [
+      0,
+      0,
+      1,
+      0.65
+     ]
+    },
+    {
+     "title": "The big picture",
+     "text": "The largest canvas, with hunters in a dark forest, is the centerpiece of the wall.",
+     "r": [
+      0.47,
+      0.1,
+      0.46,
+      0.43
+     ]
+    },
+    {
+     "title": "Gilded frames",
+     "text": "Look at the ornate carved frames, each one painted with tiny gold highlights.",
+     "r": [
+      0.02,
+      0.28,
+      0.18,
+      0.22
+     ]
+    },
+    {
+     "title": "The bench",
+     "text": "A bench for visitors, and a low rail to keep them back from the pictures.",
+     "r": [
+      0,
+      0.65,
+      0.3,
+      0.28
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Meneghelli signed and dated it 1879, bottom right.",
+     "r": [
+      0.75,
+      0.88,
+      0.25,
+      0.12
+     ]
+    }
+   ]
+  },
+  "31551": {
+   "image": "data/notice/31551.jpg",
+   "file": "Francis Davis Millet - Seacoast - RES.16.76 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Old wooden pilings standing in the sea, by Francis Davis Millet, who later died on the Titanic in 1912. This picture is a black-and-white photo; the painting itself is in color, so look for the colors in the gallery."
+    },
+    {
+     "title": "The old pier",
+     "text": "Crooked timbers lean in every direction. The pier is falling apart.",
+     "r": [
+      0,
+      0.15,
+      0.7,
+      0.65
+     ]
+    },
+    {
+     "title": "The hills",
+     "text": "Pale hills on the far shore, almost dissolved in the haze.",
+     "r": [
+      0,
+      0.12,
+      1,
+      0.25
+     ]
+    },
+    {
+     "title": "The waves",
+     "text": "Short horizontal strokes make the water move around the posts.",
+     "r": [
+      0,
+      0.6,
+      1,
+      0.35
+     ]
+    }
+   ]
+  },
+  "31415": {
+   "image": "data/notice/31415.jpg",
+   "file": "Francis William Loring - The Army of Peace - 12.2 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Farm workers with scythes in a wheat field, painted by Francis Loring in 1893."
+    },
+    {
+     "title": "The line of reapers",
+     "text": "They walk in a row, scythes on their shoulders, like soldiers on the march.",
+     "r": [
+      0.1,
+      0,
+      0.8,
+      0.5
+     ]
+    },
+    {
+     "title": "The title",
+     "text": "An “army of peace”: their weapons are farm tools. The title plays on that idea."
+    },
+    {
+     "title": "Taking a rest",
+     "text": "In front, workers rest in the shade.",
+     "r": [
+      0.6,
+      0.4,
+      0.3,
+      0.5
+     ]
+    },
+    {
+     "title": "The tree trunks",
+     "text": "Tall dark trunks break up the row and frame the scene.",
+     "r": [
+      0.3,
+      0,
+      0.4,
+      0.8
+     ]
+    },
+    {
+     "title": "The wheat",
+     "text": "Golden stalks fill the whole lower half.",
+     "r": [
+      0,
+      0.35,
+      1,
+      0.65
+     ]
+    }
+   ]
+  },
+  "30981": {
+   "image": "data/notice/30981.jpg",
+   "file": "Frank Myers Boggs - A Rough Day—Harbor of Honfleur - 86.56 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A windy day at the harbor of Honfleur in France, by Frank Boggs, an American who settled in Paris. This picture is a black-and-white photo; the painting itself is in color, so look for the colors in the gallery."
+    },
+    {
+     "title": "The sailboat",
+     "text": "A fishing boat leans hard in the wind, its sails full.",
+     "r": [
+      0.4,
+      0.25,
+      0.4,
+      0.5
+     ]
+    },
+    {
+     "title": "The lighthouse",
+     "text": "A small lighthouse at the harbor mouth, almost lost in the spray.",
+     "r": [
+      0.05,
+      0.28,
+      0.17,
+      0.25
+     ]
+    },
+    {
+     "title": "The gulls",
+     "text": "Tiny dark marks in the sky: seagulls riding the wind.",
+     "r": [
+      0.3,
+      0,
+      0.45,
+      0.2
+     ]
+    },
+    {
+     "title": "The waves",
+     "text": "Choppy, broken water across the whole bottom of the picture.",
+     "r": [
+      0,
+      0.5,
+      1,
+      0.4
+     ]
+    }
+   ]
+  },
+  "31485": {
+   "image": "data/notice/31485.jpg",
+   "file": "Henry Bacon - On the Open Sea- The Transatlantic Steamship \"Péreire\" - 13.1692 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Passengers on the deck of a French transatlantic steamship, painted in 1877 by Henry Bacon, an American living in Paris."
+    },
+    {
+     "title": "The smoke",
+     "text": "Black smoke streams from the funnel: this is a steamship, still carrying masts and sails.",
+     "r": [
+      0.6,
+      0,
+      0.4,
+      0.16
+     ]
+    },
+    {
+     "title": "The passengers",
+     "text": "People sit along the bench: reading, chatting, wrapped up against the sea wind.",
+     "r": [
+      0.15,
+      0.4,
+      0.62,
+      0.25
+     ]
+    },
+    {
+     "title": "Seasick?",
+     "text": "A woman in black lies back in a deck chair. Crossings took about ten days.",
+     "r": [
+      0.6,
+      0.55,
+      0.4,
+      0.35
+     ]
+    },
+    {
+     "title": "Deck games",
+     "text": "Rope rings on the deck: passengers played ring toss to pass the time.",
+     "r": [
+      0.3,
+      0.7,
+      0.22,
+      0.15
+     ]
+    },
+    {
+     "title": "The mast",
+     "text": "The thick mast and coiled ropes on the left put us right on board.",
+     "r": [
+      0,
+      0,
+      0.2,
+      0.95
+     ]
+    }
+   ]
+  },
+  "32199": {
+   "image": "data/notice/32199.jpg",
+   "file": "Henry Roderick Newman - Gulf of Spezia - 25.155 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Gulf of Spezia on the Italian coast, by Henry Roderick Newman, an American follower of the critic John Ruskin, who urged artists to paint nature in close detail."
+    },
+    {
+     "title": "The pines",
+     "text": "Tall umbrella pines on the left, every branch drawn.",
+     "r": [
+      0,
+      0.05,
+      0.35,
+      0.75
+     ]
+    },
+    {
+     "title": "The castle",
+     "text": "A castle on the headland and a small town on the far shore.",
+     "r": [
+      0.3,
+      0.22,
+      0.45,
+      0.18
+     ]
+    },
+    {
+     "title": "The cliffs",
+     "text": "Pale rocky cliffs drop into the water.",
+     "r": [
+      0.3,
+      0.35,
+      0.3,
+      0.4
+     ]
+    },
+    {
+     "title": "The sea",
+     "text": "A wide, calm, silvery sea.",
+     "r": [
+      0.45,
+      0.35,
+      0.55,
+      0.5
+     ]
+    },
+    {
+     "title": "The foreground",
+     "text": "Dark treetops below us: we are looking down from a hill.",
+     "r": [
+      0.45,
+      0.75,
+      0.45,
+      0.25
+     ]
+    }
+   ]
+  },
+  "32209": {
+   "image": "data/notice/32209.jpg",
+   "file": "Ignaz Gaugengigl His Studio.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A painter at work in his studio, by Ignaz Gaugengigl, a Bavarian-born artist who worked in Boston and painted small, finely detailed scenes."
+    },
+    {
+     "title": "The painter",
+     "text": "He sits at the easel, brush in hand, back straight.",
+     "r": [
+      0.5,
+      0.42,
+      0.35,
+      0.35
+     ]
+    },
+    {
+     "title": "The curtains",
+     "text": "Heavy curtains on both sides, as if we are peeking through a doorway.",
+     "r": [
+      0.55,
+      0,
+      0.42,
+      0.9
+     ]
+    },
+    {
+     "title": "Decoration",
+     "text": "A garland and a hanging lamp run along the top of the wall.",
+     "r": [
+      0.25,
+      0.17,
+      0.65,
+      0.15
+     ]
+    },
+    {
+     "title": "The armor",
+     "text": "A suit of armor in the corner: an artist’s prop, for painting old-fashioned scenes.",
+     "r": [
+      0,
+      0.7,
+      0.22,
+      0.3
+     ]
+    },
+    {
+     "title": "The rug",
+     "text": "A white fur rug on the floor catches the light.",
+     "r": [
+      0.3,
+      0.78,
+      0.5,
+      0.22
+     ]
+    }
+   ]
+  },
+  "31868": {
+   "image": "data/notice/31868.jpg",
+   "file": "John La Farge - Vase of Flowers - 20.1873 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A vase of flowers painted in 1864 by John La Farge, later famous for his stained glass."
+    },
+    {
+     "title": "The flowers",
+     "text": "Pink and red roses, white blossoms, and small red flowers.",
+     "r": [
+      0.25,
+      0.2,
+      0.42,
+      0.28
+     ]
+    },
+    {
+     "title": "The vase",
+     "text": "A dark, shiny vase with painted decoration, on a gilded stand.",
+     "r": [
+      0.28,
+      0.45,
+      0.36,
+      0.42
+     ]
+    },
+    {
+     "title": "The background",
+     "text": "A golden wall with faint patterns. La Farge loved Japanese art, which may show here.",
+     "r": [
+      0,
+      0,
+      1,
+      0.7
+     ]
+    },
+    {
+     "title": "The note",
+     "text": "A folded paper with a red mark on the table. A note? A gift? La Farge leaves it unexplained.",
+     "r": [
+      0.65,
+      0.85,
+      0.35,
+      0.15
+     ]
+    }
+   ]
+  },
+  "32240": {
+   "image": "data/notice/32240.jpg",
+   "file": "John La Farge - Woman Bending Down Branch (Study for Cornelius Vanderbilt II, House, New York) - 26.769 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A study for the decorations of Cornelius Vanderbilt II’s mansion in New York, about 1881. The title tells us the subject: the sense of smell."
+    },
+    {
+     "title": "The face",
+     "text": "Head bent, eyes half closed, she breathes in the scent of the leaves.",
+     "r": [
+      0.3,
+      0.05,
+      0.4,
+      0.25
+     ]
+    },
+    {
+     "title": "The vines",
+     "text": "Grape leaves surround her on all sides.",
+     "r": [
+      0,
+      0,
+      1,
+      0.5
+     ]
+    },
+    {
+     "title": "The figure",
+     "text": "Her pale body seems to come forward out of the green.",
+     "r": [
+      0.3,
+      0.15,
+      0.45,
+      0.8
+     ]
+    },
+    {
+     "title": "A sketch",
+     "text": "This is a study: notice the loose brushwork, done quickly to test the idea."
+    }
+   ]
+  },
+  "31369": {
+   "image": "data/notice/31369.jpg",
+   "file": "John Paul Selinger - The Water Seller - 10.101 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A boy selling water, painted in 1878 by John Paul Selinger. This picture is a black-and-white photo; the painting itself is in color, so look for the colors in the gallery."
+    },
+    {
+     "title": "The face",
+     "text": "He looks straight at us, a cloth wrapped around his head.",
+     "r": [
+      0.3,
+      0,
+      0.45,
+      0.2
+     ]
+    },
+    {
+     "title": "His hands",
+     "text": "His hands rest on top of a big water jar.",
+     "r": [
+      0.25,
+      0.45,
+      0.42,
+      0.2
+     ]
+    },
+    {
+     "title": "The jar",
+     "text": "A large clay jar for carrying water, filling the lower left.",
+     "r": [
+      0.1,
+      0.5,
+      0.55,
+      0.4
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Selinger wrote his name and the date across the top.",
+     "r": [
+      0.1,
+      0,
+      0.45,
+      0.07
+     ]
+    }
+   ]
+  },
+  "31098": {
+   "image": "data/notice/31098.jpg",
+   "file": "Isabella and the Pot of Basil.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "From a poem by John Keats: Isabella’s brothers murdered her lover, and she hid his head in a pot of basil, which she watered with her tears."
+    },
+    {
+     "title": "The pot",
+     "text": "She hugs the pot, her cheek against it.",
+     "r": [
+      0.3,
+      0,
+      0.65,
+      0.25
+     ]
+    },
+    {
+     "title": "The light",
+     "text": "A strange light seems to come from below, lighting up her white dress.",
+     "r": [
+      0.35,
+      0.25,
+      0.5,
+      0.7
+     ]
+    },
+    {
+     "title": "The long curve",
+     "text": "Her whole body makes one long, flowing curve, typical of John White Alexander.",
+     "r": [
+      0.1,
+      0,
+      0.8,
+      1
+     ]
+    },
+    {
+     "title": "The dark shawl",
+     "text": "A dark shawl falls straight down, a sharp contrast to the glowing dress.",
+     "r": [
+      0.1,
+      0.1,
+      0.35,
+      0.85
+     ]
+    },
+    {
+     "title": "Her feet",
+     "text": "Look down: her feet barely show at the bottom.",
+     "r": [
+      0.15,
+      0.86,
+      0.6,
+      0.14
+     ]
+    }
+   ]
+  },
+  "31480": {
+   "image": "data/notice/31480.jpg",
+   "file": "Joseph Foxcroft Cole - The Aberjona River, Winchester - 13.551 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A river in Winchester, Massachusetts, where Joseph Foxcroft Cole lived. He studied in France and brought back the quiet landscapes of the Barbizon painters."
+    },
+    {
+     "title": "The trees",
+     "text": "A big mass of dark trees on the right.",
+     "r": [
+      0.5,
+      0.1,
+      0.5,
+      0.6
+     ]
+    },
+    {
+     "title": "The bridge",
+     "text": "A small bridge, with a cart crossing it.",
+     "r": [
+      0.18,
+      0.48,
+      0.35,
+      0.14
+     ]
+    },
+    {
+     "title": "The river",
+     "text": "Still water reflects the sky.",
+     "r": [
+      0,
+      0.5,
+      0.6,
+      0.3
+     ]
+    },
+    {
+     "title": "The reeds",
+     "text": "Green reeds and grass in the foreground.",
+     "r": [
+      0,
+      0.6,
+      0.7,
+      0.4
+     ]
+    },
+    {
+     "title": "The sky",
+     "text": "A soft, cloudy sky takes up nearly half the picture.",
+     "r": [
+      0,
+      0,
+      0.6,
+      0.42
+     ]
+    }
+   ]
+  },
+  "31345": {
+   "image": "data/notice/31345.jpg",
+   "file": "John La Farge, by Robert Wilton Lockwood 1891.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A portrait of the painter John La Farge in 1891, by his student Robert Wilton Lockwood. Two of La Farge’s own paintings are in this guide too."
+    },
+    {
+     "title": "The face",
+     "text": "Spectacles and a thoughtful, downward look.",
+     "r": [
+      0.38,
+      0.1,
+      0.28,
+      0.25
+     ]
+    },
+    {
+     "title": "The cigarette",
+     "text": "His raised hand holds a cigarette.",
+     "r": [
+      0.15,
+      0.35,
+      0.17,
+      0.2
+     ]
+    },
+    {
+     "title": "The other hand",
+     "text": "His other hand hangs loose over the arm of the chair.",
+     "r": [
+      0.72,
+      0.7,
+      0.28,
+      0.2
+     ]
+    },
+    {
+     "title": "The dark suit",
+     "text": "Dark clothes and a dark background: only the face and hands catch the light.",
+     "r": [
+      0.25,
+      0.35,
+      0.7,
+      0.55
+     ]
+    }
+   ]
+  },
+  "31248": {
+   "image": "data/notice/31248.jpg",
+   "file": "Sarah Wyman Whitman - Roses—Souvenir de Villier le bel - 04.1719 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Roses by Sarah Wyman Whitman, a Boston artist known for her book covers and stained glass. She studied in France in the late 1870s."
+    },
+    {
+     "title": "The roses",
+     "text": "Roses and dark leaves spill from the top of the panel.",
+     "r": [
+      0.05,
+      0.05,
+      0.9,
+      0.45
+     ]
+    },
+    {
+     "title": "The inscription",
+     "text": "“Souvenir de Villiers-le-Bel”: a memento of a town near Paris.",
+     "r": [
+      0.1,
+      0.7,
+      0.8,
+      0.22
+     ]
+    },
+    {
+     "title": "Empty space",
+     "text": "The lower half is almost empty: the flowers seem to float above the words.",
+     "r": [
+      0,
+      0.45,
+      1,
+      0.3
+     ]
+    }
+   ]
+  },
+  "30979": {
+   "image": "data/notice/30979.jpg",
+   "file": "William Lamb Picknell - Sand Dunes of Essex, Massachusetts - 85.486 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Sand dunes in Essex, Massachusetts, by William Lamb Picknell, 1884."
+    },
+    {
+     "title": "The hill",
+     "text": "A rocky, grassy hill on the left.",
+     "r": [
+      0,
+      0.3,
+      0.5,
+      0.3
+     ]
+    },
+    {
+     "title": "The path",
+     "text": "A sandy path, with a tiny cart in the distance.",
+     "r": [
+      0.45,
+      0.5,
+      0.3,
+      0.18
+     ]
+    },
+    {
+     "title": "The dunes",
+     "text": "Bright sand and clumps of grass in front. Picknell painted outdoors, in strong sunlight.",
+     "r": [
+      0,
+      0.65,
+      1,
+      0.35
+     ]
+    },
+    {
+     "title": "The sky",
+     "text": "A huge pale sky over a low horizon.",
+     "r": [
+      0,
+      0,
+      1,
+      0.4
+     ]
+    }
+   ]
+  },
+  "31280": {
+   "image": "data/notice/31280.jpg",
+   "file": "William Lamb Picknell - Morning on the Loing at Moret - 06.2398 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Morning on the Loing river at Moret, a French village painted by many artists, including Sisley, who lived there."
+    },
+    {
+     "title": "The barges",
+     "text": "Two red-and-white barges tied up at the bank.",
+     "r": [
+      0.3,
+      0.42,
+      0.26,
+      0.17
+     ]
+    },
+    {
+     "title": "Reflections",
+     "text": "The still water mirrors the boats, the houses and the sky.",
+     "r": [
+      0.3,
+      0.55,
+      0.7,
+      0.22
+     ]
+    },
+    {
+     "title": "The village",
+     "text": "White houses on the far bank.",
+     "r": [
+      0.6,
+      0.38,
+      0.4,
+      0.17
+     ]
+    },
+    {
+     "title": "The towpath",
+     "text": "A sandy path where horses once pulled the barges.",
+     "r": [
+      0,
+      0.55,
+      0.35,
+      0.45
+     ]
+    },
+    {
+     "title": "The trees",
+     "text": "Green trees on the left, in full morning light.",
+     "r": [
+      0,
+      0.25,
+      0.3,
+      0.3
+     ]
+    }
+   ]
+  },
+  "31553": {
+   "image": "data/notice/31553.jpg",
+   "file": "William McGregor Paxton - Nude - 16.98 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A nude by William McGregor Paxton, 1915. Paxton, a Boston painter, admired Vermeer and his treatment of light."
+    },
+    {
+     "title": "The back",
+     "text": "Soft, smooth light falls on her back.",
+     "r": [
+      0.05,
+      0.15,
+      0.42,
+      0.65
+     ]
+    },
+    {
+     "title": "The arm",
+     "text": "Her arm stretches out to the chair.",
+     "r": [
+      0.4,
+      0.4,
+      0.55,
+      0.25
+     ]
+    },
+    {
+     "title": "The blinds",
+     "text": "Light comes in through the slats of a window.",
+     "r": [
+      0.35,
+      0,
+      0.3,
+      0.2
+     ]
+    },
+    {
+     "title": "The chair",
+     "text": "A dark, polished chair on the right.",
+     "r": [
+      0.65,
+      0.25,
+      0.35,
+      0.6
+     ]
+    },
+    {
+     "title": "The blue cloth",
+     "text": "A deep blue cloth below, the strongest color in the picture.",
+     "r": [
+      0,
+      0.8,
+      0.65,
+      0.2
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Paxton’s name, top right.",
+     "r": [
+      0.85,
+      0,
+      0.15,
+      0.08
+     ]
+    }
+   ]
+  },
+  "30905": {
+   "image": "data/notice/30905.jpg",
+   "file": "William Rimmer - Evening (The Fall of Day) - 81.110 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "William Rimmer was a sculptor and a teacher of anatomy. He drew this falling winged figure in crayon, oil and pencil on canvas, 1869–70."
+    },
+    {
+     "title": "The light",
+     "text": "A burst of light at the top, as if the day is going out.",
+     "r": [
+      0.55,
+      0.03,
+      0.2,
+      0.2
+     ]
+    },
+    {
+     "title": "The body",
+     "text": "Every muscle is shown: Rimmer knew anatomy by heart.",
+     "r": [
+      0.28,
+      0.15,
+      0.4,
+      0.48
+     ]
+    },
+    {
+     "title": "The wings",
+     "text": "Huge wings spread across the whole width.",
+     "r": [
+      0,
+      0.25,
+      0.7,
+      0.5
+     ]
+    },
+    {
+     "title": "The horizon",
+     "text": "A low line of sea or land far below.",
+     "r": [
+      0,
+      0.7,
+      1,
+      0.2
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Rimmer’s name, bottom right.",
+     "r": [
+      0.75,
+      0.88,
+      0.25,
+      0.12
+     ]
+    }
+   ]
+  },
+  "149918": {
+   "image": "data/notice/149918.jpg",
+   "file": "Unidentified artist, American, 18th century - George Jaffrey I - 1999.502 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "George Jaffrey, painted about 1705 by an unknown American artist. A second portrait of a George Jaffrey, about 1715, hangs with it: compare them."
+    },
+    {
+     "title": "The face",
+     "text": "A heavy, serious face.",
+     "r": [
+      0.36,
+      0.22,
+      0.24,
+      0.2
+     ]
+    },
+    {
+     "title": "The wig",
+     "text": "A long curled wig, the height of fashion for a gentleman around 1700.",
+     "r": [
+      0.3,
+      0.12,
+      0.42,
+      0.38
+     ]
+    },
+    {
+     "title": "The lace",
+     "text": "A lace cravat at his throat: lace was expensive and showed wealth.",
+     "r": [
+      0.45,
+      0.4,
+      0.2,
+      0.25
+     ]
+    },
+    {
+     "title": "The hand",
+     "text": "His hand points out, a common pose in portraits of the time.",
+     "r": [
+      0.5,
+      0.6,
+      0.2,
+      0.15
+     ]
+    },
+    {
+     "title": "The frame",
+     "text": "A carved, gilded oval frame."
+    }
+   ]
+  },
+  "149919": {
+   "image": "data/notice/149919.jpg",
+   "file": "Unidentified artist, American, 18th century - George Jaffrey II - 1999.503 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "George Jaffrey, about 1715, by an unknown American artist. Compare him with the other George Jaffrey, painted about ten years earlier."
+    },
+    {
+     "title": "The face",
+     "text": "Younger, with rosy cheeks and a slight smile.",
+     "r": [
+      0.42,
+      0.25,
+      0.18,
+      0.2
+     ]
+    },
+    {
+     "title": "The wig",
+     "text": "A tall, dark curled wig.",
+     "r": [
+      0.3,
+      0.13,
+      0.4,
+      0.37
+     ]
+    },
+    {
+     "title": "The cravat",
+     "text": "A white cravat, simpler than the other portrait’s lace.",
+     "r": [
+      0.4,
+      0.45,
+      0.22,
+      0.2
+     ]
+    },
+    {
+     "title": "The hand",
+     "text": "Hand on his chest.",
+     "r": [
+      0.38,
+      0.66,
+      0.27,
+      0.17
+     ]
+    }
+   ]
+  },
+  "31483": {
+   "image": "data/notice/31483.jpg",
+   "file": "Frederic Porter Vinton - La Blanchisseuse - 13.554 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A washerwoman at a stream, 1890, by Frederic Porter Vinton, a Boston portrait painter, here working loosely, in the open air."
+    },
+    {
+     "title": "The washerwoman",
+     "text": "She bends over the water, scrubbing clothes on a stone.",
+     "r": [
+      0.55,
+      0.4,
+      0.27,
+      0.27
+     ]
+    },
+    {
+     "title": "Another figure",
+     "text": "Behind her, another woman stands at a wooden rail.",
+     "r": [
+      0.72,
+      0.33,
+      0.17,
+      0.22
+     ]
+    },
+    {
+     "title": "The stones",
+     "text": "Flat washing stones at the water’s edge.",
+     "r": [
+      0.55,
+      0.55,
+      0.4,
+      0.2
+     ]
+    },
+    {
+     "title": "The water",
+     "text": "Broken strokes of green and white make the reflections shimmer.",
+     "r": [
+      0,
+      0.5,
+      0.6,
+      0.5
+     ]
+    },
+    {
+     "title": "Sun and shade",
+     "text": "Bright sunlight through the leaves.",
+     "r": [
+      0,
+      0,
+      1,
+      0.45
+     ]
+    }
+   ]
+  },
+  "31071": {
+   "image": "data/notice/31071.jpg",
+   "file": "George de Forest Brush - Mother and Child - 95.1375 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Mother and Child, 1895. George de Forest Brush often painted his wife and children like this."
+    },
+    {
+     "title": "The faces",
+     "text": "Mother and child cheek to cheek, looking in different directions.",
+     "r": [
+      0.25,
+      0.1,
+      0.45,
+      0.22
+     ]
+    },
+    {
+     "title": "The child",
+     "text": "The child’s pale body glows against the mother’s dark dress.",
+     "r": [
+      0.45,
+      0.15,
+      0.3,
+      0.45
+     ]
+    },
+    {
+     "title": "The hands",
+     "text": "Her hand holds the child’s legs.",
+     "r": [
+      0.42,
+      0.55,
+      0.25,
+      0.16
+     ]
+    },
+    {
+     "title": "The feet",
+     "text": "Small bare feet dangle at the bottom.",
+     "r": [
+      0.5,
+      0.75,
+      0.25,
+      0.18
+     ]
+    },
+    {
+     "title": "The round shape",
+     "text": "A round painting, like a Renaissance Madonna and Child. Brush admired the old masters."
+    }
+   ]
+  },
+  "31921": {
+   "image": "data/notice/31921.jpg",
+   "file": "George Fuller - Negro Funeral, Alabama - 21.2174 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A funeral in Alabama, painted in 1881 by George Fuller, who traveled through the South in 1858. The title uses the language of its time."
+    },
+    {
+     "title": "The mourners",
+     "text": "A crowd gathered in the open, in dim, smoky light.",
+     "r": [
+      0,
+      0.3,
+      0.45,
+      0.25
+     ]
+    },
+    {
+     "title": "Raised arms",
+     "text": "A figure raises its arms, perhaps a preacher.",
+     "r": [
+      0.22,
+      0.28,
+      0.17,
+      0.17
+     ]
+    },
+    {
+     "title": "The tree",
+     "text": "A thin tree stands alone in the middle.",
+     "r": [
+      0.5,
+      0,
+      0.15,
+      0.6
+     ]
+    },
+    {
+     "title": "The golden haze",
+     "text": "Fuller blurs everything in a warm, misty glow, like a memory.",
+     "r": [
+      0,
+      0,
+      1,
+      0.5
+     ]
+    },
+    {
+     "title": "The ground",
+     "text": "A dark, empty foreground.",
+     "r": [
+      0,
+      0.6,
+      1,
+      0.4
+     ]
+    }
+   ]
+  },
+  "31550": {
+   "image": "data/notice/31550.jpg",
+   "file": "George Henry Boughton - Sea Breeze - 16.67 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A young woman by the sea, by George Henry Boughton, who grew up in Albany, New York, and later worked in London."
+    },
+    {
+     "title": "The hat",
+     "text": "A straw hat with a red flower and white ribbons.",
+     "r": [
+      0.25,
+      0.08,
+      0.45,
+      0.2
+     ]
+    },
+    {
+     "title": "The breeze",
+     "text": "Her scarf and ribbons blow in the wind from the sea.",
+     "r": [
+      0.5,
+      0.28,
+      0.35,
+      0.25
+     ]
+    },
+    {
+     "title": "The flower",
+     "text": "She holds a red flower on the stone wall.",
+     "r": [
+      0.6,
+      0.75,
+      0.3,
+      0.15
+     ]
+    },
+    {
+     "title": "The harbor",
+     "text": "A lighthouse and ships far behind her.",
+     "r": [
+      0.6,
+      0.25,
+      0.4,
+      0.15
+     ]
+    },
+    {
+     "title": "The pink dress",
+     "text": "Soft pinks against the deep blue water.",
+     "r": [
+      0.05,
+      0.35,
+      0.6,
+      0.65
+     ]
+    }
+   ]
+  },
+  "31545": {
+   "image": "data/notice/31545.jpg",
+   "file": "George Henry Hall - Roman Wine Cart - 16.44 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A wine cart on its way into Rome, painted in 1851 by George Henry Hall, an American who studied in Europe."
+    },
+    {
+     "title": "The woman",
+     "text": "She smiles at us, holding a tambourine.",
+     "r": [
+      0.2,
+      0.3,
+      0.37,
+      0.32
+     ]
+    },
+    {
+     "title": "The driver",
+     "text": "A bearded man sits close beside her.",
+     "r": [
+      0.42,
+      0.18,
+      0.22,
+      0.27
+     ]
+    },
+    {
+     "title": "The hood",
+     "text": "A folding hood shades the driver’s seat.",
+     "r": [
+      0.2,
+      0.05,
+      0.62,
+      0.25
+     ]
+    },
+    {
+     "title": "The Colosseum",
+     "text": "The Colosseum on the left tells us we are in Rome.",
+     "r": [
+      0,
+      0.28,
+      0.17,
+      0.24
+     ]
+    },
+    {
+     "title": "The wheel",
+     "text": "A big wooden wheel at the bottom left.",
+     "r": [
+      0,
+      0.55,
+      0.4,
+      0.45
+     ]
+    }
+   ]
   }
  }
 }
