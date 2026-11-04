@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v80';
+const VERSION = 'v81';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -102,6 +102,8 @@ const SHELL = [
   'data/nbwm/artworks.json',
   'data/twain/floors.json',
   'data/twain/artworks.json',
+  'data/ypm/floors.json',
+  'data/ypm/artworks.json',
 ];
 
 // Install only the app itself, so an update is quick and takes over right away;

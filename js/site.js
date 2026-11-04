@@ -341,6 +341,17 @@ export const SITES = {
     flat: true,
     blurb: 'The grounds with free parking, the Museum Center where every tour starts (tickets, film, galleries, store, café and restrooms; inside approximate) and every floor of the house traced from its Historic American Buildings Survey plans: the Tiffany-decorated Entrance Hall, the Library and Conservatory, the Clemenses’ bedroom, Susy’s room and the Billiard Room where Twain wrote Huckleberry Finn, with photos of each room, directions and your visit diary.',
   },
+  ypm: {
+    key: 'ypm', id: 'Q122945', short: 'Peabody', name: 'Yale Peabody Museum',
+    floors: 'data/ypm/floors.json', artworks: 'data/ypm/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-ypm.json', packKey: 'gg-pack-ypm',
+    room: id => id,                          // galleries have names (Burke Hall, Hall of the Pacific)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'All three floors, traced from the museum’s own floor plan: Burke Hall with the Brontosaurus and The Age of Reptiles mural, the Central Gallery with Archelon, the Human Footprint, Egypt and Mesopotamia, the dioramas, the minerals and the Living Lab, with what is in each gallery, plus restrooms, elevators, stairs, the store, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

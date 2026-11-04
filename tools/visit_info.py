@@ -92,6 +92,21 @@ VISIT = {
                   'Free lockers in the coat room; big bags and umbrellas go there',
                   'Highlights Tours at 11 am and 2 pm, included with admission',
                   'Don’t miss the whale skeletons over the Lobby, the Lagoda (Main Level) and Harbor View']),
+    'Q122945': ('170 Whitney Avenue, New Haven, CT 06511',
+                ['Tue–Fri: 10 am–5 pm', 'Sat–Sun: noon–5 pm (the museum’s footer says Sat 10 am–5 pm; check before '
+                 'going early on a Saturday)', 'Mon: closed (open on MLK Day and Yale Commencement)',
+                 'Closed New Year’s Day, Juneteenth, July 4, Thanksgiving, Christmas Eve and Christmas Day'],
+                ['Free for everyone, no ticket needed (groups must book)'], None,
+                ['No café inside: snacks are allowed only in the Central Gallery (Floor 1); food trucks at Sachem '
+                 'and Prospect Streets and cafés on Whitney Avenue, 5–8 minutes’ walk',
+                 'Main entrance on Whitney Avenue; group entrance on Sachem Street',
+                 'Parking: Yale Lot 22V (corner of Whitney Avenue and Humphrey Street, also accessible parking); on '
+                 'weekends all of Lot 22 and nearby Yale garages',
+                 'Coatroom and lockers in the Lobby; wheelchairs, stools and sensory bags at the front desk',
+                 'Wellness/lactation room on the lower level; all-gender restrooms on Floors 1 and 3',
+                 'Free Amuse app: the museum’s digital guide and gallery map',
+                 'Don’t miss the Brontosaurus and The Age of Reptiles mural (Burke Hall), Archelon in the Central '
+                 'Gallery and the Living Lab (Floor 3)']),
     'Q847508': ('55 Salisbury Street, Worcester, MA 01609',
                 ['Wed–Sun: 10 am–4 pm', 'Mon–Tue: closed'],
                 ['Adults: $22', 'Seniors and students: $17', '17 and under: free', 'Members: free'], '508-799-4406', None),
@@ -379,6 +394,9 @@ EXTRA = {
                  'image': 'The Elms, Newport, Rhode Island - View from Great Lawn edit1.jpg',
                  'website': 'https://www.newportmansions.org/mansions-and-gardens/the-elms/', 'city': 'Newport',
                  'state': 'Rhode Island', 'wikipedia': 'The_Elms_(Newport,_Rhode_Island)'},
+    'Q122945': {'id': 'Q122945', 'name': 'Yale Peabody Museum', 'at': [41.315753, -72.921175], 'links': 30,
+                'image': 'Yale Peabody Museum 2.JPG', 'website': 'https://peabody.yale.edu/', 'city': 'New Haven',
+                'state': 'Connecticut', 'wikipedia': 'Peabody_Museum_of_Natural_History'},
     'Q7005471': {'id': 'Q7005471', 'name': 'New Bedford Whaling Museum', 'at': [41.6353, -70.9232], 'links': 20,
                  'image': 'Nbwmentrance.jpg', 'website': 'https://www.whalingmuseum.org/', 'city': 'New Bedford',
                  'state': 'Massachusetts', 'wikipedia': 'New_Bedford_Whaling_Museum'},
