@@ -196,6 +196,12 @@ def main():
     if '--museums' in sys.argv or not os.path.exists(path):
         print('museums…')
         ms = museums()
+        # visit details written by hand from museums' own websites (hours, admission…) survive a rebuild
+        if os.path.exists(path):
+            HAND = ('hours', 'admission', 'phone', 'entrances', 'visitNotes', 'infoChecked', 'address')
+            before = {m['id']: m for m in json.load(open(path, encoding='utf-8'))['museums']}
+            for m in ms:
+                m.update({k: v for k, v in before.get(m['id'], {}).items() if k in HAND})
         with open(path, 'w', encoding='utf-8') as f:
             json.dump({'source': 'Wikidata (CC0)', 'museums': ms}, f, ensure_ascii=False, separators=(',', ':'))
     ms = json.load(open(path))['museums']

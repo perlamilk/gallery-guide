@@ -3,12 +3,13 @@
 // so the data files can be regenerated (e.g. by a weekly scraper) without code changes.
 
 import { FACILITIES } from './icons.js';
+import { SITE } from './site.js';
 
 export async function loadData() {
   const [floorsDoc, artDoc, curiosities] = await Promise.all([
-    fetchJSON('data/floors.json'),
-    fetchJSON('data/artworks.json'),
-    fetchJSON('data/curiosities.json').catch(() => null),
+    fetchJSON(SITE.floors),
+    fetchJSON(SITE.artworks),
+    SITE.curiosities ? fetchJSON(SITE.curiosities).catch(() => null) : null,
   ]);
   const museum = new Museum(floorsDoc, artDoc);
   museum.curiosities = new Curiosities(curiosities);
@@ -73,7 +74,7 @@ class Museum {
     this.artworks = (artDoc.artworks ?? []).filter(a => a.onView !== false);
     for (const a of this.artworks) {
       a._haystack = normalize([a.title, a.artist, a.artistDetails, a.date, a.medium,
-        a.type, a.country, a.period, a.culture, a.classification, a.collection, a.description].join(' '));
+        a.type, a.country, a.period, a.culture, a.classification, a.collection, a.description, a.wing].join(' '));
       a._artist = normalize(a.artist);
       // alcoves the map doesn't draw ("204A", "219.4") belong to their main gallery
       if (a.gallery && !this.rooms.has(a.gallery)) {

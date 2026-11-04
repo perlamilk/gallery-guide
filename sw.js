@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v41';
+const VERSION = 'v42';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -41,6 +41,9 @@ const SHELL = [
   'data/artworks.json',
   'data/tours.json',
   'data/curiosities.json',
+  'js/site.js',
+  'data/wadsworth/floors.json',
+  'data/wadsworth/artworks.json',
 ];
 
 // Install only the app itself, so an update is quick and takes over right away;
@@ -61,7 +64,7 @@ self.addEventListener('activate', event => {
       const prev = await caches.open(name);
       for (const req of await prev.keys()) {
         // keep pictures and the offline pack across updates, so nothing downloads twice
-        if (/\/data\/(images|notice)\//.test(req.url) && !(await cache.match(req))) await cache.put(req, await prev.match(req));
+        if (/\/data\/(wadsworth\/)?(images|notice)\//.test(req.url) && !(await cache.match(req))) await cache.put(req, await prev.match(req));
       }
       await caches.delete(name);
     }

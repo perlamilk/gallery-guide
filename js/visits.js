@@ -1,14 +1,17 @@
 // Visit diary: the visit in progress and the saved visits, kept on the device (IndexedDB),
 // so it works offline and survives closing the app. Nothing is sent anywhere.
 //
-// A visit: { id, startedAt, endedAt?, rooms: [{ id, floor, at }], snapshots?: { [floorId]: Blob } }
+// A visit: { id, museum?, startedAt, endedAt?, rooms: [{ id, floor, at }], snapshots?: { [floorId]: Blob } }
+// `museum` is the Wikidata id of the museum the visit was made in; visits without one are MFA visits.
 
 const DB = 'gallery-guide';
 const STORE = 'visits';     // finished visits, by id
 const ACTIVE = 'active';    // the one in progress, under the key 'current'
 const FAVS = 'favorites';   // artwork id -> { id, at, work? } (work: details for works outside the MFA data)
 const MUSEUMS = 'museums';  // favourite museums: Wikidata id -> { id, at }
-const LISTS = 'lists';      // your collections: { id, name, at, items: [artwork id] }
+const LISTS = 'lists';
+const MFA = 'Q49133';
+export const museumOf = visit => visit?.museum ?? MFA;      // your collections: { id, name, at, items: [artwork id] }
 
 let dbPromise;
 function db() {
@@ -39,12 +42,20 @@ async function run(store, mode, fn) {
 }
 
 export const Visits = {
-  async active() {
-    return (await run(ACTIVE, 'readonly', s => s.get('current'))) ?? null;
+  // The visit in progress (in `museum` only, when given).
+  async active(museum = null) {
+    const v = (await run(ACTIVE, 'readonly', s => s.get('current'))) ?? null;
+    return v && museum && museumOf(v) !== museum ? null : v;
   },
 
-  async start() {
-    const visit = { id: `v${Date.now()}`, startedAt: new Date().toISOString(), rooms: [] };
+  async start(museum = MFA) {
+    // only one visit runs at a time: one left open in another museum is saved to the diary first
+    const open = await this.active();
+    if (open && museumOf(open) !== museum) {
+      if (open.rooms.length) await this.finish(open);
+      else await this.discard();
+    }
+    const visit = { id: `v${Date.now()}`, museum, startedAt: new Date().toISOString(), rooms: [] };
     await run(ACTIVE, 'readwrite', s => s.put(visit, 'current'));
     // ask the browser to keep this data even when the phone is short on space
     navigator.storage?.persist?.().catch(() => {});
@@ -71,8 +82,8 @@ export const Visits = {
     await run(ACTIVE, 'readwrite', s => s.delete('current'));
   },
 
-  async list() {
-    const all = (await run(STORE, 'readonly', s => s.getAll())) ?? [];
+  async list(museum = null) {
+    const all = ((await run(STORE, 'readonly', s => s.getAll())) ?? []).filter(v => !museum || museumOf(v) === museum);
     return all.sort((a, b) => b.startedAt.localeCompare(a.startedAt));
   },
 

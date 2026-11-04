@@ -9,6 +9,7 @@ import { MuseumMap } from './map3d.js';
 import { FACILITIES, facilitySVG } from './icons.js';
 import { Visits, Favorites, duration } from './visits.js';
 import { Router } from './routes.js';
+import { SITE } from './site.js';
 
 const $ = sel => document.querySelector(sel);
 const els = {
@@ -62,14 +63,18 @@ boot().catch(err => {
 });
 
 async function boot() {
+  document.title = `${SITE.short} · Gallery Guide`;
+  document.querySelector('.masthead__eyebrow').textContent = SITE.short;
+  document.querySelector('.guide-close').href = `./#museum/${SITE.id}`;
   state.museum = await loadData();
-  state.map = new MuseumMap(els.canvas, state.museum, { onTap: onMapTap });
+  state.map = new MuseumMap(els.canvas, state.museum, { onTap: onMapTap, flat: SITE.flat });
   state.router = new Router(state.museum);
   [state.favorites, state.diary, state.visit] = await Promise.all([
-    Favorites.list().catch(() => []), Visits.list().catch(() => []), Visits.active().catch(() => null),
+    Favorites.list().catch(() => []), Visits.list(SITE.id).catch(() => []), Visits.active(SITE.id).catch(() => null),
   ]);
-  state.tours = (await fetch('data/tours.json').then(r => r.json()).catch(() => ({}))).tours ?? [];
-  state.noticeIds = new Set(Object.keys((await noticeData())?.works ?? {}));
+  state.tours = !SITE.tours ? [] : (await fetch(SITE.tours).then(r => r.json()).catch(() => ({}))).tours ?? [];
+  if (!state.tours.length) els.tabbar.querySelector('[data-tab="tours"]').hidden = true;
+  state.noticeIds = new Set(SITE.notice ? Object.keys((await noticeData())?.works ?? {}) : []);
   state.here = state.visit?.rooms.at(-1)?.id ?? null;
 
   buildFloorPicker();
@@ -98,7 +103,7 @@ function openFromLink() {
   else if (kind === 'visits' || kind === 'tours' || kind === 'saved') { setTab(kind); setSheet('half'); }
   else if (kind === 'entry' && id) { setTab('visits'); push({ type: 'entry', id }, { sheet: 'full' }); }
   else if (kind === 'notice' && id) { openArt(id); openNotice({ id, title: state.museum.artworks.find(x => x.id === id)?.title ?? '' }); }
-  if (kind) history.replaceState(null, '', location.pathname);
+  if (kind) history.replaceState(null, '', location.pathname + location.search);
 }
 
 // ---------- tabs & navigation stacks ----------
@@ -402,7 +407,7 @@ function worksHTML(works) {
       ${imgHTML(a, 'thumb')}
       <span><span class="work__title">${escape(a.title)}</span>
       <span class="work__meta">${escape([shortArtist(a.artist), a.date].filter(Boolean).join(' · '))}</span></span>
-      <span class="gal ${lit.has(a.gallery) ? 'gal--lit' : ''}" aria-label="Gallery ${escape(a.gallery ?? 'not listed')}">${a.gallery ? escape(a.gallery) : '—'}</span>
+      <span class="gal ${lit.has(a.gallery) ? 'gal--lit' : ''}" aria-label="${escape(a.gallery ? SITE.room(a.gallery) : 'Gallery not listed')}">${a.gallery ? escape(a.gallery) : '—'}</span>
     </button></li>`).join('')}</ul>
     ${more > 0 ? `<button class="more-btn" type="button" data-action="more">Show ${Math.min(more, PAGE)} More</button>` : ''}`;
 }
@@ -503,7 +508,7 @@ function artBody(id) {
     ${a.artistDetails ? `<p class="art__life">${escape(a.artistDetails)}</p>` : ''}
     ${info ? `<div class="btn-row">
       <button class="btn" type="button" data-action="directions" data-id="${escape(info.room.id)}">${I.walk}Directions</button>
-      <button class="btn btn--gray" type="button" data-room="${escape(a.gallery)}">${I.pin}Gallery ${escape(a.gallery)}</button>
+      <button class="btn btn--gray" type="button" data-room="${escape(a.gallery)}">${I.pin}${escape(SITE.room(a.gallery))}</button>
     </div>` : ''}
     ${state.noticeIds?.has(a.id) ? `<button class="notice-cta" type="button" data-action="notice" data-id="${a.id}">
       <span class="notice-cta__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="m15 15 5 5"/></svg></span>
@@ -513,13 +518,14 @@ function artBody(id) {
     ${a.descriptionKind ? `<p class="credit">${escape(a.descriptionKind)}</p>` : ''}
     ${curiositiesHTML(state.museum.curiosities?.for(a) ?? [])}
     <dl class="facts"><ul class="group">${facts}
-      <li><div class="row"><dt>Where</dt><dd>${info ? `${escape(info.floor.label)} · Gallery ${escape(a.gallery)}${a.galleryName ? `<br><span style="color:var(--ink-2)">${escape(a.galleryName)}</span>` : ''}`
+      <li><div class="row"><dt>Where</dt><dd>${info ? `${escape(info.floor.label)} · ${escape(SITE.room(a.gallery))}${a.galleryName ? `<br><span style="color:var(--ink-2)">${escape(a.galleryName)}</span>` : ''}${a.placeNote ? `<br><span style="color:var(--ink-2)">${escape(a.placeNote)}</span>` : ''}`
         : a.location ? escape(a.location)
-        : a.gallery ? `${escape([state.museum.floor(a.floor)?.label, `Gallery ${a.gallery}`].filter(Boolean).join(' · '))}${a.galleryName ? `<br><span style="color:var(--ink-2)">${escape(a.galleryName)}</span>` : ''}<br><span style="color:var(--ink-2)">Not drawn on the map yet</span>`
+        : a.gallery ? `${escape([state.museum.floor(a.floor)?.label, SITE.room(a.gallery)].filter(Boolean).join(' · '))}${a.galleryName ? `<br><span style="color:var(--ink-2)">${escape(a.galleryName)}</span>` : ''}<br><span style="color:var(--ink-2)">Not drawn on the map yet</span>`
         : 'On view · gallery not listed yet'}</dd></div></li>
     </ul></dl>
-    <div class="stack"><a class="btn btn--ink" href="${a.url}" target="_blank" rel="noopener">View on the MFA Website</a></div>
+    ${a.url ? `<div class="stack"><a class="btn btn--ink" href="${a.url}" target="_blank" rel="noopener">${SITE.website}</a></div>` : ''}
     ${a.imageSource ? `<p class="credit">Image: <a href="${a.imageSource}" target="_blank" rel="noopener">${escape(a.imageCredit ?? 'source')}</a></p>`
+      : a.imageCredit ? `<p class="credit">Image: ${escape(a.imageCredit)}</p>`
       : a.img ? '<p class="credit">Image: Museum of Fine Arts, Boston</p>' : ''}`;
 }
 
@@ -553,7 +559,7 @@ function acquiredRow(a) {
   const c = a.creditLine ?? '';
   const purchase = a.soldBy || /purchase|\bfunds?\b/i.test(c);
   let how = c, note = '';
-  if (/expedition/i.test(c)) how = 'Excavated by the Harvard–MFA Expedition';
+  if (/expedition/i.test(c) && SITE.key === 'mfa') how = 'Excavated by the Harvard–MFA Expedition';
   else if (purchase && !/^(gift|bequest|partial gift|anonymous gift)/i.test(c)) {
     how = a.soldBy || a.price ? ['Bought', a.soldBy && `from ${a.soldBy}`, a.price && `for ${a.price}`].filter(Boolean).join(' ') : 'Purchased';
     note = c;
@@ -614,7 +620,10 @@ function favButton(id) {
 }
 
 async function toggleFavorite(id) {
-  const on = await Favorites.toggle(id);
+  // works outside the MFA data keep their details, so the app's Collection can show them
+  const w = SITE.key === 'mfa' ? null : state.museum.artworks.find(x => x.id === id);
+  const on = await Favorites.toggle(id, w ? { title: w.title, artist: w.artist, year: w.date, img: w.img, image: w.image,
+    museum: SITE.short, museumId: SITE.id } : null);
   state.favorites = await Favorites.list();
   const btn = els.header.querySelector('[data-action="favorite"]');
   if (btn) btn.outerHTML = favButton(id);
@@ -832,7 +841,7 @@ function tourBody(id) {
 
 async function startTour(id) {
   state.tour = { id, index: 0 };
-  if (!state.visit) { state.visit = await Visits.start(); updateVisitUI(); }
+  if (!state.visit) { state.visit = await Visits.start(SITE.id); updateVisitUI(); }
   routeToStop();
 }
 
@@ -931,7 +940,7 @@ async function toggleVisited(id, floorId) {
   if (!id) return;
   const info = state.museum.roomInfo(id);
   const roomId = info?.room.id ?? id;
-  if (!state.visit) { state.visit = await Visits.start(); toast('Visit Started'); }
+  if (!state.visit) { state.visit = await Visits.start(SITE.id); toast('Visit Started'); }
   const was = visitedIds().has(roomId);
   state.visit = await Visits.toggle(state.visit, roomId, floorId ?? info?.floor.id);
   if (!was) { state.here = roomId; state.hereLabel = null; }
@@ -945,7 +954,7 @@ async function toggleVisited(id, floorId) {
 }
 
 async function startVisit() {
-  state.visit = await Visits.start();
+  state.visit = await Visits.start(SITE.id);
   state.replaying = null;
   showVisitedOnMap();
   updateVisitUI();
@@ -1005,7 +1014,7 @@ async function finishVisit() {
   }
   const saved = await Visits.finish(v, snapshots);
   state.visit = null;
-  state.diary = await Visits.list();
+  state.diary = await Visits.list(SITE.id);
   showVisitedOnMap();
   updateVisitUI();
   state.stacks.visits = [{ type: 'visits' }, { type: 'entry', id: saved.id }];
@@ -1062,7 +1071,7 @@ async function deleteEntry(button) {
     return;
   }
   await Visits.remove(button.dataset.id);
-  state.diary = await Visits.list();
+  state.diary = await Visits.list(SITE.id);
   if (state.replaying?.id === button.dataset.id) { state.replaying = null; showVisitedOnMap(); }
   resetTab('visits');
   render();
@@ -1321,7 +1330,7 @@ async function registerServiceWorker() {
 
 async function checkOffline() {
   if (!('caches' in window)) return;
-  const urls = ['index.html', 'data/artworks.json', 'data/floors.json', 'data/curiosities.json',
+  const urls = ['index.html', SITE.artworks, SITE.floors, ...(SITE.curiosities ? [SITE.curiosities] : []),
     ...new Set(state.museum.artworks.map(a => a.image || a.img?.p).filter(Boolean))];
   const hits = await Promise.all(urls.map(u => caches.match(u)));
   const missing = hits.filter(h => !h).length;
@@ -1346,11 +1355,12 @@ function emptyHTML(icon, title, text) {
 function roomLabel(id) {
   const info = state.museum.roomInfo(id);
   if (info?.room.kind === 'space') return info.room.name;
+  if (info?.room.label) return info.room.label;
   return `Gallery ${[info?.room.id ?? id, ...(info?.room.aliases ?? [])].join(' / ')}`;
 }
 function shortRoomLabel(id) {
   const info = state.museum.roomInfo(id);
-  return info?.room.kind === 'space' ? info.room.name : `Gallery ${info?.room.id ?? id}`;
+  return info?.room.kind === 'space' ? info.room.name : info?.room.label ?? `Gallery ${info?.room.id ?? id}`;
 }
 function floorShort(id) { return id === 'G' ? 'G/LG' : `L${id}`; }
 

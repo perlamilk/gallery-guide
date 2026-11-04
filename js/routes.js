@@ -24,7 +24,7 @@ export class Router {
     for (const floor of museum.floors) {
       for (const room of floor.rooms) {
         const key = Router.key(floor.id, room.id);
-        this.nodes.set(key, { key, floor, room, center: innerPoint(room.poly) });
+        this.nodes.set(key, { key, floor, room, center: room.labelAt ?? innerPoint(room.poly) });
         this.edges.set(key, []);
       }
       for (const d of floor.doors ?? []) {
@@ -199,7 +199,7 @@ export class Router {
 
 export function roomName(room) {
   if (room.kind === 'space') return room.name;
-  if (room.kind === 'gallery') return `Gallery ${[room.id, ...(room.aliases ?? [])].join(' / ')}`;
+  if (room.kind === 'gallery') return room.label ?? `Gallery ${[room.id, ...(room.aliases ?? [])].join(' / ')}`;
   return 'the corridor';
 }
 
