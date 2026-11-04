@@ -206,6 +206,15 @@ ocean side at the top; the plan's Grand Salon/Library/Morning Room are today's G
 owners on floor 2 read from the plan (approximate); basement (store, restrooms) as an outline with approximate places.
 Works: 30 objects that name the house or came from Alva Belmont / Frederick H. Prince; 10 placed (9 guessed, marked).
 
+The Elms, Newport (Nov 4, 2026): map guide at `guide.html?museum=elms`, built by `tools/harvest_elms.py` (the same
+Preservation Society Digital Collections service) and `tools/build_elms.py`. Map: floor G (grounds, parking by the house,
+Bellevue Court bus parking, Sunken Garden, Carriage House Café) from OpenStreetMap; floors 1, 2 and 3 traced from the 1994
+measured plans in the National Historic Landmark nomination (preservation.ri.gov newp_bellevue-avenue_the-elms.pdf, pages
+19, 20, 25; page 21 is a sketch map of the grounds with a statuary list), turned so north is up; basement (restrooms) as an
+outline with approximate places. The house reopens Nov 16, 2026 as "The Elms Experience" (timed tickets), whose route
+isn't published yet. Works: objects that name the house or came from the Berwinds (gifts from the Edward J. Berwind II
+family are left out); some placed from their records or the statuary list, a few guessed (marked).
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
