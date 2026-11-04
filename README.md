@@ -93,6 +93,20 @@ python3 -m venv .venv && .venv/bin/pip install pymupdf numpy pillow
 
 Hand decisions (room splits, names, pinned labels) live in `OVERRIDES` at the top of the script.
 
+## Guides for more museums
+
+Museums other than the MFA get a guide on their museum page (**In the Collection**: search their works, and see what is
+on view where the museum's own data says so). `tools/build_guides.py` builds them from open data, in batches:
+
+```bash
+python3 tools/build_guides.py              # batch 1: major art museums in MA, RI and CT
+HARVARD_API_KEY=… python3 tools/build_guides.py Q3783572   # Harvard with galleries (free key)
+python3 tools/build_guides.py --region     # add every museum in MA, RI and CT to the museum list
+```
+
+It writes `data/guides/<Wikidata id>.json` and the index `data/guides.json`. The plan and the list of museums are in
+`docs/new-england-museums.md`. The app says on those pages that it is a personal, unofficial guide.
+
 ## Tours
 
 `data/tours.json` holds the ready-made tours. Each stop is a gallery number plus the works to look for there

@@ -1,0 +1,4 @@
+{
+ "about": "Museums with a guide on their museum page. Written by tools/build_guides.py; one file per museum in data/guides/.",
+ "museums": {}
+}

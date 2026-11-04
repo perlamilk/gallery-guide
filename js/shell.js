@@ -11,6 +11,7 @@ const $ = sel => document.querySelector(sel);
 const page = $('#page');
 const MFA = 'Q49133';
 const PAGE_SIZE = 30;
+const UNOFFICIAL = 'Gallery Guide is a personal, unofficial guide. It is not made by or affiliated with this museum.';
 
 const D = {};          // data
 const S = {            // state
@@ -18,6 +19,7 @@ const S = {            // state
   here: null,          // [lat, lon] once you share your location
   museumsView: 'list', museumsFilter: 'all', query: '', area: null, shown: PAGE_SIZE,
   collTab: 'library', libView: 'list', libSort: 'new', libMuseum: '', selecting: false, selected: new Set(),
+  guide: { museum: null, query: '', onView: false, shown: 24 },   // the collection search on a museum page
 };
 let maps = [];          // Leaflet maps on the current page
 let navDepth = 0;       // pages opened in this session, so Back knows where to go
@@ -52,9 +54,14 @@ boot();
 
 async function boot() {
   const json = url => fetch(url).then(r => (r.ok ? r.json() : null)).catch(() => null);
-  const [museums, discover, mfa, curio] = await Promise.all([
+  const [museums, discover, mfa, curio, guides] = await Promise.all([
     json('data/museums.json'), json('data/discover.json'), json('data/artworks.json'), json('data/curiosities.json'),
+    json('data/guides.json'),
   ]);
+  D.guides = guides?.museums ?? {};   // museums with a guide (see tools/build_guides.py)
+  D.guideDocs = new Map();            // museum id -> loaded guide
+  D.guideWorks = new Map();           // work id -> work, from loaded guides
+  D.guideDone = new Map();            // museum id -> guide, once loaded
   D.museums = museums?.museums ?? [];
   D.byMuseum = new Map(D.museums.map(m => [m.id, m]));
   D.discover = discover ?? { works: {}, artists: {}, themes: [], popularArtworks: [], popularArtists: [], popularMuseums: [] };
@@ -92,9 +99,14 @@ const PAGES = {
   discover: discoverPage, artist: artistPage, theme: themePage, work: workPage, popular: popularPage,
 };
 
-function route({ keepScroll = false } = {}) {
-  const [name, arg] = routeParts();
+// Pages that need a museum's guide loaded first: #museum/<id>, #work/<work id>/<museum id>
+const NEEDS = { museum: id => id, work: (id, museumId) => museumId };
+
+async function route({ keepScroll = false } = {}) {
+  const [name, arg, arg2] = routeParts();
   const key = PAGES[name] ? name : 'home';
+  const guide = NEEDS[key]?.(arg, arg2);
+  if (guide && D.guides[guide] && !D.guideDone.has(guide)) await loadGuide(guide);   // only waits the first time
   const tab = TAB_OF[key];
   if (['home', 'museums', 'collection', 'discover'].includes(key)) S.tab = tab;
   for (const b of document.querySelectorAll('#tabbar [data-tab]')) b.setAttribute('aria-selected', String(b.dataset.tab === (TAB_OF[key] ?? S.tab)));
@@ -171,15 +183,79 @@ function museumCard(m, { overlay = false } = {}) {
   </a>`;
 }
 
-// One shape for any artwork, from the MFA data or from open data.
+// One shape for any artwork, from the MFA data, a museum's guide or open data.
 function workInfo(id, fallback = null) {
   const a = D.mfaById.get(id);
   if (a) return { id, title: a.title, artist: a.artist, year: a.date, museum: 'MFA Boston', museumId: MFA,
     href: `guide.html#art/${id}`, thumb: cls => imgHTML(a, cls, a.title), mfa: true };
-  const w = D.discover.works[id] ?? fallback;
+  const w = D.guideWorks.get(id) ?? D.discover.works[id] ?? fallback;
   if (!w) return null;
-  return { id, title: w.title, artist: w.artist, year: w.year, museum: shortMuseum(w.museumId, w.museum), museumId: w.museumId,
-    href: `#work/${id}`, thumb: cls => (w.image ? `<img class="${cls}" src="${commons(w.image, 400)}" alt="${escape(w.title)}" loading="lazy">` : `<span class="${cls} img-empty"></span>`) };
+  return { id, title: w.title, artist: w.artist, year: w.year ?? w.date, museum: shortMuseum(w.museumId, w.museum), museumId: w.museumId,
+    href: `#work/${id}${w.museumId && D.guides[w.museumId] ? `/${w.museumId}` : ''}`, thumb: cls => workImg(w, cls, 400) };
+}
+
+// A work's picture: a Wikimedia Commons file, or a link the museum allows apps to show.
+function workImg(w, cls, width) {
+  if (w.image) return `<img class="${cls}" src="${commons(w.image, width)}" alt="${escape(w.title)}" loading="lazy">`;
+  if (w.imageUrl) return `<img class="${cls}" src="${escape(w.imageUrl)}" alt="${escape(w.title)}" loading="lazy">`;
+  return `<span class="${cls} img-empty"></span>`;
+}
+
+// ---------- museum guides (data/guides/<museum id>.json) ----------
+function loadGuide(id) {
+  if (!id || !D.guides[id]) return Promise.resolve(null);
+  if (!D.guideDocs.has(id)) {
+    D.guideDocs.set(id, fetch(`data/guides/${id}.json`).then(r => (r.ok ? r.json() : null)).catch(() => null).then(doc => {
+      for (const w of doc?.works ?? []) {
+        w.museumId = id;
+        w._hay = norm([w.title, w.artist, w.year, w.date, w.type, w.medium, w.culture, w.gallery, w.galleryName, w.location].join(' '));
+        D.guideWorks.set(w.id, w);
+      }
+      if (doc) D.guideDone.set(id, doc);
+      return doc;
+    }));
+  }
+  return D.guideDocs.get(id);
+}
+
+const GUIDE_PAGE = 24;
+function guideWorks(id) {
+  const doc = guideDocNow(id);
+  let works = doc?.works ?? [];
+  const g = S.guide;
+  if (g.museum !== id) Object.assign(g, { museum: id, query: '', onView: !!doc?.onViewKnown, shown: GUIDE_PAGE });
+  if (g.onView) works = works.filter(w => w.onView);
+  const q = norm(g.query);
+  if (q) works = works.filter(w => q.split(' ').every(t => w._hay.includes(t)));
+  return works;
+}
+const guideDocNow = id => D.guideDone.get(id) ?? null;
+
+function guideListHTML(id) {
+  const doc = guideDocNow(id);
+  const works = guideWorks(id);
+  const g = S.guide;
+  const sub = w => [w.artist, w.year ?? w.date, w.gallery ? `Gallery ${w.gallery}` : w.location].filter(Boolean).join(' · ');
+  const list = works.length
+    ? `<div class="tiles">${works.slice(0, g.shown).map(w => `<a class="tile" href="#work/${w.id}/${id}"><div class="tile__img">${workImg(w, 'ph', 400)}</div>
+        <p class="tile__title">${escape(w.title)}</p><p class="tile__sub">${escape(sub(w))}</p></a>`).join('')}</div>
+      ${works.length > g.shown ? `<button class="btn btn--gray more" type="button" data-guide-more>Show More (${(works.length - g.shown).toLocaleString('en-US')})</button>` : ''}`
+    : `<div class="s-empty"><h2>No Works Found</h2><p>Try another artist, title or gallery.</p></div>`;
+  return `${list}
+    <p class="fine">${works.length.toLocaleString('en-US')} work${works.length === 1 ? '' : 's'} · ${escape(doc.source)} · checked ${escape(doc.checked)}${doc.onViewKnown ? '' : '. Wikidata lists what the museum owns, not what is on view today.'}</p>`;
+}
+
+function guideHTML(id) {
+  const doc = guideDocNow(id);
+  if (!doc) return '';
+  guideWorks(id);   // resets the search when you open another museum
+  const g = S.guide;
+  return `<section class="s-section" id="guide"><div class="s-head"><h2>In the Collection</h2></div>
+    <label class="field" style="margin-top:12px">${I.search}<input id="guideQuery" type="search" placeholder="Artists, titles${doc.onViewKnown ? ', galleries' : ''}" value="${escape(g.query)}" autocomplete="off" enterkeyhint="search" aria-label="Search the collection"></label>
+    ${doc.onViewKnown ? `<div class="chips">
+      <button class="chip" type="button" data-guide-view="on" aria-pressed="${g.onView}">On View</button>
+      <button class="chip" type="button" data-guide-view="all" aria-pressed="${!g.onView}">Whole Collection</button></div>` : ''}
+    <div id="guideList">${guideListHTML(id)}</div></section>`;
 }
 const shortMuseum = (id, name) => (id === MFA ? 'MFA Boston' : D.byMuseum.get(id)?.name ?? name ?? '');
 
@@ -394,6 +470,7 @@ afterRender.home = () => {
 function museumsList() {
   let list = D.museums;
   if (S.museumsFilter === 'fav') list = S.museumFavs.map(id => D.byMuseum.get(id)).filter(Boolean);
+  if (S.museumsFilter === 'guide') list = list.filter(m => m.id === MFA || D.guides[m.id]);
   const q = norm(S.query);
   if (q) list = list.filter(m => norm(`${m.name} ${m.city ?? ''} ${m.state ?? ''}`).includes(q));
   if (S.area) list = list.filter(m => m.at && S.area.contains(m.at));
@@ -414,6 +491,7 @@ function museumsPage() {
     </div>
     <div class="chips">
       <button class="chip" type="button" data-mfilter="all" aria-pressed="${S.museumsFilter === 'all'}">All</button>
+      <button class="chip" type="button" data-mfilter="guide" aria-pressed="${S.museumsFilter === 'guide'}">With Guide</button>
       <button class="chip" type="button" data-mfilter="fav" aria-pressed="${S.museumsFilter === 'fav'}">${I.heart(false)}Favorites</button>
       ${S.area ? `<button class="chip" type="button" data-clear-area aria-pressed="true">In this area ✕</button>` : ''}
     </div>
@@ -493,7 +571,9 @@ function museumPage(id) {
     </div>
     ${highlights.length ? `<section class="s-section"><div class="s-head"><h2>Highlights</h2></div>
       <div class="tiles">${highlights.map(tileHTML).join('')}</div></section>` : ''}
-    <p class="fine" style="margin-top:20px">Photo: Wikimedia Commons · Data: Wikidata${m.wikipedia ? ' · Text: Wikipedia' : ''}</p>`;
+    ${guideHTML(id)}
+    <p class="fine" style="margin-top:20px">Photo: Wikimedia Commons · Data: Wikidata${m.wikipedia ? ' · Text: Wikipedia' : ''}</p>
+    ${id === MFA ? '' : `<p class="fine">${UNOFFICIAL}</p>`}`;
 }
 afterRender.museum = id => {
   fillSummary($('#museumAbout'), D.byMuseum.get(id)?.wikipedia, 'No description yet.');
@@ -764,28 +844,41 @@ function themePage(id) {
 afterRender.theme = id => fillSummary($('#themeAbout'), D.discover.themes.find(x => x.id === id)?.wikipedia, '');
 
 function workPage(id) {
-  const w = D.discover.works[id] ?? S.favs.find(f => f.id === id)?.work;
+  const w = D.guideWorks.get(id) ?? D.discover.works[id] ?? S.favs.find(f => f.id === id)?.work;
   if (!w) return `${topbar({ fallback: 'discover' })}<div class="s-empty"><h2>Artwork Not Found</h2></div>`;
   const saved = S.favs.some(f => f.id === id);
   const artist = w.artistId && D.discover.artists[w.artistId];
   const more = artist ? artist.works.filter(x => x !== id).slice(0, 6).map(x => workInfo(x)).filter(Boolean) : [];
   const m = D.byMuseum.get(w.museumId);
   return `${topbar({ fallback: 'discover', trailing: `<button class="round glass" type="button" data-save-work="${id}" aria-pressed="${saved}" aria-label="${saved ? 'Remove from Library' : 'Save to Library'}">${I.heart(saved)}</button>` })}
-    <div class="work-hero">${w.image ? `<img src="${commons(w.image, 1000)}" alt="${escape(w.title)}">` : ''}</div>
+    <div class="work-hero">${w.image ? `<img src="${commons(w.image, 1000)}" alt="${escape(w.title)}">` : w.imageUrl ? `<img src="${escape(w.imageUrl.replace(/width=\d+/, 'width=1000'))}" alt="${escape(w.title)}">` : ''}</div>
     <h1 class="work-title">${escape(w.title)}</h1>
-    <p class="work-sub">${escape([w.artist, w.year].filter(Boolean).join(' · '))}</p>
+    <p class="work-sub">${escape([w.artist, w.date ?? w.year].filter(Boolean).join(' · '))}</p>
+    ${guideFacts(w)}
     <section class="s-section">
       ${artist ? `<a class="link-card" href="#artist/${artist.id}"><div><strong>${escape(artist.name)}</strong><span>About the artist</span></div>${I.arrow}</a>` : ''}
       ${w.museumId ? `<a class="link-card" href="#museum/${w.museumId}"><div><strong>${escape(shortMuseum(w.museumId, w.museum))}</strong><span>${escape(m ? placeLine(m) || 'View museum' : 'View museum')}</span></div>${I.arrow}</a>` : ''}
     </section>
     ${more.length ? `<section class="s-section"><div class="s-head"><h2>More by This Artist</h2></div>
       ${rankedHTML(more.map(x => ({ href: x.href, title: x.title, sub: [x.year, x.museum].filter(Boolean).join(' · '), thumb: x.thumb('thumb') })))}</section>` : ''}
-    <p class="fine" style="margin-top:20px">Picture: <a href="https://commons.wikimedia.org/wiki/File:${encodeURIComponent(w.image ?? '')}" target="_blank" rel="noopener">Wikimedia Commons</a> · Data: <a href="https://www.wikidata.org/wiki/${id}" target="_blank" rel="noopener">Wikidata</a></p>`;
+    <p class="fine" style="margin-top:20px">${w.source ? `Data: ${escape(w.source)}${w.imageCredit ? ` · Picture: ${escape(w.imageCredit)}` : ''}`
+      : `Picture: <a href="https://commons.wikimedia.org/wiki/File:${encodeURIComponent(w.image ?? '')}" target="_blank" rel="noopener">Wikimedia Commons</a> · Data: <a href="https://www.wikidata.org/wiki/${id}" target="_blank" rel="noopener">Wikidata</a>`}</p>
+    ${w.museumId && w.museumId !== MFA && D.guides[w.museumId] ? `<p class="fine">${UNOFFICIAL}</p>` : ''}`;
+}
+
+// Where to find a work from a museum's guide, and its label details.
+function guideFacts(w) {
+  if (!D.guideWorks.has(w.id)) return '';
+  const where = w.gallery ? [`Gallery ${w.gallery}`, w.galleryName, w.floor ? `Floor ${w.floor}` : ''].filter(Boolean).join(' · ') : w.location;
+  const rows = [['Where', w.onView ? where || 'On view' : where ? `${where} (may have moved)` : 'Not known to be on view'],
+    ['Type', w.type], ['Medium', w.medium], ['Culture', w.culture], ['Accession', w.accession]].filter(([, v]) => v);
+  return `<div class="info-card" style="margin-top:16px"><dl class="kv">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${escape(v)}</dd>`).join('')}</dl>
+    ${w.url ? `<div class="btn-row"><a class="btn btn--gray" href="${escape(w.url)}" target="_blank" rel="noopener">${I.ext}View on the Museum's Website</a></div>` : ''}</div>`;
 }
 
 // ---------- events ----------
 async function onClick(e) {
-  const t = e.target.closest('[data-back],[data-fav-museum],[data-mview],[data-mfilter],[data-clear-area],[data-more-museums],[data-locate],[data-coll],[data-lib-view],[data-select],[data-pick],[data-add-to-list],[data-unsave],[data-new-list],[data-rename-list],[data-delete-list],[data-remove-from-list],[data-save-work],[data-more],[data-update],[data-notice-general],[data-pack-start],[data-pack-stop]');
+  const t = e.target.closest('[data-back],[data-fav-museum],[data-mview],[data-mfilter],[data-clear-area],[data-more-museums],[data-locate],[data-coll],[data-lib-view],[data-select],[data-pick],[data-add-to-list],[data-unsave],[data-new-list],[data-rename-list],[data-delete-list],[data-remove-from-list],[data-save-work],[data-more],[data-update],[data-notice-general],[data-pack-start],[data-pack-stop],[data-guide-more],[data-guide-view]');
   if (!t) return;
   const d = t.dataset;
   if (d.back !== undefined) return back(d.back);
@@ -839,12 +932,14 @@ async function onClick(e) {
     S.selected.clear(); S.selecting = false; await refreshMine(); return route({ keepScroll: true });
   }
   if (d.saveWork) {
-    const w = D.discover.works[d.saveWork];
-    const on = await Favorites.toggle(d.saveWork, w ? { title: w.title, artist: w.artist, year: w.year, image: w.image, museum: w.museum, museumId: w.museumId, artistId: w.artistId } : null);
+    const w = D.guideWorks.get(d.saveWork) ?? D.discover.works[d.saveWork];
+    const on = await Favorites.toggle(d.saveWork, w ? { title: w.title, artist: w.artist, year: w.year ?? w.date, image: w.image, imageUrl: w.imageUrl, museum: w.museum ?? shortMuseum(w.museumId), museumId: w.museumId, artistId: w.artistId } : null);
     await refreshMine();
     t.setAttribute('aria-pressed', String(on)); t.innerHTML = I.heart(on);
     return toast(on ? 'Saved to your Library' : 'Removed from Library');
   }
+  if (d.guideMore !== undefined) { S.guide.shown += GUIDE_PAGE * 2; return refreshGuide({ listOnly: true }); }
+  if (d.guideView) { S.guide.onView = d.guideView === 'on'; S.guide.shown = GUIDE_PAGE; return refreshGuide(); }
   if (d.more !== undefined) { t.previousElementSibling?.classList.remove('clamp'); t.remove(); return; }
   if (d.update !== undefined) return checkForUpdate(t);
   if (d.noticeGeneral !== undefined) return openNotice({ general: true });
@@ -853,7 +948,20 @@ async function onClick(e) {
 }
 
 let queryTimer;
+// Redraw only the collection search results on a museum page, so the keyboard stays up.
+function refreshGuide({ listOnly = false } = {}) {
+  const id = routeParts()[1];
+  const el = listOnly ? $('#guideList') : $('#guide');
+  if (!el) return;
+  if (listOnly) el.innerHTML = guideListHTML(id); else el.outerHTML = guideHTML(id);
+  hydrateImages(page);
+}
+
 function onInput(e) {
+  if (e.target.id === 'guideQuery') {
+    clearTimeout(queryTimer);
+    queryTimer = setTimeout(() => { S.guide.query = e.target.value; S.guide.shown = GUIDE_PAGE; refreshGuide({ listOnly: true }); }, 180);
+  }
   if (e.target.id === 'museumQuery') {
     clearTimeout(queryTimer);
     queryTimer = setTimeout(() => {
