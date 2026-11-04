@@ -162,6 +162,16 @@ in the rooms their picture names), the works pictured on the two ongoing shows' 
 Steam Boiler pages (via /wp-json/wp/v2/avada_portfolio) and Wikidata. Changing shows in the Krieble Gallery aren't listed
 (Patchwork closes Nov 8, 2026); add the next show's works when its page is up.
 
+Hill-Stead Museum (Nov 4, 2026): map guide at `guide.html?museum=hillstead`, built by `tools/harvest_hillstead.py` (Google
+Arts & Culture) and `tools/build_hillstead.py`. hillstead.org answers 403 (Cloudflare) and its robots.txt shuts out AI
+crawlers, so it is not read. Map: floor G (grounds) from OpenStreetMap (house and barn outline, Sunken Garden, parking,
+drive, Riddle's Pond); the renovated Carriage Barn is the visitor center (Museum Shop/tickets, lockers, restrooms, exhibition
+gallery), places inside it approximate. House floors 1 and 2 traced from the plans in Hill-Stead's illustrated museum guide
+(reproduced on bigoldhouses.blogspot.com, 2013), drawn as in the book (south at the top) and moved over the house on the
+grounds map. Works: 27 from Google Arts & Culture + 5 more from Wikidata (32 on the map, 29 pictures). The house stays as
+Theodate Pope Riddle left it, so all works are on view; rooms come from Side of Culture (May 2022) and Galerie captions,
+and 13 rooms are guesses, marked on each work. To improve: Hill-Stead's own room list, or a photo of a tour handout.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
