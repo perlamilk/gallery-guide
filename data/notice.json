@@ -8302,6 +8302,1894 @@
      "text": "Compare with Manet’s portrait of her, painted about fifteen years earlier."
     }
    ]
+  },
+  "33862": {
+   "image": "data/notice/33862.jpg",
+   "file": "John Singer Sargent - Mrs. Fiske Warren (Gretchen Osgood) and Her Daughter Rachel - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Mrs. Fiske Warren and her daughter Rachel, John Singer Sargent, 1903. Sargent painted them in Boston, at Isabella Stewart Gardner’s new house, Fenway Court."
+    },
+    {
+     "title": "Two faces",
+     "text": "Mother looks at us; the daughter rests her cheek against her and looks away.",
+     "r": [
+      0.28,
+      0.12,
+      0.42,
+      0.2
+     ]
+    },
+    {
+     "title": "Pink and white",
+     "text": "Pink silk for the girl, pale satin for her mother. Two colours, side by side.",
+     "r": [
+      0.2,
+      0.3,
+      0.75,
+      0.35
+     ]
+    },
+    {
+     "title": "The brushwork",
+     "text": "Up close the dress is just fast, loose strokes of white. Step back and it turns into shining satin.",
+     "r": [
+      0.05,
+      0.6,
+      0.75,
+      0.4
+     ]
+    },
+    {
+     "title": "The hands",
+     "text": "The girl’s arm around her mother, the mother’s hands resting in her lap.",
+     "r": [
+      0.3,
+      0.5,
+      0.4,
+      0.25
+     ]
+    },
+    {
+     "title": "Gold behind",
+     "text": "Dark carved gold in the background: part of Mrs. Gardner’s collection.",
+     "r": [
+      0,
+      0,
+      1,
+      0.22
+     ]
+    }
+   ]
+  },
+  "32503": {
+   "image": "data/notice/32503.jpg",
+   "file": "John Singer Sargent - Fishing for Oysters at Cancale - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Fishing for Oysters at Cancale, John Singer Sargent, 1878. Women and children of a Breton fishing village walk out to the oyster beds at low tide. Sargent was 22."
+    },
+    {
+     "title": "Against the light",
+     "text": "The sun is behind them: their faces are in shadow and their outlines glow.",
+     "r": [
+      0.47,
+      0.3,
+      0.32,
+      0.55
+     ]
+    },
+    {
+     "title": "The baskets",
+     "text": "Baskets on their arms and backs, ready for oysters.",
+     "r": [
+      0.25,
+      0.3,
+      0.25,
+      0.45
+     ]
+    },
+    {
+     "title": "The boy",
+     "text": "A barefoot boy follows the women on the right.",
+     "r": [
+      0.72,
+      0.42,
+      0.16,
+      0.38
+     ]
+    },
+    {
+     "title": "Wet sand",
+     "text": "The wet beach is a mirror. Look for the reflections of legs and skirts.",
+     "r": [
+      0.2,
+      0.62,
+      0.65,
+      0.3
+     ]
+    },
+    {
+     "title": "The sky",
+     "text": "Half the picture is a breezy sky of quick white clouds.",
+     "r": [
+      0,
+      0,
+      1,
+      0.45
+     ]
+    }
+   ]
+  },
+  "33015": {
+   "image": "data/notice/33015.jpg",
+   "file": "MJ Heade Passion Flowers and Hummingbirds.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Passion Flowers and Hummingbirds, Martin Johnson Heade, about 1870. Heade travelled to Brazil to paint hummingbirds in their own world."
+    },
+    {
+     "title": "The flower",
+     "text": "A passion flower in full bloom, painted almost like a scientific drawing.",
+     "r": [
+      0.48,
+      0.2,
+      0.25,
+      0.3
+     ]
+    },
+    {
+     "title": "Another flower",
+     "text": "A second one lower down, half turned away.",
+     "r": [
+      0.28,
+      0.48,
+      0.24,
+      0.28
+     ]
+    },
+    {
+     "title": "Hummingbirds",
+     "text": "Two tiny hummingbirds near the flowers.",
+     "r": [
+      0.68,
+      0.42,
+      0.2,
+      0.28
+     ]
+    },
+    {
+     "title": "The bud",
+     "text": "A red bud on the left, about to open.",
+     "r": [
+      0.15,
+      0.13,
+      0.14,
+      0.17
+     ]
+    },
+    {
+     "title": "The vine",
+     "text": "The vine curls and loops across the whole picture, tying it together.",
+     "r": [
+      0.25,
+      0.05,
+      0.6,
+      0.6
+     ]
+    },
+    {
+     "title": "Misty forest",
+     "text": "Behind, a misty rainforest. Up close and far away at once.",
+     "r": [
+      0,
+      0.55,
+      1,
+      0.45
+     ]
+    }
+   ]
+  },
+  "33107": {
+   "image": "data/notice/33107.jpg",
+   "file": "Albert Bierstadt - Valley of the Yosemite - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Valley of the Yosemite, Albert Bierstadt, 1864. Painted a year after his first visit, when few people in the East had seen the valley."
+    },
+    {
+     "title": "The cliffs",
+     "text": "Huge granite walls on the left, lit by the low sun.",
+     "r": [
+      0.12,
+      0.08,
+      0.35,
+      0.55
+     ]
+    },
+    {
+     "title": "Golden haze",
+     "text": "The far end of the valley melts into gold light.",
+     "r": [
+      0.42,
+      0.25,
+      0.35,
+      0.35
+     ]
+    },
+    {
+     "title": "The deer",
+     "text": "Find the deer drinking at the water’s edge. They show how big everything else is.",
+     "r": [
+      0.5,
+      0.78,
+      0.25,
+      0.14
+     ]
+    },
+    {
+     "title": "Reflections",
+     "text": "The calm river repeats the trees and the sky.",
+     "r": [
+      0,
+      0.72,
+      1,
+      0.28
+     ]
+    },
+    {
+     "title": "The dark wall",
+     "text": "On the right, a cliff in shadow frames the view like a stage curtain.",
+     "r": [
+      0.72,
+      0.12,
+      0.28,
+      0.65
+     ]
+    }
+   ]
+  },
+  "34216": {
+   "image": "data/notice/34216.jpg",
+   "file": "John Neagle - Pat Lyon at the Forge - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Pat Lyon at the Forge, John Neagle, 1826. Patrick Lyon, a Philadelphia blacksmith, was once jailed for a bank robbery he did not commit. Later, rich, he asked to be painted at work, not as a gentleman."
+    },
+    {
+     "title": "The prison",
+     "text": "Through the window: the cupola of the jail where he was held. A reminder he chose himself.",
+     "r": [
+      0,
+      0.12,
+      0.14,
+      0.22
+     ]
+    },
+    {
+     "title": "His face",
+     "text": "Ruddy cheeks, rolled-up sleeves, open collar.",
+     "r": [
+      0.27,
+      0.18,
+      0.24,
+      0.17
+     ]
+    },
+    {
+     "title": "The apron",
+     "text": "A long leather apron, the blacksmith’s uniform.",
+     "r": [
+      0.25,
+      0.4,
+      0.33,
+      0.45
+     ]
+    },
+    {
+     "title": "Hammer and anvil",
+     "text": "His tools: a hammer on the anvil, tongs at the fire.",
+     "r": [
+      0.45,
+      0.45,
+      0.35,
+      0.35
+     ]
+    },
+    {
+     "title": "The apprentice",
+     "text": "A young helper works the bellows in the background.",
+     "r": [
+      0,
+      0.25,
+      0.3,
+      0.27
+     ]
+    }
+   ]
+  },
+  "33207": {
+   "image": "data/notice/33207.jpg",
+   "file": "William Sidney Mount - The Bone Player - 48.461 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Bone Player, William Sidney Mount, 1856. Painted for a Paris publisher who sold prints of it, one of a series of musicians."
+    },
+    {
+     "title": "The bones",
+     "text": "Two pairs of bones held between his fingers, clicked together for rhythm.",
+     "r": [
+      0.55,
+      0.15,
+      0.3,
+      0.28
+     ]
+    },
+    {
+     "title": "The smile",
+     "text": "He looks to the side, smiling, as if keeping time with another musician.",
+     "r": [
+      0.2,
+      0.08,
+      0.38,
+      0.3
+     ]
+    },
+    {
+     "title": "The bow tie",
+     "text": "A bright pink bow at his collar.",
+     "r": [
+      0.33,
+      0.36,
+      0.25,
+      0.14
+     ]
+    },
+    {
+     "title": "Clothes",
+     "text": "A patterned yellow vest under a worn grey coat: his best clothes.",
+     "r": [
+      0.2,
+      0.35,
+      0.65,
+      0.6
+     ]
+    }
+   ]
+  },
+  "32944": {
+   "image": "data/notice/32944.jpg",
+   "file": "Duccio di Buoninsegna 003.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A small folding altarpiece, Duccio di Buoninsegna and workshop, about 1300–05, from Siena. It was made for private prayer and could be closed like a book."
+    },
+    {
+     "title": "The Crucifixion",
+     "text": "Christ on the cross against a gold sky, with small angels around.",
+     "r": [
+      0.36,
+      0.25,
+      0.25,
+      0.4
+     ]
+    },
+    {
+     "title": "Mary’s grief",
+     "text": "On the left, Mary faints into the arms of her companions.",
+     "r": [
+      0.27,
+      0.5,
+      0.18,
+      0.35
+     ]
+    },
+    {
+     "title": "The soldiers",
+     "text": "On the right, soldiers and onlookers crowd together.",
+     "r": [
+      0.5,
+      0.5,
+      0.22,
+      0.35
+     ]
+    },
+    {
+     "title": "In the gable",
+     "text": "At the top, Christ in blessing with angels.",
+     "r": [
+      0.37,
+      0.02,
+      0.27,
+      0.17
+     ]
+    },
+    {
+     "title": "Saint Nicholas",
+     "text": "Left wing: Saint Nicholas, a bishop in red, with his mitre.",
+     "r": [
+      0.02,
+      0.22,
+      0.19,
+      0.72
+     ]
+    },
+    {
+     "title": "Saint Gregory",
+     "text": "Right wing: Saint Gregory, a pope, in his papal crown.",
+     "r": [
+      0.77,
+      0.22,
+      0.2,
+      0.72
+     ]
+    }
+   ]
+  },
+  "33513": {
+   "image": "data/notice/33513.jpg",
+   "file": "Twelfth-Night Feast - Jan Steen - MFA.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Twelfth-Night Feast, Jan Steen, 1662. A Dutch family celebrates Epiphany, the twelfth night after Christmas."
+    },
+    {
+     "title": "The star",
+     "text": "Through the door on the left, children carry a paper star on a pole: a Twelfth Night custom.",
+     "r": [
+      0,
+      0.22,
+      0.14,
+      0.22
+     ]
+    },
+    {
+     "title": "The king drinks",
+     "text": "On the right, someone raises a drink. Whoever found the bean in the cake became king for the night, and everyone cheered when the king drank.",
+     "r": [
+      0.57,
+      0.28,
+      0.22,
+      0.22
+     ]
+    },
+    {
+     "title": "Jumping candles",
+     "text": "A boy jumps over candles on the floor, a holiday game. If the flame stayed lit, good luck.",
+     "r": [
+      0.05,
+      0.55,
+      0.3,
+      0.37
+     ]
+    },
+    {
+     "title": "The food",
+     "text": "Waffles and treats on the table.",
+     "r": [
+      0.25,
+      0.48,
+      0.5,
+      0.18
+     ]
+    },
+    {
+     "title": "The fire",
+     "text": "A cooking pot by the fire in the corner.",
+     "r": [
+      0.78,
+      0.75,
+      0.22,
+      0.25
+     ]
+    }
+   ]
+  },
+  "34215": {
+   "image": "data/notice/34215.jpg",
+   "file": "Giovanni Paolo Pannini - Picture Gallery with Views of Modern Rome - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Picture Gallery with Views of Modern Rome, Giovanni Paolo Panini, 1757. An imaginary gallery filled with paintings of Rome’s sights: a souvenir for rich travellers on the Grand Tour."
+    },
+    {
+     "title": "Walls of pictures",
+     "text": "Paintings hung frame to frame: churches, fountains, piazzas. Each one is a real place in Rome.",
+     "r": [
+      0,
+      0.2,
+      0.35,
+      0.5
+     ]
+    },
+    {
+     "title": "The visitors",
+     "text": "Gentlemen in the middle, looking, pointing, talking about art.",
+     "r": [
+      0.3,
+      0.6,
+      0.35,
+      0.35
+     ]
+    },
+    {
+     "title": "Statues",
+     "text": "Copies of famous statues stand among the paintings.",
+     "r": [
+      0.5,
+      0.55,
+      0.2,
+      0.4
+     ]
+    },
+    {
+     "title": "The ceiling",
+     "text": "A painted ceiling and grand arches above.",
+     "r": [
+      0.25,
+      0,
+      0.5,
+      0.3
+     ]
+    },
+    {
+     "title": "The curtain",
+     "text": "A red curtain pulled aside on the left, as if a show is starting.",
+     "r": [
+      0,
+      0,
+      0.22,
+      0.45
+     ]
+    }
+   ]
+  },
+  "33707": {
+   "image": "data/notice/33707.jpg",
+   "file": "Time Unveiling Truth - Tiepolo - MFA Boston.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Time Unveiling Truth, Giovanni Battista Tiepolo, about 1745–50. An allegory: in time, the truth always comes out."
+    },
+    {
+     "title": "Truth",
+     "text": "Truth is a woman in light, almost unclothed. She has nothing to hide.",
+     "r": [
+      0.3,
+      0.12,
+      0.38,
+      0.55
+     ]
+    },
+    {
+     "title": "The sun",
+     "text": "The sun shines above her: her symbol.",
+     "r": [
+      0.3,
+      0.02,
+      0.3,
+      0.18
+     ]
+    },
+    {
+     "title": "Time",
+     "text": "Time, a man with great dark wings, holds her.",
+     "r": [
+      0.05,
+      0.25,
+      0.4,
+      0.35
+     ]
+    },
+    {
+     "title": "The scythe",
+     "text": "His scythe on the ground, for Time cuts everything down.",
+     "r": [
+      0,
+      0.75,
+      0.55,
+      0.25
+     ]
+    },
+    {
+     "title": "The globe",
+     "text": "Truth rests her foot on the world.",
+     "r": [
+      0.55,
+      0.72,
+      0.28,
+      0.18
+     ]
+    },
+    {
+     "title": "The cupid",
+     "text": "A little cupid peeks out on the right.",
+     "r": [
+      0.62,
+      0.55,
+      0.2,
+      0.2
+     ]
+    }
+   ]
+  },
+  "33656": {
+   "image": "data/notice/33656.jpg",
+   "file": "Sofonisba Anguissola - Self-Portrait - c. 1556.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Self-portrait by Sofonisba Anguissola, about 1556. A miniature, just a few centimetres high. She became one of the most famous women painters of the Renaissance."
+    },
+    {
+     "title": "Her face",
+     "text": "A young woman, steady and serious, looking straight at us.",
+     "r": [
+      0.33,
+      0.13,
+      0.33,
+      0.22
+     ]
+    },
+    {
+     "title": "The medallion",
+     "text": "She holds up a large medallion, like a coin, with letters woven together.",
+     "r": [
+      0.15,
+      0.43,
+      0.7,
+      0.5
+     ]
+    },
+    {
+     "title": "The puzzle",
+     "text": "The letters in the middle are a riddle. They may spell her father’s name.",
+     "r": [
+      0.28,
+      0.55,
+      0.45,
+      0.3
+     ]
+    },
+    {
+     "title": "The edge",
+     "text": "The Latin around the rim says she painted it with her own hand, from a mirror, in Cremona.",
+     "r": [
+      0.15,
+      0.45,
+      0.7,
+      0.48
+     ]
+    },
+    {
+     "title": "The fingers",
+     "text": "Her fingertips hold the edge of the medallion.",
+     "r": [
+      0.18,
+      0.82,
+      0.65,
+      0.13
+     ]
+    }
+   ]
+  },
+  "699323": {
+   "image": "data/notice/699323.jpg",
+   "file": "L'Enfant Jésus endormi, par Artemisia Gentileschi.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Sleeping Christ Child, Artemisia Gentileschi, about 1630. One of the first Italian women painters to win international fame."
+    },
+    {
+     "title": "The face",
+     "text": "Eyes closed, mouth open, deep asleep. A real baby, not an idealised one.",
+     "r": [
+      0.66,
+      0.28,
+      0.24,
+      0.24
+     ]
+    },
+    {
+     "title": "The pose",
+     "text": "Head thrown back, arm limp: the pose recalls the dead Christ. The sleep foreshadows his death.",
+     "r": [
+      0.1,
+      0.3,
+      0.85,
+      0.55
+     ]
+    },
+    {
+     "title": "The cloth",
+     "text": "A white cloth across his body catches the light.",
+     "r": [
+      0.45,
+      0.45,
+      0.3,
+      0.3
+     ]
+    },
+    {
+     "title": "The pillow",
+     "text": "A green cushion under his head.",
+     "r": [
+      0.72,
+      0.45,
+      0.28,
+      0.3
+     ]
+    },
+    {
+     "title": "The feet",
+     "text": "Small bare feet at the far left.",
+     "r": [
+      0.03,
+      0.72,
+      0.22,
+      0.18
+     ]
+    }
+   ]
+  },
+  "32570": {
+   "image": "data/notice/32570.jpg",
+   "file": "Gentile Bellini 010.jpeg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Portrait of a Doge, probably Pasquale Malipiero, Gentile Bellini, about 1460. The Doge was the elected ruler of Venice."
+    },
+    {
+     "title": "The profile",
+     "text": "Seen exactly from the side, like a head on a coin or medal.",
+     "r": [
+      0.2,
+      0.25,
+      0.32,
+      0.3
+     ]
+    },
+    {
+     "title": "The hat",
+     "text": "The corno, the Doge’s horn-shaped cap: a sign of his office.",
+     "r": [
+      0.25,
+      0.02,
+      0.55,
+      0.42
+     ]
+    },
+    {
+     "title": "White linen",
+     "text": "A thin white linen cap peeks out under it.",
+     "r": [
+      0.42,
+      0.3,
+      0.16,
+      0.16
+     ]
+    },
+    {
+     "title": "The buttons",
+     "text": "A row of round gold buttons down the front.",
+     "r": [
+      0.18,
+      0.55,
+      0.15,
+      0.4
+     ]
+    },
+    {
+     "title": "The robe",
+     "text": "Red-gold brocade, once rich with patterns.",
+     "r": [
+      0.3,
+      0.5,
+      0.7,
+      0.5
+     ]
+    }
+   ]
+  },
+  "33665": {
+   "image": "data/notice/33665.jpg",
+   "file": "Martin, John - The Seventh Plague - 1823.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Seventh Plague of Egypt, John Martin, 1823. From the Bible: Moses calls down hail and fire on Egypt to make Pharaoh free the Israelites."
+    },
+    {
+     "title": "Moses",
+     "text": "Tiny figures on the terrace: Moses raises his arms to the sky.",
+     "r": [
+      0.18,
+      0.55,
+      0.16,
+      0.27
+     ]
+    },
+    {
+     "title": "The storm",
+     "text": "Lightning and hail pour out of a black sky.",
+     "r": [
+      0.35,
+      0,
+      0.45,
+      0.45
+     ]
+    },
+    {
+     "title": "The pyramids",
+     "text": "Pyramids glow in the flash of light.",
+     "r": [
+      0.38,
+      0.45,
+      0.2,
+      0.17
+     ]
+    },
+    {
+     "title": "The palace",
+     "text": "Giant columns on the right. Martin loved enormous buildings that make people tiny.",
+     "r": [
+      0.78,
+      0,
+      0.22,
+      0.7
+     ]
+    },
+    {
+     "title": "The crowd",
+     "text": "Crowds of frightened Egyptians on the right.",
+     "r": [
+      0.62,
+      0.6,
+      0.38,
+      0.32
+     ]
+    }
+   ]
+  },
+  "32968": {
+   "image": "data/notice/32968.jpg",
+   "file": "Discovery of Achilles on Skyros by Nicholas Poussin ca. 1656 cropped.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Discovery of Achilles on Skyros, Nicolas Poussin, about 1649. Achilles’ mother hid him among the king’s daughters, dressed as a girl, to keep him from the Trojan War."
+    },
+    {
+     "title": "The merchants",
+     "text": "Ulysses and a companion, disguised as merchants, bring gifts for the girls.",
+     "r": [
+      0.18,
+      0.35,
+      0.22,
+      0.4
+     ]
+    },
+    {
+     "title": "The gifts",
+     "text": "Jewels and mirrors, and hidden among them, weapons.",
+     "r": [
+      0.3,
+      0.55,
+      0.2,
+      0.25
+     ]
+    },
+    {
+     "title": "Achilles",
+     "text": "One ‘girl’ seizes the sword and gazes at it. That’s Achilles, giving himself away.",
+     "r": [
+      0.68,
+      0.32,
+      0.27,
+      0.55
+     ]
+    },
+    {
+     "title": "The others",
+     "text": "The real daughters admire the jewels.",
+     "r": [
+      0.38,
+      0.22,
+      0.3,
+      0.5
+     ]
+    },
+    {
+     "title": "The helmet",
+     "text": "A helmet on the ground, front left.",
+     "r": [
+      0.07,
+      0.76,
+      0.17,
+      0.15
+     ]
+    }
+   ]
+  },
+  "33414": {
+   "image": "data/notice/33414.jpg",
+   "file": "Dirck van Baburen - The Procuress - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Procuress, Dirck van Baburen, 1622. A scene of paid love: a man, a young woman and an old go-between."
+    },
+    {
+     "title": "The young woman",
+     "text": "She laughs and leans back, playing the lute.",
+     "r": [
+      0,
+      0.18,
+      0.45,
+      0.5
+     ]
+    },
+    {
+     "title": "The client",
+     "text": "The man grins and holds up a coin.",
+     "r": [
+      0.25,
+      0,
+      0.35,
+      0.4
+     ]
+    },
+    {
+     "title": "The procuress",
+     "text": "The old woman in a headscarf waits for her cut.",
+     "r": [
+      0.58,
+      0.05,
+      0.42,
+      0.6
+     ]
+    },
+    {
+     "title": "The hands",
+     "text": "Follow the hands: coin, lute strings, an open palm.",
+     "r": [
+      0.38,
+      0.45,
+      0.35,
+      0.25
+     ]
+    },
+    {
+     "title": "Vermeer’s picture",
+     "text": "Vermeer’s family owned this painting, and he painted it on the wall in two of his own pictures. One, The Concert, was stolen from Boston’s Gardner Museum in 1990."
+    }
+   ]
+  },
+  "33161": {
+   "image": "data/notice/33161.jpg",
+   "file": "Pieter Jansz Saenredam - Interior of Sint Odulphuskerk SC241531.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Church of Saint Odulphus in Assendelft, Pieter Saenredam. Saenredam painted plain, whitewashed Dutch church interiors with careful measured drawings."
+    },
+    {
+     "title": "The people",
+     "text": "Two tiny visitors near the back show the scale of the church.",
+     "r": [
+      0.06,
+      0.66,
+      0.12,
+      0.13
+     ]
+    },
+    {
+     "title": "The arches",
+     "text": "Tall pointed arches and round columns, all in creamy white.",
+     "r": [
+      0.35,
+      0.12,
+      0.65,
+      0.7
+     ]
+    },
+    {
+     "title": "The ceiling",
+     "text": "A wooden vault overhead, painted in warm brown.",
+     "r": [
+      0,
+      0,
+      0.5,
+      0.35
+     ]
+    },
+    {
+     "title": "The windows",
+     "text": "Clear glass lets in plain daylight. No stained glass here.",
+     "r": [
+      0,
+      0.33,
+      0.35,
+      0.25
+     ]
+    },
+    {
+     "title": "The floor",
+     "text": "Gravestones set in the floor. Saenredam’s own father was buried in this church.",
+     "r": [
+      0,
+      0.78,
+      1,
+      0.22
+     ]
+    }
+   ]
+  },
+  "333593": {
+   "image": "data/notice/333593.jpg",
+   "file": "Jacob van Ruisdael - View of Haarlem - Rose-Marie and Eijk van Otterloo.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "View of Haarlem, Jacob van Ruisdael, about 1670. A flat Dutch landscape under a huge sky."
+    },
+    {
+     "title": "The sky",
+     "text": "Two thirds of the picture is sky: piled-up clouds, moving light.",
+     "r": [
+      0,
+      0,
+      1,
+      0.65
+     ]
+    },
+    {
+     "title": "The church",
+     "text": "On the horizon, the great church of Haarlem.",
+     "r": [
+      0.18,
+      0.6,
+      0.18,
+      0.12
+     ]
+    },
+    {
+     "title": "Bleaching fields",
+     "text": "Look for the white strips: linen laid out in the sun to bleach. Haarlem was famous for it.",
+     "r": [
+      0.2,
+      0.66,
+      0.45,
+      0.14
+     ]
+    },
+    {
+     "title": "Light and shadow",
+     "text": "Bands of sun and cloud shadow pass over the land.",
+     "r": [
+      0,
+      0.68,
+      1,
+      0.32
+     ]
+    },
+    {
+     "title": "The farm",
+     "text": "Red roofs and trees on the right.",
+     "r": [
+      0.75,
+      0.6,
+      0.2,
+      0.18
+     ]
+    }
+   ]
+  },
+  "536423": {
+   "image": "data/notice/536423.jpg",
+   "file": "Nicolaes Maes - Sleeping-man-having-his-pockets-picked.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Sleeping Man Having His Pockets Picked, Nicolaes Maes, about 1655. Maes was a pupil of Rembrandt."
+    },
+    {
+     "title": "The girl",
+     "text": "She looks straight at us, finger to her lips. Don’t tell!",
+     "r": [
+      0.55,
+      0.05,
+      0.23,
+      0.22
+     ]
+    },
+    {
+     "title": "The sleeper",
+     "text": "He has dozed off, head on his hand.",
+     "r": [
+      0.26,
+      0.19,
+      0.28,
+      0.22
+     ]
+    },
+    {
+     "title": "Her other hand",
+     "text": "Behind the chair, her hand reaches for his pocket.",
+     "r": [
+      0.55,
+      0.38,
+      0.22,
+      0.22
+     ]
+    },
+    {
+     "title": "The table",
+     "text": "A stoneware jug, a glass and a clay pipe: too much drink, too much smoke.",
+     "r": [
+      0.08,
+      0.3,
+      0.45,
+      0.25
+     ]
+    },
+    {
+     "title": "The tablecloth",
+     "text": "A thick red rug on the table, glowing in the light.",
+     "r": [
+      0,
+      0.43,
+      0.65,
+      0.4
+     ]
+    }
+   ]
+  },
+  "32662": {
+   "image": "data/notice/32662.jpg",
+   "file": "Francisco de Zurbarán - Saint Francis - 38.1617 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Saint Francis, Francisco de Zurbarán, about 1640. A Spanish painter of quiet, intense religious pictures."
+    },
+    {
+     "title": "The face",
+     "text": "Eyes raised, lips parted, lost in prayer.",
+     "r": [
+      0.35,
+      0.08,
+      0.3,
+      0.16
+     ]
+    },
+    {
+     "title": "The habit",
+     "text": "A patched brown robe: Francis gave up everything to live in poverty.",
+     "r": [
+      0.15,
+      0.2,
+      0.7,
+      0.75
+     ]
+    },
+    {
+     "title": "The cord",
+     "text": "A rope belt with knots, for the vows of poverty, chastity and obedience.",
+     "r": [
+      0.25,
+      0.48,
+      0.18,
+      0.42
+     ]
+    },
+    {
+     "title": "The light",
+     "text": "Light from one side, darkness all around. He seems to step out of the wall.",
+     "r": [
+      0.2,
+      0,
+      0.75,
+      0.3
+     ]
+    }
+   ]
+  },
+  "33316": {
+   "image": "data/notice/33316.jpg",
+   "file": "Camille Pissarro - Pontoise, le chemin de Gisors en hiver.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Pontoise, the Road to Gisors in Winter, Camille Pissarro, 1873. Pissarro lived in Pontoise, near Paris, and painted its everyday streets."
+    },
+    {
+     "title": "Melting snow",
+     "text": "Snow on the roofs, slush on the road. It’s the end of winter.",
+     "r": [
+      0.3,
+      0.05,
+      0.6,
+      0.3
+     ]
+    },
+    {
+     "title": "The people",
+     "text": "Small figures go about their day, bundled up.",
+     "r": [
+      0.05,
+      0.42,
+      0.8,
+      0.22
+     ]
+    },
+    {
+     "title": "The cart",
+     "text": "A cart and horse in the middle of the street.",
+     "r": [
+      0.36,
+      0.5,
+      0.16,
+      0.15
+     ]
+    },
+    {
+     "title": "The road",
+     "text": "Mud and snow, painted in quick strokes of grey, brown and white.",
+     "r": [
+      0,
+      0.62,
+      1,
+      0.38
+     ]
+    },
+    {
+     "title": "Shutters",
+     "text": "Red shutters on the right add a spot of colour.",
+     "r": [
+      0.88,
+      0.05,
+      0.12,
+      0.45
+     ]
+    }
+   ]
+  },
+  "397941": {
+   "image": "data/notice/397941.jpg",
+   "file": "The Duchess di Montajesi with Her Daughters c1876 Edgar Degas.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Duchessa di Montejasi with her daughters Elena and Camilla, Edgar Degas, about 1876. She was Degas’s aunt, and the girls his cousins, in Naples."
+    },
+    {
+     "title": "The duchess",
+     "text": "She stares out at us, tired and serious.",
+     "r": [
+      0.53,
+      0.03,
+      0.24,
+      0.27
+     ]
+    },
+    {
+     "title": "The daughters",
+     "text": "The two girls are squeezed into the corner, half cut off by the edge.",
+     "r": [
+      0,
+      0,
+      0.35,
+      0.35
+     ]
+    },
+    {
+     "title": "All in black",
+     "text": "Black dresses on a blue-green wall: they are in mourning.",
+     "r": [
+      0.2,
+      0.25,
+      0.6,
+      0.65
+     ]
+    },
+    {
+     "title": "Flashes of white",
+     "text": "A pale hand and a scrap of white break up all that black.",
+     "r": [
+      0,
+      0.58,
+      0.25,
+      0.25
+     ]
+    },
+    {
+     "title": "The odd frame",
+     "text": "Degas crops the scene like a snapshot. Empty space in the middle keeps the family apart."
+    }
+   ]
+  },
+  "34742": {
+   "image": "data/notice/34742.jpg",
+   "file": "Vilhelm Hammershøi - Woman in an Interior - 1985.930 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Woman in an Interior, Vilhelm Hammershøi. Hammershøi painted the rooms of his Copenhagen home again and again, often with his wife Ida seen from behind."
+    },
+    {
+     "title": "The woman",
+     "text": "She sits with her back to us. We never see her face.",
+     "r": [
+      0.15,
+      0.42,
+      0.22,
+      0.3
+     ]
+    },
+    {
+     "title": "Sunlight",
+     "text": "A patch of sun on the floor, in the shape of the window.",
+     "r": [
+      0.3,
+      0.72,
+      0.35,
+      0.22
+     ]
+    },
+    {
+     "title": "The window",
+     "text": "White curtain, clear glass, soft light.",
+     "r": [
+      0.28,
+      0.05,
+      0.3,
+      0.45
+     ]
+    },
+    {
+     "title": "The door",
+     "text": "A tall closed door. Silence.",
+     "r": [
+      0.6,
+      0.12,
+      0.32,
+      0.7
+     ]
+    },
+    {
+     "title": "Empty walls",
+     "text": "Frames on the wall, but we can’t see what’s in them.",
+     "r": [
+      0.03,
+      0.18,
+      0.25,
+      0.28
+     ]
+    }
+   ]
+  },
+  "32397": {
+   "image": "data/notice/32397.jpg",
+   "file": "John Constable - Weymouth Bay from the Downs above Osmington Mills - 30.731 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Weymouth Bay, John Constable, 1816. Painted on his honeymoon, after he married Maria Bicknell, on England’s south coast."
+    },
+    {
+     "title": "The clouds",
+     "text": "Constable studied clouds closely. Look at the grey and white moving across the sky.",
+     "r": [
+      0,
+      0.05,
+      1,
+      0.4
+     ]
+    },
+    {
+     "title": "The bay",
+     "text": "The sea, flat and silver, curves into the bay.",
+     "r": [
+      0,
+      0.45,
+      0.55,
+      0.2
+     ]
+    },
+    {
+     "title": "The walker",
+     "text": "One small figure on the path on the right.",
+     "r": [
+      0.78,
+      0.65,
+      0.12,
+      0.15
+     ]
+    },
+    {
+     "title": "The downs",
+     "text": "Green hills in sun and shadow, painted quickly, outdoors.",
+     "r": [
+      0,
+      0.6,
+      1,
+      0.4
+     ]
+    }
+   ]
+  },
+  "33348": {
+   "image": "data/notice/33348.jpg",
+   "file": "Guercino - Semiramis Receiving Word of the Revolt of Babylon - WGA10962.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Semiramis Receiving Word of the Revolt of Babylon, Guercino, 1624. The legendary queen was having her hair done when the news came. She left at once, hair half braided, and put the revolt down."
+    },
+    {
+     "title": "The messenger",
+     "text": "He bursts in, pointing toward the city.",
+     "r": [
+      0,
+      0.08,
+      0.42,
+      0.55
+     ]
+    },
+    {
+     "title": "Semiramis",
+     "text": "She turns to listen, one hand still at her hair.",
+     "r": [
+      0.6,
+      0.1,
+      0.32,
+      0.4
+     ]
+    },
+    {
+     "title": "The crown",
+     "text": "A small crown already on her head.",
+     "r": [
+      0.7,
+      0.07,
+      0.18,
+      0.16
+     ]
+    },
+    {
+     "title": "The servant",
+     "text": "Behind her, a servant still busy with her hair.",
+     "r": [
+      0.86,
+      0.2,
+      0.14,
+      0.3
+     ]
+    },
+    {
+     "title": "The dress",
+     "text": "Gold-brown silk in strong light and deep shadow.",
+     "r": [
+      0.4,
+      0.4,
+      0.6,
+      0.6
+     ]
+    }
+   ]
+  },
+  "32587": {
+   "image": "data/notice/32587.jpg",
+   "file": "Fra Carnevale Presentation Boston.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Fra Carnevale, about 1467. Probably the Presentation of the Virgin in the Temple, but no one is sure what story it tells. Its companion panel is in New York."
+    },
+    {
+     "title": "The arch",
+     "text": "A huge marble arch with carved reliefs, like a Roman triumphal arch.",
+     "r": [
+      0,
+      0,
+      1,
+      0.6
+     ]
+    },
+    {
+     "title": "Inside",
+     "text": "Through the arch, the long, deep interior of a church.",
+     "r": [
+      0.3,
+      0.3,
+      0.42,
+      0.35
+     ]
+    },
+    {
+     "title": "The women",
+     "text": "Elegant women in long robes walk across the front.",
+     "r": [
+      0.4,
+      0.7,
+      0.35,
+      0.3
+     ]
+    },
+    {
+     "title": "Nude figures",
+     "text": "On the left, figures without clothes, taken from ancient sculpture.",
+     "r": [
+      0,
+      0.76,
+      0.4,
+      0.2
+     ]
+    },
+    {
+     "title": "The dog",
+     "text": "A small dog in the bottom corner.",
+     "r": [
+      0.12,
+      0.9,
+      0.18,
+      0.1
+     ]
+    }
+   ]
+  },
+  "34269": {
+   "image": "data/notice/34269.jpg",
+   "file": "Thomas Birch - Engagement Between the \"Constitution\" and the \"Guerrière\".jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Constitution and the Guerrière, Thomas Birch, 1813. A sea battle of August 1812. The Constitution won, and earned her nickname: Old Ironsides. She is still moored in Boston, at Charlestown."
+    },
+    {
+     "title": "The Constitution",
+     "text": "On the left, under full sail, the American flag at her stern.",
+     "r": [
+      0.08,
+      0.15,
+      0.42,
+      0.65
+     ]
+    },
+    {
+     "title": "The Guerrière",
+     "text": "The British ship, her masts shot away.",
+     "r": [
+      0.38,
+      0.45,
+      0.42,
+      0.35
+     ]
+    },
+    {
+     "title": "Falling masts",
+     "text": "Broken masts and sails crash down.",
+     "r": [
+      0.38,
+      0.42,
+      0.22,
+      0.32
+     ]
+    },
+    {
+     "title": "Cannon smoke",
+     "text": "White smoke between the ships.",
+     "r": [
+      0.2,
+      0.5,
+      0.3,
+      0.2
+     ]
+    },
+    {
+     "title": "The waves",
+     "text": "A rough, grey-green sea.",
+     "r": [
+      0,
+      0.78,
+      1,
+      0.22
+     ]
+    }
+   ]
+  },
+  "34496": {
+   "image": "data/notice/34496.jpg",
+   "file": "The Battle of Bunker Hill (1776-77).jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Battle of Bunker Hill, Winthrop Chandler, about 1776. The battle of June 17, 1775, across the river from Boston, painted by a Connecticut artist soon after."
+    },
+    {
+     "title": "Warships",
+     "text": "British ships fire from the water on the right. Look for the Union flag.",
+     "r": [
+      0.72,
+      0.38,
+      0.28,
+      0.35
+     ]
+    },
+    {
+     "title": "The town",
+     "text": "A town on the water, with church spires, under smoke.",
+     "r": [
+      0.15,
+      0.48,
+      0.65,
+      0.17
+     ]
+    },
+    {
+     "title": "Soldiers",
+     "text": "Rows of tiny soldiers in the foreground.",
+     "r": [
+      0,
+      0.72,
+      1,
+      0.22
+     ]
+    },
+    {
+     "title": "Hills",
+     "text": "Blue hills on the horizon.",
+     "r": [
+      0,
+      0.38,
+      0.6,
+      0.12
+     ]
+    }
+   ]
+  },
+  "34445": {
+   "image": "data/notice/34445.jpg",
+   "file": "Leighton The Painter-s Honeymoon 1864.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Painter’s Honeymoon, Frederic Leighton, about 1864. A young painter and his bride. Leighton himself never married."
+    },
+    {
+     "title": "Together",
+     "text": "She leans against him, cheek to his head.",
+     "r": [
+      0.2,
+      0.02,
+      0.38,
+      0.22
+     ]
+    },
+    {
+     "title": "The drawing",
+     "text": "He draws on a board while she watches.",
+     "r": [
+      0.1,
+      0.35,
+      0.65,
+      0.15
+     ]
+    },
+    {
+     "title": "Their hands",
+     "text": "Their hands meet on the drawing board.",
+     "r": [
+      0.4,
+      0.34,
+      0.25,
+      0.14
+     ]
+    },
+    {
+     "title": "The dress",
+     "text": "Shimmering green-gold silk spills to the floor.",
+     "r": [
+      0.45,
+      0.3,
+      0.55,
+      0.7
+     ]
+    },
+    {
+     "title": "Oranges",
+     "text": "An orange tree in a pot: orange blossom means marriage.",
+     "r": [
+      0.7,
+      0,
+      0.3,
+      0.3
+     ]
+    }
+   ]
+  },
+  "34993": {
+   "image": "data/notice/34993.jpg",
+   "file": "Joseph Wright of Derby - Grotto by the Seaside in the Kingdom of Naples with Banditti, Sunset - Google Art Project.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Grotto by the Seaside near Naples, with Bandits, at Sunset, Joseph Wright of Derby, 1778. Wright visited Naples in the 1770s and never forgot its light."
+    },
+    {
+     "title": "The opening",
+     "text": "The cave frames the view like a window.",
+     "r": [
+      0.42,
+      0.08,
+      0.5,
+      0.65
+     ]
+    },
+    {
+     "title": "Sunset",
+     "text": "Warm yellow light floods in from the sea.",
+     "r": [
+      0.55,
+      0.1,
+      0.35,
+      0.5
+     ]
+    },
+    {
+     "title": "The bandits",
+     "text": "Small figures in the shadows: bandits resting.",
+     "r": [
+      0.25,
+      0.6,
+      0.3,
+      0.3
+     ]
+    },
+    {
+     "title": "Rocks",
+     "text": "Rough, dark rock all around, lit at the edges.",
+     "r": [
+      0,
+      0,
+      0.45,
+      0.6
+     ]
+    },
+    {
+     "title": "Plants",
+     "text": "A few plants cling to the cave mouth.",
+     "r": [
+      0.8,
+      0.5,
+      0.2,
+      0.3
+     ]
+    }
+   ]
+  },
+  "32859": {
+   "image": "data/notice/32859.jpg",
+   "file": "1755 IsaacWinslow byJosephBlackburn MFABoston.jpeg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Isaac Winslow and His Family, Joseph Blackburn, 1755. A Boston merchant with his wife Lucy and their daughters. Blackburn, from England, influenced the young Copley."
+    },
+    {
+     "title": "The father",
+     "text": "Isaac stands to one side, his hand pointing to his family.",
+     "r": [
+      0,
+      0.08,
+      0.35,
+      0.6
+     ]
+    },
+    {
+     "title": "The mother",
+     "text": "Lucy in pink satin with lace.",
+     "r": [
+      0.3,
+      0.25,
+      0.33,
+      0.6
+     ]
+    },
+    {
+     "title": "The baby",
+     "text": "The baby on her lap.",
+     "r": [
+      0.47,
+      0.35,
+      0.2,
+      0.3
+     ]
+    },
+    {
+     "title": "The daughter",
+     "text": "The older girl holds fruit in her apron.",
+     "r": [
+      0.65,
+      0.3,
+      0.3,
+      0.55
+     ]
+    },
+    {
+     "title": "Sunset",
+     "text": "A sunset landscape behind. The family is outdoors, in an imagined park.",
+     "r": [
+      0.6,
+      0,
+      0.4,
+      0.45
+     ]
+    }
+   ]
+  },
+  "460392": {
+   "image": "data/notice/460392.jpg",
+   "file": "Henry Ossawa Tanner - Interior of a Mosque, Cairo - 2005.92 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Interior of a Mosque, Cairo, Henry Ossawa Tanner, 1897. Tanner, an African American painter living in Paris, stopped in Egypt on his way to the Holy Land."
+    },
+    {
+     "title": "The standing man",
+     "text": "A man in a long robe stands in a pool of light.",
+     "r": [
+      0.56,
+      0.55,
+      0.14,
+      0.4
+     ]
+    },
+    {
+     "title": "The seated man",
+     "text": "Another sits quietly on the floor at left.",
+     "r": [
+      0.08,
+      0.62,
+      0.15,
+      0.22
+     ]
+    },
+    {
+     "title": "Striped arches",
+     "text": "Bands of red and white stone, typical of Cairo’s mosques.",
+     "r": [
+      0.7,
+      0,
+      0.3,
+      0.45
+     ]
+    },
+    {
+     "title": "The light",
+     "text": "Soft light on the floor, the rest in shade. Calm and quiet.",
+     "r": [
+      0.25,
+      0.55,
+      0.5,
+      0.35
+     ]
+    }
+   ]
   }
  }
 }
