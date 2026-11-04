@@ -6,6 +6,8 @@ import { imgHTML, hydrateImages, blobURL, commons } from './images.js';
 import { Visits, Favorites, MuseumFavorites, Lists, duration } from './visits.js';
 import { noticeData, openNotice } from './notice.js';
 import { packStatus, downloadPack, mb } from './offline.js';
+import { SITES, siteById, guideURL } from './site.js';
+import { museumOf } from './visits.js';
 
 const $ = sel => document.querySelector(sel);
 const page = $('#page');
@@ -191,11 +193,19 @@ function workInfo(id, fallback = null) {
   const w = D.guideWorks.get(id) ?? D.discover.works[id] ?? fallback;
   if (!w) return null;
   return { id, title: w.title, artist: w.artist, year: w.date ?? w.year, museum: shortMuseum(w.museumId, w.museum), museumId: w.museumId,
-    href: `#work/${id}${w.museumId && D.guides[w.museumId] ? `/${w.museumId}` : ''}`, thumb: cls => workImg(w, cls, 400) };
+    href: workHref(w, id), thumb: cls => workImg(w, cls, 400) };
+}
+
+// Works on view in a museum with a map guide open there; the rest open the work page here.
+function workHref(w, id = w.id) {
+  const site = siteById(w.museumId);
+  if (site && (w.onView || w.img)) return guideURL(site, `art/${id}`);
+  return `#work/${id}${w.museumId && D.guides[w.museumId] ? `/${w.museumId}` : ''}`;
 }
 
 // A work's picture: a Wikimedia Commons file, or a link the museum allows apps to show.
 function workImg(w, cls, width) {
+  if (w.img) return imgHTML(w, cls, w.title);
   if (w.image) return `<img class="${cls}" src="${commons(w.image, width)}" alt="${escape(w.title)}" loading="lazy">`;
   if (w.imageUrl) return `<img class="${cls}" src="${escape(w.imageUrl)}" alt="${escape(w.title)}" loading="lazy">`;
   return `<span class="${cls} img-empty"></span>`;
@@ -235,9 +245,10 @@ function guideListHTML(id) {
   const doc = guideDocNow(id);
   const works = guideWorks(id);
   const g = S.guide;
-  const sub = w => [w.artist, w.date ?? w.year, w.gallery ? `Gallery ${w.gallery}` : w.location].filter(Boolean).join(' · ');
+  const room = siteById(id)?.room ?? (g => `Gallery ${g}`);
+  const sub = w => [w.artist, w.date ?? w.year, w.gallery ? room(w.gallery) : w.location].filter(Boolean).join(' · ');
   const list = works.length
-    ? `<div class="tiles">${works.slice(0, g.shown).map(w => `<a class="tile" href="#work/${w.id}/${id}"><div class="tile__img">${workImg(w, 'ph', 400)}</div>
+    ? `<div class="tiles">${works.slice(0, g.shown).map(w => `<a class="tile" href="${workHref(w)}"><div class="tile__img">${workImg(w, 'ph', 400)}</div>
         <p class="tile__title">${escape(w.title)}</p><p class="tile__sub">${escape(sub(w))}</p></a>`).join('')}</div>
       ${works.length > g.shown ? `<button class="btn btn--gray more" type="button" data-guide-more>Show More (${(works.length - g.shown).toLocaleString('en-US')})</button>` : ''}`
     : `<div class="s-empty"><h2>No Works Found</h2><p>Try another artist, title or gallery.</p></div>`;
@@ -393,11 +404,12 @@ function homePage() {
 }
 
 function continueCard() {
-  const m = D.byMuseum.get(MFA);
   const live = S.active;
-  return `<a class="cont" href="${live ? 'guide.html#visits' : 'guide.html'}">
+  const site = siteById(museumOf(live)) ?? SITES.mfa;
+  const m = D.byMuseum.get(site.id);
+  return `<a class="cont" href="${guideURL(site, live ? 'visits' : '')}">
     <span class="cont__img">${photo(m?.image, 300)}</span>
-    <span><p class="cont__title">${live ? '<span class="live-dot"></span>Visit in progress' : 'MFA Boston'}</p>
+    <span><p class="cont__title">${live ? `<span class="live-dot"></span>Visit in progress · ${escape(site.short)}` : 'MFA Boston'}</p>
       <p class="cont__sub">${live ? `${live.rooms.length} room${live.rooms.length === 1 ? '' : 's'} so far · open the map guide` : '3D map guide, tours and directions'}</p></span>
     <span class="cont__go">${I.chev}</span></a>`;
 }
@@ -452,7 +464,7 @@ function nearby() {
 
 afterRender.home = () => {
   const visited = new Set();
-  if (S.visits.length || S.active) visited.add(MFA);
+  for (const v of [...S.visits, ...(S.active ? [S.active] : [])]) visited.add(museumOf(v));
   const ids = [...visited, ...S.museumFavs.filter(id => !visited.has(id))];
   const pts = ids.map(id => D.byMuseum.get(id)).filter(m => m?.at);
   const map = makeMap($('#homeMap'), { cooperative: true });
@@ -470,7 +482,7 @@ afterRender.home = () => {
 function museumsList() {
   let list = D.museums;
   if (S.museumsFilter === 'fav') list = S.museumFavs.map(id => D.byMuseum.get(id)).filter(Boolean);
-  if (S.museumsFilter === 'guide') list = list.filter(m => m.id === MFA || D.guides[m.id]);
+  if (S.museumsFilter === 'guide') list = list.filter(m => siteById(m.id) || D.guides[m.id]);
   const q = norm(S.query);
   if (q) list = list.filter(m => norm(`${m.name} ${m.city ?? ''} ${m.state ?? ''}`).includes(q));
   if (S.area) list = list.filter(m => m.at && S.area.contains(m.at));
@@ -540,6 +552,7 @@ function museumPage(id) {
   if (!m) return `${topbar({ fallback: 'museums' })}<div class="s-empty"><h2>Museum Not Found</h2></div>`;
   const fav = S.museumFavs.includes(id);
   const highlights = museumHighlights(id);
+  const site = siteById(id);
   page.classList.add('page--hero');
   return `
     ${topbar({ fallback: 'museums', trailing: `<button class="round glass" type="button" data-fav-museum="${id}" aria-pressed="${fav}" aria-label="${fav ? 'Remove from Favorites' : 'Add to Favorites'}">${I.heart(fav)}</button>` })}
@@ -553,17 +566,23 @@ function museumPage(id) {
         ${m.wikipedia ? `<a href="https://en.wikipedia.org/wiki/${encodeURIComponent(m.wikipedia)}" target="_blank" rel="noopener">Wikipedia ${I.ext}</a>` : ''}
         ${m.website ? `<a href="${escape(m.website)}" target="_blank" rel="noopener">${escape(host(m.website))} ${I.ext}</a>` : ''}
       </div>
-      ${id === MFA ? `<div class="btn-row"><a class="btn" href="guide.html">${I.map}Open the Map Guide</a></div>
-        <p class="fine">3D floor plans, search for every work on view, tours, directions and your visit diary.</p>` : ''}
+      ${site ? `<div class="btn-row"><a class="btn" href="${guideURL(site)}">${I.map}Open the Map Guide</a></div>
+        <p class="fine">${site.key === 'mfa' ? '3D floor plans, search for every work on view, tours, directions and your visit diary.'
+          : '3D floor plans from the museum’s map, search for every work on view, directions and your visit diary.'}</p>` : ''}
     </div>
-    ${id === MFA ? '<div class="info-card offline" id="offlineCard" aria-live="polite"><p class="offline__sub">Checking offline pack…</p></div>' : ''}
+    ${site ? '<div class="info-card offline" id="offlineCard" aria-live="polite"><p class="offline__sub">Checking offline pack…</p></div>' : ''}
     <div class="info-card"><h2>Welcome to ${escape(m.name)}</h2><div id="museumAbout"><p style="color:var(--ink-3)">Loading…</p></div></div>
     <div class="info-card"><h2>Visit Information</h2>
       <dl class="kv">
         <dt>Address</dt><dd>${escape(m.address || [m.city, m.state].filter(Boolean).join(', ') || '—')}</dd>
-        <dt>Hours</dt><dd>Check the museum's website for current hours</dd>
+        ${m.entrances ? `<dt>Entrances</dt><dd>${m.entrances.map(escape).join('<br>')}</dd>` : ''}
+        <dt>Hours</dt><dd>${m.hours ? m.hours.map(escape).join('<br>') : 'Check the museum\'s website for current hours'}</dd>
+        ${m.admission ? `<dt>Admission</dt><dd>${m.admission.map(escape).join('<br>')}</dd>` : ''}
+        ${m.phone ? `<dt>Phone</dt><dd><a href="tel:${escape(m.phone.replace(/[^0-9+]/g, ''))}">${escape(m.phone)}</a></dd>` : ''}
         ${m.website ? `<dt>Website</dt><dd>${escape(host(m.website))}</dd>` : ''}
       </dl>
+      ${m.visitNotes ? `<p class="fine">${m.visitNotes.map(escape).join(' ')}</p>` : ''}
+      ${m.infoChecked ? `<p class="fine">From the museum's website, checked ${escape(m.infoChecked)}. Hours and prices can change.</p>` : ''}
       <div class="btn-row">
         ${m.at ? `<a class="btn btn--gray" href="https://maps.apple.com/?daddr=${m.at.join(',')}&q=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">${I.nav}Get Directions</a>` : ''}
         ${m.website ? `<a class="btn btn--gray" href="${escape(m.website)}" target="_blank" rel="noopener">${I.ext}Open Website</a>` : ''}
@@ -577,37 +596,41 @@ function museumPage(id) {
 }
 afterRender.museum = id => {
   fillSummary($('#museumAbout'), D.byMuseum.get(id)?.wikipedia, 'No description yet.');
-  if (id === MFA) renderOfflineCard();
+  if (siteById(id)) renderOfflineCard(null, siteById(id));
 };
 
 // ---------- offline pack ----------
 // Museum Wi-Fi and signal are often poor: download the whole guide at home, use it with no connection.
 let packJob = null;
-async function renderOfflineCard(progress = null) {
+async function renderOfflineCard(progress = null, site = packSite) {
   const el = $('#offlineCard');
-  if (!el) return;
+  if (!el || !site) return;
+  packSite = site;
+  const name = site.key === 'mfa' ? 'MFA Boston' : site.short;
+  const what = st => site.notice ? `map guide, ${st.works.toLocaleString('en-US')} works, their pictures and ${st.notice} What to Notice guides`
+    : `map guide, ${st.works.toLocaleString('en-US')} works and their pictures`;
   const icon = `<span class="offline__icon">${icon_(progress ? 'down' : 'cloud')}</span>`;
   if (progress) {
     const pct = progress.totalBytes ? Math.min(100, Math.round(progress.bytes / progress.totalBytes * 100)) : 0;
-    el.innerHTML = `<div class="offline__head">${icon}<div><h2>Downloading MFA Boston</h2>
+    el.innerHTML = `<div class="offline__head">${icon}<div><h2>Downloading ${escape(name)}</h2>
       <p class="offline__sub">${mb(progress.bytes)} of ${mb(progress.totalBytes)} · keep the app open</p></div></div>
       <div class="offline__bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Download progress"><span style="width:${pct}%"></span></div>
       <button class="btn btn--plain" type="button" data-pack-stop>Pause</button>`;
     return;
   }
-  const st = await packStatus();
+  const st = await packStatus(site);
   if (!el.isConnected) return;
   if (!st.supported) { el.innerHTML = '<p class="offline__sub">This browser can’t save the guide for offline use.</p>'; return; }
   if (st.ready) {
     const when = st.saved?.at ? new Date(st.saved.at).toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) : null;
     el.innerHTML = `<div class="offline__head"><span class="offline__icon offline__icon--ok">${icon_('check')}</span><div><h2>Ready Offline</h2>
-      <p class="offline__sub">Map guide, ${st.works.toLocaleString("en-US")} works, their pictures and ${st.notice} What to Notice guides are on this device${when ? ` · saved ${when}` : ''}. No signal needed at the museum.</p></div></div>
+      <p class="offline__sub">The ${what(st)} are on this device${when ? ` · saved ${when}` : ''}. No signal needed at the museum.</p></div></div>
       <button class="btn btn--plain" type="button" data-pack-start>Check for Updates</button>`;
     return;
   }
   const left = Math.max(0, st.bytes - st.haveBytes);
-  el.innerHTML = `<div class="offline__head">${icon}<div><h2>Take MFA Boston Offline</h2>
-    <p class="offline__sub">Museum Wi-Fi is unreliable. Download the map guide, ${st.works.toLocaleString("en-US")} works, their pictures and all What to Notice guides before you go: ${st.have ? `${mb(left)} left` : `about ${mb(st.bytes)}`}, best on Wi-Fi.</p></div></div>
+  el.innerHTML = `<div class="offline__head">${icon}<div><h2>Take ${escape(name)} Offline</h2>
+    <p class="offline__sub">Museum Wi-Fi is unreliable. Download the ${what(st)} before you go: ${st.have ? `${mb(left)} left` : `about ${mb(st.bytes)}`}, best on Wi-Fi.</p></div></div>
     <button class="btn" type="button" data-pack-start>${icon_('down')}${st.have ? 'Finish Download' : 'Download'}</button>`;
 }
 const icon_ = k => ({
@@ -616,14 +639,16 @@ const icon_ = k => ({
   check: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg>',
 }[k]);
 
+let packSite = null;
 async function startPack() {
-  if (packJob) return;
-  packJob = downloadPack(p => renderOfflineCard(p));
+  if (packJob || !packSite) return;
+  const site = packSite;
+  packJob = downloadPack(site, p => renderOfflineCard(p, site));
   const r = await packJob.done;
   packJob = null;
-  if (r.ok) toast('MFA Boston is ready offline');
+  if (r.ok) toast(`${site.key === 'mfa' ? 'MFA Boston' : site.short} is ready offline`);
   else if (!r.stopped) toast(r.failed ? 'Some files didn’t download. Check your connection and tap again.' : 'Paused');
-  renderOfflineCard();
+  renderOfflineCard(null, site);
 }
 
 function museumHighlights(id) {
@@ -703,20 +728,22 @@ function libraryHTML(all, { listId = null } = {}) {
 function visitsHTML() {
   const rows = [];
   if (S.active) {
-    rows.push(`<li><a class="lib-row" href="guide.html#visits"><span class="check"></span><span class="mosaic"></span>
+    const site = siteById(museumOf(S.active)) ?? SITES.mfa;
+    rows.push(`<li><a class="lib-row" href="${guideURL(site, 'visits')}"><span class="check"></span><span class="mosaic"></span>
       <span><span class="lib-row__title"><span class="live-dot"></span>Visit in progress</span>
-      <span class="lib-row__sub">MFA Boston · ${S.active.rooms.length} room${S.active.rooms.length === 1 ? '' : 's'} · ${duration(S.active)}</span></span>${I.chev}</a></li>`);
+      <span class="lib-row__sub">${escape(site.short)} · ${S.active.rooms.length} room${S.active.rooms.length === 1 ? '' : 's'} · ${duration(S.active)}</span></span>${I.chev}</a></li>`);
   }
   for (const v of S.visits) {
     const snap = v.snapshots ? Object.entries(v.snapshots)[0] : null;
-    rows.push(`<li><a class="lib-row" href="guide.html#entry/${v.id}"><span class="check"></span>
+    const site = siteById(museumOf(v)) ?? SITES.mfa;
+    rows.push(`<li><a class="lib-row" href="${guideURL(site, `entry/${v.id}`)}"><span class="check"></span>
       ${snap ? `<img class="thumb" src="${blobURL(`${v.id}:${snap[0]}`, snap[1])}" alt="">` : '<span class="thumb"></span>'}
       <span><span class="lib-row__title">${new Date(v.startedAt).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</span>
       <span class="lib-row__sub">${v.rooms.length} room${v.rooms.length === 1 ? '' : 's'} · ${duration(v)}</span>
-      <span class="lib-row__where">${I.pin}MFA Boston</span></span>${I.chev}</a></li>`);
+      <span class="lib-row__where">${I.pin}${escape(site.short)}</span></span>${I.chev}</a></li>`);
   }
   if (!rows.length) {
-    return `<div class="s-empty"><h2>No Visits Yet</h2><p>Start a visit in the MFA map guide and mark the rooms you walk through. It becomes a diary here.</p>
+    return `<div class="s-empty"><h2>No Visits Yet</h2><p>Start a visit in a map guide (MFA Boston or the Wadsworth) and mark the rooms you walk through. It becomes a diary here.</p>
       <a class="btn" href="guide.html#visits">Open the Map Guide</a></div>`;
   }
   return `<ul class="lib-list">${rows.join('')}</ul>`;
@@ -869,7 +896,8 @@ function workPage(id) {
 // Where to find a work from a museum's guide, and its label details.
 function guideFacts(w) {
   if (!D.guideWorks.has(w.id)) return '';
-  const where = w.gallery ? [`Gallery ${w.gallery}`, w.galleryName, w.floor ? `Floor ${w.floor}` : ''].filter(Boolean).join(' · ') : w.location;
+  const room = siteById(w.museumId)?.room ?? (g => `Gallery ${g}`);
+  const where = w.gallery ? [room(w.gallery), w.galleryName, w.floor ? `Floor ${w.floor}` : ''].filter(Boolean).join(' · ') : w.location;
   const rows = [['Where', w.onView ? where || 'On view' : where ? `${where} (may have moved)` : 'Not known to be on view'],
     ['Type', w.type], ['Medium', w.medium], ['Culture', w.culture], ['Accession', w.accession]].filter(([, v]) => v);
   return `<div class="info-card" style="margin-top:16px"><dl class="kv">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${escape(v)}</dd>`).join('')}</dl>

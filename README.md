@@ -93,6 +93,30 @@ python3 -m venv .venv && .venv/bin/pip install pymupdf numpy pillow
 
 Hand decisions (room splits, names, pinned labels) live in `OVERRIDES` at the top of the script.
 
+## The Wadsworth Atheneum map guide
+
+`guide.html?museum=wadsworth` is the same 3D map guide for the Wadsworth Atheneum (Hartford). What differs between
+museums lives in `js/site.js`; the Wadsworth's files are in `data/wadsworth/`.
+
+- **Map** — `tools/trace_wadsworth.py` traces `data/wadsworth/floors.json` from the museum's own "Map and Visitor Guide"
+  PDF (linked from thewadsworth.org/visit/planning-your-visit/). That map has no gallery numbers: each level is drawn
+  as the Avery, Morgan and Wadsworth wings, so a map "gallery" here is one wing on one level ("Avery 2"), named and
+  described the way the museum's legend does.
+- **Works on view** — the museum's collection site marks each work "Currently on view?" but not its room. To refresh:
+
+  ```bash
+  node tools/harvest-wadsworth.cjs /tmp/onview.jsonl            # slow on purpose: ~3 hours
+  python3 tools/fetch_wadsworth_images.py /tmp/onview.jsonl /tmp/wad-images   # can run at the same time
+  python3 tools/build_wadsworth.py /tmp/onview.jsonl /tmp/wad-images
+  ```
+
+  `build_wadsworth.py` places each work in the wing whose legend fits its origin, date and kind (`wing_of`), packs the
+  pictures into `data/wadsworth/images/images-NNN.bin`, and also rewrites the museum page's list
+  (`data/guides/Q403080.json`). The app marks these wings as estimates.
+- **Visit information** (hours, admission, entrances, phone) is typed into `data/museums.json` from the museum's website;
+  `build_open_data.py --museums` keeps it.
+- **Offline** — `tools/build_pack.py` writes `data/pack-wadsworth.json` next to the MFA's.
+
 ## Guides for more museums
 
 Museums other than the MFA get a guide on their museum page (**In the Collection**: search their works, and see what is

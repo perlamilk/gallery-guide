@@ -2,16 +2,18 @@
 // (museum Wi-Fi and cell signal are often poor). Files go into the same cache the
 // service worker serves from, so the guide then works with no connection at all.
 
-// The pack's file list and sizes come from data/pack-mfa.json (written by tools/build_pack.py at
+// The pack's file list and sizes come from data/pack-<museum>.json (written by tools/build_pack.py at
 // each publish), so the app can say how big it is and show progress by megabytes, not file count.
-export async function packFiles() {
+// `site` is one of SITES in site.js (MFA Boston, the Wadsworth).
+export async function packFiles(site) {
+  const list = site.pack;
   try {
-    const r = await fetch('data/pack-mfa.json', { cache: 'no-store' });
-    if (r.ok) { const p = await r.json(); return { files: [{ u: 'data/pack-mfa.json', s: 0 }, ...p.files], bytes: p.bytes, works: p.works, notice: p.notice }; }
+    const r = await fetch(list, { cache: 'no-store' });
+    if (r.ok) { const p = await r.json(); return { files: [{ u: list, s: 0 }, ...p.files], bytes: p.bytes, works: p.works, notice: p.notice }; }
   } catch { /* offline: fall back to the cached copy */ }
-  const cached = await caches.match('data/pack-mfa.json', { ignoreSearch: true });
+  const cached = await caches.match(list, { ignoreSearch: true });
   const p = cached ? await cached.json() : { files: [], bytes: 0, works: 0, notice: 0 };
-  return { files: [{ u: 'data/pack-mfa.json', s: 0 }, ...p.files], bytes: p.bytes, works: p.works, notice: p.notice };
+  return { files: [{ u: list, s: 0 }, ...p.files], bytes: p.bytes, works: p.works, notice: p.notice };
 }
 
 async function cacheName() {
@@ -29,25 +31,25 @@ async function cacheName() {
   return keys.sort().at(-1) ?? 'gallery-guide-offline';
 }
 
-export async function packStatus() {
+export async function packStatus(site) {
   if (!('caches' in window)) return { supported: false };
-  const { files, bytes, works, notice } = await packFiles();
+  const { files, bytes, works, notice } = await packFiles(site);
   const hits = await Promise.all(files.map(f => caches.match(f.u, { ignoreSearch: true })));
   const have = files.filter((f, k) => hits[k]);
   const haveBytes = have.reduce((t, f) => t + f.s, 0);
   let saved = null;
-  try { saved = JSON.parse(localStorage.getItem('gg-pack-mfa') || 'null'); } catch { /* storage off */ }
+  try { saved = JSON.parse(localStorage.getItem(site.packKey) || 'null'); } catch { /* storage off */ }
   return { supported: true, total: files.length, have: have.length, bytes, haveBytes, ready: files.length > 0 && have.length === files.length, works, notice, saved };
 }
 
 // Downloads what's missing, 4 at a time. onProgress({ done, total, bytes, totalBytes }).
 // Stop with the returned controller; whatever finished stays saved, and the next run continues.
-export function downloadPack(onProgress) {
+export function downloadPack(site, onProgress) {
   let stopped = false;
   const run = (async () => {
     navigator.storage?.persist?.().catch(() => {});   // ask the phone not to clear it when space runs low
     const cache = await caches.open(await cacheName());
-    const { files, bytes: totalBytes } = await packFiles();
+    const { files, bytes: totalBytes } = await packFiles(site);
     const missing = [];
     let doneBytes = 0;
     for (const f of files) {
@@ -74,7 +76,7 @@ export function downloadPack(onProgress) {
     await Promise.all([next(), next(), next(), next()]);
     const ok = !stopped && done === total;
     if (ok) {
-      try { localStorage.setItem('gg-pack-mfa', JSON.stringify({ at: new Date().toISOString(), total })); } catch { /* fine */ }
+      try { localStorage.setItem(site.packKey, JSON.stringify({ at: new Date().toISOString(), total })); } catch { /* fine */ }
     }
     return { ok, done, total, failed, stopped };
   })();

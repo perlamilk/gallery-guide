@@ -532,3 +532,4 @@ button.step__text { color: var(--accent); }
   .sheet[data-state="full"] { border-radius: 24px; }
   .sheet[data-state="full"] .sheet__body { padding-bottom: 28px; }
 }
+.tab[hidden] { display: none !important; }

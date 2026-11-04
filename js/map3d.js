@@ -187,10 +187,9 @@ export class MuseumMap {
 
   #buildShape(room, floor) {
     const kind = KIND[room.kind] ?? KIND.corridor;
-    const shape = new THREE.Shape(room.poly.map(p => {
-      const v = this.toWorld(p, floor);
-      return new THREE.Vector2(v.x, -v.z);
-    }));
+    const flat = p => { const v = this.toWorld(p, floor); return new THREE.Vector2(v.x, -v.z); };
+    const shape = new THREE.Shape(room.poly.map(flat));
+    for (const hole of room.holes ?? []) shape.holes.push(new THREE.Path(hole.map(flat)));
     const geo = new THREE.ExtrudeGeometry(shape, { depth: 1, bevelEnabled: false });
     geo.rotateX(-Math.PI / 2);
 
@@ -218,6 +217,8 @@ export class MuseumMap {
     const box = new THREE.Box3().setFromObject(mesh);
     const center = box.getCenter(new THREE.Vector3());
     const size = box.getSize(new THREE.Vector3());
+    // L-shaped wings: their box centre can fall outside them; the PDF tracer gives a point well inside
+    if (room.labelAt) { const a = this.toWorld(room.labelAt, floor); center.x = a.x; center.z = a.z; }
 
     // shapes that overlap in the PDF sit a little higher the later they're drawn (no flicker between them)
     const lift = (room.z ?? 0) * (room.kind === 'closed' ? 0.01 : 0.03);
@@ -801,6 +802,7 @@ export class MuseumMap {
 
 // "273" or, when one shape carries two numbers, "273 / 274"; more than two -> "214 +"
 function galleryLabel(room) {
+  if (room.label) return room.label;
   const ids = [room.id, ...(room.aliases ?? [])];
   if (ids.length === 1) return room.id;
   if (ids.length === 2) return ids.join(' / ');
