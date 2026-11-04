@@ -33,6 +33,17 @@ export const SITES = {
     official: false,
     flat: true,
   },
+  worcester: {
+    key: 'worcester', id: 'Q847508', short: 'Worcester Art Museum', name: 'Worcester Art Museum',
+    floors: 'data/worcester/floors.json', artworks: 'data/worcester/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-worcester.json', packKey: 'gg-pack-worcester',
+    room: id => (/^\d{4}$/.test(id) ? `Gallery ${id}` : id),
+    website: 'View on Wikidata',             // the museum's own collection site blocks automated reading
+    official: false,
+    flat: true,
+    blurb: 'Floor plans from the museum’s map, works from its collection in the gallery where they most likely hang, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
