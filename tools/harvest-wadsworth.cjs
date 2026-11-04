@@ -19,8 +19,19 @@ const done = new Set(fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8').trim().sp
   await p.waitForTimeout(6000);
   const total = +(await p.locator('[id$=panels_tp4]').innerText()).match(/Found ([\d,]+) record/)[1].replace(/,/g, '');
   console.log("total", total); const LIMIT = +(process.env.LIMIT || total);
-  // open record 1
-  await p.locator('[id$=panels_tp4] .lc-header-view__header a').first().click();
+  // open the first record, or START=<n> to continue an earlier run (appends to the same file)
+  const START = +(process.env.START || 1);
+  if (START > 1) {
+    // the Jump to Record box is folded away: set it and press its Go link directly
+    await p.locator('[id$=panels_tp4] input[id$=jumpToRecordTextLast]').first().evaluate((el, v) => { el.value = v; }, String(START));
+    await p.locator('[id$=panels_tp4] a[id$=jumpToRecordLinkLast]').first().dispatchEvent('click');
+    await p.waitForTimeout(8000);
+  }
+  const opened = await p.locator(`[id$=panels_tp4] [aria-current="page"][aria-label="Record ${START}"]`).count();
+  if (!opened) {
+    const cell = p.locator('[id$=panels_tp4] .lc-header-view').filter({ hasText: new RegExp(`Record ${START}\\b`) }).first();
+    await (await cell.count() ? cell.locator('.lc-header-view__header a') : p.locator('[id$=panels_tp4] .lc-header-view__header a')).first().click();
+  }
   await p.waitForTimeout(5000);
   const read = () => p.evaluate(() => {
     const panel = document.querySelector('[id$=panels_tp4]');
@@ -41,7 +52,7 @@ const done = new Set(fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8').trim().sp
     out._n = cur ? +cur.getAttribute('aria-label').slice(7) : null;
     return out;
   });
-  let n = 1, fails = 0;
+  let n = START, fails = 0;
   while (n <= Math.min(total, LIMIT)) {
     let r = await read();
     if (r._n !== n) { await p.waitForTimeout(3000); r = await read(); }
