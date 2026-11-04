@@ -9205,9 +9205,12 @@
      ]
     },
     {
-     "id": "2-rotunda",
-     "kind": "space",
-     "name": "Rotunda",
+     "id": "205",
+     "kind": "gallery",
+     "name": "Rotunda and Colonnade",
+     "aliases": [
+      "204"
+     ],
      "poly": [
       [
        397.6,
@@ -9329,7 +9332,8 @@
        397.6,
        907.1
       ]
-     ]
+     ],
+     "guess": "A named space with no number in the PDF; its gallery numbers are given by hand."
     },
     {
      "id": "273",
@@ -11790,7 +11794,7 @@
     },
     {
      "a": "207",
-     "b": "2-rotunda",
+     "b": "205",
      "at": [
       432.4,
       935.0
@@ -11800,7 +11804,7 @@
     },
     {
      "a": "206",
-     "b": "2-rotunda",
+     "b": "205",
      "at": [
       431.4,
       959.5
@@ -11900,7 +11904,7 @@
     },
     {
      "a": "250",
-     "b": "2-rotunda",
+     "b": "205",
      "at": [
       403.2,
       889.0
@@ -11919,7 +11923,7 @@
      "axis": "h"
     },
     {
-     "a": "2-rotunda",
+     "a": "205",
      "b": "273",
      "at": [
       375.1,
@@ -11929,7 +11933,7 @@
      "axis": "v"
     },
     {
-     "a": "2-rotunda",
+     "a": "205",
      "b": "271",
      "at": [
       374.1,
