@@ -215,6 +215,14 @@ outline with approximate places. The house reopens Nov 16, 2026 as "The Elms Exp
 isn't published yet. Works: objects that name the house or came from the Berwinds (gifts from the Edward J. Berwind II
 family are left out); some placed from their records or the statuary list, a few guessed (marked).
 
+Rosecliff, Newport (Nov 4, 2026): map guide at `guide.html?museum=rosecliff`, built by `tools/harvest_rosecliff.py` (the
+same Preservation Society Digital Collections service) and `tools/build_rosecliff.py`. Map: floor G (parking next to the
+house, the drive, the rose garden, the lawn to the Cliff Walk) from OpenStreetMap, estate boundary approximate; floors 1
+and 2 traced from Stanford White's own 1902 plans, plate 173 of "A Monograph of the Work of McKim, Mead & White" (vol. 2,
+Internet Archive gri_33125006526137, page n154), turned so north is up. The 1972 National Register nomination has no
+plans. Floor 2 is the exhibition floor today; basement (Museum Store, restrooms) as an outline with approximate places.
+Works: objects that name the house or came from Theresa Fair Oelrichs or the J. Edgar Monroe family.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
