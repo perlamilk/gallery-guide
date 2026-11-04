@@ -254,7 +254,7 @@ function guideListHTML(id) {
       ${works.length > g.shown ? `<button class="btn btn--gray more" type="button" data-guide-more>Show More (${(works.length - g.shown).toLocaleString('en-US')})</button>` : ''}`
     : `<div class="s-empty"><h2>No Works Found</h2><p>Try another artist, title or gallery.</p></div>`;
   return `${list}
-    <p class="fine">${works.length.toLocaleString('en-US')} work${works.length === 1 ? '' : 's'} · ${escape(doc.source)} · checked ${escape(doc.checked)}${doc.onViewKnown ? '' : '. Wikidata lists what the museum owns, not what is on view today.'}</p>`;
+    <p class="fine">${works.length.toLocaleString('en-US')} work${works.length === 1 ? '' : 's'} · ${escape(doc.source)} · checked ${escape(doc.checked)}${doc.onViewKnown ? '' : `. ${/Wikidata/.test(doc.source) ? 'Wikidata lists' : 'This list shows'} what the museum owns, not what is on view today.`}</p>`;
 }
 
 function guideHTML(id) {
@@ -914,7 +914,7 @@ function workPage(id) {
   const more = artist ? artist.works.filter(x => x !== id).slice(0, 6).map(x => workInfo(x)).filter(Boolean) : [];
   const m = D.byMuseum.get(w.museumId);
   return `${topbar({ fallback: 'discover', trailing: `<button class="round glass" type="button" data-save-work="${id}" aria-pressed="${saved}" aria-label="${saved ? 'Remove from Library' : 'Save to Library'}">${I.heart(saved)}</button>` })}
-    <div class="work-hero">${w.image ? `<img src="${commons(w.image, 1000)}" alt="${escape(w.title)}">` : w.imageUrl ? `<img src="${escape(w.imageUrl.replace(/width=\d+/, 'width=1000'))}" alt="${escape(w.title)}">` : ''}</div>
+    <div class="work-hero">${w.image ? `<img src="${commons(w.image, 1000)}" alt="${escape(w.title)}">` : w.imageUrl ? `<img src="${escape(w.imageUrl.replace(/width=\d+/, 'width=1000').replace(/\/iiif\/image\/(\d+)\/full\/\d+,\//, '/iiif/image/$1/full/1000,/'))}" alt="${escape(w.title)}">` : ''}</div>
     <h1 class="work-title">${escape(w.title)}</h1>
     <p class="work-sub">${escape([w.artist, w.date ?? w.year].filter(Boolean).join(' · '))}</p>
     ${guideFacts(w)}
@@ -935,7 +935,7 @@ function guideFacts(w) {
   const room = siteById(w.museumId)?.room ?? (g => `Gallery ${g}`);
   const where = w.gallery ? [room(w.gallery), w.galleryName, w.floor ? `Floor ${w.floor}` : ''].filter(Boolean).join(' · ') : w.location;
   const rows = [['Where', w.onView ? where || 'On view' : where ? `${where} (may have moved)` : 'Not known to be on view'],
-    ['Type', w.type], ['Medium', w.medium], ['Culture', w.culture], ['Accession', w.accession]].filter(([, v]) => v);
+    ['Type', w.type], ['Medium', w.medium], ['Culture', w.culture], ['Size', w.dimensions], ['Credit', w.credit], ['Accession', w.accession], ['Notes', w.caption]].filter(([, v]) => v);
   return `<div class="info-card" style="margin-top:16px"><dl class="kv">${rows.map(([k, v]) => `<dt>${k}</dt><dd>${escape(v)}</dd>`).join('')}</dl>
     ${w.url ? `<div class="btn-row"><a class="btn btn--gray" href="${escape(w.url)}" target="_blank" rel="noopener">${I.ext}View on the Museum's Website</a></div>` : ''}</div>`;
 }
