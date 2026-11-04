@@ -6054,6 +6054,724 @@
      ]
     }
    ]
+  },
+  "31929": {
+   "image": "data/notice/31929.jpg",
+   "file": "John Singer Sargent - Ganymede and the Eagle - 21.10508 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! John Singer Sargent decorated the Rotunda between 1916 and 1921. He designed the plaster reliefs around the paintings too. Here: Zeus, as an eagle, carries off the Trojan boy Ganymede to serve the gods."
+    },
+    {
+     "title": "The eagle",
+     "text": "Huge wings fill the circle; the boy hangs on, swept up into the sky.",
+     "r": [
+      0.15,
+      0.3,
+      0.7,
+      0.42
+     ]
+    },
+    {
+     "title": "The reliefs above",
+     "text": "Sculpted figures sit on top of the frame, in white plaster.",
+     "r": [
+      0.15,
+      0,
+      0.7,
+      0.32
+     ]
+    },
+    {
+     "title": "Below",
+     "text": "More winged figures in relief at the bottom.",
+     "r": [
+      0.15,
+      0.75,
+      0.7,
+      0.25
+     ]
+    },
+    {
+     "title": "Paint and plaster",
+     "text": "The paintings are oil on canvas, glued to the ceiling like wallpaper."
+    }
+   ]
+  },
+  "31930": {
+   "image": "data/notice/31930.jpg",
+   "file": "John Singer Sargent - Music - 21.10509 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! John Singer Sargent decorated the Rotunda between 1916 and 1921. He designed the plaster reliefs around the paintings too. This roundel is Music."
+    },
+    {
+     "title": "The violinist",
+     "text": "A woman in white plays the violin, head thrown back.",
+     "r": [
+      0.17,
+      0.3,
+      0.66,
+      0.42
+     ]
+    },
+    {
+     "title": "The bow",
+     "text": "Follow the bow across the strings.",
+     "r": [
+      0.3,
+      0.33,
+      0.4,
+      0.15
+     ]
+    },
+    {
+     "title": "The reliefs",
+     "text": "Two sculpted figures recline on top of the frame.",
+     "r": [
+      0.15,
+      0,
+      0.7,
+      0.32
+     ]
+    },
+    {
+     "title": "Below",
+     "text": "Another relief: a figure stretching out.",
+     "r": [
+      0.35,
+      0.8,
+      0.55,
+      0.2
+     ]
+    }
+   ]
+  },
+  "31931": {
+   "image": "data/notice/31931.jpg",
+   "file": "John Singer Sargent - Astronomy - 21.10510 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! John Singer Sargent decorated the Rotunda between 1916 and 1921. He designed the plaster reliefs around the paintings too. This roundel is Astronomy."
+    },
+    {
+     "title": "The figure",
+     "text": "A seated figure, wrapped in robes, looks out into the dark.",
+     "r": [
+      0.12,
+      0.3,
+      0.76,
+      0.42
+     ]
+    },
+    {
+     "title": "The reliefs",
+     "text": "Plaster figures sit on top of the frame.",
+     "r": [
+      0.15,
+      0,
+      0.7,
+      0.32
+     ]
+    },
+    {
+     "title": "Paint and plaster",
+     "text": "The paintings are oil on canvas, glued to the ceiling like wallpaper."
+    }
+   ]
+  },
+  "31932": {
+   "image": "data/notice/31932.jpg",
+   "file": "John Singer Sargent - Prometheus - 21.10511 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! John Singer Sargent decorated the Rotunda between 1916 and 1921. He designed the plaster reliefs around the paintings too. Prometheus stole fire for humans; as punishment, Zeus sent an eagle to attack him every day."
+    },
+    {
+     "title": "The eagle",
+     "text": "Dark wings spread over the twisted body of Prometheus.",
+     "r": [
+      0.15,
+      0.3,
+      0.7,
+      0.42
+     ]
+    },
+    {
+     "title": "The reliefs",
+     "text": "Sculpted figures above the frame.",
+     "r": [
+      0.15,
+      0,
+      0.7,
+      0.32
+     ]
+    },
+    {
+     "title": "The archer",
+     "text": "At the bottom, a relief of an archer drawing his bow.",
+     "r": [
+      0.45,
+      0.82,
+      0.45,
+      0.18
+     ]
+    }
+   ]
+  },
+  "31933": {
+   "image": "data/notice/31933.jpg",
+   "file": "Sargent - Apollo and the Muses, 1921, 21.10512.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! John Singer Sargent decorated the Rotunda between 1916 and 1921. He designed the plaster reliefs around the paintings too. Apollo, god of music and poetry, with the nine Muses, goddesses of the arts."
+    },
+    {
+     "title": "Apollo",
+     "text": "In the center, with a halo of light behind his head.",
+     "r": [
+      0.38,
+      0.12,
+      0.24,
+      0.3
+     ]
+    },
+    {
+     "title": "The Muses",
+     "text": "They dance around him in a ring, robes swirling.",
+     "r": [
+      0.1,
+      0.15,
+      0.8,
+      0.65
+     ]
+    },
+    {
+     "title": "The masks",
+     "text": "Theater masks in the corners of the frame.",
+     "r": [
+      0,
+      0.72,
+      0.16,
+      0.22
+     ]
+    }
+   ]
+  },
+  "31934": {
+   "image": "data/notice/31934.jpg",
+   "file": "John Singer Sargent - Architecture, Painting and Sculpture Protected by Athena from the Ravages of Time - 21.10513 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! John Singer Sargent decorated the Rotunda between 1916 and 1921. He designed the plaster reliefs around the paintings too. The full title: Architecture, Painting and Sculpture Protected by Athena from the Ravages of Time."
+    },
+    {
+     "title": "Athena",
+     "text": "The goddess of wisdom, in her helmet, watches over them.",
+     "r": [
+      0.48,
+      0.12,
+      0.4,
+      0.22
+     ]
+    },
+    {
+     "title": "The three arts",
+     "text": "Three women sit together: Architecture, Painting and Sculpture.",
+     "r": [
+      0.2,
+      0.33,
+      0.6,
+      0.35
+     ]
+    },
+    {
+     "title": "The inscription",
+     "text": "Their names in Latin: ARCHITECTVRA, PICTVRA, SCVLPTVRA.",
+     "r": [
+      0.3,
+      0.84,
+      0.4,
+      0.12
+     ]
+    }
+   ]
+  },
+  "31935": {
+   "image": "data/notice/31935.jpg",
+   "file": "John Singer Sargent - Classic and Romantic Art - 21.10514 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! John Singer Sargent decorated the Rotunda between 1916 and 1921. He designed the plaster reliefs around the paintings too. Classic and Romantic Art: two kinds of art, with Apollo between them."
+    },
+    {
+     "title": "Apollo",
+     "text": "In the center, rays of light burst out behind him.",
+     "r": [
+      0.38,
+      0.12,
+      0.24,
+      0.5
+     ]
+    },
+    {
+     "title": "The left side",
+     "text": "A wilder group, with a leopard.",
+     "r": [
+      0.08,
+      0.15,
+      0.32,
+      0.65
+     ]
+    },
+    {
+     "title": "The right side",
+     "text": "A calmer group, elegant and composed.",
+     "r": [
+      0.6,
+      0.15,
+      0.32,
+      0.65
+     ]
+    },
+    {
+     "title": "The swans",
+     "text": "Swans at Apollo’s feet: swans were sacred to him.",
+     "r": [
+      0.4,
+      0.5,
+      0.2,
+      0.2
+     ]
+    }
+   ]
+  },
+  "31936": {
+   "image": "data/notice/31936.jpg",
+   "file": "John Singer Sargent - The Sphinx and the Chimaera - 21.10515 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! John Singer Sargent decorated the Rotunda between 1916 and 1921. He designed the plaster reliefs around the paintings too. Two monsters of myth: the Sphinx, who asked riddles, and the winged Chimaera."
+    },
+    {
+     "title": "The Sphinx",
+     "text": "Her calm stone face, eyes half closed.",
+     "r": [
+      0.22,
+      0.48,
+      0.4,
+      0.25
+     ]
+    },
+    {
+     "title": "The Chimaera",
+     "text": "The winged creature swoops down to her.",
+     "r": [
+      0.3,
+      0.22,
+      0.6,
+      0.42
+     ]
+    },
+    {
+     "title": "The inscription",
+     "text": "THE SPHINX AND THE CHIMAERA",
+     "r": [
+      0.33,
+      0.84,
+      0.34,
+      0.13
+     ]
+    }
+   ]
+  },
+  "32212": {
+   "image": "data/notice/32212.jpg",
+   "file": "John Singer Sargent - The Danaïdes - 25.636 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! Sargent painted these for the Colonnade and the stair between 1922 and 1925. He died in 1925, just before the last ones went up. The Danaïdes killed their husbands on their wedding night. Their punishment in the underworld: fill a leaking jar, forever."
+    },
+    {
+     "title": "The women",
+     "text": "One after another they bring water, jars on their shoulders.",
+     "r": [
+      0.1,
+      0.2,
+      0.8,
+      0.55
+     ]
+    },
+    {
+     "title": "The great jar",
+     "text": "The jar they can never fill.",
+     "r": [
+      0.38,
+      0.35,
+      0.24,
+      0.35
+     ]
+    }
+   ]
+  },
+  "32216": {
+   "image": "data/notice/32216.jpg",
+   "file": "Sargent - Apollo in His Chariot with the Hours, 1922–25, 25.640.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! Sargent painted these for the Colonnade and the stair between 1922 and 1925. He died in 1925, just before the last ones went up. Apollo, the sun god, drives his chariot across the sky, with the Hours dancing around it."
+    },
+    {
+     "title": "Apollo",
+     "text": "He leans forward, holding the reins.",
+     "r": [
+      0.15,
+      0.05,
+      0.35,
+      0.45
+     ]
+    },
+    {
+     "title": "The horses",
+     "text": "White horses charge ahead.",
+     "r": [
+      0.55,
+      0.05,
+      0.4,
+      0.7
+     ]
+    },
+    {
+     "title": "The Hours",
+     "text": "Dancing figures circle the chariot: the hours of the day.",
+     "r": [
+      0,
+      0.15,
+      0.3,
+      0.8
+     ]
+    },
+    {
+     "title": "The wheel",
+     "text": "The great wheel of the chariot.",
+     "r": [
+      0.15,
+      0.5,
+      0.25,
+      0.45
+     ]
+    }
+   ]
+  },
+  "32217": {
+   "image": "data/notice/32217.jpg",
+   "file": "Sargent - The Winds, 1922–25, 25.641.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! Sargent painted these for the Colonnade and the stair between 1922 and 1925. He died in 1925, just before the last ones went up. The Winds: figures rush through the clouds."
+    },
+    {
+     "title": "The dark figure",
+     "text": "A figure wrapped in a dark cloak dives down through the sky.",
+     "r": [
+      0.25,
+      0.12,
+      0.22,
+      0.7
+     ]
+    },
+    {
+     "title": "The flowers",
+     "text": "Flowers scatter on the right, blown by a gentler wind.",
+     "r": [
+      0.6,
+      0.25,
+      0.3,
+      0.45
+     ]
+    },
+    {
+     "title": "The clouds",
+     "text": "Soft pink clouds on both sides.",
+     "r": [
+      0,
+      0.1,
+      0.3,
+      0.8
+     ]
+    }
+   ]
+  },
+  "32218": {
+   "image": "data/notice/32218.jpg",
+   "file": "John Singer Sargent - Perseus on Pegasus Slaying Medusa - 25.642 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! Sargent painted these for the Colonnade and the stair between 1922 and 1925. He died in 1925, just before the last ones went up. Perseus cut off the head of Medusa, whose gaze turned people to stone."
+    },
+    {
+     "title": "Perseus on Pegasus",
+     "text": "The hero rides the winged horse.",
+     "r": [
+      0.12,
+      0.05,
+      0.45,
+      0.48
+     ]
+    },
+    {
+     "title": "Medusa’s head",
+     "text": "He holds up the head, with snakes for hair.",
+     "r": [
+      0.64,
+      0.18,
+      0.18,
+      0.24
+     ]
+    },
+    {
+     "title": "Athena",
+     "text": "The goddess Athena helped him.",
+     "r": [
+      0.72,
+      0.05,
+      0.26,
+      0.6
+     ]
+    },
+    {
+     "title": "Medusa’s body",
+     "text": "Below, her body lies among the clouds.",
+     "r": [
+      0.08,
+      0.72,
+      0.7,
+      0.22
+     ]
+    }
+   ]
+  },
+  "32219": {
+   "image": "data/notice/32219.jpg",
+   "file": "John Singer Sargent - Atlas and the Hesperides, 1922-1925.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! Sargent painted these for the Colonnade and the stair between 1922 and 1925. He died in 1925, just before the last ones went up. Atlas holds up the sky while the Hesperides, nymphs who guarded the golden apples, sleep."
+    },
+    {
+     "title": "Atlas",
+     "text": "Bent forward, the whole sky on his back.",
+     "r": [
+      0.3,
+      0.05,
+      0.45,
+      0.5
+     ]
+    },
+    {
+     "title": "The stars",
+     "text": "Stars on the dark dome above him.",
+     "r": [
+      0.2,
+      0,
+      0.6,
+      0.2
+     ]
+    },
+    {
+     "title": "The Hesperides",
+     "text": "They sleep in a tangle at his feet.",
+     "r": [
+      0.05,
+      0.5,
+      0.9,
+      0.42
+     ]
+    }
+   ]
+  },
+  "32220": {
+   "image": "data/notice/32220.jpg",
+   "file": "Sargent - Chiron and Achilles, 1922–25, 25.644.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! Sargent painted these for the Colonnade and the stair between 1922 and 1925. He died in 1925, just before the last ones went up. The centaur Chiron, half man and half horse, was the teacher of the hero Achilles."
+    },
+    {
+     "title": "Chiron",
+     "text": "The centaur gallops through the clouds.",
+     "r": [
+      0.38,
+      0.15,
+      0.42,
+      0.62
+     ]
+    },
+    {
+     "title": "Achilles",
+     "text": "The young hero rides on his back, drawing a bow.",
+     "r": [
+      0.25,
+      0.18,
+      0.32,
+      0.32
+     ]
+    },
+    {
+     "title": "The eagle",
+     "text": "An eagle in the corner: a target for the lesson?",
+     "r": [
+      0.05,
+      0.08,
+      0.27,
+      0.27
+     ]
+    }
+   ]
+  },
+  "32221": {
+   "image": "data/notice/32221.jpg",
+   "file": "Sargent - Orestes, 1922–25, 25.645.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! Sargent painted these for the Colonnade and the stair between 1922 and 1925. He died in 1925, just before the last ones went up. Orestes killed his mother to avenge his father. The Furies, spirits of revenge, chase him."
+    },
+    {
+     "title": "Orestes",
+     "text": "He runs, arms up to shield himself.",
+     "r": [
+      0.4,
+      0.3,
+      0.35,
+      0.6
+     ]
+    },
+    {
+     "title": "The Furies",
+     "text": "Snakes in their hair, torches in their hands.",
+     "r": [
+      0.1,
+      0,
+      0.85,
+      0.45
+     ]
+    },
+    {
+     "title": "The signature",
+     "text": "Bottom right: JOHN S. SARGENT.",
+     "r": [
+      0.72,
+      0.88,
+      0.25,
+      0.08
+     ]
+    }
+   ]
+  },
+  "32222": {
+   "image": "data/notice/32222.jpg",
+   "file": "John Singer Sargent - Phaethon - 25.646 - Museum of Fine Arts.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! Sargent painted these for the Colonnade and the stair between 1922 and 1925. He died in 1925, just before the last ones went up. Phaethon, son of the sun god, borrowed his father’s chariot, lost control, and was struck down by Zeus."
+    },
+    {
+     "title": "The fall",
+     "text": "Phaethon tumbles head first.",
+     "r": [
+      0.33,
+      0.35,
+      0.32,
+      0.5
+     ]
+    },
+    {
+     "title": "The scorpion",
+     "text": "A giant scorpion at the top. In Ovid’s telling, the Scorpion of the zodiac terrified the horses.",
+     "r": [
+      0.22,
+      0.06,
+      0.32,
+      0.22
+     ]
+    },
+    {
+     "title": "The beam",
+     "text": "A great diagonal beam cuts across the circle.",
+     "r": [
+      0.35,
+      0.3,
+      0.5,
+      0.6
+     ]
+    }
+   ]
+  },
+  "32223": {
+   "image": "data/notice/32223.jpg",
+   "file": "Sargent - Hercules and the Hydra, 1922–25, 25.647.jpg",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Look up! Sargent painted these for the Colonnade and the stair between 1922 and 1925. He died in 1925, just before the last ones went up. Hercules fights the Hydra, a serpent whose heads grew back when cut off."
+    },
+    {
+     "title": "Hercules",
+     "text": "Club raised over his head.",
+     "r": [
+      0.25,
+      0.05,
+      0.3,
+      0.5
+     ]
+    },
+    {
+     "title": "The heads",
+     "text": "Heads everywhere, mouths open.",
+     "r": [
+      0.55,
+      0.05,
+      0.45,
+      0.55
+     ]
+    },
+    {
+     "title": "The flames",
+     "text": "Look at the flames at the necks: fire stopped new heads from growing.",
+     "r": [
+      0.65,
+      0.15,
+      0.3,
+      0.35
+     ]
+    },
+    {
+     "title": "The coils",
+     "text": "The serpent’s body knots around his legs.",
+     "r": [
+      0.2,
+      0.55,
+      0.7,
+      0.4
+     ]
+    }
+   ]
   }
  }
 }
