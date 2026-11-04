@@ -105,7 +105,7 @@ AMENITIES = {
 }
 LABELS = {
     '1': [('Lexington Street entrance', 'note', 665.0, 235.0), ('Walnut Hill Park', 'place', 300.0, 40.0),
-          ('Parking lot', 'note', 330.0, 470.0), ('Lexington Street', 'place', 665.0, 330.0),
+          ('Parking lot entrance', 'note', 200.0, 535.0), ('Lexington Street', 'place', 665.0, 330.0),
           ('Approximate layout: ask at the front desk what is on view', 'note', 380.0, 560.0)],
     '2': [('Approximate layout: galleries are rehung from time to time', 'note', 380.0, 560.0)],
 }
@@ -166,7 +166,7 @@ def room_of(w):
     if 'Benton' in artist and re.search(r'Arts of', title): return 'Benton Murals', True
     if artist == 'Sol LeWitt': return 'Sol LeWitt', False
     for t in themes:
-        if t in THEME_ROOM: return THEME_ROOM[t], True
+        if t in THEME_ROOM: return THEME_ROOM[t], t != 'illustration'
     if re.search(r'LIC\b', w.get('number') or ''): return 'Low Illustration', False
     y = year_of(w.get('date'))
     if y is None: return None, False
