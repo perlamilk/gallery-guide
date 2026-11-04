@@ -44,6 +44,9 @@ PACKS = [
     ('Q3152226', 'data/pack-ica.json',
      ['data/ica/artworks.json', 'data/ica/floors.json'],
      'data/ica/artworks.json', None),
+    ('Q7005718', 'data/pack-nbmaa.json',
+     ['data/nbmaa/artworks.json', 'data/nbmaa/floors.json'],
+     'data/nbmaa/artworks.json', None),
 ]
 
 for museum, out_path, files, art_path, notice_path in PACKS:

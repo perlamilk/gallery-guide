@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v59';
+const VERSION = 'v60';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -64,6 +64,8 @@ const SHELL = [
   'data/massmoca/artworks.json',
   'data/ica/floors.json',
   'data/ica/artworks.json',
+  'data/nbmaa/floors.json',
+  'data/nbmaa/artworks.json',
 ];
 
 // Install only the app itself, so an update is quick and takes over right away;
@@ -176,7 +178,9 @@ async function packPiece(req) {
 async function cacheArtworkImages(cache, response) {
   try {
     const doc = await (response ?? await fetch('data/artworks.json', { cache: 'no-store' })).json();
-    const urls = [...new Set((doc.artworks ?? []).map(a => a.image || a.img?.p).filter(Boolean))];
+    // Pictures on a museum's own server (NBMAA) are not fetched in bulk: thousands of requests would burden it.
+    const urls = [...new Set((doc.artworks ?? []).map(a => a.image || a.img?.p).filter(Boolean))]
+      .filter(u => !u.startsWith('https://ink.nbmaa.org/'));
     for (const u of urls) {
       if (!(await cache.match(u))) {
         try { await cache.add(u); } catch { /* skip a missing image, keep going */ }
