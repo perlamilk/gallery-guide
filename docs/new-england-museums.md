@@ -278,3 +278,15 @@ Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), 
 ## Not in the app yet
 
 `data/museums.json` lists art museums only (57 in the three states, with the MFA). History, science, maritime, children's and house museums are added with `python3 tools/build_guides.py --region`, then get guides in later batches.
+
+Norman Rockwell Museum (Nov 4, 2026): map guide at `guide.html?museum=nrm`, built by `tools/harvest_nrm.py` +
+`tools/build_nrm.py`. nrm.org and collection.nrm.org answer 403 to cloud machines (bot check), and the Internet
+Archive can't be reached from the cloud, so no floor plan from the museum was seen. The map is APPROXIMATE and says so:
+the grounds (lawn, drive, parking, terrace with the summer Terrace Café, Linwood House, Rockwell's Studio and the walk to
+it) and the building's outline come from OpenStreetMap; inside, the Main Level (entrance hall, octagonal Four Freedoms
+gallery under the cupola, Rockwell galleries north and south, Museum Store, terrace door) and the Lower Level
+(exhibition galleries, restrooms) follow descriptions of the Stern building. Works come from the museum's pages on
+Google Arts & Culture and Wikidata: 34 Rockwell paintings and studies on the map (the Four Freedoms in their gallery,
+the others in a Rockwell gallery by date, marked as a guess), plus 41 archive photos, letters and other illustrators
+on the museum page. Shows from Nov 14, 2026 (Exploring Calvin and Hobbes, The Human Touch) are named in the room
+names; update `SHOWS` when they change. To improve: a photo of the museum's gallery map.

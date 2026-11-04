@@ -253,6 +253,17 @@ export const SITES = {
     flat: true,
     blurb: 'The grounds with the Welcome Center (tickets, café, restrooms), parking and the Cliff Walk, and both floors on the house tour traced from the National Register floor plans, plus the basement store and restrooms: the Vanderbilts’ own furniture, portraits and tapestry in the rooms where they stand, directions and your visit diary.',
   },
+  nrm: {
+    key: 'nrm', id: 'Q713204', short: 'Rockwell Museum', name: 'Norman Rockwell Museum',
+    floors: 'data/nrm/floors.json', artworks: 'data/nrm/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-nrm.json', packKey: 'gg-pack-nrm',
+    room: id => id,                          // galleries have names (Four Freedoms Gallery)
+    website: 'More about this work',
+    official: false,
+    flat: true,
+    blurb: 'The grounds with parking, the lawn, the terrace and Rockwell’s own Studio, and the Main and Lower Levels of the museum (approximate: drawn inside the building’s real outline): the Four Freedoms in their octagonal gallery under the cupola, Rockwell’s Saturday Evening Post covers and civil-rights paintings, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
