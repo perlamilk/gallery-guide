@@ -11,6 +11,7 @@ export const SITES = {
     room: id => `Gallery ${id}`,           // how a room is called in the interface
     website: 'View on the MFA Website',
     official: true,
+    flat: true,                            // 2D plan from above, like every museum (Grazi, Nov 2026)
   },
   wadsworth: {
     key: 'wadsworth', id: 'Q403080', short: 'The Wadsworth', name: 'Wadsworth Atheneum Museum of Art',
