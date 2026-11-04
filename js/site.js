@@ -297,6 +297,17 @@ export const SITES = {
     flat: true,
     blurb: 'The grounds with parking, the Sunken Garden and the Carriage House Café, and every floor of the house traced from its National Historic Landmark plans: the Ballroom, Salon, Conservatory and the Berwinds’ bedrooms, the basement restrooms and the staff floor of the Servant Life Tour, with the Berwinds’ furniture and paintings, directions and your visit diary.',
   },
+  mos: {
+    key: 'mos', id: 'Q1139748', short: 'Museum of Science', name: 'Museum of Science',
+    floors: 'data/mos/floors.json', artworks: 'data/mos/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-mos.json', packKey: 'gg-pack-mos',
+    room: id => id,                          // exhibit areas have names (Dinosaurs, Hall of Human Life)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'All three levels, traced from the museum’s own map: the Red, Green and Blue Wings with the Planetarium, the Omni and 4-D theaters, the Theater of Electricity and its giant Van de Graaff generator, the dinosaurs, the Apollo capsule and every exhibit where it is, plus restrooms, elevators, the Riverview Café, the store, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

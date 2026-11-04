@@ -216,6 +216,14 @@
    "galleries": true,
    "checked": "2026-11-04",
    "source": "The Preservation Society of Newport County, Digital Collections"
+  },
+  "Q1139748": {
+   "works": 54,
+   "pictures": 44,
+   "onView": 54,
+   "galleries": true,
+   "checked": "2026-11-04",
+   "source": "Museum of Science, Boston: exhibit pages and Museum Map (mos.org)"
   }
  }
 }
