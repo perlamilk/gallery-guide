@@ -55,17 +55,6 @@ export const SITES = {
     flat: true,
     blurb: 'Floor plans of the Palace and the New Wing from the museum’s map, works in the room where Isabella placed them, directions and your visit diary.',
   },
-  clark: {
-    key: 'clark', id: 'Q1465805', short: 'The Clark', name: 'Clark Art Institute',
-    floors: 'data/clark/floors.json', artworks: 'data/clark/artworks.json',
-    tours: null, curiosities: null, notice: false,
-    pack: 'data/pack-clark.json', packKey: 'gg-pack-clark',
-    room: id => (/^\d+$/.test(id) ? `Gallery ${id}` : id),
-    website: 'View on Wikidata',             // the Clark's own collection site blocks automated reading
-    official: false,
-    flat: true,
-    blurb: 'Floor plans of the Clark Center, the Museum Building and the Manton Research Center from the museum’s map, works in the gallery where they most likely hang, directions and your visit diary.',
-  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
