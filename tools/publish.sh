@@ -43,8 +43,11 @@ echo "pushed $(git log --oneline -1) as $new"
 # fetching it we read the check Cloudflare posts on the commit in GitHub.
 sha=$(git rev-parse HEAD)
 for i in $(seq 1 60); do
+  # Cloudflare's checks are named build / deploy / report-build-status: wait until all are done
   result=$(gh api "repos/perlamilk/gallery-guide/commits/$sha/check-runs" \
-    -q '[.check_runs[] | select(.name | test("cloudflare"; "i"))][0] | "\(.status) \(.conclusion)"' 2>/dev/null || true)
+    -q 'if (.check_runs | length) == 0 then "pending" elif any(.check_runs[]; .status != "completed") then "pending"
+        elif all(.check_runs[]; .conclusion == "success" or .conclusion == "skipped" or .conclusion == "neutral") then "completed success"
+        else "completed " + ([.check_runs[] | select(.conclusion != "success" and .conclusion != "skipped" and .conclusion != "neutral") | .name] | join(", ")) end' 2>/dev/null || true)
   case "$result" in
     "completed success") echo "live: $new"; exit 0 ;;
     "completed "*) echo "Cloudflare Pages couldn't publish $new ($result). Open the Cloudflare dashboard to see why."; exit 1 ;;

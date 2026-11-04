@@ -193,7 +193,8 @@ function workInfo(id, fallback = null) {
   const w = D.guideWorks.get(id) ?? D.discover.works[id] ?? fallback;
   if (!w) return null;
   return { id, title: w.title, artist: w.artist, year: w.date ?? w.year, museum: shortMuseum(w.museumId, w.museum), museumId: w.museumId,
-    href: workHref(w, id), thumb: cls => workImg(w, cls, 400) };
+    href: workHref(w, id), where: w.onView && w.gallery ? (siteById(w.museumId)?.room ?? (g => `Gallery ${g}`))(w.gallery) : null,
+    thumb: cls => workImg(w, cls, 400) };
 }
 
 // Works on view in a museum with a map guide open there; the rest open the work page here.
@@ -547,6 +548,37 @@ afterRender.museums = () => {
 };
 
 // ---------- Museum page ----------
+// Every museum page shows its photo, full address, opening hours and ticket price. Hand-checked
+// fields (tools/visit_info.py) win; otherwise the page says plainly that it has no hours or prices yet.
+const lines = v => (Array.isArray(v) ? v : v ? [v] : []);
+function visitHTML(m) {
+  const address = m.address && /\d{5}/.test(m.address) ? m.address
+    : [m.address, m.city, m.state].filter(Boolean).filter((x, i, a) => !a.slice(0, i).some(y => y.includes(x))).join(', ') || 'United States';
+  const list = (v, none) => lines(v).length ? lines(v).map(x => `<span class="kv__line">${escape(x)}</span>`).join('') : `<span class="kv__none">${none}</span>`;
+  const site = m.website ? ` on <a href="${escape(m.website)}" target="_blank" rel="noopener">${escape(host(m.website))}</a>` : '';
+  return `<dl class="kv kv--visit">
+        <dt>Address</dt><dd>${m.at ? `<a href="https://maps.apple.com/?daddr=${m.at.join(',')}&q=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">${escape(address)}</a>` : escape(address)}</dd>
+        <dt>Hours</dt><dd>${list(m.hours, `Not in the guide yet. Check the hours${site} before you go.`)}</dd>
+        <dt>Tickets</dt><dd>${list(m.admission, `Not in the guide yet. Check ticket prices${site}.`)}</dd>
+        ${m.phone ? `<dt>Phone</dt><dd><a href="tel:${escape(m.phone.replace(/[^\d+]/g, ''))}">${escape(m.phone)}</a></dd>` : ''}
+        ${lines(m.entrances).length ? `<dt>Entrances</dt><dd>${list(m.entrances)}</dd>` : ''}
+        ${lines(m.visitNotes).length ? `<dt>Good to Know</dt><dd>${list(m.visitNotes)}</dd>` : ''}
+        ${m.website ? `<dt>Website</dt><dd>${escape(host(m.website))}</dd>` : ''}
+      </dl>
+      ${m.infoChecked ? `<p class="fine">Hours and prices checked ${new Date(m.infoChecked + 'T12:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}. They can change, so confirm on the museum’s website.</p>` : ''}`;
+}
+
+// No photo, or the photo didn't load: show where the museum is instead of an empty grey box
+function heroMap(m) {
+  const hero = $('#museumHero');
+  if (!hero || !m?.at) return;
+  let el = hero.querySelector('#heroMap');
+  if (!el) { hero.querySelector('img')?.remove(); hero.insertAdjacentHTML('afterbegin', '<div class="hero__map" id="heroMap"></div>'); el = hero.querySelector('#heroMap'); }
+  const map = makeMap(el, { center: m.at, zoom: 15 });
+  if (!map) return;
+  map.scrollZoom.disable(); map.dragPan.disable(); map.touchZoomRotate.disable(); map.doubleClickZoom.disable(); map.keyboard.disable();
+  museumLayer(map, [m], { cluster: false, on: new Set([m.id]) });
+}
 function museumPage(id) {
   const m = D.byMuseum.get(id);
   if (!m) return `${topbar({ fallback: 'museums' })}<div class="s-empty"><h2>Museum Not Found</h2></div>`;
@@ -556,7 +588,7 @@ function museumPage(id) {
   page.classList.add('page--hero');
   return `
     ${topbar({ fallback: 'museums', trailing: `<button class="round glass" type="button" data-fav-museum="${id}" aria-pressed="${fav}" aria-label="${fav ? 'Remove from Favorites' : 'Add to Favorites'}">${I.heart(fav)}</button>` })}
-    <div class="hero">${m.image ? `<img src="${commons(m.image, 1100)}" alt="">` : ''}
+    <div class="hero" id="museumHero">${m.image ? `<img src="${commons(m.image, 1100)}" alt="${escape(m.name)}">` : '<div class="hero__map" id="heroMap"></div>'}
       <div class="hero__text"><p class="eyebrow">Museum</p><h1>${escape(m.name)}</h1></div></div>
     <div class="info-card">
       <div class="mplace"><span class="badge">${escape(initials(m.name))}</span>
@@ -567,22 +599,14 @@ function museumPage(id) {
         ${m.website ? `<a href="${escape(m.website)}" target="_blank" rel="noopener">${escape(host(m.website))} ${I.ext}</a>` : ''}
       </div>
       ${site ? `<div class="btn-row"><a class="btn" href="${guideURL(site)}">${I.map}Open the Map Guide</a></div>
-        <p class="fine">${site.key === 'mfa' ? '3D floor plans, search for every work on view, tours, directions and your visit diary.'
-          : '3D floor plans from the museum’s map, search for every work on view, directions and your visit diary.'}</p>` : ''}
+        <p class="fine">${site.key === 'mfa' ? 'Floor plans, search for every work on view, tours, directions and your visit diary.'
+          : 'Floor plans from the museum’s map, search for every work on view, directions and your visit diary.'}</p>` : ''}
     </div>
     ${site ? '<div class="info-card offline" id="offlineCard" aria-live="polite"><p class="offline__sub">Checking offline pack…</p></div>' : ''}
     <div class="info-card"><h2>Welcome to ${escape(m.name)}</h2><div id="museumAbout"><p style="color:var(--ink-3)">Loading…</p></div></div>
     <div class="info-card"><h2>Visit Information</h2>
-      <dl class="kv">
-        <dt>Address</dt><dd>${escape(m.address || [m.city, m.state].filter(Boolean).join(', ') || '—')}</dd>
-        ${m.entrances ? `<dt>Entrances</dt><dd>${m.entrances.map(escape).join('<br>')}</dd>` : ''}
-        <dt>Hours</dt><dd>${m.hours ? m.hours.map(escape).join('<br>') : 'Check the museum\'s website for current hours'}</dd>
-        ${m.admission ? `<dt>Admission</dt><dd>${m.admission.map(escape).join('<br>')}</dd>` : ''}
-        ${m.phone ? `<dt>Phone</dt><dd><a href="tel:${escape(m.phone.replace(/[^0-9+]/g, ''))}">${escape(m.phone)}</a></dd>` : ''}
-        ${m.website ? `<dt>Website</dt><dd>${escape(host(m.website))}</dd>` : ''}
-      </dl>
-      ${m.visitNotes ? `<p class="fine">${m.visitNotes.map(escape).join(' ')}</p>` : ''}
-      ${m.infoChecked ? `<p class="fine">From the museum's website, checked ${escape(m.infoChecked)}. Hours and prices can change.</p>` : ''}
+    href: `#work/${id}${w.museumId && D.guides[w.museumId] ? `/${w.museumId}` : ''}`,
+    where: w.onView && w.gallery ? `Gallery ${w.gallery}` : null, thumb: cls => workImg(w, cls, 400) };
       <div class="btn-row">
         ${m.at ? `<a class="btn btn--gray" href="https://maps.apple.com/?daddr=${m.at.join(',')}&q=${encodeURIComponent(m.name)}" target="_blank" rel="noopener">${I.nav}Get Directions</a>` : ''}
         ${m.website ? `<a class="btn btn--gray" href="${escape(m.website)}" target="_blank" rel="noopener">${I.ext}Open Website</a>` : ''}
@@ -595,8 +619,8 @@ function museumPage(id) {
     ${id === MFA ? '' : `<p class="fine">${UNOFFICIAL}</p>`}`;
 }
 afterRender.museum = id => {
-  fillSummary($('#museumAbout'), D.byMuseum.get(id)?.wikipedia, 'No description yet.');
-  if (siteById(id)) renderOfflineCard(null, siteById(id));
+    href: `#work/${id}${w.museumId && D.guides[w.museumId] ? `/${w.museumId}` : ''}`,
+    where: w.onView && w.gallery ? `Gallery ${w.gallery}` : null, thumb: cls => workImg(w, cls, 400) };
 };
 
 // ---------- offline pack ----------
@@ -656,12 +680,21 @@ function museumHighlights(id) {
     const famous = Object.keys(D.curio.works ?? {}).filter(x => D.mfaById.get(x)?.image || D.mfaById.get(x)?.img);
     return famous.slice(0, 8).map(x => workInfo(x));
   }
-  return Object.values(D.discover.works).filter(w => w.museumId === id).sort((a, b) => b.links - a.links).slice(0, 8).map(w => workInfo(w.id));
+  // when the museum's guide says what is on view, show a famous work as the museum's own record
+  // of it, so the tile and its page say which gallery and floor it is in
+  const doc = guideDocNow(id);
+  const onView = new Map((doc?.onViewKnown ? doc.works : []).filter(w => w.onView).map(w => [norm(w.title), w]));
+  return Object.values(D.discover.works).filter(w => w.museumId === id).sort((a, b) => b.links - a.links).slice(0, 8).map(w => {
+    const g = onView.get(norm(w.title));
+    if (!g) return workInfo(w.id);
+    if (!g.image && !g.imageUrl && w.image) g.image = w.image;
+    return workInfo(g.id);
+  });
 }
 
 function tileHTML(w) {
   return `<a class="tile" href="${w.href}"><div class="tile__img">${w.thumb('ph')}</div>
-    <p class="tile__title">${escape(w.title)}</p><p class="tile__sub">${escape([w.artist, w.year].filter(Boolean).join(' · '))}</p></a>`;
+    <p class="tile__title">${escape(w.title)}</p><p class="tile__sub">${escape([w.artist, w.year, w.where].filter(Boolean).join(' · '))}</p></a>`;
 }
 
 const host = url => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return url; } };

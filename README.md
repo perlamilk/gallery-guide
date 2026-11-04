@@ -30,6 +30,7 @@ mfa-guide/
 ├── vendor/                 three.js r170 + OrbitControls (bundled for offline use)
 └── tools/
     ├── serve.py            local preview server (no caching)
+    ├── visit_info.py       address, hours and ticket prices for the museums near the MFA
     ├── trace_pdf.py        rebuilds data/floors.json from the MFA map PDF
     └── README.md           plan for the weekly MFA scraper (not built yet)
 ```
