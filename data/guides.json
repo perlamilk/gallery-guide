@@ -232,6 +232,14 @@
    "galleries": true,
    "checked": "2026-11-04",
    "source": "The Preservation Society of Newport County, Digital Collections"
+  },
+  "Q7005471": {
+   "works": 67,
+   "pictures": 61,
+   "onView": 67,
+   "galleries": true,
+   "checked": "2026-11-04",
+   "source": "New Bedford Whaling Museum: exhibition pages and visitor guides (whalingmuseum.org)"
   }
  }
 }

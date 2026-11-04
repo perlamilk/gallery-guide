@@ -334,3 +334,16 @@ and amenities are where the museum puts them. Works: every current exhibit, live
 (Van de Graaff generator, Foucault's Pendulum, Archimedean Excogitation, Apollo capsule, T. rex, Cliff the
 Triceratops). Weems sculptures, the Washburn exhibit, Transportation, Faces of Science and the Rock Garden give only a
 wing, so their room is a guess and says so. Seasonal "All Aboard! Trains" (Green Wing, Level 2) is not on the map yet.
+
+New Bedford Whaling Museum (Nov 4, 2026): map guide at `guide.html?museum=nbwm`, built by `tools/harvest_nbwm.py` +
+`tools/build_nbwm.py`. whalingmuseum.org pages answer 403 to scripts, but its robots.txt allows everything and the
+WordPress REST API (`/wp-json/wp/v2/exhibition`, `/pages/<id>`) and `/wp-content/uploads/` answer normally. The
+collection database (newbedford.emuseum.com) is behind a Cloudflare check and the Bloomberg Connects guide disallows
+robots, so neither is used. The map is traced from the museum's own three-level map (2026 self-guide PDF; key from the
+Visitors Guide PDF): Lobby & Lower Level, Main Level, Upper Level, all aligned to the Main Level picture (Upper x 1/0.76,
+Lower x 1.5; the elevators line up). Captain Paul Cuffe Park outside is approximate. Works: the galleries and the
+exhibitions on view, the whale skeletons (Kobo, Quasimodo, Reyna, the sperm whale), the Lagoda, the blue whale heart,
+and the objects pictured with captions on the pages of the exhibitions on view. Forging Independence, Coquilla Nut
+Carvings and Bristol County: Incarcerated are matched to the map's "Rotating Exhibition" rooms by guess and say so.
+Upcoming: The State of Water (upper level, Nov 20, 2026), New Ecologies: May Babcock (Center Street Gallery, Nov 20);
+Sailor's Valentines closes Nov 8, 2026.
