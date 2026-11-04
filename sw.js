@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v69';
+const VERSION = 'v70';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -80,6 +80,8 @@ const SHELL = [
   'data/flogris/artworks.json',
   'data/hillstead/floors.json',
   'data/hillstead/artworks.json',
+  'data/mystic/floors.json',
+  'data/mystic/artworks.json',
 ];
 
 // Install only the app itself, so an update is quick and takes over right away;

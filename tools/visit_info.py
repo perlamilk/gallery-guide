@@ -81,6 +81,20 @@ VISIT = {
                  'Gallery, the Hartman Education Center and the House. Café Flo (May–October) is on the veranda over the '
                  'river; reservations suggested (860-434-5542 x126). The House’s second floor and the Chadwick Studio are '
                  'not wheelchair accessible. Holiday Magic lights up the campus Nov 27, 2026–Jan 3, 2027.'),
+    'Q1890082': ('75 Greenmanville Avenue, Mystic, CT 06355',
+                 ['Nov 2–30, 2026: Thu–Sun 10 am–4 pm (grounds close 5 pm); closed Nov 26',
+                  'Dec 3–23: Lantern Lights, Thu–Sun (daily Dec 21–23) 2–8:30 pm; closed Dec 1–2 and 24–25',
+                  'Dec 26–31: daily 10 am–4 pm',
+                  'Jan 2–Mar 19, 2027: north campus only, Fri–Sun 10 am–4 pm',
+                  'Spring to fall: daily 10 am–5 pm (grounds close 6 pm)'],
+                 ['Adults: $35', 'Seniors 65+: $33', 'Youth 4–17: $25', '3 and under: free', 'Members: free'],
+                 '860-572-0711',
+                 'A 19-acre outdoor museum: wear comfortable shoes, the historic ground is uneven. Two entrances on '
+                 'Greenmanville Avenue (Route 27), North and South, each with free parking. Restrooms at both entrances, '
+                 'in the Thompson Exhibition Building, by Greenmans’ Landing, by the Discovery Barn and on Lighthouse '
+                 'Point. Food at Anchor Mystic Café (South Entrance), Propeller Coffee Bar (Thompson Building), '
+                 'Greenmans’ Landing and Schaefer’s Spouter Tavern. Leashed pets are welcome outdoors but not in '
+                 'buildings or on vessels. Sabino cruises and boat rentals are seasonal.'),
     'Q7005718': ('56 Lexington Street, New Britain, CT 06052',
                  ['Tue–Sun: 10 am–5 pm', 'Fri: 10 am–8 pm', 'Mon: closed'],
                  ['Adults: $22', 'Seniors 67+: $18', 'College students and ages 6–17: $10', '5 and under: free'],
@@ -223,6 +237,9 @@ EXTRA = {
     'Q5460633': {'id': 'Q5460633', 'name': 'Florence Griswold Museum', 'at': [41.325556, -72.3275], 'links': 7,
                  'image': 'Florence Griswold House, Old Lyme, CT.jpg', 'website': 'https://flogris.org/',
                  'city': 'Old Lyme', 'state': 'Connecticut', 'wikipedia': 'Florence_Griswold_Museum'},
+    'Q1890082': {'id': 'Q1890082', 'name': 'Mystic Seaport Museum', 'at': [41.3625, -71.965278], 'links': 7,
+                 'image': 'Big boat.jpg', 'website': 'https://mysticseaport.org/', 'city': 'Mystic',
+                 'state': 'Connecticut', 'wikipedia': 'Mystic_Seaport'},
     'Q4681251': {'id': 'Q4681251', 'name': 'Addison Gallery of American Art', 'at': [42.6486, -71.1333], 'links': 6,
                  'image': 'Phillips Academy, Andover, MA - Addison Gallery of American Art.JPG',
                  'website': 'https://addison.andover.edu/', 'city': 'Andover', 'state': 'Massachusetts',
