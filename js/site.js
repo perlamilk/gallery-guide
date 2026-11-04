@@ -176,6 +176,17 @@ export const SITES = {
     flat: true,
     blurb: 'All three levels traced from the Addison’s own gallery map, every work in America in the Making and the ship models in the gallery where it hangs, directions and your visit diary.',
   },
+  davis: {
+    key: 'davis', id: 'Q15694044', short: 'The Davis', name: 'Davis Museum at Wellesley College',
+    floors: 'data/davis/floors.json', artworks: 'data/davis/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-davis.json', packKey: 'gg-pack-davis',
+    room: id => id,                          // galleries are named by what they hold (Ancient World, Study Gallery)
+    website: 'View on Google Arts & Culture',
+    official: false,
+    flat: true,
+    blurb: 'An approximate plan of the five public floors inside the building’s real outline, with the entrance, front desk, restrooms and Collins Café, the works the Davis shows online in the gallery for their period, the current shows, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

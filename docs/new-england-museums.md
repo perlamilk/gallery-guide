@@ -134,6 +134,14 @@ Making, portfolio 2600) and the ship models (212). The museum names the gallery 
 within a section is guessed from date and medium (each work says so), except works the gallery map pins to a room. When the
 next season opens, add its portfolio number to `PORTFOLIOS` and the room ranges to build_addison.py. The collection has 29,000+
 works; only the ones on view are in the guide. Pictures load from accessaddison.andover.edu as they are viewed.
+Davis Museum at Wellesley College (Nov 4, 2026): map guide at `guide.html?museum=davis`, built by `tools/build_davis.py`.
+The map is approximate: the Davis hands out a paper gallery map but publishes no floor plan, so the five public floors (Lower
+Level, 1, 2, 4, 5; floor 3 has no galleries) are drawn inside the building's real outline from OpenStreetMap, following the
+museum's own description of each floor (building page, 2016 reinstallation press release, visit and accessibility pages).
+The collection site (davis.emuseum.com) and the Bloomberg Connects guide refuse cloud machines, so works come from the
+Davis's pages on Google Arts & Culture (read by `tools/harvest_davis.py`, robots.txt allows it), Wikidata and the two
+current shows (Excavating Antioch, Shi: Stories in Stone, through May 30, 2027). Each work sits in the gallery for its date
+and origin and says it may be in storage. To improve: a photo of the paper gallery map, or on-view data from the museum.
 
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
