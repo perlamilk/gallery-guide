@@ -514,7 +514,9 @@ function artBody(id) {
     ${curiositiesHTML(state.museum.curiosities?.for(a) ?? [])}
     <dl class="facts"><ul class="group">${facts}
       <li><div class="row"><dt>Where</dt><dd>${info ? `${escape(info.floor.label)} · Gallery ${escape(a.gallery)}${a.galleryName ? `<br><span style="color:var(--ink-2)">${escape(a.galleryName)}</span>` : ''}`
-        : escape(a.location || (a.gallery ? `Gallery ${a.gallery} (not on the map)` : 'On view'))}</dd></div></li>
+        : a.location ? escape(a.location)
+        : a.gallery ? `${escape([state.museum.floor(a.floor)?.label, `Gallery ${a.gallery}`].filter(Boolean).join(' · '))}${a.galleryName ? `<br><span style="color:var(--ink-2)">${escape(a.galleryName)}</span>` : ''}<br><span style="color:var(--ink-2)">Not drawn on the map yet</span>`
+        : 'On view · gallery not listed yet'}</dd></div></li>
     </ul></dl>
     <div class="stack"><a class="btn btn--ink" href="${a.url}" target="_blank" rel="noopener">View on the MFA Website</a></div>
     ${a.imageSource ? `<p class="credit">Image: <a href="${a.imageSource}" target="_blank" rel="noopener">${escape(a.imageCredit ?? 'source')}</a></p>`
