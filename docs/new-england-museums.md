@@ -50,6 +50,15 @@ Egyptian, Asian, Costume and Textiles, Pendleton House) are laid out by hand ins
 the map that they are approximate. Works: 1,465 of the ~1,900 in Wikidata (almost all paintings), placed by date, country
 and type; works with no date use the artist's birth year + 35; each says the gallery is a guess.
 
+Peabody Essex Museum (Nov 4, 2026): map guide at `guide.html?museum=pem`, built by `tools/build_pem.py`. The plan is PEM's
+2024 visitor map (a vector PDF, copy on all-maps.com): Ground Level, Level 2 and Level 3 with gallery numbers 100–305,
+entrances (Main, Charter Street, Groups), Atrium Café, shops, coatroom, restrooms, elevators and stairs. Rooms are drawn by
+hand over it; Level 2 and 3 are moved up so the elevators line up. Only the east elevator (by Maritime Art) reaches
+Fashion and Design on Level 3, and the map says so. Works: 279. pem.org is readable from the cloud: the collection pages'
+highlights ("On view in the Byrne Family Gallery of Maritime Art") and the ongoing gallery pages give 132 works in a gallery
+named by PEM, with PEM's pictures; the rest are highlights placed in the gallery of their collection area, and Wikidata's
+works placed by subject, each with a note. Pages are cached in `.cache/pem` (one request every 2 s; `--refresh` re-reads).
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
