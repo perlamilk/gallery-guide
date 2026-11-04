@@ -30,6 +30,16 @@ west wall). The 1990 theft is noted on the stolen works (empty frames still hang
 (gardnermuseum.emuseum.com) and object pages have a Cloudflare bot check, so they aren't read; the museum holds about
 7,500 objects in all.
 
+Clark Art Institute (Nov 4, 2026): map guide at `guide.html?museum=clark`, built by `tools/build_clark.py`. The plan comes
+from the Clark's visitor map PDF (clarkart.edu/getmedia/614f36ad-…/A-4547-8-5x14-Gallery-Closure-map_8-26.pdf, Aug 2021;
+the only edition the cloud can download, since clarkart.edu pages sit behind a Cloudflare check). It is flat: Main Level
+(Clark Center entrance, admissions, store; Museum Building galleries 1–20; Manton Research Center with British art, the
+Thaw works-on-paper gallery, reading room, library), Lower Level (special exhibitions, Café 7, coat check, restrooms) and
+Upper Level (American decorative arts, glass). Gallery numbers 1 and 5–14 were hidden under green "closed" shading and were
+read from the PDF's text layer. Works: 563 of the 603 in Wikidata, placed in the gallery whose subject on the map fits
+their artist, date and country (Degas → 14, Alfred Stevens → 15, Renoir → 2, British → Manton, works on paper → Thaw…),
+each with a note that the gallery is a guess.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
