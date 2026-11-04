@@ -319,6 +319,17 @@ export const SITES = {
     flat: true,
     blurb: 'All three levels, traced from the museum’s own map: the Red, Green and Blue Wings with the Planetarium, the Omni and 4-D theaters, the Theater of Electricity and its giant Van de Graaff generator, the dinosaurs, the Apollo capsule and every exhibit where it is, plus restrooms, elevators, the Riverview Café, the store, directions and your visit diary.',
   },
+  nbwm: {
+    key: 'nbwm', id: 'Q7005471', short: 'Whaling Museum', name: 'New Bedford Whaling Museum',
+    floors: 'data/nbwm/floors.json', artworks: 'data/nbwm/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-nbwm.json', packKey: 'gg-pack-nbwm',
+    room: id => id,                          // galleries have names (Lagoda, Scrimshaw Gallery)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'All three levels, traced from the museum’s own map: the Lobby with the blue whale, humpback and right whale skeletons overhead, the Lagoda you can step aboard and its balcony, the Scrimshaw Gallery, the sperm whale, Harbor View, every gallery and what is in it, plus restrooms, elevators, stairs, the store, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
