@@ -248,8 +248,9 @@ def main():
     batch = int(sys.argv[sys.argv.index('--batch') + 1]) if '--batch' in sys.argv else 1
     ids = [a for a in args if a.startswith('Q')] or ([] if '--region' in sys.argv and not args and '--batch' not in sys.argv
                                                       else list(BATCHES[batch]))
-    # museums with their own map guide have their own builder (the Wadsworth: tools/build_wadsworth.py)
-    ids = [x for x in ids if x not in (MFA, 'Q403080')]
+    # museums with their own map guide have their own builder (the Wadsworth: tools/build_wadsworth.py; ICA Boston:
+    # tools/build_ica.py)
+    ids = [x for x in ids if x not in (MFA, 'Q403080', 'Q3152226')]
     museums = {m['id']: m for m in json.load(open(os.path.join(DATA, 'museums.json'), encoding='utf-8'))['museums']}
 
     index_path = os.path.join(DATA, 'guides.json')

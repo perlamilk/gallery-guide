@@ -86,6 +86,17 @@ and 35 installations and exhibitions in the building the map lists. massmoca.org
 so they were read once by hand into `tools/data/massmoca_works.tsv`; pictures come from its uploads folder and are
 saved smaller in `data/massmoca/images/`. Seasonal galleries (Kiefer, Boiler House, Mary Lum) reopen in May.
 
+ICA Boston (Nov 4, 2026): map guide at `guide.html?museum=ica`, built by `tools/harvest_ica.py` + `tools/build_ica.py`.
+All the galleries are on the 4th floor; that floor is traced from the ICA's own gallery map (ica-gallery-map.png on
+icaboston.org). The ICA publishes no plan of floors 1–3, so they are drawn from its descriptions of the building (lobby,
+visitor center, store, Wine + Coffee Bar, Art Lab, Fineberg Art Wall, restrooms on 1 and 4, theater on 2–3) and the map says
+they are approximate. Works: icaboston.org is readable from the cloud; the collection search loads from
+`wp-admin/admin-ajax.php?action=fetch_artworks` (all ~400 works, 16 a page) and each work page has year, materials,
+dimensions, credit, accession and a text. Exhibition pages name their gallery, so works pictured there go in it; 90 YEARS —
+Beyond the Galleries names one work per floor; works given by Fotene Demoulas and Tom Coté go in To My Best Friend with a
+note. The museum page lists the whole collection (`data/guides/Q3152226.json`, on view = in a current show). Shows change
+often: re-run both scripts (with `--refresh`) and update `EXHIBITIONS`/`BEYOND` in build_ica.py when they do.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).

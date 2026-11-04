@@ -112,6 +112,14 @@
    "galleries": false,
    "checked": "2026-11-04",
    "source": "Wikidata (CC0)"
+  },
+  "Q3152226": {
+   "works": 410,
+   "pictures": 389,
+   "onView": 56,
+   "galleries": true,
+   "checked": "2026-11-04",
+   "source": "ICA Boston website (icaboston.org)"
   }
  }
 }

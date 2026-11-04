@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v56';
+const VERSION = 'v57';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -62,6 +62,8 @@ const SHELL = [
   'data/yale/artworks.json',
   'data/massmoca/floors.json',
   'data/massmoca/artworks.json',
+  'data/ica/floors.json',
+  'data/ica/artworks.json',
 ];
 
 // Install only the app itself, so an update is quick and takes over right away;
