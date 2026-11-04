@@ -152,6 +152,14 @@
    "galleries": false,
    "checked": "2026-11-04",
    "source": "WCMA open collection data (github.com/wcmaart/collection, CC0)"
+  },
+  "Q5460633": {
+   "works": 117,
+   "pictures": 115,
+   "onView": 51,
+   "galleries": true,
+   "checked": "2026-11-04",
+   "source": "Florence Griswold Museum website and Wikidata"
   }
  }
 }

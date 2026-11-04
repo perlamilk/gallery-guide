@@ -68,6 +68,19 @@ VISIT = {
                  'On the Phillips Academy campus, at Main Street (Route 28) and Chapel Avenue; free parking. Restrooms are on '
                  'the Lower Level (an accessible restroom is on Level 1). No café. An accessible lift is down the ramp to the '
                  'left of the main entrance stairs, and an elevator serves every floor.'),
+    'Q5460633': ('96 Lyme Street, Old Lyme, CT 06371',
+                 ['Tue–Sun: 10 am–5 pm (January–March: 10 am–4 pm)', 'Mon: closed',
+                  'Closed New Year’s Day, Easter, Memorial Day, Juneteenth, July 4, Labor Day, Thanksgiving and the day '
+                  'after, December 24 and 25'],
+                 ['Adults: $18', 'Seniors 62+: $17', 'Students 13+: $16', 'Children 5–12: $7.50', '4 and under: free',
+                  'SNAP/EBT cardholders (up to 4 people), military and veterans: free',
+                  'Wee Faerie Village (Oct 3–Nov 8, 2026): adults $23, seniors $22, students $21, 12 and under free'],
+                 '860-434-5542',
+                 'One ticket covers the whole 12-acre campus: the Krieble Gallery, the Griswold House, the Chadwick Studio and '
+                 'the gardens. Tickets are sold only at the admissions desk. Free parking. Restrooms are in the Krieble '
+                 'Gallery, the Hartman Education Center and the House. Café Flo (May–October) is on the veranda over the '
+                 'river; reservations suggested (860-434-5542 x126). The House’s second floor and the Chadwick Studio are '
+                 'not wheelchair accessible. Holiday Magic lights up the campus Nov 27, 2026–Jan 3, 2027.'),
     'Q7005718': ('56 Lexington Street, New Britain, CT 06052',
                  ['Tue–Sun: 10 am–5 pm', 'Fri: 10 am–8 pm', 'Mon: closed'],
                  ['Adults: $22', 'Seniors 67+: $18', 'College students and ages 6–17: $10', '5 and under: free'],
@@ -204,6 +217,9 @@ EXTRA = {
     'Q14715853': {'id': 'Q14715853', 'name': 'Smith College Museum of Art', 'at': [42.318502, -72.636378], 'links': 7,
                   'image': '020 Elm St Smith College Museum.jpg', 'website': 'https://scma.smith.edu/',
                   'city': 'Northampton', 'state': 'Massachusetts', 'wikipedia': 'Smith_College_Museum_of_Art'},
+    'Q5460633': {'id': 'Q5460633', 'name': 'Florence Griswold Museum', 'at': [41.325556, -72.3275], 'links': 7,
+                 'image': 'Florence Griswold House, Old Lyme, CT.jpg', 'website': 'https://flogris.org/',
+                 'city': 'Old Lyme', 'state': 'Connecticut', 'wikipedia': 'Florence_Griswold_Museum'},
     'Q4681251': {'id': 'Q4681251', 'name': 'Addison Gallery of American Art', 'at': [42.6486, -71.1333], 'links': 6,
                  'image': 'Phillips Academy, Andover, MA - Addison Gallery of American Art.JPG',
                  'website': 'https://addison.andover.edu/', 'city': 'Andover', 'state': 'Massachusetts',

@@ -152,6 +152,15 @@ pitiful age" (Aug 25, 2026 – Jan 3, 2027; gallery guessed as the Fairchild), t
 Assyrian relief. The collection list adds Collection Highlights, Mead files on Wikimedia Commons and Wikidata (103 works).
 The full catalogue (Five College Museums database, 20,000+ works) blocks AI crawlers and is not read. When the spring show
 (Anchors and Aspirations, Feb 23 – Jul 3, 2027) opens, update `SHOW_WORKS` and re-run.
+Florence Griswold Museum, Old Lyme (Nov 4, 2026): map guide at `guide.html?museum=flogris`, built by `tools/build_flogris.py`.
+The grounds are traced from the museum's numbered campus map (flogris.org/visit/museum-campus, 2025): Griswold House,
+Krieble Gallery with Café Flo, Artists' Trail, gardens, Rafal Landscape Center, Chadwick Studio, Hartman Education Center,
+parking. The rooms inside the Krieble Gallery and the two House floors are approximate (from the museum's descriptions and its
+Matterport tours). The collection database (EmbARK kiosk, collections.flogris.org) disallows robots everywhere but its home
+page, so works come from the museum's own WordPress pages: the dining-room painted panels (exact, always on view; door panels
+in the rooms their picture names), the works pictured on the two ongoing shows' pages, the Collections Highlights and Hartford
+Steam Boiler pages (via /wp-json/wp/v2/avada_portfolio) and Wikidata. Changing shows in the Krieble Gallery aren't listed
+(Patchwork closes Nov 8, 2026); add the next show's works when its page is up.
 
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
