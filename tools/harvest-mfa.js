@@ -21,6 +21,8 @@
   const CONFIG = {
     pause: 15000,          // ms between requests: slow enough that the site doesn't pause us
     sessionRequests: 120,  // a session stops by itself after this many requests (about 30 min); press Start later to continue
+    restMinutes: 30,       // Overnight mode: rest this long after each session, then continue by itself
+    blockRestHours: 3,     // Overnight mode: if the site stops us, wait this long and try once more; a second stop ends the night
     imageMax: 420,         // longest side of saved images, px
     imageQuality: 0.72,    // JPEG quality
     packSize: 15e6,        // bytes per image pack file (GitHub's web upload limit is 25 MB)
@@ -66,6 +68,7 @@
       <button id="h-start" style="flex:1;padding:8px;border-radius:8px;border:0;background:#1f1c18;color:#fff;font:inherit">Start</button>
       <button id="h-download" style="flex:1;padding:8px;border-radius:8px;border:1px solid #ccc;background:#fff;font:inherit">Download</button>
     </div>
+    <label style="display:flex;gap:6px;align-items:center;margin-top:10px"><input type="checkbox" id="h-night"> Overnight mode: keep going by itself, with long rests</label>
     <button id="h-reset" style="margin-top:8px;padding:4px 0;border:0;background:none;color:#a33;font:inherit;text-decoration:underline">Reset saved progress</button>
     <div style="margin-top:8px;color:#6b655b">Keep this window visible and the Mac awake.</div>`;
   document.body.appendChild(panel);
@@ -473,7 +476,33 @@
     running = false;
     $('#h-start').textContent = 'Start';
   }
-  $('#h-start').onclick = () => { if (running) running = false; else run(); };
+  // Overnight mode: after each session, rest and continue; after a stop by the site, wait hours and try
+  // once more; a second stop ends it. It never reloads the page or works around the site's checks.
+  let nightTimer = null, blockedOnce = false;
+  async function night() {
+    clearTimeout(nightTimer);
+    if (!$('#h-night').checked) return;
+    const before = await count('records') + await count('images');
+    await run();
+    if (!$('#h-night').checked) return;
+    const msg = $('#h-status').textContent, made = (await count('records')) + (await count('images')) - before;
+    if (msg === 'Metadata collected.') return;
+    if (msg === 'Stopped.') {
+      if (blockedOnce && made === 0) { status('Stopped for tonight.', 'The site stopped us twice. Progress is saved; try another day.'); $('#h-night').checked = false; return; }
+      blockedOnce = made === 0;
+      const at = new Date(Date.now() + CONFIG.blockRestHours * 3600e3);
+      status('Resting (the site asked us to stop).', `Will try once more at ${at.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}.`);
+      nightTimer = setTimeout(night, CONFIG.blockRestHours * 3600e3);
+      return;
+    }
+    if (msg === 'Paused.') return;
+    blockedOnce = false;
+    const at = new Date(Date.now() + CONFIG.restMinutes * 60e3);
+    status('Resting between sessions.', `${await count('records')} works read \u00b7 ${await count('images')} images. Next session at ${at.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}.`);
+    nightTimer = setTimeout(night, CONFIG.restMinutes * 60e3);
+  }
+  $('#h-night').onchange = () => { if ($('#h-night').checked && !running) night(); else if (!$('#h-night').checked) clearTimeout(nightTimer); };
+  $('#h-start').onclick = () => { if (running) { running = false; $('#h-night').checked = false; clearTimeout(nightTimer); } else if ($('#h-night').checked) night(); else run(); };
   $('#h-download').onclick = async () => {
     if (!(await count('records'))) { status('Nothing to download yet.', 'Click Start first. Download is for the end, after "Finished collecting".'); return; }
     download().catch(e => status('Download failed.', e.message));
