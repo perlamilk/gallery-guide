@@ -46,7 +46,11 @@ VISIT = {
     'Q713204': ('9 Glendale Road (Route 183), Stockbridge, MA 01262',
                 ['Mon, Tue, Thu, Fri: 10 am–4 pm', 'Sat–Sun: 10 am–5 pm', 'Wed: closed'],
                 ['Adults: $25', 'Seniors and retired military: $23', 'College students: $15', 'Children 6–18: $5',
-                 'Children 5 and under: free', 'Rockwell’s Studio tour: +$10'], '413-931-2221', None),
+                 'Children 5 and under: free', 'Rockwell’s Studio tour: +$10'], '413-931-2221',
+                'Free parking by the museum. The front door faces the lawn; Rockwell’s Studio is a short walk across the '
+                'grounds and is open May to early November (it closes for the season after Nov 8, 2026). The Terrace '
+                'Café is open in summer only. Exploring Calvin and Hobbes and Norman Rockwell: The Human Touch open Nov '
+                '14, 2026. No backpacks or large bags in the galleries.'),
     'Q847508': ('55 Salisbury Street, Worcester, MA 01609',
                 ['Wed–Sun: 10 am–4 pm', 'Mon–Tue: closed'],
                 ['Adults: $22', 'Seniors and students: $17', '17 and under: free', 'Members: free'], '508-799-4406', None),
