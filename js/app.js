@@ -562,11 +562,11 @@ function acquiredRow(a) {
   if (/expedition/i.test(c) && SITE.key === 'mfa') how = 'Excavated by the Harvard–MFA Expedition';
   else if (purchase && !/^(gift|bequest|partial gift|anonymous gift)/i.test(c)) {
     how = a.soldBy || a.price ? ['Bought', a.soldBy && `from ${a.soldBy}`, a.price && `for ${a.price}`].filter(Boolean).join(' ') : 'Purchased';
-    note = c;
+    note = /^purchased\.?$/i.test(c) ? '' : c;      // a credit line that only says "Purchased" (SCMA)
   }
   let when = a.accessionDate ?? '';
   if (!when) {
-    const m = String(a.accession ?? '').match(/^(\d{2,4})\./);
+    const m = String(a.accession ?? '').replace(/^SC /, '').match(/^(\d{2,4})\./);
     if (m && m[1].length === 4) when = m[1];
     else if (m && m[1].length === 2 && +m[1] < 70) when = `19${m[1]}`;
   }

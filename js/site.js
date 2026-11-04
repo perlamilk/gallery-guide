@@ -143,6 +143,17 @@ export const SITES = {
     flat: true,
     blurb: 'An approximate floor plan of both floors inside the building’s real outline, every work in the museum’s online collection in the gallery for its period, directions and your visit diary.',
   },
+  smith: {
+    key: 'smith', id: 'Q14715853', short: 'SCMA', name: 'Smith College Museum of Art',
+    floors: 'data/smith/floors.json', artworks: 'data/smith/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-smith.json', packKey: 'gg-pack-smith',
+    room: id => id,                          // galleries have names (Art Before 1800, Asian Art Gallery), not numbers
+    website: 'View on the Five College Museums Site',
+    official: false,
+    flat: true,
+    blurb: 'All four floors traced from the museum’s own map, with the entrance, restrooms, shop and elevators, the works in this season’s shows in the gallery where they hang, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
