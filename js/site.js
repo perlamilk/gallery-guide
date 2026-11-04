@@ -308,6 +308,17 @@ export const SITES = {
     flat: true,
     blurb: 'The grounds with parking and the rose garden by the Cliff Walk, and both floors of the house traced from Stanford White’s 1902 plans: the heart-shaped staircase, the Ballroom (the largest in Newport), the Salon, the Dining and Billiard Rooms, the exhibition upstairs and the basement restrooms and store, with the Oelrichs’ and Monroes’ furniture and paintings, directions and your visit diary.',
   },
+  mos: {
+    key: 'mos', id: 'Q1139748', short: 'Museum of Science', name: 'Museum of Science',
+    floors: 'data/mos/floors.json', artworks: 'data/mos/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-mos.json', packKey: 'gg-pack-mos',
+    room: id => id,                          // exhibit areas have names (Dinosaurs, Hall of Human Life)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'All three levels, traced from the museum’s own map: the Red, Green and Blue Wings with the Planetarium, the Omni and 4-D theaters, the Theater of Electricity and its giant Van de Graaff generator, the dinosaurs, the Apollo capsule and every exhibit where it is, plus restrooms, elevators, the Riverview Café, the store, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

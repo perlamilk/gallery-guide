@@ -324,3 +324,13 @@ the galleries, the glass Pavilion, restrooms) and is APPROXIMATE: the exhibits w
 is in which room follows visitors' accounts of the route. Works: 17 permanent exhibits in the order of the visit, plus
 the 28 objects, photographs and papers the museum publishes on Google Arts & Culture, each in the gallery about its
 subject and marked "may not be on view". To improve: a photo of the museum's paper map.
+
+Museum of Science, Boston (Nov 4, 2026): map guide at `guide.html?museum=mos`, built by `tools/harvest_mos.py` +
+`tools/build_mos.py`. mos.org is open to robots and lists every page in its sitemap. The map is traced from the
+museum's own visitor map (October 2026, mos.org/visit/map): Level 2, Level 1 and the Lower Level with the Red, Green
+and Blue Wings, restrooms, stairs, elevators, café, store, info desk, lockers, theaters. Walls are simplified; rooms
+and amenities are where the museum puts them. Works: every current exhibit, live presentation and drop-in activity page
+(each states its wing and level; past exhibits are left out), plus the theaters and the best-known things to see
+(Van de Graaff generator, Foucault's Pendulum, Archimedean Excogitation, Apollo capsule, T. rex, Cliff the
+Triceratops). Weems sculptures, the Washburn exhibit, Transportation, Faces of Science and the Rock Garden give only a
+wing, so their room is a guess and says so. Seasonal "All Aboard! Trains" (Green Wing, Level 2) is not on the map yet.
