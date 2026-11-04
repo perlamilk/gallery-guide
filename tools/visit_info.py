@@ -85,7 +85,8 @@ VISIT = {
                   FREE, '413-585-2760', 'No café in the museum. Lockers, coatroom, strollers and wheelchairs by the '
                                          'Lobby; elevators to every floor.'),
     'Q6803132': ('41 Quadrangle Drive, Amherst, MA 01002',
-                 ['Tue–Sun: 9 am–5 pm', 'Thu (school year): until 10 pm', 'Mon: closed'], FREE, '413-542-2335', None),
+                 ['Tue–Sun: 9 am–5 pm', 'Mon: closed'], FREE, '413-542-2335',
+                 ['All galleries are on one floor, wheelchair-accessible', 'Accessible parking at the front entrance']),
     'Q4713992': ('258 Main Street, Ridgefield, CT 06877',
                  ['Sun, Mon, Wed–Fri: 12–5 pm', 'Sat: 10 am–5 pm', 'Tue: closed', 'Last entry 4:40 pm'],
                  ['Adults: $20', 'Seniors 60+: $15', 'Students: $9', 'Third weekend of the month: free'], '203-438-4519', None),
