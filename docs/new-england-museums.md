@@ -77,6 +77,14 @@ Python's HTTP client, so the harvester calls plain curl. The map is approximate:
 (app.smartify.org blocks automated reading), so the lower lobby and floors 1–4 of the Kahn building, the Old Yale Art Gallery
 and Street Hall (across High Street, by the floor-2 bridge) are drawn from the Gallery's descriptions and turned a quarter so
 Chapel Street runs down the left. A photo of the Smartify floor plans would let the rooms be placed properly.
+MASS MoCA (Nov 4, 2026): map guide at `guide.html?museum=massmoca`, built by `tools/build_massmoca.py`. MASS MoCA
+has no collection: what it shows are long-term installations and exhibitions. The map is the museum's own October 2026
+visitor map (vector PDF behind the map link on massmoca.org/visit, hosted on indd.adobe.com); building outlines,
+restrooms, elevators and stairs are read from it, seasonal galleries, courtyards and paths are drawn over it. Works
+(123): all 88 wall drawings of the Sol LeWitt retrospective (Building 7; floor from the year, since it runs in order)
+and 35 installations and exhibitions in the building the map lists. massmoca.org pages sit behind a Cloudflare check,
+so they were read once by hand into `tools/data/massmoca_works.tsv`; pictures come from its uploads folder and are
+saved smaller in `data/massmoca/images/`. Seasonal galleries (Kiefer, Boiler House, Mary Lum) reopen in May.
 
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
