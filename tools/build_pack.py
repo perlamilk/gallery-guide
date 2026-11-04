@@ -14,6 +14,9 @@ PACKS = [
     ('Q403080', 'data/pack-wadsworth.json',
      ['data/wadsworth/artworks.json', 'data/wadsworth/floors.json'],
      'data/wadsworth/artworks.json', None),
+    ('Q3783572', 'data/pack-harvard.json',
+     ['data/harvard/artworks.json', 'data/harvard/floors.json'],
+     'data/harvard/artworks.json', None),
 ]
 
 for museum, out_path, files, art_path, notice_path in PACKS:
@@ -24,7 +27,7 @@ for museum, out_path, files, art_path, notice_path in PACKS:
     notice = json.load(open(notice_path))['works'] if notice_path else {}
     for a in art:
         for u in (a.get('image'), (a.get('img') or {}).get('p')):
-            if u and u not in files: files.append(u)
+            if u and u not in files and not u.startswith('http'): files.append(u)   # remote pictures (Harvard) stay online
     for w in notice.values():
         if w.get('image') and w['image'] not in files: files.append(w['image'])
     out = [{'u': u, 's': os.path.getsize(u)} for u in files if os.path.exists(u)]

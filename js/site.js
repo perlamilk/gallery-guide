@@ -23,6 +23,16 @@ export const SITES = {
     official: false,
     flat: true,                            // a 2D plan from above: Grazi prefers it to the tilting 3D map
   },
+  harvard: {
+    key: 'harvard', id: 'Q3783572', short: 'Harvard Art Museums', name: 'Harvard Art Museums',
+    floors: 'data/harvard/floors.json', artworks: 'data/harvard/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-harvard.json', packKey: 'gg-pack-harvard',
+    room: id => (/^\d{4}$/.test(id) ? `Gallery ${id}` : id),
+    website: 'View on the Harvard Art Museums Website',
+    official: false,
+    flat: true,
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
