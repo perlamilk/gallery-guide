@@ -106,6 +106,16 @@ museum's own collection site, ink.nbmaa.org (eMuseum, reachable from the cloud),
 `tools/harvest_nbmaa.py` (12 works a page, 1.5 s apart, so a full run takes a couple of hours). There is no on-view data:
 works in the museum's themed highlight sets go to that period's gallery, the rest by date and medium, each with a note.
 Pictures load from ink.nbmaa.org as they are viewed; sw.js does not download them in bulk.
+Smith College Museum of Art (Nov 4, 2026): map guide at `guide.html?museum=smith`, built by `tools/build_smith.py`.
+All four floors (Lower Level, 1, 2, 3) are traced by hand from the museum's own map
+(scma.smith.edu/sites/default/files/SCMA_General_Map_for_Website_0.jpg, linked from /visit), so rooms, entrance, restrooms,
+baby changing, shop, coatroom/lockers and elevator are real; there is no café. SCMA has 29,000+ works, but the full
+catalogue lives in the Five College Museums database, whose robots.txt blocks AI crawlers, so it is not read. Works on
+the map are the ones pictured on each current show's page on scma.smith.edu, in that show's gallery (Coco Fusco and Painting
+Nature name their gallery; the others are reasoned and the note says so). The museum page also lists the Highlights
+pages' works and the ~100 SCMA works in Wikidata, not placed. Shows change: update `SHOWS`/`SHOW_WORKS` and re-run.
+SCMA was missing from museums.json (its Wikidata type isn't one build_open_data.py asks for); `EXTRA` in
+tools/visit_info.py adds it back after any rebuild.
 
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 

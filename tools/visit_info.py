@@ -73,6 +73,10 @@ VISIT = {
                 '413-662-2111', 'James Turrell’s Perfectly Clear and Hind Sight need a timed reservation, made at the '
                                 'Box Office or at reserve@massmoca.org. Some outdoor and seasonal galleries '
                                 '(Anselm Kiefer, the Boiler House, Mary Lum) are open May to October only.'),
+    'Q14715853': ('20 Elm Street at Bedford Terrace, Northampton, MA 01063',
+                  ['Tue–Sun: 11 am–4 pm', 'Second Friday of the month: open until 8 pm', 'Mon and major holidays: closed'],
+                  FREE, '413-585-2760', 'No café in the museum. Lockers, coatroom, strollers and wheelchairs by the '
+                                         'Lobby; elevators to every floor.'),
     'Q6803132': ('41 Quadrangle Drive, Amherst, MA 01002',
                  ['Tue–Sun: 9 am–5 pm', 'Thu (school year): until 10 pm', 'Mon: closed'], FREE, '413-542-2335', None),
     'Q4713992': ('258 Main Street, Ridgefield, CT 06877',
@@ -181,6 +185,14 @@ VISIT = {
     'Q138002039': ('44 Troy Street, Fall River, MA 02720', None, None, None, None),
 }
 
+# Museums the Wikidata rebuild leaves out (their Wikidata type isn't one tools/build_open_data.py asks for);
+# added to museums.json if missing, so their pages exist
+EXTRA = {
+    'Q14715853': {'id': 'Q14715853', 'name': 'Smith College Museum of Art', 'at': [42.318502, -72.636378], 'links': 7,
+                  'image': '020 Elm St Smith College Museum.jpg', 'website': 'https://scma.smith.edu/',
+                  'city': 'Northampton', 'state': 'Massachusetts', 'wikipedia': 'Smith_College_Museum_of_Art'},
+}
+
 # Commons photos for museums that Wikidata has no picture for (others show a map of where they are)
 PHOTOS = {
     'Q123689395': 'Lunder Arts Center, Lesley University 1803 Mass Ave Cambridge.jpg',
@@ -191,6 +203,11 @@ PHOTOS = {
 def main():
     path = os.path.join(os.path.dirname(__file__), '..', 'data', 'museums.json')
     doc = json.load(open(path, encoding='utf-8'))
+    have = {m['id'] for m in doc['museums']}
+    for e in EXTRA.values():
+        if e['id'] not in have:
+            i = next((i for i, m in enumerate(doc['museums']) if m.get('links', 0) < e['links']), len(doc['museums']))
+            doc['museums'].insert(i, dict(e))
     seen = set()
     for m in doc['museums']:
         v = VISIT.get(m['id'])

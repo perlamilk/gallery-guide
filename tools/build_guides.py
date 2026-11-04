@@ -249,8 +249,8 @@ def main():
     ids = [a for a in args if a.startswith('Q')] or ([] if '--region' in sys.argv and not args and '--batch' not in sys.argv
                                                       else list(BATCHES[batch]))
     # museums with their own map guide have their own builder (the Wadsworth: tools/build_wadsworth.py; ICA Boston:
-    # tools/build_ica.py)
-    ids = [x for x in ids if x not in (MFA, 'Q403080', 'Q3152226')]
+    # tools/build_ica.py; Smith College Museum of Art: tools/build_smith.py)
+    ids = [x for x in ids if x not in (MFA, 'Q403080', 'Q3152226', 'Q14715853')]
     museums = {m['id']: m for m in json.load(open(os.path.join(DATA, 'museums.json'), encoding='utf-8'))['museums']}
 
     index_path = os.path.join(DATA, 'guides.json')

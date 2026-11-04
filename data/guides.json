@@ -120,6 +120,14 @@
    "galleries": true,
    "checked": "2026-11-04",
    "source": "ICA Boston website (icaboston.org)"
+  },
+  "Q14715853": {
+   "works": 153,
+   "pictures": 93,
+   "onView": 32,
+   "galleries": true,
+   "checked": "2026-11-04",
+   "source": "SCMA website (scma.smith.edu) and Wikidata"
   }
  }
 }
