@@ -191,7 +191,8 @@ function workInfo(id, fallback = null) {
   const w = D.guideWorks.get(id) ?? D.discover.works[id] ?? fallback;
   if (!w) return null;
   return { id, title: w.title, artist: w.artist, year: w.date ?? w.year, museum: shortMuseum(w.museumId, w.museum), museumId: w.museumId,
-    href: `#work/${id}${w.museumId && D.guides[w.museumId] ? `/${w.museumId}` : ''}`, thumb: cls => workImg(w, cls, 400) };
+    href: `#work/${id}${w.museumId && D.guides[w.museumId] ? `/${w.museumId}` : ''}`,
+    where: w.onView && w.gallery ? `Gallery ${w.gallery}` : null, thumb: cls => workImg(w, cls, 400) };
 }
 
 // A work's picture: a Wikimedia Commons file, or a link the museum allows apps to show.
@@ -631,12 +632,21 @@ function museumHighlights(id) {
     const famous = Object.keys(D.curio.works ?? {}).filter(x => D.mfaById.get(x)?.image || D.mfaById.get(x)?.img);
     return famous.slice(0, 8).map(x => workInfo(x));
   }
-  return Object.values(D.discover.works).filter(w => w.museumId === id).sort((a, b) => b.links - a.links).slice(0, 8).map(w => workInfo(w.id));
+  // when the museum's guide says what is on view, show a famous work as the museum's own record
+  // of it, so the tile and its page say which gallery and floor it is in
+  const doc = guideDocNow(id);
+  const onView = new Map((doc?.onViewKnown ? doc.works : []).filter(w => w.onView).map(w => [norm(w.title), w]));
+  return Object.values(D.discover.works).filter(w => w.museumId === id).sort((a, b) => b.links - a.links).slice(0, 8).map(w => {
+    const g = onView.get(norm(w.title));
+    if (!g) return workInfo(w.id);
+    if (!g.image && !g.imageUrl && w.image) g.image = w.image;
+    return workInfo(g.id);
+  });
 }
 
 function tileHTML(w) {
   return `<a class="tile" href="${w.href}"><div class="tile__img">${w.thumb('ph')}</div>
-    <p class="tile__title">${escape(w.title)}</p><p class="tile__sub">${escape([w.artist, w.year].filter(Boolean).join(' · '))}</p></a>`;
+    <p class="tile__title">${escape(w.title)}</p><p class="tile__sub">${escape([w.artist, w.year, w.where].filter(Boolean).join(' · '))}</p></a>`;
 }
 
 const host = url => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return url; } };
