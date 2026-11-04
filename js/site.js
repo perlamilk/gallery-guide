@@ -44,6 +44,17 @@ export const SITES = {
     flat: true,
     blurb: 'Floor plans from the museum’s map, works from its collection in the gallery where they most likely hang, directions and your visit diary.',
   },
+  gardner: {
+    key: 'gardner', id: 'Q49135', short: 'The Gardner', name: 'Isabella Stewart Gardner Museum',
+    floors: 'data/gardner/floors.json', artworks: 'data/gardner/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-gardner.json', packKey: 'gg-pack-gardner',
+    room: id => id,                          // rooms have names (Dutch Room, Titian Room), not numbers
+    website: 'View on the Gardner Website',
+    official: false,
+    flat: true,
+    blurb: 'Floor plans of the Palace and the New Wing from the museum’s map, works in the room where Isabella placed them, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

@@ -21,6 +21,15 @@ in their likely gallery by date and origin (the app says it's a guess and that t
 own collection site (worcester.emuseum.com) has a Cloudflare bot check, so it isn't read; on-view data would need the
 museum's permission or a data export.
 
+Isabella Stewart Gardner Museum (Nov 4, 2026): map guide at `guide.html?museum=gardner`, built by
+`tools/build_gardner_map.py`. The rooms are read off the museum's visitor map PDF (gardnermuseum.org, "ISGM_Map_English
+9.30.26.pdf"), which draws every floor flat: Floors 1–3 of the Palace and Floors 1–2 of the New Wing (entrance, tickets,
+café, store, coat check, Calderwood Hall, Hostetter Gallery), joined by the walkway on Floor 1. Works: the 425 in Wikidata;
+399 are placed in their exact room, because the museum's object numbers name the room (P21w27 = room 21, the Dutch Room,
+west wall). The 1990 theft is noted on the stolen works (empty frames still hang). The collection site
+(gardnermuseum.emuseum.com) and object pages have a Cloudflare bot check, so they aren't read; the museum holds about
+7,500 objects in all.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
