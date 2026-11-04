@@ -128,6 +128,14 @@
    "galleries": true,
    "checked": "2026-11-04",
    "source": "SCMA website (scma.smith.edu) and Wikidata"
+  },
+  "Q2019741": {
+   "works": 59,
+   "pictures": 58,
+   "onView": 53,
+   "galleries": true,
+   "checked": "2026-11-04",
+   "source": "deCordova park map (Summer 2026) and thetrustees.org"
   }
  }
 }

@@ -50,6 +50,9 @@ PACKS = [
     ('Q14715853', 'data/pack-smith.json',
      ['data/smith/artworks.json', 'data/smith/floors.json'],
      'data/smith/artworks.json', None),
+    ('Q2019741', 'data/pack-decordova.json',
+     ['data/decordova/artworks.json', 'data/decordova/floors.json'],
+     'data/decordova/artworks.json', None),
 ]
 
 for museum, out_path, files, art_path, notice_path in PACKS:

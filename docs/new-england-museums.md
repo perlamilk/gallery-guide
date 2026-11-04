@@ -117,6 +117,14 @@ pages' works and the ~100 SCMA works in Wikidata, not placed. Shows change: upda
 SCMA was missing from museums.json (its Wikidata type isn't one build_open_data.py asks for); `EXTRA` in
 tools/visit_info.py adds it back after any rebuild.
 
+deCordova Sculpture Park and Museum (Nov 4, 2026): map guide at `guide.html?museum=decordova`, built by
+`tools/build_decordova.py`. The indoor galleries are closed for renovation, so the guide is the 30-acre park. The map is
+traced from deCordova's own Summer 2026 park map (a vector PDF on thetrustees.org); the 53 numbered circles are read from
+the PDF's text, so every number sits where the museum prints it, and each sculpture is filed under the lawn or garden
+around it. Each sculpture's picture, medium, size, credit line and text come from its page on thetrustees.org (linked
+from /content/decordovasculpturepark). Nature Sanctuary (works marked * on the map) ended Oct 4, 2026; those works say
+they may have left. When a new park map comes out, update `MAP_PDF` and `MAP_LIST` and re-run.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
