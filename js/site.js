@@ -352,6 +352,17 @@ export const SITES = {
     flat: true,
     blurb: 'All three floors, traced from the museum’s own floor plan: Burke Hall with the Brontosaurus and The Age of Reptiles mural, the Central Gallery with Archelon, the Human Footprint, Egypt and Mesopotamia, the dioramas, the minerals and the Living Lab, with what is in each gallery, plus restrooms, elevators, stairs, the store, directions and your visit diary.',
   },
+  spfld: {
+    key: 'spfld', id: 'Q7758868', short: 'Springfield Museums', name: 'Springfield Museums',
+    floors: 'data/spfld/floors.json', artworks: 'data/spfld/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-spfld.json', packKey: 'gg-pack-spfld',
+    room: id => id,                          // galleries have names (Blake Court, Dinosaur Hall)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'The Quadrangle with the Welcome Center where you buy one ticket for all five museums, free parking, the Blake House Café and the Dr. Seuss Sculpture Garden, and every floor of the five museums from their own maps: the Science Museum with its dinosaurs, aquarium and planetarium, the Smith Art Museum’s armor and cloisonné, the D’Amour Museum of Fine Arts, the Amazing World of Dr. Seuss and the Museum of Springfield History, with restrooms, elevators, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
