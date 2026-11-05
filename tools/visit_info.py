@@ -393,6 +393,38 @@ VISIT = {
                   'welcome',
                   'No café: the Nook Café at the Mark Twain House next door (May–October)',
                   'CT Transit buses 60, 62, 64 and 66 stop at Farmington Ave and Woodland St']),
+    'Q1506237': ('199 Elm Street, New Canaan, CT 06840',
+                 ['Tour season: April 16 – December 14, 2026',
+                  'Thu–Mon: 9:30 am–5 pm (Visitor Center and Design Store) · Tue–Wed: closed',
+                  'Closed Nov 26–28 (Thanksgiving)',
+                  'Last shuttle to the site: 3:45 pm (Mon, Thu–Sat) and 3 pm (Sun) April–October; 2:30 pm in November '
+                  'and December',
+                  'Visits by guided tour only (Self-Guided Sundays April–October). Book ahead: tours often sell out',
+                  'Mid-December to mid-April: site closed; private and group tours by appointment, Design Store by '
+                  'appointment Mon–Fri'],
+                 ['Glass House Tour (1 hour, Glass House and Brick House): $25 weekdays, $30 weekends',
+                  'Glass House + Galleries Tour (2 hours, 5 buildings): $50 weekdays, $60 weekends and holidays',
+                  'Extended Tour (2½ hours, adds the Studio): $75 weekdays, $85 weekends and holidays',
+                  'Self-Guided Sundays (up to 3 hours, April–October): $50',
+                  'Golden Hour Tour (2 hours, set dates): $95 · Private tour: $250 per person',
+                  'Members: 10% off · Children must be 8 or older (no infants: shuttle car-seat law)',
+                  'All sales final: no refunds or date changes'],
+                 '203-594-9884',
+                 ['199 Elm Street is the Visitor Center + Design Store, where every tour starts. The house itself is '
+                  'at 798–856 Ponus Ridge Road, reached only by the tour shuttle',
+                  'Check in at the Visitor Center 15–20 minutes before your tour; a shuttle takes you '
+                  'to the site (about 10 minutes) and back. Cars, taxis and Uber going straight to the site are sent '
+                  'back',
+                  'No parking at the Visitor Center: use the Lumberyard Lot, 244 Elm Street (free after 10:30 am, 5 '
+                  'minutes’ walk). For the 9:45 and 10:30 am tours on Mon, Thu and Fri, use the Park Street lot just '
+                  'past No. 72 (free 3 hours)',
+                  'By train: Metro-North to New Canaan (New Haven Line; change at Stamford off-peak); the station is '
+                  'across the street',
+                  'Tours are mostly outdoors, rain or shine: ¾ to 1 mile on gravel, grass and hills. Wheelchairs and '
+                  'scooters can’t go on the Extended or Self-Guided tours; ramps or a staff-driven cart on request '
+                  '(call ahead)',
+                  'No food, drinks (bottled water is fine), picnics, pets, flash, tripods, selfie sticks or drones',
+                  'Free Bloomberg Connects digital guide']),
     'Q2166814': ('548 Bellevue Avenue, Newport, RI 02840',
                  ['Closed for the season; reopens Jan 29, 2027',
                   'When open: daily, hours change with the season: see the operating schedule',
@@ -865,6 +897,9 @@ EXTRA = {
                  'image': 'Stowe Center for Literary Activism (55618577734).jpg', 'website': 'https://stowecenter.org/',
                  'city': 'Hartford', 'state': 'Connecticut',
                  'wikipedia': 'Harriet_Beecher_Stowe_House_(Hartford,_Connecticut)'},
+    'Q1506237': {'id': 'Q1506237', 'name': 'The Glass House', 'at': [41.14645, -73.4968], 'links': 30,
+                 'image': 'Glasshouse-philip-johnson.jpg', 'website': 'https://theglasshouse.org/',
+                 'city': 'New Canaan', 'state': 'Connecticut', 'wikipedia': 'Philip_Johnson_Glass_House'},
     'Q2166814': {'id': 'Q2166814', 'name': 'Rosecliff', 'at': [41.465, -71.30454], 'links': 10,
                  'image': 'Rosecliff (1308020662).jpg',
                  'website': 'https://www.newportmansions.org/mansions-and-gardens/rosecliff/', 'city': 'Newport',

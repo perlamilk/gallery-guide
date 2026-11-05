@@ -636,3 +636,13 @@ only on the Wayback Machine, which the cloud can't reach), so its two floors and
 APPROXIMATE, placed from descriptions. Works: rooms, objects named as on view, the two galleries and current exhibitions,
 gardens and sculptures, and collection highlights (marked "ask whether on view"), with the Stowe Center's own pictures.
 stowecenter.org asks for a 10-second crawl delay.
+
+The Glass House (Philip Johnson, New Canaan; National Trust) (Nov 5, 2026): map guide at `guide.html?museum=glasshouse`,
+built by `tools/build_glasshouse.py`. Map: the 49-acre site traced from the Glass House's own site map (the SVG behind the
+Explore pages, theme image explore-map-with-logo.svg; NORTH IS TO THE RIGHT on it, turned north-up here; ~1.55 px/m,
+checked against OpenStreetMap). Its pins name every building (and the Judd ring, Schnabel sculpture, pool, gate, gardens).
+Footpaths across the grass are approximate. Floor V is the Visitor Center + Design Store in town (199 Elm St) from
+OpenStreetMap, where every tour starts by shuttle. Works: the buildings (Explore pages) and every collection page under
+/learn/ (paintings and sculptures, with photos); the pages don't say which building a work is in, so paintings go in the
+Painting Gallery and sculptures in the Sculpture Gallery, marked as guessed. theglasshouse.org asks for a 10-second crawl
+delay. Season April 16 – December 14, 2026: update hours in visit_info.py for 2027.
