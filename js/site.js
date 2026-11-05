@@ -495,6 +495,17 @@ export const SITES = {
     flat: true,
     blurb: 'Both public floors traced from the architects’ plans of the 2023 building: the lobby, café, Museum Store, restrooms, lecture hall and main stairs on the ground floor; the Richter Art Wing, the Sculpture Gallery, the Mineral Gallery and the science galleries one level up; the shows on view now (American Stories from Sargent to O’Keeffe, Dustin Yellin and more), directions and your visit diary.',
   },
+  mit: {
+    key: 'mit', id: 'Q6716306', short: 'MIT Museum', name: 'MIT Museum',
+    floors: 'data/mit/floors.json', artworks: 'data/mit/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-mit.json', packKey: 'gg-pack-mit',
+    room: id => id,                          // galleries have names
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'All three floors from the museum’s own floor map: the lobby, store and grand stair, restrooms and water fountains on every floor, The Exchange, the Maker Hub; Essential MIT, AI: Mind the Gap with Kismet and Claude Shannon’s machines, MIT Collects with Whirlwind and the Apollo guidance computer, and the OCEANS shows (Sensing Oceans, Crochet Coral Reef), with directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
