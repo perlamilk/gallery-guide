@@ -366,3 +366,15 @@ The collection database (peabody.collections.yale.edu) is a JavaScript app behin
 Temporary shows are placed in the second-floor Special Exhibitions gallery by guess and say so; Spineless is in the
 Student Gallery. Indigenous Connections / Mesoamerican & Andean Civilizations share one open room, split by guess.
 Admission is free.
+
+Harvard Museum of Natural History (Nov 4, 2026): map guide at `guide.html?museum=hmnh`, built by
+`tools/harvest_hmnh.py` + `tools/build_hmnh.py`. hmnh.harvard.edu, mcz.harvard.edu, oeb.harvard.edu and
+peabody.harvard.edu all answer scripts with 403 (Akamai), and the Wayback Machine is unreachable from the cloud. The map
+is traced from the floor plan in the Harvard Museums of Science & Culture wayfinding brochure (July 2023, a PDF on
+websites.harvard.edu): every gallery is on the third floor, with admissions and the shop at the top of the stairs from
+26 Oxford Street, the elevator from the ground-level accessible entrance, restrooms, accessible restroom, water and the
+way into the Peabody Museum. The plan is a diagram, so the map says it is approximate. Works: photos visitors took in the
+galleries and shared on Wikimedia Commons (museum, Glass Flowers, minerals and meteorites categories, plus a file
+search), read from the HTML pages because the Commons API rate-limits the cloud. Galleries are given by what each photo
+shows (GALLERY_RULES); mammals, birds and arthropods without a clear gallery are marked as placed by guess.
+Admission from July 1, 2026: adults $20, seniors $18, students and youth 3–18 $15.

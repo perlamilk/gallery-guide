@@ -363,6 +363,17 @@ export const SITES = {
     flat: true,
     blurb: 'The Quadrangle with the Welcome Center where you buy one ticket for all five museums, free parking, the Blake House Café and the Dr. Seuss Sculpture Garden, and every floor of the five museums from their own maps: the Science Museum with its dinosaurs, aquarium and planetarium, the Smith Art Museum’s armor and cloisonné, the D’Amour Museum of Fine Arts, the Amazing World of Dr. Seuss and the Museum of Springfield History, with restrooms, elevators, directions and your visit diary.',
   },
+  hmnh: {
+    key: 'hmnh', id: 'Q2001855', short: 'Natural History', name: 'Harvard Museum of Natural History',
+    floors: 'data/hmnh/floors.json', artworks: 'data/hmnh/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-hmnh.json', packKey: 'gg-pack-hmnh',
+    room: id => id,                          // galleries have names (Glass Flowers, Great Mammal Hall)
+    website: 'More about this photo',
+    official: false,
+    flat: true,
+    blurb: 'The gallery floor, traced from the Harvard museums’ own plan: the Glass Flowers, the Great Mammal Hall with its whale skeletons, the Kronosaurus and the dinosaurs, the Cenozoic mammals, the minerals, gems and meteorites, the arthropods and the Blaschka sea creatures, with what is in each gallery, plus the stairs and elevator, restrooms, the shop, the way to the Peabody Museum, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
