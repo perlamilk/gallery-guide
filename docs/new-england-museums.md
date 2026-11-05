@@ -656,3 +656,14 @@ the shows on view and long-term galleries from mattmuseum.org, plus the whole ca
 Collections (ctcollections.org, source facet 1868; robots.txt closes /Browse/*/images/*, so only list view and object
 pages are read, 2 s apart). Catalogue pictures are linked from ctcollections.org, not copied. mattatuckcollections.org
 has lapsed (now a sports site): don't use it. Update SHOWS in build_mattatuck.py when the shows change.
+
+New England Air Museum (Windsor Locks) (Nov 5, 2026): map guide at `guide.html?museum=neam`, built by
+`tools/build_neam.py` (reads neam.org and OpenStreetMap once into `.cache/neam`, 3 s apart). Map: the Military, Civil
+Aviation, B-29, Restoration and Storage Hangars, the entrance canopy, parking and the outdoor planes are traced from
+OpenStreetMap (true to scale); NEAM publishes no map online (a paper one is handed out at the desk), so the lobby, shop,
+restrooms, vending, the Kosciuszko room and the Space & Observation Mezzanine inside them are APPROXIMATE, placed from
+the visit page and a visitor's walk-through. Works: the 43 aircraft neam.org lists as on display (pictures hotlinked from
+its Shopify CDN), the K-16B outside, 16 exhibits and the 6 featured engines; hangars named by the museum where it says
+(ZNPK-28, CBY-3 Civil; K-225, A-10, F-100, CH-54, A-26 Military; B-29), the rest guessed by subject and marked so. The
+museum page also lists the aircraft in storage and the engine collection (no pictures, not on view). The script stops if
+neam.org adds or drops an aircraft: then add it to AIRCRAFT.

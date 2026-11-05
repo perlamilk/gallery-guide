@@ -671,6 +671,17 @@ export const SITES = {
     flat: true,
     blurb: 'The Mattatuck on the Waterbury Green, floor by floor (approximate plan, since no plan is published): the plaza entrance, the Foyer with the Welcome Desk, shop and Art of Yum Café, the History Gallery, the art galleries and Rooftop Terrace upstairs, and the Button Gallery on the 3rd floor; with the shows on view, the collection, directions and your visit diary.',
   },
+  neam: {
+    key: 'neam', id: 'Q7007140', short: 'Air Museum', name: 'New England Air Museum',
+    floors: 'data/neam/floors.json', artworks: 'data/neam/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-neam.json', packKey: 'gg-pack-neam',
+    room: id => id,                          // hangars are named (Military Hangar, B-29 Hangar)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'The New England Air Museum by Bradley Airport from above: the hangars traced true to scale (the rooms inside them approximate, since no map is published), the entrance and lobby, the Military, Civil Aviation and B-29 Hangars, the Space & Observation Mezzanine and the planes outdoors; with every aircraft and exhibit on view, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
