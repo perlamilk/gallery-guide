@@ -396,6 +396,17 @@ export const SITES = {
     flat: true,
     blurb: 'The main campus traced from OpenStreetMap and aerial photos, with the Visitor Center, the Historic Patuxet Homesite, every house of the 17th-Century English Village and the Craft Center, parking, restrooms and cafés, plus diagrams of Mayflower II’s decks and the Grist Mill downtown: the wetu, the mishoon, the Fort-Meetinghouse, the millstones and the exhibitions open now, directions and your visit diary.',
   },
+  carle: {
+    key: 'carle', id: 'Q5386237', short: 'The Carle', name: 'Eric Carle Museum of Picture Book Art',
+    floors: 'data/carle/floors.json', artworks: 'data/carle/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-carle.json', packKey: 'gg-pack-carle',
+    room: id => id,                          // galleries have names (West Gallery, Reading Library)
+    website: 'See this show on the Carle’s website',
+    official: false,
+    flat: true,
+    blurb: 'The museum’s one floor (an approximate plan: the Carle publishes none) with the entrance, admissions desk, Bookshop, Reading Library, Art Studio, Great Hall, the West, Central and East Galleries, the Café, auditorium and restrooms, the works pictured for the shows on view now, including Eric Carle’s own art, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
