@@ -387,6 +387,31 @@ VISIT = {
                   'Floor 2 holds the exhibition “Revolution Reimagined: Evolving Stories from Newport’s Past”',
                   'Free audio tour in the Newport Mansions app: bring a phone and earbuds',
                   'Partly accessible: a lift to floor 1 and a staff-run elevator to floor 2 (not to the basement); air-conditioned']),
+    'Q7370843': ('680 Bellevue Avenue, Newport, RI 02840',
+                 ['2026 season: through Sunday, Nov 8 — Tuesday–Friday 10 am–4 pm, Saturday and Sunday 10 am–5 pm '
+                  '(closed Mondays)',
+                  'A Rough Point Holiday: Nov 27 – Dec 27, 2026, Friday–Sunday 10 am–4 pm (separate holiday ticket)',
+                  'Holiday After Dark: Fridays and Saturdays 4–5:30 pm, Nov 27 – Dec 26 (drinks and jazz on the terrace)',
+                  'Closed for the winter after Dec 27; the 2027 season usually opens in late March',
+                  'Check newportrestoration.org/plan-a-visit before you go (schedule subject to change)'],
+                 ['General admission: $25 (house, exhibitions and grounds)', 'Students with ID: $12.50',
+                  'Children 12 and under: free', 'Newport County residents: free (show proof of address)',
+                  'EBT or WIC card (any state): $5 per person (Museums for All)', 'Blue Star Museum: free for active '
+                  'military families in summer',
+                  'No need to buy ahead: tickets online or at the museum entrance'],
+                 '401-847-8344',
+                 ['Doris Duke’s ocean-front home (1887–91, enlarged by the Dukes in 1922–24), with her art, furniture '
+                  'and fashion collections. Self-guided: allow 60–90 minutes',
+                  'Get the free “Newport Restoration Foundation” app before you go (room map, stories, videos); bring '
+                  'earbuds',
+                  'Limited parking on site, with accessible spaces; NRF suggests parking at the Newport Gateway Center '
+                  '(23 America’s Cup Ave) and taking the free hop-on, hop-off Route 67 trolley (May–October), which '
+                  'stops at Rough Point',
+                  'Accessible parking, entrance and restrooms, and an elevator to the second floor; bike racks on site',
+                  '2026 exhibitions: Women Designers of the 20th Century and Fashioning Resiliency (Doris Duke Fashion '
+                  'Gallery), 1776 | 2026 (Newport Galleries) and Keeping Rough Point Above Water',
+                  'Not part of the Preservation Society (Newport Mansions) ticket: Rough Point is run by the Newport '
+                  'Restoration Foundation']),
     'Q7731834': ('367 Bellevue Avenue, Newport, RI 02840',
                  ['Closed for its transformation; reopens Nov 16, 2026 as “The Elms Experience”',
                   'Timed tickets: choose a date and time when you buy; arrive 10 minutes early',
@@ -749,6 +774,9 @@ EXTRA = {
     'Q4165331': {'id': 'Q4165331', 'name': 'Mark Twain House & Museum', 'at': [41.767083, -72.701389], 'links': 30,
                  'image': 'House of Mark Twain.jpg', 'website': 'https://marktwainhouse.org/', 'city': 'Hartford',
                  'state': 'Connecticut', 'wikipedia': 'Mark_Twain_House'},
+    'Q7370843': {'id': 'Q7370843', 'name': 'Rough Point', 'at': [41.455222, -71.305444], 'links': 8,
+                 'image': 'Rough Point, Newport RI.jpg', 'website': 'https://www.newportrestoration.org/plan-a-visit/',
+                 'city': 'Newport', 'state': 'Rhode Island', 'wikipedia': 'Rough_Point'},
     'Q2166814': {'id': 'Q2166814', 'name': 'Rosecliff', 'at': [41.465, -71.30454], 'links': 10,
                  'image': 'Rosecliff (1308020662).jpg',
                  'website': 'https://www.newportmansions.org/mansions-and-gardens/rosecliff/', 'city': 'Newport',
