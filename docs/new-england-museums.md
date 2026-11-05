@@ -562,3 +562,14 @@ crosswalk are. Route 20 is drawn as a barrier; directions cross only at the cros
 inside the buildings. The online collection (pastperfectonline) returns 403 to robots. Season ends Nov 29, 2026;
 the Village Café is closed; the rebuilt Visitor Center (TSKP X IDK) was due summer 2026.
 
+Chesterwood, Stockbridge (Nov 5, 2026): map guide at `guide.html?museum=chesterwood`, built by
+`tools/harvest_chesterwood.py` + `tools/build_chesterwood.py` (cache `.cache/chesterwood`). chesterwood.org is
+Squarespace; its robots.txt gives AI bots the same rules as everyone (content pages allowed); read 5 s apart. The map
+is traced from the museum's own "Map of the Estate" (chesterwood.org/new-page-1, a 745 px hand drawing with NORTH TO
+THE RIGHT; the 2019/2020 outdoor-show maps use the same drawing) and turned north up; OpenStreetMap has only unnamed
+outlines there. The Studio's four rooms (Main Room, Casting Room, Reception Room, south piazza) are approximate shapes.
+Works: every piece in Chesterwood's printable Guide to the Studio (chesterwood.org/s/Highlights-Guide-to-the-Studio.pdf,
+~110 items by room and wall, with NT numbers), rooms and buildings, collection highlights from /the-collection-2 (where
+shown isn't published) and the 2026 exhibitions (season ended Oct 31). Few Studio pieces have photos online. Open
+May 15 – Oct 31, closed Tuesdays.
+

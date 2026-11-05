@@ -572,6 +572,17 @@ export const SITES = {
     flat: true,
     blurb: 'The whole Shaker village from above, true to scale: the Visitor Center, the Brick Dwelling, the shops, the Round Stone Barn and the gardens, and across Route 20 the Meetinghouse, Ministry’s Shop, Horse Barn and Schoolhouse, with every path, the crosswalk, restrooms, the store and picnic area, the story and a photo of each building, the room settings inside, this season’s exhibitions, directions and your visit diary.',
   },
+  chesterwood: {
+    key: 'chesterwood', id: 'Q5093884', short: 'Chesterwood', name: 'Chesterwood',
+    floors: 'data/chesterwood/floors.json', artworks: 'data/chesterwood/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-chesterwood.json', packKey: 'gg-pack-chesterwood',
+    room: id => id,                          // places are named (Residence, Main Room, Barn Gallery)
+    website: 'More on Chesterwood’s website',
+    official: false,
+    flat: true,
+    blurb: 'Daniel Chester French’s summer estate from Chesterwood’s own Map of the Estate: the Barn Gallery and Visitor Center with tickets and the shop, the restrooms, the Residence, the Studio room by room with every model on its walls (the Seated Lincoln, Andromeda, the life casts of hands), the garden and fountain, the Woodshed Gallery, the Standing Lincoln and the Woodland Walk to the Overlook, with directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
