@@ -31,7 +31,8 @@ export class Router {
         const a = this.nodes.get(Router.key(floor.id, d.a));
         const b = this.nodes.get(Router.key(floor.id, d.b));
         if (!a || !b) continue;
-        const s = floor.transform?.[0] ?? 1;
+        // walkScale: floors drawn larger than life (diagrams) walk at their real size
+        const s = floor.walkScale ?? floor.transform?.[0] ?? 1;
         const cost = (dist(a.center, d.at) + dist(d.at, b.center)) * s;
         this.#link(a, b, cost, { kind: 'door', at: d.at, floor: floor.id });
       }

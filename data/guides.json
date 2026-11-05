@@ -280,6 +280,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "Old Sturbridge Village 2026 Map Guide and website"
+  },
+  "Q1839461": {
+   "works": 50,
+   "pictures": 37,
+   "onView": 39,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "Plimoth Patuxet Museums website and OpenStreetMap"
   }
  }
 }

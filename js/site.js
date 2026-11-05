@@ -385,6 +385,17 @@ export const SITES = {
     flat: true,
     blurb: 'The gallery floor, traced from the Harvard museums’ own plan: the Glass Flowers, the Great Mammal Hall with its whale skeletons, the Kronosaurus and the dinosaurs, the Cenozoic mammals, the minerals, gems and meteorites, the arthropods and the Blaschka sea creatures, with what is in each gallery, plus the stairs and elevator, restrooms, the shop, the way to the Peabody Museum, directions and your visit diary.',
   },
+  plimoth: {
+    key: 'plimoth', id: 'Q1839461', short: 'Plimoth Patuxet', name: 'Plimoth Patuxet Museums',
+    floors: 'data/plimoth/floors.json', artworks: 'data/plimoth/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-plimoth.json', packKey: 'gg-pack-plimoth',
+    room: id => id,                          // places have names (Craft Center, Bradford House, Main deck)
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'The main campus traced from OpenStreetMap and aerial photos, with the Visitor Center, the Historic Patuxet Homesite, every house of the 17th-Century English Village and the Craft Center, parking, restrooms and cafés, plus diagrams of Mayflower II’s decks and the Grist Mill downtown: the wetu, the mishoon, the Fort-Meetinghouse, the millstones and the exhibitions open now, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
