@@ -561,6 +561,17 @@ export const SITES = {
     flat: true,
     blurb: 'The first floor from the architects’ plan of the 2026 renovation: the South Street entry, lobby, Museum Shop, café, restrooms and Children’s Activity Area; the Feigenbaum Aquarium at the heart of the museum, the Hall of History, Cabinets of Curiosities, Paleontology & Geology with the glowing rock room, the World in Miniature dioramas and Immersed in Nature; upstairs (approximate) the Soulful Creatures animal mummies, Objects and Their Stories with Pahat the mummy, and the Ellen Crane Memorial Room, with directions and your visit diary.',
   },
+  hsv: {
+    key: 'hsv', id: 'Q5647064', short: 'Hancock Shaker Village', name: 'Hancock Shaker Village',
+    floors: 'data/hsv/floors.json', artworks: 'data/hsv/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-hsv.json', packKey: 'gg-pack-hsv',
+    room: id => id,                          // buildings are named (Brick Dwelling, Round Stone Barn)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'The whole Shaker village from above, true to scale: the Visitor Center, the Brick Dwelling, the shops, the Round Stone Barn and the gardens, and across Route 20 the Meetinghouse, Ministry’s Shop, Horse Barn and Schoolhouse, with every path, the crosswalk, restrooms, the store and picnic area, the story and a photo of each building, the room settings inside, this season’s exhibitions, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

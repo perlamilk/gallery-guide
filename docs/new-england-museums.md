@@ -550,3 +550,15 @@ the Richardson House (12), its barn the Gebhardt Barn (13), "New England Changin
 robots.txt allows all, read 4 s apart) and the 62 collection highlights (osv.org/collection/...), which say nothing
 about where they are shown, so only the carding machine (in the Carding Mill) is placed. Missing pictures from Wikimedia
 Commons. Hours change by season (closed Nov 15–26; Christmas by Candlelight only Nov 27–Dec 27).
+
+Hancock Shaker Village, Pittsfield (Nov 5, 2026): map guide at `guide.html?museum=hsv`, built by
+`tools/harvest_hsv.py` + `tools/build_hsv.py` (cache `.cache/hsv`). The Village's Walking Tour Map
+(HSV_handheldMap.pdf, linked from /visit/walking-tour-guidemap/) is a painted view with north to the left, so buildings,
+paths and fences come from OpenStreetMap (north up, 0.35 m per unit), which names most buildings; the Walking Tour Map
+says which unnamed ones are which (the two west barns are the Visitor Center, the house by Route 20 the Brethren's Shop,
+OSM's "Discovery Barn" the 1910 Barn Complex) and where the restrooms (Visitor Center, Office Privy), café, store and
+crosswalk are. Route 20 is drawn as a barrier; directions cross only at the crosswalk. Works: the 16 building pages,
+2026 exhibitions with the building each page names, and room settings and objects from Wikimedia Commons photos taken
+inside the buildings. The online collection (pastperfectonline) returns 403 to robots. Season ends Nov 29, 2026;
+the Village Café is closed; the rebuilt Visitor Center (TSKP X IDK) was due summer 2026.
+
