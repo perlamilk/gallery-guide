@@ -239,6 +239,16 @@ over the campus view, with `walkScale` keeping walking times real. Works: the ex
 mill from plimoth.org (catalogaccess.com refuses robots), plus 11 collection objects from its "You Are the Historian" pages as
 not on view. The 2026 season ends Nov 29; Painting the Past and Threads of Identity run to Nov 2027.
 
+Eric Carle Museum of Picture Book Art (Nov 5, 2026): map guide at `guide.html?museum=carle`, built by `tools/build_carle.py`
+after `tools/harvest_carle.py` (reads carlemuseum.org pages 3 s apart into `.cache/carle`; robots.txt allows them). The Carle
+publishes no floor plan: the one floor is APPROXIMATE, from the OpenStreetMap outline (way 893989994, matches Esri imagery),
+the landscape architects' courtyard plan (Mantle LA: Art Studio at the south of the west wing, Great Hall on the courtyard,
+Café in the east wing) and the visit/accessibility pages. Works on the map: those pictured on the pages of the shows on view
+(West Gallery: Eric Carle's Modernist Inspirations, first rotation to Feb 28, 2027; East: Jerry Pinkney to Jan 3, 2027;
+Central: Weaving Words from Nov 21, 2026; Reading Library: Entwined Memory). Most are loans. The collection list (376) adds
+the Collection Highlights and Featured Artists pages; the Carle has 9,000+ objects but no public database. Re-run both
+scripts when shows change (next: Precious Things We Share, East Gallery, Jan 16, 2027; the second Modernist rotation Mar 6).
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).

@@ -288,6 +288,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "Plimoth Patuxet Museums website and OpenStreetMap"
+  },
+  "Q5386237": {
+   "works": 376,
+   "pictures": 376,
+   "onView": 44,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "The Eric Carle Museum’s exhibition, Collection Highlights and Featured Artists pages"
   }
  }
 }
