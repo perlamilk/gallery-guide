@@ -298,6 +298,17 @@ has 7,000+ works and no online catalogue, so works are the shows on view: all 21
 2026) from its catalogue PDF checklist (pictures cropped from it), Kaleidoscope works named in its press release,
 Heirlooms, and the public art outside. Rebuild when FESTIVAL closes and when the Kaleidoscope checklist appears.
 
+Heritage Museums & Gardens, Sandwich (Nov 5, 2026): map guide at `guide.html?museum=heritage`, built by
+`tools/build_heritage.py`. The grounds come out of the museum's own 2026 visitor map (the "Download a map" PDF on
+heritagemuseumsandgardens.org/map-of-heritage-museums-gardens, June 22, 2026), whose first page is vector: paved paths,
+stairs, nature trails, roads, gardens, lawns and Shawme Pond are its own shapes (via `pdftocairo -svg`), kept in its
+orientation (north up and to the left). The galleries are pictures in ovals on that map, so they are placed as ovals.
+The map is illustrated, not to scale; 1.2 m per point makes the app's walking times match the map's (Automobile
+Gallery 4 min, Special Exhibitions 10, Carousel 15). Works: the 26 cars of From Carriage to Classic (the museum's car
+pages via its WordPress API, `avada_portfolio`), objects pictured on the Cranberries, Revolution and Carousel pages,
+the outdoor exhibits and gardens; the other 17 cars and some blog objects are on the museum page as not on view. The
+2026 season ended Oct 18; rebuild when the 2027 shows are announced (the car pages say which are on exhibit).
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
