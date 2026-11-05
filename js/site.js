@@ -550,6 +550,17 @@ export const SITES = {
     flat: true,
     blurb: 'All four levels of the Downtown Campus from the museum’s own floor guide: the Pleasant Street entrance, Reception, Museum Store, coat room and restrooms; the Fitz Henry Lane Gallery with the world’s largest Lane collection, the Cape Ann, Central and Spotlight Galleries and the Captain Elias Davis House; the Fisheries Galleries upstairs, the Folly Cove Designers and 20th & 21st Centuries Galleries on top, and the Granite Gallery below, with directions and your visit diary.',
   },
+  berkshire: {
+    key: 'berkshire', id: 'Q4892280', short: 'Berkshire Museum', name: 'Berkshire Museum',
+    floors: 'data/berkshire/floors.json', artworks: 'data/berkshire/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-berkshire.json', packKey: 'gg-pack-berkshire',
+    room: id => id,                          // galleries have names
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'The first floor from the architects’ plan of the 2026 renovation: the South Street entry, lobby, Museum Shop, café, restrooms and Children’s Activity Area; the Feigenbaum Aquarium at the heart of the museum, the Hall of History, Cabinets of Curiosities, Paleontology & Geology with the glowing rock room, the World in Miniature dioramas and Immersed in Nature; upstairs (approximate) the Soulful Creatures animal mummies, Objects and Their Stories with Pahat the mummy, and the Ellen Crane Memorial Room, with directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

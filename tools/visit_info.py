@@ -404,8 +404,20 @@ VISIT = {
                    ['Springfield Museums ticket: adults $27.50', 'Seniors 60+ and college students: $18', 'Youth 5–17: $15'],
                    '413-263-6800', ['Part of the Springfield Museums']),
     'Q4892280': ('39 South Street, Pittsfield, MA 01201',
-                 ['Fri–Wed: 10 am–5 pm', 'Thu: closed'],
-                 ['Adults: $18', 'Seniors and college students: $15', 'Youth 4–17: $8', '3 and under: free'], '413-443-7171', None),
+                 ['Friday–Wednesday 10 am–5 pm', 'Closed Thursdays'],
+                 ['Adults: $18', 'Seniors and college students: $15', 'Youth 4–17: $8', '3 and under: free',
+                  'Members: free', 'Museums for All: free regular admission with an EBT card',
+                  'Library museum passes: discounted entry'],
+                 '413-443-7171',
+                 ['Reopened July 29, 2026 after a $12.1 million renovation: the aquarium is now on the first floor, '
+                  'twice its old size',
+                  'Now on view: Soulful Creatures: Animal Mummies in Ancient Egypt (Brooklyn Museum), Galleries '
+                  '206–208, through January 17, 2027',
+                  'Enter from South Street (Route 7), past Wally the Stegosaurus on the front lawn; lockers and coat '
+                  'racks in the lobby',
+                  'Art, natural history and history under one roof: good for families; a small café and the Museum '
+                  'Shop are by the entrance',
+                  'Accessible: elevator to the second floor, accessible ticket counter, wheelchairs to borrow']),
     'Q5506454': ('102 Prospect Hill Road, Harvard, MA 01451',
                  ['Museum buildings, Store and Café: Thu–Sun 10 am–4 pm, late April to early November',
                   '2026 season was Apr 30 – Nov 1: the buildings are closed for the winter and reopen in spring 2027',
