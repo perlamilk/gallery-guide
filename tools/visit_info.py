@@ -861,6 +861,27 @@ VISIT = {
                    'Street and St. Peter’s Square',
                    'Train: MBTA Newburyport/Rockport line to Gloucester, then a 10–15 minute walk',
                    'CAM Green campus (13 Poplar Street, free) is closed for the season until spring 2027']),
+    'Q7007140': ('36 Perimeter Road, Windsor Locks, CT 06096',
+                 ['Tuesday–Sunday: 9 am – 4 pm (last admission 3:30 pm)', 'Monday: closed',
+                  'Open during all Connecticut and Massachusetts school vacations',
+                  'Closes at 2 pm on Saturday, Nov 7, 2026 (gala)',
+                  'Closed New Year’s Eve, New Year’s Day, Easter Sunday, Thanksgiving, Christmas Eve and Christmas Day'],
+                 ['Adults: $23', 'Seniors 65+: $18', 'Youth (4–14): $13', 'Veterans with valid ID: $12',
+                  'Children 3 and under: free', 'Members: free (plus NARM reciprocal museums)',
+                  'Library passes from many local libraries (not valid on special event days)',
+                  'Extras: F/A-18 flight simulator pass (ages 12+), VIP tours inside the B-29, VS-44, blimp car and '
+                  'DC-3 ($75; $65 members; by appointment)'],
+                 '860-623-3305',
+                 ['On the north side of Bradley International Airport: I-91 exit 40 (Route 20 toward the airport), '
+                  'then Route 75 north and left onto Perimeter Road',
+                  'Free parking by the entrance, with accessible spaces close to the door',
+                  'Three big exhibit hangars (Military, Civil Aviation, B-29), mostly on the ground floor; an elevator '
+                  'by each mezzanine. Wheelchairs (one powered) at the admissions counter',
+                  'Some cockpits open when docents are there; model cockpits to sit in are around the museum',
+                  'Outdoor aircraft (“Restoration Park”) are weather dependent and closed in winter',
+                  'Small dining area with vending machines; picnic tables outside in fair weather; restaurants on '
+                  'Route 75',
+                  'Allow 2–3 hours']),
 }
 
 # Museums the Wikidata rebuild leaves out (their Wikidata type isn't one tools/build_open_data.py asks for);
@@ -921,6 +942,9 @@ EXTRA = {
                  'image': 'Stowe Center for Literary Activism (55618577734).jpg', 'website': 'https://stowecenter.org/',
                  'city': 'Hartford', 'state': 'Connecticut',
                  'wikipedia': 'Harriet_Beecher_Stowe_House_(Hartford,_Connecticut)'},
+    'Q7007140': {'id': 'Q7007140', 'name': 'New England Air Museum', 'at': [41.9471, -72.6915], 'links': 15,
+                 'image': 'NEAM.JPG', 'website': 'https://neam.org/', 'city': 'Windsor Locks',
+                 'state': 'Connecticut', 'wikipedia': 'New_England_Air_Museum'},
     'Q6789613': {'id': 'Q6789613', 'name': 'Mattatuck Museum', 'at': [41.55733, -73.04326], 'links': 15,
                  'image': 'Mattatuck Museum 1 - front exterior.JPG', 'website': 'https://www.mattmuseum.org/',
                  'city': 'Waterbury', 'state': 'Connecticut', 'wikipedia': 'Mattatuck_Museum'},

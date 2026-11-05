@@ -488,6 +488,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "Mattatuck Museum (mattmuseum.org) and its catalogue on Connecticut Collections (ctcollections.org)"
+  },
+  "Q7007140": {
+   "works": 178,
+   "pictures": 64,
+   "onView": 65,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "New England Air Museum (neam.org): aircraft, exhibit and engine pages"
   }
  }
 }
