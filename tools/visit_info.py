@@ -317,9 +317,15 @@ VISIT = {
                  ['Wed–Fri: 12–4 pm', 'Sat–Sun: 11 am–5 pm', 'First Thursday: 12–7 pm', 'Mon–Tue: closed'],
                  FREE, '978-345-4207', None),
     'Q14714982': ('625 Williams Street, New London, CT 06320',
-                  ['Tue–Sat: 10 am–5 pm', 'Sun: 1–5 pm', 'Mon: closed', 'Last entry 4 pm'],
-                  ['Adults: $12', 'Seniors 60+: $9', 'Active military: $7', 'Youth 12 and under: free',
-                   'First Saturday of the month: free'], '860-443-2545', None),
+                  ['Tue–Sat: 10 am–5 pm', 'Sun: 1–5 pm', 'Mon: closed', 'Last entry 4 pm',
+                   'First Thursday (Sep–May): open to 8 pm, last entry 7 pm'],
+                  ['Adults: $12', 'Seniors 60+: $9', 'Active military: $7', 'SNAP EBT card (Museums for All): $3',
+                   'Youth 12 and under, members, New London residents: free',
+                   'New London Public Schools, Connecticut College, USCGA and Mitchell College students and staff: free',
+                   'First Saturday of the month: free'], '860-443-2545',
+                  ['The grounds are being rebuilt as Lyman Allyn Park: the museum stays open, expect some '
+                   'construction noise', 'Free parking behind the museum; accessible parking and a ramp at the side '
+                   'entrance (ring the bell)']),
     'Q7367636': ('415 South Street, Waltham, MA 02453',
                  ['Wed–Sun: 11 am–5 pm', 'Mon–Tue: closed'], ['Free (register for a free ticket)'], '781-736-3434', None),
     'Q5508243': ('455 Oak Street, Brockton, MA 02301',
@@ -504,6 +510,9 @@ EXTRA = {
                  'wikipedia': 'Addison_Gallery_of_American_Art'},
 }
 
+# Museums whose Wikidata point is off (the Lyman Allyn's is 350 m west of the building; this is OpenStreetMap's)
+AT = {'Q14714982': [41.37374, -72.1029]}
+
 # Museums whose Wikidata name is out of date (deCordova reversed its name in 2009)
 NAMES = {'Q2019741': 'deCordova Sculpture Park and Museum'}
 
@@ -529,6 +538,7 @@ def main():
             continue
         seen.add(m['id'])
         if m['id'] in NAMES: m['name'] = NAMES[m['id']]
+        if m['id'] in AT: m['at'] = AT[m['id']]
         address, hours, admission, phone, notes = v
         m.update(address=address, infoChecked=CHECKED)
         # Wikidata sometimes gives the state as the city ("Massachusetts, Massachusetts")

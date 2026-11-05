@@ -249,6 +249,15 @@ Central: Weaving Words from Nov 21, 2026; Reading Library: Entwined Memory). Mos
 the Collection Highlights and Featured Artists pages; the Carle has 9,000+ objects but no public database. Re-run both
 scripts when shows change (next: Precious Things We Share, East Gallery, Jan 16, 2027; the second Modernist rotation Mar 6).
 
+Lyman Allyn Art Museum, New London (Nov 5, 2026): map guide at `guide.html?museum=lymanallyn`, built by
+`tools/build_lymanallyn.py` (pages cached by `tools/harvest_lymanallyn.py`). The museum publishes no floor plan, so the three
+floors are APPROXIMATE, drawn inside the OpenStreetMap outline (way 244881161: Platt's 1932 block, the link and the north
+addition) from the museum's own descriptions (lobby, Hendel Library, coat room and restrooms on the first floor; top-lit
+galleries upstairs; Lehman Auditorium and the Hawthorne dollhouse on the lower level; ramp at the side entrance). Works: the
+120 captioned pictures on its gallery pages (American Perspectives by century, the Tiffany gallery, the dollhouse) and the
+three shows on view (to Jan 2027), plus 12 collection highlights as not on view. The PastPerfect catalogue answers 403.
+Which room holds which century or show is a guess; the Wikidata point was 350 m off and is fixed in `tools/visit_info.py`.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
