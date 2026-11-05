@@ -585,3 +585,15 @@ the-estate page and the accessibility page (elevator at the end of the service w
 bedrooms. Works: rooms on the tour, the six Library Insights books (Wharton's own library), gardens, Stable, NightWood
 (Nov 21, 2026 – Jan 2, 2027) and the 2026 sculpture show (ended Oct 24, not placed). Mansion open weekends Nov–Jan 2,
 closed Jan 3 – April: update visit_info.py hours for the 2027 season.
+
+Rough Point, Newport (Nov 5, 2026): map guide at `guide.html?museum=roughpoint`, built by `tools/harvest_roughpoint.py`
++ `tools/build_roughpoint.py` (cache `.cache/roughpoint`). Run by the Newport Restoration Foundation (NRF), not the
+Preservation Society. newportrestoration.org is WordPress; robots.txt disallows nothing; pages read 5 s apart. The
+Collection highlights are a custom post type not in the REST API, so they are read from `collection-sitemap.xml` (68
+pages, each with the museum's photo as og:image; a few give a "Room" field). NRF publishes no floor plan (the map is
+inside its Encurate phone app; there is a Matterport tour on the Rough Point page). Grounds and the house outline:
+OpenStreetMap (estate way 1225567916, house way 882221285), turned 32.8° so the house stands straight. Rooms are
+APPROXIMATE, fitted into the outline: the 42 × 48 ft block at the north-east end is the 1920s Music Room (NRF: nearly
+2,000 sq ft), the angled south-west wing the service wing; the Dining Room is put on the ocean side because NRF says the
+table faces the ocean windows. Elevator and restrooms exist (NRF) but their places are guessed. 2026 season ends Nov 8;
+"A Rough Point Holiday" Nov 27 – Dec 27 (Fri–Sun): update visit_info.py for 2027.

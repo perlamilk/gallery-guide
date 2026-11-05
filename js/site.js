@@ -594,6 +594,17 @@ export const SITES = {
     flat: true,
     blurb: 'Edith Wharton’s estate from above, with the parking, Admission Booth, the Stable and its restrooms, the quarter-mile walk to the Mansion, the Italian and Flower Gardens, the Lime Walk and the woods; and the Mansion’s three floors (an approximate plan: The Mount publishes none) with every room on the tour, Wharton’s own books in her Library, the Bookstore, Terrace Café, restrooms and elevator, NightWood, directions and your visit diary.',
   },
+  roughpoint: {
+    key: 'roughpoint', id: 'Q7370843', short: 'Rough Point', name: 'Rough Point',
+    floors: 'data/roughpoint/floors.json', artworks: 'data/roughpoint/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-roughpoint.json', packKey: 'gg-pack-roughpoint',
+    room: id => id,                          // rooms are named (Great Hall, Music Room, Solarium)
+    website: 'More on the Newport Restoration Foundation’s website',
+    official: false,
+    flat: true,
+    blurb: 'Doris Duke’s ocean-front house from above, with the gate on Bellevue Avenue, the circular drive, the lions terrace, the lawn and the Cliff Walk; and the house’s two floors (an approximate plan: none is published) with the Great Hall, the portraits up the grand staircase, the Dining, Morning, Pine and Yellow Rooms, the Solarium, the Music Room, Doris Duke’s bedroom, the 2026 exhibitions, the elevator and restrooms, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

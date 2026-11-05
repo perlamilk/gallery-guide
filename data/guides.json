@@ -432,6 +432,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "The Mount’s website and media library; OpenStreetMap"
+  },
+  "Q7370843": {
+   "works": 89,
+   "pictures": 86,
+   "onView": 40,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "Newport Restoration Foundation website; OpenStreetMap"
   }
  }
 }
