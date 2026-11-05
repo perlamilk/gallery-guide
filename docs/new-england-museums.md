@@ -289,6 +289,15 @@ Harvard Press's 2024 review, the historic buildings and outdoor sculptures photo
 and five collection works from past shows (museum page only). Buildings are closed Nov–April; re-run when the 2027 season
 and its shows are announced.
 
+Fitchburg Art Museum (Nov 5, 2026): map guide at `guide.html?museum=fitchburg`, built by `tools/build_fitchburg.py`
+(pages, map and catalogue cached by `tools/harvest_fitchburg.py`). All three floors are traced from the museum's own
+visitor map (fitchburgartmuseum.org/visit, January 2026, 1:400; kept as printed, north down-right): Simonds Building
+(entrance, lobby, coat check, restrooms, Community, Ansin and Nadine Martel Galleries; the upstairs galleries) and the
+Merriam Parkway Building, joined by the Harris Gallery bridge. Floors are lined up on the elevator shafts. The museum
+has 7,000+ works and no online catalogue, so works are the shows on view: all 216 objects of FESTIVAL (to Dec 13,
+2026) from its catalogue PDF checklist (pictures cropped from it), Kaleidoscope works named in its press release,
+Heirlooms, and the public art outside. Rebuild when FESTIVAL closes and when the Kaleidoscope checklist appears.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
