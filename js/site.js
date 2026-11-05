@@ -682,6 +682,17 @@ export const SITES = {
     flat: true,
     blurb: 'The New England Air Museum by Bradley Airport from above: the hangars traced true to scale (the rooms inside them approximate, since no map is published), the entrance and lobby, the Military, Civil Aviation and B-29 Hangars, the Space & Observation Mezzanine and the planes outdoors; with every aircraft and exhibit on view, directions and your visit diary.',
   },
+  subforce: {
+    key: 'subforce', id: 'Q7631596', short: 'Nautilus', name: 'Submarine Force Museum and Historic Ship Nautilus',
+    floors: 'data/subforce/floors.json', artworks: 'data/subforce/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-subforce.json', packKey: 'gg-pack-subforce',
+    room: id => id,                          // places are named (Main Gallery, USS Nautilus, Front Lawn)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'The Submarine Force Museum in Groton from above: the building, the lawn with its midget submarines and the pier traced true to scale (the rooms inside approximate, since no plan is published), the lobby, Main Gallery, Control Room and periscopes, and the Historic Ship Nautilus compartment by compartment; with every exhibit, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
