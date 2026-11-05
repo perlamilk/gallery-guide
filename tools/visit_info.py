@@ -260,6 +260,28 @@ VISIT = {
                   'Afternoon Tea & Dining at the Chinese Tea House on the back lawn, by the Cliff Walk (book ahead)',
                   'Free audio tour (and a kids’ tour) in the Newport Mansions app: bring a phone and earbuds',
                   'Partly accessible: a ramp to floor 1 and a staff-run elevator to floor 2 and the basement; no air-conditioning']),
+    'Q5093884': ('4 Williamsville Road, Stockbridge, MA 01262',
+                 ['Open May 15 – October 31 (2026 season): every day except Tuesday, 10 am–5 pm',
+                  'Closed for the winter now; it reopens in mid-May 2027 (dates not announced yet)',
+                  'Guided tours of the Residence and Studio start between 11 am and 2 pm; self-guided visits '
+                  '10–11 am and 3–5 pm',
+                  'Check chesterwood.org/hours-admissions before you go'],
+                 ['Full estate, with the Residence and Studio tour: adults $25, seniors 65+ $23, students $18, '
+                  'military $18, National Trust members $22, children 12 and under free',
+                  'Grounds only (no Residence or Studio): adults $18; seniors, students 13+, military and National '
+                  'Trust members $16; children 12 and under free',
+                  'Members free. Buy online ahead: guided tours often sell out',
+                  'Other discounts may apply (EBT, library pass, Stockbridge residents). Not part of NARM'],
+                 '413-298-3579',
+                 ['Daniel Chester French’s summer home and studio, where he made the seated Lincoln for the Lincoln '
+                  'Memorial. Allow at least 1.5 hours',
+                  'Start at the Visitor Center in the Barn Gallery (admissions desk, Museum Shop). Restrooms are in '
+                  'their own small building between the parking lot and the Residence',
+                  'No café: there is a picnic area, and restaurants in Stockbridge and Lenox',
+                  'Paved walkways between buildings and ramps into every building; drop-off at the Visitor Center, '
+                  'accessible parking, a wheelchair on request. The Woodland Walk is a mostly flat dirt path; the '
+                  'Ledges Trail is a steep climb',
+                  'Admissions desk (in season): 413-298-2023']),
     'Q5647064': ('1843 West Housatonic Street, Pittsfield, MA 01201 (for GPS: 34 Lebanon Mountain Road, Hancock, MA 01237)',
                  ['Through Nov 29, 2026: Friday, Saturday and Sunday, 11 am–4 pm (Mon–Thu closed)',
                   'Closed for the winter after Nov 29; the Village reopens in April (in 2026 it opened April 18)',
@@ -680,6 +702,9 @@ EXTRA = {
                  'at': [42.316111, -71.033889], 'links': 24, 'image': 'JFK library Stitch Crop.jpg',
                  'website': 'https://www.jfklibrary.org/', 'city': 'Boston', 'state': 'Massachusetts',
                  'wikipedia': 'John_F._Kennedy_Presidential_Library_and_Museum'},
+    'Q5093884': {'id': 'Q5093884', 'name': 'Chesterwood', 'at': [42.28489, -73.35222], 'links': 10,
+                 'image': 'Chesterwood (Stockbridge, MA) - house.JPG', 'website': 'https://www.chesterwood.org/',
+                 'city': 'Stockbridge', 'state': 'Massachusetts', 'wikipedia': 'Chesterwood_(Massachusetts)'},
     'Q5647064': {'id': 'Q5647064', 'name': 'Hancock Shaker Village', 'at': [42.43045, -73.33905], 'links': 20,
                  'image': 'Gardens with Round Stone Barn and Dairy Ell, Hancock Shaker Village.jpg',
                  'website': 'https://hancockshakervillage.org/', 'city': 'Pittsfield', 'state': 'Massachusetts',
