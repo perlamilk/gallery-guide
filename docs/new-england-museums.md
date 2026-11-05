@@ -627,3 +627,12 @@ June 2026 Federer-exhibit press releases. tennisfame.com is a Scrivito single-pa
 but inductee pages and lists are not, so the 271 Hall of Famers come from Wikipedia's list + Wikidata (P3363).
 Their portraits come from Commons with `python3 tools/build_tennis.py --portraits` (Wikimedia answered 429 to the cloud
 on Nov 5, so most are still missing). Grounds photos: HABS RI-331 (loc.gov ri0065, public domain).
+
+Harriet Beecher Stowe Center (Stowe Center for Literary Activism), Hartford (Nov 5, 2026): map guide at
+`guide.html?museum=stowe`, built by `tools/build_stowe.py`. Map: campus from OpenStreetMap (Stowe House, the Visitor
+Center in the old carriage house, the Day House, the Forest Street lot, drives and paths); gardens placed from the Stowe
+Center's garden posts (approximate). The house has no HABS drawings and no published plan (the 2012 NHL nomination PDF is
+only on the Wayback Machine, which the cloud can't reach), so its two floors and the Visitor Center's rooms are
+APPROXIMATE, placed from descriptions. Works: rooms, objects named as on view, the two galleries and current exhibitions,
+gardens and sculptures, and collection highlights (marked "ask whether on view"), with the Stowe Center's own pictures.
+stowecenter.org asks for a 10-second crawl delay.

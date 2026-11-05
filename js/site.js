@@ -638,6 +638,17 @@ export const SITES = {
     flat: true,
     blurb: 'The historic Newport Casino from above, traced from the Hall of Fame’s own grounds map: the Welcome Center and Museum Store on Bellevue Avenue, the Lawn under the clock tower, Bill Talbert Center Court, the grass courts, Court Tennis and the Casino Theatre, entrances and restrooms; and the museum upstairs (gallery places approximate), from the Birth of Tennis to the Open Era, The Majors and the Federer exhibit, with every Hall of Famer in the Hall of Famers Gallery, directions and your visit diary.',
   },
+  stowe: {
+    key: 'stowe', id: 'Q5664050', short: 'Stowe Center', name: 'Harriet Beecher Stowe Center',
+    floors: 'data/stowe/floors.json', artworks: 'data/stowe/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-stowe.json', packKey: 'gg-pack-stowe',
+    room: id => id,                          // rooms are named (Front Parlor, Kitchen)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'The campus with free parking, the Visitor Center where every tour starts (tickets, store, restroom), the Day House and the gardens with the new bronze of Stowe, and both floors of the Stowe House (rooms approximate, since no plan is published): the parlors, the dining room, Calvin’s study, the kitchen, Stowe’s bedroom and the two galleries, with what is in each, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
