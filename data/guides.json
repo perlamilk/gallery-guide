@@ -424,6 +424,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "Chesterwood’s Guide to the Studio, Map of the Estate and website; Wikimedia Commons"
+  },
+  "Q7752461": {
+   "works": 58,
+   "pictures": 52,
+   "onView": 35,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "The Mount’s website and media library; OpenStreetMap"
   }
  }
 }

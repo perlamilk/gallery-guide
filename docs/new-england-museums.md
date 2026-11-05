@@ -573,3 +573,15 @@ Works: every piece in Chesterwood's printable Guide to the Studio (chesterwood.o
 shown isn't published) and the 2026 exhibitions (season ended Oct 31). Few Studio pieces have photos online. Open
 May 15 – Oct 31, closed Tuesdays.
 
+
+The Mount, Edith Wharton's Home, Lenox (Nov 5, 2026): map guide at `guide.html?museum=mount`, built by
+`tools/harvest_mount.py` + `tools/build_mount.py` (cache `.cache/mount`). edithwharton.org is WordPress; robots.txt
+disallows nothing; pages read 5 s apart, pictures from its media library (`/wp-json/wp/v2/media?search=`), 3 s apart.
+The Mount publishes no floor plan or grounds map (its audio tour is on Bloomberg Connects). Grounds: OpenStreetMap
+(Mansion, Stable, Ticket Booth, parking, the walk to the Mansion, Lime Walk, Walled and Flower Gardens, trails), turned
+16.6° so the house stands straight. The three Mansion floors are APPROXIMATE, drawn from the room list and sizes on
+the-estate page and the accessibility page (elevator at the end of the service wing, restrooms across from it on floors
+1 and 2, Sewing Room on floor 3, Bookstore in the old laundry). Floors use the museum's numbering: 1 ground, 2 main, 3
+bedrooms. Works: rooms on the tour, the six Library Insights books (Wharton's own library), gardens, Stable, NightWood
+(Nov 21, 2026 – Jan 2, 2027) and the 2026 sculpture show (ended Oct 24, not placed). Mansion open weekends Nov–Jan 2,
+closed Jan 3 – April: update visit_info.py hours for the 2027 season.
