@@ -608,3 +608,13 @@ describe every room and say the only ground-floor lavatory is off the Billiard R
 1472660184, house 371945264, parking 1472492429). Objects: the Preservation Society's Proficio service (directory
 NEWPHIST), records naming the house or with Wetmore/Keteltas provenance. Closed until Nov 21, 2026; open weekends for the
 holidays until Jan 3, 2027: update visit_info.py hours for the 2027 season.
+
+Audrain Automobile Museum, Newport (Nov 5, 2026): map guide at `guide.html?museum=audrain`, built by
+`tools/harvest_audrain.py` + `tools/build_audrain.py` (cache `.cache/audrain`). Wikidata has no item for the museum, so
+it uses the Audrain Building (Q4820080), whose picture is the museum. audrainautomuseum.org is Squarespace: its
+robots.txt puts the AI crawlers in the same group as everyone, so only /api/, /static/, /search and ?format=json are
+off limits; pages read 5 s apart. No published floor plan: one public floor (the second floor is private offices), drawn
+APPROXIMATELY in the OpenStreetMap outline (way 1170440781) as one open hall with the lobby, desk and shop on Bellevue
+Avenue; restrooms and simulators placed by guess. Cars: every page under /current-exhibition (17 for "Best Shown",
+Sep 19, 2026 – Jan 10, 2027; og:image photos). The show changes every few months (next: "STEAM Power", Jan 16 – May 9,
+2027): delete `.cache/audrain/html` and rerun both scripts, then update SHOW/SHOW_DATES in build_audrain.py.

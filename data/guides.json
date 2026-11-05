@@ -448,6 +448,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "The Preservation Society of Newport County, Digital Collections"
+  },
+  "Q4820080": {
+   "works": 17,
+   "pictures": 17,
+   "onView": 17,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "Audrain Automobile Museum website; OpenStreetMap"
   }
  }
 }
