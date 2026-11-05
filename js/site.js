@@ -528,6 +528,17 @@ export const SITES = {
     flat: true,
     blurb: 'Both floors (an approximate plan inside the building’s real outline: the museum publishes none) with the Gateway entrance, admissions desk, Museum Shop, coat rack, restrooms, water fountain and elevator; Emerson’s Study, Thoreau’s desk, bed and flute, the Musketaquid Gallery, Paul Revere’s lantern in the April 19, 1775 galleries, the 1720 and 1775 Period Rooms, Mark Dion’s Eccentric Collectors Like Us, directions and your visit diary.',
   },
+  fuller: {
+    key: 'fuller', id: 'Q5508243', short: 'Fuller Craft', name: 'Fuller Craft Museum',
+    floors: 'data/fuller/floors.json', artworks: 'data/fuller/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-fuller.json', packKey: 'gg-pack-fuller',
+    room: id => id,                          // galleries have names
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'Both floors from the museum’s own map: the main entrance, front desk and Museum Shop upstairs; the Great Room, Atrium, Lampos, Tarlow, Barstow, Stone and Keith Galleries, restrooms, the Lounge for a packed lunch, the Interior Courtyard and the patio downstairs; the works on display from the museum’s Digital Archive, the current shows and the outdoor sculpture, with directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
