@@ -76,8 +76,9 @@ def item(url):
     meta = {text(k): text(v) for k, v in re.findall(r'<dt>(.*?)</dt>\s*<dd>(.*?)</dd>', body, re.S)}
     head = s.split('related-portfolio-posts', 1)[0].split('<footer', 1)[0]
     cats = sorted(set(re.findall(r'portfolio_category/([a-z0-9-]+)/', head.split('</header>', 1)[-1])))
+    mus = re.search(r'<span class="museums">(.*?)</span>', s, re.S)
     return {'url': url, 'title': text(t[1]) if t else '', 'text': desc, 'meta': meta, 'image': big_image(s),
-            'cats': cats}
+            'cats': cats, 'museum': text(mus[1]) if mus else ''}
 
 
 SKIP_IMG = re.compile(r'logo|affiliate|springfield-museums-\d|medallion|Access-for-All|-map|map-|icon|narm|ASTC|AAM-|'

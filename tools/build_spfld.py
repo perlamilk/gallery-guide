@@ -716,10 +716,16 @@ def build_works(floors):
         room, guessed = place(r)
         if not room: continue
         key = 'spfld-' + slug(r['url'].rstrip('/').rsplit('/', 1)[1])
-        maker = re.sub(r'\s*\(.*?\)\s*$', '', m.get('Object Creator') or '').strip()
+        raw = re.sub(r'\s*\(.*?\)\s*$', '', m.get('Object Creator') or '').strip()
+        surname = raw.split(',')[0].strip()
+        maker = ' '.join(reversed([x.strip() for x in raw.split(',')])) if raw.count(',') == 1 and \
+            not re.search(r'&|Co\.|Company|After', raw) else raw
+        title = re.sub(r'\s+', ' ', r['title']).strip()
+        if surname and ',' in title and surname.lower() in title.rsplit(',', 1)[1].lower():
+            title = title.rsplit(',', 1)[0].strip()
         date = m.get('Object Creation Date')
         yr = re.search(r'\b(1\d{3}|20\d\d)\b', date or '')
-        a = {'id': key, 'title': re.sub(r',\s*' + re.escape(maker) + r'$', '', r['title']) if maker else r['title'],
+        a = {'id': key, 'title': title,
              'artist': maker or 'Unknown maker', 'date': date, 'year': int(yr[1]) if yr else None,
              'medium': m.get('Medium'), 'dimensions': m.get('Dimensions'), 'creditLine': m.get('Credit'),
              'accession': m.get('Accession Number'), 'description': (r.get('text') or '')[:1500], 'url': r['url'],
@@ -736,8 +742,36 @@ def build_works(floors):
             'complete': False, 'artworks': works}
 
 
+# the gallery names the museums give on a highlight's page -> rooms on the map (exact)
+NAMED = {'Japanese Decorative Arts Gallery': 'Japanese Decorative Arts', 'American Paintings Salon':
+         'American Paintings Salon', 'Japanese Arms and Armor Gallery': 'Japanese Arms & Armor',
+         'Islamic Art Gallery': 'Islamic World', 'Japanese Bronze Gallery': 'Japanese Bronzes',
+         'Astronomy Hall': 'Astronomy Hall', 'Tolman Fossil Cases': 'Tolman Hall', 'Elevator Lobby': 'Science Hall 1'}
+# highlights that name only the museum: (word in the title, room), first match wins; the room is our guess
+GUESS = [
+    ('Rehearsal Before the Ballet', 'Leary Gallery'), ('Grainstack', 'Leary Gallery'),
+    ('Bouguereau', '19th-Century French'), ('Bol', '17th-Century Dutch'),
+    ('Retable', 'Northern Renaissance'), ('Triptych', 'Northern Renaissance'),
+    ('Nadelman', 'Early 20th-Century American'), ('Sheeler', 'Early 20th-Century American'),
+    ('O’Keeffe', 'Early 20th-Century American'), ('Feininger', '20th-Century European'),
+    ('Currier', 'Print Gallery'), ('The Leaders', 'Print Gallery'), ('King of the Turf', 'Print Gallery'),
+    ('Gifford', '19th-Century American'), ('Roesen', '19th-Century American'), ('Whittredge', '19th-Century American'),
+    ('Inness', '19th-Century American'), ('Church', '19th-Century American'),
+    ('Fire', 'Police & Fire'), ('Garand', 'Smith & Wesson Gallery'), ('Revolver', 'Smith & Wesson Gallery'),
+    ('Indian', 'Indian Motocycle Collection'), ('Rolls-Royce', 'Automobile Gallery'), ('Knox', 'Automobile Gallery'),
+    ('Bicycle', 'Early Bicycles'), ('Civil War', 'Civil War'), ('Bottume', 'MassMutual Hall'),
+    ('Kibbe', 'Made in the Valley'), ('Westinghouse', 'Made in the Valley'), ('Victrola', 'Made in the Valley'),
+    ('Telegraphone', 'Science Hall 1'),
+]
+
+
 def place(r):
-    """Gallery for a collection highlight marked On View (the museums don't say which room)."""
+    """Gallery for a collection highlight marked On View: (room, guessed?)."""
+    parts = [p.strip() for p in r.get('museum', '').split('»')]
+    if parts[-1] in NAMED: return NAMED[parts[-1]], False
+    if not r.get('museum'): return None, True
+    for word, room in GUESS:
+        if word.lower() in r['title'].lower(): return room, True
     return None, True
 
 
