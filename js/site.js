@@ -660,6 +660,17 @@ export const SITES = {
     flat: true,
     blurb: 'Philip Johnson’s 49-acre site from above, traced from the Glass House’s own site map: the Glass House and Brick House, the Painting and Sculpture Galleries across the brook, the Studio, Ghost House, Da Monsta, the pond with its Pavilion and the Kirstein tower, and the Visitor Center in town where every tour shuttle starts; with the paintings and sculptures in each building, directions and your visit diary.',
   },
+  mattatuck: {
+    key: 'mattatuck', id: 'Q6789613', short: 'Mattatuck', name: 'Mattatuck Museum',
+    floors: 'data/mattatuck/floors.json', artworks: 'data/mattatuck/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-mattatuck.json', packKey: 'gg-pack-mattatuck',
+    room: id => id,                          // galleries are named (Upson Gallery, Button Gallery)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'The Mattatuck on the Waterbury Green, floor by floor (approximate plan, since no plan is published): the plaza entrance, the Foyer with the Welcome Desk, shop and Art of Yum Café, the History Gallery, the art galleries and Rooftop Terrace upstairs, and the Button Gallery on the 3rd floor; with the shows on view, the collection, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

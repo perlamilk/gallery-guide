@@ -646,3 +646,13 @@ OpenStreetMap, where every tour starts by shuttle. Works: the buildings (Explore
 /learn/ (paintings and sculptures, with photos); the pages don't say which building a work is in, so paintings go in the
 Painting Gallery and sculptures in the Sculpture Gallery, marked as guessed. theglasshouse.org asks for a 10-second crawl
 delay. Season April 16 – December 14, 2026: update hours in visit_info.py for 2027.
+
+Mattatuck Museum (Waterbury) (Nov 5, 2026): map guide at `guide.html?museum=mattatuck`, built by
+`tools/build_mattatuck.py` after `tools/harvest_mattatuck.py list` and `detail`. Map: APPROXIMATE, three floors drawn
+inside the OpenStreetMap outline (way 467492386); the museum publishes no floor plan. Rooms placed from the museum's own
+words (Foyer, Art of Yum Café and History Gallery on the main floor; Upson, Whittemore, Noonan, Munger and Baker Galleries
+and the Rooftop Terrace upstairs; Performing Arts Center, Community Gallery and Button Gallery on the 3rd floor). Works:
+the shows on view and long-term galleries from mattmuseum.org, plus the whole catalogue (6,875 objects) from Connecticut
+Collections (ctcollections.org, source facet 1868; robots.txt closes /Browse/*/images/*, so only list view and object
+pages are read, 2 s apart). Catalogue pictures are linked from ctcollections.org, not copied. mattatuckcollections.org
+has lapsed (now a sports site): don't use it. Update SHOWS in build_mattatuck.py when the shows change.
