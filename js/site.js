@@ -451,6 +451,17 @@ export const SITES = {
     flat: true,
     blurb: 'The 210-acre grounds from the museum’s own trail map: Admissions, the Café and Store, the Wayside Visitor Center, the Four Seasons, Seasonal and Shaker Galleries, the Alcotts’ Farmhouse, parking, restrooms and every trail to the historic sites; what is on view in each building, the sculptures outside, directions and your visit diary.',
   },
+  fitchburg: {
+    key: 'fitchburg', id: 'Q5455423', short: 'Fitchburg Art Museum', name: 'Fitchburg Art Museum',
+    floors: 'data/fitchburg/floors.json', artworks: 'data/fitchburg/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-fitchburg.json', packKey: 'gg-pack-fitchburg',
+    room: id => id,                          // galleries have names (Harris Gallery, Doyle Gallery West)
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'All three floors traced from the museum’s own visitor map: the Elm Street entrance, lobby, coat check, restrooms in both buildings, both elevators and the stairs, the Community Gallery, the courtyard with Thurston, the Harris Gallery bridge to the Merriam Parkway Building; every object in FESTIVAL: A Celebration of African Art (216, from its catalogue), highlights of Kaleidoscope and Heirlooms, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
