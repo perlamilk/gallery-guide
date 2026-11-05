@@ -597,3 +597,14 @@ APPROXIMATE, fitted into the outline: the 42 × 48 ft block at the north-east en
 2,000 sq ft), the angled south-west wing the service wing; the Dining Room is put on the ocean side because NRF says the
 table faces the ocean windows. Elevator and restrooms exist (NRF) but their places are guessed. 2026 season ends Nov 8;
 "A Rough Point Holiday" Nov 27 – Dec 27 (Fri–Sun): update visit_info.py for 2027.
+
+Chateau-sur-Mer, Newport (Nov 5, 2026): map guide at `guide.html?museum=chateau`, built by `tools/harvest_chateau.py`
++ `tools/build_chateau.py` (cache `.cache/chateau`). Floors 1 and 2 are traced from the Historic American Buildings
+Survey's measured drawings (HABS RI-313, 1970; www.loc.gov/item/ri0341/, sheets 5 and 6; the master TIFFs download from
+tile.loc.gov, the IIIF image service gave 500s). North points LEFT on the sheets. The HABS data pages (ri0341data.pdf)
+describe every room and say the only ground-floor lavatory is off the Billiard Room; the Society's accessibility page
+(newportmansions.org page 8855) says there is one restroom, no elevator, 9 + 33 steps. HABS also has basement, 3rd and
+4th floor plans and a c.1917 site plan (Chinese Moon Gate, Porter's Lodge). Grounds from OpenStreetMap (estate way
+1472660184, house 371945264, parking 1472492429). Objects: the Preservation Society's Proficio service (directory
+NEWPHIST), records naming the house or with Wetmore/Keteltas provenance. Closed until Nov 21, 2026; open weekends for the
+holidays until Jan 3, 2027: update visit_info.py hours for the 2027 season.
