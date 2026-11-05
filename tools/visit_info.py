@@ -92,6 +92,23 @@ VISIT = {
                   'Free lockers in the coat room; big bags and umbrellas go there',
                   'Highlights Tours at 11 am and 2 pm, included with admission',
                   'Don’t miss the whale skeletons over the Lobby, the Lagoda (Main Level) and Harbor View']),
+    'Q2001855': ('26 Oxford Street, Cambridge, MA 02138',
+                 ['Daily: 9 am–5 pm', 'Closed on a few holidays (usually Thanksgiving, Dec 24–25 and Jan 1); check '
+                  'the museum’s website before going on a holiday'],
+                 ['Adults: $20', 'Seniors 65+: $18', 'Students with ID and youth 3–18: $15', 'Under 3: free',
+                  'Harvard ID: free with one guest',
+                  'Massachusetts residents: free Sun 9 am–noon and Wed 3–5 pm (Sept–May), with proof of residency',
+                  'EBT/WIC cardholders: free with up to five guests',
+                  'Same ticket gets you into the Peabody Museum of Archaeology & Ethnology next door'],
+                 '617-495-3045',
+                 ['No café and no food or drink in the galleries; cafés in Harvard Square, 10 minutes’ walk',
+                  'Main entrance at 26 Oxford Street, then stairs up to the galleries on the 3rd floor; the '
+                  'ground-level accessible entrance is around the side, with an elevator to the galleries',
+                  'Restrooms on the 3rd floor near Earth & Planetary Sciences; accessible restroom by the elevator',
+                  'Parking: Harvard’s 52 Oxford Street Garage, next to the museum; Red Line to Harvard, 10 minutes’ '
+                  'walk',
+                  'Don’t miss the Glass Flowers, the Kronosaurus, the whale skeletons in the Great Mammal Hall and '
+                  'the giant amethyst geode in Earth & Planetary Sciences']),
     'Q122945': ('170 Whitney Avenue, New Haven, CT 06511',
                 ['Tue–Fri: 10 am–5 pm', 'Sat–Sun: noon–5 pm (the museum’s footer says Sat 10 am–5 pm; check before '
                  'going early on a Saturday)', 'Mon: closed (open on MLK Day and Yale Commencement)',
@@ -418,6 +435,10 @@ EXTRA = {
     'Q122945': {'id': 'Q122945', 'name': 'Yale Peabody Museum', 'at': [41.315753, -72.921175], 'links': 30,
                 'image': 'Yale Peabody Museum 2.JPG', 'website': 'https://peabody.yale.edu/', 'city': 'New Haven',
                 'state': 'Connecticut', 'wikipedia': 'Peabody_Museum_of_Natural_History'},
+    'Q2001855': {'id': 'Q2001855', 'name': 'Harvard Museum of Natural History', 'at': [42.37845, -71.11555],
+                 'links': 30, 'image': 'Harvard Museum of Natural History 2.JPG',
+                 'website': 'https://hmnh.harvard.edu/', 'city': 'Cambridge', 'state': 'Massachusetts',
+                 'wikipedia': 'Harvard_Museum_of_Natural_History'},
     'Q7005471': {'id': 'Q7005471', 'name': 'New Bedford Whaling Museum', 'at': [41.6353, -70.9232], 'links': 20,
                  'image': 'Nbwmentrance.jpg', 'website': 'https://www.whalingmuseum.org/', 'city': 'New Bedford',
                  'state': 'Massachusetts', 'wikipedia': 'New_Bedford_Whaling_Museum'},
