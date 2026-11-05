@@ -205,6 +205,27 @@ VISIT = {
                   'Afternoon Tea & Dining at the Chinese Tea House on the back lawn, by the Cliff Walk (book ahead)',
                   'Free audio tour (and a kids’ tour) in the Newport Mansions app: bring a phone and earbuds',
                   'Partly accessible: a ramp to floor 1 and a staff-run elevator to floor 2 and the basement; no air-conditioning']),
+    'Q7085141': ('1 Old Sturbridge Village Road, Sturbridge, MA 01566 (for GPS: 29 Stallion Hill Road, Sturbridge, MA 01518)',
+                 ['Through Nov 14, 2026: Wednesday–Sunday, 9:30 am–4 pm (Mon–Tue closed)',
+                  'Nov 15–26, 2026: closed, getting ready for Christmas by Candlelight',
+                  'Nov 27–Dec 27, 2026: Christmas by Candlelight only, select evenings 2–8 pm (Thursdays 4–8 pm), separate ticket',
+                  'Hours change with the season: check osv.org/visit before you go'],
+                 ['Bought online: adults $27, seniors 60+ $25, youth 4–17 $12, children 3 and under free',
+                  'At the door: adults $30, seniors 60+ $28, youth 4–17 $15, children 3 and under free',
+                  'Daytime tickets are good for one day; Christmas by Candlelight and other evening events need their own ticket',
+                  'Members: free'],
+                 '508-347-0290',
+                 ['A 200-acre outdoor village of the 1830s: more than 40 historic buildings, farms and three water-powered '
+                  'mills, with costumed historians. Plan 3–4 hours and wear good walking shoes',
+                  'Start at the Country Bank Visitor Center: tickets, the free map guide, the Clock Gallery and restrooms',
+                  'Food: Bullard Tavern cafeteria (Wed–Sun 11 am–3 pm), Ox & Yoke Café by the entrance, Miner Grant Bake '
+                  'Shop; Village Scoop Shop in summer',
+                  'Roads are unpaved but firm; steeper bits by the Bullard Tavern, the Glass exhibit and the Herb Garden. '
+                  'Wheelchairs free to borrow and strollers to rent at the Visitor Center',
+                  'Accessible restrooms: Visitor Center, Ox & Yoke, Bullard Tavern, next to the Countryside Gallery, Museum '
+                  'Education Center',
+                  'First aid behind the Friends Meetinghouse; a horse-drawn wagon (with ramp) runs from the Bullard Tavern to '
+                  'the Blacksmith Shop in season']),
     'Q4165331': ('351 Farmington Avenue, Hartford, CT 06105',
                  ['Daily: 9:30 am–5:30 pm; last tours start at 4:15 pm',
                   'Closed Tuesdays from January through March',
@@ -400,6 +421,9 @@ EXTRA = {
                  'at': [42.316111, -71.033889], 'links': 24, 'image': 'JFK library Stitch Crop.jpg',
                  'website': 'https://www.jfklibrary.org/', 'city': 'Boston', 'state': 'Massachusetts',
                  'wikipedia': 'John_F._Kennedy_Presidential_Library_and_Museum'},
+    'Q7085141': {'id': 'Q7085141', 'name': 'Old Sturbridge Village', 'at': [42.1089, -72.0987], 'links': 30,
+                 'image': 'View of the Center Village Old Sturbridge Village.jpg', 'website': 'https://www.osv.org/',
+                 'city': 'Sturbridge', 'state': 'Massachusetts', 'wikipedia': 'Old_Sturbridge_Village'},
     'Q4165331': {'id': 'Q4165331', 'name': 'Mark Twain House & Museum', 'at': [41.767083, -72.701389], 'links': 30,
                  'image': 'House of Mark Twain.jpg', 'website': 'https://marktwainhouse.org/', 'city': 'Hartford',
                  'state': 'Connecticut', 'wikipedia': 'Mark_Twain_House'},

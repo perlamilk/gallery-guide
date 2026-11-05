@@ -264,6 +264,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "Springfield Museums: gallery, exhibition and collection pages, and museum maps (springfieldmuseums.org)"
+  },
+  "Q7085141": {
+   "works": 111,
+   "pictures": 109,
+   "onView": 47,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "Old Sturbridge Village 2026 Map Guide and website"
   }
  }
 }
