@@ -365,6 +365,14 @@ Commons photos (mostly Daderot, Dec 2014, public domain), placed by subject; the
 Closed Doors" are listed on the museum page only. concordmuseum.org: WordPress, Crawl-delay 10, /collections/ redirects
 to eMuseum. Shows to update: Family Trees Nov 21, 2026 – Jan 3, 2027; Mark Dion closes Mar 7, 2027.
 
+Fuller Craft Museum, Brockton (Nov 5, 2026): map guide at `guide.html?museum=fuller`, built by `tools/harvest_fuller.py`
+then `tools/build_fuller.py`. The map is traced from the museum's own Museum Map brochure (2023 PDF on Plan Your Visit), in
+the brochure's orientation; the entrance, front desk and shop are on the upper (Second) floor, galleries, restrooms and
+Lounge downstairs. Works: the museum's Digital Archive (collections.fullercraft.org, a Proficio web module with a JSON
+service, 983 objects, all with pictures); its "On Display" field names the gallery for The Vessel (Lampos), Fiber
+Forward ("Education Gallery", drawn as the Community Gallery), the Great Room and the Interior Courtyard. Other shows'
+galleries are guesses. Outdoor sculpture from the 2023 Outdoor Sculpture Guide PDF.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
