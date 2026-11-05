@@ -627,6 +627,17 @@ export const SITES = {
     flat: true,
     blurb: 'The museum’s one open hall in the 1902 Audrain Building on Bellevue Avenue (an approximate plan: none is published), with the entrance, front desk and shop, the restrooms, the racing simulators and the big arched car door; and every car in “Best Shown: Winners from the Audrain Collections” (to Jan 10, 2027), from the 1901 Panhard Vanderbilt racer to the 1964 Porsche 904, with the museum’s photos, awards and stories, directions and your visit diary.',
   },
+  tennis: {
+    key: 'tennis', id: 'Q52454', short: 'Tennis Hall of Fame', name: 'International Tennis Hall of Fame',
+    floors: 'data/tennis/floors.json', artworks: 'data/tennis/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-tennis.json', packKey: 'gg-pack-tennis',
+    room: id => id,
+    website: 'More on the International Tennis Hall of Fame’s website',
+    official: false,
+    flat: true,
+    blurb: 'The historic Newport Casino from above, traced from the Hall of Fame’s own grounds map: the Welcome Center and Museum Store on Bellevue Avenue, the Lawn under the clock tower, Bill Talbert Center Court, the grass courts, Court Tennis and the Casino Theatre, entrances and restrooms; and the museum upstairs (gallery places approximate), from the Birth of Tennis to the Open Era, The Majors and the Federer exhibit, with every Hall of Famer in the Hall of Famers Gallery, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
