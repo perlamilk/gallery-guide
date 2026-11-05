@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v97';
+const VERSION = 'v98';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -132,6 +132,8 @@ const SHELL = [
   'data/bruce/artworks.json',
   'data/mit/floors.json',
   'data/mit/artworks.json',
+  'data/constitution/floors.json',
+  'data/constitution/artworks.json',
 ];
 
 // Install only the app itself, so an update is quick and takes over right away;

@@ -506,6 +506,17 @@ export const SITES = {
     flat: true,
     blurb: 'All three floors from the museum’s own floor map: the lobby, store and grand stair, restrooms and water fountains on every floor, The Exchange, the Maker Hub; Essential MIT, AI: Mind the Gap with Kismet and Claude Shannon’s machines, MIT Collects with Whirlwind and the Apollo guidance computer, and the OCEANS shows (Sensing Oceans, Crochet Coral Reef), with directions and your visit diary.',
   },
+  constitution: {
+    key: 'constitution', id: 'Q7868542', short: 'USS Constitution', name: 'USS Constitution Museum',
+    floors: 'data/constitution/floors.json', artworks: 'data/constitution/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-constitution.json', packKey: 'gg-pack-constitution',
+    room: id => id,                          // places have names
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'The museum and the ship in one map: the museum’s two floors from its own visitor map (lobby, store, restrooms, elevator, Exploring Old Ironsides, “Old Ironsides” in War and Peace, the Model Shop, All Hands on Deck), the walk through the Charlestown Navy Yard past the Park Service visitor center and the Navy’s security screening to Pier 1, and USS Constitution’s spar, gun and berth decks, with directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
