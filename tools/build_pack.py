@@ -155,6 +155,9 @@ PACKS = [
     ('Q5508243', 'data/pack-fuller.json',
      ['data/fuller/artworks.json', 'data/fuller/floors.json'],
      'data/fuller/artworks.json', None),
+    ('Q15694003', 'data/pack-capeann.json',
+     ['data/capeann/artworks.json', 'data/capeann/floors.json'],
+     'data/capeann/artworks.json', None),
 ]
 
 for museum, out_path, files, art_path, notice_path in PACKS:

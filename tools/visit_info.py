@@ -608,6 +608,18 @@ VISIT = {
     'Q123689395': ('1801 Massachusetts Avenue, Cambridge, MA 02140',
                    ['Tue–Fri: 9 am–6 pm', 'Thu: until 8 pm', 'Mon: closed'], FREE, None, ['Lesley University, Porter Square']),
     'Q138002039': ('44 Troy Street, Fall River, MA 02720', None, None, None, None),
+    'Q15694003': ('27 Pleasant Street, Gloucester, MA 01930',
+                  ['Tue–Sun: 10 am–5 pm (last entry 4:30 pm)', 'Mon: closed',
+                   'Also closed MLK Day, Presidents’ Day, Memorial Day, July 4, Labor Day, Indigenous Peoples’ Day, '
+                   'Thanksgiving, Christmas Eve and Day, New Year’s Eve and Day'],
+                  ['Adults: $20', 'Seniors 65+: $15', 'Cape Ann residents: $15 (free on the second Saturday of the month)',
+                   'Students with ID and youth 18 and under: free', 'Members: free'],
+                  '978-283-0455',
+                  ['No café: food and drink aren’t allowed in the galleries; coffee shops and restaurants nearby',
+                   'No museum parking: metered city lot across the street (2-hour limit), longer parking on Rogers '
+                   'Street and St. Peter’s Square',
+                   'Train: MBTA Newburyport/Rockport line to Gloucester, then a 10–15 minute walk',
+                   'CAM Green campus (13 Poplar Street, free) is closed for the season until spring 2027']),
 }
 
 # Museums the Wikidata rebuild leaves out (their Wikidata type isn't one tools/build_open_data.py asks for);
@@ -696,6 +708,9 @@ EXTRA = {
                  'image': 'Phillips Academy, Andover, MA - Addison Gallery of American Art.JPG',
                  'website': 'https://addison.andover.edu/', 'city': 'Andover', 'state': 'Massachusetts',
                  'wikipedia': 'Addison_Gallery_of_American_Art'},
+    'Q15694003': {'id': 'Q15694003', 'name': 'Cape Ann Museum', 'at': [42.6143, -70.6624], 'links': 4,
+                  'image': '2011 CapeAnnMuseum GloucesterMA.jpg', 'website': 'https://www.capeannmuseum.org/',
+                  'city': 'Gloucester', 'state': 'Massachusetts', 'wikipedia': 'Cape_Ann_Museum'},
 }
 
 # Museums whose Wikidata point is off (the Lyman Allyn's is 350 m west of the building; this is OpenStreetMap's)

@@ -373,6 +373,15 @@ service, 983 objects, all with pictures); its "On Display" field names the galle
 Forward ("Education Gallery", drawn as the Community Gallery), the Great Room and the Interior Courtyard. Other shows'
 galleries are guesses. Outdoor sculpture from the 2023 Outdoor Sculpture Guide PDF.
 
+Cape Ann Museum, Gloucester (Nov 5, 2026): map guide at `guide.html?museum=capeann`, built by `tools/harvest_capeann.py`
+then `tools/build_capeann.py`. The map comes from the museum's own Map & Floor Guide (June 2026 vector PDF), an isometric
+drawing of the four levels turned back into flat plans (`tools/trace_capeann.py` prints the un-skewed walls); entrance on
+Level 2 from Pleasant Street, Fisheries Galleries on Level 3, special exhibitions, Folly Cove Designers and 20th & 21st
+Centuries on Level 4, the Library & Archives and (Level 1A) the Granite Gallery below. The museum has no online
+collection yet: works are the museum's own captioned pictures on capeannmuseum.org and Daderot's Commons photos of its
+galleries, placed by subject; only the Lane Gallery, the Sculpture Courtyard cat and the shows are placed by the museum's
+own words. The CAM Green campus (13 Poplar Street) is not mapped; it is closed until spring 2027.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
