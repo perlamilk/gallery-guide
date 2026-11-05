@@ -418,6 +418,17 @@ export const SITES = {
     flat: true,
     blurb: 'All three floors (an approximate plan inside the building’s real outline: the museum publishes none) with the entrance under the portico, the side entrance with its ramp, the front desk, coat room, restrooms with a family room, the Hendel Library and the elevator; American Perspectives from colonial New London to Sol LeWitt, the Tiffany gallery, the Hawthorne dollhouse, the shows on view now, directions and your visit diary.',
   },
+  athenaeum: {
+    key: 'athenaeum', id: 'Q478013', short: 'The Athenæum', name: 'Boston Athenæum',
+    floors: 'data/athenaeum/floors.json', artworks: 'data/athenaeum/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-athenaeum.json', packKey: 'gg-pack-athenaeum',
+    room: id => id,                          // rooms have names (Bayard Henry Long Room, Gordon Reading Room)
+    website: 'See this work on the Athenæum’s website',
+    official: false,
+    flat: true,
+    blurb: 'All six floors (approximate plans: the Athenæum publishes none) with the Beacon Street entrance, front desk, Coat Room, Long Room, Calderwood Gallery, Gordon Reading Room, Leventhal Living Room, Children’s Library, elevators and restrooms on every floor, the members’ reading rooms, the fifth-floor terrace, the busts and Washington portraits the Athenæum names, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

@@ -304,6 +304,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "Lyman Allyn Art Museum: gallery and exhibition pages (lymanallyn.org); approximate plan"
+  },
+  "Q478013": {
+   "works": 593,
+   "pictures": 535,
+   "onView": 10,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "Boston Athenæum, Paintings & Sculpture Online"
   }
  }
 }
