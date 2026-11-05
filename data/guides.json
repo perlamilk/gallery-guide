@@ -504,6 +504,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "Submarine Force Museum: exhibits as described by visitors and Wikipedia; pictures from Wikimedia Commons; the Nautilus tour compartments"
+  },
+  "Q4862010": {
+   "works": 1009,
+   "pictures": 963,
+   "onView": 3,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "The Barnum Museum (barnum-museum.org) and its catalogue on Connecticut Collections (ctcollections.org)"
   }
  }
 }
