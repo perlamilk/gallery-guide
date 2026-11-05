@@ -382,6 +382,17 @@ collection yet: works are the museum's own captioned pictures on capeannmuseum.o
 galleries, placed by subject; only the Lane Gallery, the Sculpture Courtyard cat and the shows are placed by the museum's
 own words. The CAM Green campus (13 Poplar Street) is not mapped; it is closed until spring 2027.
 
+Berkshire Museum, Pittsfield (Nov 5, 2026): map guide at `guide.html?museum=berkshire`, built by
+`tools/harvest_berkshire.py` then `tools/build_berkshire.py` (cache `.cache/berkshire`; `--offline` skips downloads).
+The First Floor is the architects' (StudioHAU) numbered plan of the 2026 renovation, from their press kit on
+v2com-newswire (dossier 2757-65; only the 800 px preview is public, about 56 px = 20 ft; South Street at the top), so
+its rooms are exact. The Second Floor has no published plan: its rooms (Ellen Crane Memorial Room, Objects and Their
+Stories, Galleries 206-208, sitting room, learning spaces, restrooms) are placed from news descriptions and are
+approximate. berkshiremuseum.org's robots.txt disallows ClaudeBot, Claude-Web and anthropic-ai, so its pages were not
+read: what is on view comes from reopening news (iBerkshires, Berkshire Eagle, StudioHAU's press text, NEWS10, Rural
+Intelligence); 26 collection works from the museum's Google Arts & Culture pages (works sold in 2018 are gone from
+there). Show to update: Soulful Creatures (Brooklyn Museum animal mummies) closes Jan 17, 2027.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
