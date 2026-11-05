@@ -172,6 +172,25 @@ VISIT = {
                  'Point. Food at Anchor Mystic Café (South Entrance), Propeller Coffee Bar (Thompson Building), '
                  'Greenmans’ Landing and Schaefer’s Spouter Tavern. Leashed pets are welcome outdoors but not in '
                  'buildings or on vessels. Sabino cruises and boat rentals are seasonal.'),
+    'Q1839461': ('137 Warren Avenue, Plymouth, MA 02360',
+                 ['2026 season: daily 9 am–5 pm, through Sunday, Nov 29 (the Sunday after Thanksgiving)',
+                  'Closed for the winter after Nov 29; reopens in spring 2027',
+                  'Plentiful Café: 9 am–4 pm (hot food 11 am–3 pm)'],
+                 ['Heritage Pass (all sites, two days): adults $46, seniors $41.40, children $29',
+                  'Combination Pass (Plimoth Patuxet and Mayflower II, two days): adults $44, seniors $39.60, children $27',
+                  'Plimoth Patuxet only: adults $35, seniors $31.50, children $20',
+                  'Mayflower II only: adults $19, seniors $17.10, children $13',
+                  'Plimoth Grist Mill only: adults $11, seniors $9.90, children $8', 'Members: free'],
+                 '508-746-1622',
+                 'One museum in three places. The main campus (137 Warren Avenue; for GPS from Route 3 use 26 River '
+                 'Street) has the Visitor Center, the Historic Patuxet Homesite, the 17th-Century English Village and the '
+                 'Craft Center, on 40 acres of mostly unpaved, sometimes steep paths: wear comfortable shoes and allow at '
+                 'least 2.5 hours. Free parking; accessible parking in the lower lot. Free golf-cart rides between the '
+                 'sites (9:30 am–4:30 pm, ask any staff member). Restrooms on both sides of the Visitor Center and in the '
+                 'Craft Center; food at the Plentiful Café (Visitor Center). Mayflower II is at State Pier, 75 Water '
+                 'Street, and the Plimoth Grist Mill at 6 Spring Lane, both downtown about 3 miles away: drive, don’t walk '
+                 '(metered parking on the waterfront). Mayflower II is not wheelchair accessible. Service animals only. '
+                 'November, Thanksgiving week especially, is the busiest time of year.'),
     'Q7005718': ('56 Lexington Street, New Britain, CT 06052',
                  ['Tue–Sun: 10 am–5 pm', 'Fri: 10 am–8 pm', 'Mon: closed'],
                  ['Adults: $22', 'Seniors 67+: $18', 'College students and ages 6–17: $10', '5 and under: free'],
@@ -459,6 +478,9 @@ EXTRA = {
     'Q122945': {'id': 'Q122945', 'name': 'Yale Peabody Museum', 'at': [41.315753, -72.921175], 'links': 30,
                 'image': 'Yale Peabody Museum 2.JPG', 'website': 'https://peabody.yale.edu/', 'city': 'New Haven',
                 'state': 'Connecticut', 'wikipedia': 'Peabody_Museum_of_Natural_History'},
+    'Q1839461': {'id': 'Q1839461', 'name': 'Plimoth Patuxet Museums', 'at': [41.93906, -70.62602], 'links': 9,
+                 'image': 'Indiaans huis Plimoth Plantation.JPG', 'website': 'https://plimoth.org/', 'city': 'Plymouth',
+                 'state': 'Massachusetts', 'wikipedia': 'Plimoth_Patuxet'},
     'Q2001855': {'id': 'Q2001855', 'name': 'Harvard Museum of Natural History', 'at': [42.37845, -71.11555],
                  'links': 30, 'image': 'Harvard Museum of Natural History 2.JPG',
                  'website': 'https://hmnh.harvard.edu/', 'city': 'Cambridge', 'state': 'Massachusetts',

@@ -231,6 +231,14 @@ so north is up (on the sheets north is to the right). The Museum Center has no p
 rooms placed from the museum's exhibit page (approximate). Works: the rooms and their famous features with HABS photos,
 plus the Museum Center's permanent exhibits.
 
+Plimoth Patuxet Museums, Plymouth (Nov 5, 2026): map guide at `guide.html?museum=plimoth`, built by `tools/build_plimoth.py`.
+The museum publishes no map, so the main campus is traced from OpenStreetMap (English Village houses by family name, Craft
+Center, Nye Barn, paths) and Esri aerial imagery (Visitor Center, Homesite clearing, parking); amenities are placed from the
+museum's own words. Mayflower II (floors M and T) and the Grist Mill (G and L) are downtown, so they are diagrams drawn large
+over the campus view, with `walkScale` keeping walking times real. Works: the exhibitions, Homesite, village houses, ship and
+mill from plimoth.org (catalogaccess.com refuses robots), plus 11 collection objects from its "You Are the Historian" pages as
+not on view. The 2026 season ends Nov 29; Painting the Past and Threads of Identity run to Nov 2027.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
