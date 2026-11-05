@@ -260,6 +260,36 @@ VISIT = {
                   'Afternoon Tea & Dining at the Chinese Tea House on the back lawn, by the Cliff Walk (book ahead)',
                   'Free audio tour (and a kids’ tour) in the Newport Mansions app: bring a phone and earbuds',
                   'Partly accessible: a ramp to floor 1 and a staff-run elevator to floor 2 and the basement; no air-conditioning']),
+    'Q7752461': ('2 Plunkett Street, Lenox, MA 01240 (at the corner of Route 7)',
+                 ['Grounds and gardens: free, every day of the year, dawn to dusk',
+                  'Mansion and Bookstore now (November to January 2): Saturday and Sunday, 10 am–3 pm',
+                  'Mansion closed January 3 to April; May–October open daily, usually 10 am–5 pm (some early closings '
+                  'on Saturdays for events)',
+                  'Terrace Café closed for the season (open May–October); the NightWood café opens November 21',
+                  'NightWood light-and-sound walk in the woods: Nov 21, 25, 27–28; Dec 4, 5, 11–12, 17–23, 26–31; '
+                  'Jan 2 (separate ticket)',
+                  'Check edithwharton.org/hours-admission before you go'],
+                 ['Mansion (guided or self-guided tour, with all exhibits): adults $22, seniors 65+ $20, students $13, '
+                  'children and teens 18 and under free',
+                  'Teachers and military with ID $10 (also for one family member); caregivers free',
+                  'Grounds, gardens, Terrace Café and Bookstore: free, no ticket needed',
+                  'Bank of America Museums on Us: free on the first full weekend of each month; Card to Culture (EBT, '
+                  'WIC, ConnectorCare): free for up to 4 adults',
+                  'A NightWood ticket gives 50% off a house tour; Berkshire Site Partnership: $2 off after Herman '
+                  'Melville’s Arrowhead (May 9–Oct 31)',
+                  'Private tour of Wharton’s library: $150 for two, by reservation'],
+                 '413-551-5111',
+                 ['Edith Wharton’s own house (1902), which she designed with its gardens. Allow 1.5–2 hours',
+                  'Park in the free Parking Field by the Admission Booth and the Stable, then walk about a quarter mile '
+                  '(400 m) down the drive to the Mansion; staff can take you by golf cart',
+                  'Accessible parking right in front of the Mansion for placard holders; the accessible entrance is to '
+                  'the right of the Forecourt',
+                  'Restrooms in the Stable and in the Mansion on floors 1 and 2, across from the elevator; changing '
+                  'tables in the accessible restrooms',
+                  'An elevator reaches all three floors; free manual wheelchairs. The Italian Garden has a ramp; other '
+                  'paths are gravel, grass or steep woods',
+                  'Free audio tour (English and Spanish) on your phone: bring earbuds; guest Wi-Fi, little cell signal',
+                  'Guided tours often sell out: buy tickets ahead. Dogs on leash on the grounds (not on NightWood)']),
     'Q5093884': ('4 Williamsville Road, Stockbridge, MA 01262',
                  ['Open May 15 – October 31 (2026 season): every day except Tuesday, 10 am–5 pm',
                   'Closed for the winter now; it reopens in mid-May 2027 (dates not announced yet)',
@@ -702,6 +732,10 @@ EXTRA = {
                  'at': [42.316111, -71.033889], 'links': 24, 'image': 'JFK library Stitch Crop.jpg',
                  'website': 'https://www.jfklibrary.org/', 'city': 'Boston', 'state': 'Massachusetts',
                  'wikipedia': 'John_F._Kennedy_Presidential_Library_and_Museum'},
+    'Q7752461': {'id': 'Q7752461', 'name': 'The Mount, Edith Wharton’s Home', 'at': [42.33098, -73.28204],
+                 'links': 15, 'image': 'The Mount from the Walled Garden by David Dashiell.jpg',
+                 'website': 'https://edithwharton.org/', 'city': 'Lenox', 'state': 'Massachusetts',
+                 'wikipedia': 'The_Mount_(Lenox,_Massachusetts)'},
     'Q5093884': {'id': 'Q5093884', 'name': 'Chesterwood', 'at': [42.28489, -73.35222], 'links': 10,
                  'image': 'Chesterwood (Stockbridge, MA) - house.JPG', 'website': 'https://www.chesterwood.org/',
                  'city': 'Stockbridge', 'state': 'Massachusetts', 'wikipedia': 'Chesterwood_(Massachusetts)'},

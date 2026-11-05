@@ -583,6 +583,17 @@ export const SITES = {
     flat: true,
     blurb: 'Daniel Chester French’s summer estate from Chesterwood’s own Map of the Estate: the Barn Gallery and Visitor Center with tickets and the shop, the restrooms, the Residence, the Studio room by room with every model on its walls (the Seated Lincoln, Andromeda, the life casts of hands), the garden and fountain, the Woodshed Gallery, the Standing Lincoln and the Woodland Walk to the Overlook, with directions and your visit diary.',
   },
+  mount: {
+    key: 'mount', id: 'Q7752461', short: 'The Mount', name: 'The Mount, Edith Wharton’s Home',
+    floors: 'data/mount/floors.json', artworks: 'data/mount/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-mount.json', packKey: 'gg-pack-mount',
+    room: id => id,                          // rooms are named (Library, Drawing Room, Italian Garden)
+    website: 'More on The Mount’s website',
+    official: false,
+    flat: true,
+    blurb: 'Edith Wharton’s estate from above, with the parking, Admission Booth, the Stable and its restrooms, the quarter-mile walk to the Mansion, the Italian and Flower Gardens, the Lime Walk and the woods; and the Mansion’s three floors (an approximate plan: The Mount publishes none) with every room on the tour, Wharton’s own books in her Library, the Bookstore, Terrace Café, restrooms and elevator, NightWood, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
