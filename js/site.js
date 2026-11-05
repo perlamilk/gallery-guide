@@ -484,6 +484,17 @@ export const SITES = {
     flat: true,
     blurb: 'All three levels traced from the museum’s own guide map: the Gathering Space, front desk, coats, shop, libraries, both entrances, the ramp, elevators, escalators and restrooms; every permanent exhibit in timeline order, from the World of Ice and the caribou hunt to the 16th-century Pequot Village, the Pequot War and The Witness, Life on the Reservation and the Tribal Portrait Gallery, with directions and your visit diary.',
   },
+  bruce: {
+    key: 'bruce', id: 'Q4978055', short: 'Bruce Museum', name: 'Bruce Museum',
+    floors: 'data/bruce/floors.json', artworks: 'data/bruce/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-bruce.json', packKey: 'gg-pack-bruce',
+    room: id => id,                          // galleries have names
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'Both public floors traced from the architects’ plans of the 2023 building: the lobby, café, Museum Store, restrooms, lecture hall and main stairs on the ground floor; the Richter Art Wing, the Sculpture Gallery, the Mineral Gallery and the science galleries one level up; the shows on view now (American Stories from Sargent to O’Keeffe, Dustin Yellin and more), directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
