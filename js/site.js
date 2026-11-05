@@ -517,6 +517,17 @@ export const SITES = {
     flat: true,
     blurb: 'The museum and the ship in one map: the museum’s two floors from its own visitor map (lobby, store, restrooms, elevator, Exploring Old Ironsides, “Old Ironsides” in War and Peace, the Model Shop, All Hands on Deck), the walk through the Charlestown Navy Yard past the Park Service visitor center and the Navy’s security screening to Pier 1, and USS Constitution’s spar, gun and berth decks, with directions and your visit diary.',
   },
+  concord: {
+    key: 'concord', id: 'Q5158830', short: 'Concord Museum', name: 'Concord Museum',
+    floors: 'data/concord/floors.json', artworks: 'data/concord/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-concord.json', packKey: 'gg-pack-concord',
+    room: id => id,                          // galleries have names
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'Both floors (an approximate plan inside the building’s real outline: the museum publishes none) with the Gateway entrance, admissions desk, Museum Shop, coat rack, restrooms, water fountain and elevator; Emerson’s Study, Thoreau’s desk, bed and flute, the Musketaquid Gallery, Paul Revere’s lantern in the April 19, 1775 galleries, the 1720 and 1775 Period Rooms, Mark Dion’s Eccentric Collectors Like Us, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
