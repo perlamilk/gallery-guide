@@ -462,6 +462,17 @@ export const SITES = {
     flat: true,
     blurb: 'All three floors traced from the museum’s own visitor map: the Elm Street entrance, lobby, coat check, restrooms in both buildings, both elevators and the stairs, the Community Gallery, the courtyard with Thurston, the Harris Gallery bridge to the Merriam Parkway Building; every object in FESTIVAL: A Celebration of African Art (216, from its catalogue), highlights of Kaleidoscope and Heirlooms, directions and your visit diary.',
   },
+  heritage: {
+    key: 'heritage', id: 'Q5738956', short: 'Heritage', name: 'Heritage Museums & Gardens',
+    floors: 'data/heritage/floors.json', artworks: 'data/heritage/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-heritage.json', packKey: 'gg-pack-heritage',
+    room: id => id,                          // galleries, gardens and outdoor places have names
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'The 100-acre grounds from the museum’s own 2026 visitor map: the Barbey Family Welcome Center, the J.K. Lilly III Automobile Gallery, Lilly’s Café, the Special Exhibitions Gallery, the American Art & Carousel Gallery, the Old East Mill, every garden, Hidden Hollow, the paved paths and nature trails, parking, restrooms and drinking fountains; the 26 cars on show, the 1908 Looff Carousel, the cranberry and Revolution exhibits, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
