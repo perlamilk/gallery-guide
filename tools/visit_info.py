@@ -882,6 +882,23 @@ VISIT = {
                   'Small dining area with vending machines; picnic tables outside in fair weather; restaurants on '
                   'Route 75',
                   'Allow 2–3 hours']),
+    'Q7631596': ('One Crystal Lake Road, Groton, CT 06340',
+                 ['November 1 – April 30: Wednesday–Monday, 9 am – 4 pm',
+                  'May 1 – October 31: Wednesday–Monday, 9 am – 5 pm',
+                  'Closed Tuesdays, Thanksgiving, Christmas and New Year’s Day',
+                  'Closed about two weeks in spring and in fall for maintenance: call before you go'],
+                 ['Free (museum and the Nautilus)', 'Parking: free', 'Groups of 25 or more: call ahead'],
+                 '860-694-3174',
+                 ['Run by the U.S. Navy (Naval History and Heritage Command); just outside the gate of Naval '
+                  'Submarine Base New London, so no base pass is needed. I-95 exit 86, then Route 12 north to Crystal '
+                  'Lake Road',
+                  'You reach the Nautilus through the museum and across the railroad; a sailor on the pier hands out '
+                  'free audio-tour wands. The tour takes about 30 minutes',
+                  'The Nautilus has steep ladders and small hatches: not wheelchair accessible. The museum has two '
+                  'floors and an elevator',
+                  'No food or large backpacks inside the museum or on the Nautilus; picnic tables outside',
+                  'Free scavenger hunt for children at the docent desk',
+                  'Allow about 2 hours']),
 }
 
 # Museums the Wikidata rebuild leaves out (their Wikidata type isn't one tools/build_open_data.py asks for);
@@ -942,6 +959,10 @@ EXTRA = {
                  'image': 'Stowe Center for Literary Activism (55618577734).jpg', 'website': 'https://stowecenter.org/',
                  'city': 'Hartford', 'state': 'Connecticut',
                  'wikipedia': 'Harriet_Beecher_Stowe_House_(Hartford,_Connecticut)'},
+    'Q7631596': {'id': 'Q7631596', 'name': 'Submarine Force Museum and Historic Ship Nautilus',
+                 'at': [41.38747, -72.08706], 'links': 15, 'image': 'Submarine Force Library and Museum, Groton CT.jpg',
+                 'website': 'https://ussnautilus.org/', 'city': 'Groton', 'state': 'Connecticut',
+                 'wikipedia': 'Submarine_Force_Library_and_Museum'},
     'Q7007140': {'id': 'Q7007140', 'name': 'New England Air Museum', 'at': [41.9471, -72.6915], 'links': 15,
                  'image': 'NEAM.JPG', 'website': 'https://neam.org/', 'city': 'Windsor Locks',
                  'state': 'Connecticut', 'wikipedia': 'New_England_Air_Museum'},

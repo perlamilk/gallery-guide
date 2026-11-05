@@ -667,3 +667,15 @@ its Shopify CDN), the K-16B outside, 16 exhibits and the 6 featured engines; han
 (ZNPK-28, CBY-3 Civil; K-225, A-10, F-100, CH-54, A-26 Military; B-29), the rest guessed by subject and marked so. The
 museum page also lists the aircraft in storage and the engine collection (no pictures, not on view). The script stops if
 neam.org adds or drops an aircraft: then add it to AIRCRAFT.
+
+Submarine Force Museum and Historic Ship Nautilus (Groton) (Nov 5, 2026): map guide at `guide.html?museum=subforce`,
+built by `tools/build_subforce.py` (reads OpenStreetMap and Wikimedia Commons once into `.cache/subforce`). The museum's
+site, ussnautilus.org, sits behind a bot check that refuses scripts (its 2026 info packet PDF too), and the Navy
+publishes no floor plan. Map: the building, the pier, the Nautilus, the front lawn with the midget submarines, the
+memorial plaza and the parking lot are traced from OpenStreetMap (true to scale, turned 16° so the museum front runs
+left to right); the rooms inside (lobby, store, theater, Today's Submarine Force, main hallway, Control Room, Attack
+Center with the periscopes, the two-storey Main Gallery) and the upper level are APPROXIMATE, placed from visitors'
+descriptions. The Nautilus is a diagram of the forward compartments on the tour. Works: 40 exhibits, submarines and
+compartments written from Wikipedia and visitors' accounts, with Wikimedia Commons pictures; no online catalogue
+exists. Admission is free. To improve: a photo of the museum's own map or the 2026 info packet (try from a home
+connection).
