@@ -278,6 +278,17 @@ permanent collection: works are The Aldrich Decennial (40 Connecticut artists, t
 artist audio guide; the museum doesn't say which room each artist is in, so indoor works carry a location note, not a room.
 Rebuild when the shows change (next: Kelly Sinnapah Mary and Mimi Smith, Feb 7, 2027).
 
+Fruitlands Museum, Harvard (Nov 5, 2026): map guide at `guide.html?museum=fruitlands`, built by `tools/build_fruitlands.py`.
+The grounds come straight out of the museum's own trail map (thetrustees.org/wp-content/uploads/2025/08/Fruitlands-Trail-Map.pdf,
+a vector PDF drawn to scale from USGS/MassGIS data): building rectangles, the drive, parking lots and every trail line are
+read from the PDF (via `pdftocairo -svg`), kept in the map's own orientation (north up and to the right). Buildings are
+drawn larger than the map's symbols so they can be tapped; there is no published floor plan, and the Four Seasons Gallery
+is split by hand into its larger (Across Boundaries Across Barriers) and smaller (Eye of the Beholder) gallery. The
+collection (about 6,000 objects) is not online: works are the current shows on thetrustees.org, objects named in The
+Harvard Press's 2024 review, the historic buildings and outdoor sculptures photographed on Wikimedia Commons (credited),
+and five collection works from past shows (museum page only). Buildings are closed Nov–April; re-run when the 2027 season
+and its shows are announced.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).

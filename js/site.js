@@ -440,6 +440,17 @@ export const SITES = {
     flat: true,
     blurb: 'The grounds and Sculpture Garden traced from the museum’s own garden map, with the ten sculptures outside where the map puts them, the terraced steps, parking and the amphitheater, and both floors inside (an approximate plan: the museum publishes none) with the Front Desk, restrooms, The Shop, The Studio, the elevator and every gallery; the 40 Connecticut artists of The Aldrich Decennial, directions and your visit diary.',
   },
+  fruitlands: {
+    key: 'fruitlands', id: 'Q5506454', short: 'Fruitlands', name: 'Fruitlands Museum',
+    floors: 'data/fruitlands/floors.json', artworks: 'data/fruitlands/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-fruitlands.json', packKey: 'gg-pack-fruitlands',
+    room: id => id,                          // buildings and outdoor places have names (Farmhouse, Museum Hill)
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'The 210-acre grounds from the museum’s own trail map: Admissions, the Café and Store, the Wayside Visitor Center, the Four Seasons, Seasonal and Shaker Galleries, the Alcotts’ Farmhouse, parking, restrooms and every trail to the historic sites; what is on view in each building, the sculptures outside, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
