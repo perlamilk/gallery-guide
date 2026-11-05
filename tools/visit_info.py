@@ -132,8 +132,18 @@ VISIT = {
                  FREE, '203-432-2800', None),
     'Q478013': ('10½ Beacon Street, Boston, MA 02108',
                 ['Mon–Thu: 9 am–8 pm', 'Fri–Sat: 9 am–5 pm', 'Sun: closed'],
-                ['First-floor galleries: $11 (ages 14+)', 'Ages 13 and under: $5', 'Students, educators, military: $8',
-                 'Day membership, all floors: $40'], '617-227-0270', None),
+                ['First floor: $11 (ages 14+)', 'Ages 13 and under, with an adult: $5',
+                 'Students, educators, military (with ID): $8',
+                 'Card to Culture (EBT, WIC, ConnectorCare): $2 per adult, children 12 and under free',
+                 'NARM/ROAM members: free', 'Day membership, all 12 floors: $40'], '617-227-0270',
+                ['Your ticket covers the first floor: the Long Room, the Calderwood Gallery’s exhibitions, the Gordon '
+                 'Reading Room and the Leventhal Living Room. The upper reading rooms and the fifth-floor terrace need a '
+                 'day membership',
+                 'Step-free path on the right of the front steps and a lift inside the vestibule; two accessible '
+                 'elevators; restrooms on floors B, 1, 2, 3 and 4',
+                 'Free digital guide with audio for the first floor on the Bloomberg Connects app',
+                 'Folio, the bistro, has its own door next door at 14A Beacon Street',
+                 'Coat Room with lockers on the first floor; check the planned closings before you go']),
     'Q3152226': ('25 Harbor Shore Drive, Boston, MA 02210',
                  ['Tue, Wed, Sat, Sun: 10 am–5 pm', 'Thu–Fri: 10 am–9 pm (first Friday: 5 pm)', 'Mon: closed'],
                  ['Adults: $20', 'Seniors 65+: $17', 'Students: $15', '18 and under: free',

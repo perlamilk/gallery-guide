@@ -258,6 +258,16 @@ galleries upstairs; Lehman Auditorium and the Hawthorne dollhouse on the lower l
 three shows on view (to Jan 2027), plus 12 collection highlights as not on view. The PastPerfect catalogue answers 403.
 Which room holds which century or show is a guess; the Wikidata point was 350 m off and is fixed in `tools/visit_info.py`.
 
+Boston Athenæum (Nov 5, 2026): map guide at `guide.html?museum=athenaeum`, built by `tools/build_athenaeum.py`. Works: all 593
+records of the Athenæum's "Paintings & Sculpture Online" (535 with pictures), saved in `tools/data/athenaeum_works.tsv` and
+`athenaeum_artists.tsv` from its WordPress API (`/wp-json/wp/v2/paintings`, `/artist`) and paintings sitemap. bostonathenaeum.org
+pages and API sit behind a Cloudflare wall that refuses cloud machines (robots.txt allows everything, crawl delay 10), so they
+were read through a web reader; `wp-content/uploads` pictures download directly. The records give no location: only the busts
+of Hamilton and Lafayette in the Bayard Henry Long Room and the Washington paintings and statues on floor 4 (Harvard Magazine,
+March 2025) are on the map. Map: APPROXIMATE, six floors (B, 1-5) inside the OpenStreetMap outline (way 405941805, turned so
+Beacon Street is at the top), laid out from the Athenæum's accessibility guide (rooms, restrooms per floor, two elevators,
+terraces on 2 and 5). The Bloomberg Connects guide has the real first-floor map but refuses outside readers.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
