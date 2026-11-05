@@ -268,6 +268,16 @@ March 2025) are on the map. Map: APPROXIMATE, six floors (B, 1-5) inside the Ope
 Beacon Street is at the top), laid out from the Athenæum's accessibility guide (rooms, restrooms per floor, two elevators,
 terraces on 2 and 5). The Bloomberg Connects guide has the real first-floor map but refuses outside readers.
 
+The Aldrich Contemporary Art Museum, Ridgefield (Nov 5, 2026): map guide at `guide.html?museum=aldrich`, built by
+`tools/build_aldrich.py` (pages cached by `tools/harvest_aldrich.py`). The grounds are traced from the museum's own Sculpture
+Garden map (thealdrich.org/page/sculpture-garden, STIMSON's 2024 landscape plan with the ten outdoor works numbered), so
+those works sit exactly where the museum puts them. The museum publishes no floor plan: the First and Second Floors are
+APPROXIMATE, inside the building outline from that map, placed from the museum's social narrative (Front Desk on the left,
+restrooms behind it, gallery names per floor), the 52 Artists checklists and 2004 opening articles. The Aldrich has no
+permanent collection: works are The Aldrich Decennial (40 Connecticut artists, to Jan 10, 2027), titles from the museum's
+artist audio guide; the museum doesn't say which room each artist is in, so indoor works carry a location note, not a room.
+Rebuild when the shows change (next: Kelly Sinnapah Mary and Mimi Smith, Feb 7, 2027).
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).

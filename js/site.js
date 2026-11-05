@@ -429,6 +429,17 @@ export const SITES = {
     flat: true,
     blurb: 'All six floors (approximate plans: the Athenæum publishes none) with the Beacon Street entrance, front desk, Coat Room, Long Room, Calderwood Gallery, Gordon Reading Room, Leventhal Living Room, Children’s Library, elevators and restrooms on every floor, the members’ reading rooms, the fifth-floor terrace, the busts and Washington portraits the Athenæum names, directions and your visit diary.',
   },
+  aldrich: {
+    key: 'aldrich', id: 'Q4713992', short: 'The Aldrich', name: 'The Aldrich Contemporary Art Museum',
+    floors: 'data/aldrich/floors.json', artworks: 'data/aldrich/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-aldrich.json', packKey: 'gg-pack-aldrich',
+    room: id => id,                          // galleries and garden areas have names (Leir Gallery, Upper Garden)
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'The grounds and Sculpture Garden traced from the museum’s own garden map, with the ten sculptures outside where the map puts them, the terraced steps, parking and the amphitheater, and both floors inside (an approximate plan: the museum publishes none) with the Front Desk, restrooms, The Shop, The Studio, the elevator and every gallery; the 40 Connecticut artists of The Aldrich Decennial, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
