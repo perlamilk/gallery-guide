@@ -309,6 +309,17 @@ pages via its WordPress API, `avada_portfolio`), objects pictured on the Cranber
 the outdoor exhibits and gardens; the other 17 cars and some blog objects are on the museum page as not on view. The
 2026 season ended Oct 18; rebuild when the 2027 shows are announced (the car pages say which are on exhibit).
 
+Mashantucket Pequot Museum & Research Center, Mashantucket (Nov 5, 2026): map guide at `guide.html?museum=pequot`,
+built by `tools/build_pequot.py`. The map is the museum's own July 2023 "Museum Property Guide Map" PDF
+(pequotmuseum.org/wp-content/uploads/FOX_100075-1_Jul2023_MuseumProperty_GuideMap_8-5x14-1.pdf), whose first page
+draws Levels 1, 2 and 3 as vector lines, one colour per level. `tools/trace_pequot.py` (needs opencv) traces the rooms
+of Levels 1 and 2 from those walls into `tools/data/pequot-trace.json`; Level 3 is drawn by hand. The levels are
+moved to sit over each other so the shared elevator and the escalators line up. Works: the 26 exhibits of the 2022
+guide map and the 15 stops of the 2023 one (the newer wins where they differ), with the photos printed in the 2023
+guide; 58 collection objects from the museum's Google Arts & Culture pages (`tools/harvest_pequot.py`) are on the
+museum page as not known to be on view. pequotmuseum.org pages answer 403 to the cloud (Cloudflare); its
+/wp-content/uploads PDFs and pictures download fine. The café is closed; the Mashantucket Gallery shows change.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).

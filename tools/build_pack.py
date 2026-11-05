@@ -137,6 +137,9 @@ PACKS = [
     ('Q5738956', 'data/pack-heritage.json',
      ['data/heritage/artworks.json', 'data/heritage/floors.json'],
      'data/heritage/artworks.json', None),
+    ('Q6783079', 'data/pack-pequot.json',
+     ['data/pequot/artworks.json', 'data/pequot/floors.json'],
+     'data/pequot/artworks.json', None),
 ]
 
 for museum, out_path, files, art_path, notice_path in PACKS:
