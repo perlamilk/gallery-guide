@@ -312,6 +312,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "Boston Athenæum, Paintings & Sculpture Online"
+  },
+  "Q4713992": {
+   "works": 64,
+   "pictures": 5,
+   "onView": 64,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "The Aldrich: Sculpture Garden map and exhibition pages (thealdrich.org); approximate floor plans"
   }
  }
 }
