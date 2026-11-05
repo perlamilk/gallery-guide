@@ -649,6 +649,17 @@ export const SITES = {
     flat: true,
     blurb: 'The campus with free parking, the Visitor Center where every tour starts (tickets, store, restroom), the Day House and the gardens with the new bronze of Stowe, and both floors of the Stowe House (rooms approximate, since no plan is published): the parlors, the dining room, Calvin’s study, the kitchen, Stowe’s bedroom and the two galleries, with what is in each, directions and your visit diary.',
   },
+  glasshouse: {
+    key: 'glasshouse', id: 'Q1506237', short: 'Glass House', name: 'The Glass House',
+    floors: 'data/glasshouse/floors.json', artworks: 'data/glasshouse/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-glasshouse.json', packKey: 'gg-pack-glasshouse',
+    room: id => id,                          // buildings are named (Glass House, Painting Gallery)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'Philip Johnson’s 49-acre site from above, traced from the Glass House’s own site map: the Glass House and Brick House, the Painting and Sculpture Galleries across the brook, the Studio, Ghost House, Da Monsta, the pond with its Pavilion and the Kirstein tower, and the Visitor Center in town where every tour shuttle starts; with the paintings and sculptures in each building, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
