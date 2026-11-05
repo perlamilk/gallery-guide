@@ -374,6 +374,17 @@ export const SITES = {
     flat: true,
     blurb: 'The whole Village from above, true to scale: the Visitor Center, the Common and Center Village, the Countryside with the Freeman Farm, the three water-powered mills and the Covered Bridge over the Mill Pond, every path between them, restrooms, food, water fountains and first aid, with the story and a photo of each building, directions and your visit diary.',
   },
+  hmnh: {
+    key: 'hmnh', id: 'Q2001855', short: 'Natural History', name: 'Harvard Museum of Natural History',
+    floors: 'data/hmnh/floors.json', artworks: 'data/hmnh/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-hmnh.json', packKey: 'gg-pack-hmnh',
+    room: id => id,                          // galleries have names (Glass Flowers, Great Mammal Hall)
+    website: 'More about this photo',
+    official: false,
+    flat: true,
+    blurb: 'The gallery floor, traced from the Harvard museums’ own plan: the Glass Flowers, the Great Mammal Hall with its whale skeletons, the Kronosaurus and the dinosaurs, the Cenozoic mammals, the minerals, gems and meteorites, the arthropods and the Blaschka sea creatures, with what is in each gallery, plus the stairs and elevator, restrooms, the shop, the way to the Peabody Museum, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

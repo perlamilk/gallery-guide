@@ -110,6 +110,9 @@ PACKS = [
     ('Q7085141', 'data/pack-osv.json',
      ['data/osv/artworks.json', 'data/osv/floors.json'],
      'data/osv/artworks.json', None),
+    ('Q2001855', 'data/pack-hmnh.json',
+     ['data/hmnh/artworks.json', 'data/hmnh/floors.json'],
+     'data/hmnh/artworks.json', None),
 ]
 
 for museum, out_path, files, art_path, notice_path in PACKS:
