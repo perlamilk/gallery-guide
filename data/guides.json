@@ -272,6 +272,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "Wikimedia Commons photos taken in the galleries; floor plan from the HMSC wayfinding brochure"
+  },
+  "Q7085141": {
+   "works": 111,
+   "pictures": 109,
+   "onView": 47,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "Old Sturbridge Village 2026 Map Guide and website"
   }
  }
 }

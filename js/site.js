@@ -363,6 +363,17 @@ export const SITES = {
     flat: true,
     blurb: 'The Quadrangle with the Welcome Center where you buy one ticket for all five museums, free parking, the Blake House Café and the Dr. Seuss Sculpture Garden, and every floor of the five museums from their own maps: the Science Museum with its dinosaurs, aquarium and planetarium, the Smith Art Museum’s armor and cloisonné, the D’Amour Museum of Fine Arts, the Amazing World of Dr. Seuss and the Museum of Springfield History, with restrooms, elevators, directions and your visit diary.',
   },
+  osv: {
+    key: 'osv', id: 'Q7085141', short: 'Old Sturbridge Village', name: 'Old Sturbridge Village',
+    floors: 'data/osv/floors.json', artworks: 'data/osv/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-osv.json', packKey: 'gg-pack-osv',
+    room: id => id,                          // buildings are named (Bixby House, Gristmill)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'The whole Village from above, true to scale: the Visitor Center, the Common and Center Village, the Countryside with the Freeman Farm, the three water-powered mills and the Covered Bridge over the Mill Pond, every path between them, restrooms, food, water fountains and first aid, with the story and a photo of each building, directions and your visit diary.',
+  },
   hmnh: {
     key: 'hmnh', id: 'Q2001855', short: 'Natural History', name: 'Harvard Museum of Natural History',
     floors: 'data/hmnh/floors.json', artworks: 'data/hmnh/artworks.json',

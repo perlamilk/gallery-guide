@@ -378,3 +378,13 @@ galleries and shared on Wikimedia Commons (museum, Glass Flowers, minerals and m
 search), read from the HTML pages because the Commons API rate-limits the cloud. Galleries are given by what each photo
 shows (GALLERY_RULES); mammals, birds and arthropods without a clear gallery are marked as placed by guess.
 Admission from July 1, 2026: adults $20, seniors $18, students and youth 3–18 $15.
+
+Old Sturbridge Village, Sturbridge (Nov 5, 2026): map guide at `guide.html?museum=osv`, built by
+`tools/harvest_osv.py` + `tools/build_osv.py`. The Village's 2026 Map Guide (osv.org/visit) is a painted bird's-eye
+view, not to scale, so buildings, paths and the Mill Pond come from OpenStreetMap (north up, 0.35 m per unit); the Map
+Guide gives the building numbers and where the restrooms, food, water fountains and first aid are. OSM's "Parsonage" is
+the Richardson House (12), its barn the Gebhardt Barn (13), "New England Changing Landscape" the Countryside Gallery
+(38), "Hands-on Crafts Center" the David Wight Community Gallery (28). Works: osv.org/building/... pages (no REST API;
+robots.txt allows all, read 4 s apart) and the 62 collection highlights (osv.org/collection/...), which say nothing
+about where they are shown, so only the carding machine (in the Carding Mill) is placed. Missing pictures from Wikimedia
+Commons. Hours change by season (closed Nov 15–26; Christmas by Candlelight only Nov 27–Dec 27).
