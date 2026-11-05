@@ -616,6 +616,17 @@ export const SITES = {
     flat: true,
     blurb: 'Doris Duke’s ocean-front house from above, with the gate on Bellevue Avenue, the circular drive, the lions terrace, the lawn and the Cliff Walk; and the house’s two floors (an approximate plan: none is published) with the Great Hall, the portraits up the grand staircase, the Dining, Morning, Pine and Yellow Rooms, the Solarium, the Music Room, Doris Duke’s bedroom, the 2026 exhibitions, the elevator and restrooms, directions and your visit diary.',
   },
+  audrain: {
+    key: 'audrain', id: 'Q4820080', short: 'Audrain', name: 'Audrain Automobile Museum',
+    floors: 'data/audrain/floors.json', artworks: 'data/audrain/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-audrain.json', packKey: 'gg-pack-audrain',
+    room: id => id,                          // one open hall (Exhibition Hall)
+    website: 'More on the Audrain Automobile Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'The museum’s one open hall in the 1902 Audrain Building on Bellevue Avenue (an approximate plan: none is published), with the entrance, front desk and shop, the restrooms, the racing simulators and the big arched car door; and every car in “Best Shown: Winners from the Audrain Collections” (to Jan 10, 2027), from the 1901 Panhard Vanderbilt racer to the 1964 Porsche 904, with the museum’s photos, awards and stories, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
