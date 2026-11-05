@@ -332,6 +332,16 @@ pictures and collection works from Wikidata and Commons (Commons answered 429 fo
 Shows to update: Devasher closes Nov 29, 2026; Sandman Jan 17, 2027; Fair Feb 7, 2027; Yellin Mar 14, 2027; American
 Stories Oct 10, 2027.
 
+MIT Museum, Cambridge (Nov 5, 2026): map guide at `guide.html?museum=mit`, built by `tools/build_mit.py`. The three
+floors are traced from the museum's own visitor floor maps (`MITMus_Floor_maps_0924.pdf`, May 2025, on its file server
+mit-museum-cms-files--production.s3.us-east-2.amazonaws.com; the newer `-3` version answers 403), which match the
+architects' (Höweler + Yoon) Level 2 and 3 plans on howeleryoon.com. mitmuseum.mit.edu is behind a Vercel bot check
+(429 to curl and WebFetch), so its pages were not read; current shows and their galleries come from the OCEANS season
+booklet on the same file server (Sensing Oceans in the Termeer Gallery, Crochet Coral Reef in the "Exchange Gallery",
+Water Lines in the Kurtz Gallery from Dec 17, 2026). Objects are Daderot's public-domain photos taken in the new
+building (Wikimedia Commons). Shows to update: Freezing Time closes Nov 29, 2026; Split | Second Jan 4, 2027; Coral Reef
+Feb 14, 2027; Sensing Oceans Feb 21, 2027; Enterprise model Mar 28, 2027. Closed shows drop off when the script is rerun.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
