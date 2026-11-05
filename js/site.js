@@ -407,6 +407,17 @@ export const SITES = {
     flat: true,
     blurb: 'The museum’s one floor (an approximate plan: the Carle publishes none) with the entrance, admissions desk, Bookshop, Reading Library, Art Studio, Great Hall, the West, Central and East Galleries, the Café, auditorium and restrooms, the works pictured for the shows on view now, including Eric Carle’s own art, directions and your visit diary.',
   },
+  lymanallyn: {
+    key: 'lymanallyn', id: 'Q14714982', short: 'Lyman Allyn', name: 'Lyman Allyn Art Museum',
+    floors: 'data/lymanallyn/floors.json', artworks: 'data/lymanallyn/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-lymanallyn.json', packKey: 'gg-pack-lymanallyn',
+    room: id => id,                          // galleries have names (Glassenberg Gallery, 18th Century)
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'All three floors (an approximate plan inside the building’s real outline: the museum publishes none) with the entrance under the portico, the side entrance with its ramp, the front desk, coat room, restrooms with a family room, the Hendel Library and the elevator; American Perspectives from colonial New London to Sol LeWitt, the Tiffany gallery, the Hawthorne dollhouse, the shows on view now, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
