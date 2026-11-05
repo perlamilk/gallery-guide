@@ -433,6 +433,25 @@ VISIT = {
                   'Walking from the Welcome Center: Automobile Gallery 4 min, Special Exhibitions Gallery 10 min, '
                   'American Art & Carousel Gallery 15 min',
                   'No pets (service animals welcome); open rain or shine; buy tickets online for quick entry']),
+    'Q6783079': ('110 Pequot Trail, Mashantucket, CT 06338',
+                 ['Wednesday–Saturday 9 am–5 pm (last admission 4 pm), March–October',
+                  'November: Tuesday–Saturday 9 am–5 pm (last admission 4 pm)',
+                  'December–February: not on the museum’s hours page; call before you go'],
+                 ['Adults (18–64): $25', 'Seniors (65+): $20', 'College students and educators (with ID): $20',
+                  'Youth (6–17): $16', 'Children under 5: free', 'Members: free',
+                  'Groups of 10 or more: adults $18; add a guided tour for $10 a person',
+                  'Foxwoods Rewards points are accepted for admission'],
+                 '800-411-9671',
+                 ['Start in the Gathering Space (entry level, Level 3) and take the ramp or elevator down: the '
+                  'exhibits run as a timeline, from the Ice Age on Level 1 back up to the present on Level 2',
+                  'The Witness, a half-hour film on the 1637 Pequot War (ages 12 and older), shows at 11 am, 1 pm and '
+                  '3 pm',
+                  'Pick up the audio guide at the Three Sisters diorama, before the Pequot Village (Level 1)',
+                  'The café is temporarily closed; the Gift Shop sells work by certified Native American artists',
+                  'Accessible throughout: infrared wayfinding with audio description, closed captions and replica '
+                  'artifacts to touch; elevators to every level and up the observation tower',
+                  'Free parking in the large lot on the south side of Pequot Trail; accessible parking in front of the '
+                  'museum']),
     'Q2019741': ('51 Sandy Pond Road, Lincoln, MA 01773',
                  ['Sculpture park and store: Tue–Fri 10 am–4 pm, Sat–Sun 10 am–5 pm',
                   'Twisted Tree Café: Tue–Fri 10 am–3 pm, Sat–Sun 10 am–4 pm',
@@ -574,6 +593,10 @@ EXTRA = {
                  'image': 'Heritage Museum and Gardens (3789207677).jpg',
                  'website': 'https://heritagemuseumsandgardens.org/', 'city': 'Sandwich',
                  'state': 'Massachusetts', 'wikipedia': 'Heritage_Museums_and_Gardens'},
+    'Q6783079': {'id': 'Q6783079', 'name': 'Mashantucket Pequot Museum & Research Center',
+                 'at': [41.4661, -71.9628], 'links': 3, 'image': 'Mashantucket Pequot Museum Exterior.jpg',
+                 'website': 'https://www.pequotmuseum.org/', 'city': 'Mashantucket', 'state': 'Connecticut',
+                 'wikipedia': 'Mashantucket_Pequot_Museum_and_Research_Center'},
     'Q4681251': {'id': 'Q4681251', 'name': 'Addison Gallery of American Art', 'at': [42.6486, -71.1333], 'links': 6,
                  'image': 'Phillips Academy, Andover, MA - Addison Gallery of American Art.JPG',
                  'website': 'https://addison.andover.edu/', 'city': 'Andover', 'state': 'Massachusetts',

@@ -473,6 +473,17 @@ export const SITES = {
     flat: true,
     blurb: 'The 100-acre grounds from the museum’s own 2026 visitor map: the Barbey Family Welcome Center, the J.K. Lilly III Automobile Gallery, Lilly’s Café, the Special Exhibitions Gallery, the American Art & Carousel Gallery, the Old East Mill, every garden, Hidden Hollow, the paved paths and nature trails, parking, restrooms and drinking fountains; the 26 cars on show, the 1908 Looff Carousel, the cranberry and Revolution exhibits, directions and your visit diary.',
   },
+  pequot: {
+    key: 'pequot', id: 'Q6783079', short: 'Pequot Museum', name: 'Mashantucket Pequot Museum & Research Center',
+    floors: 'data/pequot/floors.json', artworks: 'data/pequot/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-pequot.json', packKey: 'gg-pack-pequot',
+    room: id => id,                          // exhibit areas have names
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'All three levels traced from the museum’s own guide map: the Gathering Space, front desk, coats, shop, libraries, both entrances, the ramp, elevators, escalators and restrooms; every permanent exhibit in timeline order, from the World of Ice and the caribou hunt to the 16th-century Pequot Village, the Pequot War and The Witness, Life on the Reservation and the Tribal Portrait Gallery, with directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
