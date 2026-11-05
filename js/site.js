@@ -308,6 +308,17 @@ export const SITES = {
     flat: true,
     blurb: 'The grounds with parking and the rose garden by the Cliff Walk, and both floors of the house traced from Stanford White’s 1902 plans: the heart-shaped staircase, the Ballroom (the largest in Newport), the Salon, the Dining and Billiard Rooms, the exhibition upstairs and the basement restrooms and store, with the Oelrichs’ and Monroes’ furniture and paintings, directions and your visit diary.',
   },
+  chateau: {
+    key: 'chateau', id: 'Q5087517', short: 'Chateau-sur-Mer', name: 'Chateau-sur-Mer',
+    floors: 'data/chateau/floors.json', artworks: 'data/chateau/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-chateau.json', packKey: 'gg-pack-chateau',
+    room: id => id,                          // rooms are named (Library, Dining Room)
+    website: 'More about this object',
+    official: false,
+    flat: true,
+    blurb: 'The park with parking, the Porter’s Lodge and the Chinese Moon Gate, and both floors on the tour traced from the Historic American Buildings Survey’s 1970 plans: the three-storey Great Hall, Frullini’s carved Dining Room and Library, the Billiard Room, Ballroom, Green Parlor and the Wetmores’ bedrooms upstairs, the house’s one restroom, with the Wetmores’ furniture, porcelain and paintings, directions and your visit diary.',
+  },
   mos: {
     key: 'mos', id: 'Q1139748', short: 'Museum of Science', name: 'Museum of Science',
     floors: 'data/mos/floors.json', artworks: 'data/mos/artworks.json',
