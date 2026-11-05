@@ -618,3 +618,12 @@ APPROXIMATELY in the OpenStreetMap outline (way 1170440781) as one open hall wit
 Avenue; restrooms and simulators placed by guess. Cars: every page under /current-exhibition (17 for "Best Shown",
 Sep 19, 2026 – Jan 10, 2027; og:image photos). The show changes every few months (next: "STEAM Power", Jan 16 – May 9,
 2027): delete `.cache/audrain/html` and rerun both scripts, then update SHOW/SHOW_DATES in build_audrain.py.
+
+International Tennis Hall of Fame, Newport (Nov 5, 2026): map guide at `guide.html?museum=tennis`, built by
+`tools/harvest_tennis.py` + `tools/build_tennis.py` (cache `.cache/tennis`). Wikidata Q52454. Grounds traced from the
+Hall of Fame's own 2026 Hall of Fame Open site map (info.tennisfame.com HubSpot; north is RIGHT on it, turned north-up).
+The museum (2nd floor of the Casino) has no published plan: galleries placed APPROXIMATELY from the 2025 reopening and
+June 2026 Federer-exhibit press releases. tennisfame.com is a Scrivito single-page site: plain pages are prerendered,
+but inductee pages and lists are not, so the 271 Hall of Famers come from Wikipedia's list + Wikidata (P3363).
+Their portraits come from Commons with `python3 tools/build_tennis.py --portraits` (Wikimedia answered 429 to the cloud
+on Nov 5, so most are still missing). Grounds photos: HABS RI-331 (loc.gov ri0065, public domain).

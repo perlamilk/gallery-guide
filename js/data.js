@@ -235,6 +235,8 @@ export function shortArtist(name) {
   const known = {
     'Rembrandt Harmensz. van Rijn': 'Rembrandt',
     'Rosso Fiorentino (Giovanni Battista di Jacopo)': 'Rosso Fiorentino',
+    'McKim, Mead & White': 'McKim, Mead & White',
+    'International Tennis Hall of Fame': 'Hall of Fame',
   };
   if (known[name]) return known[name];
   const clean = name.replace(/\s*\(.*\)\s*/g, ' ').trim();

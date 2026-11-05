@@ -456,6 +456,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "Audrain Automobile Museum website; OpenStreetMap"
+  },
+  "Q52454": {
+   "works": 304,
+   "pictures": 35,
+   "onView": 304,
+   "galleries": true,
+   "checked": "2026-11-05",
+   "source": "International Tennis Hall of Fame; HABS; Wikipedia and Wikidata"
   }
  }
 }
