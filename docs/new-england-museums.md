@@ -355,6 +355,16 @@ its ~205 "collection-items" pages (CC BY-NC-ND 3.0 pictures) are not in the REST
 the sitemap (about 70 minutes). The ship is run by the Navy (navy.mil answers 403 to the cloud); ship hours come from the
 museum's Hours + Admission page.
 
+Concord Museum, Concord (Nov 5, 2026): map guide at `guide.html?museum=concord`, built by `tools/build_concord.py`.
+The museum publishes no floor plan (its "Campus Map" PDF is another school's map; the Bloomberg Connects guide refuses
+outside readers), so both floors are APPROXIMATE, drawn inside the building's outline traced from Esri World Imagery
+(the building is not in OpenStreetMap). Known: the Gateway to Concord entrance with admissions and the shop; restrooms,
+elevator, coat rack and water fountain on the first floor; the April 19, 1775 galleries upstairs. The online
+collection (concord.emuseum.com) disallows Claude's crawlers in robots.txt, so it is not read: objects are Wikimedia
+Commons photos (mostly Daderot, Dec 2014, public domain), placed by subject; the 2014 photos of the show "Behind
+Closed Doors" are listed on the museum page only. concordmuseum.org: WordPress, Crawl-delay 10, /collections/ redirects
+to eMuseum. Shows to update: Family Trees Nov 21, 2026 – Jan 3, 2027; Mark Dion closes Mar 7, 2027.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
