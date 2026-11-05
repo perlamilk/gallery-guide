@@ -679,3 +679,16 @@ descriptions. The Nautilus is a diagram of the forward compartments on the tour.
 compartments written from Wikipedia and visitors' accounts, with Wikimedia Commons pictures; no online catalogue
 exists. Admission is free. To improve: a photo of the museum's own map or the 2026 info packet (try from a home
 connection).
+
+Barnum Museum (Bridgeport) (Nov 5, 2026): map guide at `guide.html?museum=barnum`, built by `tools/build_barnum.py`
+after `tools/harvest_barnum.py list` and `detail` (Connecticut Collections, source facet 1069, 1,002 records, read
+slowly into `.cache/barnum`). The museum is CLOSED while the 1893 Barnum Institute of Science and History is restored
+after the 2010 tornado and Hurricanes Irene and Sandy; barnum-museum.org says it plans to reopen in 2030, with talks
+and programs meanwhile. So the map draws no rooms inside (they are being rebuilt): it shows the building, the Main
+Street sidewalk in front of the façade, Bridgeport Center next door, the nearby parking, Ralph 'n' Rich's across the
+street and the Bridgeport station entrance and platforms, all traced from OpenStreetMap, true to scale, north up. The
+front door (the arch under the dome) is placed from Carol M. Highsmith's photograph (Library of Congress, public
+domain), which also gives the pictures of the building, the Plasschaert frieze and the inscription. Works: the façade
+(on view from the sidewalk), the museum's online exhibits and latest gift, and every catalogue object with a picture
+and a curator's description as a highlight in the closed building (in storage). The museum page lists the whole
+catalogue. When the museum reopens (2030), redo the map from its new plan.

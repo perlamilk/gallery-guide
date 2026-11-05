@@ -693,6 +693,17 @@ export const SITES = {
     flat: true,
     blurb: 'The Submarine Force Museum in Groton from above: the building, the lawn with its midget submarines and the pier traced true to scale (the rooms inside approximate, since no plan is published), the lobby, Main Gallery, Control Room and periscopes, and the Historic Ship Nautilus compartment by compartment; with every exhibit, directions and your visit diary.',
   },
+  barnum: {
+    key: 'barnum', id: 'Q4862010', short: 'Barnum', name: 'Barnum Museum',
+    floors: 'data/barnum/floors.json', artworks: 'data/barnum/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-barnum.json', packKey: 'gg-pack-barnum',
+    room: id => id,                          // places are named (Façade, Barnum Museum)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'The Barnum Museum in Bridgeport from above: closed while its 1893 building is restored (reopening planned for 2030), so this map shows the building on Main Street, the façade you can see from the sidewalk, parking and the train station; with the frieze and busts on the façade, highlights of the collection in storage, and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

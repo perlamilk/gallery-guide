@@ -899,6 +899,22 @@ VISIT = {
                   'No food or large backpacks inside the museum or on the Nautilus; picnic tables outside',
                   'Free scavenger hunt for children at the docent desk',
                   'Allow about 2 hours']),
+    'Q4862010': ('820 Main Street, Bridgeport, CT 06604',
+                 ['Closed to the public: the 1893 building is being restored after a 2010 tornado and two '
+                  'hurricanes; reopening is planned for 2030',
+                  'The façade on Main Street can be seen from the sidewalk at any time',
+                  'Talks and programs on some evenings: see Events & Programs on barnum-museum.org'],
+                 ['No tickets while the museum is closed', 'Talks and programs: price and sign-up on each event page'],
+                 '203-331-1104',
+                 ['The museum is closed until about 2030, but the building is worth a stop: the terracotta frieze '
+                  'and busts under the dome tell Bridgeport’s history, and P. T. Barnum paid for it all',
+                  'Bridgeport station (Metro-North, Amtrak, CTrail) is a 5-minute walk east; parking '
+                  'garages and lots nearby (none of the museum’s own)',
+                  'More Barnum in town: his statue in Seaside Park (about 2 km southwest, on the water) and his grave '
+                  'in Mountain Grove Cemetery',
+                  'The collection (General Tom Thumb, Jenny Lind, the mummies, “mermaids” and a centaur) can be seen online on '
+                  'Connecticut Collections and the Connecticut Digital Archive',
+                  'Open nearby: the Housatonic Museum of Art (free, at the community college, 3 minutes’ walk)']),
 }
 
 # Museums the Wikidata rebuild leaves out (their Wikidata type isn't one tools/build_open_data.py asks for);
@@ -1028,6 +1044,10 @@ EXTRA = {
                  'image': 'Phillips Academy, Andover, MA - Addison Gallery of American Art.JPG',
                  'website': 'https://addison.andover.edu/', 'city': 'Andover', 'state': 'Massachusetts',
                  'wikipedia': 'Addison_Gallery_of_American_Art'},
+    'Q4862010': {'id': 'Q4862010', 'name': 'Barnum Museum', 'at': [41.17532, -73.18817], 'links': 10,
+                 'image': 'The Barnum Museum, Bridgeport, Connecticut LCCN2011631848.tif',
+                 'website': 'https://barnum-museum.org/', 'city': 'Bridgeport', 'state': 'Connecticut',
+                 'wikipedia': 'Barnum_Museum'},
     'Q15694003': {'id': 'Q15694003', 'name': 'Cape Ann Museum', 'at': [42.6143, -70.6624], 'links': 4,
                   'image': '2011 CapeAnnMuseum GloucesterMA.jpg', 'website': 'https://www.capeannmuseum.org/',
                   'city': 'Gloucester', 'state': 'Massachusetts', 'wikipedia': 'Cape_Ann_Museum'},
