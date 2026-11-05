@@ -342,6 +342,19 @@ Water Lines in the Kurtz Gallery from Dec 17, 2026). Objects are Daderot's publi
 building (Wikimedia Commons). Shows to update: Freezing Time closes Nov 29, 2026; Split | Second Jan 4, 2027; Coral Reef
 Feb 14, 2027; Sensing Oceans Feb 21, 2027; Enterprise model Mar 28, 2027. Closed shows drop off when the script is rerun.
 
+USS Constitution Museum and USS Constitution, Charlestown Navy Yard (Nov 5, 2026): map guide at
+`guide.html?museum=constitution`, built by `tools/build_constitution.py` (collection read by
+`tools/harvest_constitution.py`). One map for the museum and the ship, turned 33.7° so Pier 1 runs left to right (up is
+north-east). The Navy Yard (museum building, NPS Visitor Center in Building 5, Dry Dock 1, Pier 1, USS Cassin Young, the
+Pier 1 building taken to be Building 292, the Navy's security screening) is OpenStreetMap on Esri imagery. The museum is
+its own visitor map from the Sept 2024 social narrative PDF (page 5, both floors with stairs, elevator, restrooms), drawn
+about twice life size at the head of Dry Dock 1; room names follow the 2026 exhibits page (Special Exhibition Gallery =
+the old Today's Navy room, a guess; Art of the Ship in the theater). The ship's spar, gun and berth decks are diagrams,
+drawn large over the water. ussconstitutionmuseum.org is WordPress, answers curl, robots.txt asks for a 10 s crawl delay;
+its ~205 "collection-items" pages (CC BY-NC-ND 3.0 pictures) are not in the REST API, so the harvester reads them from
+the sitemap (about 70 minutes). The ship is run by the Navy (navy.mil answers 403 to the cloud); ship hours come from the
+museum's Hours + Admission page.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
