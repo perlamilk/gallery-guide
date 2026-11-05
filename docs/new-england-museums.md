@@ -320,6 +320,18 @@ guide; 58 collection objects from the museum's Google Arts & Culture pages (`too
 museum page as not known to be on view. pequotmuseum.org pages answer 403 to the cloud (Cloudflare); its
 /wp-content/uploads PDFs and pictures download fine. The café is closed; the Mashantucket Gallery shows change.
 
+Bruce Museum, Greenwich (Nov 5, 2026): map guide at `guide.html?museum=bruce`, built by `tools/build_bruce.py`.
+The walls are the architects' (EskewDumezRipple) floor plans of the 2023 building, one PNG with the Ground, Mezzanine
+and Gallery Level plans side by side (eskewdumezripple.com/the-bruce-museum.html, "BruceFloorPlans_Web_1.png", taken at
+3600 px wide; 167 px = 50 ft; the Gallery Level plan sits 2395 px right of the Ground Level one). The plans name no
+rooms: lobby, store, restrooms, café, lecture hall and stairs follow the furniture drawn; the gallery names (Richter Art
+Wing, Sculpture Gallery, Mineral Gallery, science galleries) and which show is where are approximate. The Mezzanine is
+staff space and storage, not drawn. brucemuseum.org's robots.txt disallows Claude-User and Claude-Web, and its
+Bloomberg Connects guide refuses outside readers, so its pages were not read: shows come from press releases and news,
+pictures and collection works from Wikidata and Commons (Commons answered 429 for long stretches; the script waits).
+Shows to update: Devasher closes Nov 29, 2026; Sandman Jan 17, 2027; Fair Feb 7, 2027; Yellin Mar 14, 2027; American
+Stories Oct 10, 2027.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
