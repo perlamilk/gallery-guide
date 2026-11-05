@@ -539,6 +539,17 @@ export const SITES = {
     flat: true,
     blurb: 'Both floors from the museum’s own map: the main entrance, front desk and Museum Shop upstairs; the Great Room, Atrium, Lampos, Tarlow, Barstow, Stone and Keith Galleries, restrooms, the Lounge for a packed lunch, the Interior Courtyard and the patio downstairs; the works on display from the museum’s Digital Archive, the current shows and the outdoor sculpture, with directions and your visit diary.',
   },
+  capeann: {
+    key: 'capeann', id: 'Q15694003', short: 'Cape Ann', name: 'Cape Ann Museum',
+    floors: 'data/capeann/floors.json', artworks: 'data/capeann/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-capeann.json', packKey: 'gg-pack-capeann',
+    room: id => id,                          // galleries have names
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'All four levels of the Downtown Campus from the museum’s own floor guide: the Pleasant Street entrance, Reception, Museum Store, coat room and restrooms; the Fitz Henry Lane Gallery with the world’s largest Lane collection, the Cape Ann, Central and Spotlight Galleries and the Captain Elias Davis House; the Fisheries Galleries upstairs, the Folly Cove Designers and 20th & 21st Centuries Galleries on top, and the Granite Gallery below, with directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
