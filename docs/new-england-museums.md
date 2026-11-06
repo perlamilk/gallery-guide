@@ -258,6 +258,16 @@ galleries upstairs; Lehman Auditorium and the Hawthorne dollhouse on the lower l
 three shows on view (to Jan 2027), plus 12 collection highlights as not on view. The PastPerfect catalogue answers 403.
 Which room holds which century or show is a guess; the Wikidata point was 350 m off and is fixed in `tools/visit_info.py`.
 
+Rose Art Museum, Brandeis (Nov 6, 2026): map guide at `guide.html?museum=rose`, built by `tools/build_rose.py`.
+brandeis.edu refuses robots from the cloud and from a home connection, so `tools/harvest_rose.py --wayback` reads the
+Internet Archive's copies of the Rose's pages (it ran on a home computer; the cache is on the branch `claude/rose-cache`).
+Its catalogue, rosecollection.brandeis.edu, closes itself to robots. No floor plan is published: the two levels are
+APPROXIMATE, drawn inside the OpenStreetMap outline (way 42505155) from the visit, FAQ and accessibility pages (reception
+desk in the Fineberg Gallery, Lower Rose downstairs with restrooms, accessible entrance and elevator on the right side,
+restrooms and stairwell in the Lois Foster Wing). Works: the four shows on view (Jenna Gribbon, ChromaForm, Yinka
+Shonibare, En/Lighten), Mark Dion's den and Light of Reason, plus two collection highlights. Re-run both scripts when the
+shows change (Gribbon and Shonibare close Jan 3, 2027).
+
 Boston Athenæum (Nov 5, 2026): map guide at `guide.html?museum=athenaeum`, built by `tools/build_athenaeum.py`. Works: all 593
 records of the Athenæum's "Paintings & Sculpture Online" (535 with pictures), saved in `tools/data/athenaeum_works.tsv` and
 `athenaeum_artists.tsv` from its WordPress API (`/wp-json/wp/v2/paintings`, `/artist`) and paintings sitemap. bostonathenaeum.org
