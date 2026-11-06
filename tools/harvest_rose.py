@@ -79,7 +79,7 @@ def get(url, dest, delay=DELAY):
 
 def local(path, folder):
     p = unquote(path).lstrip('/')
-    if p.endswith('/') or not p: p += 'index.html'
+    if not re.search(r'\.[A-Za-z0-9]{2,5}$', p): p = (p.rstrip('/') + '/index.html').lstrip('/')
     return CACHE / folder / re.sub(r'[^A-Za-z0-9._/-]', '_', p)
 
 
