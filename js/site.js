@@ -704,6 +704,17 @@ export const SITES = {
     flat: true,
     blurb: 'The Barnum Museum in Bridgeport from above: closed while its 1893 building is restored (reopening planned for 2030), so this map shows the building on Main Street, the façade you can see from the sidewalk, parking and the train station; with the frieze and busts on the façade, highlights of the collection in storage, and your visit diary.',
   },
+  rose: {
+    key: 'rose', id: 'Q7367636', short: 'The Rose', name: 'Rose Art Museum',
+    floors: 'data/rose/floors.json', artworks: 'data/rose/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-rose.json', packKey: 'gg-pack-rose',
+    room: id => id,                          // galleries have names (Fineberg Gallery, Lower Rose Gallery)
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'Both floors of the Rose at Brandeis (an approximate plan inside the building’s real outline: the museum publishes none) with the front steps and the step-free side entrance, the reception desk, lockers, restrooms, elevator and the Foster Wing stairwell; the shows on view now (Jenna Gribbon, ChromaForm, Yinka Shonibare, En/Lighten), Mark Dion’s collector’s den and Chris Burden’s Light of Reason, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

@@ -584,7 +584,21 @@ VISIT = {
                    'construction noise', 'Free parking behind the museum; accessible parking and a ramp at the side '
                    'entrance (ring the bell)']),
     'Q7367636': ('415 South Street, Waltham, MA 02453',
-                 ['Wed–Sun: 11 am–5 pm', 'Mon–Tue: closed'], ['Free (register for a free ticket)'], '781-736-3434', None),
+                 ['Wed–Sun: 11 am–5 pm', 'Mon–Tue: closed',
+                  'Also closed on Independence Day, Thanksgiving, Christmas Eve, Christmas, New Year’s Eve and New '
+                  'Year’s Day'],
+                 ['Free, always (booking a free ticket online is encouraged, not required)',
+                  'All exhibitions included; all programs free'], '781-736-3434',
+                 ['On the Brandeis campus: enter by the main entrance on South Street, turn left past the round '
+                  'Spingold Theater; the Rose is on the left behind Chris Burden’s Light of Reason lampposts',
+                  'Free parking on the Rose circle in front; if it is full, get a pass at the front desk and park in '
+                  'the Theater lot behind Spingold. Accessible spaces on the Rose circle',
+                  'Step-free entrance with power doors and the elevator on the right side of the building (the ramp '
+                  'starts left of the front steps)',
+                  'Coat closet and free lockers at the entrance: bags larger than 11 × 14 in must go in a locker',
+                  'No café in the museum: five restaurants on the Brandeis campus are open to visitors',
+                  'Photos for personal use are fine; no flash, tripods or video cameras',
+                  'Free Rose Art Museum app (App Store or web) with self-guided tours']),
     'Q5508243': ('455 Oak Street, Brockton, MA 02301',
                  ['Tue–Sun: 10 am–5 pm', 'Mon: closed',
                   'Also closed Thanksgiving, Christmas Eve, Christmas Day, New Year’s Day and July 4; '
