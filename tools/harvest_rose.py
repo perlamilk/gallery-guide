@@ -32,7 +32,7 @@ CACHE = ROOT / '.cache' / 'rose'
 UA = 'gallery-guide/1.0 (personal museum guide; polite, cached)'
 HOST = 'https://www.brandeis.edu'
 DELAY, IMG_DELAY = 3, 1.5
-MAX_PAGES, MAX_IMAGES = 160, 450
+MAX_PAGES, MAX_IMAGES = 220, 600
 SEEDS = ['/rose/', '/rose/exhibitions', '/rose/onview/whitten.html', '/rose/index.html', '/rose/visit/index.html', '/rose/visit/accessibility.html',
          '/rose/frequently-asked-questions.html', '/rose/exhibitions/index.html', '/rose/onview/index.html',
          '/rose/onview/collection/index.html', '/rose/collection/index.html', '/rose/about/index.html',
@@ -44,10 +44,36 @@ SKIP = re.compile(r'/(give|support|join|membership|donate|calendar|events?|news-
 
 
 WAYBACK = '--wayback' in sys.argv     # brandeis.edu refuses robots even from home: read the Internet Archive's copies
+# With --wayback, the archive's index (CDX) is asked once for everything it holds under these folders, so pages and
+# pictures that no other page links to any more (this season's shows) are found too.
+CDX_PREFIXES = ['www.brandeis.edu/rose/exhibitions/2026/', 'www.brandeis.edu/rose/exhibitions/2025/',
+                'www.brandeis.edu/rose/2026/', 'www.brandeis.edu/rose/visit/', 'www.brandeis.edu/rose/lightofreason/',
+                'www.brandeis.edu/rose/frequently-asked-questions.html', 'www.brandeis.edu/rose/exhibitions/index.html',
+                'www.brandeis.edu/rose/index.html', 'www.brandeis.edu/rose/exhibitions/2015/']
+SNAPS = {}                             # url -> newest archived timestamp, from the CDX index
+
+
+def cdx(prefix):
+    """{url: timestamp} of the newest good copy of every URL the archive holds under prefix."""
+    q = ('https://web.archive.org/cdx/search/cdx?output=json&filter=statuscode:200&fl=original,timestamp'
+         '&matchType=prefix&limit=5000&url=' + urllib.request.quote(prefix, safe=''))
+    out = subprocess.run(['curl', '-s', '-f', '-m', '120', '-A', UA, q], capture_output=True).stdout
+    time.sleep(3)
+    try:
+        rows = json.loads(out or b'[]')[1:]
+    except ValueError:
+        return {}
+    found = {}
+    for original, ts in rows:
+        u = 'https://www.brandeis.edu' + urlparse(original).path
+        if ts > found.get(u, ''): found[u] = ts
+    print(f'archive index: {len(found)} URLs under {prefix}', flush=True)
+    return found
 
 
 def archived(url):
     """The Internet Archive's newest copy of url (raw, as the museum served it), or None."""
+    if url in SNAPS: return f"https://web.archive.org/web/{SNAPS[url]}id_/{urllib.request.quote(url, safe=':/%')}"
     q = 'https://archive.org/wayback/available?timestamp=20261105&url=' + urllib.request.quote(url, safe='')
     try:
         out = subprocess.run(['curl', '-s', '-f', '-m', '60', '-A', UA, q], capture_output=True).stdout
@@ -56,7 +82,7 @@ def archived(url):
         return None
     time.sleep(1)
     if not snap or snap.get('status') != '200': return None
-    return f"https://web.archive.org/web/{snap['timestamp']}id_/{url}"
+    return f"https://web.archive.org/web/{snap['timestamp']}id_/{urllib.request.quote(url, safe=':/%')}"
 
 
 def get(url, dest, delay=DELAY):
@@ -67,6 +93,7 @@ def get(url, dest, delay=DELAY):
     if not src:
         print('no archived copy of', url, flush=True)
         return None
+    if not WAYBACK: src = urllib.request.quote(src, safe=':/?=&%')
     out = subprocess.run(['curl', '-s', '-f', '-L', '-m', '90', '-A', UA, src], capture_output=True).stdout
     time.sleep(delay)
     if not out:
@@ -90,8 +117,20 @@ def main():
     if raw is None:
         print('brandeis.edu did not answer: nothing read')
         return 1
-    index = {'pages': {}, 'images': {}}
-    todo, seen, n_img = list(SEEDS), set(), 0
+    ipath = CACHE / 'index.json'
+    index = json.loads(ipath.read_text()) if ipath.exists() else {'pages': {}, 'images': {}}
+    todo, seen, n_img = list(SEEDS), set(), len(index['images'])
+    if WAYBACK:
+        for prefix in CDX_PREFIXES: SNAPS.update(cdx(prefix))
+        pages = [u for u in SNAPS if not re.search(r'\.(jpe?g|png|webp|gif|pdf|css|js|svg)$', u, re.I)]
+        todo = [urlparse(u).path for u in sorted(pages)] + todo
+        for u in sorted(SNAPS):                 # pictures of this year's and last year's shows
+            pu = urlparse(u)
+            if not re.search(r'\.(jpe?g|png|webp)$', pu.path, re.I) or u in index['images']: continue
+            if not re.search(r'/(2025|2026)/', pu.path) or not robots.can_fetch(UA, u): continue
+            if get(u, local(pu.path, 'img'), delay=IMG_DELAY):
+                index['images'][u] = str(local(pu.path, 'img').relative_to(CACHE))
+                n_img += 1
     while todo and len(index['pages']) < MAX_PAGES:
         path = todo.pop(0)
         if path in seen: continue
