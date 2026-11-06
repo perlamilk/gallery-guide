@@ -715,6 +715,17 @@ export const SITES = {
     flat: true,
     blurb: 'Both floors of the Rose at Brandeis (an approximate plan inside the building’s real outline: the museum publishes none) with the front steps and the step-free side entrance, the reception desk, lockers, restrooms, elevator and the Foster Wing stairwell; the shows on view now (Jenna Gribbon, ChromaForm, Yinka Shonibare, En/Lighten), Mark Dion’s collector’s den and Chris Burden’s Light of Reason, directions and your visit diary.',
   },
+  moma: {
+    key: 'moma', id: 'Q188740', short: 'MoMA', name: 'The Museum of Modern Art',
+    floors: 'data/moma/floors.json', artworks: 'data/moma/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-moma.json', packKey: 'gg-pack-moma',
+    room: id => /^\d+$/.test(id) ? `Gallery ${id}` : id,
+    website: 'More on MoMA’s website',
+    official: false,
+    flat: true,
+    blurb: 'Every floor traced from MoMA’s own 2025 floor plans: the lobby between 53rd and 54th Streets, tickets, checkrooms, the Sculpture Garden, The Modern, Café 2, the Terrace Café, the stores, the elevators, escalators and restrooms on each floor, the Film Center and theaters below; and all 1,500 works MoMA lists as on view, each in its gallery, from The Starry Night and Les Demoiselles d’Avignon on Floor 5 to today on Floor 2, with directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

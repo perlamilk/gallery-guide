@@ -520,6 +520,14 @@
    "galleries": true,
    "checked": "2026-11-06",
    "source": "Rose Art Museum: exhibition, visit and accessibility pages (brandeis.edu/rose, read from the Internet Archive); approximate plan"
+  },
+  "Q188740": {
+   "works": 1501,
+   "pictures": 1266,
+   "onView": 1501,
+   "galleries": true,
+   "checked": "2026-11-06",
+   "source": "MoMA collection open data (GitHub, CC0); MoMA 2025 floor plans"
   }
  }
 }
