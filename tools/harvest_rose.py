@@ -11,6 +11,10 @@ read at all.
     .cache/rose/pages/<path>.html   the pages (and press PDFs as .pdf)
     .cache/rose/img/<path>          the pictures shown on them
     .cache/rose/index.json          url -> cached file, and for each page the pictures on it with their alt text
+
+brandeis.edu refuses this script even from a home connection, so run it as `python3 tools/harvest_rose.py --wayback`:
+then every page and picture is read from the Internet Archive's newest copy (web.archive.org/web/<time>id_/<url>),
+found with the archive's availability API, one at a time with the same pauses.
 """
 import html
 import json
@@ -18,6 +22,7 @@ import re
 import subprocess
 import sys
 import time
+import urllib.request
 import urllib.robotparser
 from pathlib import Path
 from urllib.parse import urljoin, urlparse, unquote
@@ -38,11 +43,31 @@ SKIP = re.compile(r'/(give|support|join|membership|donate|calendar|events?|news-
                   re.I)
 
 
+WAYBACK = '--wayback' in sys.argv     # brandeis.edu refuses robots even from home: read the Internet Archive's copies
+
+
+def archived(url):
+    """The Internet Archive's newest copy of url (raw, as the museum served it), or None."""
+    q = 'https://archive.org/wayback/available?url=' + urllib.request.quote(url, safe='')
+    try:
+        out = subprocess.run(['curl', '-s', '-f', '-m', '60', '-A', UA, q], capture_output=True).stdout
+        snap = json.loads(out or b'{}').get('archived_snapshots', {}).get('closest')
+    except ValueError:
+        return None
+    time.sleep(1)
+    if not snap or snap.get('status') != '200': return None
+    return f"https://web.archive.org/web/{snap['timestamp']}id_/{url}"
+
+
 def get(url, dest, delay=DELAY):
     """Fetch url into dest once (cached)."""
     if dest.exists() and dest.stat().st_size > 200: return dest.read_bytes()
     dest.parent.mkdir(parents=True, exist_ok=True)
-    out = subprocess.run(['curl', '-s', '-f', '-L', '-m', '90', '-A', UA, url], capture_output=True).stdout
+    src = archived(url) if WAYBACK else url
+    if not src:
+        print('no archived copy of', url, flush=True)
+        return None
+    out = subprocess.run(['curl', '-s', '-f', '-L', '-m', '90', '-A', UA, src], capture_output=True).stdout
     time.sleep(delay)
     if not out:
         print('could not read', url, flush=True)
