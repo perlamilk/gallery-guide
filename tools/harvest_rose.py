@@ -33,7 +33,7 @@ UA = 'gallery-guide/1.0 (personal museum guide; polite, cached)'
 HOST = 'https://www.brandeis.edu'
 DELAY, IMG_DELAY = 3, 1.5
 MAX_PAGES, MAX_IMAGES = 160, 450
-SEEDS = ['/rose/', '/rose/index.html', '/rose/visit/index.html', '/rose/visit/accessibility.html',
+SEEDS = ['/rose/', '/rose/exhibitions', '/rose/onview/whitten.html', '/rose/index.html', '/rose/visit/index.html', '/rose/visit/accessibility.html',
          '/rose/frequently-asked-questions.html', '/rose/exhibitions/index.html', '/rose/onview/index.html',
          '/rose/onview/collection/index.html', '/rose/collection/index.html', '/rose/about/index.html',
          '/rose/about/history.html', '/rose/about/pressroom.html', '/rose/visit/directions.html',
@@ -48,7 +48,7 @@ WAYBACK = '--wayback' in sys.argv     # brandeis.edu refuses robots even from ho
 
 def archived(url):
     """The Internet Archive's newest copy of url (raw, as the museum served it), or None."""
-    q = 'https://archive.org/wayback/available?url=' + urllib.request.quote(url, safe='')
+    q = 'https://archive.org/wayback/available?timestamp=20261105&url=' + urllib.request.quote(url, safe='')
     try:
         out = subprocess.run(['curl', '-s', '-f', '-m', '60', '-A', UA, q], capture_output=True).stdout
         snap = json.loads(out or b'{}').get('archived_snapshots', {}).get('closest')
