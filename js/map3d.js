@@ -389,6 +389,15 @@ export class MuseumMap {
       if (prev) prev.visible = false;
       setOpacity(next, 1);
     }
+    // a floor that lies elsewhere on the plan (Fitchburg's third floor is only the far building): bring it into view
+    const home = next.userData.home;
+    if (prev && home && !home.isEmpty()) {
+      const t = this.controls.target;
+      const away = home.distanceToPoint(new THREE.Vector3(t.x, (home.min.y + home.max.y) / 2, t.z));
+      const vfov = THREE.MathUtils.degToRad(this.camera.fov);
+      const halfWidth = this.camera.position.distanceTo(t) * Math.tan(vfov / 2) * this.#visibleAspect();
+      if (away > halfWidth * 0.6) this.resetView({ animate });
+    }
   }
 
   // counts: Map(galleryId -> number of matches). Aliases share a room, so their counts add up.

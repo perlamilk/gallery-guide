@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v90';
+const VERSION = 'v115';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -102,6 +102,18 @@ const SHELL = [
   'data/nbwm/artworks.json',
   'data/twain/floors.json',
   'data/twain/artworks.json',
+  'data/stowe/floors.json',
+  'data/stowe/artworks.json',
+  'data/glasshouse/floors.json',
+  'data/glasshouse/artworks.json',
+  'data/barnum/floors.json',
+  'data/barnum/artworks.json',
+  'data/subforce/floors.json',
+  'data/subforce/artworks.json',
+  'data/neam/floors.json',
+  'data/neam/artworks.json',
+  'data/mattatuck/floors.json',
+  'data/mattatuck/artworks.json',
   'data/spfld/floors.json',
   'data/spfld/artworks.json',
   'data/ypm/floors.json',
@@ -118,6 +130,44 @@ const SHELL = [
   'data/lymanallyn/artworks.json',
   'data/athenaeum/floors.json',
   'data/athenaeum/artworks.json',
+  'data/aldrich/floors.json',
+  'data/aldrich/artworks.json',
+  'data/fitchburg/floors.json',
+  'data/fitchburg/artworks.json',
+  'data/fruitlands/floors.json',
+  'data/fruitlands/artworks.json',
+  'data/heritage/floors.json',
+  'data/heritage/artworks.json',
+  'data/pequot/floors.json',
+  'data/pequot/artworks.json',
+  'data/bruce/floors.json',
+  'data/bruce/artworks.json',
+  'data/mit/floors.json',
+  'data/mit/artworks.json',
+  'data/constitution/floors.json',
+  'data/constitution/artworks.json',
+  'data/concord/floors.json',
+  'data/concord/artworks.json',
+  'data/fuller/floors.json',
+  'data/fuller/artworks.json',
+  'data/capeann/floors.json',
+  'data/capeann/artworks.json',
+  'data/berkshire/floors.json',
+  'data/berkshire/artworks.json',
+  'data/hsv/floors.json',
+  'data/hsv/artworks.json',
+  'data/chesterwood/floors.json',
+  'data/chesterwood/artworks.json',
+  'data/mount/floors.json',
+  'data/mount/artworks.json',
+  'data/roughpoint/floors.json',
+  'data/roughpoint/artworks.json',
+  'data/audrain/floors.json',
+  'data/audrain/artworks.json',
+  'data/tennis/floors.json',
+  'data/tennis/artworks.json',
+  'data/chateau/floors.json',
+  'data/chateau/artworks.json',
 ];
 
 // Install only the app itself, so an update is quick and takes over right away;

@@ -268,6 +268,131 @@ March 2025) are on the map. Map: APPROXIMATE, six floors (B, 1-5) inside the Ope
 Beacon Street is at the top), laid out from the Athenæum's accessibility guide (rooms, restrooms per floor, two elevators,
 terraces on 2 and 5). The Bloomberg Connects guide has the real first-floor map but refuses outside readers.
 
+The Aldrich Contemporary Art Museum, Ridgefield (Nov 5, 2026): map guide at `guide.html?museum=aldrich`, built by
+`tools/build_aldrich.py` (pages cached by `tools/harvest_aldrich.py`). The grounds are traced from the museum's own Sculpture
+Garden map (thealdrich.org/page/sculpture-garden, STIMSON's 2024 landscape plan with the ten outdoor works numbered), so
+those works sit exactly where the museum puts them. The museum publishes no floor plan: the First and Second Floors are
+APPROXIMATE, inside the building outline from that map, placed from the museum's social narrative (Front Desk on the left,
+restrooms behind it, gallery names per floor), the 52 Artists checklists and 2004 opening articles. The Aldrich has no
+permanent collection: works are The Aldrich Decennial (40 Connecticut artists, to Jan 10, 2027), titles from the museum's
+artist audio guide; the museum doesn't say which room each artist is in, so indoor works carry a location note, not a room.
+Rebuild when the shows change (next: Kelly Sinnapah Mary and Mimi Smith, Feb 7, 2027).
+
+Fruitlands Museum, Harvard (Nov 5, 2026): map guide at `guide.html?museum=fruitlands`, built by `tools/build_fruitlands.py`.
+The grounds come straight out of the museum's own trail map (thetrustees.org/wp-content/uploads/2025/08/Fruitlands-Trail-Map.pdf,
+a vector PDF drawn to scale from USGS/MassGIS data): building rectangles, the drive, parking lots and every trail line are
+read from the PDF (via `pdftocairo -svg`), kept in the map's own orientation (north up and to the right). Buildings are
+drawn larger than the map's symbols so they can be tapped; there is no published floor plan, and the Four Seasons Gallery
+is split by hand into its larger (Across Boundaries Across Barriers) and smaller (Eye of the Beholder) gallery. The
+collection (about 6,000 objects) is not online: works are the current shows on thetrustees.org, objects named in The
+Harvard Press's 2024 review, the historic buildings and outdoor sculptures photographed on Wikimedia Commons (credited),
+and five collection works from past shows (museum page only). Buildings are closed Nov–April; re-run when the 2027 season
+and its shows are announced.
+
+Fitchburg Art Museum (Nov 5, 2026): map guide at `guide.html?museum=fitchburg`, built by `tools/build_fitchburg.py`
+(pages, map and catalogue cached by `tools/harvest_fitchburg.py`). All three floors are traced from the museum's own
+visitor map (fitchburgartmuseum.org/visit, January 2026, 1:400; kept as printed, north down-right): Simonds Building
+(entrance, lobby, coat check, restrooms, Community, Ansin and Nadine Martel Galleries; the upstairs galleries) and the
+Merriam Parkway Building, joined by the Harris Gallery bridge. Floors are lined up on the elevator shafts. The museum
+has 7,000+ works and no online catalogue, so works are the shows on view: all 216 objects of FESTIVAL (to Dec 13,
+2026) from its catalogue PDF checklist (pictures cropped from it), Kaleidoscope works named in its press release,
+Heirlooms, and the public art outside. Rebuild when FESTIVAL closes and when the Kaleidoscope checklist appears.
+
+Heritage Museums & Gardens, Sandwich (Nov 5, 2026): map guide at `guide.html?museum=heritage`, built by
+`tools/build_heritage.py`. The grounds come out of the museum's own 2026 visitor map (the "Download a map" PDF on
+heritagemuseumsandgardens.org/map-of-heritage-museums-gardens, June 22, 2026), whose first page is vector: paved paths,
+stairs, nature trails, roads, gardens, lawns and Shawme Pond are its own shapes (via `pdftocairo -svg`), kept in its
+orientation (north up and to the left). The galleries are pictures in ovals on that map, so they are placed as ovals.
+The map is illustrated, not to scale; 1.2 m per point makes the app's walking times match the map's (Automobile
+Gallery 4 min, Special Exhibitions 10, Carousel 15). Works: the 26 cars of From Carriage to Classic (the museum's car
+pages via its WordPress API, `avada_portfolio`), objects pictured on the Cranberries, Revolution and Carousel pages,
+the outdoor exhibits and gardens; the other 17 cars and some blog objects are on the museum page as not on view. The
+2026 season ended Oct 18; rebuild when the 2027 shows are announced (the car pages say which are on exhibit).
+
+Mashantucket Pequot Museum & Research Center, Mashantucket (Nov 5, 2026): map guide at `guide.html?museum=pequot`,
+built by `tools/build_pequot.py`. The map is the museum's own July 2023 "Museum Property Guide Map" PDF
+(pequotmuseum.org/wp-content/uploads/FOX_100075-1_Jul2023_MuseumProperty_GuideMap_8-5x14-1.pdf), whose first page
+draws Levels 1, 2 and 3 as vector lines, one colour per level. `tools/trace_pequot.py` (needs opencv) traces the rooms
+of Levels 1 and 2 from those walls into `tools/data/pequot-trace.json`; Level 3 is drawn by hand. The levels are
+moved to sit over each other so the shared elevator and the escalators line up. Works: the 26 exhibits of the 2022
+guide map and the 15 stops of the 2023 one (the newer wins where they differ), with the photos printed in the 2023
+guide; 58 collection objects from the museum's Google Arts & Culture pages (`tools/harvest_pequot.py`) are on the
+museum page as not known to be on view. pequotmuseum.org pages answer 403 to the cloud (Cloudflare); its
+/wp-content/uploads PDFs and pictures download fine. The café is closed; the Mashantucket Gallery shows change.
+
+Bruce Museum, Greenwich (Nov 5, 2026): map guide at `guide.html?museum=bruce`, built by `tools/build_bruce.py`.
+The walls are the architects' (EskewDumezRipple) floor plans of the 2023 building, one PNG with the Ground, Mezzanine
+and Gallery Level plans side by side (eskewdumezripple.com/the-bruce-museum.html, "BruceFloorPlans_Web_1.png", taken at
+3600 px wide; 167 px = 50 ft; the Gallery Level plan sits 2395 px right of the Ground Level one). The plans name no
+rooms: lobby, store, restrooms, café, lecture hall and stairs follow the furniture drawn; the gallery names (Richter Art
+Wing, Sculpture Gallery, Mineral Gallery, science galleries) and which show is where are approximate. The Mezzanine is
+staff space and storage, not drawn. brucemuseum.org's robots.txt disallows Claude-User and Claude-Web, and its
+Bloomberg Connects guide refuses outside readers, so its pages were not read: shows come from press releases and news,
+pictures and collection works from Wikidata and Commons (Commons answered 429 for long stretches; the script waits).
+Shows to update: Devasher closes Nov 29, 2026; Sandman Jan 17, 2027; Fair Feb 7, 2027; Yellin Mar 14, 2027; American
+Stories Oct 10, 2027.
+
+MIT Museum, Cambridge (Nov 5, 2026): map guide at `guide.html?museum=mit`, built by `tools/build_mit.py`. The three
+floors are traced from the museum's own visitor floor maps (`MITMus_Floor_maps_0924.pdf`, May 2025, on its file server
+mit-museum-cms-files--production.s3.us-east-2.amazonaws.com; the newer `-3` version answers 403), which match the
+architects' (Höweler + Yoon) Level 2 and 3 plans on howeleryoon.com. mitmuseum.mit.edu is behind a Vercel bot check
+(429 to curl and WebFetch), so its pages were not read; current shows and their galleries come from the OCEANS season
+booklet on the same file server (Sensing Oceans in the Termeer Gallery, Crochet Coral Reef in the "Exchange Gallery",
+Water Lines in the Kurtz Gallery from Dec 17, 2026). Objects are Daderot's public-domain photos taken in the new
+building (Wikimedia Commons). Shows to update: Freezing Time closes Nov 29, 2026; Split | Second Jan 4, 2027; Coral Reef
+Feb 14, 2027; Sensing Oceans Feb 21, 2027; Enterprise model Mar 28, 2027. Closed shows drop off when the script is rerun.
+
+USS Constitution Museum and USS Constitution, Charlestown Navy Yard (Nov 5, 2026): map guide at
+`guide.html?museum=constitution`, built by `tools/build_constitution.py` (collection read by
+`tools/harvest_constitution.py`). One map for the museum and the ship, turned 33.7° so Pier 1 runs left to right (up is
+north-east). The Navy Yard (museum building, NPS Visitor Center in Building 5, Dry Dock 1, Pier 1, USS Cassin Young, the
+Pier 1 building taken to be Building 292, the Navy's security screening) is OpenStreetMap on Esri imagery. The museum is
+its own visitor map from the Sept 2024 social narrative PDF (page 5, both floors with stairs, elevator, restrooms), drawn
+about twice life size at the head of Dry Dock 1; room names follow the 2026 exhibits page (Special Exhibition Gallery =
+the old Today's Navy room, a guess; Art of the Ship in the theater). The ship's spar, gun and berth decks are diagrams,
+drawn large over the water. ussconstitutionmuseum.org is WordPress, answers curl, robots.txt asks for a 10 s crawl delay;
+its ~205 "collection-items" pages (CC BY-NC-ND 3.0 pictures) are not in the REST API, so the harvester reads them from
+the sitemap (about 70 minutes). The ship is run by the Navy (navy.mil answers 403 to the cloud); ship hours come from the
+museum's Hours + Admission page.
+
+Concord Museum, Concord (Nov 5, 2026): map guide at `guide.html?museum=concord`, built by `tools/build_concord.py`.
+The museum publishes no floor plan (its "Campus Map" PDF is another school's map; the Bloomberg Connects guide refuses
+outside readers), so both floors are APPROXIMATE, drawn inside the building's outline traced from Esri World Imagery
+(the building is not in OpenStreetMap). Known: the Gateway to Concord entrance with admissions and the shop; restrooms,
+elevator, coat rack and water fountain on the first floor; the April 19, 1775 galleries upstairs. The online
+collection (concord.emuseum.com) disallows Claude's crawlers in robots.txt, so it is not read: objects are Wikimedia
+Commons photos (mostly Daderot, Dec 2014, public domain), placed by subject; the 2014 photos of the show "Behind
+Closed Doors" are listed on the museum page only. concordmuseum.org: WordPress, Crawl-delay 10, /collections/ redirects
+to eMuseum. Shows to update: Family Trees Nov 21, 2026 – Jan 3, 2027; Mark Dion closes Mar 7, 2027.
+
+Fuller Craft Museum, Brockton (Nov 5, 2026): map guide at `guide.html?museum=fuller`, built by `tools/harvest_fuller.py`
+then `tools/build_fuller.py`. The map is traced from the museum's own Museum Map brochure (2023 PDF on Plan Your Visit), in
+the brochure's orientation; the entrance, front desk and shop are on the upper (Second) floor, galleries, restrooms and
+Lounge downstairs. Works: the museum's Digital Archive (collections.fullercraft.org, a Proficio web module with a JSON
+service, 983 objects, all with pictures); its "On Display" field names the gallery for The Vessel (Lampos), Fiber
+Forward ("Education Gallery", drawn as the Community Gallery), the Great Room and the Interior Courtyard. Other shows'
+galleries are guesses. Outdoor sculpture from the 2023 Outdoor Sculpture Guide PDF.
+
+Cape Ann Museum, Gloucester (Nov 5, 2026): map guide at `guide.html?museum=capeann`, built by `tools/harvest_capeann.py`
+then `tools/build_capeann.py`. The map comes from the museum's own Map & Floor Guide (June 2026 vector PDF), an isometric
+drawing of the four levels turned back into flat plans (`tools/trace_capeann.py` prints the un-skewed walls); entrance on
+Level 2 from Pleasant Street, Fisheries Galleries on Level 3, special exhibitions, Folly Cove Designers and 20th & 21st
+Centuries on Level 4, the Library & Archives and (Level 1A) the Granite Gallery below. The museum has no online
+collection yet: works are the museum's own captioned pictures on capeannmuseum.org and Daderot's Commons photos of its
+galleries, placed by subject; only the Lane Gallery, the Sculpture Courtyard cat and the shows are placed by the museum's
+own words. The CAM Green campus (13 Poplar Street) is not mapped; it is closed until spring 2027.
+
+Berkshire Museum, Pittsfield (Nov 5, 2026): map guide at `guide.html?museum=berkshire`, built by
+`tools/harvest_berkshire.py` then `tools/build_berkshire.py` (cache `.cache/berkshire`; `--offline` skips downloads).
+The First Floor is the architects' (StudioHAU) numbered plan of the 2026 renovation, from their press kit on
+v2com-newswire (dossier 2757-65; only the 800 px preview is public, about 56 px = 20 ft; South Street at the top), so
+its rooms are exact. The Second Floor has no published plan: its rooms (Ellen Crane Memorial Room, Objects and Their
+Stories, Galleries 206-208, sitting room, learning spaces, restrooms) are placed from news descriptions and are
+approximate. berkshiremuseum.org's robots.txt disallows ClaudeBot, Claude-Web and anthropic-ai, so its pages were not
+read: what is on view comes from reopening news (iBerkshires, Berkshire Eagle, StudioHAU's press text, NEWS10, Rural
+Intelligence); 26 collection works from the museum's Google Arts & Culture pages (works sold in 2018 are gone from
+there). Show to update: Soulful Creatures (Brooklyn Museum animal mummies) closes Jan 17, 2027.
+
 Maps: only the MFA has a 3D map, traced from its own PDF. Other museums don't publish floor plans as open data, so their guides start without a map.
 
 Open APIs worth an adapter later: Harvard Art Museums (done, needs a free key), Yale University Art Gallery and Yale Center for British Art (LUX, open linked data), RISD Museum (collection site).
@@ -425,3 +550,145 @@ the Richardson House (12), its barn the Gebhardt Barn (13), "New England Changin
 robots.txt allows all, read 4 s apart) and the 62 collection highlights (osv.org/collection/...), which say nothing
 about where they are shown, so only the carding machine (in the Carding Mill) is placed. Missing pictures from Wikimedia
 Commons. Hours change by season (closed Nov 15–26; Christmas by Candlelight only Nov 27–Dec 27).
+
+Hancock Shaker Village, Pittsfield (Nov 5, 2026): map guide at `guide.html?museum=hsv`, built by
+`tools/harvest_hsv.py` + `tools/build_hsv.py` (cache `.cache/hsv`). The Village's Walking Tour Map
+(HSV_handheldMap.pdf, linked from /visit/walking-tour-guidemap/) is a painted view with north to the left, so buildings,
+paths and fences come from OpenStreetMap (north up, 0.35 m per unit), which names most buildings; the Walking Tour Map
+says which unnamed ones are which (the two west barns are the Visitor Center, the house by Route 20 the Brethren's Shop,
+OSM's "Discovery Barn" the 1910 Barn Complex) and where the restrooms (Visitor Center, Office Privy), café, store and
+crosswalk are. Route 20 is drawn as a barrier; directions cross only at the crosswalk. Works: the 16 building pages,
+2026 exhibitions with the building each page names, and room settings and objects from Wikimedia Commons photos taken
+inside the buildings. The online collection (pastperfectonline) returns 403 to robots. Season ends Nov 29, 2026;
+the Village Café is closed; the rebuilt Visitor Center (TSKP X IDK) was due summer 2026.
+
+Chesterwood, Stockbridge (Nov 5, 2026): map guide at `guide.html?museum=chesterwood`, built by
+`tools/harvest_chesterwood.py` + `tools/build_chesterwood.py` (cache `.cache/chesterwood`). chesterwood.org is
+Squarespace; its robots.txt gives AI bots the same rules as everyone (content pages allowed); read 5 s apart. The map
+is traced from the museum's own "Map of the Estate" (chesterwood.org/new-page-1, a 745 px hand drawing with NORTH TO
+THE RIGHT; the 2019/2020 outdoor-show maps use the same drawing) and turned north up; OpenStreetMap has only unnamed
+outlines there. The Studio's four rooms (Main Room, Casting Room, Reception Room, south piazza) are approximate shapes.
+Works: every piece in Chesterwood's printable Guide to the Studio (chesterwood.org/s/Highlights-Guide-to-the-Studio.pdf,
+~110 items by room and wall, with NT numbers), rooms and buildings, collection highlights from /the-collection-2 (where
+shown isn't published) and the 2026 exhibitions (season ended Oct 31). Few Studio pieces have photos online. Open
+May 15 – Oct 31, closed Tuesdays.
+
+
+The Mount, Edith Wharton's Home, Lenox (Nov 5, 2026): map guide at `guide.html?museum=mount`, built by
+`tools/harvest_mount.py` + `tools/build_mount.py` (cache `.cache/mount`). edithwharton.org is WordPress; robots.txt
+disallows nothing; pages read 5 s apart, pictures from its media library (`/wp-json/wp/v2/media?search=`), 3 s apart.
+The Mount publishes no floor plan or grounds map (its audio tour is on Bloomberg Connects). Grounds: OpenStreetMap
+(Mansion, Stable, Ticket Booth, parking, the walk to the Mansion, Lime Walk, Walled and Flower Gardens, trails), turned
+16.6° so the house stands straight. The three Mansion floors are APPROXIMATE, drawn from the room list and sizes on
+the-estate page and the accessibility page (elevator at the end of the service wing, restrooms across from it on floors
+1 and 2, Sewing Room on floor 3, Bookstore in the old laundry). Floors use the museum's numbering: 1 ground, 2 main, 3
+bedrooms. Works: rooms on the tour, the six Library Insights books (Wharton's own library), gardens, Stable, NightWood
+(Nov 21, 2026 – Jan 2, 2027) and the 2026 sculpture show (ended Oct 24, not placed). Mansion open weekends Nov–Jan 2,
+closed Jan 3 – April: update visit_info.py hours for the 2027 season.
+
+Rough Point, Newport (Nov 5, 2026): map guide at `guide.html?museum=roughpoint`, built by `tools/harvest_roughpoint.py`
++ `tools/build_roughpoint.py` (cache `.cache/roughpoint`). Run by the Newport Restoration Foundation (NRF), not the
+Preservation Society. newportrestoration.org is WordPress; robots.txt disallows nothing; pages read 5 s apart. The
+Collection highlights are a custom post type not in the REST API, so they are read from `collection-sitemap.xml` (68
+pages, each with the museum's photo as og:image; a few give a "Room" field). NRF publishes no floor plan (the map is
+inside its Encurate phone app; there is a Matterport tour on the Rough Point page). Grounds and the house outline:
+OpenStreetMap (estate way 1225567916, house way 882221285), turned 32.8° so the house stands straight. Rooms are
+APPROXIMATE, fitted into the outline: the 42 × 48 ft block at the north-east end is the 1920s Music Room (NRF: nearly
+2,000 sq ft), the angled south-west wing the service wing; the Dining Room is put on the ocean side because NRF says the
+table faces the ocean windows. Elevator and restrooms exist (NRF) but their places are guessed. 2026 season ends Nov 8;
+"A Rough Point Holiday" Nov 27 – Dec 27 (Fri–Sun): update visit_info.py for 2027.
+
+Chateau-sur-Mer, Newport (Nov 5, 2026): map guide at `guide.html?museum=chateau`, built by `tools/harvest_chateau.py`
++ `tools/build_chateau.py` (cache `.cache/chateau`). Floors 1 and 2 are traced from the Historic American Buildings
+Survey's measured drawings (HABS RI-313, 1970; www.loc.gov/item/ri0341/, sheets 5 and 6; the master TIFFs download from
+tile.loc.gov, the IIIF image service gave 500s). North points LEFT on the sheets. The HABS data pages (ri0341data.pdf)
+describe every room and say the only ground-floor lavatory is off the Billiard Room; the Society's accessibility page
+(newportmansions.org page 8855) says there is one restroom, no elevator, 9 + 33 steps. HABS also has basement, 3rd and
+4th floor plans and a c.1917 site plan (Chinese Moon Gate, Porter's Lodge). Grounds from OpenStreetMap (estate way
+1472660184, house 371945264, parking 1472492429). Objects: the Preservation Society's Proficio service (directory
+NEWPHIST), records naming the house or with Wetmore/Keteltas provenance. Closed until Nov 21, 2026; open weekends for the
+holidays until Jan 3, 2027: update visit_info.py hours for the 2027 season.
+
+Audrain Automobile Museum, Newport (Nov 5, 2026): map guide at `guide.html?museum=audrain`, built by
+`tools/harvest_audrain.py` + `tools/build_audrain.py` (cache `.cache/audrain`). Wikidata has no item for the museum, so
+it uses the Audrain Building (Q4820080), whose picture is the museum. audrainautomuseum.org is Squarespace: its
+robots.txt puts the AI crawlers in the same group as everyone, so only /api/, /static/, /search and ?format=json are
+off limits; pages read 5 s apart. No published floor plan: one public floor (the second floor is private offices), drawn
+APPROXIMATELY in the OpenStreetMap outline (way 1170440781) as one open hall with the lobby, desk and shop on Bellevue
+Avenue; restrooms and simulators placed by guess. Cars: every page under /current-exhibition (17 for "Best Shown",
+Sep 19, 2026 – Jan 10, 2027; og:image photos). The show changes every few months (next: "STEAM Power", Jan 16 – May 9,
+2027): delete `.cache/audrain/html` and rerun both scripts, then update SHOW/SHOW_DATES in build_audrain.py.
+
+International Tennis Hall of Fame, Newport (Nov 5, 2026): map guide at `guide.html?museum=tennis`, built by
+`tools/harvest_tennis.py` + `tools/build_tennis.py` (cache `.cache/tennis`). Wikidata Q52454. Grounds traced from the
+Hall of Fame's own 2026 Hall of Fame Open site map (info.tennisfame.com HubSpot; north is RIGHT on it, turned north-up).
+The museum (2nd floor of the Casino) has no published plan: galleries placed APPROXIMATELY from the 2025 reopening and
+June 2026 Federer-exhibit press releases. tennisfame.com is a Scrivito single-page site: plain pages are prerendered,
+but inductee pages and lists are not, so the 271 Hall of Famers come from Wikipedia's list + Wikidata (P3363).
+Their portraits come from Commons with `python3 tools/build_tennis.py --portraits` (Wikimedia answered 429 to the cloud
+on Nov 5, so most are still missing). Grounds photos: HABS RI-331 (loc.gov ri0065, public domain).
+
+Harriet Beecher Stowe Center (Stowe Center for Literary Activism), Hartford (Nov 5, 2026): map guide at
+`guide.html?museum=stowe`, built by `tools/build_stowe.py`. Map: campus from OpenStreetMap (Stowe House, the Visitor
+Center in the old carriage house, the Day House, the Forest Street lot, drives and paths); gardens placed from the Stowe
+Center's garden posts (approximate). The house has no HABS drawings and no published plan (the 2012 NHL nomination PDF is
+only on the Wayback Machine, which the cloud can't reach), so its two floors and the Visitor Center's rooms are
+APPROXIMATE, placed from descriptions. Works: rooms, objects named as on view, the two galleries and current exhibitions,
+gardens and sculptures, and collection highlights (marked "ask whether on view"), with the Stowe Center's own pictures.
+stowecenter.org asks for a 10-second crawl delay.
+
+The Glass House (Philip Johnson, New Canaan; National Trust) (Nov 5, 2026): map guide at `guide.html?museum=glasshouse`,
+built by `tools/build_glasshouse.py`. Map: the 49-acre site traced from the Glass House's own site map (the SVG behind the
+Explore pages, theme image explore-map-with-logo.svg; NORTH IS TO THE RIGHT on it, turned north-up here; ~1.55 px/m,
+checked against OpenStreetMap). Its pins name every building (and the Judd ring, Schnabel sculpture, pool, gate, gardens).
+Footpaths across the grass are approximate. Floor V is the Visitor Center + Design Store in town (199 Elm St) from
+OpenStreetMap, where every tour starts by shuttle. Works: the buildings (Explore pages) and every collection page under
+/learn/ (paintings and sculptures, with photos); the pages don't say which building a work is in, so paintings go in the
+Painting Gallery and sculptures in the Sculpture Gallery, marked as guessed. theglasshouse.org asks for a 10-second crawl
+delay. Season April 16 – December 14, 2026: update hours in visit_info.py for 2027.
+
+Mattatuck Museum (Waterbury) (Nov 5, 2026): map guide at `guide.html?museum=mattatuck`, built by
+`tools/build_mattatuck.py` after `tools/harvest_mattatuck.py list` and `detail`. Map: APPROXIMATE, three floors drawn
+inside the OpenStreetMap outline (way 467492386); the museum publishes no floor plan. Rooms placed from the museum's own
+words (Foyer, Art of Yum Café and History Gallery on the main floor; Upson, Whittemore, Noonan, Munger and Baker Galleries
+and the Rooftop Terrace upstairs; Performing Arts Center, Community Gallery and Button Gallery on the 3rd floor). Works:
+the shows on view and long-term galleries from mattmuseum.org, plus the whole catalogue (6,875 objects) from Connecticut
+Collections (ctcollections.org, source facet 1868; robots.txt closes /Browse/*/images/*, so only list view and object
+pages are read, 2 s apart). Catalogue pictures are linked from ctcollections.org, not copied. mattatuckcollections.org
+has lapsed (now a sports site): don't use it. Update SHOWS in build_mattatuck.py when the shows change.
+
+New England Air Museum (Windsor Locks) (Nov 5, 2026): map guide at `guide.html?museum=neam`, built by
+`tools/build_neam.py` (reads neam.org and OpenStreetMap once into `.cache/neam`, 3 s apart). Map: the Military, Civil
+Aviation, B-29, Restoration and Storage Hangars, the entrance canopy, parking and the outdoor planes are traced from
+OpenStreetMap (true to scale); NEAM publishes no map online (a paper one is handed out at the desk), so the lobby, shop,
+restrooms, vending, the Kosciuszko room and the Space & Observation Mezzanine inside them are APPROXIMATE, placed from
+the visit page and a visitor's walk-through. Works: the 43 aircraft neam.org lists as on display (pictures hotlinked from
+its Shopify CDN), the K-16B outside, 16 exhibits and the 6 featured engines; hangars named by the museum where it says
+(ZNPK-28, CBY-3 Civil; K-225, A-10, F-100, CH-54, A-26 Military; B-29), the rest guessed by subject and marked so. The
+museum page also lists the aircraft in storage and the engine collection (no pictures, not on view). The script stops if
+neam.org adds or drops an aircraft: then add it to AIRCRAFT.
+
+Submarine Force Museum and Historic Ship Nautilus (Groton) (Nov 5, 2026): map guide at `guide.html?museum=subforce`,
+built by `tools/build_subforce.py` (reads OpenStreetMap and Wikimedia Commons once into `.cache/subforce`). The museum's
+site, ussnautilus.org, sits behind a bot check that refuses scripts (its 2026 info packet PDF too), and the Navy
+publishes no floor plan. Map: the building, the pier, the Nautilus, the front lawn with the midget submarines, the
+memorial plaza and the parking lot are traced from OpenStreetMap (true to scale, turned 16° so the museum front runs
+left to right); the rooms inside (lobby, store, theater, Today's Submarine Force, main hallway, Control Room, Attack
+Center with the periscopes, the two-storey Main Gallery) and the upper level are APPROXIMATE, placed from visitors'
+descriptions. The Nautilus is a diagram of the forward compartments on the tour. Works: 40 exhibits, submarines and
+compartments written from Wikipedia and visitors' accounts, with Wikimedia Commons pictures; no online catalogue
+exists. Admission is free. To improve: a photo of the museum's own map or the 2026 info packet (try from a home
+connection).
+
+Barnum Museum (Bridgeport) (Nov 5, 2026): map guide at `guide.html?museum=barnum`, built by `tools/build_barnum.py`
+after `tools/harvest_barnum.py list` and `detail` (Connecticut Collections, source facet 1069, 1,002 records, read
+slowly into `.cache/barnum`). The museum is CLOSED while the 1893 Barnum Institute of Science and History is restored
+after the 2010 tornado and Hurricanes Irene and Sandy; barnum-museum.org says it plans to reopen in 2030, with talks
+and programs meanwhile. So the map draws no rooms inside (they are being rebuilt): it shows the building, the Main
+Street sidewalk in front of the façade, Bridgeport Center next door, the nearby parking, Ralph 'n' Rich's across the
+street and the Bridgeport station entrance and platforms, all traced from OpenStreetMap, true to scale, north up. The
+front door (the arch under the dome) is placed from Carol M. Highsmith's photograph (Library of Congress, public
+domain), which also gives the pictures of the building, the Plasschaert frieze and the inscription. Works: the façade
+(on view from the sidewalk), the museum's online exhibits and latest gift, and every catalogue object with a picture
+and a curator's description as a highlight in the closed building (in storage). The museum page lists the whole
+catalogue. When the museum reopens (2030), redo the map from its new plan.
