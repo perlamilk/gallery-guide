@@ -54,17 +54,20 @@ SNAPS = {}                             # url -> newest archived timestamp, from 
 
 
 def cdx(prefix):
-    """{url: timestamp} of the newest good copy of every URL the archive holds under prefix."""
+    """{url: timestamp} of the newest good copy of every URL the archive holds under prefix (copies since 2025)."""
     q = ('https://web.archive.org/cdx/search/cdx?output=json&filter=statuscode:200&fl=original,timestamp'
-         '&matchType=prefix&limit=5000&url=' + urllib.request.quote(prefix, safe=''))
-    out = subprocess.run(['curl', '-s', '-f', '-m', '120', '-A', UA, q], capture_output=True).stdout
-    time.sleep(3)
-    try:
-        rows = json.loads(out or b'[]')[1:]
-    except ValueError:
-        return {}
+         '&matchType=prefix&from=2025&limit=5000&url=' + urllib.request.quote(prefix, safe=''))
+    for attempt in (1, 2):
+        run = subprocess.run(['curl', '-s', '-S', '-f', '-m', '300', '-A', UA, q], capture_output=True)
+        time.sleep(3)
+        try:
+            rows = json.loads(run.stdout)[1:] if run.stdout.strip() else None
+        except ValueError:
+            rows = None
+        if rows is not None: break
+        print(f'archive index for {prefix} failed (try {attempt}): {run.stderr.decode().strip()[:200]}', flush=True)
     found = {}
-    for original, ts in rows:
+    for original, ts in rows or []:
         u = 'https://www.brandeis.edu' + urlparse(original).path
         if ts > found.get(u, ''): found[u] = ts
     print(f'archive index: {len(found)} URLs under {prefix}', flush=True)
