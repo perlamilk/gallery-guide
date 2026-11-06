@@ -772,7 +772,7 @@ function entranceRooms() {
         ?? floor.rooms.find(r => pointInPoly(f.at, r.poly)) ?? nearestRoomTo(floor, f.at);
       const note = (floor.labels ?? []).filter(l => /entrance/i.test(l.text))
         .sort((a, b) => Math.hypot(a.at[0] - f.at[0], a.at[1] - f.at[1]) - Math.hypot(b.at[0] - f.at[0], b.at[1] - f.at[1]))[0];
-      if (room) out.push({ id: room.id, label: note ? note.text.replace(/\s*\(.*\)\s*/, '') : `Entrance · ${floor.label}` });
+      if (room) out.push({ id: room.id, label: f.name ? `${f.name.replace(/ and Exit$/, '')} · ${floor.label}` : note ? note.text.replace(/\s*\(.*\)\s*/, '') : `Entrance · ${floor.label}` });
     }
   }
   return out.filter((e, i) => out.findIndex(x => x.id === e.id) === i);
@@ -1331,7 +1331,7 @@ async function registerServiceWorker() {
 async function checkOffline() {
   if (!('caches' in window)) return;
   const urls = ['index.html', SITE.artworks, SITE.floors, ...(SITE.curiosities ? [SITE.curiosities] : []),
-    ...new Set(state.museum.artworks.map(a => a.image || a.img?.p).filter(Boolean))];
+    ...new Set(state.museum.artworks.map(a => a.image || a.img?.p).filter(u => u && !/^https?:/.test(u)))];   // linked pictures stay online
   const hits = await Promise.all(urls.map(u => caches.match(u)));
   const missing = hits.filter(h => !h).length;
   if (!missing) setOffline(true, `Saved for offline use · ${state.museum.artworks.length} works · checked ${formatDay(`${state.museum.meta.checked}T12:00:00`)}`);

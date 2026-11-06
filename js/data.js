@@ -71,6 +71,16 @@ class Museum {
       }
     }
 
+    // big lists (The Met) leave out what every work shares: `defaults`, `urlTemplate` ({n} = the number in the id)
+    // and `imageBase` (put before pictures given as a short path)
+    const { defaults, urlTemplate, imageBase } = artDoc;
+    if (defaults || urlTemplate || imageBase) {
+      for (const a of artDoc.artworks ?? []) {
+        for (const k in defaults ?? {}) a[k] ??= defaults[k];
+        if (urlTemplate && !a.url) a.url = urlTemplate.replace('{n}', a.id.replace(/^\D+/, ''));
+        if (imageBase && a.image && !/^(https?:|data\/)/.test(a.image)) a.image = imageBase + a.image;
+      }
+    }
     this.artworks = (artDoc.artworks ?? []).filter(a => a.onView !== false);
     for (const a of this.artworks) {
       a._haystack = normalize([a.title, a.artist, a.artistDetails, a.date, a.medium,

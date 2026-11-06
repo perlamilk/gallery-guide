@@ -737,6 +737,17 @@ export const SITES = {
     flat: true,
     blurb: 'Every floor traced from MoMA’s own 2025 floor plans: the lobby between 53rd and 54th Streets, tickets, checkrooms, the Sculpture Garden, The Modern, Café 2, the Terrace Café, the stores, the elevators, escalators and restrooms on each floor, the Film Center and theaters below; and all 1,500 works MoMA lists as on view, each in its gallery, from The Starry Night and Les Demoiselles d’Avignon on Floor 5 to today on Floor 2, with directions and your visit diary.',
   },
+  met: {
+    key: 'met', id: 'Q160236', short: 'The Met', name: 'The Metropolitan Museum of Art',
+    floors: 'data/met/floors.json', artworks: 'data/met/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-met.json', packKey: 'gg-pack-met',
+    room: id => (/^\d{2,3}[a-z]?$/.test(id) ? `Gallery ${id}` : id),
+    website: 'View on The Met’s website',
+    official: false,
+    flat: true,
+    blurb: 'Every floor of The Met Fifth Avenue from The Met’s own map: the Great Hall, the Temple of Dendur, the Arms and Armor court, the American Wing, the European Paintings, Asian Art, the Roof Garden and some 430 numbered galleries, with every work The Met lists as on view in its gallery, plus restrooms, elevators, stairs, cafés, stores, coat checks, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;
