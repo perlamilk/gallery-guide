@@ -4,7 +4,7 @@
 // - Everything else: cache first, then network (and cache what comes back).
 // Bump VERSION whenever app files change so phones pick up the new version.
 
-const VERSION = 'v115';
+const VERSION = 'v116';
 const CACHE = `gallery-guide-${VERSION}`;
 
 const SHELL = [
@@ -108,6 +108,7 @@ const SHELL = [
   'data/glasshouse/artworks.json',
   'data/barnum/floors.json',
   'data/barnum/artworks.json',
+  'data/met/floors.json',
   'data/subforce/floors.json',
   'data/subforce/artworks.json',
   'data/neam/floors.json',

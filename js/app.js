@@ -1331,7 +1331,7 @@ async function registerServiceWorker() {
 async function checkOffline() {
   if (!('caches' in window)) return;
   const urls = ['index.html', SITE.artworks, SITE.floors, ...(SITE.curiosities ? [SITE.curiosities] : []),
-    ...new Set(state.museum.artworks.map(a => a.image || a.img?.p).filter(Boolean))];
+    ...new Set(state.museum.artworks.map(a => a.image || a.img?.p).filter(u => u && !/^https?:/.test(u)))];   // linked pictures stay online
   const hits = await Promise.all(urls.map(u => caches.match(u)));
   const missing = hits.filter(h => !h).length;
   if (!missing) setOffline(true, `Saved for offline use · ${state.museum.artworks.length} works · checked ${formatDay(`${state.museum.meta.checked}T12:00:00`)}`);

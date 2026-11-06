@@ -704,6 +704,17 @@ export const SITES = {
     flat: true,
     blurb: 'The Barnum Museum in Bridgeport from above: closed while its 1893 building is restored (reopening planned for 2030), so this map shows the building on Main Street, the façade you can see from the sidewalk, parking and the train station; with the frieze and busts on the façade, highlights of the collection in storage, and your visit diary.',
   },
+  met: {
+    key: 'met', id: 'Q160236', short: 'The Met', name: 'The Metropolitan Museum of Art',
+    floors: 'data/met/floors.json', artworks: 'data/met/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-met.json', packKey: 'gg-pack-met',
+    room: id => (/^\d{2,3}[a-z]?$/.test(id) ? `Gallery ${id}` : id),
+    website: 'View on The Met’s website',
+    official: false,
+    flat: true,
+    blurb: 'Every floor of The Met Fifth Avenue from The Met’s own map: the Great Hall, the Temple of Dendur, the Arms and Armor court, the American Wing, the European Paintings, Asian Art, the Roof Garden and some 430 numbered galleries, with every work The Met lists as on view in its gallery, plus restrooms, elevators, stairs, cafés, stores, coat checks, directions and your visit diary.',
+  },
 };
 
 export const SITE = SITES[new URLSearchParams(location.search).get('museum')] ?? SITES.mfa;

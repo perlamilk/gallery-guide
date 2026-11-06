@@ -915,6 +915,25 @@ VISIT = {
                   'The collection (General Tom Thumb, Jenny Lind, the mummies, “mermaids” and a centaur) can be seen online on '
                   'Connecticut Collections and the Connecticut Digital Archive',
                   'Open nearby: the Housatonic Museum of Art (free, at the community college, 3 minutes’ walk)']),
+    'Q160236': ('1000 Fifth Avenue (at 82nd Street), New York, NY 10028',
+                ['Sunday–Tuesday and Thursday: 10 am – 5 pm',
+                 'Friday and Saturday: 10 am – 9 pm',
+                 'Closed Wednesdays, Thanksgiving, December 25 and January 1'],
+                ['Adults $30', 'Seniors (65+) $22', 'Visitors with a disability $22 (in person)',
+                 'Students $17', 'Children under 12: free', 'Members and a caregiver of a visitor with a disability: free',
+                 'New York State residents and students from NY, NJ and CT: pay what you wish (in person, with ID)',
+                 'Your ticket also gets you into The Met Cloisters the same day'],
+                '212-535-7710',
+                ['Main entrance on Fifth Avenue at 82nd Street, up the steps; step-free entrance at 81st Street '
+                 '(ground floor, by the parking garage)',
+                 'Subway: 4, 5 or 6 to 86th Street, then walk three blocks west to Fifth Avenue; bus M1, M2, M3 or M4 '
+                 'on Fifth/Madison Avenues',
+                 'Coat check is free; large bags, suitcases and strollers over a certain size must be checked',
+                 'Cafés: Petrie Court Café and American Wing Café (floor 1), Great Hall Balcony Café and the '
+                 'Balcony Lounge (floor 2), The Eatery (ground floor); the Roof Garden bar is open in warm months',
+                 'Wheelchairs at the coat checks, free; elevators reach every floor',
+                 'Gallery numbers on this map are The Met’s own: look for them over the doorways',
+                 'Allow at least 3 hours; a whole day is not too much']),
 }
 
 # Museums the Wikidata rebuild leaves out (their Wikidata type isn't one tools/build_open_data.py asks for);
