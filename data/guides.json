@@ -528,6 +528,14 @@
    "galleries": true,
    "checked": "2026-11-06",
    "source": "MoMA collection open data (GitHub, CC0); MoMA 2025 floor plans"
+  },
+  "Q217717": {
+   "works": 725,
+   "pictures": 715,
+   "onView": 725,
+   "galleries": true,
+   "checked": "2026-11-06",
+   "source": "Photos from Wikimedia Commons, placed on the museum’s visitor map (2026)"
   }
  }
 }

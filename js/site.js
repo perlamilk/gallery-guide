@@ -363,6 +363,17 @@ export const SITES = {
     flat: true,
     blurb: 'All three floors, traced from the museum’s own floor plan: Burke Hall with the Brontosaurus and The Age of Reptiles mural, the Central Gallery with Archelon, the Human Footprint, Egypt and Mesopotamia, the dioramas, the minerals and the Living Lab, with what is in each gallery, plus restrooms, elevators, stairs, the store, directions and your visit diary.',
   },
+  amnh: {
+    key: 'amnh', id: 'Q217717', short: 'Natural History', name: 'American Museum of Natural History',
+    floors: 'data/amnh/floors.json', artworks: 'data/amnh/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-amnh.json', packKey: 'gg-pack-amnh',
+    room: id => id,                          // halls have names (Milstein Hall of Ocean Life)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'All five levels, traced from the museum’s own 2026 visitor map: the blue whale in Ocean Life, the Titanosaur and T. rex in the fossil halls, the Barosaurus in the Rotunda, the African elephants, the meteorites and gems, the Gilder Center with its butterflies and insects, and the Rose Center, with photos from every hall, restrooms, elevators, escalators, cafés, shops, the entrances, directions and your visit diary.',
+  },
   spfld: {
     key: 'spfld', id: 'Q7758868', short: 'Springfield Museums', name: 'Springfield Museums',
     floors: 'data/spfld/floors.json', artworks: 'data/spfld/artworks.json',
