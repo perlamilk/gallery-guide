@@ -363,6 +363,17 @@ export const SITES = {
     flat: true,
     blurb: 'All three floors, traced from the museum’s own floor plan: Burke Hall with the Brontosaurus and The Age of Reptiles mural, the Central Gallery with Archelon, the Human Footprint, Egypt and Mesopotamia, the dioramas, the minerals and the Living Lab, with what is in each gallery, plus restrooms, elevators, stairs, the store, directions and your visit diary.',
   },
+  amnh: {
+    key: 'amnh', id: 'Q217717', short: 'Natural History', name: 'American Museum of Natural History',
+    floors: 'data/amnh/floors.json', artworks: 'data/amnh/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-amnh.json', packKey: 'gg-pack-amnh',
+    room: id => id,                          // halls have names (Milstein Hall of Ocean Life)
+    website: 'More about this',
+    official: false,
+    flat: true,
+    blurb: 'All five levels, traced from the museum’s own 2026 visitor map: the blue whale in Ocean Life, the Titanosaur and T. rex in the fossil halls, the Barosaurus in the Rotunda, the African elephants, the meteorites and gems, the Gilder Center with its butterflies and insects, and the Rose Center, with photos from every hall, restrooms, elevators, escalators, cafés, shops, the entrances, directions and your visit diary.',
+  },
   spfld: {
     key: 'spfld', id: 'Q7758868', short: 'Springfield Museums', name: 'Springfield Museums',
     floors: 'data/spfld/floors.json', artworks: 'data/spfld/artworks.json',
@@ -703,6 +714,28 @@ export const SITES = {
     official: false,
     flat: true,
     blurb: 'The Barnum Museum in Bridgeport from above: closed while its 1893 building is restored (reopening planned for 2030), so this map shows the building on Main Street, the façade you can see from the sidewalk, parking and the train station; with the frieze and busts on the façade, highlights of the collection in storage, and your visit diary.',
+  },
+  rose: {
+    key: 'rose', id: 'Q7367636', short: 'The Rose', name: 'Rose Art Museum',
+    floors: 'data/rose/floors.json', artworks: 'data/rose/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-rose.json', packKey: 'gg-pack-rose',
+    room: id => id,                          // galleries have names (Fineberg Gallery, Lower Rose Gallery)
+    website: 'More on the Museum’s website',
+    official: false,
+    flat: true,
+    blurb: 'Both floors of the Rose at Brandeis (an approximate plan inside the building’s real outline: the museum publishes none) with the front steps and the step-free side entrance, the reception desk, lockers, restrooms, elevator and the Foster Wing stairwell; the shows on view now (Jenna Gribbon, ChromaForm, Yinka Shonibare, En/Lighten), Mark Dion’s collector’s den and Chris Burden’s Light of Reason, directions and your visit diary.',
+  },
+  moma: {
+    key: 'moma', id: 'Q188740', short: 'MoMA', name: 'The Museum of Modern Art',
+    floors: 'data/moma/floors.json', artworks: 'data/moma/artworks.json',
+    tours: null, curiosities: null, notice: false,
+    pack: 'data/pack-moma.json', packKey: 'gg-pack-moma',
+    room: id => /^\d+$/.test(id) ? `Gallery ${id}` : id,
+    website: 'More on MoMA’s website',
+    official: false,
+    flat: true,
+    blurb: 'Every floor traced from MoMA’s own 2025 floor plans: the lobby between 53rd and 54th Streets, tickets, checkrooms, the Sculpture Garden, The Modern, Café 2, the Terrace Café, the stores, the elevators, escalators and restrooms on each floor, the Film Center and theaters below; and all 1,500 works MoMA lists as on view, each in its gallery, from The Starry Night and Les Demoiselles d’Avignon on Floor 5 to today on Floor 2, with directions and your visit diary.',
   },
   met: {
     key: 'met', id: 'Q160236', short: 'The Met', name: 'The Metropolitan Museum of Art',

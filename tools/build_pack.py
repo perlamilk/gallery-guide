@@ -131,6 +131,9 @@ PACKS = [
     ('Q122945', 'data/pack-ypm.json',
      ['data/ypm/artworks.json', 'data/ypm/floors.json'],
      'data/ypm/artworks.json', None),
+    ('Q217717', 'data/pack-amnh.json',
+     ['data/amnh/artworks.json', 'data/amnh/floors.json'],
+     'data/amnh/artworks.json', None),
     ('Q7085141', 'data/pack-osv.json',
      ['data/osv/artworks.json', 'data/osv/floors.json'],
      'data/osv/artworks.json', None),
@@ -203,6 +206,12 @@ PACKS = [
     ('Q4892280', 'data/pack-berkshire.json',
      ['data/berkshire/artworks.json', 'data/berkshire/floors.json'],
      'data/berkshire/artworks.json', None),
+    ('Q7367636', 'data/pack-rose.json',
+     ['data/rose/artworks.json', 'data/rose/floors.json'],
+     'data/rose/artworks.json', None),
+    ('Q188740', 'data/pack-moma.json',
+     ['data/moma/artworks.json', 'data/moma/floors.json'],
+     'data/moma/artworks.json', None),
 ]
 
 for museum, out_path, files, art_path, notice_path in PACKS:

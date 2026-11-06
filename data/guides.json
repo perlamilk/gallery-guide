@@ -513,6 +513,30 @@
    "checked": "2026-11-05",
    "source": "The Barnum Museum (barnum-museum.org) and its catalogue on Connecticut Collections (ctcollections.org)"
   },
+  "Q7367636": {
+   "works": 8,
+   "pictures": 8,
+   "onView": 6,
+   "galleries": true,
+   "checked": "2026-11-06",
+   "source": "Rose Art Museum: exhibition, visit and accessibility pages (brandeis.edu/rose, read from the Internet Archive); approximate plan"
+  },
+  "Q188740": {
+   "works": 1501,
+   "pictures": 1266,
+   "onView": 1501,
+   "galleries": true,
+   "checked": "2026-11-06",
+   "source": "MoMA collection open data (GitHub, CC0); MoMA 2025 floor plans"
+  },
+  "Q217717": {
+   "works": 725,
+   "pictures": 715,
+   "onView": 725,
+   "galleries": true,
+   "checked": "2026-11-06",
+   "source": "Photos from Wikimedia Commons, placed on the museum’s visitor map (2026)"
+  },
   "Q160236": {
    "works": 43688,
    "pictures": 29279,

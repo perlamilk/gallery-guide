@@ -499,6 +499,23 @@ VISIT = {
                 'the Newport Transportation Center and ride RIPTA trolley 67 to the door',
                 'You can book the historic grass courts in season (May–Oct): Pro Shop 401-849-4777',
                 'No café; Museum Store at the entrance on Bellevue Avenue']),
+    'Q188740': ('11 West 53 Street, New York, NY 10019',
+                ['Open daily, 10:30 am – 5:30 pm', 'Fridays: 10:30 am – 8:30 pm',
+                 'Closed Thanksgiving and Christmas Day'],
+                ['Adults: $30', 'Seniors (65+, with ID): $22', 'Visitors with a disability: $22 (care partner free)',
+                 'Students (full-time, with ID, including international): $17', 'Children 16 and under: free',
+                 'Members: free; guests of members: $5',
+                 'Tickets include all galleries and exhibitions, and same-day film tickets',
+                 'Book a timed ticket at moma.org'],
+                '212-708-9400',
+                ['Floor 1 (lobby, Sculpture Garden, street-level galleries and store) is free and open to all',
+                 'Main entrance on 53rd Street; also entrances on 54th Street (between Fifth and Sixth Avenues)',
+                 'The Starry Night, Les Demoiselles d’Avignon and Monet’s Water Lilies are on Floor 5: go up first, '
+                 'before the crowds',
+                 'Free audio guides at moma.org/audio or the MoMA app; free Wi-Fi',
+                 'Eat: Café 2 (Floor 2), Terrace Café (Floor 6), The Modern (Floor 1, restaurant)',
+                 'Restrooms on every floor; elevators to all floors',
+                 'Subway: E/M to 5 Av/53 St, or B/D/F/M to 47–50 Sts–Rockefeller Center']),
     'Q4820080': ('222 Bellevue Avenue, Newport, RI 02840',
                  ['Open daily, 10 am – 4 pm',
                   'Exhibition now: “Best Shown: Winners from the Audrain Collections”, Sept 19, 2026 – Jan 10, 2027',
@@ -584,7 +601,21 @@ VISIT = {
                    'construction noise', 'Free parking behind the museum; accessible parking and a ramp at the side '
                    'entrance (ring the bell)']),
     'Q7367636': ('415 South Street, Waltham, MA 02453',
-                 ['Wed–Sun: 11 am–5 pm', 'Mon–Tue: closed'], ['Free (register for a free ticket)'], '781-736-3434', None),
+                 ['Wed–Sun: 11 am–5 pm', 'Mon–Tue: closed',
+                  'Also closed on Independence Day, Thanksgiving, Christmas Eve, Christmas, New Year’s Eve and New '
+                  'Year’s Day'],
+                 ['Free, always (booking a free ticket online is encouraged, not required)',
+                  'All exhibitions included; all programs free'], '781-736-3434',
+                 ['On the Brandeis campus: enter by the main entrance on South Street, turn left past the round '
+                  'Spingold Theater; the Rose is on the left behind Chris Burden’s Light of Reason lampposts',
+                  'Free parking on the Rose circle in front; if it is full, get a pass at the front desk and park in '
+                  'the Theater lot behind Spingold. Accessible spaces on the Rose circle',
+                  'Step-free entrance with power doors and the elevator on the right side of the building (the ramp '
+                  'starts left of the front steps)',
+                  'Coat closet and free lockers at the entrance: bags larger than 11 × 14 in must go in a locker',
+                  'No café in the museum: five restaurants on the Brandeis campus are open to visitors',
+                  'Photos for personal use are fine; no flash, tripods or video cameras',
+                  'Free Rose Art Museum app (App Store or web) with self-guided tours']),
     'Q5508243': ('455 Oak Street, Brockton, MA 02301',
                  ['Tue–Sun: 10 am–5 pm', 'Mon: closed',
                   'Also closed Thanksgiving, Christmas Eve, Christmas Day, New Year’s Day and July 4; '
@@ -915,6 +946,29 @@ VISIT = {
                   'The collection (General Tom Thumb, Jenny Lind, the mummies, “mermaids” and a centaur) can be seen online on '
                   'Connecticut Collections and the Connecticut Digital Archive',
                   'Open nearby: the Housatonic Museum of Art (free, at the community college, 3 minutes’ walk)']),
+    'Q217717': ('200 Central Park West, New York, NY 10024',
+                ['Daily: 10 am–5:30 pm', 'Closed Thanksgiving Day and Christmas Day'],
+                ['General Admission: adults $37, seniors 60+ and students with ID $30, children 3–12 $22',
+                 'With one ticketed exhibition (Butterfly Vivarium, Invisible Worlds, giant-screen film or the '
+                 'Planetarium space show): adults $43, seniors and students $35, children $26',
+                 'With all ticketed exhibitions: adults $48, seniors and students $39, children $30',
+                 'Under 3 and members: free',
+                 'New York State residents (ID required): General Admission is pay-what-you-wish (suggested $25 '
+                 'adults, $20 seniors and students, $14 children)',
+                 'Caregivers of visitors with disabilities: free (email accessibility@amnh.org)'],
+                '212-769-5100',
+                ['Entrances: Central Park West at 79th Street (main steps, Floor 2), Rose Center on 81st Street and '
+                 'the Gilder Center on Columbus Avenue at 79th Street (both step-free, Floor 1); the 81st Street '
+                 'subway station (B, C) opens into the Lower Level',
+                 'Dining: Food Court (Lower Level), Cafe on 1, Cafe on 4 and the Restaurant at Gilder (Floor 2); no '
+                 'eating in the halls',
+                 'Lockers on the Lower Level ($7 small, $12 large, until 5 pm); no large bags or luggage',
+                 'Parking garage on 81st Street (GPS: 56 West 81st Street), 6 am–11 pm weekdays, 8 am–11 pm weekends',
+                 'Restrooms on every floor; family/all-gender restrooms on Floors 1–4; lactation rooms on the Lower '
+                 'Level and Floor 3; companion care room on Floor 1',
+                 'Free Wi-Fi: AMNH-GUEST. Get the free Explorer app for turn-by-turn directions',
+                 'Don’t miss the blue whale (Ocean Life, Floor 1), the Titanosaur and T. rex (Floor 4), the Barosaurus '
+                 'in the Rotunda and the African elephants (Floor 2)']),
     'Q160236': ('1000 Fifth Avenue (at 82nd Street), New York, NY 10028',
                 ['Sunday–Tuesday and Thursday: 10 am – 5 pm',
                  'Friday and Saturday: 10 am – 9 pm',
@@ -1070,6 +1124,9 @@ EXTRA = {
     'Q15694003': {'id': 'Q15694003', 'name': 'Cape Ann Museum', 'at': [42.6143, -70.6624], 'links': 4,
                   'image': '2011 CapeAnnMuseum GloucesterMA.jpg', 'website': 'https://www.capeannmuseum.org/',
                   'city': 'Gloucester', 'state': 'Massachusetts', 'wikipedia': 'Cape_Ann_Museum'},
+    'Q217717': {'id': 'Q217717', 'name': 'American Museum of Natural History', 'at': [40.780833, -73.974444],
+                'links': 60, 'image': 'American Museum of Natural History 02.jpg', 'website': 'https://www.amnh.org/',
+                'city': 'New York', 'state': 'New York', 'wikipedia': 'American_Museum_of_Natural_History'},
 }
 
 # Museums whose Wikidata point is off (the Lyman Allyn's is 350 m west of the building; this is OpenStreetMap's)
