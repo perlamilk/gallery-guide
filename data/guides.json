@@ -512,6 +512,14 @@
    "galleries": true,
    "checked": "2026-11-05",
    "source": "The Barnum Museum (barnum-museum.org) and its catalogue on Connecticut Collections (ctcollections.org)"
+  },
+  "Q160236": {
+   "works": 43688,
+   "pictures": 29279,
+   "onView": 43688,
+   "galleries": true,
+   "checked": "2026-11-06",
+   "source": "The Met Collection API (Open Access): every object on view, with its gallery"
   }
  }
 }

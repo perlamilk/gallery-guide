@@ -51,13 +51,16 @@ export class Router {
     const ordered = [...museum.floors].sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
     for (let i = 0; i + 1 < ordered.length; i++) {
       const lower = vertical.filter(v => v.floor === ordered[i]);
-      const upper = vertical.filter(v => v.floor === ordered[i + 1]);
       for (const a of lower) {
+        // the next floor up with the same stairs/elevator: usually the one above, but a staircase may go
+        // straight past a floor marked `partial` (a mezzanine, like The Met's 1M)
         let best = null;
-        for (const b of upper) {
-          if (b.type !== a.type) continue;
-          const d = dist(a.shared, b.shared);
-          if (d < LINK_DISTANCE && (!best || d < best.d)) best = { b, d };
+        for (let j = i + 1; j < ordered.length && !best && (j === i + 1 || ordered[j - 1].partial); j++) {
+          for (const b of vertical.filter(v => v.floor === ordered[j])) {
+            if (b.type !== a.type) continue;
+            const d = dist(a.shared, b.shared);
+            if (d < LINK_DISTANCE && (!best || d < best.d)) best = { b, d };
+          }
         }
         if (!best) continue;
         const na = this.nodes.get(Router.key(a.floor.id, a.room.id));

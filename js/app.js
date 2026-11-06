@@ -772,7 +772,7 @@ function entranceRooms() {
         ?? floor.rooms.find(r => pointInPoly(f.at, r.poly)) ?? nearestRoomTo(floor, f.at);
       const note = (floor.labels ?? []).filter(l => /entrance/i.test(l.text))
         .sort((a, b) => Math.hypot(a.at[0] - f.at[0], a.at[1] - f.at[1]) - Math.hypot(b.at[0] - f.at[0], b.at[1] - f.at[1]))[0];
-      if (room) out.push({ id: room.id, label: note ? note.text.replace(/\s*\(.*\)\s*/, '') : `Entrance · ${floor.label}` });
+      if (room) out.push({ id: room.id, label: f.name ? `${f.name.replace(/ and Exit$/, '')} · ${floor.label}` : note ? note.text.replace(/\s*\(.*\)\s*/, '') : `Entrance · ${floor.label}` });
     }
   }
   return out.filter((e, i) => out.findIndex(x => x.id === e.id) === i);

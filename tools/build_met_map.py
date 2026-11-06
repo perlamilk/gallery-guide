@@ -228,6 +228,8 @@ def main():
                 t = 'stairs'
             if not t:
                 continue
+            if fid == 1 and '82nd Street' in (p.get('name') or ''):
+                continue           # the Fifth Avenue doors are on Floor 1; the ground-floor layer repeats them
             if g.geom_type.endswith('Polygon'):
                 dp = points.get((fid, p.get('geom_id')))
                 if dp is not None:
@@ -321,7 +323,7 @@ def main():
                 linked |= {(ra['id'], rb['id']), (rb['id'], ra['id'])}
 
         out_rooms = [r for r, q in rooms]
-        floors.append({'id': our, 'label': label, 'order': order, 'transform': [1, 0, 0], 'walkScale': round(1 / U / 0.35, 3),
+        floors.append({**({'partial': True} if our in ('1M', '3', '4') else {}), 'id': our, 'label': label, 'order': order, 'transform': [1, 0, 0], 'walkScale': round(1 / U / 0.35, 3),
                        'area': area, 'rooms': out_rooms, 'closed': closed, 'amenities': amen, 'labels': labels,
                        'notes': notes, 'doors': doors})
         print(our, len(out_rooms), 'rooms', sum(r['kind'] == 'gallery' for r in out_rooms), 'galleries', len(doors), 'doors', len(amen), 'icons')
