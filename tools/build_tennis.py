@@ -10,6 +10,7 @@
 First run tools/harvest_tennis.py (it fills .cache/tennis). The Hall of Famers' portraits come from Wikimedia
 Commons, which answers 429 when a cloud machine asks too often: `python3 tools/build_tennis.py --portraits` downloads
 the missing ones 6 s apart (waiting and retrying when told to slow down); without it only cached ones are used.
+tools/tennis_portraits.py adds them without the harvest cache (Nov 2026: 206 portraits), with the same file names.
 
 The map
 -------
