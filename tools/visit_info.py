@@ -1139,6 +1139,8 @@ NAMES = {'Q2019741': 'deCordova Sculpture Park and Museum'}
 PHOTOS = {
     'Q123689395': 'Lunder Arts Center, Lesley University 1803 Mass Ave Cambridge.jpg',
     'Q5913507': 'HousatonicCommunityCollegeLafayetteHallAtriumLowerLevel.jpg',
+    'Q6802407': 'The McMullen Museum of Art at Boston College, Brighton, MA.jpg',
+    'Q18965051': 'Museum of American Bird Art P1090162.jpg',
 }
 
 

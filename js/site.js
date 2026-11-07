@@ -379,6 +379,7 @@ export const SITES = {
     floors: 'data/spfld/floors.json', artworks: 'data/spfld/artworks.json',
     tours: null, curiosities: null, notice: false,
     pack: 'data/pack-spfld.json', packKey: 'gg-pack-spfld',
+    inside: ['Q41512158'],                   // the D’Amour Museum of Fine Arts has its own museum page
     room: id => id,                          // galleries have names (Blake Court, Dinosaur Hall)
     website: 'More about this',
     official: false,

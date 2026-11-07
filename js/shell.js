@@ -585,6 +585,8 @@ function museumPage(id) {
   const fav = S.museumFavs.includes(id);
   const highlights = museumHighlights(id);
   const site = siteById(id);
+  // A museum inside another site's map (the D’Amour is one of the Springfield Museums) links to that map
+  const inside = site ? null : Object.values(SITES).find(s => s.inside?.includes(id));
   page.classList.add('page--hero');
   return `
     ${topbar({ fallback: 'museums', trailing: `<button class="round glass" type="button" data-fav-museum="${id}" aria-pressed="${fav}" aria-label="${fav ? 'Remove from Favorites' : 'Add to Favorites'}">${I.heart(fav)}</button>` })}
@@ -601,6 +603,8 @@ function museumPage(id) {
       ${site ? `<div class="btn-row"><a class="btn" href="${guideURL(site)}">${I.map}Open the Map Guide</a></div>
         <p class="fine">${site.blurb ?? (site.key === 'mfa' ? 'Floor plans, search for every work on view, tours, directions and your visit diary.'
           : 'Floor plans from the museum’s map, search for every work on view, directions and your visit diary.')}</p>` : ''}
+      ${inside ? `<div class="btn-row"><a class="btn" href="${guideURL(inside)}">${I.map}Open the ${escape(inside.short)} Map</a></div>
+        <p class="fine">${escape(m.name)} is one of the ${escape(inside.short)}: its map shows every floor, with restrooms, the café, directions and your visit diary.</p>` : ''}
     </div>
     ${site ? '<div class="info-card offline" id="offlineCard" aria-live="polite"><p class="offline__sub">Checking offline pack…</p></div>' : ''}
     <div class="info-card"><h2>Welcome to ${escape(m.name)}</h2><div id="museumAbout"><p style="color:var(--ink-3)">Loading…</p></div></div>
