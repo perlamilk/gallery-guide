@@ -26,7 +26,7 @@ export const SITES = {
   harvard: {
     key: 'harvard', id: 'Q3783572', short: 'Harvard Art Museums', name: 'Harvard Art Museums',
     floors: 'data/harvard/floors.json', artworks: 'data/harvard/artworks.json',
-    tours: null, curiosities: null, notice: false,
+    tours: null, curiosities: null, notice: 'data/harvard/notice.json',
     pack: 'data/pack-harvard.json', packKey: 'gg-pack-harvard',
     room: id => (/^\d{4}$/.test(id) ? `Gallery ${id}` : id),
     website: 'View on the Harvard Art Museums Website',
