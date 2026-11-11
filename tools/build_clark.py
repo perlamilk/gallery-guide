@@ -4,8 +4,9 @@
     data/clark/floors.json    three levels seen from above (a flat 2D plan)
     data/clark/artworks.json  works the Clark owns (Wikidata, CC0) in the gallery where they most likely hang
 
-The map: the Clark's own visitor map (clarkart.edu, "A-4547 8.5x14 Gallery Closure map 8-26.pdf", Aug 2021),
-already drawn flat. The rooms below are its walls' coordinates in PDF points; doors are the gaps in the walls.
+The map: the Clark's own visitor map, drawn flat. Walls come from the Aug 2021 edition (clarkart.edu, "A-4547
+8.5x14 Gallery Closure map 8-26.pdf"); gallery subjects from the 2024 edition (copy at all-maps.com,
+Clark-Art-Institute-Museum-Map-2024.pdf), whose floor plan is the same. The rooms below are its walls' coordinates in PDF points; doors are the gaps in the walls.
 The main level holds three buildings joined indoors: the Clark Center (main entrance, admissions, store), the
 Museum Building (galleries 1-20, reached by the walkway along the reflecting pool) and the Manton Research
 Center (British art, works on paper, library), reached from gallery 18. The PDF draws the Clark Center's lower
@@ -26,8 +27,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'data' / 'clark'
 MUSEUM = 'Q1465805'
-SOURCE = ('https://www.clarkart.edu/getmedia/614f36ad-9b91-4807-819f-6266fbafd90d/'
-          'A-4547-8-5x14-Gallery-Closure-map_8-26.pdf')
+SOURCE = 'https://all-maps.com/wp-content/uploads/2025/06/Clark-Art-Institute-Museum-Map-2024.pdf'
+SOURCE_WALLS = ('https://www.clarkart.edu/getmedia/614f36ad-9b91-4807-819f-6266fbafd90d/'
+                'A-4547-8-5x14-Gallery-Closure-map_8-26.pdf')
 UA = 'GalleryGuidePersonal/1.0 (personal, non-commercial museum guide app)'
 
 LOWER_SHIFT = (263.9, -60.7)    # lower-level inset -> under the Clark Center (elevator over elevator)
@@ -38,12 +40,12 @@ def rect(x0, y0, x1, y1):
     return [[x0, y0], [x1, y0], [x1, y1], [x0, y1]]
 
 
-# Gallery subjects, from the map's gallery list
+# Gallery subjects, from the 2024 map's gallery list
 GALLERY = {
     '1': 'American Art 1850–1900', '2': 'Impressionist Paintings', '3': 'European and American Art 1850–1900',
     '4': 'Sculpture', '5': 'European Decorative Arts 1700–1800', '6': 'European Art 1800–1850',
-    '7': 'Special Installations', '8': 'European Art 1550–1650', '9': 'European Art 1450–1600',
-    '10': 'European Art 1300–1500', '11': 'European Art 1700–1850', '12': 'Pastels',
+    '7': 'British Art 1750–1850', '8': 'European Art 1550–1650', '9': 'European Art 1450–1600',
+    '10': 'European Art 1300–1500', '11': 'European Art 1700–1800', '12': 'Pastels',
     '13': 'European Art 1850–1900', '14': 'Edgar Degas', '15': 'Alfred Stevens', '16': 'European Art 1850–1900',
     '17': 'European Decorative Arts and Paintings', '18': 'Impressionist Paintings', '19': 'European Art 1800–1900',
     '20': 'European Silver 1500–1850',
@@ -188,7 +190,7 @@ def build_floors():
             assert d['a'] in ids and d['b'] in ids, (fid, d)
         floors.append({'id': fid, 'label': label, 'area': area, 'order': order, 'transform': [1, 0, 0],
                        'rooms': rooms, 'closed': [], 'amenities': amen, 'labels': labels, 'doors': doors})
-    return {'about': 'Built by tools/build_clark.py from the Clark Art Institute visitor map (2021 edition). '
+    return {'about': 'Built by tools/build_clark.py from the Clark Art Institute visitor map (2024 edition; walls from the 2021 edition). '
                      'Galleries are rehung from time to time, so a room may show other works today.',
             'source': SOURCE, 'units': 'pdf-points', 'defaultFloor': '1', 'galleryWord': 'Gallery', 'floors': floors}
 
@@ -235,7 +237,7 @@ def gallery_of(w):
     if PAPER.search(typ): return 'Thaw Gallery'
     if typ == 'sculpture': return '4'
     if AMERICA.search(where) and not BRITAIN.search(where): return '1'
-    if BRITAIN.search(where): return 'Manton Gallery'
+    if BRITAIN.search(where): return '7' if y and 1750 <= y < 1850 and not PAPER.search(typ) else 'Manton Gallery'
     if artist == 'Pierre-Auguste Renoir': return '2'
     if artist in IMPRESSIONISTS: return '18'
     if artist in BARBIZON: return '19'
