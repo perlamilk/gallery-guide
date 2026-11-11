@@ -185,7 +185,7 @@ export const SITES = {
     website: 'View on Google Arts & Culture',
     official: false,
     flat: true,
-    blurb: 'An approximate plan of the five public floors inside the building’s real outline, with the entrance, front desk, restrooms and Collins Café, the works the Davis shows online in the gallery for their period, the current shows, directions and your visit diary.',
+    blurb: 'The five public floors traced from the Davis’s own floor plans, with the entrance, Main Lobby, coat check, restrooms, the Collins Cinema & Café and every named gallery, the works the Davis shows online in the gallery for their period, the current shows, directions and your visit diary.',
   },
   mead: {
     key: 'mead', id: 'Q6803132', short: 'The Mead', name: 'Mead Art Museum',
@@ -240,7 +240,7 @@ export const SITES = {
     website: 'More on the Museum’s website',
     official: false,
     flat: true,
-    blurb: 'The lawn campus on Bellevue Avenue with the Griswold House’s ground floor traced from its 1969 measured plan and the Cushing Memorial Gallery, parking, entrances, the lobby and restrooms (some rooms approximate: the museum publishes no plan), the works in the five shows open now, directions and your visit diary.',
+    blurb: 'The lawn campus on Bellevue Avenue with the Griswold House (three levels) and the Cushing building traced from the museum’s own floor plans: the lobby, Museum Shop, every gallery, the elevator, ramps, restrooms and parking, the works in the five shows open now, directions and your visit diary.',
   },
   breakers: {
     key: 'breakers', id: 'Q1786400', short: 'The Breakers', name: 'The Breakers',
@@ -428,7 +428,7 @@ export const SITES = {
     website: 'See this show on the Carle’s website',
     official: false,
     flat: true,
-    blurb: 'The museum’s one floor (an approximate plan: the Carle publishes none) with the entrance, admissions desk, Bookshop, Reading Library, Art Studio, Great Hall, the West, Central and East Galleries, the Café, auditorium and restrooms, the works pictured for the shows on view now, including Eric Carle’s own art, directions and your visit diary.',
+    blurb: 'The museum’s one floor, traced from the Carle’s own floor plan, with the entrance, admissions, auditorium, Biography Hall, the West, Central and East Galleries, the Great Hall, the Reading and Research Libraries, Bookshop, Art Studio, Café, restrooms and courtyard, the works pictured for the shows on view now, including Eric Carle’s own art, directions and your visit diary.',
   },
   lymanallyn: {
     key: 'lymanallyn', id: 'Q14714982', short: 'Lyman Allyn', name: 'Lyman Allyn Art Museum',
@@ -439,7 +439,7 @@ export const SITES = {
     website: 'More on the Museum’s website',
     official: false,
     flat: true,
-    blurb: 'All three floors (an approximate plan inside the building’s real outline: the museum publishes none) with the entrance under the portico, the side entrance with its ramp, the front desk, coat room, restrooms with a family room, the Hendel Library and the elevator; American Perspectives from colonial New London to Sol LeWitt, the Tiffany gallery, the Hawthorne dollhouse, the shows on view now, directions and your visit diary.',
+    blurb: 'All three floors traced from the museum’s own floor plans, with the entrance under the portico, the lobby, coat room, restrooms, the Hendel Library, the Palmer Galleries, the eight upstairs galleries, the Lehman Auditorium and the elevator; American Perspectives from colonial New London to Sol LeWitt, the Tiffany gallery, the Hawthorne dollhouse, the shows on view now, directions and your visit diary.',
   },
   athenaeum: {
     key: 'athenaeum', id: 'Q478013', short: 'The Athenæum', name: 'Boston Athenæum',
@@ -450,7 +450,7 @@ export const SITES = {
     website: 'See this work on the Athenæum’s website',
     official: false,
     flat: true,
-    blurb: 'All six floors (approximate plans: the Athenæum publishes none) with the Beacon Street entrance, front desk, Coat Room, Long Room, Calderwood Gallery, Gordon Reading Room, Leventhal Living Room, Children’s Library, elevators and restrooms on every floor, the members’ reading rooms, the fifth-floor terrace, the busts and Washington portraits the Athenæum names, directions and your visit diary.',
+    blurb: 'All six floors (the first traced from the Athenæum’s own plan, the others approximate) with the Beacon Street entrance, Folio Bistro, Bow Room, front desk, Coat Room, Long Room, Calderwood Gallery, Gordon Reading Room, Leventhal Living Room, Children’s Library, elevators and restrooms on every floor, the members’ reading rooms, the fifth-floor terrace, the busts and Washington portraits the Athenæum names, directions and your visit diary.',
   },
   aldrich: {
     key: 'aldrich', id: 'Q4713992', short: 'The Aldrich', name: 'The Aldrich Contemporary Art Museum',
@@ -461,7 +461,7 @@ export const SITES = {
     website: 'More on the Museum’s website',
     official: false,
     flat: true,
-    blurb: 'The grounds and Sculpture Garden traced from the museum’s own garden map, with the ten sculptures outside where the map puts them, the terraced steps, parking and the amphitheater, and both floors inside (an approximate plan: the museum publishes none) with the Front Desk, restrooms, The Shop, The Studio, the elevator and every gallery; the 40 Connecticut artists of The Aldrich Decennial, directions and your visit diary.',
+    blurb: 'The grounds and Sculpture Garden traced from the museum’s own garden map, with the ten sculptures outside where the map puts them, the terraced steps, parking and the amphitheater, and both floors inside traced from the museum’s own plans, with the Front Desk, Coat Room, restrooms, The Shop, The Studio, the Camera Obscura, the elevator and every gallery; the 40 Connecticut artists of The Aldrich Decennial, directions and your visit diary.',
   },
   fruitlands: {
     key: 'fruitlands', id: 'Q5506454', short: 'Fruitlands', name: 'Fruitlands Museum',
@@ -549,7 +549,7 @@ export const SITES = {
     website: 'More on the Museum’s website',
     official: false,
     flat: true,
-    blurb: 'Both floors (an approximate plan inside the building’s real outline: the museum publishes none) with the Gateway entrance, admissions desk, Museum Shop, coat rack, restrooms, water fountain and elevator; Emerson’s Study, Thoreau’s desk, bed and flute, the Musketaquid Gallery, Paul Revere’s lantern in the April 19, 1775 galleries, the 1720 and 1775 Period Rooms, Mark Dion’s Eccentric Collectors Like Us, directions and your visit diary.',
+    blurb: 'Both floors traced from the museum’s own floor plans, with the Main Entrance, admission desk and Museum Shop, coat rack, restrooms, Brooke Hall and the elevator; Emerson’s Study, Thoreau’s desk, bed and flute, People of Musketaquid, Paul Revere’s lantern in the April 19, 1775 gallery, the 1720 and 1775 Period Rooms, Mark Dion’s Eccentric Collectors Like Us, directions and your visit diary.',
   },
   fuller: {
     key: 'fuller', id: 'Q5508243', short: 'Fuller Craft', name: 'Fuller Craft Museum',

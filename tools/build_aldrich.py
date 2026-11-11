@@ -47,7 +47,7 @@ OUT = ROOT / 'data' / 'aldrich'
 MUSEUM = 'Q4713992'
 NAME = 'The Aldrich Contemporary Art Museum'
 SITE = 'https://thealdrich.org'
-SOURCE = 'The Aldrich: Sculpture Garden map and exhibition pages (thealdrich.org); approximate floor plans'
+SOURCE = 'The Aldrich: Sculpture Garden map, floor plans in Bloomberg Connects and exhibition pages (thealdrich.org)'
 DECENNIAL = f'{SITE}/exhibitions/the-aldrich-decennial-new-art-made-in-connecticut'
 GARDEN = f'{SITE}/page/sculpture-garden'
 SHOW = 'The Aldrich Decennial: I am what is around me'
@@ -126,62 +126,86 @@ GR_LABELS = [('Main Street', 20, 1080), ('Front door at the top of the terraced 
              ('Secret Garden', 1380, 150), ('Church (not the museum)', 425, 345)]
 GR_NOTES = []
 
-# ---- First Floor (metres) -------------------------------------------------------------------------------------------
-F1 = [
-    ('Leir Atrium', 'corridor', 'Leir Atrium, the lobby: Front Desk (tickets) on your left as you come in, the stairs '
-     'up and the way to every gallery', [(-3.1, 17.6), (0, 17.6), (0, 10), (20, 10), (20, 25.2), (7, 25.2), (7, 21),
-                                         (0, 21), (0, 25.2), (-3.1, 25.2)], None),
-    ('The Shop', 'space', 'The Shop: artist editions, books and gifts (members 10% off)', rect(0, 21, 7, 25.2), None),
-    ('Restrooms', 'space', 'Restrooms behind the Front Desk (accessible stalls with changing stations)',
-     rect(0, 6, 6, 10), None),
-    ('Klein Kenealy Gallery', 'gallery', 'Klein Kenealy Gallery', [(0, 0), (13, 0), (13, 10), (6, 10), (6, 6), (0, 6)],
-     'Klein K.'),
-    ('Elevator Hall', 'corridor', 'Hall with the elevator, to The Studio and the Sloped Corridor', rect(13, 0, 20, 10),
+# ---- First Floor ----------------------------------------------------------------------------------------------------
+# Traced from The Aldrich's own floor plans in its Bloomberg Connects guide (read Nov 11 2026). The plans are drawn with
+# west (the front door) at the top and north on the right; E1/E2 turn their pixels into metres east/south.
+def E1(px, py):
+    return ((py - 100) / 20.95 - 3.1, (583 - px) / 20.95)
+
+
+def E2(px, py):
+    """The second-floor picture is drawn a little larger and lower; fit it onto the first floor's."""
+    return E1(55 + (px - 45) * 0.95, 172 + (py - 165) / 1.06)
+
+
+def on(f, rooms):
+    return [(rid, kind, name, [f(*q) for q in poly], short) for rid, kind, name, poly, short in rooms]
+
+
+F1 = on(E1, [
+    ('Leir Gallery', 'gallery', 'Leir Gallery', rect(55, 100, 210, 430), 'Leir'),
+    ('Leir Atrium', 'corridor', 'Leir Atrium, the lobby: Front Desk (tickets) and the stairs up', rect(210, 172, 430, 580),
      None),
-    ('The Studio', 'space', 'The Studio: drop-in art making for all ages, with materials on the tables (when open)',
-     rect(20, 0, 35, 7.1), None),
-    ('Sloped Corridor', 'corridor', 'Sloped Corridor beside the courtyard, down to the Leir Gallery', rect(20, 7.1, 23, 15.2),
-     None),
-    ('Courtyard', 'gallery', 'Interior Courtyard (open air)', rect(23, 7.1, 39.5, 15.2), 'Courtyard'),
-    ('Leir Gallery', 'gallery', 'Leir Gallery: the tall main gallery, also used for talks and performances',
-     rect(20, 15.2, 36, 25.2), 'Leir'),
-    ('Project Space', 'gallery', 'Project Space: two stories high, its east wall glass onto the Sculpture Garden; the '
-     'back doors to the garden', [(36, 15.2), (39.5, 15.2), (39.5, 17.6), (48, 17.6), (48, 25.2), (36, 25.2)],
-     'Project'),
-]
+    ('The Shop', 'space', 'The Shop: artist editions, books and gifts (members 10% off)', rect(125, 488, 210, 578), None),
+    ('Coat Room', 'space', 'Coat Room', rect(430, 172, 583, 245), None),
+    ('Restrooms', 'space', 'Restrooms (accessible stalls with changing stations)', rect(430, 248, 583, 395), None),
+    ('Elevator Hall', 'corridor', 'Elevator', rect(430, 465, 505, 530), None),
+    ('Sloped Corridor', 'corridor', 'Corridor along the courtyard to The Studio (exit to the Sculpture Garden)',
+     rect(375, 580, 430, 985), None),
+    ('West Corridor', 'corridor', 'Corridor along the courtyard to the Project Gallery', rect(210, 580, 260, 985), None),
+    ('Courtyard Steps', 'corridor', 'Steps at the end of the courtyard (exit to the Sculpture Garden)',
+     rect(210, 985, 430, 1002), None),
+    ('Courtyard', 'gallery', 'Outdoor Courtyard (open air)', rect(260, 580, 375, 985), 'Courtyard'),
+    ('The Studio', 'space', 'The Studio: drop-in art making for all ages (when open)', rect(430, 585, 575, 895), None),
+    ('Screening Room', 'space', 'Screening Room', rect(55, 652, 210, 780), None),
+    ('Stairs', 'corridor', 'Stairs up: exhibitions continue on the second floor', rect(55, 780, 210, 890), None),
+    ('Project Space', 'gallery', 'Project Gallery: two stories high, glass onto the Sculpture Garden',
+     rect(55, 890, 215, 1172), 'Project'),
+])
 F1_CLOSED = []
-F1_DOORS = [('Leir Atrium', 'The Shop', (7, 23)), ('Leir Atrium', 'Restrooms', (3, 10)),
-            ('Leir Atrium', 'Elevator Hall', (16.5, 10)), ('Elevator Hall', 'Klein Kenealy Gallery', (13, 4)),
-            ('Elevator Hall', 'The Studio', (20, 3.5)), ('Elevator Hall', 'Sloped Corridor', (20, 8.5)),
-            ('Leir Atrium', 'Leir Gallery', (20, 20)), ('Sloped Corridor', 'Leir Gallery', (21.5, 15.2)),
-            ('Sloped Corridor', 'Courtyard', (23, 11)), ('The Studio', 'Courtyard', (28, 7.1)),
-            ('Leir Gallery', 'Project Space', (36, 20))]
-F1_AMEN = [('entrance', -2.4, 19.5), ('info', 3, 12), ('shop', 3.5, 23), ('restroom', 3, 8), ('elevator', 18, 8.5),
-           ('stairs', 8.5, 13), ('entrance', 47.2, 19.5)]
-F1_LABELS = [('← Front door (from the terraced steps)', 8, 28.5),
-             ('Back doors to the garden →', 36, 28.5), ('Approximate plan', 18, -2)]
+F1_DOORS = [(a, b, E1(*p)) for a, b, p in [
+    ('Leir Atrium', 'Leir Gallery', (210, 300)), ('Leir Atrium', 'The Shop', (210, 530)),
+    ('Leir Atrium', 'Coat Room', (430, 210)), ('Leir Atrium', 'Restrooms', (430, 330)),
+    ('Leir Atrium', 'Elevator Hall', (430, 497)), ('Leir Atrium', 'Sloped Corridor', (402, 580)),
+    ('Leir Atrium', 'West Corridor', (235, 580)), ('Sloped Corridor', 'The Studio', (430, 750)),
+    ('Sloped Corridor', 'Courtyard Steps', (402, 985)), ('West Corridor', 'Courtyard Steps', (235, 985)),
+    ('West Corridor', 'Screening Room', (210, 715)), ('West Corridor', 'Project Space', (213, 950)),
+    ('Project Space', 'Stairs', (100, 890)), ('Courtyard Steps', 'Courtyard', (318, 985))]]
+F1_AMEN = [(t, *E1(x, y)) for t, x, y in [
+    ('entrance', 240, 180), ('info', 360, 300), ('shop', 167, 533), ('coat', 505, 210), ('restroom', 500, 290),
+    ('restroom', 500, 370), ('elevator', 468, 497), ('stairs', 360, 400), ('stairs', 130, 835),
+    ('entrance', 402, 600), ('entrance', 235, 995)]]
+F1_LABELS = [(t, *E1(x, y)) for t, x, y in [('↑ Front door (from the terraced steps)', 260, 130),
+                                            ('Exits to the Sculpture Garden', 330, 1040)]]
 F1_NOTES = []
 
 # ---- Second Floor ---------------------------------------------------------------------------------------------------
-F2 = [
-    ('Balcony Gallery', 'gallery', 'Balcony Gallery and Stairway, above the Leir Atrium (the stairs arrive here)',
-     rect(6, 9, 20, 15), 'Balcony'),
-    ('South Gallery', 'gallery', 'South Gallery', rect(0, 15, 20, 25.2), 'South'),
-    ('Bridge', 'corridor', 'The Bridge', rect(0, 9, 6, 15), None),
-    ('Opatrny Gallery', 'gallery', 'Opatrny Gallery and its vestibule', rect(0, 0, 12, 9), 'Opatrny'),
-    ('Sound Gallery', 'gallery', 'Sound Gallery', rect(12, 0, 20, 5), 'Sound'),
-    ('Upper Hall', 'corridor', 'Upper hall by the elevator', rect(12, 5, 20, 9), None),
-]
-F2_CLOSED = [rect(20, 0, 35, 7.1), [(20, 15.2), (39.5, 15.2), (39.5, 17.6), (48, 17.6), (48, 25.2), (20, 25.2)]]
-F2_DOORS = [('Balcony Gallery', 'South Gallery', (13, 15)), ('South Gallery', 'Bridge', (3, 15)),
-            ('Bridge', 'Opatrny Gallery', (3, 9)), ('Opatrny Gallery', 'Sound Gallery', (12, 2.5)),
-            ('Sound Gallery', 'Upper Hall', (16, 5)), ('Upper Hall', 'Balcony Gallery', (16, 9)),
-            ('Bridge', 'Balcony Gallery', (6, 12))]
-F2_AMEN = [('elevator', 18, 8.5), ('stairs', 8.5, 13)]
-F2_LABELS = [('Walk the galleries clockwise from the top of the stairs (approximate plan)', 18, -2),
-             ('Roof of the tall Leir Gallery and Project Space below', 34, 21.5), ('Roof of The Studio', 27.5, 3.5)]
+F2 = on(E2, [
+    ('Vestibule', 'gallery', 'Gallery vestibule at the top of the atrium stairs', [(350, 165), (515, 165), (515, 250),
+                                                                                  (380, 250), (380, 280), (350, 280)],
+     'Vestibule'),
+    ('Camera Obscura', 'space', 'Camera Obscura', rect(518, 165, 598, 250), None),
+    ('Stairs 2', 'corridor', 'Stairs from the Leir Atrium', rect(350, 280, 380, 440), None),
+    ('Opatrny Gallery', 'gallery', 'Opatrny Gallery', rect(380, 250, 600, 470), 'Opatrny'),
+    ('Bridge', 'gallery', 'Bridge Gallery', [(265, 490), (380, 490), (380, 470), (438, 470), (438, 595), (265, 595)],
+     'Bridge'),
+    ('Upper Hall', 'corridor', 'Elevator', rect(438, 470, 500, 595), None),
+    ('Sound Gallery', 'gallery', 'Sound Gallery (its name is hidden on our copy of the plan; the museum lists it on '
+     'this floor)', rect(380, 595, 600, 730), 'Sound'),
+    ('South Gallery', 'gallery', 'South Gallery', rect(45, 490, 265, 810), 'South'),
+    ('Balcony Gallery', 'gallery', 'Balcony Gallery, with the stairs down to the Project Gallery',
+     rect(45, 810, 265, 1050), 'Balcony'),
+])
+F2_CLOSED = [[E2(*q) for q in rect(205, 165, 350, 490)]]
+F2_DOORS = [(a, b, E2(*p)) for a, b, p in [
+    ('Opatrny Gallery', 'Vestibule', (450, 250)), ('Vestibule', 'Camera Obscura', (517, 210)),
+    ('Vestibule', 'Stairs 2', (365, 280)), ('Opatrny Gallery', 'Bridge', (410, 470)),
+    ('Opatrny Gallery', 'Upper Hall', (470, 470)), ('Upper Hall', 'Bridge', (438, 540)),
+    ('Upper Hall', 'Sound Gallery', (470, 595)), ('Bridge', 'South Gallery', (265, 540)),
+    ('South Gallery', 'Balcony Gallery', (155, 810))]]
+F2_AMEN = [(t, *E2(x, y)) for t, x, y in [('elevator', 470, 520), ('stairs', 365, 360), ('stairs', 125, 865)]]
+F2_LABELS = [(t, *E2(x, y)) for t, x, y in [('Leir Atrium (open to the first floor)', 280, 330)]]
 F2_NOTES = []
-
 
 def inside(pt, poly):
     x, y = pt
@@ -214,10 +238,11 @@ def build_floors():
         floor('G', 'Grounds & Sculpture Garden', 0, 'Front Lawn · terraced steps · parking · Sculpture Garden with the '
               'amphitheater and Secret Garden (open dawn to dusk)', GR, GR_CLOSED, GR_DOORS, GR_AMEN, GR_LABELS,
               GR_NOTES, G, [1, 0, 0]),
-        floor('1', 'First Floor', 1, 'Leir Atrium (Front Desk) · The Shop · restrooms · The Studio · Klein Kenealy '
-              'Gallery · Leir Gallery · Project Space · courtyard', F1, F1_CLOSED, F1_DOORS, F1_AMEN, F1_LABELS,
+        floor('1', 'First Floor', 1, 'Leir Atrium (Front Desk) · The Shop · Coat Room · restrooms · Leir Gallery · '
+              'Screening Room · The Studio · Project Gallery · Outdoor Courtyard', F1, F1_CLOSED, F1_DOORS, F1_AMEN, F1_LABELS,
               F1_NOTES, B, tr),
-        floor('2', 'Second Floor', 2, 'Balcony Gallery · South Gallery · Bridge · Opatrny Gallery · Sound Gallery',
+        floor('2', 'Second Floor', 2, 'Opatrny Gallery · Camera Obscura · Bridge Gallery · South Gallery · Balcony '
+              'Gallery',
               F2, F2_CLOSED, F2_DOORS, F2_AMEN, F2_LABELS, F2_NOTES, B, tr),
     ]
     for f in floors:
@@ -228,13 +253,10 @@ def build_floors():
         for a in f['amenities']:
             assert any(inside(a['at'], r['poly']) for r in f['rooms']), (f['id'], a)
     return {'about': 'Built by tools/build_aldrich.py. The grounds are traced from The Aldrich’s own Sculpture Garden '
-                     'map. The museum publishes no floor plan: the rooms inside are approximate, placed inside the '
-                     'building’s real outline from the museum’s own descriptions (Front Desk on the left, restrooms '
-                     'behind it, the galleries of each floor, the clockwise walk upstairs).',
-            'source': 'The Aldrich’s Sculpture Garden map (2026); inside approximate, from the museum’s visit and '
-                      'social-narrative pages and exhibition checklists',
+                     'map; the rooms inside from its floor plans in its Bloomberg Connects guide (Nov 2026).',
+            'source': 'The Aldrich’s Sculpture Garden map (2026) and its floor plans in Bloomberg Connects (Nov 2026)',
             'units': f'grounds: pixels of the garden map x {KG} (about north up); building: metres x {KB}',
-            'approximate': True, 'defaultFloor': '1', 'galleryWord': 'Gallery', 'floors': floors}
+            'defaultFloor': '1', 'galleryWord': 'Gallery', 'floors': floors}
 
 
 # ---- works ---------------------------------------------------------------------------------------------------------
@@ -473,6 +495,14 @@ def main():
     OUT.mkdir(exist_ok=True)
     floors = build_floors()
     (OUT / 'floors.json').write_text(json.dumps(floors, ensure_ascii=False, separators=(',', ':')))
+    if sys.argv[1:2] == ['--floors-only']:      # redraw the map only; the saved works keep their places
+        rooms = {r['id']: (f['id'], r['name']) for f in floors['floors'] for r in f['rooms']}
+        path = OUT / 'artworks.json'
+        works = json.loads(path.read_text())
+        for a in works['artworks']:
+            if a.get('gallery'): a['floor'], a['galleryName'] = rooms[a['gallery']]
+        path.write_text(json.dumps(works, ensure_ascii=False, separators=(',', ':')))
+        return
     works = build_works(floors)
     (OUT / 'artworks.json').write_text(json.dumps(works, ensure_ascii=False, separators=(',', ':')))
     guide = build_guide(works)

@@ -78,46 +78,64 @@ OUTLINE = [(-14.1, -10.0), (-10.2, -8.7), (-10.0, -7.1), (-4.3, -4.6), (17.9, -5
            (22.2, -1.0), (22.4, 0.7), (22.0, 2.4), (21.1, 4.0), (18.8, 5.6), (18.9, 12.7), (-15.2, 15.5),
            (-16.0, 6.9), (-15.6, 2.9)]
 
+def T(x, y):
+    """A point on the Athenæum's own first-floor plan (its Bloomberg Connects guide, Nov 2026; drawn with Beacon Street
+    at the bottom) -> map pixels: turned half round and fitted over the OpenStreetMap outline."""
+    return [round(497 - 0.683 * (x - 15), 1), round(348 - 0.688 * (y - 20), 1)]
+
+
+def tp(*pts):
+    return [T(x, y) for x, y in pts]
+
+
+def box(x0, y0, x1, y1):
+    return tp((x0, y0), (x1, y0), (x1, y1), (x0, y1))
+
+
 # Rooms of the first floor, the floor visitors see: (id, kind, name, polygon, short label for galleries)
 FLOOR1 = [
-    ('Bayard Henry Long Room', 'gallery', 'Bayard Henry Long Room: paintings and sculpture from the collection',
-     poly((-4, -4.7), (10, -5.4), (10, 1.5), (-4, 1.5)), 'Long Room'),
-    ('Norma Jean Calderwood Gallery', 'gallery', 'Norma Jean Calderwood Gallery: changing exhibitions',
-     poly((10, -5.4), (17.9, -5.8), (18.8, 1.5), (10, 1.5)), 'Calderwood'),
-    ('Leventhal Living Room', 'gallery', 'Leventhal Living Room: seating and display cases, windows over the Granary '
-     'Burying Ground', poly((-14.1, -10.0), (-10.2, -8.7), (-10.0, -7.1), (-4.3, -4.6), (-4, 1.5), (-15.4, 1.5)),
-     'Leventhal'),
-    ('Gordon Reading Room', 'gallery', 'Gordon Reading Room: Special Collections highlights (Re-Reading Special '
-     'Collections)', poly((6, 5), (18.8, 5), (18.9, 12.7), (6, 13.6)), 'Gordon'),
-    ('Lobby', 'corridor', 'Lobby · front desk · admissions', poly((-3, 5), (6, 5), (6, 13.6), (3, 13.8), (3, 15.0),
-                                                               (-3, 15.0)), None),
-    ('Hall', 'corridor', 'Hall · elevators · restrooms', poly((-15.4, 1.5), (18.8, 1.5), (18.8, 5), (-15.8, 5),
-                                                             (-15.6, 2.9)), None),
+    ('Bayard Henry Long Room', 'gallery', 'Long Room: paintings and sculpture from the collection',
+     box(60, 235, 245, 345), 'Long Room'),
+    ('Norma Jean Calderwood Gallery', 'gallery', 'Norma Jean Calderwood Gallery and the Junction: changing exhibitions',
+     tp((540, 90), (655, 25), (690, 85), (660, 195), (560, 195), (550, 170)), 'Calderwood'),
+    ('Leventhal Living Room', 'gallery', 'Leventhal Room: seating and display cases',
+     tp((330, 180), (540, 90), (550, 170), (345, 215)), 'Leventhal'),
+    ('Gordon Reading Room', 'gallery', 'Gordon Reading Room: Special Collections highlights',
+     box(60, 345, 172, 430), 'Gordon'),
+    ('Lobby', 'corridor', 'Lobby · Front Desk', tp((172, 345), (360, 345), (360, 430), (250, 430), (250, 455),
+                                                  (205, 455), (205, 430), (172, 430)), None),
+    ('Hall', 'corridor', 'Hall · elevator · restrooms',
+     tp((345, 215), (540, 170), (560, 200), (545, 270), (500, 270), (495, 250), (415, 250), (400, 320), (385, 345),
+        (360, 345), (345, 320)), None),
 ]
 FLOOR1_SPACES = [
-    ('Coat Room', 'space', 'Coat Room and lockers (all-gender restroom, water fountain)',
-     poly((-8, 5), (-3, 5), (-3, 15.0), (-8, 15.2)), None),
-    ('Children’s Library', 'space', 'Children’s Library', poly((-16.0, 5), (-8, 5), (-8, 15.2), (-15.2, 15.5),
-                                                                (-16.0, 6.9)), None),
-    ('The Drum', 'space', 'The Drum (round stair tower; not wheelchair accessible)',
-     poly((18.8, -5.0), (21.5, -5.2), (22.2, -1.0), (22.4, 0.7), (22.0, 2.4), (21.1, 4.0), (18.8, 5.0)), None),
+    ('The Drum', 'space', 'Drum 1 (members only; round stair tower)',
+     tp((15, 255), (45, 240), (60, 250), (60, 335), (45, 345), (20, 330)), None),
+    ('Bornheimer', 'space', 'Bornheimer Room', tp((45, 235), (120, 182), (170, 235)), None),
+    ('Bow Room', 'space', 'Bow Room', box(245, 235, 345, 345), None),
+    ('Elevator', 'corridor', 'Elevator and stairs', box(345, 255, 385, 320), None),
+    ('Restrooms', 'space', 'Restrooms', tp((415, 215), (500, 190), (510, 250), (445, 270)), None),
+    ('Coat Room', 'space', 'Coat Room', tp((415, 320), (465, 300), (465, 375), (420, 380)), None),
+    ('Family Restroom', 'space', 'Restroom', box(465, 345, 495, 380), None),
+    ('Children’s Library', 'space', 'Children’s Library', tp((390, 345), (420, 380), (495, 380), (495, 450),
+                                                             (405, 450)), None),
+    ('Folio Bistro', 'space', 'Folio Bistro (café)', box(520, 270, 600, 450), None),
 ]
-FLOOR1_DOORS = [('Lobby', 'Hall', (1.5, 5)), ('Lobby', 'Coat Room', (-3, 9)), ('Lobby', 'Gordon Reading Room', (6, 9)),
-                ('Hall', 'Bayard Henry Long Room', (3, 1.5)), ('Hall', 'Norma Jean Calderwood Gallery', (14, 1.5)),
-                ('Hall', 'Leventhal Living Room', (-10, 1.5)), ('Hall', 'Children’s Library', (-12, 5)),
-                ('Hall', 'Gordon Reading Room', (12, 5)), ('Hall', 'The Drum', (18.8, 3)),
-                ('Bayard Henry Long Room', 'Leventhal Living Room', (-4, -1.5)),
-                ('Bayard Henry Long Room', 'Norma Jean Calderwood Gallery', (10, -2))]
-FLOOR1_AMENITIES = [('entrance', 0, 16.3), ('elevator', -1.5, 13.8), ('info', 1.5, 8), ('coat', -5.5, 11),
-                    ('restroom-all', -5.5, 7), ('water', -6.8, 8.5), ('restroom', -13, 3.3), ('nursing', -10.5, 3.3),
-                    ('elevator', 4.5, 5.8), ('elevator', 8, 2.3), ('stairs', 6.3, 3.3), ('stairs', 20, 0)]
-FLOOR1_LABELS = [
-    ('Entrance', 'note', 0, 18.3),
-    ('Beacon Street', 'note', 3, 21),
-    ('Granary Burying Ground', 'note', 4, -9.5),
-    ('Folio bistro (14A Beacon St)', 'note', -12, 18.3),
-    ('Approximate plan', 'note', 3, -12.5),
-]
+FLOOR1_DOORS = [(a, b, T(*p)) for a, b, p in [
+    ('Lobby', 'Gordon Reading Room', (172, 390)), ('Lobby', 'Bayard Henry Long Room', (210, 345)),
+    ('Lobby', 'Bow Room', (300, 345)), ('Lobby', 'Hall', (372, 345)), ('Bayard Henry Long Room', 'Bow Room', (245, 290)),
+    ('Bayard Henry Long Room', 'The Drum', (60, 290)), ('Bayard Henry Long Room', 'Bornheimer', (110, 235)),
+    ('Bow Room', 'Elevator', (345, 300)), ('Hall', 'Elevator', (365, 255)),
+    ('Hall', 'Leventhal Living Room', (440, 195)), ('Leventhal Living Room', 'Norma Jean Calderwood Gallery', (545, 130)),
+    ('Hall', 'Norma Jean Calderwood Gallery', (555, 190)), ('Hall', 'Restrooms', (460, 250)),
+    ('Hall', 'Coat Room', (410, 330)), ('Hall', 'Children’s Library', (392, 345)),
+    ('Children’s Library', 'Family Restroom', (480, 380)), ('Hall', 'Folio Bistro', (530, 270))]]
+FLOOR1_AMENITIES = [(t, *T(x, y)) for t, x, y in [
+    ('entrance', 228, 450), ('info', 338, 400), ('stairs', 230, 385), ('elevator', 365, 272), ('stairs', 365, 305),
+    ('coat', 440, 345), ('restroom', 455, 240), ('restroom', 485, 225), ('restroom-all', 480, 362), ('dining', 560, 380),
+    ('stairs', 35, 290)]]
+FLOOR1_LABELS = [(t, k, *T(x, y)) for t, k, x, y in [
+    ('Entrance', 'note', 228, 475), ('Beacon Street', 'note', 400, 490), ('Granary Burying Ground', 'note', 330, 60)]]
 
 # Upper floors and the basement: members and day members only. (id, label, order, area, rooms, amenities, labels)
 MEMBERS = 'Members and day members only'
@@ -183,15 +201,15 @@ def build_floors():
                 for rid, kind, name, pl, short in spec]
     rooms = mk(FLOOR1 + FLOOR1_SPACES)
     ids = {r['id'] for r in rooms}
-    doors = [{'a': a, 'b': b, 'at': P(u, v), 'width': 12, 'axis': 'o'} for a, b, (u, v) in FLOOR1_DOORS]
+    doors = [{'a': a, 'b': b, 'at': at, 'width': 12, 'axis': 'o'} for a, b, at in FLOOR1_DOORS]
     for d in doors:
         assert d['a'] in ids and d['b'] in ids, d
     first = {'id': '1', 'label': 'Floor 1', 'order': 1, 'transform': [1, 0, 0],
-             'area': 'Entrance · Lobby · Coat Room · Long Room · Calderwood Gallery · Gordon Reading Room · '
-                     'Leventhal Living Room · Children’s Library · Restrooms',
+             'area': 'Entrance · Lobby and Front Desk · Coat Room · Long Room · Bow Room · Calderwood Gallery · '
+                     'Gordon Reading Room · Leventhal Room · Children’s Library · Folio Bistro · Restrooms',
              'rooms': rooms, 'closed': [],
-             'amenities': [{'type': t, 'at': P(u, v)} for t, u, v in FLOOR1_AMENITIES],
-             'labels': [{'text': t, 'kind': k, 'at': P(u, v)} for t, k, u, v in FLOOR1_LABELS],
+             'amenities': [{'type': t, 'at': [x, y]} for t, x, y in FLOOR1_AMENITIES],
+             'labels': [{'text': t, 'kind': k, 'at': [x, y]} for t, k, x, y in FLOOR1_LABELS],
              'doors': doors}
     floors = [first]
     for f in UPPER:
@@ -208,9 +226,10 @@ def build_floors():
                        'amenities': [{'type': t, 'at': P(u, v)} for t, u, v in f['amenities']],
                        'labels': labels, 'doors': []})
     floors.sort(key=lambda f: f['order'])
-    return {'about': 'Built by tools/build_athenaeum.py. The Athenæum publishes no floor plan: these plans are '
-                     'approximate, drawn inside the building’s real outline (OpenStreetMap) from the Athenæum’s '
-                     'accessibility guide. Beacon Street is at the top.',
+    return {'about': 'Built by tools/build_athenaeum.py. Floor 1 is traced from the Athenæum’s own plan in its '
+                     'Bloomberg Connects guide (Nov 2026). The other floors are approximate, drawn inside the '
+                     'building’s real outline (OpenStreetMap) from the Athenæum’s accessibility guide. Beacon Street '
+                     'is at the top.',
             'source': SOURCE, 'units': 'metres x 12, Beacon Street at the top', 'defaultFloor': '1',
             'galleryWord': 'Room', 'floors': floors}
 
@@ -334,6 +353,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     floors = build_floors()
     (OUT / 'floors.json').write_text(json.dumps(floors, ensure_ascii=False, separators=(',', ':')))
+    if sys.argv[1:2] == ['--floors-only']: return        # redraw the map only; the works' rooms keep their ids
     rows = records()
     works = build_works(rows)
     (OUT / 'artworks.json').write_text(json.dumps(works, ensure_ascii=False, separators=(',', ':')))
