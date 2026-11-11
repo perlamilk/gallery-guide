@@ -10,23 +10,10 @@ First run tools/harvest_lymanallyn.py: it reads the museum's gallery and exhibit
 
 The map
 -------
-The Lyman Allyn publishes no floor plan (no PDF, no map on its site; its app is Bloomberg Connects, which robots may
-not read). The plan here is APPROXIMATE, drawn inside the building's real outline:
-  - OpenStreetMap way 244881161 (ODbL): Charles A. Platt's 1932 granite block, 34 x 16 m (the 108' x 50' of the
-    Connecticut Trust's inventory form), facing south, with the portico in the middle, and the later addition to the
-    north joined by a narrower link; a notch on the east side of the link is the side porch. The outline is turned
-    4.6 degrees so its walls are square; north is up.
-  - the museum's own words: the lobby with the front desk (main entrance under the portico); the Hendel Library
-    "adjacent to the lobby" and the kitchen; the coat room, the wheelchair-accessible restroom and the family restroom
-    with a changing table "on the first floor"; a ramp at the side entrance, by the staff and accessible parking ("ring
-    the doorbell"); the Glassenberg Gallery "on the first floor" (the Near::New contemporary shows); the American art
-    galleries (Palmer Galleries, American Perspectives) on the first floor near the Hendel Library; the upper floor is
-    windowless (top-lit galleries): "three adjacent galleries and the corridor on the second floor", "the 2nd floor
-    hallway near the elevator"; the Lehman Auditorium and the Hawthorne dollhouse (Playthings of the Past) "on the
-    lower level"; the Tiffany gallery is the Chappell Gallery, 1,070 sq ft.
-Which room is where inside each part of the building, and which upstairs gallery holds which show, is our best
-reading of those sources; the map and each work say so. Coordinates are metres east/south of the building's south-east
-corner area, times K.
+The rooms are traced from the museum's own floor plans in its Bloomberg Connects guide (read in the app on
+Nov 11 2026; the three levels share one picture frame, so P() serves them all). Run with --floors-only to redraw the
+map and move the saved works onto it without the harvest cache. Which room of the Palmer Galleries holds which century,
+and which upstairs gallery holds which show, is still our guess, and each work says so.
 """
 import html
 import io
@@ -47,90 +34,103 @@ MUSEUM = 'Q14714982'
 NAME = 'Lyman Allyn Art Museum'
 SITE = 'https://www.lymanallyn.org'
 SOURCE = 'Lyman Allyn Art Museum: gallery and exhibition pages (lymanallyn.org); approximate plan'
-K = 16          # pixels per metre
-
-
 def P(x, y):
-    """Metres east / south in the building's frame -> map pixels (north up)."""
-    return [round((x + 36) * K, 1), round((y + 22) * K, 1)]
+    """Pixels of the museum's own floor-plan pictures (all three levels share one frame; north up) -> map units."""
+    return [round(x * 0.75, 1), round(y * 0.75, 1)]
 
 
 def rect(x0, y0, x1, y1):
     return [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
 
 
-# The building's outline (OpenStreetMap way 244881161, squared): south block x -31.2..3.1, y 4.5..20.3; portico
-# x -19.5..-6.9 to y 23.8; link x -22..-6.3, y 0..4.5; north addition x -23.8..0, y -18.7..0.
-HALL = [(-22, 0), (-6.3, 0), (-6.3, 4.5), (3.1, 4.5), (3.1, 7.5), (-31.2, 7.5), (-31.2, 4.5), (-22, 4.5)]
-NORTH = rect(-23.8, -18.7, 0, 0)
+ELEVATOR = rect(545, 595, 640, 662)
+STAIRS = rect(535, 665, 660, 812)
 
 # ---- Lower Level ---------------------------------------------------------------------------------------------------
 # rooms: (id, kind, name, polygon, short label for galleries)
 FL = [
-    ('Lower Hall', 'corridor', 'Lower Level hall: stairs and elevator', HALL, None),
-    ('Lehman Auditorium', 'space', 'Lehman Auditorium (talks, films, student shows)', rect(-31.2, 7.5, -14, 20.3), None),
-    ('Playthings of the Past', 'gallery', 'Playthings of the Past: toys, dolls and the Hawthorne dollhouse, with a '
-     'hands-on play area for ages 3–10', rect(-14, 7.5, 3.1, 20.3), 'Playthings'),
-    ('Art Studio', 'space', 'Art Studio (classes and drop-in art making)', rect(-23.8, -9, -10, 0), None),
+    ('Lower Hall', 'corridor', 'Lower Level hall', rect(465, 460, 545, 665), None),
+    ('Restrooms L', 'space', 'Restrooms', rect(548, 462, 688, 545), None),
+    ('Elevator L', 'corridor', 'Elevator', ELEVATOR, None),
+    ('Stairs L', 'corridor', 'Stairs', rect(530, 665, 660, 915), None),
+    ('Playthings of the Past', 'gallery', 'Playthings of the Past: the Hawthorne dollhouse, in the Lower Level hall',
+     [(465, 665), (530, 665), (530, 915), (660, 915), (660, 1045), (410, 1045), (410, 915), (465, 915)], 'Playthings'),
+    ('Lehman Auditorium', 'space', 'Lehman Auditorium (talks, films, student shows)', rect(678, 675, 945, 1045), None),
 ]
-FL_CLOSED = [rect(-23.8, -18.7, 0, -9), rect(-10, -9, 0, 0)]
-FL_DOORS = [('Lower Hall', 'Lehman Auditorium', (-22, 7.5)), ('Lower Hall', 'Playthings of the Past', (-4, 7.5)),
-            ('Lower Hall', 'Art Studio', (-16, 0))]
-FL_AMEN = [('elevator', -20, 2.2), ('stairs', -9, 6.2)]
-FL_LABELS = [('Lower Level (approximate plan)', -12, 26)]
+FL_CLOSED = [rect(218, 75, 797, 445), rect(70, 462, 452, 1045)]
+FL_DOORS = [('Lower Hall', 'Restrooms L', (546, 500)), ('Lower Hall', 'Elevator L', (545, 628)),
+            ('Lower Hall', 'Playthings of the Past', (497, 665)), ('Playthings of the Past', 'Stairs L', (530, 790)),
+            ('Playthings of the Past', 'Stairs L', (595, 915)), ('Stairs L', 'Lehman Auditorium', (670, 860))]
+FL_AMEN = [('elevator', 592, 628), ('stairs', 595, 740), ('restroom', 620, 500)]
+FL_LABELS = []
 FL_NOTES = []
 
-# ---- Main Floor ----------------------------------------------------------------------------------------------------
+# ---- First Level ---------------------------------------------------------------------------------------------------
 F1 = [
-    ('Lobby', 'corridor', 'Lobby: front desk (tickets, sketching materials, multilingual family guides, gallery '
-     'stools)', [(-15.5, 4.5), (-7, 4.5), (-7, 20.3), (-19.5, 20.3), (-19.5, 8), (-15.5, 8)], None),
-    ('Coat Room', 'space', 'Coat room (backpacks and large bags go here; stroller parking)', rect(-19.5, 4.5, -15.5, 8),
-     None),
-    ('Gallery Hall', 'corridor', 'Hall to the American galleries: elevator and side entrance', rect(-22, 0, -6.3, 4.5),
-     None),
-    ('Restrooms', 'space', 'Restrooms: wheelchair-accessible restroom and family restroom with changing table '
-     '(diapers and wipes)', rect(-25, 4.5, -19.5, 9.5), None),
-    ('Hendel Library', 'space', 'Hendel Library (open storage cases with more of the collection; events)',
-     rect(-31.2, 9.5, -19.5, 20.3), None),
-    ('Glassenberg Gallery', 'gallery', 'Glassenberg Gallery (contemporary shows, Near::New series)',
-     rect(-7, 4.5, 3.1, 20.3), 'Glassenberg'),
-    ('18th Century', 'gallery', 'American Perspectives: the 18th century (Palmer Galleries)',
-     rect(-23.8, -9.5, -12, 0), '18th c.'),
-    ('19th Century', 'gallery', 'American Perspectives: the 19th century (Palmer Galleries)',
-     rect(-23.8, -18.7, -12, -9.5), '19th c.'),
-    ('20th Century', 'gallery', 'American Perspectives: the 20th century (Palmer Galleries)',
-     rect(-12, -18.7, 0, -9.5), '20th c.'),
-    ('Post-War Art', 'gallery', 'American Perspectives: post-war art (Palmer Galleries)', rect(-12, -9.5, 0, 0),
+    ('19th Century', 'gallery', 'Palmer Galleries: American Perspectives, the 19th century', rect(218, 75, 400, 235),
+     '19th c.'),
+    ('18th Century', 'gallery', 'Palmer Galleries: American Perspectives, the 18th century', rect(218, 235, 400, 395),
+     '18th c.'),
+    ('Palmer Center', 'gallery', 'Palmer Galleries (centre)', rect(415, 75, 600, 395), 'Palmer Galleries'),
+    ('20th Century', 'gallery', 'Palmer Galleries: American Perspectives, the 20th century', rect(615, 75, 795, 225),
+     '20th c.'),
+    ('Post-War Art', 'gallery', 'Palmer Galleries: American Perspectives, post-war art', rect(615, 225, 795, 395),
      'Post-War'),
+    ('Gallery Hall', 'corridor', 'Hall to the Palmer Galleries', rect(470, 395, 545, 670), None),
+    ('Restrooms', 'space', 'Restroom (wheelchair-accessible)', rect(548, 465, 695, 545), None),
+    ('Elevator 1', 'corridor', 'Elevator', ELEVATOR, None),
+    ('Coat Room', 'space', 'Coat room (backpacks and large bags; stroller parking)', rect(415, 670, 465, 805), None),
+    ('Stairs 1', 'corridor', 'Stairs', STAIRS, None),
+    ('Family Restrooms', 'space', 'Restrooms (family restroom with changing table)', rect(668, 670, 740, 735), None),
+    ('Lobby', 'corridor', 'Lobby: front desk',
+     [(465, 670), (470, 670), (470, 812), (745, 812), (745, 905), (540, 905), (540, 1060), (470, 1060), (470, 905),
+      (270, 905), (270, 812), (465, 812)], None),
+    ('Hendel Library', 'space', 'Hendel Library', rect(65, 665, 270, 1050), None),
+    ('Glassenberg Gallery', 'gallery', 'Glassenberg Gallery (contemporary shows, Near::New series)',
+     rect(750, 670, 945, 912), 'Glassenberg'),
 ]
-F1_CLOSED = [rect(-31.2, 4.5, -25, 9.5)]
-F1_DOORS = [('Lobby', 'Gallery Hall', (-11, 4.5)), ('Lobby', 'Coat Room', (-17.5, 8)), ('Lobby', 'Hendel Library', (-19.5, 15)),
-            ('Lobby', 'Glassenberg Gallery', (-7, 13)), ('Gallery Hall', 'Restrooms', (-20.7, 4.5)),
-            ('Gallery Hall', '18th Century', (-17, 0)), ('Gallery Hall', 'Post-War Art', (-8.5, 0)),
-            ('18th Century', '19th Century', (-18, -9.5)), ('19th Century', '20th Century', (-12, -14)),
-            ('20th Century', 'Post-War Art', (-6, -9.5))]
-F1_AMEN = [('entrance', -13.2, 19.3), ('entrance', -6.8, 2.2), ('info', -10, 15.5), ('coat', -17.5, 6.2),
-           ('restroom', -23.6, 6.5), ('restroom-all', -21, 8.2), ('elevator', -20, 2.2), ('stairs', -9, 6.2)]
-F1_LABELS = [('Main entrance under the portico ↓', -13.2, 25.5),
-             ('Side entrance (east): ramp by the accessible parking, ring the bell · free parking behind the museum',
-              -12, 28)]
-F1_NOTES = [('Kitchen (staff)', -28.1, 7)]
+F1_CLOSED = []
+F1_DOORS = [('Gallery Hall', 'Palmer Center', (507, 395)), ('Palmer Center', '18th Century', (408, 365)),
+            ('Palmer Center', '19th Century', (408, 120)), ('Palmer Center', '20th Century', (608, 120)),
+            ('Palmer Center', 'Post-War Art', (608, 365)), ('18th Century', '19th Century', (250, 235)),
+            ('20th Century', 'Post-War Art', (760, 225)), ('Gallery Hall', 'Restrooms', (545, 500)),
+            ('Gallery Hall', 'Elevator 1', (545, 628)), ('Gallery Hall', 'Lobby', (507, 670)),
+            ('Lobby', 'Coat Room', (467, 760)), ('Lobby', 'Stairs 1', (597, 812)),
+            ('Lobby', 'Family Restrooms', (705, 812)), ('Lobby', 'Hendel Library', (270, 860)),
+            ('Lobby', 'Glassenberg Gallery', (747, 860))]
+F1_AMEN = [('entrance', 505, 1055), ('info', 505, 950), ('coat', 440, 740), ('restroom', 620, 500),
+           ('restroom-all', 705, 705), ('elevator', 592, 628), ('stairs', 597, 740)]
+F1_LABELS = [('Main entrance under the portico ↓', 505, 1090)]
+F1_NOTES = []
 
-# ---- Upper Floor ---------------------------------------------------------------------------------------------------
+# ---- Second Level ----------------------------------------------------------------------------------------------------
 F2 = [
-    ('Upper Hall', 'corridor', 'Upper floor corridor and the hallway by the elevator', HALL, None),
-    ('Upper West Gallery', 'gallery', 'Upper West Gallery (special exhibitions)', rect(-31.2, 7.5, -16, 20.3), 'West'),
-    ('Upper Center Gallery', 'gallery', 'Upper Center Gallery (special exhibitions)', rect(-16, 7.5, -7, 20.3), 'Center'),
-    ('Chappell Gallery', 'gallery', 'Chappell Gallery: Louis Comfort Tiffany in New London', rect(-7, 7.5, 3.1, 20.3),
-     'Tiffany'),
+    ('Art Studio', 'space', 'Art Studio (classes and drop-in art making)', rect(218, 75, 530, 452), None),
+    ('Stamm North Gallery', 'gallery', 'Stamm North Gallery', rect(320, 460, 460, 660), 'Stamm North'),
+    ('McDannel Gallery', 'gallery', 'McDannel Gallery', rect(545, 460, 690, 595), 'McDannel'),
+    ('Elevator 2', 'corridor', 'Elevator', ELEVATOR, None),
+    ('Stairs 2', 'corridor', 'Stairs', STAIRS, None),
+    ('Upper Hall', 'corridor', 'Upper corridor',
+     [(460, 455), (545, 455), (545, 660), (535, 660), (535, 815), (745, 815), (745, 880), (270, 880), (270, 815),
+      (460, 815)], None),
+    ('Stamm South Gallery', 'gallery', 'Stamm South Gallery', rect(285, 665, 460, 812), 'Stamm South'),
+    ('McKee Gallery', 'gallery', 'McKee Gallery', rect(65, 670, 265, 1045), 'McKee'),
+    ('Hazlewood Gallery', 'gallery', 'Hazlewood Gallery', rect(285, 882, 400, 1045), 'Hazlewood'),
+    ('Powers Gallery', 'gallery', 'Powers Gallery', rect(405, 882, 615, 1045), 'Powers'),
+    ('Miles Gallery', 'gallery', 'Miles Gallery', rect(620, 882, 735, 1045), 'Miles'),
+    ('Chappell Gallery', 'gallery', 'Chappell Gallery: Louis Comfort Tiffany in New London', rect(750, 670, 945, 1045),
+     'Chappell (Tiffany)'),
 ]
 F2_CLOSED = []
-F2_DOORS = [('Upper Hall', 'Upper West Gallery', (-24, 7.5)), ('Upper Hall', 'Upper Center Gallery', (-11.5, 7.5)),
-            ('Upper Hall', 'Chappell Gallery', (-2, 7.5)), ('Upper West Gallery', 'Upper Center Gallery', (-16, 14))]
-F2_AMEN = [('elevator', -20, 2.2), ('stairs', -9, 6.2)]
-F2_LABELS = [('Top-lit galleries, no windows (approximate plan)', -12, 26)]
+F2_DOORS = [('Upper Hall', 'Art Studio', (500, 452)), ('Upper Hall', 'Stamm North Gallery', (460, 600)),
+            ('Upper Hall', 'McDannel Gallery', (545, 480)), ('Upper Hall', 'Elevator 2', (545, 628)),
+            ('Stamm North Gallery', 'Stamm South Gallery', (350, 662)), ('Upper Hall', 'Stamm South Gallery', (460, 790)),
+            ('Upper Hall', 'Stairs 2', (597, 815)), ('Upper Hall', 'McKee Gallery', (267, 850)),
+            ('Upper Hall', 'Hazlewood Gallery', (440, 880)), ('Upper Hall', 'Powers Gallery', (505, 880)),
+            ('Upper Hall', 'Miles Gallery', (705, 880)), ('Upper Hall', 'Chappell Gallery', (747, 850))]
+F2_AMEN = [('elevator', 592, 628), ('stairs', 597, 740)]
+F2_LABELS = [('Top-lit galleries, no windows', 600, 1090)]
 F2_NOTES = []
-
 
 def inside(pt, poly):
     x, y = pt
@@ -157,12 +157,13 @@ def floor(fid, label, order, area, rooms, closed, doors, amen, labels, notes):
 
 def build_floors():
     floors = [
-        floor('L', 'Lower Level', 0, 'Playthings of the Past (dollhouse, play area) · Lehman Auditorium · Art Studio',
+        floor('L', 'Lower Level', 0, 'Playthings of the Past (the dollhouse) · Lehman Auditorium · Restrooms',
               FL, FL_CLOSED, FL_DOORS, FL_AMEN, FL_LABELS, FL_NOTES),
-        floor('1', 'Main Floor', 1, 'Entrance · Lobby · Coat room · Restrooms · Hendel Library · American Perspectives '
-              '· Glassenberg Gallery', F1, F1_CLOSED, F1_DOORS, F1_AMEN, F1_LABELS, F1_NOTES),
-        floor('2', 'Upper Floor', 2, 'Special exhibitions · Louis Comfort Tiffany in New London', F2, F2_CLOSED,
-              F2_DOORS, F2_AMEN, F2_LABELS, F2_NOTES),
+        floor('1', 'First Level', 1, 'Entrance · Lobby · Coat room · Restrooms · Hendel Library · Palmer Galleries '
+              '(American Perspectives) · Glassenberg Gallery', F1, F1_CLOSED, F1_DOORS, F1_AMEN, F1_LABELS, F1_NOTES),
+        floor('2', 'Second Level', 2, 'Special exhibitions (McKee, Stamm, McDannel, Hazlewood, Powers and Miles '
+              'Galleries) · Louis Comfort Tiffany (Chappell Gallery) · Art Studio', F2, F2_CLOSED, F2_DOORS, F2_AMEN,
+              F2_LABELS, F2_NOTES),
     ]
     for f in floors:
         ids = [r['id'] for r in f['rooms']]
@@ -171,13 +172,10 @@ def build_floors():
             assert d['a'] in ids and d['b'] in ids, (f['id'], d)
         for a in f['amenities']:
             assert any(inside(a['at'], r['poly']) for r in f['rooms']), (f['id'], a)
-    return {'about': 'Built by tools/build_lymanallyn.py. The Lyman Allyn publishes no floor plan: this one is '
-                     'approximate, drawn inside the building’s real outline (OpenStreetMap) from the museum’s own '
-                     'descriptions of its rooms (lobby, Hendel Library, restrooms and coat room on the first floor, '
-                     'top-lit galleries upstairs, auditorium and dollhouse on the lower level).',
-            'source': 'Approximate: OpenStreetMap building outline and the Lyman Allyn’s visit, rental and exhibition '
-                      'pages',
-            'units': 'metres x 16, north up', 'approximate': True, 'defaultFloor': '1', 'galleryWord': 'Gallery',
+    return {'about': 'Built by tools/build_lymanallyn.py. Rooms traced from the Lyman Allyn’s own floor plans in its '
+                     'Bloomberg Connects guide (Nov 2026).',
+            'source': 'Lyman Allyn floor plans in its Bloomberg Connects guide (Nov 2026)',
+            'units': 'plan pixels x 0.75, north up', 'defaultFloor': '1', 'galleryWord': 'Gallery',
             'floors': floors}
 
 
@@ -301,9 +299,9 @@ AP_NOTE = ('American Perspectives is on the first floor (the museum’s Palmer G
            'century is our guess from the order of the museum’s gallery page.')
 # Shows on view now (Nov 2026): slug -> (room, title, dates, which upstairs/downstairs room is a guess)
 SHOWS = [
-    ('the-land-you-stand', 'Upper West Gallery', 'The Land You Stand On: Contemporary Art of Native and Indigenous '
+    ('the-land-you-stand', 'McKee Gallery', 'The Land You Stand On: Contemporary Art of Native and Indigenous '
      'Identity', 'October 10, 2026 – January 24, 2027'),
-    ('isaac-sheffield-portraits-from-new-londons-whaling-era', 'Upper Center Gallery',
+    ('isaac-sheffield-portraits-from-new-londons-whaling-era', 'Stamm South Gallery',
      'Isaac Sheffield: Portraits from New London’s Whaling Era', 'September 12, 2026 – January 3, 2027'),
     ('lydia-viscardi-time-takes-time', 'Glassenberg Gallery', 'Lydia Viscardi – Time Takes Time',
      'October 31, 2026 – January 10, 2027'),
@@ -331,6 +329,27 @@ def main_images(slug_):
 
 def full_size(url):
     return re.sub(r'-\d+x\d+(\.\w+)$', r'\1', url)
+
+
+MOVED = {'Upper West Gallery': 'McKee Gallery', 'Upper Center Gallery': 'Stamm South Gallery'}   # earlier map
+
+
+def floors_only(floors):
+    """Move the saved works onto the redrawn map (no harvest cache needed)."""
+    rooms = {r['id']: (f['id'], r['name']) for f in floors['floors'] for r in f['rooms']}
+    path = OUT / 'artworks.json'
+    works = json.loads(path.read_text())
+    for a in works['artworks']:
+        g = MOVED.get(a['gallery'], a['gallery'])
+        a['gallery'], (a['floor'], a['galleryName']) = g, rooms[g]
+        if g == 'Chappell Gallery': a['placeNote'] = 'In the permanent Louis Comfort Tiffany in New London gallery (the Chappell Gallery, upstairs).'
+        if g == 'Playthings of the Past': a.pop('placeGuessed', None)
+    path.write_text(json.dumps(works, ensure_ascii=False, separators=(',', ':')))
+    gpath = ROOT / 'data' / 'guides' / f'{MUSEUM}.json'
+    guide = json.loads(gpath.read_text())
+    for w in guide['works']:
+        if w.get('gallery'): w['gallery'] = MOVED.get(w['gallery'], w['gallery']); w['floor'] = rooms[w['gallery']][0]
+    gpath.write_text(json.dumps(guide, ensure_ascii=False, separators=(',', ':')))
 
 
 def build_works(floors):
@@ -369,7 +388,7 @@ def build_works(floors):
         a, p = work(cap, href, f'{SITE}/american-perspectives/', 'la')
         if not a: continue
         if p['accession'] in TO_SHEFFIELD:
-            add(a, 'Upper Center Gallery', True, 'Usually in American Perspectives; the museum’s page for the Isaac '
+            add(a, 'Stamm South Gallery', True, 'Usually in American Perspectives; the museum’s page for the Isaac '
                 'Sheffield show (to January 3, 2027) features it, so it is probably in that show now.')
         else:
             add(a, AP_ROOM[head], True, AP_NOTE)
@@ -382,7 +401,7 @@ def build_works(floors):
         if 'Tiffany & Company' in cap: a['artist'] = 'Tiffany & Company'
         if 'Long-term loan' in cap: a['loan'] = True
         add(a, 'Chappell Gallery', True, 'In the permanent Louis Comfort Tiffany in New London gallery (the Chappell '
-            'Gallery); that it is upstairs is our guess.')
+            'Gallery, upstairs).')
     # Playthings of the Past: the dollhouse
     imgs = main_images('playthings-of-the-past')
     doll = next((u for u in imgs if 'Dollhouse' in u), None)
@@ -428,6 +447,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     floors = build_floors()
     (OUT / 'floors.json').write_text(json.dumps(floors, ensure_ascii=False, separators=(',', ':')))
+    if sys.argv[1:2] == ['--floors-only']: return floors_only(floors)
     works, extra = build_works(floors)
     (OUT / 'artworks.json').write_text(json.dumps(works, ensure_ascii=False, separators=(',', ':')))
     guide = build_guide(works, extra)
