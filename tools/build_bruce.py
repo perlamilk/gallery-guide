@@ -22,7 +22,10 @@ art and science wings), from the reopening press (the mineral gallery lies betwe
 changing science gallery; a 4,500 sq ft gallery for changing art shows; five galleries for the permanent collection)
 and from the furniture drawn on the plans (the shop's display tables, the restroom stalls, the café counter and its
 terrace tables, the lecture hall's stage). Names of the rooms in the old building and which show is in which gallery
-are therefore APPROXIMATE, and the floors say so. The Mezzanine is staff space and collection storage: not drawn.
+were approximate until Nov 11 2026, when the museum's own floor plans in its Bloomberg Connects guide (read in the app
+on Grazi's Mac) gave every room its name: the north rooms of the old house are the Cohen Education Wing (classrooms),
+the centre is the Changing Science Gallery and the west the Permanent Science Galleries. The Mezzanine is staff space
+and collection storage: not drawn.
 
 Works: brucemuseum.org asks AI agents not to read it (robots.txt disallows Claude-User and Claude-Web), and its
 Bloomberg Connects guide refuses outside readers, so nothing here comes from the museum's own pages. Current shows come
@@ -60,56 +63,55 @@ def rect(x0, y0, x1, y1):
 # ---- Ground Floor (park level: free to enter during museum hours) -------------------------------------------------
 GROUND = [
     # id, kind, name shown, polygon, short label
-    ('Lobby', 'space', 'Lobby',
+    ('Lobby', 'space', 'Cunniffe Grand Hall · Admissions',
      [(722, 585), (876, 585), (876, 740), (722, 740)], None),
     ('Museum Store', 'space', 'Museum Store', rect(722, 412, 806, 582), None),
     ('Restrooms G', 'space', 'Restrooms', rect(806, 412, 876, 582), None),
-    ('Café', 'space', 'Café', [(752, 740), (876, 740), (876, 878), (752, 878)],
+    ('Café', 'space', 'Dining Room (café)', [(752, 740), (876, 740), (876, 878), (752, 878)],
      None),
     ('Lecture Hall Corridor', 'corridor', 'Corridor', rect(720, 740, 752, 898), None),
-    ('Lecture Hall', 'space', 'Lecture Hall', rect(572, 742, 718, 898), None),
-    ('Education Wing', 'space', 'Classrooms (approximate)', rect(578, 900, 782, 968),
-     None),
+    ('Lecture Hall', 'space', 'Goergen Auditorium', rect(572, 742, 718, 898), None),
 ]
 GROUND_CLOSED = [rect(540, 775, 570, 895), rect(808, 744, 872, 772)]          # stage store; staff stair
 GROUND_DOORS = [('Lobby', 'Museum Store', (764, 584)), ('Lobby', 'Restrooms G', (840, 584)), ('Lobby', 'Café', (814, 740)),
                 ('Lobby', 'Lecture Hall Corridor', (736, 740)), ('Lecture Hall Corridor', 'Lecture Hall', (719, 830)),
-                ('Lecture Hall Corridor', 'Café', (752, 790)), ('Lecture Hall Corridor', 'Education Wing', (736, 899)),
-                ('Lecture Hall', 'Education Wing', (666, 899))]
+                ('Lecture Hall Corridor', 'Café', (752, 790))]
 GROUND_AMEN = [('entrance', 874, 664), ('info', 769, 626), ('shop', 764, 500), ('restroom', 841, 500),
-               ('elevator', 702, 567), ('stairs', 815, 618), ('dining', 845, 850)]
+               ('elevator', 702, 567), ('stairs', 815, 618), ('dining', 845, 850),
+               ('coat', 735, 600)]
 GROUND_LABELS = [('MAIN ENTRANCE ←', 925, 664), ('Café terrace', 830, 925), ('Bruce Park', 960, 820),
                  ('Light court (open air) ↖', 650, 715)]
 GROUND_NOTES = [('Stairs up to the galleries', 739, 655), ('Front desk', 775, 640)]
 
 # ---- Gallery Level (the old house and the new wing, all on one level) ---------------------------------------------
 GALLERY = [
-    ('Changing Exhibitions', 'gallery', 'Changing exhibition gallery (about 4,500 sq ft, William L. Richter Art Wing)',
+    ('Changing Exhibitions', 'gallery', 'Changing Art Gallery (about 4,500 sq ft, William L. Richter Art Wing)',
      rect(726, 160, 868, 503), 'Changing Exhibitions'),
-    ('Gallery Hall', 'corridor', 'Hall of the art wing, from the stairs and elevator',
+    ('Gallery Hall', 'corridor', 'Susan & Bill Mahoney Gallery Lobby and the Vicki Netter Fitzgerald Gallery (the long hall)',
      [(682, 160), (718, 160), (718, 512), (868, 512), (868, 580), (636, 580), (636, 515), (682, 515)], None),
     ('Main Stair', 'corridor', 'Top of the main stairs from the lobby', rect(822, 584, 868, 740), None),
-    ('Art Gallery East', 'gallery', 'Art gallery (Richter Art Wing)', rect(722, 584, 818, 740), 'East'),
-    ('Art Gallery South-East', 'gallery', 'Art gallery (Richter Art Wing)', rect(724, 744, 868, 900), 'South-East'),
-    ('Art Gallery South', 'gallery', 'Art gallery with windows to the harbor (Richter Art Wing)', rect(626, 744, 716, 900),
-     'South'),
-    ('Art Gallery South-West', 'gallery', 'Art gallery (Richter Art Wing)', rect(540, 744, 616, 900), 'South-West'),
+    ('Art Gallery East', 'gallery', 'Grossman Family Gallery', rect(722, 584, 818, 740), 'Grossman'),
+    ('Art Gallery South-East', 'gallery', 'Edward & Barbara Netter Foundation Gallery', rect(724, 744, 868, 900), 'Netter'),
+    ('Art Gallery South', 'gallery', 'Art gallery between the Blavatnik and Netter galleries (Richter Art Wing)',
+     rect(626, 744, 716, 900), 'South'),
+    ('Art Gallery South-West', 'gallery', 'The Blavatnik Family Gallery', rect(540, 744, 616, 900), 'Blavatnik'),
     ('Sculpture Gallery', 'gallery', 'Sculpture Gallery: the link between the art and science wings, with views of '
      'Greenwich Harbor and Long Island Sound', rect(404, 776, 520, 900), 'Sculpture'),
     ('South Passage', 'corridor', 'Passage from the science galleries to the Sculpture Gallery', rect(408, 735, 520, 776),
      None),
     ('Mineral Gallery', 'gallery', 'Robert R. Wiener Mineral Gallery (about 200 minerals)', rect(410, 664, 546, 735),
      'Minerals'),
-    ('Science Hall', 'gallery', 'Science galleries: Natural Cycles Shape Our Land (the permanent science exhibition)',
+    ('Changing Science', 'gallery', 'Changing Science Gallery',
      [(452, 446), (490, 446), (490, 512), (636, 512), (636, 585), (590, 585), (590, 662), (410, 662), (410, 575),
-      (448, 575), (448, 512)], 'Natural Cycles'),
-    ('Changing Science', 'gallery', 'Changing science gallery', rect(232, 622, 392, 800), 'Changing Science'),
-    ('West Galleries', 'gallery', 'Science galleries in the old house (west)',
-     [(262, 505), (448, 505), (448, 575), (410, 575), (410, 622), (232, 622), (232, 560), (262, 560)], 'West'),
-    ('North Galleries', 'gallery', 'Galleries in the old house (north)',
+      (448, 575), (448, 512)], 'Changing Science'),
+    ('Science Hall', 'gallery', 'Permanent Science Galleries: Natural Cycles Shape Our Land', rect(232, 622, 392, 800),
+     'Permanent Science'),
+    ('West Galleries', 'gallery', 'Permanent Science Galleries (north part)',
+     [(262, 505), (448, 505), (448, 575), (410, 575), (410, 622), (232, 622), (232, 560), (262, 560)], 'Science'),
+    ('North Galleries', 'space', 'Cohen Education Wing: Woodburn, Selander and Trustees 2021 classrooms',
      [(270, 352), (367, 352), (367, 418), (360, 418), (360, 446), (448, 446), (448, 505), (262, 505), (262, 446),
-      (270, 446)], 'North'),
-    ('Rotunda', 'corridor', 'Rotunda and north hall of the old house (the school-group entrance)',
+      (270, 446)], None),
+    ('Rotunda', 'corridor', 'Education Entrance hall and Quiet Room (Cohen Education Wing)',
      [(436, 352), (500, 352), (500, 418), (680, 418), (680, 446), (360, 446), (360, 418), (436, 418)], None),
     ('Restrooms U1', 'space', 'Restrooms', rect(560, 354, 680, 416), None),
     ('Restrooms U2', 'space', 'Restrooms', rect(548, 448, 660, 510), None),
@@ -123,15 +125,15 @@ GALLERY_DOORS = [('Gallery Hall', 'Changing Exhibitions', (722, 243)), ('Gallery
                  ('Art Gallery South', 'Art Gallery South-West', (621, 821)),
                  ('Art Gallery South-West', 'Sculpture Gallery', (530, 821)),
                  ('Sculpture Gallery', 'South Passage', (466, 776)), ('South Passage', 'Mineral Gallery', (478, 735)),
-                 ('Mineral Gallery', 'Science Hall', (478, 663)), ('South Passage', 'Changing Science', (400, 755)),
-                 ('Changing Science', 'West Galleries', (300, 622)), ('West Galleries', 'Science Hall', (448, 540)),
+                 ('Mineral Gallery', 'Changing Science', (478, 663)), ('South Passage', 'Science Hall', (400, 755)),
+                 ('Science Hall', 'West Galleries', (300, 622)), ('West Galleries', 'Changing Science', (448, 540)),
                  ('West Galleries', 'North Galleries', (350, 505)), ('North Galleries', 'Rotunda', (364, 432)),
-                 ('Science Hall', 'Rotunda', (471, 446)), ('Science Hall', 'Gallery Hall', (636, 548)),
+                 ('Changing Science', 'Rotunda', (471, 446)), ('Changing Science', 'Gallery Hall', (636, 548)),
                  ('Rotunda', 'Gallery Hall', (681, 432)), ('Rotunda', 'Restrooms U1', (620, 417)),
-                 ('Science Hall', 'Restrooms U2', (592, 511))]
+                 ('Changing Science', 'Restrooms U2', (592, 511))]
 GALLERY_AMEN = [('stairs', 845, 630), ('elevator', 701, 564), ('elevator', 418, 600), ('restroom', 620, 385),
                 ('restroom', 592, 480), ('entrance', 468, 356)]
-GALLERY_LABELS = [('SCHOOL GROUPS ENTRANCE ↑', 468, 330), ('Light court (open air)', 640, 680),
+GALLERY_LABELS = [('EDUCATION ENTRANCE ↑', 468, 330), ('Light court (open air)', 640, 680),
                   ('Windows to the harbor ↓', 560, 930)]
 GALLERY_NOTES = [('Main stairs down to the lobby', 845, 700)]
 
@@ -184,12 +186,11 @@ def build_floors():
               GALLERY_AMEN, GALLERY_LABELS, GALLERY_NOTES),
     ]
     return {'about': 'Built by tools/build_bruce.py. Walls traced from the architects’ (EskewDumezRipple) floor plans of '
-                     'the 2023 building. The plans name no rooms: the lobby, store, restrooms, café, lecture hall and '
-                     'stairs follow the furniture drawn on them; which gallery is which, and which show is in which '
-                     'gallery, is approximate. The Mezzanine (staff and collection storage) is not drawn.',
-            'source': 'EskewDumezRipple, The Bruce Museum floor plans (Ground Level and Gallery Level), 2023',
+                     'the 2023 building; room names from the museum’s own floor plans in its Bloomberg Connects guide '
+                     '(Nov 2026). Which show is in which gallery is still a guess. The Mezzanine (staff) is not drawn.',
+            'source': 'EskewDumezRipple floor plans (2023) and the Bruce’s floor plans in Bloomberg Connects (Nov 2026)',
             'units': 'pixels of the architects’ plan sheet at 3600 px wide, x 2 (0.046 m a unit), north up',
-            'approximate': True, 'defaultFloor': 'G', 'galleryWord': 'Gallery', 'floors': floors}
+            'defaultFloor': 'G', 'galleryWord': 'Gallery', 'floors': floors}
 
 
 # ---- pictures ------------------------------------------------------------------------------------------------------
@@ -292,10 +293,10 @@ WHERE = {
     'Art Gallery East': 'Which gallery the show is in is a guess.',
     'Art Gallery South-East': 'Which gallery the show is in is a guess.',
     'Art Gallery South': 'Which gallery the show is in is a guess.',
-    'Changing Science': 'Which gallery the show is in is a guess: the changing science gallery.',
+    'Changing Science': 'The Changing Science Gallery, as the museum’s own floor plan names it.',
     'Mineral Gallery': 'Between the Sculpture Gallery and the changing science gallery, as the museum describes it; '
                        'its exact rooms are approximate.',
-    'Science Hall': 'Approximate: somewhere in the science galleries of the old house.',
+    'Science Hall': 'The Permanent Science Galleries, as the museum’s own floor plan names them.',
 }
 
 # collection works from Wikidata and Commons: not known to be on view (the Bruce has no online collection)

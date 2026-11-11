@@ -1,25 +1,18 @@
 #!/usr/bin/env python3
 """Build the Concord Museum (Concord, MA) map guide (run: python3 tools/build_concord.py).
 
-    data/concord/floors.json       the First and Second Floors, seen from above (flat 2D, APPROXIMATE)
+    data/concord/floors.json       the First and Second Floors, seen from above (flat 2D)
     data/concord/artworks.json     what is on view, placed in its gallery
     data/concord/images/           pictures, made smaller for phones
     data/guides/Q5158830.json      the same list, plus collection objects that may be in storage, for the museum page
 
 Where the information comes from
 --------------------------------
-The Concord Museum publishes no floor plan. Its "Campus Map" PDF is another school's map, the 2017 "Parking Info Map"
-only shows the building on its lot, and the museum's Bloomberg Connects guide refuses outside readers. So the plan is
-APPROXIMATE: the building's real outline is traced from Esri World Imagery (zoom 19, 0.22 m a pixel; the building is
-not in OpenStreetMap): the 1930 museum building to the west, the brick entrance wing and the 1991 galleries in the
-middle, and the 2018 Rasmussen Education Center with its courtyard to the east (designLAB architects). Coordinates
-here are pixels of that picture, north up.
-
-What is known and used: the entrance is the "Gateway to Concord" (admissions desk and Museum Shop together, designLAB
-and the 2019 opening press); restrooms, the elevator, coat rack, lockers and water fountain are on the first floor
-(museum's Families page); ramps and an elevator reach every gallery (Groups page); the April 19, 1775 galleries are
-upstairs (a visitor's review). The 16 galleries and their subjects come from the museum's What's On page and its
-Fall 2021 newsletter. Which room holds which gallery is a guess, and the map says so.
+The rooms are traced from the museum's own floor plans in its Bloomberg Connects guide (read in the app on Nov 11
+2026; run with --floors-only to redraw the map and move the saved works without downloading again). Coordinates are
+pixels of the first-floor plan picture; up() fits the second-floor picture onto it. One room name on the first floor
+was hidden in our copy ("To Set the World …"); it is shown as the Transcendentalist authors gallery, its subject on
+the museum's What's On page. The older galleries' ids are moved to the plan's rooms by MOVED.
 
 Works: concord.emuseum.com (the museum's online collection) disallows Claude's crawlers in robots.txt, so it is not
 read. Objects come from Wikimedia Commons: Daderot's photos of December 2014 (public domain / CC0), Clare Richardson's
@@ -51,7 +44,7 @@ WHATS_ON = SITE + 'whats-on/'
 UP = SITE + 'wp-content/uploads/'
 COMMONS = 'Wikimedia Commons'
 TODAY = date.today()
-X0, Y0, U = 540, 780, 3.5      # map units = (aerial pixel - origin) x 3.5 (0.063 m a unit)
+X0, Y0, U = 0, 60, 1.6      # map units = (pixel of the museum's first-floor plan - origin) x 1.6
 
 
 def P(x, y):
@@ -62,82 +55,98 @@ def rect(x0, y0, x1, y1):
     return [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
 
 
-# ---- First Floor ---------------------------------------------------------------------------------------------------
+def up(pts):
+    """Second-floor plan pixels -> first-floor plan pixels (the two pictures differ a little in scale)."""
+    return [((x + 46) / 1.062, (y + 36.8) / 1.12) for x, y in pts]
+
+
+# ---- First Floor (traced from the museum's own plan in its Bloomberg Connects guide) -----------------------------
 FIRST = [
     # id, kind, name shown, polygon, short label
-    ('Gateway', 'space', 'Gateway to Concord: entrance, admissions desk and Museum Shop', rect(612, 925, 735, 962),
-     None),
+    ('Emerson’s Study', 'gallery', 'Emerson’s Study', rect(135, 175, 250, 268), 'Emerson’s Study'),
+    ('Thoreau Gallery', 'gallery', 'Thoreau Gallery: his flute, spyglass, bed and tools', rect(65, 268, 185, 370),
+     'Thoreau Gallery'),
+    ('Thoreau’s Desk', 'gallery', 'Thoreau’s Desk', rect(185, 268, 258, 355), 'Thoreau’s Desk'),
+    ('Poetry Passageway', 'corridor', 'Poetry Passageway', rect(35, 370, 195, 410), None),
+    ('Stairs West 1', 'corridor', 'Stairs to the 2nd floor', rect(195, 355, 258, 425), None),
+    ('Getting a Living', 'gallery', 'Getting a Living: farms, work and the town’s people', rect(65, 410, 185, 490),
+     'Getting a Living'),
+    ('Thomas Dugan Gallery', 'gallery', 'Thomas Dugan Gallery: the farmer Thomas Dugan and the silversmith’s shop',
+     rect(185, 425, 265, 490), 'Thomas Dugan'),
+    ('1775 Period Room', 'gallery', '1775 Period Room: a family on the eve of April 19', rect(135, 490, 260, 630),
+     '1775 Period Room'),
+    ('1720 Period Room', 'gallery', '1720 Period Room: a magistrate’s parlor', rect(265, 465, 380, 560),
+     '1720 Period Room'),
+    ('Transcendentalist Authors', 'gallery', 'Celebrated Transcendentalist Authors',
+     [(258, 225), (360, 222), (365, 310), (258, 315)], 'Authors'),
+    ('Incorporating Concord', 'gallery', '1600’s Gallery: Incorporating Concord',
+     [(360, 222), (470, 200), (480, 228), (460, 300), (365, 310)], '1600’s Gallery'),
+    ('Elevator hall', 'corridor', 'Elevator and ramp', [(428, 135), (600, 105), (612, 205), (480, 228), (470, 200),
+                                                        (440, 205)], None),
     ('At the Center of Revolution', 'gallery', 'Concord: At the Center of Revolution (introductory gallery)',
-     rect(680, 878, 735, 925), 'Intro'),
-    ('Wallace Kane Gallery', 'gallery', 'Wallace Kane Gallery: special exhibitions', rect(680, 838, 735, 878),
-     'Special'),
-    ('Musketaquid Gallery', 'gallery', 'Musketaquid Gallery: Indigenous history and art', rect(565, 835, 612, 878),
-     'Musketaquid Gallery'),
-    ('Incorporating Concord', 'gallery', 'Incorporating Concord: the 1600s town', rect(612, 835, 680, 860),
-     'Incorporating'),
-    ('Emerson’s Study', 'gallery', 'Ralph Waldo Emerson’s Study', rect(612, 860, 645, 890), 'Emerson'),
-    ('Thoreau’s Desk', 'gallery', 'Thoreau’s desk (media presentation)', rect(645, 860, 680, 890), 'Thoreau'),
-    ('Thoreau Gallery', 'gallery', 'Henry David Thoreau: his flute, spyglass, bed and tools',
-     rect(645, 890, 680, 925), 'Thoreau'),
-    ('Transcendentalist Authors', 'gallery', 'Celebrated Transcendentalist Authors: the Alcotts, Hawthorne and their circle',
-     rect(565, 878, 612, 925), 'Transcendentalist Authors'),
-    ('Hall 1', 'corridor', 'Hall with the stairs and elevator', rect(612, 890, 645, 925), None),
-    ('Restrooms', 'space', 'Restrooms (with changing table) and water fountain', rect(735, 840, 757, 878), None),
-    ('Link Gallery', 'corridor', 'Link gallery to the Education Center', rect(735, 878, 757, 935), None),
-    ('Lyceum', 'space', 'Churchill and Janet Franklin Lyceum: talks and family activities', rect(757, 882, 875, 935),
-     None),
-    ('Courtyard', 'space', 'Courtyard (outdoors)', rect(735, 935, 850, 1003), None),
+     [(480, 228), (612, 205), (610, 345), (488, 345), (460, 300)], 'At the Center of Revolution'),
+    ('Musketaquid Gallery', 'gallery', 'People of Musketaquid: Indigenous history and art',
+     [(600, 108), (697, 108), (697, 345), (610, 345), (612, 205)], 'People of Musketaquid'),
+    ('Courtyard', 'space', 'Courtyard', [(258, 315), (365, 310), (460, 300), (488, 345), (488, 455), (380, 455),
+                                         (380, 465), (265, 465), (265, 425), (258, 425)], None),
+    ('Brooke Hall', 'corridor', 'Brooke Hall', [(488, 345), (697, 345), (697, 455), (575, 455), (575, 560),
+                                                 (488, 560)], None),
+    ('Restrooms', 'space', 'Restrooms (accessible, with changing table)', rect(380, 455, 488, 560), None),
+    ('Lobby', 'corridor', 'Main Entrance · coat rack', rect(410, 560, 575, 640), None),
+    ('Gateway', 'space', 'Admission Desk and Museum Shop', rect(575, 455, 697, 630), None),
 ]
-FIRST_CLOSED = [rect(757, 845, 875, 882)]      # Education Center classrooms (school programs)
-FIRST_DOORS = [('Gateway', 'At the Center of Revolution', (707, 925)), ('Gateway', 'Hall 1', (628, 925)),
-               ('Gateway', 'Link Gallery', (735, 930)), ('At the Center of Revolution', 'Wallace Kane Gallery', (707, 878)),
-               ('At the Center of Revolution', 'Thoreau Gallery', (680, 907)),
-               ('At the Center of Revolution', 'Link Gallery', (735, 900)), ('Link Gallery', 'Restrooms', (746, 878)),
-               ('Link Gallery', 'Lyceum', (757, 908)), ('Link Gallery', 'Courtyard', (746, 935)),
-               ('Hall 1', 'Transcendentalist Authors', (612, 907)), ('Hall 1', 'Emerson’s Study', (628, 890)),
-               ('Hall 1', 'Thoreau Gallery', (645, 907)), ('Thoreau Gallery', 'Thoreau’s Desk', (662, 890)),
-               ('Thoreau’s Desk', 'Emerson’s Study', (645, 875)), ('Emerson’s Study', 'Incorporating Concord', (628, 860)),
-               ('Incorporating Concord', 'Musketaquid Gallery', (612, 847)), ('Musketaquid Gallery', 'Transcendentalist Authors', (588, 878))]
-FIRST_AMEN = [('entrance', 662, 960), ('info', 700, 945), ('shop', 650, 940), ('coat', 725, 955),
-              ('restroom', 741, 858), ('restroom', 751, 858), ('water', 746, 872), ('elevator', 620, 915),
-              ('stairs', 637, 900)]
-FIRST_LABELS = [('Cambridge Turnpike', 560, 1030), ('Lexington Road', 660, 795),
-                ('Free parking lot →', 850, 1018), ('Classrooms', 815, 862)]
-FIRST_NOTES = [('Entrance: brick walk from Cambridge Turnpike', 662, 985),
-               ('Approximate plan: the museum publishes none', 600, 815)]
+FIRST_CLOSED = []
+FIRST_DOORS = [('Emerson’s Study', 'Thoreau’s Desk', (220, 268)), ('Thoreau Gallery', 'Thoreau’s Desk', (185, 300)),
+               ('Thoreau Gallery', 'Poetry Passageway', (125, 370)), ('Poetry Passageway', 'Getting a Living', (125, 410)),
+               ('Poetry Passageway', 'Stairs West 1', (195, 390)), ('Thoreau’s Desk', 'Stairs West 1', (225, 355)),
+               ('Stairs West 1', 'Thomas Dugan Gallery', (225, 425)), ('Getting a Living', 'Thomas Dugan Gallery', (185, 455)),
+               ('Getting a Living', '1775 Period Room', (160, 490)), ('Thomas Dugan Gallery', '1720 Period Room', (265, 478)),
+               ('1775 Period Room', '1720 Period Room', (262, 540)), ('Thoreau’s Desk', 'Transcendentalist Authors', (258, 290)),
+               ('Transcendentalist Authors', 'Incorporating Concord', (362, 265)),
+               ('Incorporating Concord', 'Elevator hall', (455, 205)),
+               ('Elevator hall', 'At the Center of Revolution', (530, 215)),
+               ('Elevator hall', 'Musketaquid Gallery', (606, 160)),
+               ('At the Center of Revolution', 'Musketaquid Gallery', (611, 280)),
+               ('At the Center of Revolution', 'Brooke Hall', (550, 345)), ('Musketaquid Gallery', 'Brooke Hall', (650, 345)),
+               ('1720 Period Room', 'Restrooms', (380, 510)), ('Brooke Hall', 'Restrooms', (488, 500)),
+               ('Brooke Hall', 'Lobby', (530, 560)), ('Brooke Hall', 'Gateway', (575, 520)), ('Lobby', 'Gateway', (575, 600))]
+FIRST_AMEN = [('entrance', 505, 635), ('info', 640, 560), ('shop', 640, 600), ('coat', 450, 605),
+              ('restroom', 405, 490), ('restroom-all', 435, 490), ('nursing', 465, 490), ('elevator', 528, 145),
+              ('stairs', 225, 405), ('stairs', 660, 480)]
+FIRST_LABELS = []
+FIRST_NOTES = [('Main Entrance', 505, 665)]
 
-# ---- Second Floor --------------------------------------------------------------------------------------------------
+# ---- Second Floor ----------------------------------------------------------------------------------------------
 SECOND = [
-    ('April 19: The Alarm', 'gallery', 'April 19, 1775: the road to war and the alarm (Paul Revere’s lantern)',
-     rect(565, 835, 612, 878), 'April 19'),
-    ('April 19: North Bridge', 'gallery', 'April 19, 1775: the fight at the North Bridge', rect(612, 835, 680, 872),
-     'North Bridge'),
-    ('April 19: Road to Boston', 'gallery', 'April 19, 1775: the bloody road back to Boston, and remembering the day',
-     rect(565, 878, 612, 925), 'April 19'),
-    ('Hall 2', 'corridor', 'Hall with the stairs and elevator',
-     [(612, 872), (680, 872), (680, 890), (645, 890), (645, 925), (612, 925)], None),
-    ('1775 Period Room', 'gallery', '1775 Period Room: a family on the eve of April 19', rect(645, 890, 680, 925),
-     '1775 Room'),
-    ('Life in Concord', 'gallery', 'Life in Concord: farms, work, abolition and the town’s people',
-     rect(680, 838, 735, 868), 'Life in Concord'),
-    ('Milldam and Farm', 'gallery', 'Life in Concord: the silversmith’s shop on the Milldam and Thomas Dugan’s farm',
-     rect(680, 868, 735, 896), 'Milldam and Farm'),
-    ('1720 Period Room', 'gallery', '1720 Period Room: a magistrate’s parlor', rect(680, 896, 710, 925), '1720 Room'),
-    ('Gross Family Gallery', 'gallery', 'Gross Family Gallery: clocks, furniture, needlework and silver',
-     rect(710, 896, 735, 925), 'Gross'),
+    ('April 19, 1775', 'gallery', 'April 19, 1775 (Paul Revere’s lantern)', up(rect(25, 272, 148, 532)),
+     'April 19, 1775'),
+    ('Concord Minute Man', 'gallery', 'The Concord Minute Man', up(rect(148, 272, 232, 368)), 'Minute Man'),
+    ('Stairs West 2', 'corridor', 'Stairs to the 1st floor', up(rect(148, 368, 232, 440)), None),
+    ('Revolution at Home', 'gallery', 'The Revolution at Home', up(rect(148, 440, 232, 532)), 'Revolution at Home'),
+    ('Midnight Ride Passageway', 'corridor', 'Midnight Ride Passageway',
+     up([(205, 242), (430, 222), (445, 262), (360, 292), (232, 292), (232, 272), (205, 272)]), None),
+    ('Elevator hall 2', 'corridor', 'Elevator', up([(425, 120), (600, 80), (585, 200), (445, 212)]), None),
+    ('The Work of Art', 'gallery', 'The Work of Art: clocks, furniture, needlework and silver',
+     up([(445, 212), (585, 200), (600, 322), (490, 345), (460, 262), (445, 262), (430, 222)]), 'The Work of Art'),
+    ('History Learning Center', 'space', 'The History Learning Center (open by appointment only)',
+     up([(600, 80), (630, 205), (652, 315), (600, 322), (585, 200)]), None),
+    ('Passage 2', 'corridor', 'Hall to the Special Exhibit Gallery', up(rect(490, 345, 522, 530)), None),
+    ('Stairs East 2', 'corridor', 'Stairs to the 1st floor', up(rect(522, 470, 700, 530)), None),
+    ('Special Exhibit Gallery', 'gallery', 'Special Exhibit Gallery (Wallace Kane Gallery)',
+     up(rect(402, 530, 702, 662)), 'Special Exhibit Gallery'),
 ]
 SECOND_CLOSED = []
-SECOND_DOORS = [('Hall 2', 'April 19: The Alarm', (612, 875)), ('April 19: The Alarm', 'April 19: North Bridge', (612, 850)),
-                ('April 19: The Alarm', 'April 19: Road to Boston', (588, 878)), ('April 19: Road to Boston', 'Hall 2', (612, 907)),
-                ('Hall 2', 'April 19: North Bridge', (650, 872)), ('Hall 2', '1775 Period Room', (662, 890)),
-                ('Hall 2', 'Milldam and Farm', (680, 881)), ('Milldam and Farm', 'Life in Concord', (707, 868)),
-                ('Milldam and Farm', '1720 Period Room', (695, 896)), ('Milldam and Farm', 'Gross Family Gallery', (722, 896)),
-                ('1720 Period Room', 'Gross Family Gallery', (710, 910)),
-                ('1775 Period Room', '1720 Period Room', (680, 910))]
-SECOND_AMEN = [('elevator', 620, 915), ('stairs', 637, 900)]
+SECOND_DOORS = [(a, b, up([p])[0]) for a, b, p in [
+    ('April 19, 1775', 'Concord Minute Man', (148, 320)), ('April 19, 1775', 'Stairs West 2', (148, 404)),
+    ('April 19, 1775', 'Revolution at Home', (148, 486)), ('Stairs West 2', 'Concord Minute Man', (190, 368)),
+    ('Stairs West 2', 'Revolution at Home', (190, 440)), ('Concord Minute Man', 'Midnight Ride Passageway', (218, 272)),
+    ('Midnight Ride Passageway', 'The Work of Art', (440, 245)), ('The Work of Art', 'Elevator hall 2', (520, 206)),
+    ('The Work of Art', 'History Learning Center', (592, 260)), ('The Work of Art', 'Passage 2', (506, 340)),
+    ('Passage 2', 'Special Exhibit Gallery', (506, 530)), ('Passage 2', 'Stairs East 2', (522, 500)),
+    ('Stairs East 2', 'Special Exhibit Gallery', (610, 530))]]
+SECOND_AMEN = [(t, *up([(x, y)])[0]) for t, x, y in [('elevator', 533, 120), ('stairs', 193, 422), ('stairs', 655, 520)]]
 SECOND_LABELS = []
-SECOND_NOTES = [('Approximate plan: the museum publishes none', 600, 815)]
-
+SECOND_NOTES = []
 
 def inside(p, pg):
     x, y = p
@@ -171,21 +180,18 @@ def floor(fid, label, order, area_text, spec, closed, doors, amen, labels, notes
 
 def build_floors():
     floors = [
-        floor('1', 'First Floor', 0, 'Gateway to Concord (entrance, admissions, Museum Shop), restrooms, elevator; '
-              'Emerson’s Study, Thoreau, Musketaquid, the Transcendentalist authors, the special exhibition, the '
-              'Lyceum', FIRST, FIRST_CLOSED, FIRST_DOORS, FIRST_AMEN, FIRST_LABELS, FIRST_NOTES),
-        floor('2', 'Second Floor', 1, 'April 19, 1775 (Paul Revere’s lantern), Life in Concord, the 1720 and 1775 '
-              'Period Rooms, the Gross Family Gallery', SECOND, SECOND_CLOSED, SECOND_DOORS, SECOND_AMEN,
-              SECOND_LABELS, SECOND_NOTES),
+        floor('1', 'First Floor', 0, 'Main Entrance, Admission Desk and Museum Shop, Brooke Hall, restrooms, '
+              'elevator; At the Center of Revolution, People of Musketaquid, the 1600’s Gallery, Emerson’s Study, '
+              'Thoreau, Getting a Living, Thomas Dugan, the 1720 and 1775 Period Rooms', FIRST, FIRST_CLOSED,
+              FIRST_DOORS, FIRST_AMEN, FIRST_LABELS, FIRST_NOTES),
+        floor('2', 'Second Floor', 1, 'April 19, 1775 (Paul Revere’s lantern), The Concord Minute Man, The Revolution '
+              'at Home, the Midnight Ride Passageway, The Work of Art, the Special Exhibit Gallery', SECOND,
+              SECOND_CLOSED, SECOND_DOORS, SECOND_AMEN, SECOND_LABELS, SECOND_NOTES),
     ]
-    return {'about': 'Built by tools/build_concord.py. The Concord Museum publishes no floor plan: this one is '
-                     'approximate, drawn inside the building’s real outline (aerial imagery) from the museum’s own '
-                     'descriptions: the Gateway entrance with admissions and the shop, restrooms, elevator and coat '
-                     'rack on the first floor, the April 19 galleries upstairs. Which room holds which gallery is a '
-                     'guess.',
-            'source': 'Approximate: Esri World Imagery outline; Concord Museum Plan Your Visit, Families, Groups and '
-                      'What’s On pages; Fall 2021 newsletter',
-            'units': 'aerial-photo pixels (0.22 m) x 3.5, north up', 'approximate': True, 'defaultFloor': '1',
+    return {'about': 'Built by tools/build_concord.py. Rooms traced from the Concord Museum’s own floor plans in its '
+                     'Bloomberg Connects guide (Nov 2026).',
+            'source': 'Concord Museum floor plans in its Bloomberg Connects guide (Nov 2026)',
+            'units': 'plan pixels x 1.6, north up', 'defaultFloor': '1',
             'galleryWord': 'Gallery', 'floors': floors}
 
 
@@ -459,13 +465,21 @@ SHOWS = [
      SITE + 'online-exhibition/thomas-dugan-yeoman-of-concord/', None, None),
 ]
 WHERE = {
-    'Lyceum': 'Family Trees fills the museum; the Lyceum is only where its family activities often are.',
+    'Lyceum': 'Family Trees fills the museum; it is shown here in Brooke Hall, by the entrance.',
 }
-APPROX = 'Approximate: the museum publishes no floor plan, so this gallery’s place on the map is a guess.'
+APPROX = 'In this gallery, as the museum’s own floor plan names it.'
+
+
+# galleries of the earlier, approximate map -> the rooms on the museum's own plan
+MOVED = {'Wallace Kane Gallery': 'Special Exhibit Gallery', 'Lyceum': 'Brooke Hall',
+         'April 19: The Alarm': 'April 19, 1775', 'April 19: North Bridge': 'April 19, 1775',
+         'April 19: Road to Boston': 'April 19, 1775', 'Life in Concord': 'Getting a Living',
+         'Milldam and Farm': 'Thomas Dugan Gallery', 'Gross Family Gallery': 'The Work of Art'}
 
 
 def build_works(floors):
     rooms = {r['id']: (f['id'], r['name']) for f in floors['floors'] for r in f['rooms']}
+    rooms.update({old: rooms[new] for old, new in MOVED.items()})
     works, extra = [], []
     for key, room, title, maker, when, medium, text, pic, url, credit, span in SHOWS:
         if span and date.fromisoformat(span[1]) < TODAY: continue          # closed
@@ -477,7 +491,7 @@ def build_works(floors):
         a = {'id': f'concord-{key}', 'title': title, 'artist': maker, 'date': when, 'medium': medium,
              'description': text if not span or date.fromisoformat(span[0]) <= TODAY
              else f'Opens {when.split(" – ")[0]}. ' + text,
-             'gallery': room, 'galleryName': gname, 'floor': fl, 'placeNote': WHERE.get(room, APPROX),
+             'gallery': MOVED.get(room, room), 'galleryName': gname, 'floor': fl, 'placeNote': WHERE.get(room, APPROX),
              'url': url, 'image': img, 'imageCredit': cred}
         if span: a['temporary'] = True
         works.append({k: v for k, v in a.items() if v not in (None, '', [])})
@@ -490,7 +504,7 @@ def build_works(floors):
              'url': SITE, 'image': img, 'imageCredit': o['credit'] if img else None}
         if o['room']:
             fl, gname = rooms[o['room']]
-            a.update(gallery=o['room'], galleryName=gname, floor=fl,
+            a.update(gallery=MOVED.get(o['room'], o['room']), galleryName=gname, floor=fl,
                      placeNote='Placed in the gallery for its subject (approximate): the museum’s online '
                                'catalogue can’t be read by this guide, and its galleries change.')
             works.append({k: v for k, v in a.items() if v not in (None, '', [])})
@@ -518,10 +532,29 @@ def build_guide(works, extra):
             'works': rows}
 
 
+def floors_only(floors):
+    """Move the saved works onto the redrawn map (no downloads)."""
+    rooms = {r['id']: (f['id'], r['name']) for f in floors['floors'] for r in f['rooms']}
+    path = OUT / 'artworks.json'
+    works = json.loads(path.read_text())
+    for a in works['artworks']:
+        g = MOVED.get(a['gallery'], a['gallery'])
+        a['gallery'], (a['floor'], a['galleryName']) = g, rooms[g]
+        if a.get('placeNote', '').startswith('Approximate: the museum publishes'): a['placeNote'] = APPROX
+        if a['id'] == 'concord-family-trees': a['placeNote'] = WHERE['Lyceum']
+    path.write_text(json.dumps(works, ensure_ascii=False, separators=(',', ':')))
+    gpath = ROOT / 'data' / 'guides' / f'{MUSEUM}.json'
+    guide = json.loads(gpath.read_text())
+    for w in guide['works']:
+        if w.get('gallery'): w['gallery'] = MOVED.get(w['gallery'], w['gallery']); w['floor'] = rooms[w['gallery']][0]
+    gpath.write_text(json.dumps(guide, ensure_ascii=False, separators=(',', ':')))
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     floors = build_floors()
     (OUT / 'floors.json').write_text(json.dumps(floors, ensure_ascii=False, separators=(',', ':')))
+    if sys.argv[1:2] == ['--floors-only']: return floors_only(floors)
     works, extra = build_works(floors)
     (OUT / 'artworks.json').write_text(json.dumps(works, ensure_ascii=False, separators=(',', ':')))
     guide = build_guide(works, extra)

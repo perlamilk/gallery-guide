@@ -46,75 +46,77 @@ CACHE = ROOT / '.cache' / 'carle'
 MUSEUM = 'Q5386237'
 SITE = 'https://carlemuseum.org'
 TODAY = date.today()
-SOURCE = ('Approximate: OpenStreetMap building outline, the landscape architects’ courtyard plan and the Carle’s '
-          'visit and accessibility pages')
-K = 12          # pixels per metre
+SOURCE = 'The Carle’s own floor plan in its Bloomberg Connects guide (Nov 2026)'
 
 
 def P(x, y):
-    """Metres east/north of the museum point -> map pixels (north up)."""
-    return [round((x + 46) * K, 1), round((42 - y) * K, 1)]
+    """Pixels of the Carle's plan picture (north up) -> map units."""
+    return [round(x * 1.65 + 20, 1), round(y * 1.65, 1)]
 
 
 def poly(*pts):
     return [P(x, y) for x, y in pts]
 
 
-# (id, kind, name, polygon, short label for galleries)
+def box(x0, y0, x1, y1):
+    return poly((x0, y0), (x1, y0), (x1, y1), (x0, y1))
+
+
+# (id, kind, name, polygon, short label for galleries), traced from the Carle's own plan
 ROOMS = [
-    ('West Gallery', 'gallery', 'West Gallery (Eric Carle’s own art)',
-     poly((-40, 2.2), (-15, 2.0), (-15, 20.4), (-39.1, 21.6)), 'West'),
-    ('Central Gallery', 'gallery', 'Central Gallery', poly((-15, 8), (21, 8), (21.1, 18.9), (-15, 20.4)), 'Central'),
-    ('East Gallery', 'gallery', 'East Gallery', poly((25, -0.8), (34.6, -0.6), (38.8, -0.8), (39.6, 18.1), (25, 18.7)),
-     'East'),
+    ('Biography Hall', 'gallery', 'Eric Carle Biography Hall', box(218, 140, 245, 248), 'Biography Hall'),
+    ('West Gallery', 'gallery', 'West Gallery (Eric Carle’s own art)', box(295, 140, 390, 245), 'West'),
+    ('Central Gallery', 'gallery', 'Central Gallery', box(390, 140, 438, 245), 'Central'),
+    ('East Gallery', 'gallery', 'East Gallery', box(438, 140, 535, 245), 'East'),
     ('Reading Library', 'gallery', 'Reading Library (picture books to read, and a small show)',
-     poly((-17, -26), (-11, -26), (-10.2, -8), (-17, -8)), 'Reading Library'),
-    ('Lobby', 'corridor', 'Lobby · admissions desk', poly((-30.2, -8), (-10.2, -8), (-10, 2), (-29.6, 1.8)), None),
-    ('Great Hall', 'corridor', 'The Great Hall (seating, windows onto the courtyard)',
-     poly((-10.4, -11.5), (7.3, -12.3), (7.5, -7.2), (19.4, -7.8), (19.6, -1), (21, -1), (21, 8), (-15, 8), (-15, 2),
-          (-10, 2)), None),
-    ('West hall', 'corridor', 'Hall to the Art Studio', poly((-21, -26), (-17, -26), (-17, -8), (-21, -8)), None),
-    ('East hall', 'corridor', 'East hall · restrooms · to the auditorium', poly((21, -1), (25, -0.8), (25, 18.7),
-                                                                              (21.1, 18.9)), None),
+     box(560, 205, 680, 245), 'Reading Library'),
+    ('Lobby', 'corridor', 'Entrance · Admissions', poly((62, 248), (218, 248), (218, 245), (295, 245), (295, 322),
+                                                        (218, 322), (218, 345), (145, 345), (145, 322), (62, 322)),
+     None),
+    ('Great Hall', 'corridor', 'The Great Hall (windows onto the courtyard)',
+     poly((295, 245), (680, 245), (680, 328), (630, 328), (630, 330), (565, 330), (565, 345), (425, 345), (425, 357),
+          (295, 357)), None),
+    ('West hall', 'corridor', 'Hall to the Art Studio', box(262, 357, 295, 540), None),
 ]
 SPACES = [
-    ('Bookshop', 'space', 'The Carle Bookshop', poly((-30.6, -26), (-21, -26), (-21, -8), (-30.2, -8)), None),
-    ('Art Studio', 'space', 'Art Studio (make art, open to everyone)',
-     poly((-31.2, -40.6), (-12.2, -41.4), (-11.9, -37.4), (-11, -26), (-30.6, -26)), None),
-    ('Carle Café', 'space', 'Carle Café (eating area, vending machine; bring your own food)',
-     poly((18.6, -25.5), (37.2, -26.3), (38, -8.1), (34.3, -7.9), (34.6, -0.6), (25, -0.8), (21, -1), (19.6, -1),
-          (19.4, -7.8)), None),
-    ('Auditorium', 'space', 'Auditorium (films, talks, storytime; hearing loop)',
-     poly((21.1, 18.9), (39.6, 18.1), (42.6, 18), (42.8, 24), (39.6, 24.2), (40.2, 37.8), (22, 38.6)), None),
+    ('Auditorium', 'space', 'Auditorium (Quiet Zone)', box(62, 140, 218, 248), None),
+    ('Research Library', 'space', 'Research Library', box(560, 140, 680, 205), None),
+    ('Bookshop', 'space', 'The Carle Bookshop', box(145, 345, 262, 395), None),
+    ('Restrooms West', 'space', 'Restrooms', box(145, 395, 262, 455), None),
+    ('Art Studio', 'space', 'Art Studio (make art, open to everyone)', box(145, 455, 262, 540), None),
+    ('Restrooms East', 'space', 'Restrooms', box(565, 330, 630, 372), None),
+    ('Carle Café', 'space', 'Carle Café (eating area; bring your own food)',
+     poly((540, 345), (565, 345), (565, 372), (630, 372), (630, 465), (540, 465)), None),
 ]
 DOORS = [
-    ('Lobby', 'Great Hall', (-10.1, -3)), ('Lobby', 'Bookshop', (-25.5, -8)), ('Lobby', 'West hall', (-19, -8)),
-    ('Lobby', 'Reading Library', (-13.5, -8)), ('Lobby', 'West Gallery', (-22, 2)),
-    ('West hall', 'Art Studio', (-19, -26)), ('West hall', 'Bookshop', (-21, -17)),
-    ('Great Hall', 'West Gallery', (-15, 5)), ('Great Hall', 'Central Gallery', (3, 8)),
-    ('Great Hall', 'East hall', (21, 3.5)), ('Great Hall', 'Carle Café', (19.5, -4.5)),
-    ('East hall', 'East Gallery', (25, 9)), ('East hall', 'Auditorium', (23, 18.8)), ('East hall', 'Carle Café', (23, -0.9)),
+    ('Lobby', 'Auditorium', (140, 248)), ('Lobby', 'Biography Hall', (231, 248)), ('Lobby', 'Great Hall', (295, 290)),
+    ('Lobby', 'Bookshop', (180, 345)), ('Great Hall', 'West Gallery', (342, 245)),
+    ('West Gallery', 'Central Gallery', (390, 210)), ('Central Gallery', 'East Gallery', (438, 210)),
+    ('Great Hall', 'Central Gallery', (414, 245)), ('Great Hall', 'East Gallery', (486, 245)),
+    ('Great Hall', 'Reading Library', (620, 245)), ('Reading Library', 'Research Library', (620, 205)),
+    ('Great Hall', 'West hall', (278, 357)), ('West hall', 'Bookshop', (262, 373)),
+    ('West hall', 'Restrooms West', (262, 430)), ('West hall', 'Art Studio', (262, 500)),
+    ('Great Hall', 'Carle Café', (552, 345)), ('Great Hall', 'Restrooms East', (597, 330)),
 ]
-AMENITIES = [('entrance', -32, -3), ('info', -22, -3.5), ('shop', -26, -17), ('dining', 29, -15),
-             ('entrance', -5, -12.6), ('entrance', -12.2, -38.5), ('entrance', 28, -26.8),
-             ('restroom', 23, 3), ('restroom-all', 23, 6.5), ('nursing', 23, 10)]
+AMENITIES = [('entrance', 40, 285), ('info', 260, 290), ('coat', 178, 330), ('shop', 200, 370),
+             ('restroom', 215, 420), ('restroom', 597, 350), ('water', 278, 432), ('water', 552, 338),
+             ('dining', 600, 420), ('entrance', 657, 305), ('entrance', 230, 130), ('entrance', 538, 130),
+             ('entrance', 157, 540), ('entrance', 540, 380)]
 LABELS = [
-    ('Main entrance (power-assist doors) · drop-off, free parking with 4 accessible spaces to the west', 'note', -44, -4.5),
-    ('Courtyard', 'note', 4, -19),
-    ('Doors to the courtyard terrace and the paved path to Bobbie’s Meadow', 'note', 2, -15),
-    ('Bobbie’s Meadow: orchard and meadow walk (outside, south)', 'note', 4, -47),
-    ('Café terrace (outside)', 'note', 28, -29.5),
-    ('Everything is on this one floor · places inside each wing approximate', 'note', 0, 43),
+    ('Main entrance (accessible)', 'note', 60, 270),
+    ('Courtyard', 'note', 425, 460),
+    ('Picnic tables', 'note', 596, 540),
+    ('Accessible door to the courtyard', 'note', 668, 495),
+    ('Everything is on this one floor', 'note', 380, 590),
 ]
-AREA = 'Entrance · Lobby · Bookshop · Reading Library · Art Studio · Great Hall · West, Central and East Galleries · ' \
-       'Café · Auditorium · Restrooms'
-
+AREA = 'Entrance · Admissions · Auditorium · Biography Hall · West, Central and East Galleries · Great Hall · ' \
+       'Reading and Research Libraries · Bookshop · Art Studio · Café · Restrooms'
 
 def build_floors():
     rooms = [{'id': rid, 'kind': kind, 'name': name, 'poly': pl, **({'label': short} if kind == 'gallery' else {})}
              for rid, kind, name, pl, short in ROOMS + SPACES]
     ids = {r['id'] for r in rooms}
-    doors = [{'a': a, 'b': b, 'at': P(x, y), 'width': 10, 'axis': 'o'} for a, b, (x, y) in DOORS]
+    doors = [{'a': a, 'b': b, 'at': P(x, y), 'width': 16, 'axis': 'o'} for a, b, (x, y) in DOORS]
     for d in doors:
         assert d['a'] in ids and d['b'] in ids, d
     floor = {'id': '1', 'label': 'Museum Floor', 'order': 1, 'transform': [1, 0, 0], 'area': AREA,
@@ -122,9 +124,9 @@ def build_floors():
              'amenities': [{'type': t, 'at': P(x, y)} for t, x, y in AMENITIES],
              'labels': [{'text': t, 'kind': k, 'at': P(x, y)} for t, k, x, y in LABELS],
              'doors': doors}
-    return {'about': 'Built by tools/build_carle.py. The Carle publishes no floor plan: this one is approximate, from '
-                     'the building’s outline, the landscape architects’ courtyard plan and the Carle’s visit pages.',
-            'source': SOURCE, 'units': 'metres x 12, north up', 'defaultFloor': '1', 'galleryWord': 'Gallery',
+    return {'about': 'Built by tools/build_carle.py. Rooms traced from the Carle’s own floor plan in its Bloomberg '
+                     'Connects guide (Nov 2026).',
+            'source': SOURCE, 'units': 'plan units, north up', 'defaultFloor': '1', 'galleryWord': 'Gallery',
             'floors': [floor]}
 
 
@@ -332,7 +334,20 @@ def build_guide(works, harvest):
             'works': rows}
 
 
+def floors_only():
+    """Redraw the map only; the saved works keep their galleries (no harvest cache needed)."""
+    floors = build_floors()
+    (OUT / 'floors.json').write_text(json.dumps(floors, ensure_ascii=False, separators=(',', ':')))
+    rooms = {r['id']: (f['id'], r['name']) for f in floors['floors'] for r in f['rooms']}
+    path = OUT / 'artworks.json'
+    works = json.loads(path.read_text())
+    for a in works['artworks']:
+        if a.get('gallery') in rooms: a['floor'], a['galleryName'] = rooms[a['gallery']]
+    path.write_text(json.dumps(works, ensure_ascii=False, separators=(',', ':')))
+
+
 def main():
+    if sys.argv[1:2] == ['--floors-only']: return floors_only()
     hv = CACHE / 'harvest.json'
     if not hv.exists():
         raise SystemExit('run tools/harvest_carle.py first')

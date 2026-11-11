@@ -49,147 +49,166 @@ NAME = 'Davis Museum at Wellesley College'
 SITE = 'https://www.wellesley.edu/davismuseum'
 UA = 'gallery-guide/1.0 (personal museum guide; polite, cached)'
 APPROX = 'Approximate layout'
-K = 2          # drawn in decimetres, stored at twice that so labels fit like other museums' maps
+# The floors are traced from the Davis's own floor plans in its Bloomberg Connects guide (read Nov 11 2026). Each
+# floor is drawn in the pixels of its own plan picture; FRAME turns them into one frame (the floor-4 plan) so the
+# staircase and elevator line up from floor to floor: X = 95 + (x - x0)·s, Y = 143 + (y - y0)·s.
+FRAME = {'LL': (107, 152, 1.053), '1': (330, 166, 1.571), '2': (332, 180, 1.571), '4': (95, 143, 1.0),
+         '5': (107, 152, 1.053)}
 
 
-def pt(x, y):
-    return [x * K, y * K]
+def tp(fid, x, y):
+    x0, y0, s = FRAME[fid]
+    return [round((95 + (x - x0) * s + 320) * 1.7, 1), round((143 + (y - y0) * s - 100) * 1.7, 1)]
 
 
-def rect(x0, y0, x1, y1):
+def box(x0, y0, x1, y1):
     return [[x0, y0], [x1, y0], [x1, y1], [x0, y1]]
 
 
-# The building (decimetres): the museum's main block, with its south-east corner cut out for the entrance plaza,
-# and the lower wing on the south side with the Collins Café and Cinema.
-MAIN = [[6, 11], [433, 11], [433, 195], [245, 195], [245, 316], [6, 316]]
-NORTH = rect(6, 11, 433, 195)        # the tall block under the saw-tooth skylights (floors 4 and 5)
-STAIR = rect(215, 11, 265, 195)      # the maple-panelled staircase that rises through every floor, with the elevator
-VOID = rect(150, 60, 215, 150)       # the skylit void, open from floor 2 up to the roof
-ELEV, STAIRS = (240, 175), (240, 90)
-
-# (id, kind, name, poly, label for galleries)
+# (id, kind, name, poly, label for galleries, holes)
 ROOMS = {
     'LL': [
-        ('Lower Level Galleries', 'gallery', 'Lower Level Galleries: special exhibitions',
-         [[6, 11], [215, 11], [215, 195], [245, 195], [245, 316], [6, 316]], 'Special Exhibitions'),
-        ('Lower Level East', 'gallery', 'Lower Level Galleries (east)', rect(265, 11, 433, 195), 'Special Exhibitions'),
-        ('LL-stair', 'corridor', 'Staircase and elevator', STAIR, None),
+        ('Lower Level Galleries', 'gallery', 'Lower Level: Temporary Exhibitions', box(105, 152, 592, 555),
+         'Temporary Exhibitions', [box(185, 378, 515, 437)]),
+        ('LL-stair', 'corridor', 'Staircase', box(185, 378, 515, 437), None, None),
+        ('LL-lift', 'corridor', 'Elevator', [[592, 388], [665, 388], [665, 437], [707, 437], [707, 490], [592, 490]],
+         None, None),
     ],
     '1': [
-        ('Lobby', 'corridor', 'Lobby · front desk · bag check', [[140, 195], [245, 195], [245, 316], [140, 316]], None),
-        ('1-stair', 'corridor', 'Staircase and elevator', STAIR, None),
-        ('Collins Café', 'space', 'Collins Café', rect(55, 316, 250, 420), None),
-        ('Collins Cinema', 'space', 'Collins Cinema (168 seats: films and talks)', [[55, 420], [250, 420], [250, 586], [85, 586]], None),
-        ('1-staff-n', 'corridor', 'Staff areas (not open to visitors)', [[6, 11], [215, 11], [215, 195], [140, 195], [140, 316], [6, 316]], None),
-        ('1-staff-e', 'corridor', 'Staff areas (not open to visitors)', rect(265, 11, 433, 195), None),
+        ('Lobby', 'corridor', 'Main Lobby · front desk',
+         [[330, 350], [738, 350], [738, 433], [598, 433], [598, 608], [538, 608], [538, 433], [330, 433]], None, None),
+        ('1-stair', 'corridor', 'Staircase and elevator',
+         [[330, 307], [648, 307], [648, 315], [720, 315], [720, 350], [330, 350]], None, None),
+        ('1-restrooms', 'space', 'Restrooms', box(598, 540, 685, 608), None, None),
+        ('1-passage', 'corridor', 'Passage to the Collins Cinema & Café', box(270, 372, 330, 410), None, None),
+        ('Collins Café', 'space', 'Collins Cinema & Café',
+         [[82, 280], [218, 233], [248, 307], [277, 307], [270, 433], [125, 433]], None, None),
     ],
     '2': [
+        ('Asian Art', 'gallery', 'Asian', [[332, 180], [445, 180], [445, 270], [385, 270], [385, 368], [332, 368]],
+         'Asian', None),
         ('Ancient Mediterranean', 'gallery', 'Ancient Mediterranean · the Antioch mosaic, set in the floor',
-         [[6, 11], [150, 11], [150, 195], [6, 195]], 'Ancient World'),
-        ('Wellesley Collects', 'gallery', 'Wellesley Collects', rect(150, 11, 215, 60), 'Wellesley Collects'),
-        ('2-void', 'space', 'Skylit atrium: look up to the roof', VOID, None),
-        ('Asian Art', 'gallery', 'South Asia · East Asia', rect(265, 11, 433, 100), 'Asia'),
-        ('Africa, Oceania & the Americas', 'gallery', 'Africa · Oceania · Ancient Americas', rect(265, 100, 433, 195),
-         'Africa · Americas'),
-        ('Study Gallery', 'gallery', 'Study Gallery (chosen by faculty each semester)', rect(6, 195, 100, 316), 'Study Gallery'),
-        ('Works on Paper Gallery', 'gallery', 'Morelle Lasky Levine ’56 Works on Paper Gallery', rect(100, 195, 170, 316),
-         'Works on Paper'),
-        ('Friends of Art Gallery', 'gallery', 'Friends of Art Gallery (changing exhibitions)', rect(170, 195, 245, 316),
-         'Friends of Art'),
-        ('2-hall', 'corridor', 'Gallery walk around the atrium', rect(150, 150, 215, 195), None),
-        ('2-stair', 'corridor', 'Staircase and elevator', STAIR, None),
+         [[445, 180], [548, 180], [548, 270], [610, 270], [610, 325], [385, 325], [385, 270], [445, 270]],
+         'Ancient Mediterranean', None),
+        ('Ancient Americas', 'gallery', 'Ancient Americas', box(548, 180, 658, 270), 'Ancient Americas', None),
+        ('Study Gallery', 'gallery', 'Study Gallery (chosen by faculty each semester)', box(658, 193, 738, 280),
+         'Study Gallery', None),
+        ('2-hall', 'corridor', 'Staircase', [[385, 325], [610, 325], [610, 270], [658, 270], [658, 368], [385, 368]],
+         None, None),
+        ('African Art', 'gallery', 'African', box(332, 368, 553, 452), 'African', None),
+        ('Wellesley Method', 'gallery', 'Wellesley Method', box(553, 368, 625, 452), 'Wellesley Method', None),
+        ('2-lift', 'corridor', 'Elevator', [[658, 330], [720, 330], [720, 368], [738, 368], [738, 400], [658, 400]],
+         None, None),
+        ('2-passage', 'corridor', 'Passage to the Print Study', box(625, 400, 658, 555), None, None),
+        ('Print Study', 'gallery', 'Print Study (works on paper)',
+         [[530, 555], [727, 555], [727, 598], [683, 598], [683, 610], [530, 610]], 'Print Study', None),
     ],
     '4': [
-        ('Medieval & Renaissance', 'gallery', 'Medieval · Renaissance', [[6, 11], [150, 11], [150, 195], [6, 195]],
-         'Medieval · Renaissance'),
-        ('Southern Baroque', 'gallery', 'Southern Baroque · Spanish Colonial', rect(265, 11, 433, 100),
-         'Southern Baroque'),
-        ('Northern Baroque', 'gallery', 'Northern Baroque · Rococo · British portraits · Colonial American',
-         rect(265, 100, 433, 195), 'Northern Baroque'),
-        ('19th Century', 'gallery', '19th century: American landscapes, Native American, European and American art',
-         rect(6, 195, 245, 316), '19th Century'),
-        ('4-balcony', 'space', 'Balcony over the skylit atrium', VOID, None),
-        ('4-hall', 'corridor', 'Gallery walk', [[150, 11], [215, 11], [215, 60], [150, 60]], None),
-        ('4-hall-s', 'corridor', 'Gallery walk', rect(150, 150, 215, 195), None),
-        ('4-stair', 'corridor', 'Staircase and elevator', STAIR, None),
+        ('18th Century', 'gallery', '18th-century European', box(95, 143, 229, 252), '18 C. European', None),
+        ('Northern Baroque', 'gallery', '17th-century Northern Europe', box(229, 143, 350, 252), '17 C. Northern Europe',
+         None),
+        ('Southern Baroque', 'gallery', '17th-century Southern Europe', box(350, 143, 475, 252), '17 C. Southern Europe',
+         None),
+        ('Renaissance', 'gallery', '15th–16th-century European', box(475, 143, 607, 252), '15-16 C. European', None),
+        ('Medieval', 'gallery', 'Medieval', box(607, 165, 727, 300), 'Medieval', None),
+        ('Portraiture', 'gallery', 'Portraiture', box(95, 252, 180, 440), 'Portraiture', None),
+        ('4-hall', 'corridor', 'Staircase and gallery walk',
+         [[180, 252], [607, 252], [607, 440], [180, 440], [180, 377], [527, 377], [527, 303], [180, 303]], None, None),
+        ('4-void', 'space', 'Open to the floor below', box(180, 303, 527, 377), None, None),
+        ('Early American', 'gallery', 'Early American', box(95, 440, 229, 567), 'Early American', None),
+        ('US Landscapes', 'gallery', '19th-century U.S. Landscapes', box(229, 440, 485, 505), '19 C. U.S. Landscapes',
+         None),
+        ('Native American', 'gallery', '19th–21st-century Native American', box(229, 505, 372, 567),
+         '19-21 C. Native American', None),
+        ('19th Century', 'gallery', '19th-century European & American',
+         [[485, 440], [607, 440], [607, 567], [372, 567], [372, 505], [485, 505]], '19 C. European & American', None),
+        ('4-lift', 'corridor', 'Elevator', [[607, 390], [685, 390], [685, 440], [727, 440], [727, 500], [607, 500]],
+         None, None),
     ],
     '5': [
-        ('Modern & Contemporary', 'gallery', 'Modern and contemporary art, under the saw-tooth skylights',
-         [[6, 11], [215, 11], [215, 195], [6, 195]], 'Modern · Contemporary'),
-        ('Contemporary East', 'gallery', 'Contemporary art (east)', rect(265, 11, 433, 195), 'Contemporary'),
-        ('5-stair', 'corridor', 'Staircase and elevator', STAIR, None),
+        ('Modern & Contemporary', 'gallery', 'Modern and Contemporary', box(107, 152, 593, 555),
+         'Modern and Contemporary', [box(187, 305, 517, 375)]),
+        ('5-void', 'space', 'Open to the floor below', box(187, 305, 517, 375), None, None),
+        ('Contemporary East', 'gallery', 'Modern and Contemporary (east room)', box(593, 172, 708, 300),
+         'Modern and Contemporary', None),
+        ('5-lift', 'corridor', 'Elevator', [[593, 388], [665, 388], [665, 437], [708, 437], [708, 490], [593, 490]],
+         None, None),
     ],
 }
 
+LABEL_AT = {'Lower Level Galleries': (350, 250), 'Modern & Contemporary': (350, 250)}   # off the stair well
+
 DOORS = {
-    'LL': [('LL-stair', 'Lower Level Galleries', (215, 120)), ('LL-stair', 'Lower Level East', (265, 120))],
-    '1': [('Lobby', '1-stair', (240, 195)), ('Lobby', 'Collins Café', (200, 316))],
-    '2': [('2-stair', 'Asian Art', (265, 55)), ('2-stair', 'Africa, Oceania & the Americas', (265, 150)),
-          ('2-stair', '2-hall', (215, 172)), ('2-hall', 'Ancient Mediterranean', (150, 172)),
-          ('2-hall', 'Friends of Art Gallery', (195, 195)), ('Friends of Art Gallery', 'Works on Paper Gallery', (170, 255)),
-          ('Works on Paper Gallery', 'Study Gallery', (100, 255)), ('Ancient Mediterranean', 'Wellesley Collects', (150, 35)),
-          ('Asian Art', 'Africa, Oceania & the Americas', (350, 100)), ('2-hall', '2-void', (182, 150))],
-    '4': [('4-stair', 'Southern Baroque', (265, 55)), ('4-stair', 'Northern Baroque', (265, 150)),
-          ('4-stair', '4-hall-s', (215, 172)), ('4-stair', '4-hall', (215, 35)),
-          ('4-hall', 'Medieval & Renaissance', (150, 35)), ('4-hall-s', 'Medieval & Renaissance', (150, 172)),
-          ('4-hall-s', '19th Century', (182, 195)), ('Southern Baroque', 'Northern Baroque', (350, 100)),
-          ('4-hall-s', '4-balcony', (182, 150))],
-    '5': [('5-stair', 'Modern & Contemporary', (215, 120)), ('5-stair', 'Contemporary East', (265, 120))],
+    'LL': [('LL-stair', 'Lower Level Galleries', (350, 437)), ('LL-lift', 'Lower Level Galleries', (592, 462))],
+    '1': [('Lobby', '1-stair', (498, 350)), ('Lobby', '1-stair', (690, 350)), ('Lobby', '1-restrooms', (598, 585)),
+          ('Lobby', '1-passage', (330, 391)), ('1-passage', 'Collins Café', (272, 391))],
+    '2': [('Asian Art', 'Ancient Mediterranean', (445, 195)), ('Ancient Mediterranean', 'Ancient Americas', (548, 195)),
+          ('Ancient Americas', '2-hall', (630, 270)), ('Ancient Americas', 'Study Gallery', (658, 258)),
+          ('Asian Art', '2-hall', (385, 346)), ('Asian Art', 'African Art', (358, 368)),
+          ('2-hall', 'Wellesley Method', (615, 368)), ('African Art', 'Wellesley Method', (553, 380)),
+          ('2-hall', '2-lift', (658, 348)), ('2-lift', '2-passage', (642, 400)),
+          ('Wellesley Method', '2-passage', (625, 425)), ('2-passage', 'Print Study', (642, 555))],
+    '4': [('18th Century', 'Portraiture', (137, 252)), ('18th Century', 'Northern Baroque', (229, 165)),
+          ('Northern Baroque', '4-hall', (260, 252)), ('Southern Baroque', '4-hall', (440, 252)),
+          ('Southern Baroque', 'Renaissance', (475, 165)), ('Renaissance', '4-hall', (570, 252)),
+          ('Renaissance', 'Medieval', (607, 270)), ('Portraiture', '4-hall', (180, 410)),
+          ('Portraiture', 'Early American', (137, 440)), ('Early American', 'US Landscapes', (229, 465)),
+          ('US Landscapes', 'Native American', (300, 505)), ('US Landscapes', '19th Century', (485, 465)),
+          ('Native American', '19th Century', (372, 508)), ('4-hall', '19th Century', (567, 440)),
+          ('4-hall', '4-lift', (607, 415))],
+    '5': [('Modern & Contemporary', 'Contemporary East', (593, 256)), ('Modern & Contemporary', '5-lift', (593, 412))],
 }
 
 AMENITIES = {
-    'LL': [('elevator', *ELEV), ('stairs', *STAIRS)],
-    '1': [('entrance', 245, 255), ('info', 205, 240), ('coat', 165, 240), ('restroom', 165, 290), ('elevator', *ELEV),
-          ('stairs', *STAIRS), ('dining', 150, 365), ('restroom', 90, 400)],
-    '2': [('elevator', *ELEV), ('stairs', *STAIRS)],
-    '4': [('elevator', *ELEV), ('stairs', *STAIRS)],
-    '5': [('elevator', *ELEV), ('stairs', *STAIRS)],
+    'LL': [('elevator', 618, 412), ('stairs', 350, 407)],
+    '1': [('entrance', 738, 390), ('info', 630, 410), ('coat', 578, 485), ('restroom', 640, 585),
+          ('elevator', 672, 332), ('stairs', 498, 328), ('dining', 183, 375)],
+    '2': [('elevator', 672, 348), ('stairs', 497, 346)],
+    '4': [('elevator', 632, 415), ('stairs', 358, 410)],
+    '5': [('elevator', 618, 412), ('stairs', 352, 408)],
 }
 LABELS = {
-    'LL': [(APPROX, 'note', 220, 340)],
-    '1': [('Front door up a few steps from the plaza; ramp along the side of the building', 'note', 340, 270),
-          ('Accessible restrooms in the museum and the café', 'note', 340, 310), (APPROX, 'note', 340, 350)],
-    '2': [('Floor 3: offices and print study room (no galleries)', 'note', 220, 345), (APPROX, 'note', 220, 375)],
-    '4': [(APPROX, 'note', 220, 345)],
-    '5': [('Saw-tooth skylights', 'note', 110, 60), (APPROX, 'note', 220, 225)],
+    'LL': [],
+    '1': [('Front door up a few steps from the plaza; ramp along the side of the building', 'note', 640, 650),
+          ('Accessible restrooms in the museum and the café', 'note', 200, 470)],
+    '2': [('Floor 3: offices (no galleries)', 'note', 420, 520)],
+    '4': [],
+    '5': [('Saw-tooth skylights', 'note', 350, 230)],
 }
 FLOORS = [
-    ('LL', 'Lower Level', 'Special exhibitions: Excavating Antioch · Shi: Stories in Stone', 0),
-    ('1', 'Floor 1', 'Entrance · Lobby and front desk · Bag check · Restrooms · Collins Café · Collins Cinema', 1),
-    ('2', 'Floor 2', 'Ancient Mediterranean · Asia · Africa, Oceania and the Americas · Study Gallery · '
-                     'Works on Paper · Friends of Art Gallery · Wellesley Collects', 2),
-    ('4', 'Floor 4', 'Medieval · Renaissance · Baroque · Spanish Colonial · Rococo · Colonial American · 19th century', 4),
-    ('5', 'Floor 5', 'Modern and contemporary art under the skylights', 5),
+    ('LL', 'Lower Level', 'Temporary exhibitions: Excavating Antioch · Shi: Stories in Stone', 0),
+    ('1', 'Floor 1', 'Entrance · Main Lobby and front desk · Coat check · Restrooms · Collins Cinema & Café', 1),
+    ('2', 'Floor 2', 'Asian · Ancient Mediterranean · Ancient Americas · African · Wellesley Method · Study Gallery · '
+                     'Print Study', 2),
+    ('4', 'Floor 4', 'Medieval · 15th–18th-century European · Portraiture · Early American · 19th century · '
+                     'Native American', 4),
+    ('5', 'Floor 5', 'Modern and Contemporary art under the skylights', 5),
 ]
 
 
 def build_floors():
     floors = []
     for fid, label, area, order in FLOORS:
-        rooms, closed = [], []
-        for rid, kind, name, poly, short in ROOMS[fid]:
-            if kind == 'closed':
-                closed.append({'poly': [pt(*q) for q in poly]})
-                continue
-            r = {'id': rid, 'kind': kind, 'name': name, 'poly': [pt(*q) for q in poly]}
+        rooms = []
+        for rid, kind, name, poly, short, holes in ROOMS[fid]:
+            r = {'id': rid, 'kind': kind, 'name': name, 'poly': [tp(fid, *q) for q in poly]}
             if kind == 'gallery': r['label'] = short or rid
+            if holes: r['holes'] = [[tp(fid, *q) for q in h] for h in holes]
+            if rid in LABEL_AT: r['labelAt'] = tp(fid, *LABEL_AT[rid])
             rooms.append(r)
         ids = {r['id'] for r in rooms}
-        doors = [{'a': a, 'b': b, 'at': pt(x, y), 'width': 24, 'axis': 'o'} for a, b, (x, y) in DOORS[fid]]
+        doors = [{'a': a, 'b': b, 'at': tp(fid, x, y), 'width': 24, 'axis': 'o'} for a, b, (x, y) in DOORS[fid]]
         for d in doors:
             assert d['a'] in ids and d['b'] in ids, (fid, d)
         floors.append({'id': fid, 'label': label, 'area': area, 'order': order, 'transform': [1, 0, 0],
-                       'rooms': rooms, 'closed': closed,
-                       'amenities': [{'type': t, 'at': pt(x, y)} for t, x, y in AMENITIES[fid]],
-                       'labels': [{'text': t, 'kind': k, 'at': pt(x, y)} for t, k, x, y in LABELS[fid]],
+                       'rooms': rooms, 'closed': [],
+                       'amenities': [{'type': t, 'at': tp(fid, x, y)} for t, x, y in AMENITIES[fid]],
+                       'labels': [{'text': t, 'kind': k, 'at': tp(fid, x, y)} for t, k, x, y in LABELS[fid]],
                        'doors': doors})
-    return {'about': 'Built by tools/build_davis.py. The layout is approximate: the Davis publishes no floor plan, so '
-                     'the galleries are drawn inside the building’s real outline from the museum’s own description '
-                     'of what is on each floor.',
-            'source': 'Davis Museum website (building, visit and accessibility pages) and its 2016 reinstallation '
-                      'press release; building outline from OpenStreetMap (MassGIS). Layout drawn by hand, approximate',
-            'units': 'half-decimetres (1 unit = 5 cm)', 'defaultFloor': '1', 'galleryWord': 'Gallery', 'floors': floors}
+    return {'about': 'Built by tools/build_davis.py. Rooms traced from the Davis’s own floor plans in its Bloomberg '
+                     'Connects guide (Nov 2026). Which gallery a work is in is guessed from its date and origin.',
+            'source': 'Davis Museum floor plans in its Bloomberg Connects guide (Nov 2026); Davis Museum website',
+            'units': 'plan units', 'defaultFloor': '1', 'galleryWord': 'Gallery', 'floors': floors}
 
 
 # ---- works ------------------------------------------------------------------------------------------------------
@@ -246,97 +265,37 @@ def year_of(date):
     return None
 
 
+AMERICAS = r'pre-columbian|precolumbian|maya|aztec|olmec|inca|peru|moche|nazca|colima|nayarit|mesoamerica|' \
+           r'ancient americas|costa rica|zapotec|veracruz|teotihuacan|chancay|chimu|wari'
+NATIVE = r'native american|navajo|hopi|pueblo|lakota|sioux|cherokee|apache|zuni|acoma|tlingit|haida|inuit|ojibwe|' \
+         r'cheyenne|kiowa|first nations'
+PORTRAIT = r'portrait|self-portrait|\bbust of\b'
+LANDSCAPE = r'landscape|valley|river|mountain|lake|view of|hudson|niagara|white mountains|sunset|coast'
+AMERICAN = r'american|united states|\bu\.s\.|boston|new york|massachusetts|hudson river|colonial'
+
+
 def place(w):
-    """(room, note) for a work, from its date, origin and medium."""
+    """The gallery for a work, from its date, origin and medium."""
     hay = ' '.join([w.get('title', ''), w.get('artist', ''), w.get('medium', ''), w.get('type', ''),
                     w.get('origin', ''), w.get('text', '')[:400]]).lower()
     y = w.get('year')
     if re.search(ANCIENT, hay) and (y is None or y < 700): return 'Ancient Mediterranean'
+    if re.search(NATIVE, hay) and (y is None or y >= 1800): return 'Native American'
+    if re.search(AMERICAS, hay) and (y is None or y < 1600): return 'Ancient Americas'
     if y is not None and y < 0: return 'Ancient Mediterranean'
     if re.search(ASIA, hay): return 'Asian Art'
-    if re.search(AFRICA, hay): return 'Africa, Oceania & the Americas'
-    if re.search(PAPER, hay): return 'Works on Paper Gallery'
+    if re.search(AFRICA, hay): return 'African Art'
+    if re.search(PAPER, hay): return 'Print Study'
     if y is None: return 'Study Gallery'
-    if y < 1600: return 'Medieval & Renaissance' if y >= 500 else 'Ancient Mediterranean'
-    if y < 1800: return 'Southern Baroque' if re.search(SOUTH, hay) and not re.search(NORTH_B, hay) else 'Northern Baroque'
-    if y < 1900: return '19th Century'
+    if y < 500: return 'Ancient Mediterranean'
+    if y < 1400: return 'Medieval'
+    if y < 1600: return 'Renaissance'
+    if y < 1900 and re.search(PORTRAIT, hay) and not re.search(AMERICAN, hay): return 'Portraiture'
+    if y < 1800 and re.search(AMERICAN, hay): return 'Early American'
+    if y < 1700: return 'Southern Baroque' if re.search(SOUTH, hay) and not re.search(NORTH_B, hay) else 'Northern Baroque'
+    if y < 1800: return '18th Century'
+    if y < 1900: return 'US Landscapes' if re.search(AMERICAN, hay) and re.search(LANDSCAPE, hay) else '19th Century'
     return 'Modern & Contemporary'
-
-
-def picture(key, url):
-    """Download once (politely) and save a phone-sized JPEG; returns the app path."""
-    if not url: return None
-    raw = CACHE / 'img' / f'{key}.bin'
-    if not raw.exists():
-        raw.parent.mkdir(parents=True, exist_ok=True)
-        out = subprocess.run(['curl', '-s', '-f', '-L', '-m', '60', '-A', UA, url], capture_output=True).stdout
-        time.sleep(1)
-        if not out: return None
-        raw.write_bytes(out)
-    dest = OUT / 'images' / f'{key}.jpg'
-    if not dest.exists():
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        try:
-            im = Image.open(io.BytesIO(raw.read_bytes()))
-        except Exception:
-            raw.unlink()
-            return None
-        im = im.convert('RGB')
-        im.thumbnail((1000, 1000))
-        im.save(dest, 'JPEG', quality=80, optimize=True, progressive=True)
-    return f'data/davis/images/{key}.jpg'
-
-
-def wikidata():
-    q = '''SELECT ?w ?title ?creator ?born ?nat ?date ?img ?acc ?material ?type ?origin ?url WHERE {
-      ?w wdt:P195 wd:%s . OPTIONAL { ?w rdfs:label ?title FILTER(lang(?title)="en") }
-      OPTIONAL { ?w wdt:P170 ?c . ?c rdfs:label ?creator FILTER(lang(?creator)="en")
-                 OPTIONAL { ?c wdt:P569 ?born } OPTIONAL { ?c wdt:P27 ?n . ?n rdfs:label ?nat FILTER(lang(?nat)="en") } }
-      OPTIONAL { ?w wdt:P571 ?date } OPTIONAL { ?w wdt:P18 ?img } OPTIONAL { ?w wdt:P973 ?url }
-      OPTIONAL { ?w wdt:P31 ?t . ?t rdfs:label ?type FILTER(lang(?type)="en") }
-      OPTIONAL { ?w wdt:P495 ?o . ?o rdfs:label ?origin FILTER(lang(?origin)="en") }
-      OPTIONAL { ?w p:P217 ?s . ?s ps:P217 ?acc . ?s pq:P195 wd:%s }
-      OPTIONAL { ?w wdt:P186 ?m . ?m rdfs:label ?material FILTER(lang(?material)="en") } }''' % (MUSEUM, MUSEUM)
-    f = CACHE / 'wikidata.json'
-    if not f.exists():
-        CACHE.mkdir(parents=True, exist_ok=True)
-        url = 'https://query.wikidata.org/sparql?format=json&query=' + urllib.parse.quote(q)
-        out = subprocess.run(['curl', '-s', '-f', '-m', '120', '-A', UA, url], capture_output=True).stdout
-        if not out: raise SystemExit('Wikidata did not answer')
-        f.write_bytes(out)
-    rows = {}
-    for b in json.loads(f.read_text())['results']['bindings']:
-        v = {k: x['value'] for k, x in b.items()}
-        qid = v['w'].rsplit('/', 1)[1]
-        r = rows.setdefault(qid, {'qid': qid, 'title': v.get('title') or '', 'artist': set(), 'date': '', 'image': None,
-                                  'accession': '', 'medium': set(), 'type': '', 'origin': '', 'url': '', 'born': None,
-                                  'nat': set()})
-        if v.get('born') and not v['born'].startswith('-') and r['born'] is None: r['born'] = int(v['born'][:4])
-        if v.get('nat'): r['nat'].add(v['nat'])
-        if v.get('creator'): r['artist'].add(v['creator'])
-        if v.get('material'): r['medium'].add(v['material'])
-        if v.get('date'):
-            yr = v['date'].split('-')[0] if not v['date'].startswith('-') else '-' + v['date'][1:].split('-')[0]
-            r['date'] = str(int(yr)) if int(yr) > 0 else f'{-int(yr)} BCE'
-        if v.get('img'): r['image'] = v['img']
-        if v.get('acc'): r['accession'] = v['acc']
-        if v.get('type'): r['type'] = r['type'] or v['type']
-        if v.get('origin'): r['origin'] = r['origin'] or v['origin']
-        if v.get('url') and 'emuseum' in v['url']: r['url'] = v['url']
-    out = []
-    for r in rows.values():
-        if not r['title'] or re.fullmatch(r'Q\d+', r['title']): continue
-        r['artist'] = ', '.join(sorted(r['artist'])) or 'Unknown artist'
-        r['medium'] = ', '.join(sorted(r['medium']))
-        r['origin'] = ' '.join([r['origin']] + sorted(r['nat'])).strip()
-        out.append(r)
-    return out
-
-
-def gac():
-    f = CACHE / 'gac-works.json'
-    if not f.exists(): raise SystemExit('run tools/harvest_davis.py first')
-    return json.loads(f.read_text())
 
 
 def build_works(floors):
@@ -409,10 +368,41 @@ def build_guide(works):
             'works': rows}
 
 
+# rooms of the earlier, approximate map
+OLD = {'Medieval & Renaissance': 'Renaissance', 'Works on Paper Gallery': 'Print Study',
+       'Africa, Oceania & the Americas': 'African Art', 'Friends of Art Gallery': 'Study Gallery',
+       'Lower Level East': 'Lower Level Galleries'}
+
+
+def floors_only(floors):
+    """Redraw the map and move the saved works onto it, without the harvest caches."""
+    rooms = {r['id']: (f['id'], r['name']) for f in floors['floors'] for r in f['rooms']}
+    path = OUT / 'artworks.json'
+    works = json.loads(path.read_text())
+    for a in works['artworks']:
+        g = 'Lower Level Galleries' if a.get('onView') else place({**a, 'text': a.get('description', '')})
+        if g == 'Study Gallery': g = OLD.get(a['gallery'], a['gallery'] if a['gallery'] in rooms else g)   # undated: keep the room the artist's dates gave
+        a['gallery'], (a['floor'], a['galleryName']) = g, rooms[g]
+    order = {r['id']: i for f in floors['floors'] for i, r in enumerate(f['rooms'])}
+    forder = {f['id']: f['order'] for f in floors['floors']}
+    works['artworks'].sort(key=lambda a: (-forder[a['floor']], order[a['gallery']], a.get('year') or 0))
+    path.write_text(json.dumps(works, ensure_ascii=False, separators=(',', ':')))
+    gpath = ROOT / 'data' / 'guides' / f'{MUSEUM}.json'
+    guide = json.loads(gpath.read_text())
+    where = {a['id']: (a['gallery'], a['floor']) for a in works['artworks']}
+    for w in guide['works']:
+        if w['id'] in where: w['gallery'], w['floor'] = where[w['id']]
+    gpath.write_text(json.dumps(guide, ensure_ascii=False, separators=(',', ':')))
+    by = {}
+    for a in works['artworks']: by[a['gallery']] = by.get(a['gallery'], 0) + 1
+    print(by)
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     floors = build_floors()
     (OUT / 'floors.json').write_text(json.dumps(floors, ensure_ascii=False, separators=(',', ':')))
+    if sys.argv[1:2] == ['--floors-only']: return floors_only(floors)
     works = build_works(floors)
     (OUT / 'artworks.json').write_text(json.dumps(works, ensure_ascii=False, separators=(',', ':')))
     guide = build_guide(works)
