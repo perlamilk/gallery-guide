@@ -47,7 +47,7 @@ export const SITES = {
   gardner: {
     key: 'gardner', id: 'Q49135', short: 'The Gardner', name: 'Isabella Stewart Gardner Museum',
     floors: 'data/gardner/floors.json', artworks: 'data/gardner/artworks.json',
-    tours: null, curiosities: null, notice: false,
+    tours: null, curiosities: null, notice: 'data/gardner/notice.json',
     pack: 'data/pack-gardner.json', packKey: 'gg-pack-gardner',
     room: id => id,                          // rooms have names (Dutch Room, Titian Room), not numbers
     website: 'View on the Gardner Website',

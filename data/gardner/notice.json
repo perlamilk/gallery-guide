@@ -1,0 +1,541 @@
+{
+ "about": "What to Notice: guided looks at a work, one detail at a time. Written for this app from general art-history knowledge, not by the museum. Regions are fractions of the picture: x, y, width, height.",
+ "works": {
+  "isgm-Q18002417": {
+   "image": "data/gardner/notice/isgm-Q18002417.jpg",
+   "credit": "Wikimedia Commons",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "In Greek myth, the god Jupiter falls in love with the princess Europa, turns himself into a white bull and carries her off across the sea. Titian painted it around 1560–62 for King Philip II of Spain."
+    },
+    {
+     "title": "Europa",
+     "r": [
+      0.38,
+      0.32,
+      0.6,
+      0.5
+     ],
+     "text": "She sprawls across the bull’s back, one arm flung up, legs in the air. Titian shows her terror and her twisting body in a single pose."
+    },
+    {
+     "title": "The bull",
+     "r": [
+      0.78,
+      0.43,
+      0.22,
+      0.35
+     ],
+     "text": "The bull looks gentle, even friendly, with a garland on his horns. Look at his eye: he is a god in disguise."
+    },
+    {
+     "title": "Loose brushwork",
+     "r": [
+      0.68,
+      0.18,
+      0.3,
+      0.27
+     ],
+     "text": "The red scarf is painted with broad, quick strokes. In his late works Titian painted more and more freely, sometimes with his fingers."
+    },
+    {
+     "title": "Left behind",
+     "r": [
+      0.0,
+      0.55,
+      0.25,
+      0.16
+     ],
+     "text": "On the shore, far away, her companions wave helplessly. They are tiny compared with what is happening in front."
+    },
+    {
+     "title": "Cupids",
+     "r": [
+      0.0,
+      0.0,
+      0.62,
+      0.27
+     ],
+     "text": "Two winged cupids chase after the bull with bow and arrows: the sign that this is a story of love, or desire."
+    },
+    {
+     "title": "On the fish",
+     "r": [
+      0.05,
+      0.72,
+      0.28,
+      0.25
+     ],
+     "text": "A third cupid rides a big fish, copying Europa’s pose: a light, almost funny echo of the drama."
+    },
+    {
+     "title": "Why it matters",
+     "r": [
+      0.0,
+      0.88,
+      0.12,
+      0.08
+     ],
+     "text": "Titian signed it at bottom left. Isabella Stewart Gardner bought it in 1896, then one of the most famous paintings ever to leave Europe. Below it she hung a piece of silk from one of her own dresses."
+    }
+   ]
+  },
+  "isgm-Q5351449": {
+   "image": "data/gardner/notice/isgm-Q5351449.jpg",
+   "credit": "Wikimedia Commons",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A dancer performs flamenco in a dim room in Spain, while men play guitars and women clap. John Singer Sargent painted it in 1882, after a trip to Spain. It is huge: more than 3.5 metres tall."
+    },
+    {
+     "title": "The dancer",
+     "r": [
+      0.53,
+      0.27,
+      0.28,
+      0.68
+     ],
+     "text": "She leans back, one arm stretched out, her white skirt swinging. Most of her is painted with big, rapid strokes of white."
+    },
+    {
+     "title": "Light from below",
+     "r": [
+      0.55,
+      0.25,
+      0.3,
+      0.3
+     ],
+     "text": "The light comes from the floor, like stage footlights, throwing her shadow high up the wall. It makes the scene feel like theatre."
+    },
+    {
+     "title": "The musicians",
+     "r": [
+      0.2,
+      0.38,
+      0.33,
+      0.28
+     ],
+     "text": "The guitarists sit in a row against the wall, heads thrown back, absorbed in the music. They are almost lost in the dark."
+    },
+    {
+     "title": "Shadows on the wall",
+     "r": [
+      0.1,
+      0.35,
+      0.48,
+      0.15
+     ],
+     "text": "Their hats and heads cast huge shadows on the whitewashed wall. Sargent uses them to multiply the crowd."
+    },
+    {
+     "title": "The guitars on the wall",
+     "r": [
+      0.1,
+      0.03,
+      0.18,
+      0.28
+     ],
+     "text": "Spare guitars hang on the wall. Sargent paints a few marks on the plaster too: a real, used room."
+    },
+    {
+     "title": "Clapping",
+     "r": [
+      0.8,
+      0.33,
+      0.2,
+      0.37
+     ],
+     "text": "At the right, women clap and shout. The word “jaleo” means the clapping and shouting that cheers on a dancer."
+    },
+    {
+     "title": "A room built for it",
+     "text": "A friend gave the painting to Isabella Stewart Gardner in 1914. She built the Spanish Cloister around it, framed by an arch, so you see it at the end of a long space, like a stage."
+    }
+   ]
+  },
+  "isgm-Q15880869": {
+   "image": "data/gardner/notice/isgm-Q15880869.jpg",
+   "credit": "Wikimedia Commons",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "This is Isabella Stewart Gardner herself, the woman who built this museum. Her friend John Singer Sargent painted her in Boston in 1888, when she was 47."
+    },
+    {
+     "title": "Head-on",
+     "r": [
+      0.35,
+      0.1,
+      0.3,
+      0.16
+     ],
+     "text": "She stands straight and looks right at us, calm and in charge. It is an unusually simple, frontal pose."
+    },
+    {
+     "title": "A halo",
+     "r": [
+      0.15,
+      0.0,
+      0.7,
+      0.35
+     ],
+     "text": "Behind her head, the pattern of an old Venetian brocade spreads out like a halo, almost like a saint in a church painting."
+    },
+    {
+     "title": "Pearls",
+     "r": [
+      0.33,
+      0.38,
+      0.33,
+      0.12
+     ],
+     "text": "Ropes of pearls circle her waist, and a necklace of pearls with a ruby pendant sits at her throat. They were her favourite jewels."
+    },
+    {
+     "title": "Her hands",
+     "r": [
+      0.38,
+      0.48,
+      0.24,
+      0.1
+     ],
+     "text": "Her hands are clasped calmly in front. Pale skin, black dress and gold background: Sargent kept the colours few and strong."
+    },
+    {
+     "title": "The black dress",
+     "r": [
+      0.25,
+      0.6,
+      0.5,
+      0.35
+     ],
+     "text": "The dress fades into the dark lower half of the canvas. All the light goes up to her face and arms."
+    },
+    {
+     "title": "Why it is in this room",
+     "text": "When it was first shown at a Boston club it caused gossip, and her husband asked that it not be shown in public again. She hung it in the Gothic Room, which opened to visitors only after her death."
+    }
+   ]
+  },
+  "isgm-Q21409404": {
+   "image": "data/gardner/notice/isgm-Q21409404.jpg",
+   "credit": "Wikimedia Commons",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Rembrandt painted himself at about 23, in 1629, in his home town of Leiden. He dressed up for it, as he often did in his self-portraits."
+    },
+    {
+     "title": "Half in shadow",
+     "r": [
+      0.35,
+      0.38,
+      0.25,
+      0.2
+     ],
+     "text": "Light falls from the left. One side of his face is lit, the other in shadow: the eyes are hard to read. Rembrandt loved that mystery."
+    },
+    {
+     "title": "The beret",
+     "r": [
+      0.25,
+      0.13,
+      0.38,
+      0.3
+     ],
+     "text": "A dark beret with a jewel and a soft feather. It is a costume, not everyday clothing: the young artist plays a role."
+    },
+    {
+     "title": "Curly hair",
+     "r": [
+      0.25,
+      0.38,
+      0.35,
+      0.22
+     ],
+     "text": "Look at the edges of his hair. Rembrandt often scratched into wet paint with the end of his brush to make curls."
+    },
+    {
+     "title": "The gold chain",
+     "r": [
+      0.15,
+      0.62,
+      0.3,
+      0.13
+     ],
+     "text": "A gold chain glints on his shoulder. Chains were given as honours to artists, and Rembrandt liked to paint himself wearing one."
+    },
+    {
+     "title": "Why it matters",
+     "text": "It is one of Rembrandt’s earliest self-portraits. He painted and drew himself all his life, about 80 times in all."
+    }
+   ]
+  },
+  "isgm-Q1115514": {
+   "image": "data/gardner/notice/isgm-Q1115514.jpg",
+   "credit": "Wikimedia Commons",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "This panel tells a story from ancient Rome in three scenes. Sandro Botticelli painted it in Florence around 1500. It was the first Botticelli to come to America."
+    },
+    {
+     "title": "Left: the threat",
+     "r": [
+      0.0,
+      0.4,
+      0.16,
+      0.42
+     ],
+     "text": "In the doorway, Sextus Tarquinius, son of the king, threatens the noblewoman Lucretia with a dagger."
+    },
+    {
+     "title": "Right: her death",
+     "r": [
+      0.81,
+      0.33,
+      0.19,
+      0.45
+     ],
+     "text": "Dishonoured, Lucretia tells her family what happened and takes her own life. Here she collapses among the men."
+    },
+    {
+     "title": "Centre: revolt",
+     "r": [
+      0.2,
+      0.5,
+      0.55,
+      0.45
+     ],
+     "text": "Her body lies on a bier in the square. Brutus stands over it, sword raised, calling the Romans to overthrow the king. This leads to the Roman Republic."
+    },
+    {
+     "title": "David on the column",
+     "r": [
+      0.45,
+      0.0,
+      0.12,
+      0.27
+     ],
+     "text": "A statue of David stands on the column. David, who killed a tyrant, was a symbol of the Florentine Republic: Botticelli links ancient Rome to his own city."
+    },
+    {
+     "title": "Stories in stone",
+     "r": [
+      0.0,
+      0.1,
+      0.16,
+      0.25
+     ],
+     "text": "The buildings are covered with painted reliefs of other heroic stories. Look up into the architecture."
+    },
+    {
+     "title": "Perspective",
+     "r": [
+      0.32,
+      0.25,
+      0.4,
+      0.4
+     ],
+     "text": "The central arch opens onto a far-off landscape. Lines of the buildings lead your eye to that point."
+    }
+   ]
+  },
+  "isgm-Q3731175": {
+   "image": "data/gardner/notice/isgm-Q3731175.jpg",
+   "credit": "Wikimedia Commons",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The hero Hercules stands in a doorway, holding his club. Piero della Francesca painted it as a fresco, directly into wet plaster on a wall of his own house in Sansepolcro, in Italy, around 1470."
+    },
+    {
+     "title": "A calm hero",
+     "r": [
+      0.45,
+      0.0,
+      0.3,
+      0.2
+     ],
+     "text": "Hercules doesn’t look heroic or fierce. He stands still and calm, with a steady, plain face, like a statue."
+    },
+    {
+     "title": "The club",
+     "r": [
+      0.0,
+      0.52,
+      0.28,
+      0.25
+     ],
+     "text": "His club, held loosely, is his sign: with it he did his famous twelve labours."
+    },
+    {
+     "title": "Painted on a wall",
+     "r": [
+      0.0,
+      0.0,
+      0.2,
+      0.5
+     ],
+     "text": "Look at the fine cracks and the matte surface. This is plaster: the painting was later cut from the wall of the house so it could be moved."
+    },
+    {
+     "title": "Volume and light",
+     "r": [
+      0.4,
+      0.2,
+      0.5,
+      0.35
+     ],
+     "text": "Piero was also a mathematician. He built the body with simple, solid shapes and soft light."
+    },
+    {
+     "title": "Why it matters",
+     "text": "It is the only work by Piero della Francesca in the United States. Isabella Stewart Gardner bought it in 1903."
+    }
+   ]
+  },
+  "isgm-Q3947220": {
+   "image": "data/gardner/notice/isgm-Q3947220.jpg",
+   "credit": "Wikimedia Commons",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Saint George, on his white horse, is about to kill a dragon to save a princess. Carlo Crivelli painted it around 1470 as part of an altarpiece in Italy."
+    },
+    {
+     "title": "The saint",
+     "r": [
+      0.45,
+      0.08,
+      0.45,
+      0.3
+     ],
+     "text": "George raises his sword over his head, his armour richly decorated, his face calm and young."
+    },
+    {
+     "title": "Raised gold",
+     "r": [
+      0.5,
+      0.42,
+      0.42,
+      0.25
+     ],
+     "text": "Look at the horse’s harness and the saint’s armour: some details are raised from the surface and covered in gold leaf, so they catch the light."
+    },
+    {
+     "title": "The dragon",
+     "r": [
+      0.0,
+      0.33,
+      0.35,
+      0.65
+     ],
+     "text": "The dragon twists below the horse, with a broken lance stuck in its throat."
+    },
+    {
+     "title": "The broken lance",
+     "r": [
+      0.25,
+      0.78,
+      0.5,
+      0.1
+     ],
+     "text": "The rest of the lance lies on the ground. George broke it in the fight and now finishes with his sword."
+    },
+    {
+     "title": "The princess",
+     "r": [
+      0.0,
+      0.25,
+      0.16,
+      0.13
+     ],
+     "text": "Far back, on a rocky path, the princess kneels and prays."
+    },
+    {
+     "title": "A gold sky",
+     "r": [
+      0.0,
+      0.0,
+      0.55,
+      0.25
+     ],
+     "text": "The sky is gold, as in older church paintings, but the castle and the hills are full of real-world detail."
+    }
+   ]
+  },
+  "isgm-Q103838740": {
+   "image": "data/gardner/notice/isgm-Q103838740.jpg",
+   "credit": "Wikimedia Commons",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Isabella Stewart Gardner in Venice, 1894, painted by her friend the Swedish artist Anders Zorn. She is stepping in from a balcony over the Grand Canal at the Palazzo Barbaro."
+    },
+    {
+     "title": "Arms wide open",
+     "r": [
+      0.0,
+      0.08,
+      1.0,
+      0.28
+     ],
+     "text": "She pushes open both doors at once. The pose is energetic, theatrical, full of life, much like her."
+    },
+    {
+     "title": "Her face",
+     "r": [
+      0.38,
+      0.1,
+      0.2,
+      0.15
+     ],
+     "text": "She looks straight at us, smiling a little, as if surprised and amused."
+    },
+    {
+     "title": "Fireworks",
+     "r": [
+      0.15,
+      0.1,
+      0.18,
+      0.4
+     ],
+     "text": "Behind her, in the night, flashes of light over the canal: fireworks for a Venetian festival."
+    },
+    {
+     "title": "The pearls",
+     "r": [
+      0.38,
+      0.2,
+      0.15,
+      0.38
+     ],
+     "text": "A long string of pearls hangs to her waist, as in Sargent’s portrait of her."
+    },
+    {
+     "title": "Fast brushstrokes",
+     "r": [
+      0.3,
+      0.38,
+      0.4,
+      0.5
+     ],
+     "text": "The white dress is made of quick, loose strokes. Zorn painted it quickly, to catch a moment."
+    },
+    {
+     "title": "Signed in Venice",
+     "r": [
+      0.08,
+      0.88,
+      0.25,
+      0.1
+     ],
+     "text": "Bottom left: Zorn’s signature, “Venezia 1894”."
+    }
+   ]
+  }
+ }
+}
