@@ -1,0 +1,543 @@
+{
+ "about": "What to Notice: guided looks at a work, one detail at a time. Written for this app from general art-history knowledge, not by the museum. Regions are fractions of the picture: x, y, width, height.",
+ "works": {
+  "moma-79802": {
+   "image": "data/moma/notice/moma-79802.jpg",
+   "credit": "The Museum of Modern Art",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Vincent van Gogh painted this in June 1889 at the asylum in Saint-Rémy, in southern France. From his window he watched the sky before dawn, but he painted the picture in daytime, partly from memory and imagination."
+    },
+    {
+     "title": "The swirl",
+     "r": [
+      0.3,
+      0.2,
+      0.5,
+      0.35
+     ],
+     "text": "Across the middle of the sky, a great spiral rolls like a wave. Nothing in a real night sky looks like this: it is the feeling of the sky, not a record of it."
+    },
+    {
+     "title": "The morning star",
+     "r": [
+      0.28,
+      0.43,
+      0.15,
+      0.16
+     ],
+     "text": "The big white star near the cypress is probably Venus, the morning star. Van Gogh wrote to his brother that he had seen it from his window before sunrise, looking very big."
+    },
+    {
+     "title": "The moon",
+     "r": [
+      0.8,
+      0.07,
+      0.19,
+      0.25
+     ],
+     "text": "Top right, a crescent moon glows inside a halo of yellow and white. Each star and the moon has its own ring of light, painted in circles of short strokes."
+    },
+    {
+     "title": "The cypress",
+     "r": [
+      0.12,
+      0.05,
+      0.36,
+      0.95
+     ],
+     "text": "A dark cypress shoots up like a flame and links the earth to the sky. In southern France cypresses grow in cemeteries, so many people read it as a sign of death, or of eternity."
+    },
+    {
+     "title": "The sleeping village",
+     "r": [
+      0.42,
+      0.62,
+      0.58,
+      0.38
+     ],
+     "text": "Below, a quiet village with lit windows. The pointed steeple looks more like a church in Van Gogh’s native Netherlands than one in Provence."
+    },
+    {
+     "title": "The hills",
+     "r": [
+      0.4,
+      0.5,
+      0.6,
+      0.22
+     ],
+     "text": "The Alpilles hills roll along in the same wave-like strokes as the sky. Everything is made of the same movement."
+    },
+    {
+     "title": "Why it matters",
+     "text": "Van Gogh himself wasn’t sure about it and called it a failure in a letter. Today it is one of the most famous paintings in the world. MoMA acquired it in 1941."
+    }
+   ]
+  },
+  "moma-79766": {
+   "image": "data/moma/notice/moma-79766.jpg",
+   "credit": "The Museum of Modern Art",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Five women stare out at us from a brothel on Avinyó Street in Barcelona. Pablo Picasso painted it in Paris in 1907, when he was 25. It shocked even his friends."
+    },
+    {
+     "title": "Broken space",
+     "r": [
+      0.55,
+      0.05,
+      0.4,
+      0.55
+     ],
+     "text": "The background isn’t a room, but sharp shards of blue and white. Bodies and space are broken into flat planes. This is the first step towards Cubism."
+    },
+    {
+     "title": "Two kinds of faces",
+     "r": [
+      0.15,
+      0.1,
+      0.45,
+      0.25
+     ],
+     "text": "The three women on the left have simplified faces with large eyes, inspired by ancient Iberian sculpture that Picasso had seen in Paris."
+    },
+    {
+     "title": "Faces like masks",
+     "r": [
+      0.68,
+      0.05,
+      0.3,
+      0.52
+     ],
+     "text": "The two on the right have faces like masks, with hatched stripes and twisted features. Picasso had been looking at African and Oceanic objects in Paris museums. That borrowing, and how he used it, is still debated."
+    },
+    {
+     "title": "The squatting woman",
+     "r": [
+      0.6,
+      0.35,
+      0.38,
+      0.6
+     ],
+     "text": "Look at the woman at bottom right: her back is turned to us, yet her face looks straight at us. Picasso shows two viewpoints at once."
+    },
+    {
+     "title": "Staring back",
+     "r": [
+      0.32,
+      0.18,
+      0.3,
+      0.18
+     ],
+     "text": "All the women look directly at the viewer. You are put in the place of the client, and the painting makes you uneasy about it."
+    },
+    {
+     "title": "The fruit",
+     "r": [
+      0.44,
+      0.83,
+      0.2,
+      0.17
+     ],
+     "text": "At the bottom, a small still life: grapes, a pear, a slice of melon. It tips forward towards us, as if about to slide off."
+    },
+    {
+     "title": "What happened next",
+     "text": "Early sketches showed a sailor and a medical student among the women; Picasso took them out. The painting stayed in his studio for years and wasn’t shown publicly until 1916. MoMA acquired it in 1939."
+    }
+   ]
+  },
+  "moma-79018": {
+   "image": "data/moma/notice/moma-79018.jpg",
+   "credit": "The Museum of Modern Art",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Salvador Dalí painted this in 1931. It is surprisingly small, about the size of a sheet of paper (24 x 33 cm). Get close: the detail is tiny and precise."
+    },
+    {
+     "title": "Melting watches",
+     "r": [
+      0.1,
+      0.5,
+      0.2,
+      0.35
+     ],
+     "text": "Watches hang limp like soft cloth. Dalí said the idea came to him after dinner, looking at a Camembert cheese melting in the heat."
+    },
+    {
+     "title": "Watch on a branch",
+     "r": [
+      0.26,
+      0.15,
+      0.2,
+      0.28
+     ],
+     "text": "One drips from the branch of a dead tree. Hard things become soft, and time, which we think of as fixed, seems to flow."
+    },
+    {
+     "title": "Ants",
+     "r": [
+      0.0,
+      0.67,
+      0.17,
+      0.18
+     ],
+     "text": "The only closed watch is orange and swarming with ants. In Dalí’s pictures ants are a sign of decay."
+    },
+    {
+     "title": "A sleeping creature",
+     "r": [
+      0.37,
+      0.48,
+      0.48,
+      0.38
+     ],
+     "text": "In the middle lies a strange pale shape with a closed eye and long eyelashes. It is often read as a distorted profile of Dalí himself, asleep: this is a dream landscape."
+    },
+    {
+     "title": "Home cliffs",
+     "r": [
+      0.6,
+      0.12,
+      0.4,
+      0.2
+     ],
+     "text": "The golden cliffs are those of Cap de Creus, on the coast of Catalonia near Dalí’s home. A real place, lit with an unreal light."
+    },
+    {
+     "title": "Signed and dated",
+     "r": [
+      0.08,
+      0.92,
+      0.22,
+      0.08
+     ],
+     "text": "Bottom left, Dalí signed and dated it, 1931. MoMA acquired it in 1934, only three years later."
+    }
+   ]
+  },
+  "moma-80172": {
+   "image": "data/moma/notice/moma-80172.jpg",
+   "credit": "The Museum of Modern Art",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A woman sleeps in the desert under the moon, and a lion comes to sniff her. Henri Rousseau painted it in 1897. He was a self-taught painter who had worked as a customs clerk in Paris."
+    },
+    {
+     "title": "The lion",
+     "r": [
+      0.15,
+      0.24,
+      0.55,
+      0.42
+     ],
+     "text": "The lion’s tail is raised, his eye glows, but he doesn’t attack. The moment hangs between danger and peace."
+    },
+    {
+     "title": "The sleeper",
+     "r": [
+      0.28,
+      0.53,
+      0.65,
+      0.33
+     ],
+     "text": "She sleeps deeply, holding a staff, in a dress of bright stripes. Rousseau’s note on the picture says she is a wandering mandolin player who fell asleep, exhausted."
+    },
+    {
+     "title": "Mandolin and jug",
+     "r": [
+      0.67,
+      0.67,
+      0.33,
+      0.27
+     ],
+     "text": "Beside her lie a mandolin and a water jug: everything she needs to travel and sing."
+    },
+    {
+     "title": "The moon",
+     "r": [
+      0.76,
+      0.0,
+      0.14,
+      0.17
+     ],
+     "text": "The full moon lights the scene. Everything is clear and still, like in a dream."
+    },
+    {
+     "title": "No footprints",
+     "r": [
+      0.0,
+      0.62,
+      0.45,
+      0.35
+     ],
+     "text": "Look at the sand: there are no footprints, not hers, not the lion’s. Nothing explains how they got there. That strangeness later fascinated the Surrealists."
+    },
+    {
+     "title": "Why it matters",
+     "r": [
+      0.85,
+      0.9,
+      0.15,
+      0.1
+     ],
+     "text": "Rousseau offered it to his hometown, Laval, which turned it down. It was forgotten until 1923; MoMA received it in 1939. Painters like Picasso admired his flat, careful, dreamlike style."
+    }
+   ]
+  },
+  "moma-78455": {
+   "image": "data/moma/notice/moma-78455.jpg",
+   "credit": "The Museum of Modern Art",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A woman lies in a dry field, looking towards a farmhouse on the hill. Andrew Wyeth painted it in 1948 in Cushing, Maine."
+    },
+    {
+     "title": "Christina",
+     "r": [
+      0.12,
+      0.43,
+      0.42,
+      0.42
+     ],
+     "text": "She is Christina Olson, Wyeth’s neighbour. A muscle disease meant she couldn’t walk, and she moved around by pulling herself along with her arms. Wyeth saw her crawling across the field."
+    },
+    {
+     "title": "Her hands",
+     "r": [
+      0.38,
+      0.6,
+      0.18,
+      0.25
+     ],
+     "text": "Look at her thin arms and twisted fingers. Wyeth painted them from Christina. For the body he asked his wife Betsy to pose."
+    },
+    {
+     "title": "The house",
+     "r": [
+      0.68,
+      0.0,
+      0.32,
+      0.17
+     ],
+     "text": "The Olson House, where Christina lived with her brother. It still stands and is now a museum."
+    },
+    {
+     "title": "Every blade of grass",
+     "r": [
+      0.5,
+      0.5,
+      0.3,
+      0.3
+     ],
+     "text": "Wyeth painted in tempera, egg yolk mixed with pigment, with tiny brushes. Each blade of grass is a separate line. Up close it is almost obsessive."
+    },
+    {
+     "title": "Her hair in the wind",
+     "r": [
+      0.37,
+      0.38,
+      0.22,
+      0.22
+     ],
+     "text": "Strands of hair blow in the wind, and her pink dress is the brightest colour in a world of tan and grey."
+    },
+    {
+     "title": "Why it matters",
+     "text": "MoMA bought it in 1949 for $1,800. Wyeth said he wanted to show a life that most people would consider hopeless, lived with great strength."
+    }
+   ]
+  },
+  "moma-79124": {
+   "image": "data/moma/notice/moma-79124.jpg",
+   "credit": "The Museum of Modern Art",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Five dancers whirl in a ring. Henri Matisse painted this large picture in 1909 as a full-size study for a mural ordered by the Russian collector Sergei Shchukin."
+    },
+    {
+     "title": "Three colours",
+     "text": "Blue sky, green hill, pink bodies. That is almost all. With so few colours, every line and shape counts."
+    },
+    {
+     "title": "The leader",
+     "r": [
+      0.0,
+      0.15,
+      0.3,
+      0.8
+     ],
+     "text": "The dancer on the left leans back, pulling the circle round. Her long curve sets the rhythm of the whole picture."
+    },
+    {
+     "title": "The broken link",
+     "r": [
+      0.25,
+      0.33,
+      0.27,
+      0.27
+     ],
+     "text": "Look in front: two dancers don’t quite hold hands. One reaches for the other. The gap gives the ring its tension, as if it might break, or close."
+    },
+    {
+     "title": "Fast painting",
+     "r": [
+      0.6,
+      0.0,
+      0.3,
+      0.6
+     ],
+     "text": "The paint is thin and quick. You can see where Matisse changed his mind and moved an arm or a leg: the earlier lines still show."
+    },
+    {
+     "title": "Off the ground",
+     "r": [
+      0.25,
+      0.4,
+      0.2,
+      0.25
+     ],
+     "text": "Some feet barely touch the hill. The dancers seem to float."
+    },
+    {
+     "title": "What happened next",
+     "text": "The final version, painted in 1910 with darker reds, is in the Hermitage in St Petersburg. This first one was donated to MoMA in 1963 by Nelson A. Rockefeller in honour of Alfred H. Barr Jr., the museum’s first director."
+    }
+   ]
+  },
+  "moma-78389": {
+   "image": "data/moma/notice/moma-78389.jpg",
+   "credit": "The Museum of Modern Art",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "This is Henri Matisse’s studio at Issy-les-Moulineaux, near Paris, painted in 1911. Almost everything is drowned in one red."
+    },
+    {
+     "title": "One colour for everything",
+     "r": [
+      0.3,
+      0.45,
+      0.45,
+      0.4
+     ],
+     "text": "Floor, walls and furniture are the same red. Where is the corner of the room? It is just a faint line. Matisse said that red came to him as the colour he felt in the room."
+    },
+    {
+     "title": "Lines left behind",
+     "r": [
+      0.53,
+      0.38,
+      0.25,
+      0.2
+     ],
+     "text": "The furniture is drawn by thin yellow and blue lines. They are not painted on top: they are gaps where the earlier layer shows through the red."
+    },
+    {
+     "title": "A clock with no hands",
+     "r": [
+      0.46,
+      0.16,
+      0.1,
+      0.4
+     ],
+     "text": "The grandfather clock has no hands. In the studio, time seems to stop."
+    },
+    {
+     "title": "His own works",
+     "r": [
+      0.32,
+      0.0,
+      0.66,
+      0.3
+     ],
+     "text": "On the walls and floor are Matisse’s own paintings, sculptures and ceramics, the ones in his studio at the time. The red room is a portrait of his work."
+    },
+    {
+     "title": "Pink canvas",
+     "r": [
+      0.09,
+      0.15,
+      0.2,
+      0.43
+     ],
+     "text": "The large pink painting is the brightest thing here. Matisse’s own art keeps its real colours; only the room has turned red."
+    },
+    {
+     "title": "Glass and plate",
+     "r": [
+      0.02,
+      0.66,
+      0.25,
+      0.34
+     ],
+     "text": "Bottom left, a glass and a plate painted with a reclining figure: objects from his daily life."
+    },
+    {
+     "title": "What happened next",
+     "text": "Matisse painted it for Sergei Shchukin, who declined it. The painting stayed unsold for years, travelled to London and New York, and was bought by MoMA in 1949."
+    }
+   ]
+  },
+  "moma-78805": {
+   "image": "data/moma/notice/moma-78805.jpg",
+   "credit": "The Museum of Modern Art",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Is it a flag, or a painting of a flag? Jasper Johns said the idea came from a dream. He painted it in 1954–55, and it raised exactly that question."
+    },
+    {
+     "title": "48 stars",
+     "r": [
+      0.0,
+      0.0,
+      0.47,
+      0.53
+     ],
+     "text": "Count the stars: 48. Alaska and Hawaii only became states in 1959."
+    },
+    {
+     "title": "Hot wax",
+     "r": [
+      0.47,
+      0.0,
+      0.53,
+      0.5
+     ],
+     "text": "Johns painted with encaustic: pigment mixed with hot wax. It cools fast, so every stroke stays visible, like a skin."
+    },
+    {
+     "title": "Newspaper underneath",
+     "r": [
+      0.55,
+      0.55,
+      0.25,
+      0.22
+     ],
+     "text": "Look closely at the stripes. Under the wax are scraps of newspaper. In some places you can still read words and printed letters."
+    },
+    {
+     "title": "Edge to edge",
+     "r": [
+      0.0,
+      0.5,
+      1.0,
+      0.5
+     ],
+     "text": "The flag fills the whole surface: no sky, no pole, no wind. The painting and the object it shows are the same shape."
+    },
+    {
+     "title": "Why it matters",
+     "text": "By painting something everyone already knows, Johns turned attention to the painting itself: surface, material, the hand. It opened the way for Pop Art. It was given to MoMA in 1973."
+    }
+   ]
+  }
+ }
+}

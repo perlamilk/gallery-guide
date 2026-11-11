@@ -730,7 +730,7 @@ export const SITES = {
   moma: {
     key: 'moma', id: 'Q188740', short: 'MoMA', name: 'The Museum of Modern Art',
     floors: 'data/moma/floors.json', artworks: 'data/moma/artworks.json',
-    tours: null, curiosities: null, notice: false,
+    tours: null, curiosities: null, notice: 'data/moma/notice.json',
     pack: 'data/pack-moma.json', packKey: 'gg-pack-moma',
     room: id => /^\d+$/.test(id) ? `Gallery ${id}` : id,
     website: 'More on MoMA’s website',
