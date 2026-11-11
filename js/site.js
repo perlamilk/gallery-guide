@@ -6,7 +6,7 @@ export const SITES = {
   mfa: {
     key: 'mfa', id: 'Q49133', short: 'MFA Boston', name: 'Museum of Fine Arts, Boston',
     floors: 'data/floors.json', artworks: 'data/artworks.json',
-    tours: 'data/tours.json', curiosities: 'data/curiosities.json', notice: true,
+    tours: 'data/tours.json', curiosities: 'data/curiosities.json', notice: 'data/notice.json',
     pack: 'data/pack-mfa.json', packKey: 'gg-pack-mfa',
     room: id => `Gallery ${id}`,           // how a room is called in the interface
     website: 'View on the MFA Website',
@@ -16,7 +16,7 @@ export const SITES = {
   wadsworth: {
     key: 'wadsworth', id: 'Q403080', short: 'The Wadsworth', name: 'Wadsworth Atheneum Museum of Art',
     floors: 'data/wadsworth/floors.json', artworks: 'data/wadsworth/artworks.json',
-    tours: null, curiosities: null, notice: false,
+    tours: null, curiosities: null, notice: 'data/wadsworth/notice.json',
     pack: 'data/pack-wadsworth.json', packKey: 'gg-pack-wadsworth',
     room: id => id,                        // the map shows wings ("Avery 2"), not numbered galleries
     website: 'Search the Wadsworth Collection',
@@ -26,7 +26,7 @@ export const SITES = {
   harvard: {
     key: 'harvard', id: 'Q3783572', short: 'Harvard Art Museums', name: 'Harvard Art Museums',
     floors: 'data/harvard/floors.json', artworks: 'data/harvard/artworks.json',
-    tours: null, curiosities: null, notice: false,
+    tours: null, curiosities: null, notice: 'data/harvard/notice.json',
     pack: 'data/pack-harvard.json', packKey: 'gg-pack-harvard',
     room: id => (/^\d{4}$/.test(id) ? `Gallery ${id}` : id),
     website: 'View on the Harvard Art Museums Website',
@@ -47,7 +47,7 @@ export const SITES = {
   gardner: {
     key: 'gardner', id: 'Q49135', short: 'The Gardner', name: 'Isabella Stewart Gardner Museum',
     floors: 'data/gardner/floors.json', artworks: 'data/gardner/artworks.json',
-    tours: null, curiosities: null, notice: false,
+    tours: null, curiosities: null, notice: 'data/gardner/notice.json',
     pack: 'data/pack-gardner.json', packKey: 'gg-pack-gardner',
     room: id => id,                          // rooms have names (Dutch Room, Titian Room), not numbers
     website: 'View on the Gardner Website',
@@ -730,7 +730,7 @@ export const SITES = {
   moma: {
     key: 'moma', id: 'Q188740', short: 'MoMA', name: 'The Museum of Modern Art',
     floors: 'data/moma/floors.json', artworks: 'data/moma/artworks.json',
-    tours: null, curiosities: null, notice: false,
+    tours: null, curiosities: null, notice: 'data/moma/notice.json',
     pack: 'data/pack-moma.json', packKey: 'gg-pack-moma',
     room: id => /^\d+$/.test(id) ? `Gallery ${id}` : id,
     website: 'More on MoMA’s website',
@@ -741,7 +741,7 @@ export const SITES = {
   met: {
     key: 'met', id: 'Q160236', short: 'The Met', name: 'The Metropolitan Museum of Art',
     floors: 'data/met/floors.json', artworks: 'data/met/artworks.json',
-    tours: null, curiosities: null, notice: false,
+    tours: null, curiosities: null, notice: 'data/met/notice.json',
     pack: 'data/pack-met.json', packKey: 'gg-pack-met',
     room: id => (/^\d{2,3}[a-z]?$/.test(id) ? `Gallery ${id}` : id),
     website: 'View on The Met’s website',

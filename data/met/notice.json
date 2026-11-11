@@ -1,0 +1,573 @@
+{
+ "about": "What to Notice: guided looks at a work, one detail at a time. Written for this app from general art-history knowledge, not by the museum. Regions are fractions of the picture: x, y, width, height.",
+ "works": {
+  "met11417": {
+   "image": "data/met/notice/met11417.jpg",
+   "credit": "The Metropolitan Museum of Art (Open Access, public domain)",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "George Washington crosses the icy Delaware River on the night of December 25–26, 1776, to surprise the enemy at Trenton. Emanuel Leutze painted it in Düsseldorf, Germany, in 1851. It is huge: about 4 metres tall and 6.5 metres wide."
+    },
+    {
+     "title": "The hero stands",
+     "r": [
+      0.35,
+      0.27,
+      0.17,
+      0.45
+     ],
+     "text": "Washington stands upright in a rocking boat, eyes on the far shore. Nobody would really stand like that in a small boat on an icy river, and that is the point: Leutze wanted a calm, unshakable leader, not a realistic snapshot."
+    },
+    {
+     "title": "A flag from the future",
+     "r": [
+      0.47,
+      0.13,
+      0.2,
+      0.37
+     ],
+     "text": "The young officer holding the flag is usually identified as James Monroe, a future president. But this Stars and Stripes was only adopted in June 1777, six months after the crossing. Leutze chose a symbol over a date."
+    },
+    {
+     "title": "Everyone pulls together",
+     "r": [
+      0.13,
+      0.38,
+      0.27,
+      0.45
+     ],
+     "text": "Look at the rowers: a man in a Scottish bonnet, farmers, a frontiersman in fringed buckskin and a Black man near the front. Leutze filled the boat with a mix of Americans, all pushing in the same direction."
+    },
+    {
+     "title": "The ice",
+     "r": [
+      0.0,
+      0.55,
+      0.3,
+      0.3
+     ],
+     "text": "The rough ice slabs give the danger shape. Leutze knew the Rhine in winter, and the river here looks more like the Rhine than the narrow Delaware."
+    },
+    {
+     "title": "The rest of the army",
+     "r": [
+      0.6,
+      0.37,
+      0.4,
+      0.25
+     ],
+     "text": "Behind, other boats carry soldiers and horses. The crossing really took all night, with about 2,400 men."
+    },
+    {
+     "title": "Light ahead",
+     "r": [
+      0.0,
+      0.08,
+      0.55,
+      0.35
+     ],
+     "text": "The crossing happened in darkness and snow, yet Leutze paints a dawn sky with the brightest light on the side where they are heading. It reads as hope."
+    },
+    {
+     "title": "Why it was made",
+     "text": "Leutze, who grew up in the United States, painted it to encourage the European revolutionaries of 1848. His first version was destroyed in Bremen in World War II; this is the second, sent to America and shown to huge crowds in New York in 1851."
+    }
+   ]
+  },
+  "met12127": {
+   "image": "data/met/notice/met12127.jpg",
+   "credit": "The Metropolitan Museum of Art (Open Access, public domain)",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "This is Madame Pierre Gautreau, an American-born Parisian famous for her beauty. John Singer Sargent showed it at the Paris Salon of 1884, and it caused a scandal."
+    },
+    {
+     "title": "The profile",
+     "r": [
+      0.33,
+      0.12,
+      0.25,
+      0.17
+     ],
+     "text": "Her face is turned sharply away, like a head on a coin. The profile shows off the line of her nose and forehead, and keeps her distant: she doesn’t look at us."
+    },
+    {
+     "title": "The strap",
+     "r": [
+      0.3,
+      0.26,
+      0.2,
+      0.16
+     ],
+     "text": "At the Salon, this jewelled strap hung loose off her right shoulder. Critics and the public found it indecent, and her family asked for the picture to be withdrawn. Sargent repainted the strap in place afterwards."
+    },
+    {
+     "title": "The colour of her skin",
+     "r": [
+      0.28,
+      0.25,
+      0.35,
+      0.25
+     ],
+     "text": "Her skin is a pale, almost lavender white. She used a powder to look like that, and Sargent painted it exactly, set hard against the black dress."
+    },
+    {
+     "title": "The twisted arm",
+     "r": [
+      0.25,
+      0.38,
+      0.17,
+      0.22
+     ],
+     "text": "Her right arm twists back to lean on the table, a pose that is awkward and elegant at once. It pushes her body forward and her head away."
+    },
+    {
+     "title": "The table",
+     "r": [
+      0.05,
+      0.58,
+      0.3,
+      0.38
+     ],
+     "text": "The small table rests on legs shaped like mythical creatures. Its curves echo her silhouette."
+    },
+    {
+     "title": "The dark dress",
+     "r": [
+      0.35,
+      0.4,
+      0.4,
+      0.5
+     ],
+     "text": "The velvet and satin are painted with very few strokes. Up close they are loose and quick; from a few steps back they turn into fabric."
+    },
+    {
+     "title": "What happened next",
+     "r": [
+      0.58,
+      0.89,
+      0.35,
+      0.07
+     ],
+     "text": "After the scandal Sargent moved to London. He kept the painting for more than 30 years and sold it to the Met in 1916, writing that he thought it was the best thing he had done. Before selling, he asked that her name not be used: hence “Madame X”."
+    }
+   ]
+  },
+  "met435809": {
+   "image": "data/met/notice/met435809.jpg",
+   "credit": "The Metropolitan Museum of Art (Open Access, public domain)",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "It is a hot day in late summer, and peasants harvest wheat in Flanders. Pieter Bruegel the Elder painted it in 1565, as one of six pictures of the seasons for a rich Antwerp collector. Five survive; this is the only one outside Europe."
+    },
+    {
+     "title": "Lunch under the tree",
+     "r": [
+      0.45,
+      0.68,
+      0.5,
+      0.3
+     ],
+     "text": "A group sits in the shade to eat bread, porridge and pears and to drink. Look at the details: one man cuts bread, a woman holds a bowl, another drinks from a jug."
+    },
+    {
+     "title": "The sleeper",
+     "r": [
+      0.44,
+      0.76,
+      0.2,
+      0.22
+     ],
+     "text": "One man has collapsed for a nap, legs splayed and his clothes undone. It is one of the most relaxed figures in old painting."
+    },
+    {
+     "title": "The work goes on",
+     "r": [
+      0.12,
+      0.64,
+      0.25,
+      0.33
+     ],
+     "text": "Not everyone is resting. On the left, men are still cutting the tall wheat with scythes."
+    },
+    {
+     "title": "A path through the wheat",
+     "r": [
+      0.29,
+      0.6,
+      0.1,
+      0.17
+     ],
+     "text": "A man comes out through a path cut in the wheat, carrying jugs. The wheat is taller than he is; it stands like a golden wall."
+    },
+    {
+     "title": "The church",
+     "r": [
+      0.66,
+      0.24,
+      0.14,
+      0.18
+     ],
+     "text": "Among the trees stands the village church, the centre of life in this world."
+    },
+    {
+     "title": "Far away",
+     "r": [
+      0.0,
+      0.28,
+      0.55,
+      0.3
+     ],
+     "text": "Let your eye travel over fields, villages, a road and finally a bay with ships, fading into blue haze. Bruegel shows a whole world, not just a scene."
+    },
+    {
+     "title": "Why it matters",
+     "text": "Bruegel made ordinary people and a real landscape the main subject, not a background for saints or heroes. That was new, and it influenced landscape painting for centuries."
+    }
+   ]
+  },
+  "met436535": {
+   "image": "data/met/notice/met436535.jpg",
+   "credit": "The Metropolitan Museum of Art (Open Access, public domain)",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Vincent van Gogh painted this field in July 1889, near the asylum in Saint-Rémy, in the south of France, where he had gone to be treated. He loved the scene so much that he painted more versions of it."
+    },
+    {
+     "title": "The cypress",
+     "r": [
+      0.7,
+      0.05,
+      0.22,
+      0.65
+     ],
+     "text": "The dark cypress flickers upward like a flame. Van Gogh wrote to his brother Theo that cypresses were as beautiful in line and proportion as an Egyptian obelisk."
+    },
+    {
+     "title": "Paint you can feel",
+     "r": [
+      0.1,
+      0.08,
+      0.4,
+      0.32
+     ],
+     "text": "Look at the clouds from the side: the paint is so thick it stands up off the canvas, swirled with the brush. Van Gogh painted fast, outdoors, and the strokes still show how his hand moved."
+    },
+    {
+     "title": "Wind in the wheat",
+     "r": [
+      0.03,
+      0.68,
+      0.94,
+      0.25
+     ],
+     "text": "The ripe wheat is all short, slanting strokes, as if bent by the wind. Everything in the picture moves: wheat, bushes, sky."
+    },
+    {
+     "title": "The mountains",
+     "r": [
+      0.38,
+      0.47,
+      0.42,
+      0.16
+     ],
+     "text": "Behind the trees rise the Alpilles, the low mountains around Saint-Rémy, painted in waves of blue."
+    },
+    {
+     "title": "Small red flowers",
+     "r": [
+      0.55,
+      0.85,
+      0.17,
+      0.12
+     ],
+     "text": "Find the touches of red at the bottom: poppies. A small dose of red makes the greens and yellows sing."
+    },
+    {
+     "title": "Why it matters",
+     "text": "Van Gogh considered this one of his best summer pictures. He made a copy in his studio in September 1889 (now in London) and a smaller one for his mother and sister."
+    }
+   ]
+  },
+  "met437881": {
+   "image": "data/met/notice/met437881.jpg",
+   "credit": "The Metropolitan Museum of Art (Open Access, public domain)",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "A young woman opens a window with one hand and holds a pitcher with the other. Nothing happens, and that is the point: a quiet moment, painted by Johannes Vermeer in Delft around 1662."
+    },
+    {
+     "title": "The window",
+     "r": [
+      0.0,
+      0.07,
+      0.16,
+      0.6
+     ],
+     "text": "Daylight comes in through leaded glass at the left, as in most of Vermeer’s paintings. It is the real subject of the picture."
+    },
+    {
+     "title": "Two hands, two tasks",
+     "r": [
+      0.1,
+      0.36,
+      0.55,
+      0.3
+     ],
+     "text": "One hand on the window, one on the pitcher: her arms make a long, gentle line across the picture, linking the light to the objects on the table."
+    },
+    {
+     "title": "Blue in the white",
+     "r": [
+      0.3,
+      0.2,
+      0.3,
+      0.32
+     ],
+     "text": "Look at her headscarf. It is white linen, but Vermeer painted it with blues and greys, the colours white takes on in daylight. Her face sits in its soft shadow."
+    },
+    {
+     "title": "The pitcher and basin",
+     "r": [
+      0.47,
+      0.57,
+      0.3,
+      0.2
+     ],
+     "text": "The silver-gilt pitcher and basin reflect the blue of her skirt and the red of the carpet. Vermeer painted reflections with tiny dots and strokes of light."
+    },
+    {
+     "title": "The map",
+     "r": [
+      0.66,
+      0.01,
+      0.33,
+      0.37
+     ],
+     "text": "On the wall hangs a map of the Netherlands, a typical decoration in prosperous Dutch homes. Maps appear in several of Vermeer’s rooms."
+    },
+    {
+     "title": "The jewellery box and carpet",
+     "r": [
+      0.37,
+      0.66,
+      0.6,
+      0.34
+     ],
+     "text": "A box with a blue ribbon and a rich carpet from the Middle East cover the table. These are signs of a well-off household, painted with great care."
+    },
+    {
+     "title": "Why it matters",
+     "text": "It was the first painting by Vermeer to come to America, given to the Met in 1889. Only about 35 paintings by Vermeer are known today."
+    }
+   ]
+  },
+  "met436105": {
+   "image": "data/met/notice/met436105.jpg",
+   "credit": "The Metropolitan Museum of Art (Open Access, public domain)",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Athens, 399 BC. The philosopher Socrates has been sentenced to death for corrupting the young and for impiety. Instead of fleeing, he will drink poison hemlock. Jacques-Louis David painted it in Paris in 1787."
+    },
+    {
+     "title": "Still teaching",
+     "r": [
+      0.58,
+      0.28,
+      0.17,
+      0.25
+     ],
+     "text": "Socrates points upward, still talking about the immortality of the soul. He is calm; everyone around him is falling apart."
+    },
+    {
+     "title": "The hand and the cup",
+     "r": [
+      0.47,
+      0.38,
+      0.2,
+      0.17
+     ],
+     "text": "His other hand reaches for the cup without looking at it. The cup is right in the middle of the picture: the whole story is in that gap between hand and cup."
+    },
+    {
+     "title": "The jailer",
+     "r": [
+      0.33,
+      0.35,
+      0.15,
+      0.55
+     ],
+     "text": "The young man handing over the poison turns away and covers his eyes. Even the executioner can’t bear it."
+    },
+    {
+     "title": "Crito",
+     "r": [
+      0.62,
+      0.43,
+      0.22,
+      0.47
+     ],
+     "text": "His friend Crito grips his thigh and stares at his face, as if to hold him back."
+    },
+    {
+     "title": "Plato",
+     "r": [
+      0.1,
+      0.45,
+      0.26,
+      0.42
+     ],
+     "text": "At the foot of the bed sits an old man, turned away: Plato, who wrote down this story. In reality he was young and not there. David put him in as the witness who would remember."
+    },
+    {
+     "title": "Leaving",
+     "r": [
+      0.15,
+      0.32,
+      0.1,
+      0.24
+     ],
+     "text": "Far back, up the stairs, Socrates’ wife Xanthippe is led away, waving goodbye."
+    },
+    {
+     "title": "Why it was made",
+     "text": "Painted two years before the French Revolution, it praised duty and dying for your principles. Its sharp outlines, sculptural bodies and stage-like setting made David the leader of the Neoclassical style."
+    }
+   ]
+  },
+  "met437394": {
+   "image": "data/met/notice/met437394.jpg",
+   "credit": "The Metropolitan Museum of Art (Open Access, public domain)",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "The Greek philosopher Aristotle rests his hand on a bust of the poet Homer, lost in thought. Rembrandt painted it in Amsterdam in 1653 for a collector in Sicily, Don Antonio Ruffo."
+    },
+    {
+     "title": "The thoughtful face",
+     "r": [
+      0.42,
+      0.22,
+      0.2,
+      0.2
+     ],
+     "text": "His eyes look past the bust, not at it. His face is half in shadow: a man thinking, not posing."
+    },
+    {
+     "title": "Touching the poet",
+     "r": [
+      0.12,
+      0.4,
+      0.33,
+      0.3
+     ],
+     "text": "His hand rests on Homer’s head, almost tenderly. The philosopher seems to ask what is worth more: wisdom, fame, or poetry."
+    },
+    {
+     "title": "The gold chain",
+     "r": [
+      0.45,
+      0.4,
+      0.27,
+      0.4
+     ],
+     "text": "Follow the heavy gold chain down to its medal, which bears the face of Alexander the Great, Aristotle’s former pupil. It was a gift: a sign of worldly success."
+    },
+    {
+     "title": "Two hands, two choices",
+     "r": [
+      0.6,
+      0.68,
+      0.22,
+      0.16
+     ],
+     "text": "One hand on the poet, the other on the chain from a king. Many people read the painting as a choice between lasting value and riches."
+    },
+    {
+     "title": "Paint as fabric",
+     "r": [
+      0.68,
+      0.43,
+      0.28,
+      0.38
+     ],
+     "text": "The white sleeves are built up with thick, loose paint that catches the light. Rembrandt left his brush marks visible, unusual for the time."
+    },
+    {
+     "title": "Why it matters",
+     "text": "When the Met bought it at auction in 1961, it cost $2.3 million, then the highest price ever paid for a painting. Thousands came to see it in its first days."
+    }
+   ]
+  },
+  "met437869": {
+   "image": "data/met/notice/met437869.jpg",
+   "credit": "The Metropolitan Museum of Art (Open Access, public domain)",
+   "steps": [
+    {
+     "title": "First look",
+     "text": "Juan de Pareja was born in Spain, of African descent, and was enslaved by the painter Diego Velázquez, working in his studio. Velázquez painted this portrait in Rome in 1650."
+    },
+    {
+     "title": "His gaze",
+     "r": [
+      0.3,
+      0.18,
+      0.25,
+      0.25
+     ],
+     "text": "Pareja looks straight at us, confident and serious. The face is painted with great care and the light falls on it fully."
+    },
+    {
+     "title": "The collar",
+     "r": [
+      0.12,
+      0.43,
+      0.5,
+      0.2
+     ],
+     "text": "The lace collar is just a few rapid strokes of white and grey. Up close it dissolves into paint; from a few steps back it becomes lace."
+    },
+    {
+     "title": "Loose brushwork",
+     "r": [
+      0.1,
+      0.6,
+      0.38,
+      0.32
+     ],
+     "text": "Look at the sleeve and cloak: broad, quick strokes, almost sketchy. Velázquez’s free handling impressed painters for centuries, including Manet."
+    },
+    {
+     "title": "The hand",
+     "r": [
+      0.6,
+      0.78,
+      0.22,
+      0.17
+     ],
+     "text": "His hand rests on his chest, half in shadow, giving the pose dignity."
+    },
+    {
+     "title": "A plain background",
+     "r": [
+      0.58,
+      0.05,
+      0.4,
+      0.4
+     ],
+     "text": "Nothing distracts: no room, no objects. All attention goes to the man."
+    },
+    {
+     "title": "What happened next",
+     "text": "It was shown at the Pantheon in Rome in 1650 and widely praised. That same year Velázquez signed papers freeing Pareja, who went on to work as an independent painter in Madrid. The Met bought the portrait in 1971."
+    }
+   ]
+  }
+ }
+}

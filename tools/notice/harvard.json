@@ -1,0 +1,74 @@
+{
+ "ham299843": {"steps": [
+  {"title": "First look", "text": "Vincent van Gogh painted this in Arles, in the south of France, in September 1888, as a gift for his friend Paul Gauguin."},
+  {"title": "The dedication", "r": [0.0, 0.0, 0.6, 0.1], "text": "Faintly, across the top, he wrote “to my friend Paul”. The two artists swapped self-portraits that autumn, just before Gauguin came to live with him."},
+  {"title": "A monk", "r": [0.18, 0.17, 0.45, 0.45], "text": "Van Gogh shaved his head and slanted his eyes slightly. He wrote that he painted himself as a simple Buddhist monk, a worshipper of the eternal Buddha: his dream of an artist living plainly for his work."},
+  {"title": "The eyes", "r": [0.35, 0.3, 0.3, 0.12], "text": "Green-grey eyes, lined in red, look past us. The face is built with strokes of yellow, green and pink that follow its shape."},
+  {"title": "The green", "r": [0.6, 0.15, 0.4, 0.5], "text": "The background is a pale, even green, brushed in long strokes. No room, no shadows: like a Japanese print, which he admired."},
+  {"title": "Blue outlines", "r": [0.0, 0.55, 0.8, 0.45], "text": "His brown jacket is edged in bright blue lines. Outlines like these were a new idea he shared with Gauguin."},
+  {"title": "What happened next", "text": "Weeks after Gauguin arrived, the two quarrelled and Van Gogh had his breakdown. Gauguin kept the portrait for a while, then sold it. It came to Harvard in 1951."}
+ ]},
+ "ham228649": {"steps": [
+  {"title": "First look", "text": "A train arrives at the Gare Saint-Lazare in Paris, in 1877. Claude Monet painted a whole series of pictures of this station that year."},
+  {"title": "Steam", "r": [0.38, 0.2, 0.55, 0.35], "text": "The real subject is the steam: puffs of blue, white and grey filling the glass roof. Monet painted something that changes every second."},
+  {"title": "The locomotive", "r": [0.6, 0.48, 0.35, 0.42], "text": "The black engine comes towards us, with a red buffer beam and a glowing lamp. A modern machine as the hero of a painting."},
+  {"title": "The roof", "r": [0.0, 0.0, 0.7, 0.3], "text": "The iron and glass roof is barely drawn: a few dark lines and light shining through."},
+  {"title": "City beyond", "r": [0.18, 0.4, 0.35, 0.25], "text": "Through the steam you glimpse the pale apartment buildings of Paris."},
+  {"title": "People", "r": [0.5, 0.75, 0.2, 0.25], "text": "Railway workers are just quick dabs of colour. Monet cared more about the effect of the whole scene than about anyone in it."},
+  {"title": "Signed", "r": [0.0, 0.92, 0.25, 0.08], "text": "“Claude Monet 77”. He showed several views of the station at the third Impressionist exhibition that year."}
+ ]},
+ "ham230640": {"steps": [
+  {"title": "First look", "text": "Young men swim, rest and wrestle by a river on a summer day. Frédéric Bazille painted it in 1869, near his family home outside Montpellier, in southern France."},
+  {"title": "Against the tree", "r": [0.0, 0.3, 0.3, 0.65], "text": "A young man leans against the birch, eyes half closed. His pose recalls paintings of Saint Sebastian, but here it is just a lazy summer afternoon."},
+  {"title": "Striped suits", "r": [0.66, 0.57, 0.15, 0.3], "text": "The bathing suits are striped, modern, from 1869. Bazille set classical poses in everyday life."},
+  {"title": "Helping hand", "r": [0.68, 0.27, 0.32, 0.55], "text": "On the right, a man pulls another out of the water. The two arms form a strong diagonal across the picture."},
+  {"title": "Wrestlers", "r": [0.45, 0.32, 0.15, 0.25], "text": "In the middle distance, two men wrestle on the grass."},
+  {"title": "In the water", "r": [0.4, 0.75, 0.25, 0.25], "text": "A swimmer seen from behind, half in the dark water. Look how the water is painted: flat, with a few bright reflections."},
+  {"title": "Sunlight", "r": [0.2, 0.0, 0.8, 0.35], "text": "Bright sky, clear shadows, green grass. Bazille worked alongside Monet and Renoir to paint figures in real daylight."},
+  {"title": "What happened next", "r": [0.1, 0.94, 0.15, 0.05], "text": "It was shown at the Paris Salon of 1870. A few months later Bazille was killed in the Franco-Prussian War, at 28."}
+ ]},
+ "ham299842": {"steps": [
+  {"title": "First look", "text": "A fashionable young woman at an ice-skating rink in Paris. Édouard Manet painted it in 1877."},
+  {"title": "Her face", "r": [0.38, 0.13, 0.25, 0.2], "text": "She looks out at us with a slight smile, rosy from the cold. Manet catches a brief moment, as if she had just noticed us."},
+  {"title": "The hat", "r": [0.35, 0.03, 0.25, 0.15], "text": "A fur hat with a green ribbon. Up close it is a few strokes of black and green."},
+  {"title": "The pattern", "r": [0.4, 0.33, 0.25, 0.4], "text": "The swirling pattern on her jacket is painted freely, almost like handwriting."},
+  {"title": "Gloves", "r": [0.55, 0.55, 0.2, 0.18], "text": "Her pale gloves rest on the rail. A bright spot in the dark painting."},
+  {"title": "The skater", "r": [0.18, 0.08, 0.25, 0.35], "text": "Behind her, a man glides by on skates. The crowd and the rink are blurred, full of movement."},
+  {"title": "Signed", "r": [0.78, 0.94, 0.22, 0.06], "text": "Manet signed bottom right. He loved scenes of modern Paris life: cafés, bars, the skating rink."}
+ ]},
+ "ham299806": {"steps": [
+  {"title": "First look", "text": "A reclining woman, a musician and a guard in an imagined harem. Jean-Auguste-Dominique Ingres painted it in Rome in 1839–40. Ingres never travelled to the Middle East: this is a European fantasy."},
+  {"title": "The reclining woman", "r": [0.42, 0.45, 0.5, 0.4], "text": "Her body stretches impossibly long, a shape Ingres liked more than anatomy. Her skin is smooth, almost like porcelain."},
+  {"title": "The musician", "r": [0.1, 0.15, 0.4, 0.6], "text": "An enslaved woman plays a long-necked lute. Her costume is painted with great precision: Ingres copied clothes and objects from books and prints."},
+  {"title": "The guard", "r": [0.55, 0.05, 0.15, 0.48], "text": "In the background stands a eunuch, a guard of the harem. The museum’s title names all three people, not just the reclining woman."},
+  {"title": "Pattern everywhere", "r": [0.3, 0.05, 0.5, 0.25], "text": "Columns, tiles, balustrades and textiles are covered with ornament. The room is as much the subject as the people."},
+  {"title": "Objects", "r": [0.85, 0.8, 0.15, 0.2], "text": "A water pipe and other objects lie on the floor, details meant to make the fantasy feel real."},
+  {"title": "Seen today", "text": "Paintings like this shaped how Europeans imagined the “Orient”. Today they are also read as images of power, slavery and the male gaze."}
+ ]},
+ "ham299923": {"steps": [
+  {"title": "First look", "text": "Christ on the cross, above Florence, in a storm. Sandro Botticelli, or his workshop, painted it around 1500, in a time of religious fear and turmoil in the city."},
+  {"title": "Florence", "r": [0.0, 0.38, 0.45, 0.2], "text": "At left lies Florence, with the great dome of its cathedral. The painting is about the city and its fate."},
+  {"title": "Mary Magdalene", "r": [0.05, 0.6, 0.55, 0.35], "text": "Mary Magdalene, in red, clings to the foot of the cross in grief and repentance."},
+  {"title": "The angel", "r": [0.55, 0.48, 0.38, 0.45], "text": "An angel strikes a small animal held up by the tail, often read as the lion of Florence: a punishment for the sinful city."},
+  {"title": "Smoke and fire", "r": [0.55, 0.15, 0.45, 0.35], "text": "On the right, dark clouds of smoke and flaming arrows rain down. On the left, the sky is calm and blue. Judgment and mercy, side by side."},
+  {"title": "Shields from the sky", "r": [0.2, 0.1, 0.25, 0.2], "text": "White shields with red crosses float down: signs of protection for those who repent."},
+  {"title": "God above", "r": [0.0, 0.0, 0.15, 0.12], "text": "In the top left corner, God the Father appears in a burst of light."},
+  {"title": "Why it was made", "text": "In the 1490s the preacher Savonarola warned Florence of God’s punishment. Botticelli seems to have been deeply affected. This strange picture is one of his most personal."}
+ ]},
+ "ham229048": {"steps": [
+  {"title": "First look", "text": "Gabrielle Renard worked in Pierre-Auguste Renoir’s household, looking after his children, and became his favourite model. He painted her many times; this portrait dates from about 1908."},
+  {"title": "Her face", "r": [0.3, 0.25, 0.35, 0.28], "text": "Her face is soft, rounded, with warm pink cheeks. Renoir wanted his figures to look healthy and full of life."},
+  {"title": "All red", "r": [0.0, 0.55, 1.0, 0.45], "text": "Red dress, red background: Renoir’s late paintings glow with warm reds and oranges."},
+  {"title": "The armchair", "r": [0.0, 0.45, 0.3, 0.3], "text": "A golden-yellow chair behind her, painted with loose, flowing strokes."},
+  {"title": "Signed", "r": [0.85, 0.92, 0.15, 0.08], "text": "Renoir signed it at bottom right. By then he suffered from severe arthritis, yet he kept painting every day."}
+ ]},
+ "ham299877": {"steps": [
+  {"title": "First look", "text": "John Adams, who would become the second President of the United States. John Singleton Copley painted him in London in 1783, just after Adams helped negotiate the peace treaty that ended the American Revolution."},
+  {"title": "The face", "r": [0.5, 0.17, 0.25, 0.15], "text": "He looks at us calmly, in a powdered wig. Copley, born in Boston, was famous for honest, sharp likenesses."},
+  {"title": "The map", "r": [0.0, 0.45, 0.45, 0.17], "text": "His hand points to a map. Maps meant diplomacy and the new borders of the United States."},
+  {"title": "The globe", "r": [0.05, 0.62, 0.32, 0.3], "text": "A large globe stands beside him: the new nation now has a place in the world."},
+  {"title": "Peace", "r": [0.0, 0.0, 0.32, 0.4], "text": "In the background, a statue of a woman holds an olive branch, the symbol of peace."},
+  {"title": "Dressed in velvet", "r": [0.4, 0.28, 0.4, 0.5], "text": "A dark velvet suit with gold buttons and a sword: Adams is shown as a gentleman and statesman, ready for European courts."},
+  {"title": "Why it is at Harvard", "text": "Adams studied at Harvard. The portrait was given to the university in 1828 and belongs to the Harvard University Portrait Collection."}
+ ]}
+}
