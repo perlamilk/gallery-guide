@@ -19,6 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'data' / 'worcester' / 'artworks.json'
 MUSEUM = 'Q847508'
+EXTRA_PHOTOS = json.loads((Path(__file__).resolve().parent / 'data' / 'worcester-commons-photos.json').read_text())
 UA = 'GalleryGuidePersonal/1.0 (personal, non-commercial museum guide app)'
 PLACE_NOTE = ('Gallery guessed from the work’s date and origin. Wikidata lists what the museum owns, '
               'so this work may not be on view.')
@@ -108,6 +109,9 @@ def main():
              'medium': ', '.join(sorted(w['mat'])).capitalize(), 'accession': w.get('accession', ''),
              'type': (w.get('type') or '').capitalize(), 'gallery': g, 'galleryName': gname, 'floor': floor,
              'placeNote': PLACE_NOTE, 'url': f'https://www.wikidata.org/wiki/{w["id"]}', 'wikidata': w['id']}
+        if not w.get('image'):
+            # Commons photos of the work that Wikidata doesn't link yet (tools/data/worcester-commons-photos.json)
+            w['image'] = EXTRA_PHOTOS.get(w['id'])
         if w.get('image'):
             a['image'] = 'https://commons.wikimedia.org/wiki/Special:FilePath/' + urllib.parse.quote(w['image']) + '?width=600'
             a['imageCredit'] = 'Wikimedia Commons'
