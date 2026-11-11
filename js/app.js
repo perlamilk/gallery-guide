@@ -74,7 +74,7 @@ async function boot() {
   ]);
   state.tours = !SITE.tours ? [] : (await fetch(SITE.tours).then(r => r.json()).catch(() => ({}))).tours ?? [];
   if (!state.tours.length) els.tabbar.querySelector('[data-tab="tours"]').hidden = true;
-  state.noticeIds = new Set(SITE.notice ? Object.keys((await noticeData())?.works ?? {}) : []);
+  state.noticeIds = new Set(SITE.notice ? Object.keys((await noticeData(SITE.notice))?.works ?? {}) : []);
   state.here = state.visit?.rooms.at(-1)?.id ?? null;
 
   buildFloorPicker();
@@ -102,7 +102,7 @@ function openFromLink() {
   if (kind === 'art' && id) openArt(id);
   else if (kind === 'visits' || kind === 'tours' || kind === 'saved') { setTab(kind); setSheet('half'); }
   else if (kind === 'entry' && id) { setTab('visits'); push({ type: 'entry', id }, { sheet: 'full' }); }
-  else if (kind === 'notice' && id) { openArt(id); openNotice({ id, title: state.museum.artworks.find(x => x.id === id)?.title ?? '' }); }
+  else if (kind === 'notice' && id) { openArt(id); openNotice({ id, title: state.museum.artworks.find(x => x.id === id)?.title ?? '', src: SITE.notice }); }
   if (kind) history.replaceState(null, '', location.pathname + location.search);
 }
 
@@ -1120,7 +1120,7 @@ els.sheet.addEventListener('click', e => {
     t.setAttribute('aria-expanded', String(open));
   }
   else if (a === 'check-update') checkForUpdate(t);
-  else if (a === 'notice') { const w = state.museum.artworks.find(x => x.id === t.dataset.id); openNotice({ id: t.dataset.id, title: w?.title ?? '' }); }
+  else if (a === 'notice') { const w = state.museum.artworks.find(x => x.id === t.dataset.id); openNotice({ id: t.dataset.id, title: w?.title ?? '', src: SITE.notice }); }
   else if (a === 'favorite') toggleFavorite(t.dataset.id);
   else if (a === 'route-favorites') routeFavorites();
   else if (a === 'directions') directionsTo([t.dataset.id]);

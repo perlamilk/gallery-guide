@@ -2,26 +2,28 @@
 // Full-screen, like a photo viewer (HIG modality: full screen for photos and multistep tasks),
 // with a clear way out (✕, swipe down, Esc). Each step zooms the picture to a region
 // (fractions of the picture: [x, y, w, h]); swipe or use Back / Next (HIG gestures: never gesture-only).
-// Data: data/notice.json.
+// Data: data/notice.json (MFA, plus the general guide); other museums keep theirs next to their
+// artworks (data/met/notice.json), named by the notice field in js/site.js.
 
-let docPromise;
-export function noticeData() {
-  docPromise ??= fetch('data/notice.json').then(r => (r.ok ? r.json() : null)).catch(() => null);
-  return docPromise;
+const DEFAULT = 'data/notice.json';
+const docs = new Map();
+export function noticeData(src = DEFAULT) {
+  if (!docs.has(src)) docs.set(src, fetch(src).then(r => (r.ok ? r.json() : null)).catch(() => null));
+  return docs.get(src);
 }
 
-export async function hasNotice(id) {
-  return !!(await noticeData())?.works?.[id];
+export async function hasNotice(id, src = DEFAULT) {
+  return !!(await noticeData(src))?.works?.[id];
 }
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // open({ id }) for a work, or open({ general: true }) for the seven-question guide.
-export async function openNotice({ id = null, general = false, title = '', artist = '' } = {}) {
-  const doc = await noticeData();
+export async function openNotice({ id = null, general = false, title = '', artist = '', src = DEFAULT } = {}) {
+  const doc = await noticeData(src);
   const work = id ? doc?.works?.[id] : null;
-  const guide = general ? doc?.general : null;
+  const guide = general ? (await noticeData(DEFAULT))?.general : null;
   if (!work && !guide) return;
   const steps = work ? work.steps : guide.steps;
   const heading = work ? title : guide.title;
@@ -48,7 +50,7 @@ export async function openNotice({ id = null, general = false, title = '', artis
         <button class="notice__btn notice__btn--ghost" type="button" data-prev>Back</button>
         <button class="notice__btn" type="button" data-next>Next</button>
       </div>
-      ${work ? `<p class="notice__credit">Picture: Wikimedia Commons · Written for this app, not by the museum</p>` : ''}
+      ${work ? `<p class="notice__credit">Picture: ${esc(work.credit ?? 'Wikimedia Commons')} · Written for this app, not by the museum</p>` : ''}
     </div>`;
   document.body.appendChild(el);
   document.documentElement.classList.add('notice-open');

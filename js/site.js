@@ -6,7 +6,7 @@ export const SITES = {
   mfa: {
     key: 'mfa', id: 'Q49133', short: 'MFA Boston', name: 'Museum of Fine Arts, Boston',
     floors: 'data/floors.json', artworks: 'data/artworks.json',
-    tours: 'data/tours.json', curiosities: 'data/curiosities.json', notice: true,
+    tours: 'data/tours.json', curiosities: 'data/curiosities.json', notice: 'data/notice.json',
     pack: 'data/pack-mfa.json', packKey: 'gg-pack-mfa',
     room: id => `Gallery ${id}`,           // how a room is called in the interface
     website: 'View on the MFA Website',
@@ -741,7 +741,7 @@ export const SITES = {
   met: {
     key: 'met', id: 'Q160236', short: 'The Met', name: 'The Metropolitan Museum of Art',
     floors: 'data/met/floors.json', artworks: 'data/met/artworks.json',
-    tours: null, curiosities: null, notice: false,
+    tours: null, curiosities: null, notice: 'data/met/notice.json',
     pack: 'data/pack-met.json', packKey: 'gg-pack-met',
     room: id => (/^\d{2,3}[a-z]?$/.test(id) ? `Gallery ${id}` : id),
     website: 'View on The Met’s website',
