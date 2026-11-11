@@ -16,7 +16,7 @@ export const SITES = {
   wadsworth: {
     key: 'wadsworth', id: 'Q403080', short: 'The Wadsworth', name: 'Wadsworth Atheneum Museum of Art',
     floors: 'data/wadsworth/floors.json', artworks: 'data/wadsworth/artworks.json',
-    tours: null, curiosities: null, notice: false,
+    tours: null, curiosities: null, notice: 'data/wadsworth/notice.json',
     pack: 'data/pack-wadsworth.json', packKey: 'gg-pack-wadsworth',
     room: id => id,                        // the map shows wings ("Avery 2"), not numbered galleries
     website: 'Search the Wadsworth Collection',
